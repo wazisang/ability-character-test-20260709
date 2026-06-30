@@ -1,0 +1,663 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-30",
+  "role": "default-result-portrait",
+  "slotCount": 16,
+  "readyCount": 16,
+  "mapping": {
+    "sourceOfTruth": "app.js MBTI_PORTRAIT_RESOURCE_MAP",
+    "expectedFilePattern": "assets/portraits/generated/{id}-preview.webp",
+    "fallback": "When a slot is not ready, or its image fails to load, the result page keeps the existing canvas fallback portrait.",
+    "batchIngestionSteps": [
+      "Generate one portrait per pending slot using the slot id and prompt brief.",
+      "Save the preview image to expectedFile.",
+      "Set the slot status to ready and copy expectedFile into file.",
+      "Append a reviewed item record with the same id to items.",
+      "Keep file paths relative to the site root so index.html can load them directly."
+    ]
+  },
+  "slots": [
+    {
+      "id": "default-intj-strategic-wizard",
+      "mbti": "INTJ",
+      "archetype": "strategic wizard",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-intj-strategic-wizard-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-intj-strategic-wizard-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "INTJ strategic wizard, calm analytical observer, black and gold robe, astral chart patterns, rune manuscript, silver blue magical light."
+    },
+    {
+      "id": "default-intp-arcane-researcher",
+      "mbti": "INTP",
+      "archetype": "arcane researcher",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-intp-arcane-researcher-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-intp-arcane-researcher-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "INTP arcane researcher, scattered scholar, rune manuscripts, experimental blue laboratory glow, curious detached expression."
+    },
+    {
+      "id": "default-entj-expedition-commander",
+      "mbti": "ENTJ",
+      "archetype": "expedition commander",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-entj-expedition-commander-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-entj-expedition-commander-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ENTJ expedition commander, military cloak, sharp gaze, tactical map, commanding posture, disciplined high-fantasy officer."
+    },
+    {
+      "id": "default-entp-trickster-inventor",
+      "mbti": "ENTP",
+      "archetype": "trickster inventor",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-entp-trickster-inventor-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-entp-trickster-inventor-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ENTP trickster inventor, mechanical goggles, sly smile, chaotic workshop after a small explosion, clever improviser energy."
+    },
+    {
+      "id": "default-infj-oracle-mediator",
+      "mbti": "INFJ",
+      "archetype": "oracle mediator",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-infj-oracle-mediator-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-infj-oracle-mediator-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "INFJ oracle mediator, silver white cloak, gentle focused eyes, stained glass cathedral light, calm prophetic presence."
+    },
+    {
+      "id": "default-infp-dream-bard",
+      "mbti": "INFP",
+      "archetype": "dream bard",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-infp-dream-bard-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-infp-dream-bard-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "INFP dream bard, soft shawl, handwritten poetry pages, night garden, tender idealistic expression."
+    },
+    {
+      "id": "default-enfj-oathbound-leader",
+      "mbti": "ENFJ",
+      "archetype": "oathbound leader",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-enfj-oathbound-leader-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-enfj-oathbound-leader-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ENFJ oathbound leader, golden shoulder armor, inspiring stance, banner and morning light, warm charismatic protector."
+    },
+    {
+      "id": "default-enfp-inspiration-travel-mage",
+      "mbti": "ENFP",
+      "archetype": "inspiration travel mage",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-enfp-inspiration-travel-mage-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-enfp-inspiration-travel-mage-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ENFP inspiration travel mage, bright cloak, open smile, floating paper birds, colorful adventurous magic."
+    },
+    {
+      "id": "default-istj-archive-warden",
+      "mbti": "ISTJ",
+      "archetype": "archive warden",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-istj-archive-warden-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-istj-archive-warden-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ISTJ archive warden, dark uniform, orderly insignia, ancient archive room, reliable disciplined guardian."
+    },
+    {
+      "id": "default-isfj-guardian-healer",
+      "mbti": "ISFJ",
+      "archetype": "guardian healer",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-isfj-guardian-healer-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-isfj-guardian-healer-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ISFJ guardian healer, soft cloak, medicine kit, warm lantern light, careful protective kindness."
+    },
+    {
+      "id": "default-estj-order-officer",
+      "mbti": "ESTJ",
+      "archetype": "order officer",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-estj-order-officer-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-estj-order-officer-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ESTJ order officer, firm silhouette, commanding gesture, steel city gate, structured tactical authority."
+    },
+    {
+      "id": "default-esfj-court-coordinator",
+      "mbti": "ESFJ",
+      "archetype": "court coordinator",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-esfj-court-coordinator-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-esfj-court-coordinator-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ESFJ court coordinator, elegant formalwear, friendly smile, banquet hall and letters, socially graceful organizer."
+    },
+    {
+      "id": "default-istp-mechanism-ranger",
+      "mbti": "ISTP",
+      "archetype": "mechanism ranger",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-istp-mechanism-ranger-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-istp-mechanism-ranger-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ISTP mechanism ranger, leather armor tool belt, calm side profile, mechanical crossbow, practical tactical craft."
+    },
+    {
+      "id": "default-isfp-chroma-bard-painter",
+      "mbti": "ISFP",
+      "archetype": "chroma bard painter",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-isfp-chroma-bard-painter-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-isfp-chroma-bard-painter-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ISFP chroma bard painter, paint-stained shawl, quiet expression, light and shadow woodland, artistic sensory mood."
+    },
+    {
+      "id": "default-estp-breaker-duelist",
+      "mbti": "ESTP",
+      "archetype": "breaker duelist",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-estp-breaker-duelist-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-estp-breaker-duelist-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ESTP breaker duelist, short cloak, provocative smile, arena firelight, agile high-risk combat confidence."
+    },
+    {
+      "id": "default-esfp-stage-bard",
+      "mbti": "ESFP",
+      "archetype": "stage bard",
+      "status": "ready",
+      "file": "assets/portraits/generated/default-esfp-stage-bard-preview.webp",
+      "expectedFile": "assets/portraits/generated/default-esfp-stage-bard-preview.webp",
+      "fallback": "canvas",
+      "promptBrief": "ESFP stage bard, ornate coat, spotlight, audience and instruments, vibrant performance energy."
+    }
+  ],
+  "items": [
+    {
+      "id": "default-intj-strategic-wizard",
+      "slotId": "default-intj-strategic-wizard",
+      "role": "default-result-portrait",
+      "mbti": "INTJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-intj-strategic-wizard-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. INTJ strategic wizard, high intelligence and high wisdom, calm analytical observer, lawful good aura. Young adult, clear face, black and gold robe, astral chart patterns, rune manuscript, silver blue magical light, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the INTJ strategic wizard result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-intp-arcane-researcher",
+      "slotId": "default-intp-arcane-researcher",
+      "role": "default-result-portrait",
+      "mbti": "INTP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-intp-arcane-researcher-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. INTP arcane researcher, scattered scholar, rune manuscripts, experimental blue laboratory glow, curious detached expression. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the INTP arcane researcher result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-entj-expedition-commander",
+      "slotId": "default-entj-expedition-commander",
+      "role": "default-result-portrait",
+      "mbti": "ENTJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-entj-expedition-commander-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ENTJ expedition commander, military cloak, sharp gaze, tactical map, commanding posture, disciplined high-fantasy officer. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ENTJ expedition commander result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-entp-trickster-inventor",
+      "slotId": "default-entp-trickster-inventor",
+      "role": "default-result-portrait",
+      "mbti": "ENTP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-entp-trickster-inventor-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ENTP trickster inventor, mechanical goggles, sly smile, chaotic workshop after a small explosion, clever improviser energy. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ENTP trickster inventor result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-infj-oracle-mediator",
+      "slotId": "default-infj-oracle-mediator",
+      "role": "default-result-portrait",
+      "mbti": "INFJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-infj-oracle-mediator-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. INFJ oracle mediator, silver white cloak, gentle focused eyes, stained glass cathedral light, calm prophetic presence. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the INFJ oracle mediator result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-infp-dream-bard",
+      "slotId": "default-infp-dream-bard",
+      "role": "default-result-portrait",
+      "mbti": "INFP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-infp-dream-bard-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. INFP dream bard, soft shawl, handwritten poetry pages, night garden, tender idealistic expression. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the INFP dream bard result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-enfj-oathbound-leader",
+      "slotId": "default-enfj-oathbound-leader",
+      "role": "default-result-portrait",
+      "mbti": "ENFJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-enfj-oathbound-leader-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ENFJ oathbound leader, golden shoulder armor, inspiring stance, banner and morning light, warm charismatic protector. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ENFJ oathbound leader result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-enfp-inspiration-travel-mage",
+      "slotId": "default-enfp-inspiration-travel-mage",
+      "role": "default-result-portrait",
+      "mbti": "ENFP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-enfp-inspiration-travel-mage-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ENFP inspiration travel mage, bright cloak, open smile, floating paper birds, colorful adventurous magic. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ENFP inspiration travel mage result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-istj-archive-warden",
+      "slotId": "default-istj-archive-warden",
+      "role": "default-result-portrait",
+      "mbti": "ISTJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-istj-archive-warden-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ISTJ archive warden, dark uniform, orderly insignia, ancient archive room, reliable disciplined guardian. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ISTJ archive warden result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-isfj-guardian-healer",
+      "slotId": "default-isfj-guardian-healer",
+      "role": "default-result-portrait",
+      "mbti": "ISFJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-isfj-guardian-healer-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ISFJ guardian healer, soft cloak, medicine kit, warm lantern light, careful protective kindness. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ISFJ guardian healer result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-estj-order-officer",
+      "slotId": "default-estj-order-officer",
+      "role": "default-result-portrait",
+      "mbti": "ESTJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-estj-order-officer-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body. ESTJ order officer, firm silhouette, commanding gesture, steel city gate, structured tactical authority. Clear face, refined outfit, dramatic soft lighting, clean dark background, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ESTJ order officer result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-esfj-court-coordinator",
+      "slotId": "default-esfj-court-coordinator",
+      "role": "default-result-portrait",
+      "mbti": "ESFJ",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-esfj-court-coordinator-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body, ornate dark fantasy tarot-card border matching a cohesive MBTI result portrait series. ESFJ court coordinator, elegant formalwear, warm friendly smile, socially graceful organizer, inviting open posture, softly lit banquet hall, sealed letters and court planning papers in the background with no readable text, refined outfit with gold accents, clear face, dramatic soft lighting, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ESFJ court coordinator result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-istp-mechanism-ranger",
+      "slotId": "default-istp-mechanism-ranger",
+      "role": "default-result-portrait",
+      "mbti": "ISTP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-istp-mechanism-ranger-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body, ornate dark fantasy tarot-card border matching a cohesive MBTI result portrait series. ISTP mechanism ranger, leather armor tool belt, calm side profile, mechanical crossbow, practical tactical craft, quiet focused expression, workshop forest outpost with gears and field tools, refined rugged outfit, clear face, dramatic soft lighting, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ISTP mechanism ranger result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-isfp-chroma-bard-painter",
+      "slotId": "default-isfp-chroma-bard-painter",
+      "role": "default-result-portrait",
+      "mbti": "ISFP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-isfp-chroma-bard-painter-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body, ornate dark fantasy tarot-card border matching a cohesive MBTI result portrait series. ISFP chroma bard painter, paint-stained shawl, quiet thoughtful expression, artistic sensory mood, woodland light and shadow, subtle color magic around brushes and pigments, refined outfit, clear face, dramatic soft lighting, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ISFP chroma bard painter result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-estp-breaker-duelist",
+      "slotId": "default-estp-breaker-duelist",
+      "role": "default-result-portrait",
+      "mbti": "ESTP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-estp-breaker-duelist-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body, ornate dark fantasy tarot-card border matching a cohesive MBTI result portrait series. ESTP agile duelist adventurer, short cloak, confident playful smile, arena firelight, dynamic ready posture, decorative dueling blade held low, refined adventurous outfit, clear face, dramatic soft lighting, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no injury, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ESTP breaker duelist result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    },
+    {
+      "id": "default-esfp-stage-bard",
+      "slotId": "default-esfp-stage-bard",
+      "role": "default-result-portrait",
+      "mbti": "ESFP",
+      "world": "DND fantasy",
+      "file": "assets/portraits/generated/default-esfp-stage-bard-preview.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy character portrait, vertical 2:3, half body, ornate dark fantasy tarot-card border matching a cohesive MBTI result portrait series. ESFP stage bard performer, ornate coat, warm spotlight, theatre backdrop with soft audience silhouettes and musical instruments, vibrant performance energy, charismatic open smile, colorful stage magic, refined theatrical outfit, clear face, dramatic soft lighting, high quality character illustration, single character, suitable for OC tabletop RPG avatar. No text, no watermark, no logo, no extra people, no gore, no low quality.",
+      "previewSize": {
+        "width": 480,
+        "height": 720
+      },
+      "reportedOriginalSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "webp",
+      "review": {
+        "status": "accepted",
+        "notes": [
+          "Single character with clear face and fantasy role-card tone.",
+          "No visible text, watermark, logo, gore, or explicit content.",
+          "Fits the ESFP stage bard result page."
+        ]
+      },
+      "limitations": [
+        "Saved file is the web preview extracted from the page. The site reported 1024x1536, but a stable original-download control was not exposed during this pass."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>能力角色仪 | 冒险者检定与出卡</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" id="brandHome" type="button" aria-label="返回开始页">
+          <span class="brand-mark">A6</span>
+          <span>
+            <strong>能力角色仪</strong>
+            <small>掷骰建卡 / 冒险者名册</small>
+          </span>
+        </button>
+        <div class="topbar-meta">
+          <span id="progressLabel">公会柜台待命</span>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+      </header>
+
+      <main id="app" class="app-main"></main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
