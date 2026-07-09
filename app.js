@@ -924,6 +924,12 @@ const QUIZ_COPY = globalThis.QUIZ_COPY || { modules: {}, mbtiProbe: null };
 const CONSTITUTION_COPY = globalThis.CONSTITUTION_COPY || { base: {}, triggers: {} };
 const DEFECT_CARD_ASSETS = globalThis.DEFECT_CARD_ASSETS || { byId: {} };
 const RACE_RECRUITMENT_DATA = globalThis.RACE_RECRUITMENT_DATA || null;
+const RACE_RECRUITMENT_DATASET = {
+  ...(globalThis.RACE_RECRUITMENT_DATASET || {}),
+};
+if (RACE_RECRUITMENT_DATA?.raceCard?.raceId && !RACE_RECRUITMENT_DATASET[RACE_RECRUITMENT_DATA.raceCard.raceId]) {
+  RACE_RECRUITMENT_DATASET[RACE_RECRUITMENT_DATA.raceCard.raceId] = RACE_RECRUITMENT_DATA;
+}
 const RACE_RECRUITMENT_ASSETS = globalThis.RACE_RECRUITMENT_ASSETS || {
   ui: {},
   races: {},
@@ -946,6 +952,18 @@ const RECRUITMENT_TARGET_CLASS = {
   fighter_line: "战士",
   warlock_contract: "术士",
   druid_mutation_circle: "德鲁伊",
+  guild_wizard: "法师",
+  guild_fighter: "战士",
+  guild_rogue: "游荡者",
+  guild_ranger: "游侠",
+  guild_cleric: "牧师",
+  guild_druid: "德鲁伊",
+  guild_paladin: "圣武士",
+  guild_bard: "吟游诗人",
+  guild_warlock: "术士",
+  guild_monk: "武僧",
+  guild_barbarian: "野蛮人",
+  guild_artificer: "工匠",
 };
 
 const RECRUITMENT_TARGET_ALIASES = {
@@ -997,6 +1015,46 @@ const RECRUITMENT_THEME = {
     seal: "ROOT",
     texture: "树根、骨枝、异变法阵",
   },
+  guild_barbarian: {
+    name: "突破先锋营",
+    className: "trial-barbarian",
+    accent: "#d85d4a",
+    secondary: "#e4bf62",
+    seal: "RAGE",
+    texture: "破门锤、营火、冲锋旗",
+  },
+  guild_fighter: {
+    name: "战士训练厅",
+    className: "trial-fighter",
+    accent: "#7f95b7",
+    secondary: "#d8b66a",
+    seal: "EDGE",
+    texture: "兵器架、盾墙、战术沙盘",
+  },
+  guild_cleric: {
+    name: "誓约医疗所",
+    className: "trial-cleric",
+    accent: "#d8b66a",
+    secondary: "#70c7c7",
+    seal: "BLESS",
+    texture: "圣徽、药箱、值夜名单",
+  },
+  guild_druid: {
+    name: "自然顾问席",
+    className: "trial-druid",
+    accent: "#72c891",
+    secondary: "#d8d0a0",
+    seal: "WILD",
+    texture: "草药、兽径、季节记录",
+  },
+  guild_warlock: {
+    name: "异常契约审阅处",
+    className: "trial-warlock",
+    accent: "#9b6ad6",
+    secondary: "#d85d78",
+    seal: "PACT",
+    texture: "封蜡、密约、风险条款",
+  },
   default: {
     name: "征召试炼",
     className: "trial-default",
@@ -1019,7 +1077,7 @@ const HOME_RACE_TARGET_PRESETS = {
   dragonborn: ["圣武士", "战士", "术士", "牧师"],
   goliath: ["野蛮人", "战士", "武僧", "游侠"],
   troll: ["野蛮人", "战士", "术士", "德鲁伊"],
-  ogre_giant: ["野蛮人", "战士", "德鲁伊", "术士"],
+  ogre_giant: ["野蛮人", "战士", "牧师", "德鲁伊"],
 };
 
 const GENERIC_GUILD_TARGET_META = {
@@ -1083,6 +1141,35 @@ const app = document.querySelector("#app");
 const progressLabel = document.querySelector("#progressLabel");
 const progressBar = document.querySelector("#progressBar");
 
+function getDefaultRecruitmentRaceId() {
+  return RACE_RECRUITMENT_DATA?.raceCard?.raceId || Object.keys(RACE_RECRUITMENT_DATASET)[0] || "troll";
+}
+
+function getDefaultRecruitmentData() {
+  const defaultId = getDefaultRecruitmentRaceId();
+  return RACE_RECRUITMENT_DATASET[defaultId] || RACE_RECRUITMENT_DATA || null;
+}
+
+function getRecruitmentData(raceId = "") {
+  const normalized = raceId || state.recruitment?.raceId || state.homePreviewRaceId || getDefaultRecruitmentRaceId();
+  return RACE_RECRUITMENT_DATASET[normalized] || null;
+}
+
+function hasRecruitmentData(raceId) {
+  return Boolean(getRecruitmentData(raceId));
+}
+
+function getOpenRecruitmentRaceIds() {
+  const ids = Object.keys(RACE_RECRUITMENT_DATASET).filter((raceId) => hasRecruitmentData(raceId));
+  return ids.length ? ids : [getDefaultRecruitmentRaceId()].filter(Boolean);
+}
+
+function getOpenRecruitmentRaceNames() {
+  return getOpenRecruitmentRaceIds()
+    .map((raceId) => getRecruitmentData(raceId)?.raceCard?.raceNameZh || getRecruitmentRace(raceId)?.name || raceId)
+    .join("、");
+}
+
 document.querySelector("#brandHome").addEventListener("click", () => {
   state.screen = "start";
   state.recruitment = null;
@@ -1139,26 +1226,23 @@ function getHomePreviewRaceIds(limit = 6) {
   const pool = getHomePreviewRacePool();
   const maxCount = Math.min(limit, pool.length);
   const validIds = new Set(pool.map((race) => race.id));
+  const openIds = getOpenRecruitmentRaceIds().filter((id) => validIds.has(id));
   const existingIds = Array.isArray(state.homePreviewRaceIds)
     ? state.homePreviewRaceIds.filter((id) => validIds.has(id))
     : [];
 
-  if (existingIds.length >= maxCount) {
-    state.homePreviewRaceIds = existingIds.slice(0, maxCount);
+  const seededIds = [...openIds, ...existingIds].filter((id, index, list) => list.indexOf(id) === index);
+  if (seededIds.length >= maxCount) {
+    state.homePreviewRaceIds = seededIds.slice(0, maxCount);
     return state.homePreviewRaceIds;
   }
 
-  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
   const shuffledIds = pool
     .map((race) => ({ id: race.id, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map((race) => race.id);
 
-  const pickedIds = [...existingIds, ...shuffledIds].filter((id, index, list) => list.indexOf(id) === index);
-  if (validIds.has(sampleId) && !pickedIds.includes(sampleId)) {
-    if (pickedIds.length >= maxCount) pickedIds[maxCount - 1] = sampleId;
-    else pickedIds.push(sampleId);
-  }
+  const pickedIds = [...seededIds, ...shuffledIds].filter((id, index, list) => list.indexOf(id) === index);
 
   state.homePreviewRaceIds = pickedIds.slice(0, maxCount);
   return state.homePreviewRaceIds;
@@ -1173,7 +1257,7 @@ function getHomePreviewRaces(limit = 6) {
 }
 
 function getHomePreviewSelection(previewRaces) {
-  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  const sampleId = getDefaultRecruitmentRaceId();
   const fallbackRace = previewRaces.find((race) => race.id === sampleId) || previewRaces[0] || getRecruitmentRace(sampleId);
   const selectedId = previewRaces.some((race) => race.id === state.homePreviewRaceId)
     ? state.homePreviewRaceId
@@ -1186,13 +1270,13 @@ function getDndClassByName(className) {
   return DND_CLASS_POOL.find((item) => item.className === className) || null;
 }
 
-function getHomeRecruitTargetPreviews(raceId, recruitTargets = []) {
-  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
-  if (raceId === sampleId && recruitTargets.length) {
-    return recruitTargets.map((target) => ({
+function getHomeRecruitTargetPreviews(raceId) {
+  const recruitmentData = getRecruitmentData(raceId);
+  if (recruitmentData?.recruitTargets?.length) {
+    return recruitmentData.recruitTargets.map((target) => ({
       id: target.targetId,
       type: "sample",
-      label: "样板路线",
+      label: "完整题库",
       title: target.classNameZh,
       subtitle: target.title,
       body: target.oneLine || target.acceptedStyle || target.recruitPitch || "",
@@ -1238,15 +1322,17 @@ function render() {
 
 function renderStart() {
   setProgress("征召大厅开放", 0);
-  const raceCard = RACE_RECRUITMENT_DATA?.raceCard;
-  const recruitTargets = RACE_RECRUITMENT_DATA?.recruitTargets || [];
+  const defaultRecruitmentData = getDefaultRecruitmentData();
+  const raceCard = defaultRecruitmentData?.raceCard;
   const previewRaces = getHomePreviewRaces(6);
   const previewRaceCard = getHomePreviewSelection(previewRaces);
   const previewRaceId = previewRaceCard?.raceId || state.homePreviewRaceId || raceCard?.raceId || "troll";
   const selectedPreviewRace = previewRaces.find((race) => race.id === previewRaceId) || getRecruitmentRace(previewRaceId);
-  const homeTargetPreviews = getHomeRecruitTargetPreviews(previewRaceId, recruitTargets);
+  const homeTargetPreviews = getHomeRecruitTargetPreviews(previewRaceId);
   const homeTargetTheme = homeTargetPreviews[0]?.theme || RECRUITMENT_THEME.default;
   const previewRaceName = selectedPreviewRace?.name || previewRaceCard?.raceNameZh || "当前血脉";
+  const canStartRecruitment = hasRecruitmentData(previewRaceId);
+  const openRecruitmentRaceNames = getOpenRecruitmentRaceNames() || "巨魔";
   app.innerHTML = `
     <section class="screen recruitment-home">
       <div class="recruit-hero">
@@ -1267,10 +1353,10 @@ function renderStart() {
             <span>公会判定</span>
           </div>
           <div class="actions">
-            <button class="button primary recruitment-cta" id="recruitStartBtn" type="button">开始登记</button>
+            <button class="button primary recruitment-cta" id="recruitStartBtn" type="button" ${canStartRecruitment ? "" : "disabled"}>${canStartRecruitment ? "开始登记" : "文案待接入"}</button>
             <button class="button ghost" id="demoResultBtn" type="button">随机投递简历</button>
           </div>
-          <p class="fineprint">当前开放 ${raceCard ? raceCard.raceNameZh : "巨魔"} 征召样板线：四条志愿路线、种族体格鉴定、职业试炼、六维实战校准与 MBTI 简易滤镜。</p>
+          <p class="fineprint">当前开放 ${openRecruitmentRaceNames} 征召样板线：四条志愿路线、种族体格鉴定、职业试炼、六维实战校准与 MBTI 简易滤镜。</p>
         </div>
         <div class="recruit-notice-board">
           <span class="board-pin"></span>
@@ -1306,7 +1392,7 @@ function renderStart() {
         <article class="recruit-ledger home-target-ledger" style="--trial-accent:${homeTargetTheme.accent}; --trial-secondary:${homeTargetTheme.secondary}">
           <p class="eyebrow">Recruit Targets / 今日可投</p>
           <h2>${previewRaceName}今日可投</h2>
-          <p>${homeTargetPreviews[0]?.type === "sample" ? "当前血脉已有完整征兵样板，投递后会进入对应职业试炼。" : "当前血脉会先按推荐方向预分流，正式登记后再由六维校准和 MBTI 滤镜细化职业结果。"}</p>
+          <p>${homeTargetPreviews[0]?.type === "sample" ? "当前血脉已有完整征兵样板，投递后会进入对应职业试炼。" : `当前血脉先展示推荐方向，正式征兵题库待接入；要进入做题流程，请切换到 ${openRecruitmentRaceNames}。`}</p>
           <div class="recruit-target-strip">
             ${homeTargetPreviews
               .map((target) => {
@@ -1326,7 +1412,7 @@ function renderStart() {
         <article class="recruit-ledger">
           <p class="eyebrow">Linked Preview / 联动状态</p>
           <h2>已跟随${previewRaceName}</h2>
-          <p>上方卡牌切换后，这里的可投方向会同步刷新；点击开始登记时，也会默认带入当前预览的 ${previewRaceName} 血脉。</p>
+          <p>${canStartRecruitment ? `上方卡牌切换后，这里的可投方向会同步刷新；点击开始登记时，也会默认带入当前预览的 ${previewRaceName} 血脉。` : `上方卡牌切换后，这里的可投方向会同步刷新；${previewRaceName} 目前只开放预览，完整做题流程请切换到 ${openRecruitmentRaceNames}。`}</p>
           <div class="descriptor-tags">
             ${(previewRaceCard?.tags || selectedPreviewRace?.tags || ["血脉预览", "联动投递"]).slice(0, 4).map((tag) => `<span>${tag}</span>`).join("")}
           </div>
@@ -1341,6 +1427,7 @@ function renderStart() {
     });
   });
   document.querySelector("#recruitStartBtn").addEventListener("click", () => {
+    if (!canStartRecruitment) return;
     beginRecruitment(previewRaceId);
   });
   document.querySelector("#demoResultBtn").addEventListener("click", () => {
@@ -1391,6 +1478,14 @@ function getRaceArt(raceId = "troll") {
 
 function getTargetArt(targetId) {
   const normalized = normalizeRecruitmentTargetId(targetId);
+  const raceId = state.recruitment?.raceId || state.homePreviewRaceId || getDefaultRecruitmentRaceId();
+  const raceTarget = RACE_RECRUITMENT_ASSETS.targets?.[raceId]?.[normalized];
+  if (typeof raceTarget === "string") return raceTarget;
+  if (raceTarget?.sourceFile || raceTarget?.file) return raceTarget.sourceFile || raceTarget.file;
+  const guildTarget = RACE_RECRUITMENT_ASSETS.targets?.guild?.[normalized];
+  if (typeof guildTarget === "string") return guildTarget;
+  if (guildTarget?.sourceFile || guildTarget?.file) return guildTarget.sourceFile || guildTarget.file;
+  if (raceId !== "troll") return "";
   const record = getRecruitmentAssetRecord(`troll_target_${normalized}`);
   if (record?.sourceFile) return record.sourceFile;
   const value = RACE_RECRUITMENT_ASSETS.targets?.troll?.[normalized];
@@ -1402,11 +1497,17 @@ function getQuestionArt(kind, question, targetId) {
   const value = RACE_RECRUITMENT_ASSETS.questions?.[question?.id];
   const directPath = typeof value === "string" ? value : value?.file || getRecruitmentAssetPath(question?.id);
   if (directPath) return directPath;
-  if (kind === "physique") return getTargetArt(targetId) || getRaceArt("troll") || getRecruitmentUiArt("registry");
-  return getTargetArt(targetId) || getRaceArt("troll") || getRecruitmentUiArt("registry");
+  const raceId = state.recruitment?.raceId || getDefaultRecruitmentRaceId();
+  if (kind === "physique") return getTargetArt(targetId) || getRaceArt(raceId) || getRecruitmentUiArt("registry");
+  return getTargetArt(targetId) || getRaceArt(raceId) || getRecruitmentUiArt("registry");
 }
 
 function getEndingArt(endingType) {
+  const raceId = state.recruitment?.raceId || getDefaultRecruitmentRaceId();
+  const raceValue = RACE_RECRUITMENT_ASSETS.endings?.[raceId]?.[endingType];
+  if (typeof raceValue === "string") return raceValue;
+  if (raceValue?.file) return raceValue.file;
+  if (raceId !== "troll") return getRecruitmentUiArt("verdict");
   const value = RACE_RECRUITMENT_ASSETS.endings?.troll?.[endingType];
   if (typeof value === "string") return value;
   return value?.file || getRecruitmentAssetPath(`troll_ending_${endingType}`) || getRecruitmentUiArt("verdict");
@@ -1430,13 +1531,14 @@ function normalizeRecruitmentTargetId(targetId) {
   return RECRUITMENT_TARGET_ALIASES[targetId] || targetId || "";
 }
 
-function getRecruitmentRace(raceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll") {
+function getRecruitmentRace(raceId = state.recruitment?.raceId || getDefaultRecruitmentRaceId()) {
   const normalized = raceId || "troll";
   return FANTASY_ANCESTRIES.find((item) => item.id === normalized) || FANTASY_ANCESTRIES.find((item) => item.id === "troll") || null;
 }
 
-function getRecruitmentRaceCard(raceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll") {
-  const source = RACE_RECRUITMENT_DATA?.raceCard || {};
+function getRecruitmentRaceCard(raceId = state.recruitment?.raceId || getDefaultRecruitmentRaceId()) {
+  const recruitmentData = getRecruitmentData(raceId);
+  const source = recruitmentData?.raceCard || getDefaultRecruitmentData()?.raceCard || {};
   const race = getRecruitmentRace(raceId);
   if (!race) return source;
   if (race.id === source.raceId) return source;
@@ -1455,6 +1557,8 @@ function getRecruitmentRaceCard(raceId = state.recruitment?.raceId || RACE_RECRU
 
 function adaptRecruitmentCopy(value) {
   if (typeof value !== "string") return value ?? "";
+  const activeData = getRecruitmentData(state.recruitment?.raceId);
+  if (activeData?.raceCard?.raceId === state.recruitment?.raceId) return value;
   const sourceName = RACE_RECRUITMENT_DATA?.raceCard?.raceNameZh;
   const race = getRecruitmentRace();
   if (!sourceName || !race || race.id === RACE_RECRUITMENT_DATA?.raceCard?.raceId) return value;
@@ -1463,7 +1567,7 @@ function adaptRecruitmentCopy(value) {
 
 function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
   state.recruitment = {
-    raceId: preferredRaceId || state.homePreviewRaceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll",
+    raceId: preferredRaceId || state.homePreviewRaceId || getDefaultRecruitmentRaceId(),
     targetId: "",
     phase: "race",
     questionIndex: 0,
@@ -1492,8 +1596,9 @@ function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
 
 function renderRaceSelect() {
   setProgress("血脉登记", 8);
-  const selectedRaceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  const selectedRaceId = state.recruitment?.raceId || getDefaultRecruitmentRaceId();
   const activeRace = getRecruitmentRaceCard(selectedRaceId);
+  const hasActiveData = hasRecruitmentData(selectedRaceId);
   app.innerHTML = `
     <section class="screen recruitment-flow">
       <div class="recruit-step-head">
@@ -1506,10 +1611,11 @@ function renderRaceSelect() {
           ${FANTASY_ANCESTRIES.filter((item) => item.id !== "auto")
             .map((race) => {
               const active = race.id === selectedRaceId;
+              const open = hasRecruitmentData(race.id);
               return `
-                <button class="race-registry-card is-open ${active ? "is-featured" : ""}" data-race="${race.id}" type="button" aria-pressed="${active ? "true" : "false"}">
+                <button class="race-registry-card ${open ? "is-open" : "is-pending"} ${active ? "is-featured" : ""}" data-race="${race.id}" type="button" aria-pressed="${active ? "true" : "false"}">
                   ${renderRecruitmentArt({ src: getRaceArt(race.id), alt: `${race.name}血脉登记图`, className: "race-card-art" })}
-                  <span>${active ? "已选血脉" : "开放征召"}</span>
+                  <span>${active ? "已选血脉" : open ? "开放征召" : "文案待接入"}</span>
                   <strong>${race.name}</strong>
                   <small>${race.label}</small>
                   <p>${race.note}</p>
@@ -1523,12 +1629,12 @@ function renderRaceSelect() {
           <p class="eyebrow">Selected Bloodline / 当前选择</p>
           <h2>${activeRace?.title || "血脉登记"}</h2>
           <p>${activeRace?.bodyText || "公会书记员正在整理这份血脉档案。"}</p>
-          <div class="notice">${activeRace?.warningText || "特殊种族会改变体格和试炼口吻。"}</div>
+          <div class="notice">${hasActiveData ? activeRace?.warningText || "特殊种族会改变体格和试炼口吻。" : `${activeRace?.raceNameZh || "该血脉"}正式征召文案还没接入，先选择巨魔或食人魔/巨人。`}</div>
           <div class="descriptor-tags">
             ${(activeRace?.tags || []).map((tag) => `<span>${tag}</span>`).join("")}
           </div>
           <div class="actions">
-            <button class="button primary" id="selectRace" type="button">登记${activeRace?.raceNameZh || "当前"}血脉</button>
+            <button class="button primary" id="selectRace" type="button" ${hasActiveData ? "" : "disabled"}>登记${activeRace?.raceNameZh || "当前"}血脉</button>
             <button class="button ghost" id="backHome" type="button">返回大厅</button>
           </div>
         </aside>
@@ -1563,7 +1669,28 @@ function renderRaceSelect() {
 
 function renderRecruitTargetSelect() {
   setProgress("征兵志愿投递", 18);
-  const targets = RACE_RECRUITMENT_DATA?.recruitTargets || [];
+  const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
+  const targets = recruitmentData?.recruitTargets || [];
+  if (!recruitmentData) {
+    const raceCard = getRecruitmentRaceCard(state.recruitment?.raceId);
+    app.innerHTML = `
+      <section class="screen recruitment-flow">
+        <div class="recruit-step-head">
+          <p class="eyebrow">Recruitment Pending / 文案待接入</p>
+          <h1>${raceCard?.raceNameZh || "该血脉"}征召档案未装订</h1>
+          <p>这条血脉目前只有卡牌预览，还没有正式体格鉴定和职业试炼题库。</p>
+        </div>
+        <div class="actions">
+          <button class="button ghost" id="backRace" type="button">重选血脉</button>
+        </div>
+      </section>
+    `;
+    document.querySelector("#backRace").addEventListener("click", () => {
+      state.screen = "raceSelect";
+      render();
+    });
+    return;
+  }
   app.innerHTML = `
     <section class="screen recruitment-flow">
       <div class="recruit-step-head">
@@ -1599,7 +1726,7 @@ function renderRecruitTargetCard(target) {
   const theme = getRecruitmentTheme(target.targetId);
   return `
     <button class="target-contract ${theme.className}" data-target-id="${target.targetId}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}" type="button">
-      ${renderRecruitmentArt({ src: getTargetArt(target.targetId), alt: `${target.classNameZh}征兵目标图`, className: "target-contract-art" })}
+      ${renderRecruitmentArt({ src: getTargetArt(target.targetId) || getRaceArt(state.recruitment?.raceId) || getRecruitmentUiArt("registry"), alt: `${target.classNameZh}征兵目标图`, className: "target-contract-art" })}
       <span class="contract-seal">${theme.seal}</span>
       <p class="eyebrow">${target.classNameEn}</p>
       <h2>${adaptRecruitmentCopy(target.title)}</h2>
@@ -1628,14 +1755,16 @@ function renderRecruitTargetCard(target) {
 
 function getRecruitmentTarget(targetId = state.recruitment?.targetId) {
   const normalized = normalizeRecruitmentTargetId(targetId);
-  return (RACE_RECRUITMENT_DATA?.recruitTargets || []).find((item) => item.targetId === normalized) || null;
+  const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
+  return (recruitmentData?.recruitTargets || []).find((item) => item.targetId === normalized) || null;
 }
 
 function getRecruitmentQuestions(kind) {
-  if (!RACE_RECRUITMENT_DATA) return [];
-  if (kind === "physique") return RACE_RECRUITMENT_DATA.physiqueChecks || [];
+  const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
+  if (!recruitmentData) return [];
+  if (kind === "physique") return recruitmentData.physiqueChecks || [];
   const targetId = state.recruitment?.targetId;
-  return RACE_RECRUITMENT_DATA.trialSets?.[targetId] || [];
+  return recruitmentData.trialSets?.[targetId] || [];
 }
 
 function renderRecruitmentQuestionScreen(kind) {
@@ -1699,7 +1828,7 @@ function renderRecruitmentQuestionScreen(kind) {
             </div>
             <div>
               <dt>试炼材质</dt>
-              <dd>${kind === "physique" ? "骨架、再生、空间代价" : theme.texture}</dd>
+              <dd>${kind === "physique" ? "骨架、体型、空间代价" : theme.texture}</dd>
             </div>
           </dl>
           ${renderRecruitmentLeanings()}
@@ -1862,7 +1991,7 @@ function finalizeRecruitment() {
   applyRecruitmentClassBias(traits, recruitment.targetId);
 
   state.profile = {
-    ancestry: recruitment.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll",
+    ancestry: recruitment.raceId || getDefaultRecruitmentRaceId(),
     mbtiSelf: "未知",
     exercise: "unknown",
     sleep: recruitment.triggerTags.includes("再生代价") || recruitment.triggerTags.includes("野性饥饿") ? "poor" : "unknown",
@@ -1892,6 +2021,11 @@ function applyRecruitmentClassBias(traits, targetId) {
     fighter_line: { S: 1, J: 1, lawful: 2, order: 2 },
     warlock_contract: { N: 1, T: 1, self: 1, control: 1 },
     druid_mutation_circle: { N: 1, F: 1, good: 1, empathy: 1 },
+    guild_barbarian: { S: 1, P: 1, chaotic: 1, action: 2, risk: 1 },
+    guild_fighter: { S: 1, J: 1, lawful: 1, order: 2, control: 1 },
+    guild_cleric: { F: 1, J: 1, good: 2, empathy: 1 },
+    guild_druid: { N: 1, F: 1, good: 1, empathy: 1 },
+    guild_warlock: { N: 1, T: 1, self: 1, control: 1 },
   };
   addDeltaMap(traits, bias[targetId] || {});
 }
@@ -1924,7 +2058,7 @@ function buildRecruitmentAxisStages(storyScores, target, calibrationStages = {})
           weight: hasCalibration ? 0.6 : 1,
           difficulty: "种族流程",
           raw: { recruitment: true },
-          note: `巨魔血脉 / ${target?.classNameZh || "征召目标"} / 文案判断`,
+          note: `${getRecruitmentRaceCard().raceNameZh || "征召血脉"} / ${target?.classNameZh || "征召目标"} / 文案判断`,
         },
       };
       playedEntries.forEach(([stageId, item]) => {
@@ -1982,7 +2116,8 @@ function getNormalizedRecruitmentAffinity(affinityDelta = {}) {
 }
 
 function pickRecruitmentEnding(endingType, targetId, topTargetId) {
-  const endings = RACE_RECRUITMENT_DATA?.endingTemplates || [];
+  const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
+  const endings = recruitmentData?.endingTemplates || [];
   const sameType = endings.filter((item) => item.endingType === endingType);
   const selectedTargetId = normalizeRecruitmentTargetId(targetId);
   const recommendedTargetId = normalizeRecruitmentTargetId(topTargetId);

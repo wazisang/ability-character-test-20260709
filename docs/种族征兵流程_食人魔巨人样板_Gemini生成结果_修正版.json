@@ -1,0 +1,4208 @@
+{
+  "meta": {
+    "version": 1,
+    "raceId": "ogre_giant",
+    "raceNameZh": "食人魔/巨人",
+    "scope": "race_recruitment_full"
+  },
+  "raceCard": {
+    "raceId": "ogre_giant",
+    "raceNameZh": "食人魔/巨人",
+    "raceNameEn": "Ogre/Giant",
+    "title": "荒野的轰鸣与雷霆巨力",
+    "oneLine": "体型庞大不是为了当肉盾，而是为了在更高的地方俯瞰蝼蚁的愚蠢。",
+    "bodyText": "体内流淌着古老泰坦与雷霆巨兽的血脉，食人魔与巨人并非脑干缺失的野蛮人。他们庞大的身躯蕴含着改变地貌的伟力，当他们张开双手，要么是在撕裂城墙，要么是在拥抱荒野的狂风。不要试图和他们拼力量，因为他们的力量甚至可以成为杠杆，去撬动这无趣世界的平衡。",
+    "tags": [
+      "泰坦血脉",
+      "雷霆巨力",
+      "暴食艺术",
+      "荒野道标"
+    ],
+    "warningText": "警告：与其庞大胃口相比，他们的脾气可能更加难以预测。绝不要试图在他们投掷巨石时站在落点进行‘力学分析’。",
+    "recruiterQuote": "“俺寻思这山头有点碍眼……起开，让俺把它投到河对岸去铺路！”"
+  },
+  "recruitTargets": [
+    {
+      "targetId": "guild_barbarian",
+      "classNameZh": "突破先锋营",
+      "classNameEn": "Barbarian Vanguard",
+      "title": "荒野行者",
+      "oneLine": "把雷霆、胃口和巨体怒火压进一次能撬开城门的冲锋。",
+      "recruiter": "断角冲阵长",
+      "recruitPitch": "你不是来证明自己会挥拳的，城墙已经知道这件事了。先锋营要看的是你能不能在疼痛、饥饿和号角声里保持方向，把巨体怒火砸到敌人身上，而不是砸进自家补给车。",
+      "acceptedStyle": "以巨体压迫和狂暴承伤开路，在第一轮冲击中打乱敌方阵型。",
+      "likelyFailure": "把所有问题都当成饭前热身，冲得太远，导致队友只能追着你的脚印收拾残局。",
+      "hiddenRoute": "如果能把冲锋节奏稳定下来，会被转入战士训练厅当重型拒马；若把野性听成自然呼吸，也可能被德鲁伊收走。",
+      "recommendedStats": [
+        "str",
+        "con"
+      ],
+      "riskTags": [
+        "高危开路",
+        "巨体冲撞",
+        "饥饿误判",
+        "雷霆怒火"
+      ]
+    },
+    {
+      "targetId": "guild_fighter",
+      "classNameZh": "战士训练厅",
+      "classNameEn": "Fighter Guild",
+      "title": "碎甲先锋",
+      "oneLine": "让庞大体型不只是压迫感，而是能被军令调度的移动城门。",
+      "recruiter": "铁闸教官",
+      "recruitPitch": "你这副身板随便站在门口都像一道防线，但公会不缺挡路的石头。我们要的是懂得何时推进、何时钉住阵脚、何时把敌人连盾带人一起拆开的重型战士。",
+      "acceptedStyle": "用臂展、塔盾和重兵器控制空间，承担阵线支点与攻城破甲位。",
+      "likelyFailure": "迷信体型优势，在狭窄地形里卡住队伍，或者把防守演成大型家具搬运事故。",
+      "hiddenRoute": "纪律束不住时会被丢去先锋营；若展现出战地救援和誓约感，可能被牧师线收编。",
+      "recommendedStats": [
+        "str",
+        "con",
+        "dex"
+      ],
+      "riskTags": [
+        "空间限制",
+        "重甲负担",
+        "误伤队友",
+        "阵线支点"
+      ]
+    },
+    {
+      "targetId": "guild_cleric",
+      "classNameZh": "誓约医疗所",
+      "classNameEn": "Cleric Ward",
+      "title": "雷霆祭司",
+      "oneLine": "把信仰喊成雷鸣，把治疗做成让病人和死灵一起发抖的战地奇迹。",
+      "recruiter": "雷灯修女",
+      "recruitPitch": "你的嗓门足够让圣徽自己震起来。医疗所不介意你的手掌比病床还大，只要你明白神术不是把同伴电到站起来，而是在最混乱的战线里保住那口气。",
+      "acceptedStyle": "以高体格扛住前线压力，用雷霆、祝福和粗暴急救维持队伍续航。",
+      "likelyFailure": "把每次治疗都理解成雷电除颤，病人活了，但全营帐的头发都立起来了。",
+      "hiddenRoute": "若信仰更像荒野灵脉，会被德鲁伊接走；若只剩砸人的热情，会退回战士训练厅。",
+      "recommendedStats": [
+        "wis",
+        "con",
+        "cha"
+      ],
+      "riskTags": [
+        "雷疗事故",
+        "神术过载",
+        "战地急救",
+        "信仰噪音"
+      ]
+    },
+    {
+      "targetId": "guild_druid",
+      "classNameZh": "自然顾问席",
+      "classNameEn": "Druid Circle",
+      "title": "大地守护者",
+      "oneLine": "用能搬动古树的手，去听见泥土里小得可怜的呼吸。",
+      "recruiter": "苔冠长老",
+      "recruitPitch": "文明嫌你太大，森林倒是不介意。问题是，你得学会把巨力放轻，知道什么时候拔树当棍，什么时候把树重新栽回去，什么时候让一整片山坡替你说话。",
+      "acceptedStyle": "在荒野地形中担任巨型守护者，兼具控场、搬运、威慑和自然恢复。",
+      "likelyFailure": "一边自称守护自然，一边顺手把古树拔起来当拐杖，留下三公里长的生态投诉书。",
+      "hiddenRoute": "若把自然呼吸听成神明雷声，会转向牧师；若只想冲撞猎物，会被先锋营重新领走。",
+      "recommendedStats": [
+        "wis",
+        "con"
+      ],
+      "riskTags": [
+        "生态误伤",
+        "巨兽共鸣",
+        "泥沼风险",
+        "荒野守护"
+      ]
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "ogre_giant_physique_appetite",
+      "targetId": "guild_barbarian",
+      "title": "暴食测试",
+      "scene": "征兵处的食堂里，厨师端上了一整只用香料烤制的炭烤雷霆蜥蜴，体型比一个成年矮人还大。周围的应征者都在发愁如何下嘴，而你的胃部正在发出雷鸣般的轰鸣。",
+      "prompt": "面对这顿分量惊人的巨兽大餐，你打算如何消灭它？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你迅速心算了一下雷霆蜥蜴的骨骼支撑点和脂肪分布，拔出剔骨刀，用极快且流畅的刀法将其拆解，连皮带骨全部吞下，顺便把骨髓也吸得干干净净。这叫高能量密度摄入计算。",
+          "npcReply": "大口咀嚼的声音回荡在食堂里。‘你不仅是个大胃王，还是个精通解剖学的吃客。’",
+          "scoreDelta": {
+            "str": 3,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "高能摄入",
+            "骨骼解剖",
+            "暴食艺术"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "将暴食转化为精准能量精算的解剖大师"
+        },
+        {
+          "id": "B",
+          "text": "你规规矩矩地系上特大号餐巾，双手持刀叉，以极其优雅但快如残影的动作把蜥蜴切成均等的两百块，准点在五分钟内全部吃完，骨头在盘子里码得整整齐齐。这叫军事化进餐规程。",
+          "npcReply": "考官赞许地看着你。‘优雅，且极具纪律性。你把吃饭变成了一种仪式。’",
+          "scoreDelta": {
+            "con": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "军事化进餐",
+            "优雅切割",
+            "餐桌纪律"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "严格按照战地规程和仪式感用餐的重装绅士"
+        },
+        {
+          "id": "C",
+          "text": "你为了展示食人魔的凶残，当场宣布要“活吞雷霆蜥蜴的带电毒腺”，结果被蜥蜴残留的电荷电得翻白眼，舌头肿成胡萝卜，当场倒地抽搐。",
+          "npcReply": "担架队赶紧冲了上来。‘愚蠢！雷霆蜥蜴的毒腺在死后三小时内依然带电！你差点把自己毒死！’",
+          "scoreDelta": {
+            "con": -2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "生吞毒腺",
+            "电击抽搐",
+            "盲目自大"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "盲目作死、试图吞食带电毒腺导致口吐白沫的蠢货"
+        },
+        {
+          "id": "D",
+          "text": "你直接抱起烤蜥蜴，把它当成一杆巨型麦克风，高唱一首跑调的《荒野烤肉进行曲》，然后当场表演“肚皮吸入法”，连盘子带桌角一起塞进了嘴里，宣称“木头桌子有膳食纤维”。",
+          "npcReply": "全场食客惊掉了下巴。‘这已经不是吃饭了，这是纯粹的杂耍与精神污染！’",
+          "scoreDelta": {
+            "cha": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_druid": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "肚皮吸入",
+            "木桌纤维",
+            "狂怒高歌"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "通过魔性高歌与生吞桌角进行精神污染的抽象演员"
+        }
+      ]
+    },
+    {
+      "id": "ogre_giant_physique_stone",
+      "targetId": "guild_fighter",
+      "title": "投掷巨石测试",
+      "scene": "测试场上摆着一块千斤重的花岗岩巨石，考官要求你将其投掷到五十步外的目标红圈内。很多应征者都在深呼吸准备发力。",
+      "prompt": "面对这块花岗岩，你打算如何展示你的投掷力学？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你双腿扎下结实的马步，双手合抱巨石，利用腰腹力量和巨人的高重心做出完美的投掷抛物线，巨石呼啸而出，精准砸中红圈红心，把地面砸出一个大坑。",
+          "npcReply": "巨石正中靶心。‘无可挑剔的战地重力投掷，你证明了巨人的力量也可以如此精准。’",
+          "scoreDelta": {
+            "str": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "腰腹发力",
+            "抛物线投掷",
+            "重击红心"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "深谙弹道轨迹与核心发力机制的重投掷手"
+        },
+        {
+          "id": "B",
+          "text": "你用指甲在巨石上划出受力轴线，将巨石单手托起，利用全身旋转加速（铁饼动作）猛地甩出，巨石借着动能飞去，顺便砸碎了红圈后的靶场围墙。",
+          "npcReply": "考官擦了擦冷汗。‘威力极大，但你下次能别把我们的围墙砸烂吗？’",
+          "scoreDelta": {
+            "str": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 2
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "单手甩石",
+            "物理学公式",
+            "暴力破坏"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "运用角动量守恒定理进行单手旋转抛石的物理极客"
+        },
+        {
+          "id": "C",
+          "text": "你为了显示血怒的力量，强行用一根手指去抠巨石底部的裂缝，试图搞“单指倒拔山河”，结果伴随着一声脆响，你的手指当场骨折，巨石砸下来压扁了你的脚趾。",
+          "npcReply": "医疗队员推着担架跑了过来。‘巨石的自重是两千磅！你以为你的手指是秘银做的吗？！’",
+          "scoreDelta": {
+            "con": -2,
+            "dex": -2
+          },
+          "mbtiDelta": {
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "单指挑战",
+            "骨折惨剧",
+            "重石压脚"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "试图单指挑千斤重石导致手指当场骨折的莽夫"
+        },
+        {
+          "id": "D",
+          "text": "你给巨石画上了考官的滑稽笑脸，高喊着“飞吧，我那终将逝去的青春！”，然后用屁股把巨石当成排球一样“垫”了出去，巨石歪歪扭扭地砸中了解析台，把考官的咖啡杯砸得粉碎。",
+          "npcReply": "考官咬牙切齿。‘这绝对是严重的蓄意破坏！虽然姿态确实很让人窒息！’",
+          "scoreDelta": {
+            "cha": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "N": 2
+          },
+          "affinityDelta": {
+            "guild_druid": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "滑稽涂鸦",
+            "屁股垫石",
+            "砸毁解析台"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "用臀部垫石砸咖啡杯并高呼青春的抽象艺术家"
+        }
+      ]
+    },
+    {
+      "id": "ogre_giant_physique_siege",
+      "targetId": "guild_fighter",
+      "title": "要塞守卫测试",
+      "scene": "模拟攻城战中，敌方的轻步兵如潮水般涌上城门通道，而你负责死守城门通道。后方是脆弱的平民和军火库，局势千钧一发。",
+      "prompt": "面对冲上来的敌军，你打算如何守住这道防线？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你大吼一声，将身侧的巨大铁栅栏直接拆下来死死插在通道中央，用厚实的脊背死死顶住，化身为人肉铁幕，任凭长矛折断在你的厚皮上。",
+          "npcReply": "长矛折断的声音不绝于耳。‘你一个人就是一扇城门！无可撼动的钢铁防线！’",
+          "scoreDelta": {
+            "con": 3,
+            "str": 2
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 3
+          },
+          "alignmentDelta": {
+            "order": 2
+          },
+          "triggerTags": [
+            "拆卸铁门",
+            "以背顶墙",
+            "铁幕防守"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "用身体与重型城门合二为一的铁垒戍卫者"
+        },
+        {
+          "id": "B",
+          "text": "你迅速搬来城墙上的备用火油桶，在城门前布置成一个连环殉爆雷区，手持火把在雷区后冷眼旁观，迫使敌人在爆炸威胁前生生止步。",
+          "npcReply": "敌军见状纷纷刹车。‘极佳的战地工事利用，你用最小的体力成功控制了整个战场通道。’",
+          "scoreDelta": {
+            "con": 2,
+            "int": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 2
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "火油布防",
+            "连环雷区",
+            "战术退敌"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "运用易燃物设置连环爆炸盲区进行战术威慑的工程师"
+        },
+        {
+          "id": "C",
+          "text": "你为了展现“绝对的侵略性”，大开城门主动迎着敌人的箭雨冲了出去，试图“千人斩”，结果还没冲出十步就被射成了刺猬，敌军顺着大开的城门蜂拥而入。",
+          "npcReply": "队友们大惊失色。‘愚蠢至极！城防演习被你玩成了送人头！’",
+          "scoreDelta": {
+            "con": -2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "开门作死",
+            "万箭穿心",
+            "城防破裂"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "放弃防线主动出门迎战被射成仙人掌的战术白痴"
+        },
+        {
+          "id": "D",
+          "text": "你把大门拆下来背在后背上假装自己是巨型王八，然后缩在通道中央开始疯狂旋转，像一个两吨重的血肉陀螺一样无差别把所有冲进来的士兵弹飞。",
+          "npcReply": "被弹飞的士兵挂在墙上。‘这滑稽的旋风旋转……虽然极其离谱，但城门确实没被打破。’",
+          "scoreDelta": {
+            "cha": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_druid": 2
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "王八拟态",
+            "血肉陀螺",
+            "暴力清场"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "身背门板进行高速物理旋转清场的陀螺大师"
+        }
+      ]
+    },
+    {
+      "id": "ogre_giant_physique_thunder",
+      "targetId": "guild_cleric",
+      "title": "雷霆抗性测试",
+      "scene": "试炼场上的雷电高塔发生了奥术泄露，数道明亮的闪电链在空中狂舞，眼看就要击中毫无防备的法师营帐。",
+      "prompt": "作为一名天生对雷霆有极高耐受力的巨人，你决定：",
+      "options": [
+        {
+          "id": "A",
+          "text": "你直接跳上高台，用双手握住铁制引雷针，主动将所有泄露的雷电链引向自己，让高压电弧在你的巨大骨架间流转，并借此雷光大吼着向战神祈祷。",
+          "npcReply": "电光笼罩了你，宛如天神下凡。‘纯粹的信念与铁骨，你用肉身化作了保护凡人的避雷针！’",
+          "scoreDelta": {
+            "con": 3,
+            "wis": 2
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 3
+          },
+          "alignmentDelta": {
+            "good": 2
+          },
+          "triggerTags": [
+            "肉体避雷",
+            "雷光流转",
+            "雷霆神术"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "将高压电荷导入骨骼强行吸收并向战神致敬的雷霆祭司"
+        },
+        {
+          "id": "B",
+          "text": "你用身上的导电铜锁链迅速缠绕在铁轨上，制造了一个简易的法拉第笼，然后站在里面悠闲地喝茶，任凭闪电打在笼子外侧被导入大地。",
+          "npcReply": "法师们纷纷赞叹。‘聪明的做法，你完美地利用了金属屏蔽效应，毫发无伤。’",
+          "scoreDelta": {
+            "con": 2,
+            "int": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_druid": 2
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "铜链屏蔽",
+            "法拉第笼",
+            "优雅避雷"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "使用导电铜链组装便携式避雷法拉第笼的知性学者"
+        },
+        {
+          "id": "C",
+          "text": "你宣称自己的脑门是“世上最硬的绝缘体”，用头去迎击最粗的一道紫色神雷，试图当场把它“撞碎”，结果被劈得浑身焦黑，头发直立，直接口吐白沫不省人事。",
+          "npcReply": "治疗官猛掐你的人中。‘愚蠢！雷电是纯粹的能量流动，物理硬度根本没有任何卵用！’",
+          "scoreDelta": {
+            "con": -2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "脑门铁头功",
+            "神雷直击",
+            "口吐白沫"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "试图用头盖骨强行撞碎紫色神雷导致全身焦黑的憨货"
+        },
+        {
+          "id": "D",
+          "text": "你从包里掏出两根大洋葱绑在耳朵上，全身涂满黄泥，在雷电中疯狂扭动身体跳起“绝缘体霹雳舞”，宣称雷霆也被你的舞姿震撼而不敢近身。",
+          "npcReply": "闪电歪歪扭扭地绕过了你。‘闪电确实击中了旁边的铁箱……你这泥巴霹雳舞简直是在侮辱天灾！’",
+          "scoreDelta": {
+            "cha": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "N": 2
+          },
+          "affinityDelta": {
+            "guild_barbarian": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "双耳绑葱",
+            "黄泥霹雳舞",
+            "雷电回避"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "浑身涂满黄泥跳绝缘霹雳舞让闪电绕道走的怪杰"
+        }
+      ]
+    },
+    {
+      "id": "ogre_giant_physique_nature",
+      "targetId": "guild_druid",
+      "title": "自然联结测试",
+      "scene": "队伍在古老的迷雾森林里迷失了方向。四周是会移动的古木与低语的自然之灵，应征的斥候们都在用罗盘和魔法定位，但都失效了。",
+      "prompt": "拥有巨人对荒野本能的你，打算如何引导队伍走出迷雾？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你将巨大的耳朵贴在冰冷的地面上，倾听大地的脉动与古木根须的摩擦声，用温柔的低吼安抚狂躁的林间元素，顺着风带动的绿叶找到了唯一的古老兽径。",
+          "npcReply": "迷雾渐渐退去。‘与森林共鸣，用自然的脉动指引方向。这才是真正的自然之子。’",
+          "scoreDelta": {
+            "wis": 3,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_druid": 3
+          },
+          "alignmentDelta": {
+            "empathy": 2
+          },
+          "triggerTags": [
+            "倾听大地",
+            "元素安抚",
+            "古老兽径"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "通过巨耳伏地沟通根脉共振指明生路的德鲁伊"
+        },
+        {
+          "id": "B",
+          "text": "你掏出巨大的斧头，直接在四周的古木上标记起微积分般的刻度，通过观察苔藓生长的密度分布和落叶飘散的流体力学，精确计算出森林的几何边缘出口。",
+          "npcReply": "小队成功脱困。‘虽然听不懂你在嘀咕什么公式，但这确实是非常精准的野外几何定位。’",
+          "scoreDelta": {
+            "wis": 2,
+            "int": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "微积分标记",
+            "苔藓密度学",
+            "几何定位"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "通过观察叶绿素浓度和风阻公式解算出口的地理学家"
+        },
+        {
+          "id": "C",
+          "text": "你宣称这森林里全是“妖言惑众的树精”，为了开路，你点燃了巨大的火把准备火烧森林，结果引来了整个森林古木的暴动，无数藤蔓将你绑成了粽子吊在大树上。",
+          "npcReply": "树精们愤怒地朝你扔松果。‘你在一个充满德鲁伊的试炼场放火？！你的脑子被火烧了吗？！’",
+          "scoreDelta": {
+            "wis": -2,
+            "con": -2
+          },
+          "mbtiDelta": {
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_druid": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "纵火开路",
+            "藤蔓捆绑",
+            "古木暴动"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "盲目放火烧山反被愤怒古树吊起来痛揍的纵火狂"
+        },
+        {
+          "id": "D",
+          "text": "你走到一棵巨大的会移动的树精面前，热烈地给它来了一个足以捏断树枝的“熊抱”，并大声认它当亲爹：‘爹！俺找你找得好苦啊！’",
+          "npcReply": "树精无语地把你推开，嫌弃地指了指出口的方向。‘这过于深情的胡言乱语，连古木都被你整尴尬了。’",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "N": 2
+          },
+          "affinityDelta": {
+            "guild_barbarian": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "树精熊抱",
+            "认树当爹",
+            "尴尬指路"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "通过强抱树精并认树作父强行化解迷雾的抽象奇葩"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_barbarian": [
+      {
+        "id": "ogre_giant_barb_melee",
+        "targetId": "guild_barbarian",
+        "title": "破阵冲撞",
+        "scene": "模拟战场上，一队手持盾牌的重装步兵组成了一面铜墙铁壁般的盾墙，封锁了唯一的通道。教官要求你想办法打破这道盾墙。",
+        "prompt": "你的野蛮人破阵方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "凭借巨人庞大的身躯 and 冲锋带来的可怕惯性，抡起门板大的巨斧，伴随着一声怒吼，以摧枯拉朽之势直接将整排盾墙撞得粉碎。",
+            "npcReply": "士兵们像落叶一样飞散。‘纯粹的力量美学，你就是一辆活体攻城战车！’",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "巨体冲锋",
+              "门板巨斧",
+              "物理破阵"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "用纯粹惯性与巨体撞碎包铁盾墙的物理推土机"
+          },
+          {
+            "id": "B",
+            "text": "你不直接冲锋，而是抱起旁边的一根攻城滚木，当成标枪精准投掷出去，直接砸穿了盾防的核心支点，随后快步跟上用战锤清理残局。",
+            "npcReply": "盾阵的核心瞬间溃散。‘极其冷静的投掷，你证明了野蛮人也懂得破防支点。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "滚木投掷",
+              "力学破防",
+              "战锤残局"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长投掷重型滚木砸穿重步兵防守轴心的战术家"
+          },
+          {
+            "id": "C",
+            "text": "你为了省力，试图用大嘴去咬士兵刺来的长矛，玩一出“空手接白刃”的极限挑战，结果舌头被长矛划破，长矛差点扎穿你的扁桃体。",
+            "npcReply": "担架队叹了口气。‘你在战场上表演生吞铁器？！你的脑子是空的吗？’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "口咬长矛",
+              "扁桃体穿孔",
+              "脑干缺失"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图口咬长矛表演空手接白刃却扎穿喉咙的蠢人"
+          },
+          {
+            "id": "D",
+            "text": "你从兜里摸出一大瓶鲱鱼罐头，用巨大的手掌将罐头捏扁，里面的腐臭汤汁漫天飞溅。在生化恶臭中，整排重步兵当场吐着白沫瘫倒在地，你大摇大摆地跨了过去。",
+            "npcReply": "教官也戴上了防毒面具。‘这简直是反人类的化学武器！但是……确实突破了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "鲱鱼生化武器",
+              "防线集体瘫痪",
+              "精神折磨"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "使用捏扁鲱鱼罐头释放毒气让重步兵全员瘫痪的奇葩"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_rage",
+        "targetId": "guild_barbarian",
+        "title": "荒野之怒",
+        "scene": "试炼中，你被施加了虚弱诅咒，力气降到谷底，而几个哥布林正围着你用小刀划拉你厚实的皮肤，试图慢慢消耗你的生命。",
+        "prompt": "极度虚弱且面临挑衅，你如何唤醒血液中的荒野之怒？",
+        "options": [
+          {
+            "id": "A",
+            "text": "闭上眼睛，不再关注力气的流失，而是任由痛苦转化为无尽的狂性。每一次皮肉被划破，都让你眼中的血色加深一分，终于你爆发出震天动地的咆哮，凭本能将靠近的哥布林全部生撕。",
+            "npcReply": "哥布林残肢散落一地。‘痛苦换取狂怒！这才是荒野巨兽最纯粹的狂暴！’",
+            "scoreDelta": {
+              "con": 3,
+              "str": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "痛苦狂暴",
+              "撕裂哥布林",
+              "荒野之吼"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将自身剧痛转化为无尽狂性生撕对手的纯血狂战"
+          },
+          {
+            "id": "B",
+            "text": "强忍痛楚，利用你庞大的重心，将自己当作一块无法被撼动的巨石，顺势倒下压扁两个哥布林，然后借助翻滚的惯性压碎剩余的目标。",
+            "npcReply": "地上的哥布林变成了贴画。‘借势借力，你连倒地都能成为一种致命的战术。’",
+            "scoreDelta": {
+              "con": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "重心压制",
+              "肉饼战术",
+              "借势翻滚"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "利用自身庞大质量物理倒地压扁目标的战术大师"
+          },
+          {
+            "id": "C",
+            "text": "你为了证明自己能抗，大喊“哥布林的小刀就跟挠痒痒一样”，然后张开双臂任由他们砍，结果被一刀扎中了腹股沟动脉，当场血流如注。",
+            "npcReply": "止血带被死死扎在你的大腿上。‘你以为你没有痛觉吗？！你的自大差点害死你！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "任人宰割",
+              "大动脉破裂",
+              "流血不止"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "任由哥布林小刀乱戳结果扎爆动脉大出血的逞能怪"
+          },
+          {
+            "id": "D",
+            "text": "你在哥布林砍你的同时，当场开始疯狂地抠鼻子，然后把巨大的、带有雷霆抗性的鼻屎弹在哥布林的脸上，巨大的冲击力直接把哥布林砸昏。",
+            "npcReply": "哥布林被砸飞三米远。‘这鼻屎的密度……你平时到底在吃什么异界土特产？！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "生化鼻屎弹",
+              "击飞哥布林",
+              "精神攻击"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "通过弹射高密度物理鼻屎强行击昏哥布林的生化怪人"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_survival",
+        "targetId": "guild_barbarian",
+        "title": "荒原绝境",
+        "scene": "小队在极寒的荒原上遭遇暴风雪，补给尽失。周围只有冻硬的泥土和漫天的冰雹，同伴们都冻得瑟瑟发抖。",
+        "prompt": "作为生命力顽强的巨人，你如何带队伍生存下来？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你用巨大的双手刨开冻土，挖出一个能容纳全队的大坑，然后张开双臂像一堵温暖的墙壁挡在坑口，用你体内的熔炉体温为同伴提供庇护，硬扛风雪一夜。",
+            "npcReply": "同伴在坑里安稳睡去。‘用血肉之躯在风雪中铸起防风墙，这才是领袖的担当！’",
+            "scoreDelta": {
+              "con": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "刨坑遮风",
+              "血肉熔炉",
+              "硬抗暴雪"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "刨土作坑、张开双臂以肉体熔炉为全队遮挡暴雪的苦行者"
+          },
+          {
+            "id": "B",
+            "text": "你迅速砸碎周围的冻木，利用摩擦生热的物理学规律和身上仅存 of 火石，强行搭建起一个防风的燃煤地炉，并计算火候维持最低热量消耗。",
+            "npcReply": "炉火虽然微弱，但十分稳定。‘精密的战地工程取暖，你用知识救了大家的命。’",
+            "scoreDelta": {
+              "con": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "物理摩擦生热",
+              "防风地炉",
+              "温控计算"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "科学搭建地热火炉维持长效营地温控的工程军士"
+          },
+          {
+            "id": "C",
+            "text": "你宣称“冰雹是神明赐予的冰镇小点心”，抓起满地的冰块和冻土就开始狼吞虎咽，试图以此填饱肚子，结果胃部被冻伤，当场吐血并陷入深度休克。",
+            "npcReply": "考官脸色大变。‘快灌热水！这家伙把冰块和碎石当馒头吃！胃袋被扎烂了！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "暴食冰雹",
+              "冻土碎石",
+              "胃袋受损"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "疯狂吞食冻土和冰雹导致胃穿孔大吐血的蠢汉"
+          },
+          {
+            "id": "D",
+            "text": "你脱光衣服在暴风雪中跳起热烈的桑巴舞，一边大喊“俺不冷，俺是太阳之子！”，一边用肚皮的反光把雪地上的阳光反射给队友，强行通过纯粹的滑稽给队友制造“精神温暖”。",
+            "npcReply": "队友们看着你白花花的肚皮，笑得全身发热。‘虽然滑稽透顶，但大家确实不那么绝望了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "风雪桑巴",
+              "肚皮反光",
+              "精神供热"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在风雪中赤身跳桑巴用滑稽逗乐队友强行取暖的舞者"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_beast",
+        "targetId": "guild_barbarian",
+        "title": "犀角角力",
+        "scene": "试炼森林中，一头体型如象、性情极其残暴的野生犀角兽向你疯狂冲锋。它的角足以刺穿最厚的铁板。",
+        "prompt": "面对冲来的野兽，你打算如何处置？",
+        "options": [
+          {
+            "id": "A",
+            "text": "在巨兽撞中你的瞬间，你用粗壮的双臂死死抱住它的犀角，额头青筋暴起，脚陷入地面半尺，凭借洪荒巨力强行扭转犀角，轰然一声将巨兽摔翻在地。",
+            "npcReply": "巨兽在泥地上扬起大片沙尘。‘力拔山河！你竟然在力量对决中碾压了犀角暴龙！’",
+            "scoreDelta": {
+              "str": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "犀角角力",
+              "过肩摔巨兽",
+              "纯物理压制"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "强行徒手掰住暴龙犀角并将其按倒在地的怪力暴徒"
+          },
+          {
+            "id": "B",
+            "text": "你不直接对抗，而是在它冲来的路线上，利用你投掷巨石的本能将一块尖锐的岩石砸进它前方的地面，巨兽在惯性作用下自己撞上岩石，惨叫倒下。",
+            "npcReply": "巨兽撞得头破血流。‘聪明！你用重力和惯性完成了最省力的杀戮。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "尖石绊马索",
+              "惯性自撞",
+              "高效捕猎"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "利用巨石定位强迫暴兽发生高速物理碰撞的射手"
+          },
+          {
+            "id": "C",
+            "text": "你试图张开大嘴去咬暴龙的犀角，大吼“俺的钢牙天下无敌！”，结果下巴当场粉碎性骨折，整个人被顶飞十几米。",
+            "npcReply": "教官扶着额头。‘你的牙齿再硬，硬得过暴龙的角吗？！你的下颌骨完全碎了！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "口接暴击",
+              "下颌粉碎",
+              "击飞惨剧"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "用嘴强咬冲锋犀角导致满嘴碎牙下巴粉碎的残障"
+          },
+          {
+            "id": "D",
+            "text": "你给犀角兽抛了个媚眼，然后撅起屁股对准它放了一个响亮且带毒雾的闷屁。巨兽被你的生化攻击熏得意乱情迷，踩错脚步摔进了旁边的泥潭里。",
+            "npcReply": "犀角兽在泥潭里疯狂咳嗽。‘太恶劣了！这绝对是巨型生物的毒气反噬！’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "生化毒屁",
+              "重心打滑",
+              "泥潭陷落"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用充满恶臭的闷屁熏晕暴兽使其踩空摔倒的生化狂魔"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_siege",
+        "targetId": "guild_barbarian",
+        "title": "巨力拆迁",
+        "scene": "要塞攻防战演习中，守军依托一座极其坚固的石质箭塔进行顽抗，小队被压制在掩体后动弹不得。",
+        "prompt": "为了打破僵局，你采取的“拆迁”策略是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "狂吼着冲向箭塔，根本不顾箭雨，用巨大的双手死死抠住箭塔底部的巨石缝隙，全身肌肉贲张，将荒野雷霆之力集中在双臂，生生将箭塔的基石拔了出来，箭塔轰然倒塌。",
+            "npcReply": "石块崩裂，巨塔倾覆。‘单人拔塔！你的破坏力简直像一头活着的攻城巨兽！’",
+            "scoreDelta": {
+              "str": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "手撕箭塔",
+              "基石拔除",
+              "要塞坍塌"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "用蛮力强行掏出箭塔承重巨石物理拆房的恐怖拆迁工"
+          },
+          {
+            "id": "B",
+            "text": "找来几根铁索拴在箭塔的重要承重柱上，利用你庞大的质量当做坠子，借用杠杆原理将承重柱拉倒，让箭塔朝无人的方向倾斜倒塌。",
+            "npcReply": "箭塔在力下轰然折断。‘精彩的重力与机械应用，你用最小的代价摧毁了敌方的防守核心。’",
+            "scoreDelta": {
+              "str": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "索链牵引",
+              "重力杠杆",
+              "定向爆破"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "系索以身作锤拉垮巨塔承重柱实现定向倾倒的军士"
+          },
+          {
+            "id": "C",
+            "text": "你试图用头去猛烈撞击石塔，大喊“脑壳硬就是王道！”，结果把额头撞得头骨开裂，鲜血淋漓，箭塔却纹丝不动。",
+            "npcReply": "你倒在塔下直翻白眼。‘这可是黑曜石混合水泥浇筑的防爆塔！你的脑壳是豆腐脑吗？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "铁头撞墙",
+              "头骨开裂",
+              "不省人事"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图用头颅物理撞碎混凝土石塔导致脑震荡的憨子"
+          },
+          {
+            "id": "D",
+            "text": "你拿出一只巨大的铜锣，在石塔下面疯狂敲击，并用跑调十万八千里的巨人嗓门高唱情歌，石塔里的守军被震得耳膜流血，集体抱着头从塔上跳下来投降。",
+            "npcReply": "守军从塔窗上吐着白沫跳了下来。‘这已经不是歌声了，这是针对灵魂的致命音波共振！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "铜锣狂轰",
+              "索命情歌",
+              "音波震颤"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "通过高频铜锣和魔性巨嗓震落高空守军的音波恶魔"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_trap",
+        "targetId": "guild_barbarian",
+        "title": "铁板雷区",
+        "scene": "试炼地带被敌军布置了密集的“连环爆裂地雷区”，每一颗地雷的爆炸威力都能将普通人炸成灰烬。",
+        "prompt": "面对这个致命的雷区，你打算：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你用巨大的双手拔起一块足有两米厚的钢板挡在身前，狂吼着踩着沉重的步伐，将一整排地雷全部用脚“踩爆”，一路踩着火光和爆炸强行趟出一条通道。",
+            "npcReply": "爆炸的火光洗刷着你的身躯。‘强悍！你用肉身和钢板强行开辟了一条死亡通道！’",
+            "scoreDelta": {
+              "con": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "钢板护盾",
+              "物理踩雷",
+              "趟过雷区"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "背负厚重防爆钢板用脚大步硬踩完所有地雷的开路巨灵"
+          },
+          {
+            "id": "B",
+            "text": "你站在雷区外，抱起周围散落的沉重木桩和石块，像打保龄球一样把它们扔进雷区，利用巨石的翻滚把所有的引信提前触发。",
+            "npcReply": "雷区里传来接连不断的爆炸声。‘无声的排雷战术，你用重力解决了危机。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "投石探路",
+              "保龄球排除",
+              "引信引爆"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "投掷大体积碎石如保龄球般物理碾爆一整条地雷引信的射手"
+          },
+          {
+            "id": "C",
+            "text": "你宣称地雷是“发光的糖果”，试图趴在地上用舌头去舔引信，大喊“俺的舌头有直觉！”，结果引爆了地雷，把大半边脸炸成焦黑。",
+            "npcReply": "考官几乎抓狂。‘你居然想用舌头去排雷？！你没死简直是医学奇迹！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "舌舔地雷",
+              "生化面瘫",
+              "毁容惨案"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图用舌头感应地雷引信惨遭爆头炸成黑碳的痴汉"
+          },
+          {
+            "id": "D",
+            "text": "你给脚掌上绑上两个巨大的充气野猪皮做成“蹦床”，然后像个两吨重的优雅芭蕾舞演员一样在雷区上蹦跳，地雷还没来得及感应重量，你就已经被弹到了雷区对岸。",
+            "npcReply": "你飘然落地。‘这野猪皮蹦床的弹性……你竟然靠起跳延迟把重力地雷全耍了！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "野猪皮充气垫",
+              "弹跳排雷",
+              "延迟压感"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "穿戴充气野猪皮鞋垫通过高频弹跳规避重力压感的杂耍家"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_barb_feast",
+        "targetId": "guild_barbarian",
+        "title": "狂暴战歌",
+        "scene": "氏族祭典上，祭司要求你用最能代表荒野巨人野性的仪式，在全军面前振奋士气。",
+        "prompt": "你的表演是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "扯下身上的皮甲，露出伤痕累累的宽厚胸膛，用铁锤般的拳头疯狂捶击胸口，发出震天动地的雷霆低吼，这股纯粹野性的声浪让周围所有的战马都为之低头。",
+            "npcReply": "全军开始疯狂欢呼。‘野性至上！这才是能够撕裂天空的战锤之声！’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "捶胸咆哮",
+              "战意高昂",
+              "兽耳低头"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "赤身锤击胸膛发出泰坦雷鸣咆哮唤醒荒野之魂的祭主"
+          },
+          {
+            "id": "B",
+            "text": "拔出背上的两柄巨剑，当场进行了一套密不透风、火星四溅的剑舞，双剑交击的金属爆鸣声如同雷电轰鸣，展现了巨人的格斗纪律。",
+            "npcReply": "军容整齐划一。‘力量与纪律的完美结合，双剑舞出了重装军团的风采！’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "巨剑对舞",
+              "火星四溅",
+              "军规步伐"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "双持大剑伴随有条理的舞步击打出雷鸣电光的严苛剑客"
+          },
+          {
+            "id": "C",
+            "text": "你为了显示豪迈，抓起一整坛正在燃烧的火油试图“喷火”，结果不仅没烧到敌人，反而把自己的大胡子和眉毛全部点燃，满头是火地在祭坛上惨叫狂奔。",
+            "npcReply": "祭司们拼命泼水。‘快拿湿毛毯！这家伙的头发全烧秃了！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "火油表演",
+              "引火烧身",
+              "焦黑奔逃"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "玩火自焚、喷吐火油将胡子眉毛全烧秃的滑稽小丑"
+          },
+          {
+            "id": "D",
+            "text": "你抢过祭司的特大号铜锣套在头上当帽子，然后用巨大的肚皮和肚脐眼表演“肚皮打击乐”，打出了一段极具喜感的B-box节奏，全场士兵笑得前仰后合。",
+            "npcReply": "士兵们笑出了眼泪。‘这肚皮的弹性共鸣……你把祭典变成了一场滑稽剧！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "锣戴头上",
+              "肚皮鼓乐",
+              "Bbox节奏"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "头扣大铜锣拍打腹肌进行巨型B-box肚皮鼓演出的鬼才"
+          }
+        ]
+      }
+    ],
+    "guild_fighter": [
+      {
+        "id": "ogre_giant_fight_discipline",
+        "targetId": "guild_fighter",
+        "title": "冷静格斗",
+        "scene": "试炼场上，帝国最精锐的轻步兵剑术大师向你发起挑战，他身法极快，手中的细剑在你的巨大体型周围晃出无数残影。",
+        "prompt": "面对快如闪电的对手，你的战士格斗技巧是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "不做多余的挥击，而是沉稳举起巨大的塔盾，将自己庞大的身躯完全缩在盾后，冷静观察对手的步伐。在他力竭出招的空门瞬间，塔盾猛烈拍出，将其直接拍飞在墙上。",
+            "npcReply": "剑术大师倒地不起。‘以静制动，大巧不工！你的重盾防御反击无懈可击！’",
+            "scoreDelta": {
+              "str": 2,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "盾墙反击",
+              "以静制动",
+              "墙壁挂画"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "手持重塔盾坚如盘石、等敌人招式用尽一记拍墙的重步兵"
+          },
+          {
+            "id": "B",
+            "text": "你利用巨人庞大的臂展优势，将手中的长戟在半空划出一个巨大且绝对无法逾越的扇形禁区，任凭对手身法再快也无法跨越这三米长的力学防御线。",
+            "npcReply": "大师连连后退。‘臂展即正义！你用绝对的几何空间优势把对手拒之门外！’",
+            "scoreDelta": {
+              "str": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 2
+            },
+            "alignmentDelta": {
+              "order": 1
+            },
+            "triggerTags": [
+              "臂展禁区",
+              "大范围横扫",
+              "空间防御"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "舞动长戟制造绝对物理空间防线以封锁剑手近身的枪士"
+          },
+          {
+            "id": "C",
+            "text": "你试图用双手去抓对手那柄淬了毒的细剑，大吼“俺的皮比铁还厚！”，结果双手被割得鲜血淋漓，蛇毒顺着伤口迅速流向全身。",
+            "npcReply": "你双唇发紫地倒下。‘白痴！毒刃是穿透毒素，你的厚皮防不了血液剧毒！’",
+            "scoreDelta": {
+              "con": -2,
+              "dex": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "手接毒刃",
+              "剧毒渗透",
+              "双手伤残"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图空手夺毒刃惨遭割脉蛇毒攻心当场青紫的智障"
+          },
+          {
+            "id": "D",
+            "text": "你直接在地上撒了一大包圆滚滚的荒野大坚果，然后顺势躺下开始四脚朝天疯狂翻滚，像一个巨大的血肉碾压机一样把剑术大师和坚果一起碾成平地。",
+            "npcReply": "大师鼻青脸肿地爬了出去。‘这翻滚的吨位……你简直是个移动的地质天灾！’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "坚果滑轨",
+              "巨兽翻滚",
+              "横扫千军"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "利用坚果打滑配合大体重肉身在地上做花式翻滚的地滚流"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_weapon",
+        "targetId": "guild_fighter",
+        "title": "武器决意",
+        "scene": "战备库里摆满了各种各样的武器，考官要求你选择一柄最能发挥巨人优势的格斗兵器，并在木偶上展示。",
+        "prompt": "你的武器选择和演示是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "选择一柄长达三米的精钢斩马宽刃剑，用双手握持，使出一套大开大合但极其沉稳的顺劈斩，直接将三个包铁木偶连同石座一起切成两半。",
+            "npcReply": "切口光滑如镜。‘极度惊人的劈砍力！你将重剑的分量发挥到了极致！’",
+            "scoreDelta": {
+              "str": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "斩马宽刃剑",
+              "石座双切",
+              "沉稳顺劈"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "手持双手重斩马剑一套沉稳连击连同石台一同切断的剑豪"
+          },
+          {
+            "id": "B",
+            "text": "选择一柄带滑轮组和配重的特制攻城锤枪，通过拉动索链释放强大的瞬间穿透力，一下刺穿了最厚的玄铁防具。",
+            "npcReply": "铁盾被破开一个大洞。‘极佳的机械助力！你证明了巨人的肌肉配合机关能毁天灭地！’",
+            "scoreDelta": {
+              "str": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "滑轮锤枪",
+              "瞬间穿透",
+              "机械破坏"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "运用滑轮组机构和杠杆原理设计攻城锤枪的特战枪手"
+          },
+          {
+            "id": "C",
+            "text": "选择了一把仅有手掌大小、给侏儒用的剧毒匕首，试图展示“巨人之指尖暗杀”，结果匕首在你的粗壮手指间打滑，不小心扎到了你自己的肚皮。",
+            "npcReply": "毒素流进你的腹肌。‘你那胡萝卜一样粗的手指怎么拿得住绣花针？！急救包呢？！’",
+            "scoreDelta": {
+              "dex": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "侏儒短匕",
+              "手指打滑",
+              "反伤肚皮"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "强行拿侏儒修脚小匕首剔牙反扎穿自己肚皮的逗比"
+          },
+          {
+            "id": "D",
+            "text": "你把备战库的木门连同上面的铜锁链整个卸了下来，把门框套在脖子上假装是“新潮护肩”，把门板当成板砖疯狂乱拍。",
+            "npcReply": "木门在空气中呼啸。‘这毫无章法的门板狂挥……不过防守面积确实是拉满了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "卸载木门",
+              "门框围脖",
+              "门板乱拍"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "背着巨型仓库木门乱抡大喝“俺寻思这是好盾”的即兴格斗手"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_tactics",
+        "targetId": "guild_fighter",
+        "title": "龙火退却",
+        "scene": "试炼中，敌方三头成年红龙对你展开了合围，灼热的烈焰即将把周围的岩石融化。教官要求你在保证战力前提下进行“有组织的战术退却”。",
+        "prompt": "你的战士退却策略是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "丝毫不乱，举起背上的熔铁重盾抵挡吐息，边退边寻找掩体。在经过峡谷隘口时，用巨力砸塌两侧的悬崖，用落石彻底封死红龙的地面追击路线。",
+            "npcReply": "落石彻底堵塞了峡谷。‘冷静的火力规避与封路，完美的重盾后撤教科书！’",
+            "scoreDelta": {
+              "con": 3,
+              "str": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "落石掩埋",
+              "盾壁后撤",
+              "隘口物理封路"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "通过砸毁两翼岩壁制造大量石土阻断巨龙追兵的防守大师"
+          },
+          {
+            "id": "B",
+            "text": "你根据红龙吐息的温度和散射角度，精确计算出岩壁阴影的温度盲区，利用钩爪在岩壁间高速穿插，以最省力的抛物线轨迹脱离战场。",
+            "npcReply": "你轻巧地荡出了火海。‘利用热流反射与盲区，这是一次无可挑剔的动力学撤退！’",
+            "scoreDelta": {
+              "con": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "热辐射计算",
+              "盲区折返",
+              "飞索吊装"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "科学测量岩壁折射率与对流盲区通过绳索飞荡脱险的智囊"
+          },
+          {
+            "id": "C",
+            "text": "你大喊“巨龙的口水正好用来洗热水澡！”，站在原地张开双臂迎接龙息，试图强行用皮肉硬抗红龙的灭世火焰，结果全身皮肤被烧成焦炭。",
+            "npcReply": "冰疗术的光芒瞬间笼罩了你。‘蠢货！龙息是高达两千度的元素烈焰！你差点变成一堆黑碳！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "硬接龙息",
+              "焦炭烧伤",
+              "脱水休克"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "张开双腿自信拥抱千度龙息被烧成活体黑人木雕的傻缺"
+          },
+          {
+            "id": "D",
+            "text": "你抓起两个巨大的烂泥团抹在脸上假装自己是“泥石流”，然后顺着山坡开始疯狂地横向打滚，一路高声歌唱《滚石乐章》，以时速六十公里滚出了战场。",
+            "npcReply": "你把红龙也整无语了。‘这狂野的下坡翻滚……虽然很没尊严，速度确实快得惊人！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "泥巴涂脸",
+              "人肉下坡滚石",
+              "高速脱战"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用黄泥掩面模仿圆形山石一路滚落山坡狂飙退却的艺术家"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_armor",
+        "targetId": "guild_fighter",
+        "title": "负重铁罐",
+        "scene": "试炼进行到最后一项，教官要求你穿着重达千斤的精钢全身铠甲，在泥泞的沼泽地里完成十里负重长途拉练。",
+        "prompt": "穿着这套极其沉重的铁罐头，你打算：",
+        "options": [
+          {
+            "id": "A",
+            "text": "调整呼吸，将每一步的重心深深踩进泥潭底部的坚硬岩石层，以军人特有的平稳步频前行，即使满身是泥也绝不弯腰，雷打不动地准时抵达终点。",
+            "npcReply": "考官满意地打分。‘钢铁般的体魄与意志，这才是负重步兵的绝对中坚！’",
+            "scoreDelta": {
+              "con": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "步幅调整",
+              "重心深踩",
+              "铁律行军"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "通过将双脚踩入沼泽硬质土层保持高纪律行军的重铠军官"
+          },
+          {
+            "id": "B",
+            "text": "你拆掉铠甲上多余的装饰，利用护甲的关节卡扣和滑轮制造了一个自重分配支架，让每一步的压力通过杠杆传递到大腿外侧，以最轻巧的姿态穿过沼泽。",
+            "npcReply": "你几乎没怎么陷进去。‘完美的自重分配力学！你把千斤重甲改良成了力学外骨骼！’",
+            "scoreDelta": {
+              "con": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "关节微调",
+              "重量重分配",
+              "省力滑轴"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "利用护甲卡榫与重心连杆重新分配重力负荷的工兵师"
+          },
+          {
+            "id": "C",
+            "text": "你为了省力，试图把整套沉重的铠甲全部吞进肚子里，大喊“把铁装在肚子里才是最好的负重！”，结果钢板卡在食道和胃部，痛得你面部扭曲。",
+            "npcReply": "洗胃机被推进了库房。‘你在吞食生铁重铠？！你的胃酸是王水吗？！快催吐！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "吞噬重铠",
+              "食道卡死",
+              "腹部剧痛"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "生吞一千斤钢板护胸企图负重前行导致胃出血的吃货"
+          },
+          {
+            "id": "D",
+            "text": "你给重铠的鞋底抹满了大块的沼泽滑脂，把盾牌垫在脚下当成“单板滑雪板”，然后利用手中的长枪当成撑杆，在泥沼里玩起了花式越野滑雪。",
+            "npcReply": "你在一片泥浪中呼啸而过。‘这泥沼单板滑行……你竟然在负重训练里刷出了百公里时速！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "盾牌冲浪板",
+              "泥沼滑行",
+              "长矛撑杆"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在盾牌上涂抹滑脂将其改造成泥沼滑雪板狂飙的冲浪手"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_ambush",
+        "targetId": "guild_fighter",
+        "title": "丛林隐身",
+        "scene": "小队在密林中伏击敌军车队。作为身高四米的巨人，你那庞大的体型在低矮的灌木丛中极其扎眼，很容易暴露小队位置。",
+        "prompt": "你打算如何隐藏自己以完成这次战术伏击？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其耐心地趴在泥地里，将身上的重铠用泥土和落叶覆盖，甚至停止了沉重的呼吸，像一截枯木一样在泥潭里一动不动地趴了三个时辰，直到敌人进入包围圈。",
+            "npcReply": "敌人大摇大摆地走了过来。‘铁一般的潜伏纪律！四米高的巨人趴在泥里竟然变成了磐石！’",
+            "scoreDelta": {
+              "con": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "泥沼潜伏",
+              "呼吸抑制",
+              "泥甲伪装"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "身涂黑泥趴伏于腐烂泥叶中完全抑制声息的铁人守候者"
+          },
+          {
+            "id": "B",
+            "text": "你利用光折射的死角，在敌军视线盲区布置了三面巨大的反射铜镜，制造了光影错觉，将自己的巨大体型完全隐形在折射光幕后。",
+            "npcReply": "敌车队擦肩而过。‘高级的光学反射应用！你用几面铜镜制造了完美的视觉虚空！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "铜镜折射",
+              "反射角盲区",
+              "光影折射幕"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "运用光学反射角原理布置巨型铜镜构建视线死角的物理学家"
+          },
+          {
+            "id": "C",
+            "text": "你为了省事，直接闭上双眼，坚信“俺只要看不见敌人，敌人就看不见俺”，然后直挺挺地站在路中间。结果被敌军百步穿杨的弩兵一箭射穿了鼻孔。",
+            "npcReply": "你捂着红肿的鼻子大叫。‘你在进行唯心主义隐身术吗？！你这活靶子简直是箭靶！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "唯心隐身",
+              "弩箭贯穿",
+              "当场暴露"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "闭上双眼在大道中央施展自欺欺人潜行惨被射穿鼻头的憨子"
+          },
+          {
+            "id": "D",
+            "text": "你扯下周围所有的藤蔓和绿叶，把自己裹得像个巨大的绿色椰子，然后蹲在树叉上闭着眼，用极度做作的娇柔嗓音学小鸟叫：“叽叽喳喳，俺是一只四吨重的小麻雀。”",
+            "npcReply": "树枝被你压断的瞬间你砸倒了敌军的马车。‘虽然极其荒唐，但压垮树枝也算是一种高空突袭吧……’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "椰子拟态",
+              "重压树枝",
+              "魔性鸟叫"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "编织藤蔓假装鸟巢高唱小鸟儿歌踩塌老松树砸扁粮车的怪才"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_duel",
+        "targetId": "guild_fighter",
+        "title": "群狼围攻",
+        "scene": "帝国角斗场里，十名全副武装的半兽人狂战士将你重重包围，观众们在看台上疯狂呼喊着血腥的口号。",
+        "prompt": "面对群敌，你的破局之战是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "举起你的玄铁重锤，使出教科书般的“旋风劈砍”，将每一击的力道通过脚下的轴心完美传递，沉重的锤风将四周冲上来的半兽人全部击退，并精准砸断了他们的兵器。",
+            "npcReply": "角斗士的武器碎了一地。‘霸道无双！你把旋风重击玩成了风暴领域的战术压制！’",
+            "scoreDelta": {
+              "str": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "旋风劈砍",
+              "武器砸碎",
+              "轴心发力"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "通过脚底发力轴向旋转将万钧重锤舞动成真空禁区的大师"
+          },
+          {
+            "id": "B",
+            "text": "你不主动出击，而是根据角斗场的沙地陷阱分布，通过走位引诱他们踩中尖刺机关，再利用巨大的回音石壁制造声波干扰，以最小的体力损耗将他们解体。",
+            "npcReply": "半兽人们纷纷掉进陷阱。‘精密的地理学卡位！你把角斗场本身变成了你的致命棋盘！’",
+            "scoreDelta": {
+              "str": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "沙地陷阱卡位",
+              "声波声纳",
+              "陷阱反击"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "熟知角斗场地壳结构引诱敌军踩入自陷钢刺的战术指挥"
+          },
+          {
+            "id": "C",
+            "text": "你为了显示巨人的傲慢，直接丢掉了所有防具和武器，张开双手要求他们“一起上，朝俺心窝子砍”，结果被十柄大斧同时砍中，瞬间血流成河。",
+            "npcReply": "你在担架上直打寒颤。‘这可不是演练！你把狂战士的斧子当修指甲钳吗？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "空手挑群狼",
+              "利斧穿胸",
+              "血肉横飞"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "自废武功张开肚皮让狂战士用板斧砍胸骨大出血的狂徒"
+          },
+          {
+            "id": "D",
+            "text": "你从兜里摸出三个巨大的松果，一边闭眼疯狂杂耍，一边用巨人特有的公鸭嗓高唱儿歌。十名半兽人被你这极其抽象、仿佛神经病院在逃的行为艺术震怒得当场丢下武器开始怀疑人生。",
+            "npcReply": "全场倒喝彩。‘半兽人的脑子完全卡死了……他们以为自己进错了马戏团！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "松果杂耍",
+              "公声高唱",
+              "心智瓦解"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "闭眼抛接松果尖声合唱摇篮曲瓦解全场杀意的抽象小丑"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_fight_fort",
+        "targetId": "guild_fighter",
+        "title": "巨石堡垒",
+        "scene": "战地演习中，小队需要在河岸边迅速搭建起一座能够抵挡投石机轰炸的防御碉堡。其他人都缺乏材料和力量。",
+        "prompt": "你的工事搭建方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你直接走到旁边的山崖，徒手掰下几块千斤重的巨石板扛回营地，像搭积木一样稳稳地将石板咬合在一起，搭建起一座坚不可摧的巨石碉堡。",
+            "npcReply": "碉堡顶住了飞石撞击。‘徒手抠石，千斤石板拼装！你一个人就抵得上一个工程营！’",
+            "scoreDelta": {
+              "str": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "徒手劈石",
+              "千斤拼接",
+              "积木防御"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "徒手从岩层开采巨石板以榫卯结构强建战地工事的工匠"
+          },
+          {
+            "id": "B",
+            "text": "你利用拱形受力结构的力学原理，设计了一座双层互锁拱桥形掩体，虽然用的石块较少，但能将投石机的撞击力完美分散导入大地。",
+            "npcReply": "飞石打在上面直接滑落。‘精妙的力学结构！你用最少的材料搭建了抗压能力最强的拱形掩体！’",
+            "scoreDelta": {
+              "str": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "双层拱形",
+              "重力消散",
+              "受力分析"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "依据三点受力支撑拱面原理拼装分散力学冲击地堡的学者"
+          },
+          {
+            "id": "C",
+            "text": "你试图用自己的巨大肚子当做碉堡的“软性缓冲墙”，让队友把稻草绑在你的肚皮上，宣称“俺的脂肪能吸收一切冲击”，结果被一块模拟飞石直接砸断了三根肋骨。",
+            "npcReply": "你吐血倒在碎石中。‘那可是重达百磅的抛石机实弹！你以为你的肚皮是棉花糖吗？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "人肉缓冲盾",
+              "飞石贯穿",
+              "肋骨骨折"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图用肚腩油脂硬接飞行石球导致肋骨三折当场吐血的荒人"
+          },
+          {
+            "id": "D",
+            "text": "你给地上的烂泥里掺满了你黏糊糊的口水和松脂，堆成了一个巨大的、造型极其滑稽的“史莱姆泥人碉堡”。投石机的飞石砸在上面不仅没碎，反而被反弹了回去。",
+            "npcReply": "飞石原路返回砸碎了敌方大炮。‘这黏糊糊的泥巴弹性共振……你把物理力学玩成了反弹外挂！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "口水黏性碉堡",
+              "强力物理反弹",
+              "敌台击碎"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "使用高黏度唾液黏土配比制成橡胶质感高反弹泥垒的怪才"
+          }
+        ]
+      }
+    ],
+    "guild_cleric": [
+      {
+        "id": "ogre_giant_cleric_healing",
+        "targetId": "guild_cleric",
+        "title": "雷霆急救",
+        "scene": "模拟战场上，你的盗贼队友被巨毒魔蛛咬伤，正躺在地上痛苦地呻吟，毒素已经蔓延到他的心脏，普通的解毒药剂根本来不及生效。",
+        "prompt": "你的巨人神术治疗是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你双脚跺地，大吼着沟通战神的雷霆，右手亮起刺眼的电光，一巴掌狠狠拍在队友...胸口上。强烈的电荷瞬间击穿了他的神经，强行电击除颤并将蛛毒物理炭化。",
+            "npcReply": "队友剧烈咳嗽着吐出一口黑烟。‘电击除颤加局部碳化！虽然粗暴，但确实物理性阻止了毒素！’",
+            "scoreDelta": {
+              "wis": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "雷霆掌击",
+              "强力电疗",
+              "蛛毒物理化"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将掌击雷弧导入胸腔除颤并用电热封闭血液毒素流向的暴躁牧师"
+          },
+          {
+            "id": "B",
+            "text": "顺着蛛毒流动的轨迹，掏出两根银针扎在队友心脏周围的穴位上，用微小的电弧精准碳化血管内的蛛毒，并挤出伤口的毒液。",
+            "npcReply": "队友的伤口喷出毒液，脸色迅速转好。‘极其精妙的微观雷电针灸！你把粗暴的雷电驯服成了精密的手术刀！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "银针微放电",
+              "血管封闭",
+              "精准排毒"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "利用高导电性银针在心脏外围形成雷电电磁屏障防止扩散的医官"
+          },
+          {
+            "id": "C",
+            "text": "你宣称“巨人的口水包治百病”，深吸一口浓痰吐在队友的伤口上，并试图用巨力挤压他的心脏进行“物理复苏”，结果把队友的肋骨捏碎了两根。",
+            "npcReply": "队友疼得当场背过气去。‘你这到底是急救还是物理超度？！他的心脏快被你捏烂了！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "生化浓痰",
+              "野蛮按压",
+              "肋骨粉碎"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "用生化浓痰涂抹毒口并野蛮心肺复苏导致队友骨裂的祸害"
+          },
+          {
+            "id": "D",
+            "text": "你抱起队友开始疯狂晃动，嘴里高喊“把毒素摇晃均匀就不怕了！”，然后用巨人那五音不全的魔性歌喉在他耳边唱《大悲咒》，队友在剧烈的耳膜折磨和反胃中，一口把蛛毒和胆汁全部吐了出来，奇迹般复活了。",
+            "npcReply": "队友流着泪爬开。‘别唱了！我是被你的歌声活活恶心醒的！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "高速摇匀",
+              "神圣催吐情歌",
+              "死而复生"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "以魔性噪音刺耳歌声摧毁神智强行迫使队友胃酸逆流催吐的怪医"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_prayer",
+        "targetId": "guild_cleric",
+        "title": "雷神召来",
+        "scene": "试炼中，小队被困在漆黑无光的古墓深处，四周的阴影魔物正在黑暗中蠢蠢欲动，罗盘失效，神圣火把即将燃尽。",
+        "prompt": "作为雷霆神明的仆从，你的祈祷方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你高高举起战锤指向穹顶，用足以震碎墓砖的巨响唱出战神赞歌，将体内的生命力化作耀眼的雷霆，战锤爆发如同白昼的刺眼强光，瞬间将方圆百米的阴影魔物全部气化。",
+            "npcReply": "地宫被照得通亮。‘神说要有光！你这纯正的雷光之锤瞬间超度了所有污秽！’",
+            "scoreDelta": {
+              "wis": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "战锤雷芒",
+              "巨音祈祷",
+              "阴影净化"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "举锤震天高唱泰坦赞歌强引雷火驱散方圆百米阴影的纯血祭司"
+          },
+          {
+            "id": "B",
+            "text": "你分析墓穴顶部的结晶矿石成分，利用微弱的奥术电荷激发其发光特性，使整条矿石甬道变成长效的发光冷光源通道。",
+            "npcReply": "晶石散发出柔和的蓝光。‘精彩！你利用弱电荷激活了地质冷光结晶，节省了大量魔力！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "弱电激发",
+              "地矿结晶",
+              "长效冷光"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "用微安级别弱电流激发顶壁结晶矿石发光的物理地质研究者"
+          },
+          {
+            "id": "C",
+            "text": "你为了省事，试图生吞墓穴里的剧毒发光苔藓来给自己“开天眼”，宣称“只要俺的胃发光，俺就能看清一切”，结果毒素蔓延导致眼角膜发炎，当场变成睁眼瞎，在黑暗里抱头惨叫。",
+            "npcReply": "你双眼红肿地在通道里乱撞。‘那可是带有死灵毒素的荧光苔藓！你竟然把它当零食吃？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "生吞发光苔",
+              "眼角膜烧伤",
+              "黑暗乱撞"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "生吃腐尸荧光苔藓导致视神经发炎双目失明满地乱滚的倒霉鬼"
+          },
+          {
+            "id": "D",
+            "text": "你在脸上涂满了发光虫的黏液假装自己是“百年古尸”，然后一边疯狂摆手跳起“僵尸蹦迪舞”，一边用巨人特有的震怒嗓音学鬼叫。周围的阴影魔物被你这极端抽象的行为艺术吓退。",
+            "npcReply": "阴影魔物落荒而逃。‘阴影怪物觉得你的精神状态比它们更像鬼……它们不想招惹精神病！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "发光虫伪装",
+              "古尸跳舞",
+              "反向恐吓"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "满脸涂抹荧光素跳僵尸摇摆舞并学鸡叫吓退深渊魔物的行为艺术家"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_undead",
+        "targetId": "guild_cleric",
+        "title": "物理超度",
+        "scene": "墓地里，一具由死灵术士召唤的、坚不可摧的白骨巨魔将军正在疯狂破坏，普通的圣水和净化术打在它那厚重的骸骨铠甲上毫无反应。",
+        "prompt": "你的神圣超度方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你高呼着战神的圣名，往战锤上洒满圣水，以排山倒海之势一锤砸在白骨将军的头盖骨上，圣力伴随着雷霆与千斤巨力瞬间爆发，将其连同灵魂一起物理超度成漫天粉尘。",
+            "npcReply": "骨架碎片被雷火烧成灰烬。‘大音希声！你把圣光与铁锤融合，完成了最彻底的超度！’",
+            "scoreDelta": {
+              "str": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "战锤肉体涂圣水",
+              "雷圣双重击",
+              "物理超度"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "大锤淋圣水一记重击配合圣光将亡灵将军头骨彻底粉碎的物理法师"
+          },
+          {
+            "id": "B",
+            "text": "你根据骸骨将军的骨骼拼装结构，用微弱的净化雷电精准打断了它脊椎中央的死灵线圈，让整具骸骨失去魔法支撑，如多米诺骨牌般散落一地。",
+            "npcReply": "骸骨瞬间堆成小山。‘极其高明的结构解构！你击碎了死灵法术的魔力流动关节点！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "死灵线圈打断",
+              "魔力流切断",
+              "骨节卸载"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "分析亡灵力学连结点以电击脉冲打断魔力流使骨架溃散的法医"
+          },
+          {
+            "id": "C",
+            "text": "你试图去和白骨将军“贴贴”，大喊“先祖之灵，俺要用爱感化你！”，结果被白骨将军一骨爪刺穿了锁骨，差点被死灵之火烧焦了灵魂。",
+            "npcReply": "你惨叫着从墓碑堆里爬出。‘这家伙全身挂满诅咒黑刺！你居然去熊抱它？！你的爱能防魔吗？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "强行熊抱",
+              "骸骨刺穿",
+              "死灵火烧"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "强抱全身涂毒长满倒刺亡灵意图拥抱感化反被刺穿胸骨的蠢材"
+          },
+          {
+            "id": "D",
+            "text": "你抢走白骨将军的肋骨，把它当成巨大的排琴，当场用你的粗壮手指敲出了一首欢快的《小星星》，在极度欢快和荒谬的音波中，死灵法术的力场直接紊乱，白骨将军散架了。",
+            "npcReply": "白骨将军崩溃了。‘死灵法术被你敲门板般的噪音彻底震碎了力学平衡！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "肋骨木琴",
+              "音波震爆",
+              "魔法紊乱"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "卸下白骨肋排用大铁锤当排钟奏出欢快《小星星》引魔力紊乱的怪才"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_sacred",
+        "targetId": "guild_cleric",
+        "title": "圣物防线",
+        "scene": "邪教徒偷走了神殿的“战神法典”，圣物被施加了极其恶毒的“凡人触碰即死”的虚空诅咒，此时他们正试图将法典运走。",
+        "prompt": "面对这个致命的圣物，你决定：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你狂吼着冲过去，丝丝毫顾虚空诅咒，用你天生坚不可摧的巨人铁骨和对诅咒的高抗性，直接用巨大的肉掌死死握住法典，任凭虚空火焰在手上燃烧，大步跨回神殿。",
+            "npcReply": "法典重归神坛。‘用硬骨顶着诅咒强抢圣物，你对神明的忠诚简直如钢铁般不可动摇！’",
+            "scoreDelta": {
+              "con": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "强纳圣物",
+              "铁掌抓火",
+              "抗性全开"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "顶着恶毒灼烧强行徒手合抱法典归位的重装圣血武士"
+          },
+          {
+            "id": "B",
+            "text": "你不用肉身触碰，而是利用地上的大理石板和铜索搭成了一个物理绝缘的真空容器，将法典套在里面安全运回，并用神圣雷电将表面的虚空能量悉数剥离。",
+            "npcReply": "法典安然无恙。‘极其冷静的物理隔离，你成功在不触发即死诅咒的前提下带回了圣物！’",
+            "scoreDelta": {
+              "con": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "容器组装",
+              "电离剥离",
+              "物理隔离法"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "设计岩石隔离槽并利用雷弧气化外层虚空膜的机电祭司"
+          },
+          {
+            "id": "C",
+            "text": "你大喊“俺的胃是最好的保险箱！”，张开大嘴试图直接把沾满诅咒的法典吞进肚子里，结果诅咒在胃里爆发，痛得你满地打滚，胃酸逆流。",
+            "npcReply": "你狂吐酸水。‘圣书上写着致命即死诅咒！你竟然想把它塞进消化道？！快服泻药！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "吞噬法典",
+              "内脏灼烧",
+              "毒素泄露"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "狂妄吞咽致命诅咒法典导致内脏黏膜大范围烧穿的极品吃货"
+          },
+          {
+            "id": "D",
+            "text": "你给脚掌上绑上两个邪教徒假装是“人肉拖鞋”，然后踩着他们一路尖叫着划向法典，用头把法典“顶”进了旁边的圣水池里。",
+            "npcReply": "法典在圣水里冒出白烟。‘这用人当旱冰鞋的做法虽然人神共愤……但法典确实被净化了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "人肉旱冰鞋",
+              "顶球回槽",
+              "圣水洗礼"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "踩踏邪教徒滑行以头球姿势把法典顶入圣水池的抽象运动手"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_blessing",
+        "targetId": "guild_cleric",
+        "title": "雷霆祝祷",
+        "scene": "决战前夕，小队面临压倒性的敌军，同伴们都在为实力的差距而感到极度沮丧和恐慌，士气低落。",
+        "prompt": "你的神圣雷霆祝福方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你用战锤敲击盾牌，大吼着将战神的愤怒化作无尽 of 雷光。数道细小的蓝色雷电链准确降临在每个队友的武器上，让他们全身充满酥麻的雷霆战意。",
+            "npcReply": "队友们大吼着握紧武器。‘雷霆附魔！这酥麻的电荷瞬间扫空了所有懦弱！’",
+            "scoreDelta": {
+              "wis": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "雷霆加持",
+              "电荷鼓舞",
+              "士气爆棚"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "向众人降下不伤人的感应电弧加持战刃引爆士气的电镀牧师"
+          },
+          {
+            "id": "B",
+            "text": "你给每个队友的防具上安装了微型的电荷释放电极，让他们在被击中的瞬间能对敌人释放微弱的麻痹电弧，极大地提升了战术容错率。",
+            "npcReply": "队友们防具噼啪作响。‘极佳的被动麻痹防御！每次被砍都能反弹电弧，防守端稳了！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "静电防具",
+              "电磁反弹",
+              "麻痹领域"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "在全队甲片外覆加电荷微触发器建立被动近防静电屏障的学者"
+          },
+          {
+            "id": "C",
+            "text": "你为了强行“电击疗法”，直接用高压闪电去轰击队友的脑门，大喊“雷劈一劈就精神了！”，结果把队友全部劈得头发焦黑、浑身痉挛地瘫倒在地。",
+            "npcReply": "队友们翻着白眼口吐白沫。‘你这是在剿灭队友吗？！高压闪电能把人的天灵盖劈开！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "雷劈天灵盖",
+              "全员烤焦",
+              "阵线崩溃"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "高额雷霆猛击队友天灵盖实施野蛮电疗导致集体口吐白沫的法盲"
+          },
+          {
+            "id": "D",
+            "text": "你抱来一整框大土豆塞给队友，宣称“这是战神开过光的雷霆地雷”，然后带头在脸上用锅底灰画鬼脸，跳起“土豆雷霆祭祀舞”。",
+            "npcReply": "同伴们笑得上气不接下气。‘虽然土豆根本不带电……但跳完这魔性舞蹈后确实一点都不怕了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "土豆地雷",
+              "鬼脸祭天",
+              "荒诞舞姿"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "把生土豆当成闪电法器在脸上涂黑跳滑稽舞消解战前恐惧的谐星"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_exorcism",
+        "targetId": "guild_cleric",
+        "title": "恶魔退散",
+        "scene": "试炼村落里，一个小女孩被虚空恶魔附身，她全身漂浮在半空中，口中发出恐怖的异界低语，村民们都束手无策。",
+        "prompt": "你的巨人神圣驱魔仪式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你大步走上前，双手合十高念圣言，亮起神圣的金色雷霆，右手极其温柔但极其沉重地按在小女孩的额头上，用纯粹的神圣雷弧将附身的恶魔强行击碎并排出体外。",
+            "npcReply": "恶魔化作青烟消散。‘神圣雷火的纯粹热量！你用温暖而霸道的神力蒸干了恶魔！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "雷火额杀",
+              "恶魔震爆",
+              "神圣净化"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将一缕温和 of 雷神净火印在孩子额头强行烧穿恶魔魔力的圣疗者"
+          },
+          {
+            "id": "B",
+            "text": "你利用电磁共振的物理学原理，在小女孩身体周围布置了四个强磁铁柱，通过高频微小的雷电振幅，将恶魔的虚空灵魂频率强行共振并剥离出来，用圣水瓶捕捉。",
+            "npcReply": "小女孩安然落地。‘奇迹般的电磁共振灵魂捕捉术！你竟然把驱魔变成了一场声学共振实验！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "磁场定位",
+              "微雷共振",
+              "恶魔吸出"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "采用四极磁石矩阵对附体灵魂实施微震荡频率剥离的音疗师"
+          },
+          {
+            "id": "C",
+            "text": "你为了省事，试图用巨大的重锤“物理驱邪”，宣称“只要把肉体砸扁，恶魔就没有藏身之处了”，结果一锤下去差点把床砸碎，被村民拿着锄头疯狂撵出了村子。",
+            "npcReply": "村民愤怒地朝你扔石子。‘你这明明是故意谋杀！有你拿着两百斤大锤给八岁小孩驱邪的吗？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "物理大锤超度",
+              "砸毁木床",
+              "村民暴动"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图抡起三百斤铁锤搞“物理去魔”把小女孩木床砸成碎片的狂魔"
+          },
+          {
+            "id": "D",
+            "text": "你走到小女孩面前，用巨大的手掌开始疯狂抓挠自己的胳肢窝，然后对着她做出各种各样极其滑稽可笑的巨人鬼脸，恶魔因为承受不住如此低俗和精神污染的笑料，忍俊不禁地从小女孩嘴里喷了出来。",
+            "npcReply": "一团黑气边笑边飞走。‘恶魔竟然是被你的鬼脸活活笑死的……这驱魔方式简直有毒！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "腋下抓挠",
+              "魔性鬼脸",
+              "恶魔笑喷"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用腋下取痒结合大面积脸部肌肉鬼脸让邪灵笑喷的驱邪奇葩"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_cleric_sermon",
+        "targetId": "guild_cleric",
+        "title": "广场布道",
+        "scene": "征兵广场上，教官要求你面向成千上万名市民发表一次关于“雷霆与战神”的神圣布道，以招募信徒。",
+        "prompt": "你的巨人布道方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你直接站在广场中央的巨石上，用战锤狂暴敲击盾牌，震得四周的房瓦哗哗直响。你用如同雷鸣般的宏亮嗓音宣布：“神明不需要懦夫！雷霆会撕裂所有伪善！想要获得力量，就跟老子一起握紧铁锤！”",
+            "npcReply": "广场上传来排山倒海的吼声。‘战火与雷鸣！你的吼声激起了所有人灵魂深处的血性！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "雷鼓动天",
+              "怒斥宣道",
+              "全场应和"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "通过巨锤锤击铜盾发出恐怖噪音震慑全场并用洪亮巨嗓招兵的布道官"
+          },
+          {
+            "id": "B",
+            "text": "你在广场上搭起了一个巨大的电弧发生器，在雷电闪烁的背景中，有条不紊地用几何图表和物理学公式向市民阐述雷电的形成原理和神圣不可侵犯性。",
+            "npcReply": "市民们听得满脸求知欲。‘雷电理学讲座！你成功把布道变成了一场跨时代的自然科学大会！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "电弧发生器",
+              "雷电解构图",
+              "物理神学"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "站在高压感应发生器前讲授雷云对流与云层摩擦起电的教授"
+          },
+          {
+            "id": "C",
+            "text": "you 宣称“只有被雷劈过的人才算真信徒”，在现场引来一道巨大的闪电锁链无差别轰击听众，吓得市民们抱头鼠窜，踩踏事件导致神殿当场被愤怒的市政厅查封。",
+            "npcReply": "广场上一片焦黑。‘这哪里是布道，这明是邪教徒在进行广场大屠杀！快逮捕他！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "天降电雨",
+              "广场暴动",
+              "市政查封"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "在市民集会点降下雷暴洗礼导致全场踩踏死伤惨重的狂热疯子"
+          },
+          {
+            "id": "D",
+            "text": "你给市民们每人分发了一根避雷针，然后戴上特大号的萨满面具，在台上表演“倒立吃洋葱求雨”，宣称这是“雷神降临的滑稽洗礼”。",
+            "npcReply": "市民们笑得合不拢嘴，纷纷登记加入。‘虽然跟信仰毫无关系……但你确实成为了广场上最受欢迎的巨人！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "避雷针赠品",
+              "倒立啃洋葱",
+              "荒诞招募"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "向市民赠送铜避雷针并当场倒立啃咬辛辣洋葱逗乐民众的逗趣者"
+          }
+        ]
+      }
+    ],
+    "guild_druid": [
+      {
+        "id": "ogre_giant_druid_roots",
+        "targetId": "guild_druid",
+        "title": "古树根脉",
+        "scene": "试炼森林的中央，一棵千年战争古木的根脉因为受到深渊污染而疯狂生长，即将把整座精灵哨所绞碎。",
+        "prompt": "面对暴走的古木根须，你的自然沟通方式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你温柔地用粗壮的双手抱住暴走的粗大根茎，将脸颊贴在干瘪的树皮上，发出巨人特有的、低沉如大地震颤的哼唱，安抚古木的痛苦，并用你体内的纯净荒野之血顺着根系反向净化污染。",
+            "npcReply": "根须缓缓松开并缩回地下。‘大地的安抚！你用纯净的荒野血脉完成了最深沉的救赎！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "荒野低吟",
+              "根脉净化",
+              "血脉共鸣"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "双手拥抱树根以生命力反哺清除深渊斑块使古木平静的纯良守卫者"
+          },
+          {
+            "id": "B",
+            "text": "你不直接安抚，而是掏出大斧，通过计算树根受力拉扯的平衡支点，精准斩断了三处多余的畸变分叉，强行利用杠杆应力迫使暴走的根系向相反方向偏折。",
+            "npcReply": "哨所压力瞬间解除。‘精准的植物力学砍伐！你用最小的破坏解决了复杂的缠绕危机！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "平衡支点斩断",
+              "力学偏折",
+              "精准修剪"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "根据拉张剪切力断开坏死根瘤以防连锁力学崩溃的林业工兵"
+          },
+          {
+            "id": "C",
+            "text": "你为了展示巨人的“牙口”，大喊“污染的树皮吃起来像熏肉干！”，试图直接用嘴把几千根带刺的畸变根须啃烂吞下去，结果嘴唇和喉咙被木刺扎烂，毒素导致满脸长毒疮。",
+            "npcReply": "德鲁伊们大惊失色。‘那可是带有深渊魔毒的寄生木！你竟然敢放在嘴里嚼？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "啃食畸变树",
+              "口咽感染",
+              "全身毒疮"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "强行撕咬啃食深渊寄生倒刺木导致食道彻底被木质毒素感染的莽汉"
+          },
+          {
+            "id": "D",
+            "text": "你给暴走的树根画上了花花绿绿的蝴蝶结，然后脱掉外衣，一边疯狂扭屁股，一边高唱《俺是一棵小青草》，古木在极度嫌弃中，浑身起鸡皮疙瘩并自动把所有根须蜷缩了回去。",
+            "npcReply": "哨所士兵叹为观止。‘古树活了上千年……第一次被一个巨人的舞姿恶心到了！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "结蝴蝶结",
+              "小草之舞",
+              "魔性退魔"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "给树根装饰蝴蝶结并跳抽象青草舞污染古树灵智使其被动退缩的怪才"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_whisper",
+        "targetId": "guild_druid",
+        "title": "巨兽沟通",
+        "scene": "试炼峡谷中，一头因为幼崽走失而狂暴的成年猛犸巨兽正在四处冲撞，踩碎了无数营帐，猎人们正准备用弩炮射杀它。",
+        "prompt": "面对濒死的猛犸巨兽，你打算如何安抚它？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你直接张开双臂挡在弩炮前，缓缓走向愤怒的猛犸，伸出巨大的手掌温柔地抚摸它长满长毛的鼻子，用巨人特有的兽语低语，并在旁边大石头底下找到了被困的小猛犸。",
+            "npcReply": "猛犸巨兽用头蹭了蹭你。‘用真心沟通狂兽，保护幼崽，你赢得了远古巨兽的尊敬！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "兽语沟通",
+              "幼崽救援",
+              "猛犸抚摸"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "张臂阻挡重箭走向长毛猛犸低吟远古泰坦长歌安抚其狂躁的护兽者"
+          },
+          {
+            "id": "B",
+            "text": "你用铁索和滑轮迅速搭建了一个野兽限制器，引诱猛犸巨兽踩入，在不伤及它皮肉的情况下强行将其固定，随后开始有计划地在四周喷洒草本镇静剂。",
+            "npcReply": "猛犸巨兽缓缓睡去。‘极其合理的物理限制与麻醉！你用科学手段阻止了这场浩劫！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "滑轮限制网",
+              "草本气雾麻醉",
+              "安全捕获"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "运用套索卡口组装安全驻停网并释放高效宁神香精强力安眠的工兵"
+          },
+          {
+            "id": "C",
+            "text": "你为了展示巨人的“威严”，试图用头去猛撞猛犸的脑门，大喊“俺才是这峡谷的老大！”，结果被猛犸一象牙挑飞了半只耳朵，额头鲜血淋漓。",
+            "npcReply": "你捂着耳朵大叫。‘那是重达十吨的猛犸！你跟它玩头槌？！没把你撞死算你命大！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "巨兽头槌",
+              "象牙挑飞",
+              "血染峡谷"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图与狂暴猛犸发生正面额头物理硬碰被象牙撞翻碎裂头骨的傻大个"
+          },
+          {
+            "id": "D",
+            "text": "你当场把自己的衣服脱掉反着穿在头上假装自己是“第二只猛犸”，学着猛犸的姿势趴在地上，屁股一扭一扭地发出“噗噗”的叫声，猛犸巨兽被你这奇葩的同类拟态震得站在原地怀疑犸生。",
+            "npcReply": "猛犸收起了长牙，满脸困惑。‘这过于魔性的公猛犸拟态……虽然很不要脸，但确实拖延了时间。’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "衣服戴头上",
+              "奇葩拟态",
+              "母犸沉默"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用长袍套在双臂扮成长鼻怪做出各种抽象同类滑稽动作唤醒猛犸理智的戏精"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_swamp",
+        "targetId": "guild_druid",
+        "title": "沼泽净化",
+        "scene": "试炼村落旁边的神圣黑水沼泽因为邪能污染发生异变，剧毒的酸性沼泽泥浆正在腐蚀周围的农田，农夫们愁眉苦脸。",
+        "prompt": "对于这片受到污染的剧毒湿地，你决定：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你闭上双眼，双脚稳稳扎进剧毒酸泥中，将自身作为连接地脉的桥梁，吟唱远古大地之咒，强行把沼泽里的污染之毒引入你粗壮的巨人双腿，用自身的净化血脉把酸泥转化为肥沃的腐殖土。",
+            "npcReply": "黑水沼泽渐渐变得清澈。‘用肉体净化大地！你用巨人的坚韧血肉拯救了整片湿地！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "地脉之桥",
+              "肉体滤毒",
+              "沼泽沃土化"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "以厚重皮肉直接承受强酸浸泡通过大地咒语将其转化肥沃黑土的德鲁伊"
+          },
+          {
+            "id": "B",
+            "text": "你不盲目肉身过滤，而是通过投放石灰石和长纤维泥炭，利用酸碱中和原理和吸附过滤，有条不紊地建立了一套三级物理沉淀池，让污染物沉降到池底。",
+            "npcReply": "水质迅速转好。‘精彩的化学和水利工程！你用最少的成本建立了一套高效的生态沉淀系统！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "石灰中和",
+              "沉淀池构建",
+              "三级过滤"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "计算酸碱滴定度投放白垩石粉构建多级生态澄清堰板的工学祭司"
+          },
+          {
+            "id": "C",
+            "text": "你宣布“酸性烂泥正好用来做泥浴！”，直接脱光躺在酸液里疯狂打滚，试图通过“皮肤呼吸”来净化酸泥，结果全身皮肤被重度酸蚀烧伤，痛得大呼小叫。",
+            "npcReply": "你满身燎泡地被抬了出来。‘那可是带有强烈腐蚀性的邪能酸泥！你居然躺在里面游泳？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "酸泥洗澡",
+              "重度酸蚀",
+              "全身烫伤"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "把强腐蚀黑水当矿泉疗养裸躺其中泡泥巴浴导致表皮大范围烧焦的傻子"
+          },
+          {
+            "id": "D",
+            "text": "你从包里摸出几千颗大蒜塞进鼻孔，然后用屁股对着沼泽疯狂排气，宣称“以毒攻毒，巨人之风可以吹散所有异味”。",
+            "npcReply": "沼泽上升起了一大片绿色的瓦斯云。‘快撤退！这家伙把毒沼泽引爆了！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "鼻孔塞蒜",
+              "沼泽引爆",
+              "生化驱散"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "给鼻孔塞入大蒜高频释放体内废气试图用臭气对冲沼泽酸气的荒诞狂魔"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_volcano",
+        "targetId": "guild_druid",
+        "title": "地热熔炉",
+        "scene": "试炼火山的岩浆湖发生泄露，滚烫的赤红岩浆正顺着裂缝向底部的森林和庄稼流去，周围的热浪让空气扭曲。",
+        "prompt": "面对即将毁灭森林的火山熔岩，你选择：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你狂吼着跳向岩浆边缘，用巨大的身体死死抵住松动 of 火山岩，引导地热能量顺着你的厚实脊椎流向四周的岩石，将地热固化，强行用身体筑起防堵大坝。",
+            "npcReply": "岩浆凝固成黑色的黑曜石。‘肉身筑坝，固化地热！你的坚韧简直比岩石还要可靠！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "肉体火山坝",
+              "地热固化",
+              "黑曜岩大壁"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "双手抵住融化岩壁将火焰热能导入自身厚实骨架强凝结熔岩的筑垒者"
+          },
+          {
+            "id": "B",
+            "text": "你迅速用大斧砍倒一排坚硬的铁木，在裂缝前开辟了一条定向分流渠，将岩浆引导到无人的乱石废墟中，顺便利用其热能为村子提供温差热力发电。",
+            "npcReply": "熔岩被顺利分流。‘极佳的灾害分流！你甚至把地热危机转化成了生态温室能源！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "定向引流渠",
+              "温差能利用",
+              "防灾工程学"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "通过定向爆破开拓分流斜槽引导流体向废石滩排泄并储热的机械工"
+          },
+          {
+            "id": "C",
+            "text": "你大喊“岩浆是天然的温水游泳池！”，张开双臂直接跳进了滚烫的熔岩湖里试图洗热水澡，结果全身瞬间大面积碳化，只剩下骨架在火光里直立。",
+            "npcReply": "牧师的复活术瞬间降临。‘你这家伙真的有脑子吗？！岩浆是融化的石头！你瞬间气化了懂不懂？！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "熔岩洗澡",
+              "瞬间碳化",
+              "白骨立地"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "跳入一千度熔岩池洗热水澡导致大面积皮肉气化沦为白骨的极品铁头娃"
+          },
+          {
+            "id": "D",
+            "text": "你找来两个特大号的南瓜绑在脚底下，在岩浆流的上方表演起“南瓜滑浆舞”，一边大喊“看俺表演水上漂！”，一边利用南瓜的浮力在岩浆表面疯狂滑行。",
+            "npcReply": "南瓜起火的瞬间你安全回到了岸上。‘南瓜被烤糊的香味传遍了山谷……你这家伙简直是用命在杂耍！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "南瓜漂移鞋",
+              "火热滑行",
+              "南瓜烤肉香"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "给鞋底绑缚巨型耐热南瓜在熔岩表面滑行大跳即兴踢踏舞的杂耍天才"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_earth",
+        "targetId": "guild_druid",
+        "title": "深地共振",
+        "scene": "试炼村庄下方的千米矿道发生了特大塌方事故，多名矮人矿工被困在极深的地底，罗盘和搜救声纳全被厚重的岩层阻断。",
+        "prompt": "面对被深层岩土阻断的幸存者，你决定：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你将巨大的耳朵紧紧贴在冰冷的矿坑坚石上，全身心沟通大地的共振，捕捉废墟深处微弱的呼吸与敲击频率，然后用温柔的巨力将巨石一块块搬开，刨出一条生命甬道。",
+            "npcReply": "被困矿工被顺利救出。‘通过大地的回响定位生命！你向我们展示了荒野巨人的深地之耳！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "深地共振",
+              "矿难刨石",
+              "生命甬道"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "侧耳俯身听取深层泥石中的敲打波形并徒手搬卸数十吨塌方块的搜救员"
+          },
+          {
+            "id": "B",
+            "text": "你利用回声定位和波动震荡仪的力学数据，反向推算出空洞的具体坐标，并在支撑柱上安装了定向千斤顶，阻止了矿道的二次塌方。",
+            "npcReply": "矿道结构趋于稳定。‘完美的工程救援！你用结构力学保住了矿坑的支撑结构！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "声波定位",
+              "定向支护",
+              "二次塌方预防"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "根据力波散射矩阵解算碎石堆间空腔网格并运用杠杆建立斜拉支柱的极客"
+          },
+          {
+            "id": "C",
+            "text": "你宣称自己是“钻地土行孙”，直接用铁头去猛撞坚硬的矿道山石，试图用头顶出一条路，结果额头被撞得满脸是血，矿道发生连锁塌方，差点把自己埋在里面。",
+            "npcReply": "你灰头土脸地被拽出来。‘那可是花岗岩矿床！你拿头去跟大地死磕？！差点把自己活埋！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "铁头碎花岗",
+              "连锁塌方",
+              "当场活埋"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "用铁头撞击矿井破碎拱梁企图物理打孔导致大面积落石活埋的莽夫"
+          },
+          {
+            "id": "D",
+            "text": "你找来一根大竹筒对着矿壁大吼《野人disco》，巨大的超低音共振让矿洞壁上的石块像爆米花一样往外弹射，竟然奇迹般地在震颤中震出了一条光滑的孔道。",
+            "npcReply": "矮人矿工从孔道里钻了出来，满脸耳鸣。‘这魔性的低音震动……你竟然靠唱歌把花岗岩震出了孔道！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "竹筒低音炮",
+              "石爆共振",
+              "disco打通"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用粗竹筒制作巨型扩音器大声吼歌引发大理石板高频剪切剥离的魔性歌手"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_flora",
+        "targetId": "guild_druid",
+        "title": "花卉低语",
+        "scene": "试炼温室中，一朵极其珍贵的神圣“九生兰花”因为气候异常而生命垂危，它的花瓣开始枯黄，魔法灵光极其微弱。",
+        "prompt": "为了拯救这朵娇弱的神圣之花，你的巨人做法是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极度温柔地用你那胡萝卜粗的食指指尖点在兰花幼嫩的叶片上，将体内的雷霆生机化作微小的感应电弧轻轻抚摸兰花，顺便把自己温热的巨人呼吸吹拂在花瓣上提供适宜的温度。",
+            "npcReply": "兰花舒展花瓣，吐出芬芳。‘心有猛虎，细嗅蔷薇！你竟然能用巨人的体魄照料如此娇嫩的花朵！’",
+            "scoreDelta": {
+              "wis": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "细指抚摸",
+              "微电流施肥",
+              "巨人吹气"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "指尖亮起弱感应电能模拟阳光脉冲对受冻兰花温和加温复苏的柔情祭司"
+          },
+          {
+            "id": "B",
+            "text": "你分析了温室的温湿度曲线，精确调整了四周吸热矿石的摆放角度，并通过往土壤里掺入适量的富铁雷击土，从化学层面调节了基质的酸碱度。",
+            "npcReply": "兰花长出了新芽。‘极其合理的理化基质改良！你用科学手段让濒死的植物重获新生！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "吸热石角度",
+              "雷击土酸度",
+              "基质调控"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "运用多孔泥炭土与碳化腐殖质调配黄金营养土进行栽培的农学家"
+          },
+          {
+            "id": "C",
+            "text": "你为了展示巨人的“热情”，把兰花直接拔出来泡进滚烫的圣水池里，大喊“温泉洗一洗，花朵更精神！”，结果兰花当场被烫成了一盘温水煮青菜。",
+            "npcReply": "兰花化作了一滩烂泥。‘那可是极寒高山兰！你把它扔进热水里泡温泉？！你这刽子手！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "拔花泡温泉",
+              "兰花脱水",
+              "彻底烫死"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "直接将高山耐寒兰花浸泡在热水中泡澡导致其细胞壁破裂烫死的蠢贼"
+          },
+          {
+            "id": "D",
+            "text": "你抱来一整箱臭气熏天的陈年鲱鱼，把腐烂的鱼头埋在花盆里，宣称“根据俺的荒野经验，越臭的肥料兰花越喜欢”，结果兰花被浓郁的臭气熏得自动关闭了花瓣开始装死。",
+            "npcReply": "温室里的植物全部缩回了叶片。‘你这是在用生化武器折磨温室！全场植物都被你熏晕了！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "鱼头施肥",
+              "生化恶臭",
+              "温室中毒"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "将散发狂暴臭气的生化鱼骨强行深埋花盆充当黄金氮肥引起全房窒息的奇葩"
+          }
+        ]
+      },
+      {
+        "id": "ogre_giant_druid_totem",
+        "targetId": "guild_druid",
+        "title": "图腾唤醒",
+        "scene": "试炼高地上，矗立着一根高达十米、沉寂了数百年的雷霆巨兽石雕图腾。考官要求你用自然之力将其重新唤醒，以展现对风暴的感悟。",
+        "prompt": "你唤醒图腾的仪式是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你张开双臂合抱粗大的图腾柱，将额头死死抵在石纹上，闭眼吟唱荒野氏族的雷霆低语。你体内的巨人血脉与图腾产生深层共鸣，图腾上的符文渐次亮起耀眼的电光，最终直冲云霄。",
+            "npcReply": "天空降下一道蓝色的闪电。‘血脉共鸣，图腾唤醒！你证明了你是雷霆真正的代言人！’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "empathy": 2
+            },
+            "triggerTags": [
+              "图腾合抱",
+              "符文激活",
+              "天降雷鸣"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "用额头抵住图腾柱释放体内雷电微粒激活风暴共振腔的纯血萨满"
+          },
+          {
+            "id": "B",
+            "text": "你分析了图腾柱内部的金属铜线分布，用大锤砸向图腾底部的磁石，产生强大的瞬时电磁感应，迫使符文电路受激亮起，以最科学的方式重构了共鸣。",
+            "npcReply": "图腾柱电路发光。‘完美的物理感应唤醒！你竟然找到了图腾内部的古老感应回路！’",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "磁石大锤",
+              "感应电路重构",
+              "电磁共鸣"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "运用砸击产生的压电效应强行激发图腾内部氧化铜导电网的工师"
+          },
+          {
+            "id": "C",
+            "text": "you 试图展示力量，直接往图腾上撒尿，声称“用巨人的体液可以强行净化沉睡的图腾”，结果被图腾柱残留的高压防盗雷电当场击中，尿流导电，下身被电得直冒青烟。",
+            "npcReply": "你捂着下半身在地上惨叫。‘图腾柱上有防御外来侮辱的禁忌高压防线！你这家伙纯属咎由自取！’",
+            "scoreDelta": {
+              "con": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "液体侮辱",
+              "导电电击",
+              "下身冒烟"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "试图用巨人的液体泼洒图腾反遭高压感应雷顺流电击的恶劣分子"
+          },
+          {
+            "id": "D",
+            "text": "你抱来两个特大号的荒野野蜂窝挂在图腾柱上，然后全身涂满蜂蜜，在图腾柱前跳起了滑稽至极的“狗熊蹭树舞”，宣称这是“雷神最喜欢的欢快蹭蹭洗礼”。",
+            "npcReply": "图腾柱在被无数野蜂摩擦的声音中被蜂毒酸性腐蚀，符文歪歪扭扭地亮了起来。‘虽然过程惨不忍睹……但你这狗熊蹭树居然真的触发了压力感应！’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 2
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "野蜂巢引流",
+              "狗熊蹭树舞",
+              "摩擦电符文"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "以肥胖身躯涂抹蜂皇浆摩擦图腾石柱大跳狗熊蹭痒舞激活压感的怪杰"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "endingId": "ogre_giant_accepted_barbarian",
+      "endingType": "accepted",
+      "title": "不屈之怒",
+      "verdictLine": "突破先锋营录用你。公会决定把第一面被撞开的门和第一声惨叫都记在你的名下。",
+      "explanation": "你用坚韧的生命力和极速积聚的血液狂性向世人宣告，巨人的愤怒不是简单的乱打，而是将每一丝痛苦精算并双倍反弹的狂暴艺术。你的痛觉是你的狂暴催化剂。",
+      "tableFunction": "狂暴反弹",
+      "playableFlaw": "由于对痛苦有着变态般的狂热，你有时会主动去撞仙人掌以保持怒气状态。",
+      "nextHook": "在战场上担任第一波破盾的‘人肉冲锋车’，或者在营地里负责帮厨师用指甲盖切菜。",
+      "recommendedClass": [
+        "guild_barbarian"
+      ],
+      "tags": [
+        "痛苦狂暴",
+        "铁壁肉盾",
+        "荒野之怒"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_accepted_fighter",
+      "endingType": "accepted",
+      "title": "要塞门墙",
+      "verdictLine": "战士训练厅录用你。你不只是站在防线前面，你本人就是那条防线。",
+      "explanation": "你将巨人体型发挥到了极致，只要你举起塔盾站在通道中央，你本身就是一扇不可被打破的城门。以静制动，让对手在绝望中筋疲力尽。",
+      "tableFunction": "塔盾铁幕",
+      "playableFlaw": "你有着强烈的‘门框狂热’，每当你看到狭窄的门道，就忍不住背起门板假装自己是王八。",
+      "nextHook": "在狭隘要塞防御中担任单人城门防线，或者在行军中负责搬运重型军火箱和防爆挡板。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "tags": [
+        "重防铁盾",
+        "阵线守卫",
+        "以静制动"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_accepted_cleric",
+      "endingType": "accepted",
+      "title": "雷光主祭",
+      "verdictLine": "誓约医疗所录用你。雷声、圣徽和你那双过大的手暂时达成了停火协议。",
+      "explanation": "你以肉身沟通雷电风暴，将雷火融进神圣赞歌。你的每一次大吼与捶击，都是战神意志在这个世界的回响，纯粹的雷火将恶魔物理蒸干。",
+      "tableFunction": "雷火超度",
+      "playableFlaw": "你坚持用雷电来给自己的大胡子‘做造型’，导致你一年四季都散发着一股烧焦的毛发臭味。",
+      "nextHook": "在前线布道广场担任千人战意附魔的雷光祭司，或者在神殿负责给圣水池接发电机充电。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "tags": [
+        "神圣雷火",
+        "战圣代言",
+        "物理驱魔"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_accepted_druid",
+      "endingType": "accepted",
+      "title": "根脉低语者",
+      "verdictLine": "自然顾问席录用你。森林决定容忍一个会走路的山头，前提是你别再拔错树。",
+      "explanation": "你用粗壮的双臂沟通巨木深处的灵智，用荒野血脉净化深渊污染。你那庞大的身躯不仅不排斥自然，反而是大自然根系中温度最温和的生机枢纽。",
+      "tableFunction": "血脉反哺",
+      "playableFlaw": "你睡觉时极度喜欢把双脚深深插进泥土里，结果常常在清晨被当成一棵会打呼噜的‘泰坦树雕’。",
+      "nextHook": "在受灾森林担任重灾区灵脉净化的先锋，或者在后方苗圃负责把百年老树拔起来晒太阳换土。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "灵脉净化",
+        "血反哺",
+        "巨树搬运"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_probation_barbarian",
+      "endingType": "probation",
+      "title": "临时开路重锤",
+      "verdictLine": "你足够凶，也足够响，但先锋营暂时只敢给你挂见习牌。",
+      "explanation": "你的冲击力让考官满意，你的路线规划让地图师流泪。公会愿意让你上前线试用，但会安排三名旗手专门提醒你：敌人在前面，补给车在后面，厨师不是战利品。",
+      "tableFunction": "高爆发前排和地形破坏手，适合用一次冲锋改变战场形状。",
+      "playableFlaw": "听到号角就容易把所有门、墙和可疑家具都当成冲锋对象。",
+      "nextHook": "你被派去拆一座桥，但委托书上用红字写着：只拆敌人那边。",
+      "recommendedClass": [
+        "guild_barbarian"
+      ],
+      "tags": [
+        "见习",
+        "高危开路",
+        "方向感观察"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_probation_fighter",
+      "endingType": "probation",
+      "title": "移动拒马试用员",
+      "verdictLine": "训练厅承认你很能挡，但还没确认你挡的是敌人还是全队路线。",
+      "explanation": "你在阵线中表现出可靠的承压能力，也展示了可怕的门框事故潜力。教官决定先把你编入重盾试用队，学习如何成为防线，而不是成为堵住所有撤退路线的大型麻烦。",
+      "tableFunction": "稳定承伤和通道封锁，能用体型给队友制造安全角。",
+      "playableFlaw": "在狭窄地城中需要提前声明自己打算转身，否则那会变成一个团队事件。",
+      "nextHook": "你将守住一条只容得下半个你的矿道，敌人很多，出口很少。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "tags": [
+        "见习",
+        "阵线训练",
+        "空间事故"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_probation_cleric",
+      "endingType": "probation",
+      "title": "雷疗见习医官",
+      "verdictLine": "医疗所觉得你有信仰，也有电量，只是暂时缺少剂量概念。",
+      "explanation": "你确实能在战地压力下保护伤员，也确实让一整排病床同时冒烟。雷灯修女给你发了见习徽章和一本厚到能砸晕小恶魔的《神术剂量守则》。",
+      "tableFunction": "前线辅助和急救支点，能在混乱中稳定队伍士气。",
+      "playableFlaw": "总想用更响的祷告解决更小的问题，连包扎绷带都像在主持风暴仪式。",
+      "nextHook": "一批被诅咒的士兵需要救治，而你的导师只允许你使用三成音量。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "tags": [
+        "见习",
+        "雷疗",
+        "剂量未明"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_probation_druid",
+      "endingType": "probation",
+      "title": "泥沼观察对象",
+      "verdictLine": "自然顾问席愿意留下你，但先把你登记为半个学徒、半个生态风险。",
+      "explanation": "你听得见荒野的呼吸，也经常把呼吸声理解成拔树许可。长老没有赶你走，只是在你的档案上夹了三张生态赔偿单，决定让你从看守幼苗开始学起。",
+      "tableFunction": "荒野控场和大型搬运，适合解决普通人解决不了的地形问题。",
+      "playableFlaw": "你对自然的热爱很真诚，就是偶尔爱得太用力。",
+      "nextHook": "一片古林要求你赔偿三棵树，方式是护送它们的树苗穿过战区。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "见习",
+        "生态赔偿",
+        "荒野试用"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_transferred_to_fighter",
+      "endingType": "transferred",
+      "title": "被军令拴住的山",
+      "verdictLine": "先锋营嫌你太会停下来思考，战士训练厅却很欣赏这块会听命令的巨石。",
+      "explanation": "你报名时像个冲锋者，考核里却总在最关键的位置站住、卡线、护住后排。教官们一致认为，把你丢进纯狂暴队伍太浪费了，你更适合成为纪律锻造过的移动城门。",
+      "tableFunction": "主防线和空间控制位，负责让敌人撞上你而不是撞上脆皮队友。",
+      "playableFlaw": "偶尔会因为太认真执行防守命令，在战斗结束后还站在原地等撤防许可。",
+      "nextHook": "训练厅让你守一扇没有门的门，证明防线有时只需要一个足够固执的人。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "rejectedClass": "guild_barbarian",
+      "tags": [
+        "转岗",
+        "防线支点",
+        "纪律驯化"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_transferred_to_barbarian",
+      "endingType": "transferred",
+      "title": "盾墙留不住雷步",
+      "verdictLine": "训练厅的队列容不下你那种会把地板踩出鼓点的战斗热情。",
+      "explanation": "你试图当个战士，但每次军令刚念到一半，你的脚已经带着整条防线往前冲了。与其让教官天天修地板，不如把你送去先锋营，让那股雷步砸在敌人脸上。",
+      "tableFunction": "冲锋破阵和高压压制，适合把胶着战打成地形灾害。",
+      "playableFlaw": "对等待、列队和战术会议有天然过敏反应。",
+      "nextHook": "先锋营要求你在不撞塌友军塔楼的前提下撞塌敌军塔楼。",
+      "recommendedClass": [
+        "guild_barbarian"
+      ],
+      "rejectedClass": "guild_fighter",
+      "tags": [
+        "转岗",
+        "雷步冲锋",
+        "纪律失败"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_transferred_to_druid",
+      "endingType": "transferred",
+      "title": "把祷词听成山风",
+      "verdictLine": "医疗所说你的信仰更像风暴前的树林，建议自然顾问席接手。",
+      "explanation": "你举起圣徽时，周围的草叶先动了；你念祷词时，回应你的不是神殿钟声，而是地下水脉。雷灯修女认为这不是失败，只是你找错了聆听对象。",
+      "tableFunction": "荒野支援和自然控场，能用巨体与环境一起保护队伍。",
+      "playableFlaw": "容易在神殿里对盆栽产生过度庄严的敬意。",
+      "nextHook": "顾问席让你去安抚一座即将醒来的山，而它听起来脾气很差。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "rejectedClass": "guild_cleric",
+      "tags": [
+        "转岗",
+        "灵脉共鸣",
+        "自然回应"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_transferred_to_cleric",
+      "endingType": "transferred",
+      "title": "雷鸣像一段祷告",
+      "verdictLine": "自然顾问席觉得你太爱把风暴解释成神谕，医疗所倒是很需要这股嗓门。",
+      "explanation": "你报名德鲁伊时说自己在听大地，结果每次听完都会开始布道。长老叹了口气，把你连同那根被你当圣杖的古树枝一起送去誓约医疗所。",
+      "tableFunction": "前线祝福和战地急救，靠威慑、信仰和雷鸣稳住局面。",
+      "playableFlaw": "分不清自然启示和宗教仪式，经常把林间晨雾讲成神迹发布会。",
+      "nextHook": "医疗所让你主持一场安静祷告，所有人都对此缺乏信心。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "rejectedClass": "guild_druid",
+      "tags": [
+        "转岗",
+        "雷鸣祷告",
+        "信仰过载"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_blacklisted_appetite",
+      "endingType": "blacklisted",
+      "title": "高危胃袋事故",
+      "verdictLine": "公会拒绝正式录用你，但边境清障队已经开始询问你的饭量和拆墙报价。",
+      "explanation": "你的胃口和战斗力都极具说服力，问题是它们经常同时启动。考官认为你还不能进入正规队伍，否则补给账本会先于敌人阵亡。",
+      "tableFunction": "适合危险边境、攻城承包和荒野生存剧本的高风险外援。",
+      "playableFlaw": "看到大型目标时会先判断它能不能打，再判断它能不能吃。",
+      "nextHook": "一个矿镇雇你处理塌方，报酬按清出的石头和没吃掉的骡子计算。",
+      "recommendedClass": [
+        "guild_barbarian"
+      ],
+      "tags": [
+        "黑名单",
+        "暴食事故",
+        "边境外包"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_blacklisted_thunder",
+      "endingType": "blacklisted",
+      "title": "雷疗事故档案",
+      "verdictLine": "医疗所拒绝签字，因为你让治疗室看起来像刚被小型风暴审问过。",
+      "explanation": "你的信仰很响，你的雷也很响，病人的尖叫更响。公会承认你有价值，但暂时只愿把你列入异常战地支援名单，而不是正规医官。",
+      "tableFunction": "适合极端战场救援或邪典风暴萨满路线，救人和吓人通常同时发生。",
+      "playableFlaw": "你坚信任何濒死状态都可以通过更庄严、更响亮的雷鸣解决。",
+      "nextHook": "一支敢死队邀请你随行，条件是每次施法前先喊倒计时。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "tags": [
+        "黑名单",
+        "雷疗事故",
+        "异常支援"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_blacklisted_mire",
+      "endingType": "blacklisted",
+      "title": "泥沼灾害备案",
+      "verdictLine": "自然顾问席拒绝录用你，因为你把生态实验做成了地形灾害。",
+      "explanation": "你对荒野充满热情，荒野对你的热情暂时表示害怕。长老们没有否认你的潜力，只是认为正规队伍承受不起你每次顿悟后的生态账单。",
+      "tableFunction": "适合荒野灾害、沼泽怪谈和高危探索线的巨型变量。",
+      "playableFlaw": "你总能把简单的自然互动升级成需要地图重画的大事件。",
+      "nextHook": "一个沼泽部落请你帮忙搬走毒雾源头，特别强调不要尝味道。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "黑名单",
+        "生态灾害",
+        "泥沼变量"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_blacklisted_wallbreaker",
+      "endingType": "blacklisted",
+      "title": "误拆友军门",
+      "verdictLine": "训练厅拒绝录用你，因为你证明了自己能拆门，也能拆错门。",
+      "explanation": "你的破坏力没有任何问题，问题是识别敌我建筑时太依赖直觉。公会决定暂不让你进入正规军阵，但攻城承包商显然对你很感兴趣。",
+      "tableFunction": "攻城、破障和混乱战场中的高风险破坏手。",
+      "playableFlaw": "所有门在你眼里都有罪，只是罪行大小不同。",
+      "nextHook": "一名承包商给你一张城防图，第一句话是：红色的才能拆。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "tags": [
+        "黑名单",
+        "误拆",
+        "攻城外包"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_absurd_biochemical",
+      "endingType": "absurdAccepted",
+      "title": "生化风暴狂舞",
+      "verdictLine": "公会本想拒绝你，直到发现敌军真的会被你这套荒诞战术吓到后退。",
+      "explanation": "你把胃袋、舞步、毒雾和雷声组合成了一种很难被军法定义的战斗艺术。考官沉默了很久，最后把你塞进最远的奇袭小队，并要求所有人提前购买鼻塞。",
+      "tableFunction": "用极端荒诞、气味威慑和巨体表演吸引仇恨的混乱前排。",
+      "playableFlaw": "你的战术经常先击穿队友的心理防线，再击穿敌人的阵线。",
+      "nextHook": "军需官要求你证明这套战术能重复使用，而不是一次性公共灾害。",
+      "recommendedClass": [
+        "guild_barbarian"
+      ],
+      "tags": [
+        "荒诞通过",
+        "气味威慑",
+        "奇袭前排"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_absurd_shaman",
+      "endingType": "absurdAccepted",
+      "title": "萨满洋葱倒立",
+      "verdictLine": "自然顾问席无法解释你，但承认附近的野兽确实都停下来看了。",
+      "explanation": "你的仪式动作没有任何一本德鲁伊手册敢收录，却意外让躁动的巨兽安静下来。长老认为这可能是自然的幽默感，也可能是自然被你震住了。",
+      "tableFunction": "靠荒诞仪式、巨体威慑和不可预测的自然共鸣控场。",
+      "playableFlaw": "你相信越离谱的姿势越能接近大地真理，旁观者通常不敢反驳。",
+      "nextHook": "一头古老猛犸拒绝迁徙，顾问席让你带着洋葱去谈谈。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "荒诞通过",
+        "怪仪式",
+        "自然沉默"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_absurd_door_saint",
+      "endingType": "absurdAccepted",
+      "title": "门板圣徒",
+      "verdictLine": "你把一扇门背成了盾牌，又把盾牌讲成了誓约，医疗所居然点头了。",
+      "explanation": "没有人知道你为什么坚持门板能听懂祷告，但在考核中，那块门板确实挡住了三次攻击和一次争吵。雷灯修女决定先不追问神学细节。",
+      "tableFunction": "兼具守护、喜剧减压和临时掩体功能的奇怪辅助前排。",
+      "playableFlaw": "会给装备起过于庄严的名字，并要求队友向它们保持基本礼貌。",
+      "nextHook": "你那块门板被某个小神殿认定为圣物，麻烦也随之而来。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "tags": [
+        "荒诞通过",
+        "门板信仰",
+        "临时圣物"
+      ]
+    },
+    {
+      "endingId": "ogre_giant_absurd_bridge",
+      "endingType": "absurdAccepted",
+      "title": "临时桥梁本人",
+      "verdictLine": "你没有通过常规试炼，但你趴下后让整支队伍安全过河，公会很难说这不算贡献。",
+      "explanation": "你的解法太直接，直接到书记员不知道该归入战术、地形还是家具。无论如何，任务完成了，队友过河了，你也只丢了一点尊严和半口河水。",
+      "tableFunction": "用巨体创造临时地形优势，适合喜剧冒险和高压撤离场景。",
+      "playableFlaw": "遇到地形问题时第一反应是判断自己能否成为地形。",
+      "nextHook": "下一次委托写着：请护送商队过峡谷。所有人都看向了你。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "tags": [
+        "荒诞通过",
+        "地形本人",
+        "队伍桥梁"
+      ]
+    }
+  ],
+  "mbtiFilters": [
+    {
+      "groupId": "NT",
+      "title": "风暴学者",
+      "oneLine": "用微积分计算雷霆，用弹道学扔掷石块。",
+      "evaluationStyle": "你不是不粗暴，你只是把粗暴拆成公式、角度和冲击力。巨体在你这里不是蛮力，而是一整套会走路的攻城力学。",
+      "guild_barbarianFlavor": "把狂暴当成可控的能量释放，知道哪一次怒吼能把敌阵震散。",
+      "guild_fighterFlavor": "视战场格斗为力学折射与角动量守恒的严密公式应用。",
+      "guild_clericFlavor": "把雷霆神术当成可校准的战地能量，连祷告都像实验记录。",
+      "guild_druidFlavor": "用地质、风向和生态循环解释荒野，把山林当成巨大的开放实验室。",
+      "riskText": "容易在真正该闪避时继续计算最佳抛物线，导致队友怀疑你是不是在拿自己做实验。"
+    },
+    {
+      "groupId": "NF",
+      "title": "荒野共鸣者",
+      "oneLine": "倾听大地的呼吸，用温柔巨掌安抚狂暴的猛犸。",
+      "evaluationStyle": "你的巨体里藏着意外细腻的情感。你知道自己会吓到小东西，所以更想证明巨大的手也能保护，而不只是碾碎。",
+      "guild_barbarianFlavor": "你的怒火来自守护欲，看到弱者被伤害时，整片地面都会替你发抖。",
+      "guild_fighterFlavor": "你愿意站成一堵墙，因为墙后面有人值得活下来。",
+      "guild_clericFlavor": "你的信仰带着笨拙但真诚的热度，像雷雨夜里还没熄的篝火。",
+      "guild_druidFlavor": "主张血肉反哺自然，能用低吼安抚古木与巨兽。",
+      "riskText": "过度悲悯会让你在必须做艰难选择时犹豫，甚至试图把敌人也抱进保护范围。"
+    },
+    {
+      "groupId": "SJ",
+      "title": "泰坦执政官",
+      "oneLine": "肉身筑起铁幕大门，在雷暴中维持铁律行军。",
+      "evaluationStyle": "你渴望秩序，因为你很清楚失控的巨体会造成什么。规章、誓约和队列不是束缚，而是让你不把世界踩碎的栏杆。",
+      "guild_barbarianFlavor": "哪怕冲锋，你也会记住旗号、边界和撤退路线，形成一种很吓人的有序狂暴。",
+      "guild_fighterFlavor": "你是最适合被写进军令的山，站在哪里，哪里就变成防线。",
+      "guild_clericFlavor": "把信仰化作静电防区，将防御姿态融入战地规程。",
+      "guild_druidFlavor": "你试图给自然循环建立秩序，哪怕森林本人对此意见很大。",
+      "riskText": "一旦命令互相冲突，你可能会像卡住的攻城机一样停在原地冒烟。"
+    },
+    {
+      "groupId": "SP",
+      "title": "雷霆劫掠者",
+      "oneLine": "以剧痛唤醒血怒，在致命雷区中跳起滑稽芭蕾。",
+      "evaluationStyle": "你靠现场反应、身体直觉和一股让考官头疼的快乐活着。危险不是警告，对你来说更像开场鼓点。",
+      "guild_barbarianFlavor": "擅长将庞大体重转化为致命角动量，在爆炸与火光中踩出野性舞步。",
+      "guild_fighterFlavor": "你能用极快的临场判断找出最适合砸开的角度，虽然通常伴随巨大噪音。",
+      "guild_clericFlavor": "你的战地祷告像即兴演出，效果惊人，副作用也惊人。",
+      "guild_druidFlavor": "你享受泥土、巨兽和暴雨带来的即时反馈，把荒野当作一场永不停歇的试胆大会。",
+      "riskText": "纯粹的极限冒险享乐主义者，容易为了展示个性而执行高危战术操作。"
+    }
+  ]
+}

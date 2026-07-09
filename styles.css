@@ -3220,6 +3220,16 @@ h3 {
   filter: saturate(0.55);
 }
 
+.race-registry-card.is-pending {
+  border-color: rgba(243, 236, 215, 0.09);
+  background: rgba(243, 236, 215, 0.032);
+}
+
+.race-registry-card.is-pending span {
+  border-color: rgba(243, 236, 215, 0.14);
+  color: var(--muted);
+}
+
 .race-registry-card.is-featured {
   border-color: rgba(228, 191, 98, 0.55);
   background:
@@ -3356,6 +3366,11 @@ h3 {
 .trial-druid {
   --trial-accent: #72c891;
   --trial-secondary: #d8d0a0;
+}
+
+.trial-cleric {
+  --trial-accent: #d8b66a;
+  --trial-secondary: #70c7c7;
 }
 
 .trial-physique,
