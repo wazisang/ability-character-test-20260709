@@ -1,0 +1,4214 @@
+(() => {
+  const data = {
+  "meta": {
+    "version": 1,
+    "raceId": "dragonborn",
+    "raceNameZh": "龙裔",
+    "scope": "race_recruitment_full"
+  },
+  "raceCard": {
+    "raceId": "dragonborn",
+    "raceNameZh": "龙裔",
+    "raceNameEn": "Dragonborn",
+    "title": "拥有巨龙血脉的极度高傲者",
+    "oneLine": "把氏族荣誉看得比生命还重，随时准备为了证明自己是‘真龙后裔’而跟别人拼命。",
+    "bodyText": "拥有巨龙血脉的极度高傲者。把氏族荣誉看得比生命还重，随时准备为了证明自己是‘真龙后裔’而跟别人拼命。坚信一口强大的龙息可以解决世间一切问题。",
+    "tags": [
+      "强力防御",
+      "龙息喷吐",
+      "极度荣誉"
+    ],
+    "warningText": "警告：与龙裔组队时，切勿质疑其血脉纯度，否则可能引发大范围物理毁灭。",
+    "recruiterQuote": "“真龙的怒火，从不在条约前妥协。”——龙鳞禁军统领"
+  },
+  "recruitTargets": [
+    {
+      "targetId": "guild_paladin",
+      "classNameZh": "誓言审议厅",
+      "classNameEn": "Paladin Hall",
+      "title": "巨龙誓约者",
+      "oneLine": "极其古板的荣誉捍卫者。他们不仅自己恪守骑士精神，还会用物理手段强迫所有人跟着他们一起讲规矩。",
+      "recruiter": "誓言审议厅书记员",
+      "recruitPitch": "极其古板的荣誉捍卫者。他们不仅自己恪守骑士精神，还会用物理手段强迫所有人跟着他们一起讲规矩。",
+      "acceptedStyle": "关键门槛：STR 12 / CHA 14。通过后会按该路线记录职业试炼倾向。",
+      "likelyFailure": "若只展示血脉噱头而无法稳定服务队伍，会被列入观察或转岗名单。",
+      "hiddenRoute": "试炼会同时记录其他公会倾向，最终判定可能转荐到更匹配的柜台。",
+      "recommendedStats": [
+        "str",
+        "cha"
+      ],
+      "riskTags": [
+        "誓言",
+        "守护",
+        "STR",
+        "CHA"
+      ]
+    },
+    {
+      "targetId": "guild_fighter",
+      "classNameZh": "战士训练厅",
+      "classNameEn": "Fighter Guild",
+      "title": "龙鳞禁军",
+      "oneLine": "依靠坚硬的鳞片 and 霸道的龙息横冲直撞。他们通常看不起穿盔甲的人，因为‘真正的防御长在肉上’。",
+      "recruiter": "战士训练厅书记员",
+      "recruitPitch": "依靠坚硬的鳞片 and 霸道的龙息横冲直撞。他们通常看不起穿盔甲的人，因为‘真正的防御长在肉上’。",
+      "acceptedStyle": "关键门槛：STR 14 / CON 12。通过后会按该路线记录职业试炼倾向。",
+      "likelyFailure": "若只展示血脉噱头而无法稳定服务队伍，会被列入观察或转岗名单。",
+      "hiddenRoute": "试炼会同时记录其他公会倾向，最终判定可能转荐到更匹配的柜台。",
+      "recommendedStats": [
+        "str",
+        "con"
+      ],
+      "riskTags": [
+        "阵线",
+        "武器",
+        "STR",
+        "CON"
+      ]
+    },
+    {
+      "targetId": "guild_sorcerer",
+      "classNameZh": "血脉术法厅",
+      "classNameEn": "Sorcerer Hall",
+      "title": "血脉唤醒者",
+      "oneLine": "沉迷于挖掘体内的巨龙魔法。为了证明自己的法术比精灵的更强，经常在不必要的时候引发大面积爆炸。",
+      "recruiter": "血脉术法厅书记员",
+      "recruitPitch": "沉迷于挖掘体内的巨龙魔法。为了证明自己的法术比精灵的更强，经常在不必要的时候引发大面积爆炸。",
+      "acceptedStyle": "关键门槛：CHA 14 / CON 10。通过后会按该路线记录职业试炼倾向。",
+      "likelyFailure": "若只展示血脉噱头而无法稳定服务队伍，会被列入观察或转岗名单。",
+      "hiddenRoute": "试炼会同时记录其他公会倾向，最终判定可能转荐到更匹配的柜台。",
+      "recommendedStats": [
+        "cha",
+        "con"
+      ],
+      "riskTags": [
+        "血脉",
+        "魔力",
+        "CHA",
+        "CON"
+      ]
+    },
+    {
+      "targetId": "guild_barbarian",
+      "classNameZh": "突破先锋营",
+      "classNameEn": "Barbarian Vanguard",
+      "title": "龙怒狂战士",
+      "oneLine": "一旦被激怒，就会进入‘伪龙化’状态。智商虽然下降，但咬合力和喷吐范围会呈指数级上升。",
+      "recruiter": "突破先锋营书记员",
+      "recruitPitch": "一旦被激怒，就会进入‘伪龙化’状态。智商虽然下降，但咬合力和喷吐范围会呈指数级上升。",
+      "acceptedStyle": "关键门槛：STR 14 / CON 14。通过后会按该路线记录职业试炼倾向。",
+      "likelyFailure": "若只展示血脉噱头而无法稳定服务队伍，会被列入观察或转岗名单。",
+      "hiddenRoute": "试炼会同时记录其他公会倾向，最终判定可能转荐到更匹配的柜台。",
+      "recommendedStats": [
+        "str",
+        "con"
+      ],
+      "riskTags": [
+        "冲锋",
+        "狂暴",
+        "STR",
+        "CON"
+      ]
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "dragonborn_physique_honor",
+      "targetId": "guild_paladin",
+      "title": "荣誉的泥潭",
+      "scene": "为了追捕一个极度狡猾的哥布林盗贼，你的队伍不得不穿过一片极其肮脏、散发着恶臭的下水道泥沼。精灵队友已经在抱怨脏水弄脏了靴子。",
+      "prompt": "面对这种有损龙裔高贵形象的恶劣环境，你如何抉择？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你直接给靴子附着‘至圣斩’和‘红龙吐息’，踩出的每一步都引发剧烈的小型蒸汽爆炸，像一台狂暴的蒸汽机车般在泥沼里乘风破浪，顺便用锁喉的方式拖着尖叫的精灵队友高速前行。",
+          "npcReply": "‘你硬生生把下水道追击战跑出了工业革命的气势，那精灵看起来快被蒸汽蒸熟了。’盗贼被你一头撞晕。",
+          "scoreDelta": {
+            "str": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_paladin": 3
+          },
+          "alignmentDelta": {
+            "order": 2,
+            "action": 1
+          },
+          "triggerTags": [
+            "至圣斩蒸发泥潭",
+            "蒸汽机车冲锋",
+            "物理拖拽"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "能把神圣法术用出重工业重型机械质感的硬核执行者"
+        },
+        {
+          "id": "B",
+          "text": "你嫌弃地看了一眼泥潭，随后深吸一口气，朝着正下方喷出极度压缩的烈焰龙息。利用恐怖的反冲力，你整个人像火箭一样拔地而起，直接在空中划过一道完美的抛物线，精准砸在哥布林盗贼的背上。",
+          "npcReply": "‘你把龙息当成了单兵飞行背包。’虽然因为落地姿势不佳摔断了三根肋骨，但盗贼被你直接砸扁了。",
+          "scoreDelta": {
+            "con": 2,
+            "int": -1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 2
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "龙息反冲",
+            "肉身火箭",
+            "精确砸击"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "精通空气动力学与龙息反冲原理的肉身飞行物"
+        },
+        {
+          "id": "C",
+          "text": "你极其熟练地从怀里掏出一份由圣光教会盖章的《鳞片急性泥浆过敏症免役证明》，严正声明根据《冒险者劳动保护法》，你拒绝在无防护的情况下下水，并当场雇佣了三只流浪史莱姆替你去抓贼。",
+          "npcReply": "‘你甚至还给史莱姆买了临时工伤保险？！’哥布林虽然跑了，但你的合法维权让公会无言以对。",
+          "scoreDelta": {
+            "wis": -2,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_paladin": -2
+          },
+          "alignmentDelta": {
+            "self": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "劳动保护法",
+            "雇佣史莱姆",
+            "合法拒载"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "随身携带免责声明并熟练运用劳动法的维权狂魔"
+        },
+        {
+          "id": "D",
+          "text": "你深吸一口气，胸腔高高鼓起，然后直接把自己吹成了一个巨大的热气球状。你漂浮在泥潭表面一米高的地方，以一种极其安详的姿势随风飘向哥布林，一边飘一边向路过的老鼠挥手致意。",
+          "npcReply": "‘我这辈子没见过像河豚一样充气渡河的龙裔！’哥布林看着飘过来的巨大球体，吓得当场放弃了思考。",
+          "scoreDelta": {
+            "dex": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "河豚充气",
+            "漂浮过河",
+            "安详飘走"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "随时随地能把自己吹成河豚的生物学奇迹"
+        }
+      ]
+    },
+    {
+      "id": "dragonborn_physique_magic",
+      "targetId": "guild_sorcerer",
+      "title": "血脉的反噬",
+      "scene": "在一场魔法实验中，你体内的巨龙血脉突然失控，狂暴的魔力在你的血液里横冲直撞，随时可能引发一场大爆炸。",
+      "prompt": "面对这种极其危险的魔力失控，你如何压制它？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你不仅不压制，反而直接抓起实验台上的三瓶强效导魔药剂一饮而尽。你将失控的魔力当做助推剂，仰头朝着实验室的天窗喷出一道直冲云霄的七彩龙息光柱，强行把爆炸转化成了一场城市级激光秀。",
+          "npcReply": "‘你把致命的实验室事故变成了一次经费爆炸的法术路演，连城管都来问你要不要接商演。’",
+          "scoreDelta": {
+            "cha": 3,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "把魔药当助推剂",
+            "龙息激光秀",
+            "华丽商演"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "擅长将灾难转化为华丽演出的舞台型施法者"
+        },
+        {
+          "id": "B",
+          "text": "你极其冷静地撕下实验日志，用龙息将其点燃，然后用失控的魔力在空中疯狂绘制复杂的法阵，最后把所有狂暴能量封印进旁边一个极其廉价的陶瓷咖啡杯里。",
+          "npcReply": "‘你把一颗随时能抹平街区的魔力核弹装进了一个印着“最佳员工”的杯子里。’考官现在根本不敢靠近你的桌子。",
+          "scoreDelta": {
+            "int": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 2
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "法阵封印",
+            "最佳员工杯",
+            "廉价魔导器"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "精通极限微操、用废品制作高阶魔导器的危险工匠"
+        },
+        {
+          "id": "C",
+          "text": "你在千钧一发之际，以极其惊人的手速将自己的心跳和呼吸强行停止，直接进入了‘假死休眠’状态，让体内失控的魔力因为失去宿主的生命体征而误以为宿主已死，从而缓缓消散。",
+          "npcReply": "‘你为了躲避爆炸甚至骗过了你自己的细胞！’抢救你的学徒看着你突然睁眼，差点吓出心脏病。",
+          "scoreDelta": {
+            "wis": -2,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": -2
+          },
+          "alignmentDelta": {
+            "self": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "强制休眠",
+            "物理装死",
+            "拔自己电源"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "能随时通过物理拔插自己电源来规避系统报错的装死大师"
+        },
+        {
+          "id": "D",
+          "text": "你觉得魔力太烫了，于是极其顺手地从旁边的冰柜里拿出五公斤生牛肉贴在自己身上，并均匀地撒上黑胡椒和海盐，试图利用魔力爆炸的高温来做一顿完美的铁板烧。",
+          "npcReply": "‘……牛肉的火候居然真的是完美的七分熟！’看着你在废墟中津津有味地嚼着牛排，考官彻底陷入了沉默。",
+          "scoreDelta": {
+            "con": 2,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "S": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "生鲜铁板烧",
+            "完美七分熟",
+            "硬核美食"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "在生死关头依然把烹饪质量放在第一位的硬核美食家"
+        }
+      ]
+    },
+    {
+      "id": "dragonborn_physique_anger",
+      "targetId": "guild_barbarian",
+      "title": "龙鳞的逆鳞",
+      "scene": "在一次酒馆斗殴中，一个喝醉的半兽人极其不知死活地把一大杯极其劣质的啤酒泼在了你那极其引以为傲的纯血龙鳞上，并大声嘲笑你的鳞片像蜥蜴。",
+      "prompt": "触碰了逆鳞，你的龙怒将如何爆发？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你猛地深吸一口气，胸腔发出闷雷般的轰鸣。你没有动手，而是贴着他的脸发出了一声纯正的超高分贝龙吼。恐怖的音波直接将半兽人震得凌空飞起，撞穿了酒馆的三层木墙，镶嵌在对面的钟楼上。",
+          "npcReply": "‘不动一刀一枪，纯靠肺活量完成了一次攻城级别的打击。’酒馆老板现在求你别再大喘气了。",
+          "scoreDelta": {
+            "str": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "超高分贝龙吼",
+            "声波攻城",
+            "不战而屈人"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "人形自走音波炮、一嗓子能完成清场的生物武器"
+        },
+        {
+          "id": "B",
+          "text": "你面无表情地拔出巨剑，以肉眼无法捕捉的速度在半兽人眼前挥舞。当他还在狂笑时，他的衣服、腰带甚至靴子上的绑带已经全部化为碎片。你用剑面拍了拍他光秃秃的肚子：‘现在，去街上笑吧。’",
+          "npcReply": "‘这种剥夺了对方一切社会尊严的物理裁决，比直接杀了他还要恶毒一万倍。’半兽人捂着肚子狂奔出了酒馆。",
+          "scoreDelta": {
+            "cha": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "肉眼无法捕捉",
+            "社会性死亡",
+            "物理裁决"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "精通人体解剖学与社会性死亡的冷面剑客"
+        },
+        {
+          "id": "C",
+          "text": "你极其做作地发出一声惨叫，直接倒在地上开始剧烈抽搐，声称这种劣质啤酒中含有‘龙鳞致命毒素’，并当场掏出一卷羊皮纸，要求半兽人支付高达十万金币的医疗赔偿金，否则就让城卫军以谋杀未遂逮捕他。",
+          "npcReply": "‘你把一场酒馆斗殴硬生生变成了金额巨大的碰瓷敲诈案。’半兽人吓得当场把钱包留下并连夜逃出了城。",
+          "scoreDelta": {
+            "wis": -2,
+            "str": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": -2
+          },
+          "alignmentDelta": {
+            "risk": 2,
+            "self": 1
+          },
+          "triggerTags": [
+            "碰瓷医疗费",
+            "谋杀未遂警告",
+            "法律讹诈"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通法律讹诈与浮夸演技的职业碰瓷龙"
+        },
+        {
+          "id": "D",
+          "text": "你不仅没生气，反而抓起他的衣领，用看绝世珍宝的眼神看着他：‘你知道怎么把这玩意发酵出这种刺鼻味道的？！天才！’随后你强行把他绑架回了营地，逼他给你当专属酿酒师。",
+          "npcReply": "‘……你不仅原谅了他的冒犯，还让他沦为了每天必须酿造劣质啤酒的苦力。’半兽人现在每天都在哭着酿酒。",
+          "scoreDelta": {
+            "con": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "强行绑架",
+            "赏识劣质酒",
+            "打工酿酒"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "脑回路奇诡、强行让敌人转职为你打工的资本家"
+        }
+      ]
+    },
+    {
+      "id": "dragonborn_physique_breath",
+      "targetId": "guild_fighter",
+      "title": "烈焰的吐息",
+      "scene": "体检教官让你展示龙息喷吐的威力，并在靶场中央放置了一个三米厚的实心钢靶。周围的空气因为高热而微微扭曲。",
+      "prompt": "面对这个坚固的测试钢靶，你如何喷吐龙息？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你深吸一口气，将体内的烈焰能量压缩到极限，喷射出一道极其凝聚的高温射线，瞬间将钢靶中央融穿，并在地上留下一片炽热的岩浆。",
+          "npcReply": "“完美的温度控制与穿透力，你的吐息简直可以用来当做切割机。”",
+          "scoreDelta": {
+            "str": 2,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "凝聚吐息",
+            "高温切割",
+            "液态熔穿"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "追求极致杀伤力和精准度的重炮手"
+        },
+        {
+          "id": "B",
+          "text": "你不按套路出牌，同时调动体内的雷电与寒冰血脉，喷吐出一股狂暴的多元素混合洪流，把钢靶冻结后瞬间用雷暴震得粉碎。",
+          "npcReply": "“虽然你把钢靶弄碎了，但这混乱的法术差点把我也波及进去！”",
+          "scoreDelta": {
+            "cha": 2,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 2
+          },
+          "alignmentDelta": {
+            "expression": 2
+          },
+          "triggerTags": [
+            "多元素吐息",
+            "碎冰雷暴",
+            "混乱爆发"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "擅长多重元素融合与混乱爆发的施法天才"
+        },
+        {
+          "id": "C",
+          "text": "你嫌直接喷射太累，趁考官转身时，使用龙息的高温在钢靶正下方熔化出一个深坑，让钢靶陷进去，试图以此伪造“被彻底融化蒸发”的假象。",
+          "npcReply": "“别装了！我看到钢靶的顶端还在坑底下露着呢！”",
+          "scoreDelta": {
+            "wis": -2,
+            "cha": -1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": -2
+          },
+          "alignmentDelta": {
+            "self": 2,
+            "risk": 1
+          },
+          "triggerTags": [
+            "熔化坑洞",
+            "伪造击穿",
+            "小聪明"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极度懒惰但善于利用环境进行欺诈的投机者"
+        },
+        {
+          "id": "D",
+          "text": "你憋了半天，只打了一个满是硫磺味的嗝，吐出一个粉红色的爱心状烟圈，随后极其滑稽地走上前去在冰冷的钢靶上亲了一口。",
+          "npcReply": "“……我们测试的是杀伤力，不是让你来跟钢铁谈恋爱的！”",
+          "scoreDelta": {
+            "cha": 2,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "F": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "爱心烟圈",
+            "亲吻钢靶",
+            "现场示爱"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "在严肃的杀伤性测试中当众卖萌的整活艺术家"
+        }
+      ]
+    },
+    {
+      "id": "dragonborn_physique_scales",
+      "targetId": "guild_paladin",
+      "title": "龙鳞的防线",
+      "scene": "教官抬起一柄特制的附魔重型十字弩，对准你的胸口：‘别乱动，孩子，我要测试你那极其骄傲的龙鳞是否能挡住穿甲箭。’",
+      "prompt": "面对即将射出的穿甲重弩，你如何证明鳞片的强度？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你傲然挺起胸膛，体表龙鳞瞬间紧密闭合，在重箭射中你的刹那火花四溅，弩箭直接折断坠地，而你连眉头都没皱一下。",
+          "npcReply": "“硬邦邦的真龙后裔，你的鳞片比白银誓约庭的盾牌还要坚固。”",
+          "scoreDelta": {
+            "con": 3,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_paladin": 3
+          },
+          "alignmentDelta": {
+            "order": 2
+          },
+          "triggerTags": [
+            "硬接重弩",
+            "龙鳞紧闭",
+            "火花四溅"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "坚不可摧、贯彻铁律与无畏意志的团队磐石"
+        },
+        {
+          "id": "B",
+          "text": "在弩箭射出的瞬间，你微微偏转身体，利用龙鳞的弧度和倾角将箭矢巧妙地反弹出去，正好射中教官桌上的茶杯，茶水洒了一地。",
+          "npcReply": "“好一招物理偏斜！不过你得赔我的特级红茶！”",
+          "scoreDelta": {
+            "dex": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "倾角弹飞",
+            "精准反弹",
+            "物理偏斜"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "精通物理斜面反射与战斗微操的技术流战士"
+        },
+        {
+          "id": "C",
+          "text": "你惊慌之下，飞速掏出一面涂了红漆、画有龙鳞图案的铁皮盾牌挡在胸前，声称这是你的‘本命退化护鳞’，其实就是块便宜的盾牌。",
+          "npcReply": "“你管这块有螺丝眼的铁板叫龙鳞？你当我们瞎吗？”",
+          "scoreDelta": {
+            "cha": -2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_paladin": -2
+          },
+          "alignmentDelta": {
+            "self": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "劣质铁皮盾",
+            "欺骗考官",
+            "本命龙鳞"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "在防御力不足时习惯用劣质防具进行忽悠的骗子"
+        },
+        {
+          "id": "D",
+          "text": "你在弩箭射来的前一秒，极其顺滑地朝全身涂抹了五公斤黄油，弩箭在碰到你身体的瞬间滑飞，你整个人顺势在地板上滑行了十米远。",
+          "npcReply": "“……你把防弹测试硬生生滑成了极其丝滑的冰上杂技！”",
+          "scoreDelta": {
+            "dex": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "全身涂黄油",
+            "物理滑行",
+            "丝滑闪避"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "脑回路惊奇、用极其润滑的方式规避一切物理撞击的戏精"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_paladin": [
+      {
+        "id": "dragonborn_paladin_oath",
+        "targetId": "guild_paladin",
+        "title": "死板的骑士",
+        "scene": "为了掩护平民撤退，你独自面对一支哥布林大军。哥布林首领提出进行一场极其不公平的决斗：如果你赢了，他们就退兵；如果输了，你要交出所有的装备。",
+        "prompt": "面对这种明显的陷阱，你的骑士精神会如何回应？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你庄重地接受了决斗，但在哥布林首领偷袭的瞬间，你反手拔出一把三米长、重达五百斤的附魔攻城锤，一锤连人带陷阱带他身后的一排小弟全部砸进了地底，并严肃宣告：‘骑士法则没有规定不能用攻城武器决斗。’",
+            "npcReply": "‘你极其精准地利用了决斗规则的物理盲区。’剩下的哥布林看着那个深坑，疯狂地后退。",
+            "scoreDelta": {
+              "str": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "order": 2,
+              "action": 1
+            },
+            "triggerTags": [
+              "附魔攻城锤",
+              "物理拓展规则",
+              "重火力碾压"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "不仅遵守规则，还极其擅长物理拓展规则边界的重火力骑士"
+          },
+          {
+            "id": "B",
+            "text": "你直接掏出一份《神圣骑士团决斗仲裁条约》，指出哥布林首领的场地不符合安全标准，并当场召唤了一位拥有高级审判官资格的天使作为公证人。在天使的死亡凝视下，哥布林首领被迫签署了退兵协议。",
+            "npcReply": "‘你把战场对峙变成了一场让敌人绝望的仲裁法庭。’哥布林大军发现自己连律师都请不起，只能认输。",
+            "scoreDelta": {
+              "cha": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_paladin": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "决斗仲裁条约",
+              "天使公证人",
+              "法理降维打击"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "熟练运用神圣法条对敌人进行降维打击的法务圣骑士"
+          },
+          {
+            "id": "C",
+            "text": "你极其悲愤地指责他‘欺负工伤患者’，并瞬间掏出一副拐杖，给自己脑袋上缠满绷带，表示自己昨天刚做完龙角抛光手术，不适宜剧烈运动，必须申请‘延期决斗’三十年，然后拄着拐极其丝滑地溜走了。",
+            "npcReply": "‘你逃跑时的步法甚至带有一种极其神圣的仪式感。’哥布林首领拿着你的延期申请书风中凌乱。",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "工伤请假",
+              "延期三十年",
+              "熟练开溜"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通伤残伪装、能用极其正当的理由合法避战的戏精"
+          },
+          {
+            "id": "D",
+            "text": "你接受了决斗，但在开打前，你极其强硬地要求哥布林首领和你一起跳一支极其复杂的‘骑士战前热身交谊舞’。你用极其庞大的身躯和错乱的步伐，在跳舞的过程中把首领踩成了重度骨折。",
+            "npcReply": "‘你用舞蹈完成了一场极其残忍的非接触式暗杀。’哥布林大军看着一边吐血一边惨叫的首领，陷入了深深的迷茫。",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "骑士交谊舞",
+              "踩断骨头",
+              "舞蹈暗杀"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "把交谊舞当做致命武器的战场舞蹈家"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_honor",
+        "targetId": "guild_paladin",
+        "title": "战友的名誉",
+        "scene": "你的一名精灵队友被指控偷窃了圣水，但你确信他是被构陷的。主教要求你当众鞭笞他以示惩戒，维护圣堂的绝对威严。",
+        "prompt": "面对维护教廷威严与捍卫战友名誉的冲突，你如何选择？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你拒绝执行鞭笞，并当众宣布发起‘神圣辩护决斗’，表示愿意代替队友接受任何惩罚，直到查明真凶。",
+            "npcReply": "“你用自己的脊梁抗下了正义的重量。”主教被迫重新展开调查。",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2,
+              "good": 1
+            },
+            "triggerTags": [
+              "神圣辩护",
+              "代替受罚",
+              "铁骨铮铮"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将战友情谊与正义高高举起的荣誉誓约者"
+          },
+          {
+            "id": "B",
+            "text": "你拿过皮鞭，极其精准地使用巧劲，在鞭打时让皮鞭与空中摩擦发出恐怖的音爆，看似打得皮开肉绽，实则连皮都没蹭破。",
+            "npcReply": "“你这套音响魔术连大审判官都给骗过去了，配合得天衣无缝。”",
+            "scoreDelta": {
+              "dex": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "虚张声势",
+              "空震皮鞭",
+              "双簧表演"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通舞台特效与战术配合的实用圣骑士"
+          },
+          {
+            "id": "C",
+            "text": "为了向主教展示你‘坚定的信仰’，你不仅狠狠地鞭笞了战友，还在鞭子上涂抹了辣椒油，宣称是在帮他‘辣化净化灵魂’。",
+            "npcReply": "“你真是个冷血的怪物，队友的惨叫声连路过的魔鬼都觉得残忍。”",
+            "scoreDelta": {
+              "cha": -2,
+              "str": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "辣椒油皮鞭",
+              "辣化灵魂",
+              "残酷表忠"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "通过迫害同伴来谋取晋升机会的残忍狂热分子"
+          },
+          {
+            "id": "D",
+            "text": "你宣布鞭笞必须在有神圣音乐的氛围下进行，随后拿出木鱼一边狂敲，一边以每秒十下的速度飞速抽打旁边的空气，声称是在物理超度罪恶。",
+            "npcReply": "“……大殿里全是你的鞭影和木鱼声，不知道的人还以为在做法事。”",
+            "scoreDelta": {
+              "cha": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "敲木鱼超度",
+              "物理抽空气",
+              "音波超度"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用荒诞行为艺术强行搅黄严厉惩戒仪式的乐子人"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_heretic",
+        "targetId": "guild_paladin",
+        "title": "异端的小孩",
+        "scene": "在一次扫荡中，你在一间破屋里发现了一个年旧的半兽人孤儿。村民们群情激愤，要求你代表圣光当场“净化”这个被视为邪恶孽种的生命。",
+        "prompt": "面对教义中对异类的净化要求与你内心的怜悯，你如何裁决？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你庄严地把十字架挂在孤儿胸前，宣布他已被你收纳为‘圣光眷属’，任何伤害他的人都将被视为向誓约庭宣战。",
+            "npcReply": "“你用圣光的庇护挡住了愚昧的火把。”孤儿紧紧地拉住了你的衣角。",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "F": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "good": 2,
+              "lawful": 1
+            },
+            "triggerTags": [
+              "圣光眷属",
+              "强力庇护",
+              "正义誓言"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "以爱与包容阐释圣光真义的真圣徒"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地从怀里掏出一本《帝国民族融合与宗教转化条例》，现场论证该孤儿尚未成年，具有极高的劳动力转化价值，强行将其收编为教廷的实习杂役。",
+            "npcReply": "“你用法条和行政手续在狂暴的村民手里强行救下了这条命。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 2
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "法条救人",
+              "行政收编",
+              "程序化管理"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "将法律与管理程序玩得极其丝滑的法务圣武士"
+          },
+          {
+            "id": "C",
+            "text": "为了讨好村民，你大声宣布要施展‘地火净化仪式’，然后偷偷将火引向了隔壁存放村民麦子的谷仓，在一片混乱中让孤儿溜走。",
+            "npcReply": "“铺天盖地的大火烧毁了村里的谷仓，孤儿溜走了但村民全破产了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "火烧谷仓",
+              "瞒天过海",
+              "混乱救人"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "不惜以无辜平民财产为代价进行秘密营救的偏激圣武士"
+          },
+          {
+            "id": "D",
+            "text": "你当场给半兽人戴上了一副极其喜感的假胡子，坚称这其实是个微型侏儒旅行商，只是长得有点粗犷，并在现场卖起了过期面包。",
+            "npcReply": "“村民们在这一瞬间甚至怀疑自己的智商被你狠狠地碾压了。”",
+            "scoreDelta": {
+              "cha": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "戴假胡子",
+              "指婴为商",
+              "街头叫卖"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极其弱智的假装和离谱商业行为强行化解仇恨的戏精"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_charity",
+        "targetId": "guild_paladin",
+        "title": "圣剑与乞丐",
+        "scene": "一个衣衫褴褛的乞丐向你跑来，哭诉他病重的女儿快要饿死了。他请求你把手中那柄由教廷赐予、象征无限荣誉的附魔圣剑送给他卖钱度日。",
+        "prompt": "面对象征骑士荣誉的象征物与底层弱小者的求助，你如何回应？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你收起长剑，表示圣剑不可转赠，但当场摘下了自己沉重的银质肩甲和佩饰塞进他手里，并承诺护送他去圣光诊所看病。",
+            "npcReply": "“圣剑留在了发鞘中，但圣光的慈悲已经落在了他的心头。”",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "F": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "good": 2,
+              "order": 1
+            },
+            "triggerTags": [
+              "解衣推食",
+              "佩饰赠与",
+              "医患护送"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "分得清教条与慈悲边界的骑士楷模"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地对乞丐进行了一次神圣洞察，识破了他是地头蛇假扮的骗子，反手用剑鞘把他拍翻，并强制押送他去教化所进行为期半年的劳动改造。",
+            "npcReply": "“识破骗局，精准打击。教化所又多了一个免费的劳动生产力。”",
+            "scoreDelta": {
+              "wis": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "识破骗局",
+              "剑鞘拍翻",
+              "强送教化"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "拥有极高警惕性与铁腕管理能力的务实执法者"
+          },
+          {
+            "id": "C",
+            "text": "你极其大方地把圣剑丢给了他，然后当场声称自己被邪恶的诅咒夺取了武器，需要向教廷申请一笔高达三千金币的‘圣剑遗失特别抚恤金’。",
+            "npcReply": "“圣剑成了你套现教廷专款的完美筹码。法务审计已经上路了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "圣剑赠与",
+              "抚恤金套现",
+              "吃空饷"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "善于利用神圣资产套现中饱私囊的贪腐圣骑士"
+          },
+          {
+            "id": "D",
+            "text": "你把圣剑插在地上，现场开始给乞丐表演‘铁头开砖’和‘胸口碎大石’，表示可以靠杂耍帮他众筹医药费，并吸引了全街人围观。",
+            "npcReply": "“乞丐坐在地上帮你数铜板，他似乎已经忘了自己是来要饭的了。”",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "胸口碎大石",
+              "街头杂耍",
+              "众筹筹款"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "随时随地能用硬核物理杂耍进行募捐的战场艺人"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_command",
+        "targetId": "guild_paladin",
+        "title": "愚蠢的军令",
+        "scene": "战局焦灼，前线指挥官下达了极其冷酷的命令：为了彻底剿灭潜伏在村庄里的亡灵探子，要连同村子里的三百名无辜村民一起放火烧死。",
+        "prompt": "面对明显违背人道的灭绝军令，你的选择是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你公然抗命，带领圣武士小队在村口筑起钢铁防线，挡住督战队，并大声宣告：‘圣光照耀之地，不容焚烧无辜之血！违者以叛国罪处之！’",
+            "npcReply": "“你用武器和信念守住了人性的底线，虽然等待你的是军事法庭。”",
+            "scoreDelta": {
+              "str": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "good": 2,
+              "lawful": 1
+            },
+            "triggerTags": [
+              "公然抗命",
+              "钢铁防守",
+              "决不退缩"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "宁可接受军法审判也决不对平民挥刀的铁卫"
+          },
+          {
+            "id": "B",
+            "text": "你利用龙鳞在泥土中的挖掘天赋，连夜在村庄正下方挖出了一条四通八达的地下撤退地道，在火攻发起前把所有村民全部物理搬迁到了安全区。",
+            "npcReply": "“敌人的大火只烧了个空村，你顺便给帝国展示了一次完美的土木防空疏散演习。”",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "深夜挖地道",
+              "物理疏散",
+              "偷梁换柱"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通土木工程与人员隐秘转移的战术专家"
+          },
+          {
+            "id": "C",
+            "text": "为了完美执行命令又洗脱自己的责任，你向指挥官提出‘净化税’的概念，声称只要村民每人交纳十个金币，就可以用‘神圣洗礼’免除火烧。",
+            "npcReply": "“你成功把灭绝军令改造成了一场剥削村民血汗钱的敲诈生意。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "赎罪税收",
+              "趁火打劫",
+              "带头勒索"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其善于利用战争危机和行政漏洞敲诈勒索的吸血鬼"
+          },
+          {
+            "id": "D",
+            "text": "你当场把指挥官的军令状抢过来塞进嘴里生生嚼碎吞了下去，随后无辜地声称‘巨龙的肠胃突然有了对白纸的极度渴望’，以此拖延进攻时间。",
+            "npcReply": "“指挥官看着你那还在吐白纸屑的嘴，气得当场背了过去。”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "生吞军令状",
+              "物理毁证",
+              "胡搅蛮缠"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "通过生吞官方文件和装傻充愣来瓦解残暴指令的奇才"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_corrupt",
+        "targetId": "guild_paladin",
+        "title": "教廷的贪腐",
+        "scene": "你在整理后勤账目时，震惊地发现圣光大教堂的主祭正在秘密克扣原本用于赈济灾民的精粉救济粮，用来给他的私人神像贴金箔并购买高档教皇丝绸。",
+        "prompt": "面对神圣光环底下的龌龊贪腐，你如何惩治？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你连夜起草了一份长长、附带详尽发票证据的贪腐报告，联合三位荣誉大骑士，直接堵在主祭讲道时当众向全体信徒宣读，将他依法逮捕。",
+            "npcReply": "“你的正义铁锤直接砸碎了贪腐者的遮羞布，大教堂当天就炸开了锅。”",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2,
+              "order": 1
+            },
+            "triggerTags": [
+              "铁证如山",
+              "当众揭露",
+              "雷霆逮捕"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其善于收集证据并当众实施法律审判的纪律化圣职"
+          },
+          {
+            "id": "B",
+            "text": "你没有打草惊蛇，而是通过精妙的物流微操，偷偷将那批克扣的救济粮在运输途中全部调包成极其坚硬的、写有“禁止贪污”的石碑，把真正的救济粮安全送到灾民手中。",
+            "npcReply": "“主祭开箱时看到一箱子写着反贪污的石碑，脸色当场绿了。”",
+            "scoreDelta": {
+              "dex": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "暗中调包",
+              "物料微操",
+              "无声警告"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长暗度陈仓与物理调包的高智商后勤老兵"
+          },
+          {
+            "id": "C",
+            "text": "你极其私密地找到主祭，表示如果能分给你两箱金箔，你就可以把这笔账目做成‘神圣白蚁事故’，并帮他开发出更高级的避税通道。",
+            "npcReply": "“主主理人很赞赏你的财务头脑，你现在成功成为了贪腐链条的关键合伙人。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "账目作假",
+              "同流合污",
+              "白蚁事故"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "把财务知识全部用在违法作账和同流合污上的审计蛀虫"
+          },
+          {
+            "id": "D",
+            "text": "你把主祭所有的丝绸睡衣全部用龙息烧焦，并用金箔在神像的屁股上贴了一圈极其醒目的嘲讽标语，然后在房顶大跳驱魔舞引发围观。",
+            "npcReply": "“主祭崩溃地看着神像上的贴金嘲讽，当场决定去修道院隐退。”",
+            "scoreDelta": {
+              "cha": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "火烧丝绸",
+              "屁股贴金",
+              "房顶热舞"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极其神经质的恶搞手段把腐败者逼疯的朋克骑士"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_paladin_confess",
+        "targetId": "guild_paladin",
+        "title": "最终的宣誓",
+        "scene": "白银誓约庭的最终洗礼。大主教将圣水洒在你的额头：‘很多异族嘲笑龙裔的圣武士只是狂热的铁疙瘩。我们寿命短暂，血脉暴躁。你为什么还要接过这副沉重的重担？’",
+        "prompt": "面对大主教关于血脉与本性的终极质问，你的回答是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "“正因为凡人寿命如流星般短暂，我们燃烧时的光芒才足以划破这漫长的黑夜。我将以巨龙的怒火为鞘，圣光的仁慈为刃，守护誓言直至生命燃尽！”",
+            "npcReply": "大主教将圣白长剑递入你手中。“去照亮那片黑夜吧，高贵的誓约者。”",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2,
+              "good": 1
+            },
+            "triggerTags": [
+              "流星誓言",
+              "接过重担",
+              "热血毕业"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "完美的圣武士毕业宣言"
+          },
+          {
+            "id": "B",
+            "text": "“我不追求虚无缥缈的神界救赎。我只知道，如果我们不维持法典与秩序，这片边境明天就会变成怪物的废墟。我只在乎现世的和平。”",
+            "npcReply": "大主教点了点头。“缺乏一些浪漫，但极其扎实。这正是白银法庭需要的基石。”",
+            "scoreDelta": {
+              "int": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_paladin": 2
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "现世秩序",
+              "实用信仰",
+              "扎实求稳"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其务实的护教军风格"
+          },
+          {
+            "id": "C",
+            "text": "“少给我洗脑了。我加入誓约庭只是因为这里的伙食最好，而且圣武士的头衔在贵族圈子里很吃得开，我需要这个身份来结识富婆。”",
+            "npcReply": "圣水在你的额头上变得滚烫，将你烫伤。“亵渎者！你根本不配站在这里！”",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "贪图利益",
+              "当面亵渎",
+              "动机不纯"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "因动机极其不纯被当场开除的投机客"
+          },
+          {
+            "id": "D",
+            "text": "“所以我们在宣誓之前，能不能先讨论一下公会怎么解决我的养老和龙息引起的慢性咽喉炎报销问题？我这里有二十页的医保谈判草案。”",
+            "npcReply": "大主教被你气得差点脑溢血。“……你的世俗焦虑已经严重干扰了仪式的庄严！”",
+            "scoreDelta": {
+              "int": 2,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "expression": 1
+            },
+            "triggerTags": [
+              "咽喉炎报销",
+              "医保谈判",
+              "打乱节奏"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在最神圣的时刻讨论最世俗福利问题的维权奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_fighter": [
+      {
+        "id": "dragonborn_fighter_defense",
+        "targetId": "guild_fighter",
+        "title": "龙鳞的自信",
+        "scene": "你们小队遭到了一队半人马弓箭手的伏击。箭雨像暴雨一样倾泻而下，队友们纷纷寻找掩体躲避。",
+        "prompt": "作为极其迷信自身防御的龙裔，你会怎么做？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你根本懒得躲闪，直接深吸一口气，浑身肌肉紧绷，让坚硬的龙鳞在体表相互摩擦，竟然发出了极其刺耳的金属共振声！飞来的箭矢在接触到共振力场的瞬间，纷纷从中间断裂，化作木屑。",
+            "npcReply": "‘你把纯粹的肉体防御提升到了声波武器的境界。’半人马弓箭手以为你在施展什么禁忌魔法。",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "鳞片共振",
+              "声波折断箭矢",
+              "物理力场"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "能用肌肉控制鳞片频率产生物理力场的硬核武斗派"
+          },
+          {
+            "id": "B",
+            "text": "你极其兴奋地拔出两把巨大的精钢战锅，在箭雨中跳起了极具节奏感的‘锅铲防御舞’。清脆的‘叮当’声不绝于耳，你不仅完美格挡了所有箭矢，还顺便用火系龙息把掉落的箭头熔炼成了一把新铁锅。",
+            "npcReply": "‘你在枪林弹雨中完成了极其嚣张的铁匠作业。’这不仅是防御，更是对敌人火力的极度侮辱。",
+            "scoreDelta": {
+              "dex": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_paladin": 1
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "双锅格挡",
+              "打铁防御",
+              "现场熔炼"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "把战场当做露天打铁铺的硬核烹饪战士"
+          },
+          {
+            "id": "C",
+            "text": "你瞬间用极其高超的泥塑手艺，在原地用下水道烂泥堆了一个一模一样的‘龙裔泥人雕像’，并极其自然地给自己盖上隐形斗篷，在一旁安静地磕着瓜子，看着半人马对着泥人疯狂输出。",
+            "npcReply": "‘你把战场生存技能点全点在造假和隐形上了。’半人马射空了三个箭袋才发现自己被一个泥巴人骗了。",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "捏泥人替身",
+              "盖隐形斗篷",
+              "吃瓜看戏"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通替身诱饵战术与隐身看戏的战场魔术师"
+          },
+          {
+            "id": "D",
+            "text": "你不仅不躲，反而从背包里掏出一块巨大的靶子绑在自己胸前，并在靶心用极其鲜艳的油漆写着‘射不中我是你孙子’！极度猖狂的挑衅让半人马气得手抖，箭矢全部完美地避开了你，射在了周围的树上。",
+            "npcReply": "‘你用极度拉仇恨的嘲讽完成了最高级别的物理闪避。’半人马弓箭手的自信心被你彻底摧毁了。",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "胸口挂靶",
+              "嘲讽脱靶",
+              "精神污染"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "利用精神污染让敌人强制脱靶的心理学防御大师"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_challenge",
+        "targetId": "guild_fighter",
+        "title": "决斗的挑衅",
+        "scene": "一个喝醉了的精灵剑术大师当众侮辱你的龙裔血脉是‘粗鲁的笨重变色龙’，并挑衅地拔出细剑，要求与你进行一场关于优雅与技巧的生死决斗。",
+        "prompt": "面对针对你血脉和尊严的刻意挑衅，你如何回击？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你面无表情地拔出巨剑，仅凭手腕的力量狂暴地在空中挥舞，斩断细剑的同时将他身上的皮甲外衣全部化为碎片，并冷冷宣告：‘优雅在力量面前一文不值。’",
+            "npcReply": "“你用绝对的物理控制力让他的优雅成了脱衣舞滑稽戏。”挑衅者光着身子狂奔下台。",
+            "scoreDelta": {
+              "str": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "物理碎衣",
+              "大剑震击",
+              "绝对压制"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "崇尚绝对力量与霸道控制的重剑宗师"
+          },
+          {
+            "id": "B",
+            "text": "你根本不拔剑，而是极其冷静地戴上一双附魔了高温龙息的铁手套，在对方细剑刺来的刹那，精准地用肉掌合十夹住剑身，将其熔化成了一根红热的铁条。",
+            "npcReply": "“你空手接白刃顺便把对方的武器降级成了废铁。非常极端的技巧。”",
+            "scoreDelta": {
+              "dex": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "空手接白刃",
+              "徒手熔剑",
+              "物理控场"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "善于将身体特性与格斗战术精密结合的格斗家"
+          },
+          {
+            "id": "C",
+            "text": "你当场做痛苦万状状，声称对方的细剑‘附带了严重的金属锈毒’，并拿出一张免责赔偿声明要求对方先签字，否则就以危害公共安全罪起诉他。",
+            "npcReply": "“你把一场武者决斗硬生生谈成了民事诉讼赔偿案。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "法律诉讼",
+              "碰瓷起诉",
+              "免责声明"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "遇到挑衅就立刻熟练开启法律讹诈模式的碰瓷大师"
+          },
+          {
+            "id": "D",
+            "text": "你大喝一声，突然从裤兜里掏出两只极其狂暴的尖叫松鼠砸在精灵脸上，趁他手忙脚乱时，用铁锅底狠狠地拍在了他的屁股上。",
+            "npcReply": "“……这大概是决斗史上最不优雅但也最让人崩溃的暗器了。”",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "投掷松鼠",
+              "铁锅底拍击",
+              "街头流氓"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "喜欢用各种莫名其妙的街头脏套路来羞辱敌人的无赖战士"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_weapon",
+        "targetId": "guild_fighter",
+        "title": "武器的选择",
+        "scene": "你被突然投放到一片危机四伏的森林废墟中，教官只在木架上留下了三样奇葩装备：一把生锈的农用铁锹、一具极其沉重且没有拉绳的床弩弩机，和一把折断的铁叉。",
+        "prompt": "面对即将发起的怪物袭击，你选择哪样武器？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你大步上前，双手抱起那具重达两百斤的床弩弩机，将其当作巨型盾牌兼攻城锤，深吸一口气直接朝着丛林里的野兽蛮力横扫。",
+            "npcReply": "“你硬生生把远程武器用出了重型坦克冲撞的暴力美感。”野兽被砸得凌空倒飞。",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "重弩猛砸",
+              "坦克冲撞",
+              "巨力武器"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有极度霸道的肉体力量、擅长将一切重物化为碎骨锤的猛将"
+          },
+          {
+            "id": "B",
+            "text": "你拿起生锈的农用铁锹，利用熟练的杠杆发力技巧，在地上飞速挖坑设陷，把碎石磨成锋利的标枪，将整片区域布置成了致命的战壕防线。",
+            "npcReply": "“你挖战壕的效率简直像一个受过正规训练的矮人工兵团。”",
+            "scoreDelta": {
+              "wis": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "铁锹设防",
+              "战壕挖掘",
+              "阵地建设"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长阵地设防与精细工事构筑的军工工兵"
+          },
+          {
+            "id": "C",
+            "text": "你对这三样破烂看都不看，而是极其迅速地爬上了最高的一棵橡树，用藤蔓把自己牢牢绑在树冠上，一边安静磕着树皮一边等袭击过去。",
+            "npcReply": "“你为了不战斗甚至愿意在树上当三个小时的松鼠。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "爬树避战",
+              "绑在树上",
+              "磕树皮"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通各种高空隐蔽避战手段的极度怕死老油条"
+          },
+          {
+            "id": "D",
+            "text": "你拿起了折断的铁叉插在自己头上，声称自己是‘橡树之神委派的铁叉守护者’，并开始对路过的一只野兔进行长达一小时的传教。",
+            "npcReply": "“那只野兔看起来比我们还要担心你脑子的健康状况。”",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "铁叉戴头",
+              "兔子传教",
+              "橡树神使"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "精神极其恍惚、总能把战场演变成宗教荒诞剧的乐子人"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_retreat",
+        "targetId": "guild_fighter",
+        "title": "防线的守卫",
+        "scene": "你们小队奉命在一座残破的石桥上阻击溃退的兽人大军。桥面狭窄，敌人的重甲骑兵正发起毁灭性的冲锋，队友们的防线已经开始动摇。",
+        "prompt": "面对即将被撕裂的防线，作为重装战士的你如何站出来？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你将大剑狠狠插入桥面，浑身龙鳞紧闭，发出一声震天怒吼，像一堵不可逾越的钢铁大坝般死死闸在桥中央，用肉身硬生生挡下了战马的冲击！",
+            "npcReply": "“你以一己之力成了石桥上的闸门，战马撞在你身上像撞到了花岗岩。”",
+            "scoreDelta": {
+              "con": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "order": 2,
+              "action": 1
+            },
+            "triggerTags": [
+              "钢铁大坝",
+              "肉身挡车",
+              "雷霆怒吼"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "在绝境中甘愿成为团队坚实盾牌的钢铁防线卫士"
+          },
+          {
+            "id": "B",
+            "text": "你利用龙息的高温瞬间对准桥拱的结构弱点进行精准的‘定向热熔爆破’，在骑兵冲到眼前的刹那让前半段桥面轰然塌陷，完美截断通路。",
+            "npcReply": "“你用物理熔断和定向爆破完成了最完美的战术阻击。虽然桥坏了。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "桥梁爆破",
+              "物理截断",
+              "定向熔断"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通爆破力学与结构破坏的战术阻击大师"
+          },
+          {
+            "id": "C",
+            "text": "你以极其惊人的手速将自己的盔甲扒掉塞进包裹，然后极其丝滑地跳进了桥下的激流中，顺水漂流时还不忘朝桥上的战友大喊：‘我先去下游给你们占领防御高地！’",
+            "npcReply": "“你逃跑的速度和接口的无耻程度都刷新了公会的纪录。”",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "扒甲跳河",
+              "下游占地",
+              "丝滑溜走"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "在战局不利时能极其迅速且无耻地抛弃防线的逃兵"
+          },
+          {
+            "id": "D",
+            "text": "掏出了一块巨大的‘前方施工，请绕道通行’的假告示牌立在桥头，并站在牌子旁给飞驰而来的兽人骑兵做起极其规范的‘道路交通指挥手势’。",
+            "npcReply": "“……最离谱的是，打头的两匹战马竟然真的被你那极其专业的交通手势给指挥得当场劈叉了！”",
+            "scoreDelta": {
+              "cha": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "交通手势",
+              "施工告示牌",
+              "物理指挥"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "擅长用极度荒诞的行为让敌人强行刹车并丧失战意的脑洞奇才"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_arena",
+        "targetId": "guild_fighter",
+        "title": "竞技场博杀",
+        "scene": "在公会的实战竞技场中，你的对手是一头因为注射了狂暴药剂而双眼猩红、失去理智的重型双头座狼。它正发出极其狂暴的咆哮向你扑来。",
+        "prompt": "面对失去理智的狂暴凶兽，你如何进行物理终结？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你完全不用剑，在座狼扑来的瞬间，你直接迎头撞去，双手分别卡住两个狼头的喉咙，凭借极其狂暴的臂力生生将这头巨兽按在地上动弹不得。",
+            "npcReply": "“你用比野兽还要野蛮的巨力强行压制了狂暴，连看台上的观众都惊呆了。”",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "物理掐脖",
+              "巨兽锁喉",
+              "纯力压制"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "崇尚肌肉压制、用格斗巨力制服一切凶兽的怪兽摔跤手"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地在原地垫步，观察座狼冲锋的重心。在它擦身而过的瞬间，用大剑剑柄精准敲击其脊椎的第三节，利用杠杆原理将它庞大的身躯物理瘫痪。",
+            "npcReply": "“教科书级别的弱点打击。你甚至连一滴汗都没出就解决了战斗。”",
+            "scoreDelta": {
+              "wis": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "弱点截击",
+              "脊椎敲击",
+              "精准瘫痪"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通解剖学与反重力打击的精准武学者"
+          },
+          {
+            "id": "C",
+            "text": "你迅速掏出一瓶‘超强效魔用驱兽喷雾’对准座狼的眼睛一顿狂喷，并大声宣布根据《濒危动物保护法》，此座狼属于国家二级保护动物，禁止殴打。",
+            "npcReply": "“座狼被你喷瞎了，而你用野生动物法把考官也给绕晕了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "驱兽喷雾",
+              "动物保护法",
+              "合法休战"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "擅长携带违禁化学试剂并在战场上熟练搬出法律护身的滑头"
+          },
+          {
+            "id": "D",
+            "text": "你突然在现场摆出了一个极其标准的烧烤摊，生火并在座狼面前撒起了大量的孜然和黑胡椒，一边撒一边流口水：‘兄弟，你喜欢几分熟？’",
+            "npcReply": "“那座狼看着你的烧烤架，脸上的狂暴瞬间变成了对食客的纯粹恐惧。”",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "现场烧烤",
+              "香料洗礼",
+              "食欲震慑"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在生死搏杀中始终对食材抱有极高热情的怪咖主厨"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_scout",
+        "targetId": "guild_fighter",
+        "title": "孤胆侦察",
+        "scene": "你独自深入敌方的丛林前哨，发现了一支由二十名重装兽人组成的精锐伏击队。他们正在磨刀，准备截击你们即将路过的主力小队。",
+        "prompt": "作为唯一的侦察兵，你如何处置这支危机重重的伏击队？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你冷笑一声，拔出大剑，利用茂密的丛林掩护，像一头狂暴的猎食巨龙般从树冠上直接砸进敌阵，强行开启了一场极其残忍的清场反伏击。",
+            "npcReply": "“你单枪匹马把侦察任务跑成了斩首行动。二十个伏击者被你一个人包围了。”",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "单兵突破",
+              "反向包围",
+              "清场肉搏"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "信奉最好的侦察就是把敌人全部杀光的狂暴武德派"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地观察对方营地的柴堆和风向，使用龙息偷偷引燃了他们上风口的干草堆，并在浓烟中利用共振声波制造了‘大军压境’的物理音效，迫使对方狼狈撤退。",
+            "npcReply": "“空城计加物理烟熏，你用最少的体力消耗完成了一次完美的战略逼退。”",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "定向烟熏",
+              "共振音效",
+              "战略逼退"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长运用心理战和物理力学扰乱敌方阵型的智将"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从怀里掏出一面印有兽人图腾的‘投降免死牌’挂在脖子上，极其丝滑地走入营地，声称自己是前来进行学术交流的‘异族友好学者’，然后拿走了他们的三个烤羊腿。",
+            "npcReply": "“你不仅成功通敌，还极其顺手地顺走了敌人的午餐，厚颜无耻。”",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "挂免死牌",
+              "友好交流",
+              "顺走羊腿"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通战场伪装与厚脸皮通敌顺手牵羊的滑头游荡者"
+          },
+          {
+            "id": "D",
+            "text": "你把全身龙鳞涂成极其鲜艳的荧光粉色，在营地外的树梢上疯狂摇摆，同时大声播放极其洗脑的‘龙裔广场舞神曲’，试图以精神污染逼退敌人。",
+            "npcReply": "“兽人看着树梢上的荧光粉色闪烁球，以为自己误入了某种魔鬼的祭祀，吓得当场逃走。”",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "荧光粉龙鳞",
+              "树上疯狂摇摆",
+              "广场舞神曲"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极度精神污染和怪诞行径将敌人吓退的战场艺术家"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_fighter_siege",
+        "targetId": "guild_fighter",
+        "title": "破城的怒火",
+        "scene": "守城战的最后一刻，敌方铁卫军锁死了厚达一尺的玄铁城门，城墙上的弩兵正疯狂射击。作为攻城前锋，你必须在三十秒内砸开这道门，否则全军覆没。",
+        "prompt": "面对紧锁的玄铁城门与漫天箭雨，你如何破门？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你怒吼一声，全身肌肉暴胀，将全身的龙息和力道汇聚在大剑之上，使出一记极其狂暴的‘真龙碎岩斩’，生生将一尺厚的玄铁门劈出了一个大窟窿！",
+            "npcReply": "“你用纯粹的物理暴力把铁门砸碎了，你的大剑基本上也成了废铁，但门开了！”",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "碎岩巨斩",
+              "物理砸门",
+              "破城一击"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "崇尚用极暴力解决一切障碍的攻城锤型战士"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地观察城门的铰链与插销结构，深吸一口气，利用高温龙息将铰链瞬间融化，随后用肩膀轻轻一推，整扇玄铁门便轰然倒地。",
+            "npcReply": "“精准热熔，四两拨千斤，这才是高级技术流的破城方法。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "铰链热熔",
+              "结构瓦解",
+              "技术破门"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通金属熔点与工程结构的战术拆迁专家"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从怀里掏出一张伪造的《城门产权纠纷违建强拆令》，大声向城墙上的敌人宣读，并威胁要向帝国审计局举报他们的城门不符合消防规范。",
+            "npcReply": "“你甚至试图在攻城战里用法务强拆令逼迫守军开门？！太离奇了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "法理强拆",
+              "违建强拆令",
+              "消防举报"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "即使在大战关头也执着于用伪造公文进行忽悠的奇葩"
+          },
+          {
+            "id": "D",
+            "text": "你深吸一口气把自己吹成一个巨大的河豚球，然后利用肚皮的高弹性疯狂地在城门上撞击，像一个巨大的蹦蹦球一样把城门震得哐啷作响。",
+            "npcReply": "“守军在城墙上看着一个巨大的粉色龙裔球在撞门，下巴都砸在了地上。”",
+            "scoreDelta": {
+              "con": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "巨球撞击",
+              "河豚蹦蹦",
+              "物理战术"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用不可思议的弹性物理撞击来震撼守军的整活大师"
+          }
+        ]
+      }
+    ],
+    "guild_sorcerer": [
+      {
+        "id": "dragonborn_sorcerer_hoard",
+        "targetId": "guild_sorcerer",
+        "title": "血脉的贪婪",
+        "scene": "在一次遗迹探索中，你发现了一个装满极其稀有魔法宝石的宝箱。但是宝箱上刻着警告：‘只能拿取一颗，多拿将触发毁灭诅咒。’",
+        "prompt": "作为极其痴迷于财宝和魔法力量的龙脉术士，你如何选择？",
+        "options": [
+          {
+            "id": "A",
+            "text": "you冷笑一声，极其狂暴地催动体内魔力，直接施展了禁忌的‘物质同化术’。你没有把宝石装进口袋，而是极其粗暴地把所有的宝石直接按进了自己的龙鳞缝隙里，用肉身强制兼容了这些魔法晶石。",
+            "npcReply": "‘诅咒判定你没有“带走”它们，因为你变成了宝藏的一部分。’你现在看起来像个行走的七彩迪斯科球。",
+            "scoreDelta": {
+              "con": 3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3,
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "物质同化",
+              "塞进鳞片",
+              "肉身兼容"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "利用肉体同化强行卡规则漏洞的狠人法师"
+          },
+          {
+            "id": "B",
+            "text": "你极其专业地掏出一份空白的《宝藏所有权转让契约》，用一滴龙血签上自己的名字，然后把契约拍在箱子上。你极其严肃地宣布这个箱子已经被你依法收购，拿走自己的财产不算‘拿取’。",
+            "npcReply": "‘你用魔法商业法硬生生把上古诅咒的逻辑判定给烧毁了。’宝箱在法理的冲击下冒出了一阵青烟。",
+            "scoreDelta": {
+              "int": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "宝藏转让契约",
+              "合法收购",
+              "法理破除诅咒"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通魔法界产权法、能用合同对抗诅咒的法务施法者"
+          },
+          {
+            "id": "C",
+            "text": "你极其谨慎地后退十步，然后掏出一只被魔法控制的僵尸老鼠。你操控这只已经死透的老鼠把宝石一颗颗叼出来放在安全区域。诅咒疯狂地劈在老鼠身上，却对一具早没命的尸体毫无作用。",
+            "npcReply": "‘你把防雷击测试做到了极致，诅咒法阵都快被你薅秃了。’极度安全，也极度缺德。",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "僵尸老鼠趟雷",
+              "疯狂试探",
+              "死道友不死贫道"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "永远用非生命体趟雷、极度怕死但绝不吃亏的稳健派"
+          },
+          {
+            "id": "D",
+            "text": "你仔细端详了宝箱半天，突然极其兴奋地把那块写着警告的石碑给拔了起来，装进背包里。‘能在这种环境下保存几千年的警告牌，这才是真正的稀世古董！’随后你对满箱子的宝石看都不看一眼就走了。",
+            "npcReply": "‘买椟还珠的究极变种。’诅咒系统因为你这种极其离谱的脑回路陷入了漫长的死机。",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "搬走警告牌",
+              "买椟还珠",
+              "古董捡漏"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "关注点永远异于常人、对宝藏毫无概念的古董捡漏王"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_library",
+        "targetId": "guild_sorcerer",
+        "title": "禁忌的卷轴",
+        "scene": "在皇家大图书馆的底层，你发现了一本散发着硫磺与深渊气息的古老巨龙卷轴。卷轴上刻着警告：‘凡解开此印记者，将承受血脉暴涨的极痛。’",
+        "prompt": "面对这份可能大幅提升魔法力量但也伴随极高风险的禁忌卷轴，你如何抉择？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你毫无惧色，直接咬破手指，用炽热的龙血强行激活先祖印记，任由狂暴的龙之魔法涌入体内，全身鳞片因为魔力高热而呈现出亮红色。",
+            "npcReply": "“你用狂傲的意志强行承受了血脉暴涨的痛苦，体内的魔力光柱冲天而起。”",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "龙血唤醒",
+              "强承极痛",
+              "血脉暴胀"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "为了追求极致魔力甘愿承受肉体极限折磨的血脉术士"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地使用复杂的魔法阵，将卷轴上的禁忌印记引导至旁边一块极其耐热的花岗岩上，通过岩石的物理传导间接读取其中的奥术代码。",
+            "npcReply": "“你用极限微操成功白嫖了卷轴上的魔力，且没有任何副作用。”考官大为惊叹。",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "阵法偏转",
+              "白嫖魔力",
+              "花岗岩载体"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长运用严密逻辑与奥术技巧规避风险的智多星法师"
+          },
+          {
+            "id": "C",
+            "text": "你在千钧一发之际，把同行的牧师学徒当做‘神圣导体’，强行让他用肉身替你承受了血脉暴胀的痛楚，而你在一旁飞速记录魔力变化。",
+            "npcReply": "“学徒在狂叫，而你在疯狂记笔记。你真是个道德极其低下的冷血施法者。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "学徒趟雷",
+              "道德沦丧",
+              "学术记录"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "视同伴生命为研究耗材的极端利己主义学者"
+          },
+          {
+            "id": "D",
+            "text": "你把卷轴当成了极其高级的生火纸，现场用它烤起了一串烤面筋，并坚称这是‘远古巨龙秘制香辣面筋’，还要强行卖给考官。",
+            "npcReply": "“那卷轴蕴含的禁忌魔力把面筋烤得滋滋冒油，居然意外的极其美味？！”",
+            "scoreDelta": {
+              "cha": 2,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "火烧卷轴",
+              "烤面筋",
+              "秘制小吃"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "暴殄天物、将上古禁忌秘籍当做烧烤木炭的硬核吃货"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_element",
+        "targetId": "guild_sorcerer",
+        "title": "元素的暴走",
+        "scene": "在一场突如其来的倾盆暴雨中，你体内的红龙火焰法术与空气中的水元素产生剧烈冲突，法术魔力在你的胸腔内疯狂沸腾，随时会引发自燃大爆炸。",
+        "prompt": "面对冰与火的体内冲突，你如何引导这股暴走力量？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你不仅不压制，反而张大嘴巴，将暴雨引入喉咙，利用体内的高热瞬间将其汽化，喷出一道遮天蔽日的超级高温蒸汽云，将眼前的敌人瞬间蒸熟。",
+            "npcReply": "“你把体内的爆沸变成了蒸汽大喷发，现场瞬间变成了大型桑拿房。”",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "汽化暴雨",
+              "蒸汽洪流",
+              "桑拿爆破"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "精通体液汽化与超大范围蒸汽杀伤的术士"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地绘制‘温差魔力发电阵’，将体内冰火交融的极端温差强行转化为纯净的奥术电流，反手射出一道高能激光束击穿了远处的山头。",
+            "npcReply": "“把自燃风险物理转化为高能电流，你这物理转化的微操简直是天才。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "温差转化",
+              "激光束",
+              "无害放电"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "将热力学定律应用于奥术实战的工业风术士"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从怀里掏出一张《天气损害保险理赔单》，要求大教堂对这场暴雨造成的‘施法环境恶化及龙鳞褪色损毁’支付双倍理赔金，并当场绝食抗议。",
+            "npcReply": "“你在生死关头甚至还有心思跟老天爷索要气象保险赔偿金？！”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "保险理赔",
+              "气象索赔",
+              "绝食维权"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "随时准备通过维权和抗议来索要高额战争理赔的法务狂"
+          },
+          {
+            "id": "D",
+            "text": "你顺势从包里掏出三盒速食面塞进胸腔那通红的鳞片缝隙里，利用体内的高热在三秒内把面泡开，并热烈邀请旁边的考官一起吸溜吸溜。",
+            "npcReply": "“……面条的软硬度竟然刚刚好，考官一边吃面一边陷入了深度自闭。”",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "鳞片泡面",
+              "三秒泡开",
+              "现场吃面"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在毁灭边缘依然以惊人的淡定进行现场泡面的顶级吃货"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_ritual",
+        "targetId": "guild_sorcerer",
+        "title": "火山的洗礼",
+        "scene": "在一座活火山的熔岩池旁，你需要将手放入沸腾的岩浆中，感应并激活先祖留下的巨龙火符文。周围有热浪滚滚，石块不断坠落。",
+        "prompt": "面对温度高达千度的滚烫岩浆，你如何完成洗礼？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你冷笑一声，直接大步跨入熔岩池中，半个身子没入岩浆，任由烈焰洗礼全身，不仅激活了符文，还让体表的红龙鳞片变得越发鲜红夺目。",
+            "npcReply": "“你硬生生把熔岩洗礼做成了高贵的真龙桑拿，鳞片折射出的光芒令人不敢直视。”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "熔岩泡澡",
+              "真龙桑拿",
+              "鳞片强化"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "完全无视物理高温、用肉身强行融汇烈焰魔能的铁人"
+          },
+          {
+            "id": "B",
+            "text": "you极其冷静地拿出一根特制的黄铜引魔针，插入岩浆中，利用引魔针将符文波段完美桥接到你的项链上，全程手指都没沾上一度高温。",
+            "npcReply": "“极其聪明的奥术导体应用，你用一根针白嫖了整座火山的魔能。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "引魔针",
+              "桥接符文",
+              "精准窃取"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长运用工具和桥接原理白嫖魔法符文的精算师"
+          },
+          {
+            "id": "C",
+            "text": "你飞速抓住旁边一个吓得发抖的地精，在他的屁股上画满导魔符文，然后粗暴地将他当做垫脚石踩在熔岩上，以此强行读取符文数据。",
+            "npcReply": "“地精的皮裤都烧着了！你这种极其卑劣的过河拆桥行为遭到了强烈谴责。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "地精垫脚石",
+              "过河拆桥",
+              "道德滑坡"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "为了自身安全不惜将一切异类生命当作隔热垫的利己主义者"
+          },
+          {
+            "id": "D",
+            "text": "你往岩浆里扔了一百公斤生红薯，然后一边用龙吼大唱‘烤红薯之歌’，一边用铁铲疯狂地在大伙面前翻炒，把庄严的仪式变成了火山地摊。",
+            "npcReply": "“……红薯被火山灰烤得极香，全场考核官最后都一边吐皮一边默默地吃了起来。”",
+            "scoreDelta": {
+              "cha": 2,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "火山烤红薯",
+              "地摊翻炒",
+              "红薯之歌"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "能把任何庄严肃穆的远古神迹强行扭转为农贸市场的摆摊王"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_apprentice",
+        "targetId": "guild_sorcerer",
+        "title": "学徒的失误",
+        "scene": "你的施法学徒在配置强效龙息增幅药剂时，不小心把魔光粉的分量加了十倍。药水正疯狂冒泡，发出极其刺耳的金属摩擦声，随时会发生剧烈的大爆炸。",
+        "prompt": "面对即将引发实验室上天的大爆炸，你如何处理？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你一把推开学徒，深吸一口气，竟然直接把整瓶爆裂药剂一饮而尽！你将药剂的高热当作自身龙息的燃料，仰天朝实验室的防火烟道喷出一道千米长的火柱。",
+            "npcReply": "“你用极其强悍的巨龙胃袋强行消化了化学炸弹，烟道甚至被你烫坏了。”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "生吞药水",
+              "物理消化",
+              "烟道排火"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "体质极其变态、能把任何剧毒易爆化学品当成碳酸饮料喝的术士"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地撕下实验日志，用龙息将其点燃，然后用失控的魔力在空中疯狂绘制复杂的法阵，最后把所有狂暴能量封印进旁边一个极其廉价的陶瓷咖啡杯里。",
+            "npcReply": "“你把一颗随时能抹平街区的魔力核弹装进了一个印着‘最佳员工’的杯子里。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "法阵封印",
+              "最佳员工杯",
+              "廉价魔导器"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通极限微操、用废品制作高阶魔导器的危险工匠"
+          },
+          {
+            "id": "C",
+            "text": "你在千钧一发之际，以极其惊人的手速将自己的心跳和呼吸强行停止，直接进入了‘假死休眠’状态，让体内失控的魔力因为失去宿主的生命体征而误以为宿主已死，从而缓缓消散。",
+            "npcReply": "“你为了躲避爆炸甚至骗过了你自己的细胞！学徒看着你突然睁眼差点吓疯。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "强制休眠",
+              "物理装死",
+              "拔自己电源"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "能随时通过物理拔插自己电源来规避系统报错的装死大师"
+          },
+          {
+            "id": "D",
+            "text": "你觉得药水沸腾的热量很好，于是极其顺手地拿出五公斤生牛肉贴在烧红的试管上，并撒上黑胡椒和海盐，试图做一顿高阶魔能铁板烧。",
+            "npcReply": "“……牛肉的火候居然真的是完美的七分熟！考官在废墟里嚼得津津有味。”",
+            "scoreDelta": {
+              "con": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "S": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "生鲜铁板烧",
+              "完美七分熟",
+              "硬核美食"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在生死关头依然把烹饪质量放在第一位的硬核美食家"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_trade",
+        "targetId": "guild_sorcerer",
+        "title": "魔法的交易",
+        "scene": "一个黑市商人神秘地叫住你，掏出了一个被水晶盒封存的‘远古成年红龙心脏标本’。他愿意用它换取你一半的红龙吐息本源魔力，但一旦失去本源，你的火焰魔法威力将折半。",
+        "prompt": "面对血脉本源的交易引诱，你如何选择？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你傲然冷笑，直接一口火焰龙息喷在水晶盒上，当场将标本连同商人的贪婪化为灰烬：‘真龙的力量只配生长在体内，而不是被当做玩物！’",
+            "npcReply": "“霸道而高傲的龙裔，你用大火证明了血脉不可交易的尊严。”",
+            "scoreDelta": {
+              "cha": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "火烧标本",
+              "傲骨铮铮",
+              "血脉尊严"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "视氏族荣誉高于一切物性资产的傲骨术士"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地使用奥术‘镜像伪造术’，现场复制了一份完全相同的、由胡椒粉和磷火混合的‘假吐息本源’，极其专业地将那颗真正的心脏套路了过来。",
+            "npcReply": "“黑市商人在半路上被自己水晶盒里的胡椒粉熏得打了三百个喷嚏。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "镜像伪造",
+              "胡椒粉本源",
+              "套路黑市"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长运用幻术和商战套路反向白嫖黑市物品的精明法师"
+          },
+          {
+            "id": "C",
+            "text": "你大方地同意了交易，但在交接的瞬间，你飞速将本源抽离过程引流到了你身旁的队友身上，让他替你支付了一半的本源，而你白拿了心脏。",
+            "npcReply": "“你获得了红龙心脏，而你的队友现在施展火球术只能点烟了。极其卑劣！”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "引流魔力",
+              "出卖队友",
+              "空手套白狼"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "能把一切施法代价和损失物理转移到同伴身上的财务精明者"
+          },
+          {
+            "id": "D",
+            "text": "你突然把那颗红龙心脏当成了极其高级的棒球，拿出一根大棒猛力挥击，将其一棒打出了城墙外，并大声高呼：‘全垒打！’",
+            "npcReply": "“商人看着在天空中变成一颗星星的无价之宝，哭得瘫倒在地。”",
+            "scoreDelta": {
+              "str": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "心脏棒球",
+              "极速挥杆",
+              "全垒打击"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "对财富毫无概念、纯粹追求物理打击快感的体育奇才"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_sorcerer_portal",
+        "targetId": "guild_sorcerer",
+        "title": "最终的唤醒",
+        "scene": "在遗迹的最深处，巨大的跨界传送门正疯狂颤抖，虚空怪物潮水般涌出。你体内的巨龙血脉疯狂沸腾，这是你最后也是最危险的引导机会，随时可能爆体而亡。",
+        "prompt": "面对即将撕裂虚空的能量节点，你的最终决断是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你任由体内的龙血彻底暴走，不退反进，将所有的奥术能量与高温龙息融合成一道刺眼的光幕，用肉身作为防线，生生把传送门强行焊死封印！",
+            "npcReply": "“你以近乎自爆的高热焊死了世界裂缝，你的英姿将成为不朽的符文。”",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 3
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "good": 2,
+              "action": 1
+            },
+            "triggerTags": [
+              "龙息封印",
+              "焊死传送门",
+              "肉身防线"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "以生命和怒火履行誓言的血脉大法师"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地撕下旁边的防护法阵残页，用龙血飞速演算其中的几何公式，在传送门能量谐振的奇点精准插下一根金属棍，强行引发电磁偏转将门物理偏转封闭。",
+            "npcReply": "“你用极其冷静的几何算计完成了法术阻击。那门像被拉链拉上了一样整齐。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "几何演算",
+              "拉链式封闭",
+              "物理偏转"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通奥术奇点计算与物理力场偏转控制的算理术士"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从怀里掏出一面印有虚空图腾的‘通关特别许可证’，大声对涌出的虚空怪物说你其实是虚空大公在人间的税务代表，要求怪物们先补交三千金币的‘跨界过路税’。",
+            "npcReply": "“你甚至试图对虚空怪物征税？！虚空领主被你的厚颜无耻震惊了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "虚空过路税",
+              "通关许可证",
+              "税务敲诈"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "能在跨界灾难中面不改色对虚空恶魔实施税务勒索的商业骗子"
+          },
+          {
+            "id": "D",
+            "text": "你深吸一口气把自己吹成一个巨大的河豚球，然后卡在传送门的洞口，大声朝虚空深处喊：‘别挤了！本球已经把门堵死了，再挤我就要打嗝了！’",
+            "npcReply": "“……最离谱的是，你那极高弹性的肚皮竟然真的像个塞子一样把空间门堵得极其严实！”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "肉身塞门",
+              "河豚塞子",
+              "空间门堵漏"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "随时准备用自己充气膨胀的身体去给一切时空裂缝当塞子的物理学家"
+          }
+        ]
+      }
+    ],
+    "guild_barbarian": [
+      {
+        "id": "dragonborn_barbarian_rage",
+        "targetId": "guild_barbarian",
+        "title": "龙化暴走",
+        "scene": "在一次守城战中，你的小队被重重包围。你受了极其严重的伤，剧烈的痛苦正在疯狂刺激你体内的巨龙血脉，随时可能让你进入六亲不认的‘伪龙化’状态。",
+        "prompt": "面对即将失控的野兽本能，你如何应对？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你任由伪龙化占据身体，但在最后一丝理智消散前，你极其狠辣地把一根烧红的铁条死死缠在自己的右臂上。剧烈的疼痛锚定了你的敌我识别，你化作一头双眼猩红但绝对不会误伤队友的杀戮绞肉机。",
+            "npcReply": "‘你用自残的方式给狂暴本能加了一道安全锁。’敌军被你极其精确的狂化屠杀吓得肝胆俱裂。",
+            "scoreDelta": {
+              "str": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "烧红铁条",
+              "痛觉锚定",
+              "精准绞肉机"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "能用剧痛给狂暴系统植入底层逻辑的狠毒战士"
+          },
+          {
+            "id": "B",
+            "text": "you感受到狂暴的龙血在沸腾，你极其果断地拔出战斧，不是砍向敌人，而是疯狂地挥砍地面。你将体内所有无处发泄的破坏欲倾注在大地上，生生劈出了一道宽达十米的深渊壕沟，直接截断了敌人的冲锋路线。",
+            "npcReply": "‘你把狂暴状态变成了一次极其恐怖的土木工程作业。’敌军看着那道深渊，彻底放弃了攻城。",
+            "scoreDelta": {
+              "wis": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "劈出深渊",
+              "地形改造",
+              "土木工程作业"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "能将毁灭本能转化为地形改造的狂暴工程师"
+          },
+          {
+            "id": "C",
+            "text": "你在失控的前一秒，极其熟练地对着敌军将领大喊：‘我感染了高致死性的巨龙狂犬病！谁碰我谁就会浑身长满鳞片然后炸开！’然后你开始极其安全地在地上疯狂打滚口吐白沫。",
+            "npcReply": "‘你这极其制造恐慌演技的表演，直接引发了敌军的恐慌性大溃退。队友们都被你精湛的演技折服了。’",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "狂犬病警告",
+              "口吐白沫",
+              "生化危机式恐吓"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "用医学造假和浮夸演技完成清场的战术欺诈师"
+          },
+          {
+            "id": "D",
+            "text": "在极度的狂躁中，你极其离谱地掏出了一把破旧的尤克里里，开始一边流血一边弹奏极其欢快、洗脑的乡村小调，甚至还用龙吼的音量大声伴唱。狂暴的力量被你全部转化成了震耳欲聋的魔音贯脑。",
+            "npcReply": "‘你把血肉横飞的战场强行扭转成了极其荒诞的重金属乡村音乐节。敌我双方都因为无法忍受你的歌声而痛苦地捂住了耳朵。’",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "弹尤克里里",
+              "重金属乡村音乐",
+              "魔音贯脑"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极度崩坏的音乐品味强行终止战争的灵魂歌手"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_barbarian_insult",
+        "targetId": "guild_barbarian",
+        "title": "逆鳞的触碰",
+        "scene": "在一次酒馆斗殴中，一个喝醉的半兽人极其不知死活地把一大杯极其劣质的啤酒泼在了你那极其引以为傲的纯血龙鳞上，并大声嘲笑你的鳞片像大壁虎。",
+        "prompt": "面对触碰你逆鳞的挑衅，你的龙怒如何爆发？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你猛地深吸一口气，胸腔发出闷雷般的轰鸣。你没有动手，而是贴着他的脸发出了一声纯正的超高分贝龙吼。音波直接将半兽人震得飞起，撞穿了酒馆的三层木墙，挂在对面的钟楼上。",
+            "npcReply": "“不动一刀一枪，纯靠肺活量完成了一次攻城级别的打击。”酒馆老板求你别再喘气了。",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "超高分贝龙吼",
+              "声波攻城",
+              "不战而屈人"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "人形自走音波炮、一嗓子能完成清场的生物武器"
+          },
+          {
+            "id": "B",
+            "text": "你面无表情地拔出巨剑，以肉眼无法捕捉的速度在半兽人眼前挥舞。当他还在狂笑时，他的衣服、腰带甚至靴子上的绑带已经全部化为碎片。你用剑面拍了拍他光秃秃的肚子：‘现在，去街上笑吧。’",
+            "npcReply": "“这种剥夺了对方一切社会尊严的物理裁决，比直接杀了他还要恶毒一万倍。”",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "肉眼无法捕捉",
+              "社会性死亡",
+              "物理裁决"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "精通人体解剖学与社会性死亡的冷面剑客"
+          },
+          {
+            "id": "C",
+            "text": "你极其做作地发出一声惨叫，直接倒在地上开始剧烈抽搐，声称这种劣质啤酒中含有‘龙鳞致命毒素’，并当场要求半兽人支付高达十万金币的赔偿金，否则就让城卫军以谋杀未遂逮捕他。",
+            "npcReply": "“你把一场酒馆斗殴硬生生变成了金额巨大的碰瓷敲诈案。半兽人连夜逃出了城。”",
+            "scoreDelta": {
+              "wis": -2,
+              "str": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "risk": 2,
+              "self": 1
+            },
+            "triggerTags": [
+              "碰瓷医疗费",
+              "谋杀未遂警告",
+              "法律讹诈"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通法律讹诈与浮夸演技的职业碰瓷龙"
+          },
+          {
+            "id": "D",
+            "text": "你不仅没生气，反而抓起他的衣领，用看绝世珍宝的眼神看着他：‘你知道怎么把这玩意发酵出这种刺鼻味道的？！天才！’随后你强行把他绑架回了营地，逼他给你当专属酿酒师。",
+            "npcReply": "“你不仅原谅了他的冒犯，还让他沦为了每天必须酿造劣质啤酒的苦力。”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "强行绑架",
+              "赏识劣质酒",
+              "打工酿酒"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "脑回路奇诡、强行让敌人转职为你打工的资本家"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_barbarian_cage",
+        "targetId": "guild_barbarian",
+        "title": "铁笼的狂噬",
+        "scene": "你被关在一个直径仅有五米的圆形精钢决斗铁笼中，没有任何武器。栅栏外，三只双眼猩红的腐化地狱犬正死死盯着你，空气里弥漫着血腥味。",
+        "prompt": "铁笼降下，空手面对恶犬，你的狂暴兽性如何爆发？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你怒吼一声，全身毛发直竖，鳞片瞬间膨胀并闭合，不退反进，直接合身撞向冲过来的地狱犬，张开长满獠牙的巨口，用狂暴的咬合力反向撕咬野兽的喉咙！",
+            "npcReply": "“三头恶犬被你咬死了一只，剩下的两只看着满嘴是血的你，吓得在角落里瑟瑟发抖。”",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "反向撕咬",
+              "钢牙咬合",
+              "生吃恶兽"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "战斗本能极度野蛮、在牙齿和撕咬力度上远超野兽的伪龙狂战"
+          },
+          {
+            "id": "B",
+            "text": "你冷静地在铁笼角落垫步，双手发力抓住精钢栏杆，凭借惊人的臂力和物理杠杆原理，生生将一根直径五公分的精钢栅栏给掰折了下来，当做标枪刺穿了恶犬。",
+            "npcReply": "“你把角斗笼当成了自取武器的材料库。力学控制极佳。”",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "掰断铁栅栏",
+              "物理杠杆",
+              "钢标枪"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长就地取材、用蛮力配合力学制造简易重型兵器的战术战士"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从怀里掏出一张伪造的《铁笼施工安全隐患停工整顿书》，贴在自己胸前，声称铁笼宽度不符合帝国劳动安全法，拒绝与恶犬进行无安全带的接触。",
+            "npcReply": "“恶犬看着你胸前的整顿书，似乎也因为没见过这么厚脸皮的对手而迟疑了。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "停工整顿书",
+              "劳动安全法",
+              "厚脸皮避战"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "在绝境中也执着于用伪造劳动法文书来规避身体接触的滑头"
+          },
+          {
+            "id": "D",
+            "text": "你突然在原地大跳踢踏舞，脚掌与铁笼地板撞击出极具节奏感的金属噪音，把地狱犬的咆哮声全部强行带偏成了乡村民谣的伴奏声。",
+            "npcReply": "“……恶犬因为听了你魔性的踢踏舞节奏，竟然在现场开始排队绕圈走起了花步！”",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "铁笼踢踏舞",
+              "节奏噪音",
+              "物理降智"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "擅长用离谱的噪音节奏将严肃杀戮场变成滑稽马戏团的舞蹈魔王"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_barbarian_charge",
+        "targetId": "guild_barbarian",
+        "title": "死亡的冲锋",
+        "scene": "敌方的重装强弩阵列在五十米开外的山坡上对准了你。一排排带着幽绿毒光的穿甲弩箭已经上膛，一旦你发起冲锋，将面临漫天毒雨。",
+        "prompt": "面对五十米开阔地的致命强弩阵列，你如何突防？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你完全不在乎毒箭，发出一声震耳欲聋的雷霆战吼，浑身龙鳞竖起，化作一头高速奔行的大型猩红绞肉机，迎着箭雨以极速撞碎了对方的木栅防线！",
+            "npcReply": "“你身上插了十几根弩箭，但你的高速冲撞直接把敌人的弩兵阵型给踩扁了。”",
+            "scoreDelta": {
+              "str": 2,
+              "con": 3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "带箭冲锋",
+              "战车撞击",
+              "雷霆战吼"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "凭借超凡体魄强顶远程伤害、一己之力撕裂战阵的突防野兽"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地紧绷全身龙鳞，让它们在体表快速摩擦共振发出高频金属共振声，飞来的弩箭在接触到共振力场的瞬间由于物理受力不均纷纷偏斜落地。",
+            "npcReply": "“你把身体的鳞片开发成了物理防弹偏转装甲，太硬核了。”",
+            "scoreDelta": {
+              "dex": 2,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "高频共振",
+              "物理偏转",
+              "鳞片防御"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长微调鳞片角度形成物理弹道防弹反射的微操大师"
+          },
+          {
+            "id": "C",
+            "text": "你飞速从背包里扯出五个被捕获的地精绑在自己前面作为‘人肉隔热板’，一边大声宣称地精是全大陆最好的防弹背心，一边猫着腰往前推进。",
+            "npcReply": "“地精们在疯狂咒骂你的祖宗十八代。极度残忍且没有底线。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "地精盾牌",
+              "道德滑坡",
+              "猥琐推进"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "为了保命能毫无道德负担地用一切生命当做人体盾牌的阴险之辈"
+          },
+          {
+            "id": "D",
+            "text": "你深吸一口气把自己吹成一个巨大的蹦蹦气球，然后利用山坡的陡峭角度极其滑稽地朝着弩兵阵地一路滚了过去，顺便压扁了沿途的三个捕熊夹。",
+            "npcReply": "“守军看着一个粉色的巨大龙裔球一路滚过来，吓得连弩都瞄不准了。”",
+            "scoreDelta": {
+              "con": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "球体滚落",
+              "碾压捕熊夹",
+              "物理圆球"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用不可思议的球体滚动姿势物理碾碎沿途一切陷阱的奇人"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_barbarian_hunt",
+        "targetId": "guild_barbarian",
+        "title": "极寒的追猎",
+        "scene": "在零下四十度的极寒冻土上，你已经追踪那头重伤的白龙幼崽整整三天。你的补给已经彻底耗尽，寒风像小刀一样在割你的脸，你的肌肉开始僵硬。",
+        "prompt": "在体能极限与饥寒交迫的双重折磨下，你如何维持猎杀意志？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你猛地咬破自己的舌尖，用剧烈的刺痛强行重新激活狂暴状态，在雪地里拖着沉重的巨斧狂奔，将滚烫的龙血洒在雪地上，以极速扑向猎物。",
+            "npcReply": "“你用自残的剧痛战胜了风雪。猎物看到你满头是血扑过来的残暴模样，吓得当场放弃抵抗。”",
+            "scoreDelta": {
+              "str": 2,
+              "con": 3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "自残抗寒",
+              "舌尖刺痛",
+              "狂暴追猎"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "在极端肉体逆境下能用自残剧痛维持狂化状态的狠人"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地在避风的冰缝中扎营，利用摩擦龙鳞产生的金属热量烘干靴子，并用冰雪搭建了一个完美的折射式防风灶，优雅地烧了一锅热汤。",
+            "npcReply": "“你把极寒生存做成了高标准的野外宿营教学，冷静得令人发指。”",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "龙鳞发热",
+              "冰雪防风灶",
+              "极地露营"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长运用鳞片热能和防风构造进行长期极地生存的战术老兵"
+          },
+          {
+            "id": "C",
+            "text": "你决定不打猎了，直接把旁边冻僵的斥候队友当做‘紧急口粮储备’，一边用铁锤砸开他的背包分食干粮，一边大声向他传授龙裔的‘生存必要恶’理论。",
+            "npcReply": "“你连自己的战友都想咬一口？！考官看着你的账单，手都在颤抖。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "抢夺队友干粮",
+              "口粮储备",
+              "无底线求生"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "在资源匮乏时会瞬间抛弃所有同伴与良知的极端危险分子"
+          },
+          {
+            "id": "D",
+            "text": "你宣布自己是一只‘冬眠的北极蜥蜴’，极其熟练地在雪地里挖了个洞把自己埋了进去，并给自己竖了一块写有‘春暖花开再叫我’的冰碑。",
+            "npcReply": "“……搜救队把你挖出来时，你正抱着一根冻香肠睡得极其香甜。”",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "雪地冬眠",
+              "挖洞活埋",
+              "睡眠大师"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在严寒考验中直接选择就地挖洞睡觉的极度不靠谱乐子人"
+          }
+        ]
+      },
+      {
+        "id": "dragonborn_barbarian_totem",
+        "targetId": "guild_barbarian",
+        "title": "图腾的试炼",
+        "scene": "在一座古老的荒野巨石阵前，荒野萨满要求你将双手按在先祖的怒火图腾上。一旦图腾被你体内的暴烈巨龙血脉刺激，将释放出极其狂暴的雷霆反噬。",
+        "prompt": "面对雷霆灌注的图腾反噬，你的龙怒如何硬抗？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你双眼泛起血芒，直接张开双臂死死抱住图腾，引导雷霆在全身龙鳞间游走噼啪作响，甚至将雷光吞入口中，反向震碎了周围的祭坛石碑！",
+            "npcReply": "“你生生把图腾反噬当成了充能电池。萨满看着碎裂的巨石阵，当场跪了下来。”",
+            "scoreDelta": {
+              "str": 2,
+              "con": 3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "吞噬雷霆",
+              "抱住图腾",
+              "震碎祭坛"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "能够反向引导并吞噬自然雷霆的霸道狂战"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地从怀里掏出一根长达三米的精铜接地导线，一端缠在图腾上，另一端深深插入地底的潮湿泥土，雷霆瞬间全部无害地导入大地。",
+            "npcReply": "“极其完美的物理接地应用。图腾在你面前连个电火花都没冒出来。”",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "接地线",
+              "物理引雷",
+              "无害化放电"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长用最扎实的物理接地原理解决超自然危机的工程狂人"
+          },
+          {
+            "id": "C",
+            "text": "你迅速将一张伪造的《圣地封山育林及文物禁触声明》贴在图腾上，声称图腾已年久失修，任何雷击事故将由萨满承担民事侵权赔偿，以此拒绝触碰。",
+            "npcReply": "“你试图在荒野祭坛上跟萨满打民事侵权官司？！萨满被你气得手抖。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "文物保护法",
+              "侵权声明",
+              "法理避战"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "随时准备用奇葩公文和侵权指控来逃避硬核体能试炼的投机者"
+          },
+          {
+            "id": "D",
+            "text": "你拿出一把生锈的尤克里里，开始对着噼啪闪电的图腾弹奏极其欢快洗脑的乡村小调，用魔性的噪音强行与雷鸣声进行大声合唱。",
+            "npcReply": "“你用极度崩坏的歌声把神圣的先祖雷鸣演变成了乡村重金属音乐会。”",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "弹尤克里里",
+              "乡村小调",
+              "魔音贯脑"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在生死关头依然执着于弹琴唱歌进行精神污染的艺术家"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "endingId": "dragonborn_paladin_end",
+      "endingType": "accepted",
+      "title": "巨龙誓约者",
+      "verdictLine": "你获得了巨龙誓约者的圣骑士徽章，内务整理的典范。",
+      "explanation": "你极其完美地捍卫了龙裔的荣誉，成为了一名连巨龙看到都会觉得你有点死板的圣骑士。你不仅在战场上无坚不摧，更可怕的是，你开始用龙息去烫平制服上的每一道褶皱。你的战友们现在最害怕的不是敌人的冲锋，而是你极其严肃的内务检查。",
+      "tableFunction": "在小队整备阶段，你可以通过展示整洁的内务让全队获得‘精神焕发’状态（所有攻击骰获得+1有利）",
+      "playableFlaw": "洁癖强迫症：如果视线范围内出现不整洁的装备，你将无法专注于战斗（攻击投骰-1不利）",
+      "nextHook": "前往圣光大教堂接受内务总管的进一步审计",
+      "recommendedClass": [
+        "guild_paladin",
+        "guild_cleric"
+      ],
+      "tags": [
+        "完美收尾",
+        "铁腕内务",
+        "荣誉之誓"
+      ]
+    },
+    {
+      "endingId": "dragonborn_barbarian_end",
+      "endingType": "accepted",
+      "title": "异食癖狂战",
+      "verdictLine": "你觉醒了真正的巨龙胃口，连城墙都是你的口粮。",
+      "explanation": "你不仅极其完美地掌握了龙化的狂暴力量，还极其离谱地觉醒了真正的巨龙胃口。你现在打仗已经不需要带军粮了，因为你发现敌人的攻城车和花岗岩城墙嚼起来极其的嘎嘣脆。你成了所有敌方后勤 and 建筑工程师的极其恐怖的噩梦。",
+      "tableFunction": "吞噬万物：你可以吞噬任何小型金属或石质道具来恢复生命值（1d8+体质调整值）",
+      "playableFlaw": "铁胃饥饿：当三天不吃矿石或攻城器械碎片时，你将陷入饥饿狂暴状态",
+      "nextHook": "去攻城器械作坊兼职质量检测员",
+      "recommendedClass": [
+        "guild_barbarian",
+        "guild_fighter"
+      ],
+      "tags": [
+        "战场清理",
+        "铁齿铜牙",
+        "狂暴进化"
+      ]
+    },
+    {
+      "endingId": "dragonborn_fighter_end",
+      "endingType": "accepted",
+      "title": "龙鳞铁壁卫",
+      "verdictLine": "你用肉身筑起了长城，坚不可摧。",
+      "explanation": "你以无可争议的强悍体魄与战技赢得了所有教官的尊重。你的龙鳞坚硬度超越了精钢，在战场上，你就是那堵最让人绝望的防线。任何试图越过你的敌人都只会撞得头破血流。",
+      "tableFunction": "龙鳞铁壁：在战斗中，你和相邻盟友的护甲等级（AC）获得+1的加值。",
+      "playableFlaw": "身形笨重：由于过度堆积肌肉和鳞片防护，你的敏捷相关判定受到-1处罚。",
+      "nextHook": "去要塞前线接任重装禁卫军统领",
+      "recommendedClass": [
+        "guild_fighter",
+        "guild_paladin"
+      ],
+      "tags": [
+        "不破铁壁",
+        "重装堡垒",
+        "阵地中坚"
+      ]
+    },
+    {
+      "endingId": "dragonborn_sorcerer_end",
+      "endingType": "accepted",
+      "title": "魔息大法师",
+      "verdictLine": "体内的远古龙血沸腾，元素魔法的化身。",
+      "explanation": "你成功引导了体内最纯粹的巨龙魔力，成为了挥手间召唤暴风与烈焰的魔法大师。精灵学者在你的魔力波动面前只能羞愧地低下头。你证明了龙裔的魔法才是真正的奇迹。",
+      "tableFunction": "魔能潮汐：你每天有一次机会重置一个已消耗的2环以下法术位。",
+      "playableFlaw": "魔力外溢：当你施放法术时，会对周围5尺内的所有单位造成1点火焰余波伤害。",
+      "nextHook": "前往龙火高塔担任高阶奥术顾问",
+      "recommendedClass": [
+        "guild_sorcerer",
+        "guild_wizard"
+      ],
+      "tags": [
+        "血脉觉醒",
+        "元素风暴",
+        "纯血奇迹"
+      ]
+    },
+    {
+      "endingId": "dragonborn_paladin_spec",
+      "endingType": "probation",
+      "title": "神圣拷问官",
+      "verdictLine": "用冰冷的教条和倾泻的圣光审判一切邪恶。",
+      "explanation": "你成为了圣光教会中最令人畏惧的审判者。你对法典的理解极其严苛，对待罪恶绝不妥协。在你的死亡凝视下，甚至连地精都会主动交代上周偷窃的面包。",
+      "tableFunction": "真言凝视：在对嫌疑人进行洞悉或威吓检定时获得+2有利加值。",
+      "playableFlaw": "严苛正义：你无法容忍任何形式的谎言，哪怕是善意的谎言，否则会陷入短暂沮丧状态。",
+      "nextHook": "前往宗教裁判所接管异端审判档案",
+      "recommendedClass": [
+        "guild_paladin",
+        "guild_cleric"
+      ],
+      "tags": [
+        "冷酷审判",
+        "铁面无私",
+        "圣光之影"
+      ]
+    },
+    {
+      "endingId": "dragonborn_fighter_spec",
+      "endingType": "probation",
+      "title": "极速斩击者",
+      "verdictLine": "天下武功唯快不破，刀光中的死神。",
+      "explanation": "你打破了龙裔笨重的刻板印象，将速度与斩击结合到了极致。你的大剑挥舞时只留下一片模糊的残影，敌人在感受到鳞片摩擦的共振声前就已经被你斩落马下。",
+      "tableFunction": "极速爆发：战斗开始的第一轮，你的移动速度翻倍，且多获得一次副手攻击机会。",
+      "playableFlaw": "体力透支：如果在前两轮战斗中未能击杀敌人，从第三轮起你的所有判定受到-1惩罚。",
+      "nextHook": "去先锋突击队挑战最速百人斩纪录",
+      "recommendedClass": [
+        "guild_fighter",
+        "guild_rogue"
+      ],
+      "tags": [
+        "瞬息斩击",
+        "狂飙极速",
+        "无影剑客"
+      ]
+    },
+    {
+      "endingId": "dragonborn_sorcerer_spec",
+      "endingType": "probation",
+      "title": "元素风暴狂",
+      "verdictLine": "你把各种不稳定的元素融合在一起，每天都在制造华丽的大爆炸。",
+      "explanation": "你觉得单一的火系法术太无聊，于是把雷电、寒冰与龙息混合在一起，开发出了华丽无比的‘七彩风暴’。虽然你的实验室已经被炸飞了三次，但你的输出威力让军方大为震撼。",
+      "tableFunction": "混乱施法：施法时可以掷一次骰子，如果是奇数，伤害类型随机转化为冰/雷/酸，且伤害+1d4。",
+      "playableFlaw": "自炸风险：如果大成功判定失败（大失败），法术会当场以你为中心爆炸，对自身造成1d6伤害。",
+      "nextHook": "去皇家军工研究院指导大范围杀伤性法术研发",
+      "recommendedClass": [
+        "guild_sorcerer"
+      ],
+      "tags": [
+        "爆炸美学",
+        "混乱元素",
+        "火力覆盖"
+      ]
+    },
+    {
+      "endingId": "dragonborn_barbarian_spec",
+      "endingType": "probation",
+      "title": "风暴怒吼者",
+      "verdictLine": "一嗓子吼退千军万马的活火山。",
+      "explanation": "你的肺活量成了战场上的传奇。在一次战斗中，你深吸一口气发出的雷霆怒吼直接把敌人的攻城梯全部震碎。你现在出门从不用带号角，因为你就是最响亮的战争信号。",
+      "tableFunction": "风暴雷吼：每天可施放一次‘雷鸣波’（1环法术效果），无需消耗法术位。",
+      "playableFlaw": "破锣嗓子：由于声带长期受损，你的说服检定永久受到-2惩罚。",
+      "nextHook": "去城墙要塞接替战鼓指挥官的职位",
+      "recommendedClass": [
+        "guild_barbarian",
+        "guild_bard"
+      ],
+      "tags": [
+        "声波武器",
+        "震天雷吼",
+        "战吼之魂"
+      ]
+    },
+    {
+      "endingId": "dragonborn_failure_end",
+      "endingType": "blacklisted",
+      "title": "无鳞的蜥蜴",
+      "verdictLine": "你的鳞片耻辱脱落，沦为下水道的变色龙。",
+      "explanation": "你的极其懦弱和极其卑劣的行为彻底触怒了巨龙先祖。你的鳞片因为失去了荣誉的支撑而全部极其耻辱地脱落。你现在看起来就像一只极其巨大的、光秃秃的变色龙。你被氏族永远流放，只能在极其肮脏的下水道里靠极其卑微地偷吃残羹饭度日。",
+      "tableFunction": "无鳞伪装：你可以完美地融入下水道阴影中，隐匿检定获得+2",
+      "playableFlaw": "脆弱皮肤：没有龙鳞保护，你受到的物理伤害增加2点",
+      "nextHook": "在下水道寻找失落的祖传生发剂",
+      "recommendedClass": [
+        "guild_rogue",
+        "guild_druid"
+      ],
+      "tags": [
+        "耻辱流放",
+        "变色伪装",
+        "生存至上"
+      ]
+    },
+    {
+      "endingId": "dragonborn_coward_end",
+      "endingType": "blacklisted",
+      "title": "战前逃亡者",
+      "verdictLine": "你精通一百种滑溜的逃跑姿势，唯独不会往前冲锋。",
+      "explanation": "面对战场上的危机，你每次都用极其完美的合法理由或者演技溜之大吉。虽然你保住了小命，但氏族的长辈们一致决定将你的名字从族谱里极其屈辱地抹去。你成了全大陆龙裔茶余饭后的笑料。",
+      "tableFunction": "丝滑闪避：在脱离战斗和逃跑时，你的AC获得+3临时加值。",
+      "playableFlaw": "名誉扫地：所有龙裔NPC对你的初始好感度直接降为‘厌恶’。",
+      "nextHook": "在边境小镇改名换姓，靠假装人类小贩度日",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "临阵脱逃",
+        "耻辱之名",
+        "苟命至上"
+      ]
+    },
+    {
+      "endingId": "dragonborn_contract_slave",
+      "endingType": "blacklisted",
+      "title": "法条奴隶",
+      "verdictLine": "你用合同破除了诅咒，却把自己永远绑在文书堆里。",
+      "explanation": "你太喜欢用法务手段和商业合同去卡规则漏洞了。最终，公会法务部认为你是个不可多得的合同奇才，强行雇佣你成为公会的终身文书审计员。你现在每天要处理一万份地精工伤申报单，再也没有机会踏入战场。",
+      "tableFunction": "契约漏洞：在与NPC进行商业谈判时，能强制扣减交易金额 of 10% 作为法务合规费。",
+      "playableFlaw": "文书焦虑：如果没有随身携带羊皮纸和钢笔，你的智力检定受到-1惩罚。",
+      "nextHook": "在公会地下二层档案室核对三十年前的烂账",
+      "recommendedClass": [
+        "guild_wizard",
+        "guild_rogue"
+      ],
+      "tags": [
+        "终身文员",
+        "法务陷阱",
+        "纸面人生"
+      ]
+    },
+    {
+      "endingId": "dragonborn_slime_breeder",
+      "endingType": "blacklisted",
+      "title": "史莱姆牧羊人",
+      "verdictLine": "放着尊贵的龙裔不当，你跑去养史莱姆。",
+      "explanation": "因为你多次雇佣史莱姆替你趟雷、做脏活，你意外掌握了史莱姆的行为习惯。你索性脱掉了骑士甲，在乡下办起了一家‘流浪史莱姆回收养殖场’。虽然每天身上都黏糊糊的，但你确实过得极其安逸。",
+      "tableFunction": "软泥亲和：野生史莱姆类怪物不会主动攻击你，且你可以驯服一只作为宠物。",
+      "playableFlaw": "粘性气味：由于长期接触史莱姆，你散发着怪异的酸味，魅力值判定-1。",
+      "nextHook": "扩建你的史莱姆养殖场，开发酸液清洁剂业务",
+      "recommendedClass": [
+        "guild_druid",
+        "guild_ranger"
+      ],
+      "tags": [
+        "软泥相伴",
+        "农耕隐退",
+        "酸爽人生"
+      ]
+    },
+    {
+      "endingId": "dragonborn_disco_ball",
+      "endingType": "absurdAccepted",
+      "title": "行走的迪斯科球",
+      "verdictLine": "把宝石全塞进鳞片里，闪瞎了全城人的眼。",
+      "explanation": "你利用肉身同化，把所有魔法宝石按进了龙鳞里。你现在不仅百毒不侵，而且只要稍微动一动，就会折射出极其耀眼的七彩光芒。你被城里的歌舞厅老板高薪聘请，成为了全城最瞩目的活体光源。",
+      "tableFunction": "眩晕之光：每天一次，你可以展示身上的鳞片，使周围10尺内所有生物致盲一轮。",
+      "playableFlaw": "无法潜行：你在黑暗中就像一个两千瓦的灯泡，潜行检定受到-5极度不利罚值。",
+      "nextHook": "去大都市的豪华歌舞厅担任特邀领舞及舞台光源",
+      "recommendedClass": [
+        "guild_bard",
+        "guild_sorcerer"
+      ],
+      "tags": [
+        "七彩华丽",
+        "闪盲全场",
+        "时尚弄潮"
+      ]
+    },
+    {
+      "endingId": "dragonborn_pufferfish_balloon",
+      "endingType": "absurdAccepted",
+      "title": "龙裔热气球",
+      "verdictLine": "随时随地把自己吹成球，飘向远方的奇才。",
+      "explanation": "你彻底掌握了‘河豚吸气充气法’。每当遇到无法解决的泥沼、山谷或是强大的敌人，你就会当场吸一大口气，把自己吹成一个大球，然后随风飘走。你成了全奇幻世界里最神奇的浮空旅行家。",
+      "tableFunction": "轻羽飘浮：你可以随时通过吸气让自己获得‘羽落术’效果，并随风朝指定方向飘行。",
+      "playableFlaw": "风吹就跑：当战场上刮起强风时，你需要进行力量对抗，否则会被吹离原本位置。",
+      "nextHook": "加盟环球航空探险队，挑战无动力飞跃世界屋脊",
+      "recommendedClass": [
+        "guild_druid",
+        "guild_bard"
+      ],
+      "tags": [
+        "河豚奇迹",
+        "自由飘流",
+        "生物气球"
+      ]
+    },
+    {
+      "endingId": "dragonborn_heavy_machinery",
+      "endingType": "absurdAccepted",
+      "title": "重力攻城骑士",
+      "verdictLine": "手握三米攻城锤，讲着最正经的物理法理。",
+      "explanation": "你把神圣的决斗规则和重工业重型武器完美结合。你挥舞着攻城锤，一边把敌人砸扁一边高呼圣光纪律。你开创了圣光教会中极其暴力且具有物理震撼力的‘重型工业流派’。",
+      "tableFunction": "攻城大师：你对建筑物、障碍物和重装护甲单位造成的伤害额外增加1d8。",
+      "playableFlaw": "过载负重：由于你的武器过重，每轮战斗你必须消耗额外的移动力来调整姿态。",
+      "nextHook": "去城防工兵营接管‘重锤破袭队’",
+      "recommendedClass": [
+        "guild_paladin",
+        "guild_fighter"
+      ],
+      "tags": [
+        "重锤轰击",
+        "物理正义",
+        "重工战神"
+      ]
+    },
+    {
+      "endingId": "dragonborn_court_clown",
+      "endingType": "absurdAccepted",
+      "title": "战场尤克里里魔王",
+      "verdictLine": "一边吐血一边弹琴，用崩溃的音乐折磨全世界。",
+      "explanation": "你成功在狂暴状态下用一把破旧的尤克里里唱完了整首欢快乡村小调。你的魔音不仅让敌人痛苦地捂住耳朵，连你的队友也开始对你的音乐品味产生深度心理创伤。你被军方归类为‘大范围精神杀伤武器’。",
+      "tableFunction": "魔音贯脑：施放音波或吟唱相关法术时，目标会额外受到1d4精神伤害并产生耳鸣。",
+      "playableFlaw": "音乐死敌：所有声乐类NPC对你的交流态度都会变得极其冷淡和绝望。",
+      "nextHook": "前往边境哨所用歌声驱赶成群的野兽和哥布林",
+      "recommendedClass": [
+        "guild_bard",
+        "guild_barbarian"
+      ],
+      "tags": [
+        "精神污染",
+        "魔音绕梁",
+        "致命弹唱"
+      ]
+    },
+    {
+      "endingId": "dragonborn_gourmet_burned",
+      "endingType": "transferred",
+      "title": "焦糊的美食家",
+      "verdictLine": "在生死关头做铁板烧，你终究把厨房给炸了。",
+      "explanation": "你执着于利用魔力倾注的高温来做烤牛肉，最终在一次火候控制失误中，把你自己的眉毛和半边胡子全部炸飞了。你做出的牛肉甚至能拿来当盾牌防弹。教官认为你完全不务正业，直接取消了你的考试资格。",
+      "tableFunction": "硬核烹饪：你制作的口粮可以作为简易暗器投掷（造成1d4物理伤害）。",
+      "playableFlaw": "嗅觉损毁：由于长期被焦糊烟熏，你的感知（察觉）检定受到-1惩罚。",
+      "nextHook": "去当地餐馆应聘成为一名‘火系主厨’",
+      "recommendedClass": [
+        "guild_fighter",
+        "guild_bard"
+      ],
+      "tags": [
+        "厨房灾难",
+        "美食执念",
+        "失格厨子"
+      ],
+      "rejectedClass": "guild_paladin"
+    },
+    {
+      "endingId": "dragonborn_law_advocate",
+      "endingType": "transferred",
+      "title": "法理大法官",
+      "verdictLine": "用一本厚厚的法典，在战场上把敌人说得羞愧自尽。",
+      "explanation": "你深谙用各种法条、免责声明去对抗怪物与诅诅的奥秘。最终，教皇亲自授予你‘神圣法理大法官’的称号。你能在两军阵前连续宣读三小时停战免责协议，硬生生把对方的士气宣读到归零。",
+      "tableFunction": "法庭审判：在战斗中，你可以通过宣读罪状来威吓敌人，使其意志检定受到-2减值。",
+      "playableFlaw": "程序正义：如果未能在动手前向敌人宣读合规警告，你的第一轮攻击投骰必然大失败。",
+      "nextHook": "代表教廷前往帝国议会主持跨国纠纷听证会",
+      "recommendedClass": [
+        "guild_wizard",
+        "guild_paladin"
+      ],
+      "tags": [
+        "律法之威",
+        "口诛笔伐",
+        "程序至上"
+      ],
+      "rejectedClass": "guild_fighter"
+    },
+    {
+      "endingId": "dragonborn_fossil_hunter",
+      "endingType": "transferred",
+      "title": "警告牌收藏家",
+      "verdictLine": "宝藏你不要，你非要把诅咒警告石碑背回家。",
+      "explanation": "因为你在宝箱前只拔走了警告石碑，你那极其神奇的脑回路让你声名大噪。你现在成为了一名极其狂热的‘历史诅咒石碑收集狂’。你的宅邸里堆满了上千块写着‘擅入者死’的墓碑和警告牌，没有任何盗贼敢靠近你家一步。",
+      "tableFunction": "碑文震慑：你的住宅及随身背包会自动散发微弱的诅咒震慑光环，阻吓低阶盗贼。",
+      "playableFlaw": "奇物收集癖：当在副本或遗迹中看到写有文字的石板时，你必须通过一个意志检定，否则会强行试图将其搬走。",
+      "nextHook": "出发前往沉没之城寻找失落的‘终极警告石碑’",
+      "recommendedClass": [
+        "guild_fighter",
+        "guild_rogue"
+      ],
+      "tags": [
+        "奇特收藏",
+        "碑文避邪",
+        "脑路清奇"
+      ],
+      "rejectedClass": "guild_paladin"
+    },
+    {
+      "endingId": "dragonborn_capitalist",
+      "endingType": "transferred",
+      "title": "半兽人榨汁机",
+      "verdictLine": "强行把冒犯你的敌人变成终身免费酿酒工。",
+      "explanation": "你完美展示了什么叫资本家的残忍。你没有杀死那个泼你酒的半兽人，而是强行把他变成你的酿酒劳力。现在你拥有了一家畅销全省的‘怒鳞啤酒厂’，每天坐在金币堆上享受人生，完美实践了以德报怨（物理）。",
+      "tableFunction": "压榨劳力：你的商业经营类收益永久提升20%，且招募雇工的成本减半。",
+      "playableFlaw": "恶劣口碑：由于剥削手段过于残忍，底层劳工对你发起暴动的概率翻倍。",
+      "nextHook": "在商业大都市注册你的‘怒鳞集团’，开始垄断周边麦酒市场",
+      "recommendedClass": [
+        "guild_fighter",
+        "guild_rogue"
+      ],
+      "tags": [
+        "垄断巨头",
+        "劳务压榨",
+        "黄金啤酒"
+      ],
+      "rejectedClass": "guild_paladin"
+    }
+  ],
+  "mbtiFilters": [
+    {
+      "groupId": "NT",
+      "title": "真龙算计者",
+      "oneLine": "以冰冷的理性解构巨龙血脉的魔力与荣誉。",
+      "evaluationStyle": "你展现了龙裔中罕见的冷静与严密。你把高傲的血脉看作是一种可以量化的资源，龙息是高效的能量输出，荣誉是维系氏族稳定的契约。考官认为你拥有极高的战术价值，但也提醒你不要低估感性在战斗中的爆发力。",
+      "guild_paladinFlavor": "你视誓言为不可违背的绝对底层逻辑算法，用物理和教条实施完美规约。",
+      "guild_fighterFlavor": "你擅长在刀尖上做力学计算，每一击都直奔对方阵型的结构死角。",
+      "guild_sorcererFlavor": "你视魔法为严密的公式，对血脉的引导如同在操控一台精密的魔能熔炉。",
+      "guild_barbarianFlavor": "你连狂暴都经过精算，把痛苦当作激发潜能的阈值控制器。",
+      "riskText": "过于追求冷酷的最优解，可能会让你在需要牺牲的关头显得有些算计。"
+    },
+    {
+      "groupId": "NF",
+      "title": "血脉之誓约",
+      "oneLine": "以狂热的信念和炽热的同理心，照亮族人与战友的道路。",
+      "evaluationStyle": "你将龙裔的荣誉升华为守护弱小与捍卫正义的宏大愿景。你不仅为自己而战，更为所有被压迫者的希望而战。公会欣赏你身上那种能够感召异族的奇妙魅力，你的每一个决定都饱含着对生命的执着与尊重。",
+      "guild_paladinFlavor": "你的誓言是纯粹的光芒，用宽恕与牺牲去践行最崇高的正义。",
+      "guild_fighterFlavor": "你的鳞片与盾牌不是为了守护自己，而是为了在战友身前筑起不屈的钢铁防线。",
+      "guild_sorcererFlavor": "你的魔法温暖而耀眼，每一次爆炸都是为了驱散黑暗与邪恶。",
+      "guild_barbarianFlavor": "你的愤怒只为守护而生，当同伴受到伤害，你的龙怒将化作席卷一切的烈焰。",
+      "riskText": "过度的共情和道德洁癖可能会让你在残酷的战局中陷入自我折磨。"
+    },
+    {
+      "groupId": "SJ",
+      "title": "誓言守护者",
+      "oneLine": "将古板与规矩贯彻到底，氏族的铁律就是你的生命线。",
+      "evaluationStyle": "你是氏族传统的忠实捍卫者。你把纪律看得比生命还重要，对规则的遵守近乎严苛。在混乱的战场上，你是最可靠的锚点。公会认为你虽然缺乏创造力，但绝对是团队最坚实的纪律基石。",
+      "guild_paladinFlavor": "你视法典为最高指示，用一丝不苟的执行力去物理规约每一条规矩。",
+      "guild_fighterFlavor": "你是战阵中雷打不动的磐石，坚决执行长官的每一道命令，寸步不让。",
+      "guild_sorcererFlavor": "你极其严格地按照魔法书上的步骤施法，绝不尝试任何未经验证的危险实验。",
+      "guild_barbarianFlavor": "你的狂怒是有规可循的，哪怕失去理智也绝不踏出防守区域半步。",
+      "riskText": "过于死板地遵守条约，可能会让你在战局瞬息万变时错失致胜的先机。"
+    },
+    {
+      "groupId": "SP",
+      "title": "荒野之猎手",
+      "oneLine": "直觉敏锐，出手狠辣，只要能赢，规则就是用来踩的。",
+      "evaluationStyle": "你拥有最野性的直觉和极强的现世适应能力。你不在乎繁文缛节或宏大誓言，你只在乎眼前的战斗怎么打得最痛快、怎么用最省力的方式把敌人撕碎。你的战术天马行空，经常让规矩的考官气得直打滚。",
+      "guild_paladinFlavor": "你是个离经叛道的街头侠客，经常用不光彩但极其实用的手段实现你的正义。",
+      "guild_fighterFlavor": "你精通街头肉搏的一切技巧，能把手边的任何东西变成致命的武器。",
+      "guild_sorcererFlavor": "你的施法天马行空，喜欢在瞬息万变中即兴发挥，制造各种出其不意的爆炸。",
+      "guild_barbarianFlavor": "你是纯粹的战斗野兽，顺从本能的召唤，在鲜血与狂欢中享受狩猎的乐趣。",
+      "riskText": "极其厌恶束缚与规则，可能会让你的长官随时担心你脱离战阵去自由活动。"
+    }
+  ]
+};
+  window.RACE_RECRUITMENT_DATASET = Object.freeze({
+    ...(window.RACE_RECRUITMENT_DATASET || {}),
+    "dragonborn": Object.freeze(data),
+  });
+})();

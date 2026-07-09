@@ -3373,6 +3373,46 @@ h3 {
   --trial-secondary: #70c7c7;
 }
 
+.trial-wizard {
+  --trial-accent: #6fb4d8;
+  --trial-secondary: #d8b66a;
+}
+
+.trial-rogue {
+  --trial-accent: #8c8f9b;
+  --trial-secondary: #d8b66a;
+}
+
+.trial-ranger {
+  --trial-accent: #7fb37a;
+  --trial-secondary: #d8d0a0;
+}
+
+.trial-paladin {
+  --trial-accent: #d8b66a;
+  --trial-secondary: #7f95b7;
+}
+
+.trial-bard {
+  --trial-accent: #c779a7;
+  --trial-secondary: #d8b66a;
+}
+
+.trial-artificer {
+  --trial-accent: #c88754;
+  --trial-secondary: #70c7c7;
+}
+
+.trial-sorcerer {
+  --trial-accent: #d85d78;
+  --trial-secondary: #9b6ad6;
+}
+
+.trial-monk {
+  --trial-accent: #70c7c7;
+  --trial-secondary: #d8d0a0;
+}
+
 .trial-physique,
 .trial-default {
   --trial-accent: #e4bf62;
