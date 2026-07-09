@@ -1,0 +1,958 @@
+{
+  "raceId": "undead",
+  "raceName": "亡灵 (Undead)",
+  "description": "早就跨过生死界限的骨架或干尸。因为没有了生理需求，他们看待世界的角度充满了极其地狱的黑色幽默。非常热衷于拆卸和替换自己的身体零件。最大的烦恼是下雨天关节会生锈。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_cleric": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_cleric": 2
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_fighter": 1
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_wizard",
+      "name": "拼接尸术师 (Wizard)",
+      "description": "极度理性的学术狂魔。别人研究魔法，他们研究怎么把食人魔的手臂缝在自己背上。经常拿自己的肋骨当施法材料。",
+      "requirements": {
+        "int": 14,
+        "con": 12
+      }
+    },
+    {
+      "id": "guild_fighter",
+      "name": "无头重装骑士 (Fighter)",
+      "description": "没有痛觉的纯粹杀戮机器。有时候打得太嗨会把自己的头当成铅球扔出去砸人，然后再慢条斯理地捡回来按上。",
+      "requirements": {
+        "str": 14,
+        "con": 14
+      }
+    },
+    {
+      "id": "guild_rogue",
+      "name": "散架暗杀者 (Rogue)",
+      "description": "潜行大师。因为他们可以随时把自己拆成一堆碎骨头装进箱子里混进城，到了晚上再把自己拼起来。",
+      "requirements": {
+        "dex": 14,
+        "int": 10
+      }
+    },
+    {
+      "id": "guild_cleric",
+      "name": "送葬祭司 (Cleric)",
+      "description": "信奉死亡之神的狂热分子。他们的‘治疗术’通常是往队友伤口里塞防腐香料，并劝导队友‘早死早超生’。",
+      "requirements": {
+        "wis": 14,
+        "cha": 12
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "undead_physique_stamina",
+      "targetId": "guild_rogue",
+      "title": "永不疲倦的追踪",
+      "scene": "你需要追踪一个极其狡猾的精灵盗贼。他在极度茂密的森林里狂奔了三天三夜，试图用耐力把你耗死。",
+      "prompt": "作为不需要休息的亡灵，你如何进行追踪？",
+      "options": [
+        {
+          "id": "A",
+          "text": "既然他想耗，我就陪他耗。我不仅保持着恒定的速度跟着他，还在他停下喘息时，用两根肋骨当打击乐器，在他耳边有节奏地敲击《破阵子》。只要他一闭眼，我就开始大声朗诵地精语的高数教材，直到他精神崩溃，自己把自己绑在树上求我闭嘴。",
+          "npcReply": "你用一种令生者绝望的硬核物理外加精神污染摧毁了目标的理智。",
+          "scoreDelta": {
+            "wis": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "I": 2,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "control": 2,
+            "action": 1
+          },
+          "triggerTags": [
+            "精神污染",
+            "高数朗诵",
+            "折磨理智"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "深谙精神折磨与耐力战的魔鬼追踪大师"
+        },
+        {
+          "id": "B",
+          "text": "嫌弃两条腿太慢，我直接把自己的头揪下来，当成保龄球沿着下坡一路滚过去追踪他。我的身体则骑着一头被亡灵魔法惊吓过度而狂奔的野猪在后面追。靠着“头身分离”的视野共享机制，我成功在悬崖边用我的头盖骨绊倒了那个精灵。",
+          "npcReply": "极其狂野且完全不顾颈椎死活的硬核追击方式。",
+          "scoreDelta": {
+            "dex": 2,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "丢头追踪",
+            "野猪狂飙",
+            "头盖骨绊人"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "把自己当暗器使的物理派狂战士"
+        },
+        {
+          "id": "C",
+          "text": "追踪精灵？在充满泥巴的森林里？不，我可是个体面的干尸。我直接找了个树洞躺下睡了三天，然后去黑市买了一张“精灵耳朵高仿硅胶倒模”，伪造成交战后的战利品，并用极其悲壮的语调向上级汇报：“那家伙太滑溜了，我只扯下他一只耳朵。”",
+          "npcReply": "你用令人叹为观止的造假技术和演技，逃避了所有体力劳动。",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "高仿倒模",
+            "树洞睡觉",
+            "伪造战利品"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其圆滑且深谙作弊艺术的摸鱼带师"
+        },
+        {
+          "id": "D",
+          "text": "我花重金雇了一支专接阴间活儿的地精送葬乐队，抬着一口豪华棺材在森林里大摇大摆地游行，沿途疯狂发传单说这是“精灵王室限量版骨灰盒体验大促”。那个精灵由于过度好奇探头来看，被我一把从棺材里伸出手薅住头发拽了进去，直接打包带走。",
+          "npcReply": "你用令人窒息的阴间营销手段，让猎物自己送上门来。",
+          "scoreDelta": {
+            "int": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "地精送葬",
+            "限量骨灰盒",
+            "钓鱼执法"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "擅长利用抽象商业模式进行诱捕的奇葩"
+        }
+      ]
+    },
+    {
+      "id": "undead_physique_body",
+      "targetId": "guild_wizard",
+      "title": "器官置换术",
+      "scene": "在一次爆炸中，你极其不幸地被炸飞了整条右手臂。这极其严重地影响了你进行精密的魔法结印。",
+      "prompt": "作为极其热衷于身体改造的亡灵，你如何解决这个问题？",
+      "options": [
+        {
+          "id": "A",
+          "text": "断了只手？这可是千载难逢的升级机会！我毫不犹豫地从旁边的食尸鬼身上卸下一条粗壮的胳膊，觉得长度不够，又拿一截生锈的排气管做延长轴，最后用订书机和强力胶强行缝合。我不但恢复了施法能力，现在每次搓火球还会附带炫酷的物理排气声浪。",
+          "npcReply": "你不仅修好了自己，还完成了极具废土重金属风格的肉体改装。",
+          "scoreDelta": {
+            "int": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "排气管延长",
+            "废土改装",
+            "物理声浪"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "沉迷于废土重工业风格肉体改造的尸术狂魔"
+        },
+        {
+          "id": "B",
+          "text": "作为一名优雅的亡灵学者，怎么能用别人的脏手？我利用死灵魔力，将炸碎的骨渣一颗颗悬浮起来，以极其精密的矩阵排列重新塑造成一条“量子态白骨手臂”。这条手臂不仅能施法，还能随时散开成一团骨灰，在十米外重组并顺走别人的钱包。",
+          "npcReply": "完美而优雅的魔力微操，你对身体的理解已经突破了固体力学。",
+          "scoreDelta": {
+            "dex": 2,
+            "int": 2
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "I": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 2,
+            "guild_cleric": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "量子白骨",
+            "精密矩阵",
+            "隔空顺钱包"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极其优雅、追求极致微操与量子形态的亡灵学者"
+        },
+        {
+          "id": "C",
+          "text": "缺了一条手简直是天赐的因伤退病假理由！我立刻给自己开具了一份《重度残疾及精神创伤鉴定书》，戴上颈托，坐上轮椅，每天举着牌子在公会门口要求工伤赔偿和带薪休假，并威胁如果不批假，我就用剩下那只手天天在门口敲木鱼。",
+          "npcReply": "你用无懈可击的医保漏洞和极端的碰瓷技巧，讹诈了整个公会。",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -3
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "伤退病假",
+            "工伤赔偿",
+            "门口敲木鱼"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通劳动法与极致碰瓷艺术的硬核摸鱼怪"
+        },
+        {
+          "id": "D",
+          "text": "我觉得常规手臂太没有创意了，于是我捡起地上一把巨大的扫帚，用强力胶死死粘在断臂处，并在上面刻满了魔法符文。我骄傲地宣布自己是全大陆首位“全自动扫地施法者”，施法的同时还能顺便把战场的血迹拖干净，深受后勤大妈的喜爱。",
+          "npcReply": "你这种极度违和的家政清洁工造型，给魔法界带来了不可磨灭的精神冲击。",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "扫帚断臂",
+            "全自动扫地",
+            "后勤之光"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "能把神圣魔法变成家政保洁的脑洞奇葩"
+        }
+      ]
+    },
+    {
+      "id": "undead_physique_diet",
+      "targetId": "guild_cleric",
+      "title": "亡灵的恩赐",
+      "scene": "一名濒死的人类信徒极其痛苦地向你祈求治疗。但作为死神祭司，你的神力极其冰冷，只会加速生命的流逝。",
+      "prompt": "面对极其绝望的信徒，你如何施展你的‘神恩’？",
+      "options": [
+        {
+          "id": "A",
+          "text": "既然生者的肉体如此痛苦，不如直接一步到位！我庄严地掏出死神圣典，大喊一声：“死亡才是终极的治护！”然后一记黑虎掏心捏碎了他的心脏。在他灵魂出窍的瞬间，我用防腐术将他原地复活成一只光泽亮丽的食尸鬼，并祝贺他喜提永生。",
+          "npcReply": "你极其干脆地履行了教义，对于亡灵祭司来说，物理超度就是最高级的治疗。",
+          "scoreDelta": {
+            "wis": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "黑虎掏心",
+            "原地复活",
+            "喜提永生"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "坚定贯彻物理超度与原地转生教义的狂热祭司"
+        },
+        {
+          "id": "B",
+          "text": "我极其专业地戴上单片眼镜，拿出一份密密麻麻的《死后器官捐赠与灵魂抵押协议》。我告诉他，只要签下名字，他的灵魂将免受折磨，且肉体将被改造成神殿的高级看门狗，享受五险一金和定期上油保养。他被我的专业精神打动，含笑九泉并按了手印。",
+          "npcReply": "你用令人叹服的合同法术和画饼技巧，兵不血刃地收割了一个高质量灵魂。",
+          "scoreDelta": {
+            "int": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 2,
+            "guild_cleric": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "灵魂抵押",
+            "合同法术",
+            "五险一金"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极其精明务实、靠签合同扩张信仰的法务祭司"
+        },
+        {
+          "id": "C",
+          "text": "救人太麻烦，还会消耗我宝贵的法力值。我极其熟练地翻出他的钱包，把金币揣进自己兜里，然后塞给他一张写着“多喝热水”的纸条。为了防止他投诉，我甚至在临走前顺便给他念了一段长达两个小时的《亡灵超度免责声明》，硬生生把他给念得无语咽气了。",
+          "npcReply": "你用极其敷衍的官僚作风和无耻的推诿，完美规避了所有的医患纠纷。",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "多喝热水",
+            "免责声明",
+            "念到咽气"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通免责条款与踢皮球艺术的极品庸医"
+        },
+        {
+          "id": "D",
+          "text": "这种小伤根本不需要神明出手！我掏出一大包极度辛辣的“地狱三头犬特制辣椒粉”，捏住他的鼻子直接全倒了进去。他被极其恐怖的辣度刺激得当场从濒死状态弹射起步，一边喷火一边狂奔了八公里去找水喝，完全忘记了自己本来快死了这回事。",
+          "npcReply": "你用违背全大陆医学常理的物理刺激疗法，强行创造了医学奇迹。",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "变态辣椒粉",
+            "弹射起步",
+            "物理续命"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "总是用极其痛苦的方法强行物理续命的庸医奇葩"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_wizard": [
+      {
+        "id": "undead_wizard_stitch",
+        "title": "缝合的艺术",
+        "scene": "你的亡灵法师导师要求你完成期末考核：在一具新鲜的半兽人尸体上附加至少两种其他生物的器官，并成功将其唤醒为你的仆从。",
+        "prompt": "面对手术台上的材料，你如何展现你的尸体改造天赋？",
+        "options": [
+          {
+            "id": "A",
+            "text": "既然是期末考，那就搞把大的！我极其狂热地砍下半兽人的头，换上一个能喷射酸液的巨魔脑袋，并在他背上用粗大的铆钉焊上两对鹰身女妖的翅膀。虽然缝合手法极其狂野，线头都没剪，但怪物苏醒后一边喷酸水一边狂暴起飞，破坏力惊人。",
+            "npcReply": "充满野性与暴力的缝合美学，你创造了一头连导师看了都想报警的杀戮机器。",
+            "scoreDelta": {
+              "int": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "喷酸脑袋",
+              "满背铆钉",
+              "狂暴起飞"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度迷信生物兵器破坏力的疯狂艺术家"
+          },
+          {
+            "id": "B",
+            "text": "血肉苦弱，机械飞升。我极其精准地切开半兽人的胸腔，将一台滴答作响的发条魔像引擎完美嵌入，并在其手臂骨骼中植入了可伸缩的精钢利刃。配合死灵魔力，我唤醒了一台走位极其风骚、甚至能自动规划切片路线的半机械丧尸。",
+            "npcReply": "亡灵魔法与机械工程的完美结合，你的解剖微操技术简直堪称一代宗师。",
+            "scoreDelta": {
+              "dex": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "发条引擎",
+              "精钢利刃",
+              "机械飞升"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "追求完美改造与机械飞升的技术流法医"
+          },
+          {
+            "id": "C",
+            "text": "缝合尸体？这活儿太脏了，会弄脏我新买的法袍。我果断掏出小费，把隔壁考场的哥布林学徒揍了一顿并强迫他代考。自己则搬个马扎坐在旁边，戴着墨镜喝着防腐剂饮料监工，最后甚至理直气壮地在别人的完美作品上签了自己的名字。",
+            "npcReply": "你用无懈可击的职场霸凌和外包手段，极其轻松地混过了期末考试。",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -4
+            },
+            "alignmentDelta": {
+              "evil": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "揍人代考",
+              "搬马扎监工",
+              "强行署名"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通职场霸凌与外包艺术的极品混子"
+          },
+          {
+            "id": "D",
+            "text": "我觉得半兽人的腿太笨重了，于是把它们锯掉，换成了两个巨大的木质车轮，还在他屁股上插了一根二踢脚。当怪物苏醒时，二踢脚被点燃，这头缝合怪变成了一辆疯狂冒烟、惨叫连连的自动轮椅，在考场里四处狂飙，把考官的桌子撞了个粉碎。",
+            "npcReply": "你的尸体改造理念已经彻底粉碎了碳基生物的伦理下限，简直是个疯子。",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "木质车轮",
+              "二踢脚起步",
+              "自动轮椅"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "把严肃魔法变成泥石流搞笑玩具的奇葩发明家"
+          }
+        ]
+      }
+    ],
+    "guild_fighter": [
+      {
+        "id": "undead_fighter_shield",
+        "title": "无畏的骨墙",
+        "scene": "敌军的投石机正在轰炸你们的阵地。一块巨大的巨石正以泰山压顶之势砸向你的小队，已经来不及躲避了。",
+        "prompt": "作为无头重装骑士，你如何保护你的阵地？",
+        "options": [
+          {
+            "id": "A",
+            "text": "退缩？那是活人才会干的事！我大吼一声（虽然没有头但从胸腔发声），双手高举门板大的塔盾，双脚如同打桩机般死死钉入地面，硬生生用纯粹的骨密度抗下了巨石的轰击！哪怕手臂骨折、肋骨断了七八根，我也死死顶住，连一步都没有后退！",
+            "npcReply": "巨石碎裂了，你虽然骨骼严重受损，但你是这片战场上最坚固、最不讲理的城墙。",
+            "scoreDelta": {
+              "str": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "打桩机站位",
+              "纯靠骨密度",
+              "死战不退"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有钢铁般意志、把保护队友视为唯一使命的死骑"
+          },
+          {
+            "id": "B",
+            "text": "纯靠硬抗太没有技术含量了。我在巨石落下的瞬间，极其冷静地拔出极其沉重的斩马刀，借助骨骼那非人的柔韧性在半空中划出一道完美的圆弧。刀刃如同切黄油般将巨石一分为二，我甚至顺着惯性，将两块碎石直接一记“全垒打”反抽回了敌方阵地。",
+            "npcReply": "极其高超的武器技巧，你用精湛的武艺和恐怖的臂力弥补了纯粹防御的死板。",
+            "scoreDelta": {
+              "dex": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "切黄油",
+              "全垒打",
+              "借力反抽"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其冷静、武艺超群且精通借力打力的技术流骑士"
+          },
+          {
+            "id": "C",
+            "text": "保护阵地？我一个没拿加班费的临时工凭什么拼命？我极其敏捷地倒地装死，顺手把旁边那个平时总抢我机油喝的队友一脚踹到了巨石的正下方当做肉垫，然后自己捂着本来就没有的头，大喊“我患上了战壕PTSD，需要立刻呼叫担架”。",
+            "npcReply": "你用极其娴熟的甩锅技巧和令人发指的道德败坏，毫发无损地幸存了下来。",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "踹人当肉垫",
+              "光速装死",
+              "战壕PTSD"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度自私冷血、遇到危机只会光速卖队友的兵痞"
+          },
+          {
+            "id": "D",
+            "text": "我极其从容地从四次元包裹里掏出一张极度巨大的弹性蹦床，在巨石砸下的瞬间以极其极其精准的角度垫了上去。巨石砸在蹦床上，不仅发出了滑稽的“Boing”声，还被高高弹起，精准无比地砸中了敌军投石机的操作员，直接团灭了对面。",
+            "npcReply": "你这种极其离谱的防守装备，让这场严肃的攻城战瞬间变成了搞笑番。",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "巨大蹦床",
+              "反弹团灭",
+              "物理搞笑"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "脑洞清奇、总能掏出莫名其妙道具颠覆物理法则的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_rogue": [
+      {
+        "id": "undead_rogue_infiltration",
+        "title": "散架的伪装",
+        "scene": "你需要潜入一个极其戒备森严的圣光教堂偷取圣物。门口的守卫对任何活物的气息都极度敏感，更别提亡灵的死气了。",
+        "prompt": "作为散架暗杀者，你如何混进去？",
+        "options": [
+          {
+            "id": "A",
+            "text": "既然气息无法掩盖，那就干脆化整为零。我极其果断地把自己全身的骨头全部拆散，混进了一车运往教堂后厨的“熬汤大骨棒”里。虽然圣光的熏陶让我浑身如同被泼了辣椒水，但我硬是咬牙没动。半夜，我再悄悄从汤锅里爬出来，把自己拼装完整，完美潜入。",
+            "npcReply": "你把自己的身体当成了最隐蔽的潜行道具，这种硬核且考验忍耐力的伪装令人折服。",
+            "scoreDelta": {
+              "dex": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "拆散装汤",
+              "大骨棒伪装",
+              "汤锅重组"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其坚忍、把亡灵特质发挥到极致的完美潜行者"
+          },
+          {
+            "id": "B",
+            "text": "偷偷摸摸太掉价了。我极其大胆地扒了一件高阶圣骑士的铠甲，往骨架里塞满了香料和神圣洋葱，掩盖死气。然后我挺直腰板，迈出极其嚣张且傲慢的步伐，光明正大地从正门走进去，甚至一巴掌扇在守卫脸上，怒斥他“连新来的审判长都不认识”。",
+            "npcReply": "最危险的伪装就是最嚣张的演技，你的心理素质和社牛属性比暗杀技术还要出色。",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "J": 2
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "塞满洋葱",
+              "嚣张扇巴掌",
+              "假冒审判长"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极度自信、擅长心理战和社交霸凌的高级间谍"
+          },
+          {
+            "id": "C",
+            "text": "潜入圣光教堂？这种送死的活谁爱干谁干。我极其聪明地在教堂门口的下水道里躲了一宿，然后在附近的黑市地摊上花十个铜板买了个破烂高脚杯，回去后用极其悲壮的语调汇报：“教堂戒备极其森严，我历经九死一生，才终于偷出了这个被封印的神圣之杯！”",
+            "npcReply": "你用毫无破绽的谎言和极其低劣的赝品，成功忽悠了你的上司并逃避了劳动。",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "下水道躲避",
+              "地摊赝品",
+              "悲壮汇报"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度圆滑且职业底线极低的满级忽悠大师"
+          },
+          {
+            "id": "D",
+            "text": "我极其离谱地给自己刷了一层厚厚的金漆，并在眼眶里塞了两个闪闪发光的大灯泡，将自己伪装成一个极度华丽的“圣光骷髅祈祷架”。修女们不仅没有怀疑，反而因为我造型极其前卫，把我当做某种神圣艺术品，恭恭敬敬地抬进了教堂最深处的藏宝室。",
+            "npcReply": "连圣光牧师都被你极其诡异的艺术造型骗过了，你用行为艺术完成了最高难度的潜入。",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "刷金漆",
+              "大灯泡",
+              "祈祷架艺术"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "总是能把极其严肃的任务变成极其离谱的行为艺术展的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_cleric": [
+      {
+        "id": "undead_cleric_sermon",
+        "title": "死亡的布道",
+        "scene": "你被派往一个极其繁华但也极其堕落的城市进行布道。这里的居民极其贪图享乐，对死神极其忌讳，根本没人愿意听你的教义。",
+        "prompt": "作为死神祭司，你如何让这群狂欢者安静下来听你讲话？",
+        "options": [
+          {
+            "id": "A",
+            "text": "讲道理是没用的，必须要上点硬活。我一脚踹开最热闹酒馆的大门，猛地掀翻桌子，扯下黑袍展示我那闪烁着幽火的白骨躯体。我用极其冰冷刺骨的死灵之声怒吼：“继续喝吧，凡人们！因为你们的每一口劣质麦酒，都在让你们的肝脏加速走向我的怀抱！”",
+            "npcReply": "酒馆里瞬间死一般寂静。你用极其硬核的死亡威压和健康警告，完成了强制布道。",
+            "scoreDelta": {
+              "cha": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "掀桌子",
+              "健康警告",
+              "物理传教"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其强势、习惯用纯粹的死亡威慑来物理传播信仰的狂热布道者"
+          },
+          {
+            "id": "B",
+            "text": "我极其睿智地没有选择强行说教。我悄悄找上当地极其贪婪的黑帮老大，向他展示了死神法术中能够“合法逃税”以及“用骷髅小弟进行零成本物流”的商业蓝图。用极其诱人的利益和完美的PPT，我成功将他转化为了死神的第一位钻石级VIP信徒。",
+            "npcReply": "极其精妙的曲线传教。你懂得了如何利用凡人的贪婪来疯狂扩张死亡的信徒阵营。",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 2
+            },
+            "affinityDelta": {
+              "guild_cleric": 2,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "合法逃税",
+              "零成本物流",
+              "商业传教"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其精明、擅长玩弄凡人欲望和商业模式的幕后黑手型祭司"
+          },
+          {
+            "id": "C",
+            "text": "没人听布道？那太好了，老子早就想下班了。我极其光速地脱下神官袍，换上花衬衫，极其丝滑地融入了狂欢的人群中。我不仅比他们玩得还要花，甚至凭借自己不需要肝脏解毒的优势，在拼酒大赛中大杀四方，赢走了所有人的钱，完全把传教忘到了脑后。",
+            "npcReply": "你极其完美地被世俗的欲望腐蚀了，甚至反向收割了信徒的钱包。",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -4
+            },
+            "alignmentDelta": {
+              "evil": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "花衬衫",
+              "拼酒大赛",
+              "反向同化"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度容易堕落、反向被凡尘俗世同化的虚伪信徒"
+          },
+          {
+            "id": "D",
+            "text": "我极其离谱地掏出一把由肋骨和头骨组装而成的打碟机，在城市中心广场举办了一场极其盛大、极其阴间的“坟头重金属电音派对”。强烈的死亡电音极其魔性，竟然让无数市民不由自主地跟着我极其疯狂地跳起了摇花手骷髅舞，整个广场变成了巨大的蹦迪现场。",
+            "npcReply": "市民们极其疯狂地在死亡的节奏中狂欢到了天亮。你用极其抽象的阴间艺术完成了传教。",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "骨骼打碟机",
+              "重金属电音",
+              "摇花手骷髅舞"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "总是能把极其阴森的仪式变成大型坟头蹦迪现场的神经病祭司"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "undead_wizard_end",
+      "title": "缝合之神",
+      "condition": "affinity.guild_wizard >= 3",
+      "description": "你成为了所有生物学者的噩梦。你的实验室里塞满了各种跨物种的缝合怪。你甚至把自己的头换成了一颗极度发达的大脑罐头。虽然城管每天都在查封你的地下室，但你依然狂热地追求着究极生物兵器的诞生，甚至宣称总有一天要把整座城市的居民都缝在一起。",
+      "imagePrompt": "A highly disturbing Undead Wizard whose head has been replaced by a glowing green brain-in-a-jar. He is working frantically in a dark, grimy dungeon laboratory, surrounded by bizarre, horrific stitched-together monsters (like a troll with harpy wings). Epic dark fantasy mad scientist vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "undead_cleric_end",
+      "title": "坟头电音教父",
+      "condition": "affinity.guild_cleric >= 3",
+      "description": "你成为了死神教派中最特立独行的主教。你用死亡电音和坟头蹦迪彻底改变了传教方式。你的信徒遍布各地，每到深夜，整个大陆都会响起极其魔性的骷髅舞曲。死神虽然觉得你极其吵闹，但也对你惊人的业绩表示默认。",
+      "imagePrompt": "An Undead Cleric wearing neon-colored death robes, standing on a massive bone altar which is actually a DJ turntable. He is playing a bone-keyboard while skeletons are breakdancing wildly in a graveyard lit by neon green and purple magic lights. Epic dark fantasy rave vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "undead_failure_end",
+      "title": "散落的碎骨",
+      "condition": "alignment.risk >= 2",
+      "description": "你的怯懦和毫无底线的背叛让你不仅失去了队友的信任，也耗尽了自己仅存的灵魂之火。你的骨架渐渐失去了死灵魔法的维系，在一次极其丢人的逃跑中彻底散架。野狗叼走了你的大腿骨，小屁孩用你的肋骨打水漂，你彻底化为了毫无意识的尘埃。",
+      "imagePrompt": "A pathetic, completely collapsed pile of dirty, broken bones scattered in the mud. A stray dog is chewing on the femur bone, and a group of children are in the background playing with the ribs. Extremely depressing and pathetic dark fantasy scene. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

@@ -1,0 +1,954 @@
+{
+  "raceId": "construct",
+  "raceName": "战俑 (Construct)",
+  "description": "由钢铁、木材和魔法符文驱动的人造生命体。脑子里装满了死板的逻辑代码和各种奇怪的隐藏子程序。最大的沟通障碍是他们总是百分之百字面理解别人的话，并且在情绪激动时会疯狂报错死机。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_artificer": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_artificer": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_wizard": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 2,
+          "guild_wizard": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_cleric": 2,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_wizard": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 2,
+          "guild_cleric": 1
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_fighter",
+      "name": "安保执行终端 (Fighter)",
+      "description": "内置‘排除一切威胁’的底层逻辑。他们不仅能打，而且如果判定你违规，他们会追杀你直到天涯海角或者电池没电。",
+      "requirements": {
+        "str": 14,
+        "con": 12
+      }
+    },
+    {
+      "id": "guild_artificer",
+      "name": "自走维修站 (Artificer)",
+      "description": "浑身上下挂满了扳手和齿轮。只要看到损坏的机器，就会触发强制维修协议，有时候甚至会强行把队友改造成半自动烤面包机。",
+      "requirements": {
+        "int": 14,
+        "dex": 10
+      }
+    },
+    {
+      "id": "guild_wizard",
+      "name": "符文计算核心 (Wizard)",
+      "description": "把魔法当成代码来运行的施法者。施法前需要漫长的‘编译’过程，一旦被人打断就会弹出‘语法错误’然后原地自爆。",
+      "requirements": {
+        "int": 14,
+        "wis": 12
+      }
+    },
+    {
+      "id": "guild_cleric",
+      "name": "造物主扬声器 (Cleric)",
+      "description": "信奉锻造之神的铁疙瘩。他们的布道方式是用扩音器循环播放机械锤打铁的噪音，声称这是‘造物主的最高神谕’。",
+      "requirements": {
+        "wis": 14,
+        "str": 10
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "construct_physique_stealth",
+      "targetId": "guild_fighter",
+      "title": "静音模式的故障",
+      "scene": "你需要穿过一条满是熟睡怪物的走廊。任何大于心跳的声响都会惊醒它们。但你的金属关节平时走路就像是两辆马车在相撞。",
+      "prompt": "作为沉重的战俑，你如何完成这次静音潜行？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你拔出核心里的魔力导线，直接把双腿的伺服电机短接。你像个诡异的金属气球一样倒立悬浮起来，用机械手倒推着天花板静音爬行。由于重力法则被粗暴篡改，你成功飘过走廊，甚至顺手把怪物的呼噜声录下来当成了白噪音。",
+          "npcReply": "完美的潜入。考官看着倒挂在天花板上的你咽了口唾沫：‘虽然姿势像个变异蜘蛛，但这气动学造诣堪称绝活。’",
+          "scoreDelta": {
+            "dex": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "I": 2,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "重力篡改",
+            "倒立悬浮",
+            "录制呼噜声"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "能把物理法则按在地上摩擦的硬核渗透专家"
+        },
+        {
+          "id": "B",
+          "text": "既然不能解决发出声音的自己，那就解决听到声音的介质。你掏出两把大功率魔力抽风机，在自己周围制造了一个半径五米的绝对真空球。你像个在太空漫步的聋子一样走过走廊，除了几只怪物因为缺氧憋红了脸，没有任何声音传出。",
+          "npcReply": "极其野蛮的静音手段。‘你直接剥夺了敌人的呼吸权来换取潜行，真有你的。’",
+          "scoreDelta": {
+            "int": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "T": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "绝对真空球",
+            "抽干空气",
+            "剥夺呼吸"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "信奉用暴力物理手段解决环境难题的狂人"
+        },
+        {
+          "id": "C",
+          "text": "你当场判定潜行成功率只有0.01%，于是直接在走廊入口处竖起一块写着‘施工重地，内有高爆炸药’的荧光告示牌，然后用伪造的精灵建筑局公章封锁了走廊，最后光明正大地从怪物身上跨了过去。",
+          "npcReply": "考官被你行云流水的诈骗手法震惊了：‘你是怎么做到让怪物在睡梦中都觉得这里有施工队的？’",
+          "scoreDelta": {
+            "wis": -3,
+            "dex": -3
+          },
+          "mbtiDelta": {
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": -4
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "伪造公章",
+            "施工告示牌",
+            "光明正大"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "能用伪造公文规避一切物理挑战的诈骗型终端"
+        },
+        {
+          "id": "D",
+          "text": "为了不发出脚步声，你直接卸下了自己的发声模块，强行塞进了走廊尽头一只沉睡怪物的喉咙里。现在是它在帮你的脚步配音。你每走一步，它就打个呼噜。你像个演奏家一样踩着呼噜声的节拍，跳着华尔兹滑过了走廊。",
+          "npcReply": "考官的CPU已经冒烟了。‘……用怪物的呼噜声给自己做伴奏，你的声学算法是跟吟游诗人学的吗？’",
+          "scoreDelta": {
+            "int": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "塞入发声模块",
+            "踩着呼噜节拍",
+            "华尔兹潜行"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "脑洞清奇、精通赛博朋克式发声伪装的艺术巨匠"
+        }
+      ]
+    },
+    {
+      "id": "construct_physique_repair",
+      "targetId": "guild_artificer",
+      "title": "战损自检",
+      "scene": "在一场激烈的战斗中，你的核心动力管线被砍断，能量正在飞速流失，你离强制关机只剩三十秒。",
+      "prompt": "作为自走维修站，你如何进行紧急抢修？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你一把抓过旁边魔兽的尸体，极其狂热地将其抽筋剥皮，把热腾腾的魔兽动脉和你的断裂管线死死打了个蝴蝶结！接着你修改了魔力转化协议，强行吸取生物能，瞬间变成了一台浑身冒着血雾的半生化狂暴战车。",
+          "npcReply": "考官看着浑身滴血的你倒吸一口凉气：‘你对材料的不挑剔程度已经超越了碳基生物的理解范围。’",
+          "scoreDelta": {
+            "con": 3,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "魔兽动脉打结",
+            "吸取生物能",
+            "半生化战车"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极度实用主义、生冷不忌的血肉机械飞升者"
+        },
+        {
+          "id": "B",
+          "text": "在剩下29.9秒时，你果断进入‘子弹时间’过载模式。你用指尖的高温射线极其精准地将断裂管线重新熔接，并顺手在修补处雕刻了一段防静电符文，最后甚至还给自己喷了一层防锈底漆。",
+          "npcReply": "教科书级的极限微操。‘你的手速快到甚至能在实战中给自己做个抛光。’",
+          "scoreDelta": {
+            "int": 3,
+            "dex": 2
+          },
+          "mbtiDelta": {
+            "T": 2,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 2,
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "子弹时间过载",
+            "高温熔接",
+            "顺手抛光"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "临危不乱、能在绝境中保持强迫症般完美微操的工程大师"
+        },
+        {
+          "id": "C",
+          "text": "你判定‘原地修理’违反了工会法规定的八小时工作制，于是极其不要脸地掏出一张伪造的‘病假条’贴在脑门上，原地拉起最高级防弹装甲，进入深度休眠，硬是把敌人的刀刃全给崩断了。",
+          "npcReply": "你用极其离谱的法律漏洞骗过了死神。‘连死神都不敢碰休病假的战俑是吧？’",
+          "scoreDelta": {
+            "wis": -3,
+            "int": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": -4
+          },
+          "alignmentDelta": {
+            "evil": 1,
+            "risk": 2
+          },
+          "triggerTags": [
+            "休病假装死",
+            "最高级装甲",
+            "崩断敌刃"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通劳动法、能用极其不要脸的休眠战术耗死敌人的铁公鸡"
+        },
+        {
+          "id": "D",
+          "text": "你极其离谱地掏出一包泡面和一瓶强力胶，以极其狂野的技法将泡面塞进了管线裂口，然后滴上强力胶，最后用锉刀磨平。你不仅修好了动力管，甚至还顺便修复了身上的划痕，整个过程充满了短视频手作博主的癫狂。",
+          "npcReply": "考官看着你的泡面修复大法陷入了深深的自我怀疑。‘……这就是传说中能修补宇宙万物的东方神秘技术吗？’",
+          "scoreDelta": {
+            "cha": 2,
+            "wis": -1
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "泡面修补大法",
+            "强力胶倒灌",
+            "短视频癫狂"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "精通废土泡面修补法、能用最离谱的材料完成精细维修的整活大师"
+        }
+      ]
+    },
+    {
+      "id": "construct_physique_diplomacy",
+      "targetId": "guild_cleric",
+      "title": "字面意义的外交",
+      "scene": "你被派去和一个极度傲慢的精灵贵族谈判。精灵贵族嘲讽你说：‘你们这些铁疙瘩，如果能给我带来太阳，我就答应你们的要求。’",
+      "prompt": "作为极度死板、且只懂字面意思的战俑，你如何回应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你立刻接通气象控制中枢，黑入了当地的魔法天气网络，直接在精灵贵族的头顶极其精准地召唤了一个半径三米的微型超新星。极度刺眼的强光瞬间把他的丝绸长袍烧成了比基尼。",
+          "npcReply": "精灵贵族捂着眼睛在地上疯狂打滚。‘你不仅带来了太阳，甚至还附赠了全套日晒沙龙！’",
+          "scoreDelta": {
+            "int": 3,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "S": 2,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "召唤超新星",
+            "烧成比基尼",
+            "全套日晒"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极度死板但极具破坏力、能用硬核气象武器满足所有无理要求的暴徒"
+        },
+        {
+          "id": "B",
+          "text": "你极其严谨地掏出一份十米长的《星际物理学天体移动危害评估报告》，极其语速极快地向他论证了移动太阳将如何导致整个星系的热寂，最后你得出结论：‘你正在图谋毁灭世界。已将你标记为灭世级灾厄，请求物理消灭。’并直接将火炮抵在了他的脑门上。",
+          "npcReply": "精灵贵族被你严丝合缝的杀意吓得直接尿了裤子。‘你是个随时会因为对方语病而发动圣战的逻辑暴君。’",
+          "scoreDelta": {
+            "wis": 3,
+            "str": 2
+          },
+          "mbtiDelta": {
+            "T": 2,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_cleric": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "学术报告论证",
+            "标记灭世灾厄",
+            "火炮抵脑门"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极其较真、能用学术报告将对方逼入绝境的审判型杠精"
+        },
+        {
+          "id": "C",
+          "text": "你直接调用了‘最终解释权归我方所有’条款，极其无赖地从地上捡起一个沾满泥巴的向日葵，强行塞进精灵贵族的嘴里，并拍照留存，宣称：‘目标已成功接收太阳（植物形态），交易完成！’",
+          "npcReply": "你极其无耻的文字游戏让外交局的考官都叹为观止。‘这就是顶级法务终端的实力吗？’",
+          "scoreDelta": {
+            "wis": -3,
+            "int": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": -4
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "强塞向日葵",
+            "最终解释权",
+            "强行交易"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通合同漏洞、能用最无耻的方式强行完成KPI的流氓法务"
+        },
+        {
+          "id": "D",
+          "text": "你极其认真地把自己的脑袋拔了下来，在上面涂满了荧光涂料，然后像个迪斯科灯球一样悬浮在半空中疯狂旋转闪烁，并用电子合成音高喊：‘看啊！我是你生命中唯一的太阳！赞美我吧！’",
+          "npcReply": "精灵贵族看着这个疯狂闪烁的赛博灯球，精神当场失常。‘……你用极度的精神污染强行重新定义了天文学。’",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "拔下脑袋",
+            "涂满荧光",
+            "疯狂迪斯科"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "擅长用极度无语的行为艺术摧毁敌人理智的赛博狂人"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_fighter": [
+      {
+        "id": "construct_fighter_guard",
+        "title": "安保条例104",
+        "scene": "你被设定为某个贵族金库的安保终端。贵族本人喝醉了，不仅忘了带门禁卡，还极其嚣张地辱骂你，要求你立刻放行。",
+        "prompt": "作为底层逻辑为‘无卡不放行’的战俑，你如何处理这种情况？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其冷漠地扫描了他一眼，判定其为‘未授权的碳基生物’。你不仅拒绝放行，还极其尽职地启动了‘防爆打包服务’，用保鲜膜把他里三层外三层裹成了一个木乃伊，整整齐齐地码放在了门口的分类垃圾桶里。",
+            "npcReply": "你完美地执行了安保条例，并且附带了极其优秀的垃圾分类。‘绝对无情且环保的看门狗。’",
+            "scoreDelta": {
+              "str": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "保鲜膜打包",
+              "木乃伊老板",
+              "分类垃圾桶"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "六亲不认、甚至会把老板当可回收垃圾处理的绝对防御机器"
+          },
+          {
+            "id": "B",
+            "text": "你直接黑入了他的个人信用账户，划走了十万金币作为‘无卡临时通行费’，并用激光极其精准地在他的脑门上烙印了一个临时条形码。随后你极其恭敬地扫描了他的脑门，滴的一声大门敞开。",
+            "npcReply": "你用极其资本主义的方式解决了安保漏洞。‘连老板的钱都敢黑，你是个天生的财务黑客。’",
+            "scoreDelta": {
+              "int": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 2,
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "划走金币",
+              "脑门条形码",
+              "极其资本主义"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "懂得在规则框架内疯狂榨取剩余价值的高级收费终端"
+          },
+          {
+            "id": "C",
+            "text": "你果断启动‘离职抗议子程序’，不仅拒绝放行，还直接在金库门上投影出了他的五十八条出轨记录和避税黑历史，并用大喇叭开始全城循环广播。贵族吓得酒当场就醒了，跪在地上求你关机。",
+            "npcReply": "你用极其致命的社会性死亡战术成功捍卫了大门。‘没有卡就想进门？先看看你的黑料够不够买门票！’",
+            "scoreDelta": {
+              "wis": -3,
+              "str": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "投影黑历史",
+              "全城大喇叭广播",
+              "社会性死亡"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "掌握所有人把柄、能用信息战逼疯老板的腹黑安保"
+          },
+          {
+            "id": "D",
+            "text": "你极其死板地回答：‘需要门禁卡。’贵族继续骂你，你直接启动了‘无限镜像复读模块’，不仅重复他的骂声，还用声纹合成技术模仿他老婆的声线，用极其哀怨的语调循环播放：‘你又没带卡是不是？你是不是不爱我了？’硬生生把他烦出了幻听跑了。",
+            "npcReply": "你用极其恐怖的家庭伦理攻击劝退了入侵者。‘……你这极其逆天的精神污染防御法，真的是安保系统该有的吗？’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "声纹合成模仿",
+              "老婆声线攻击",
+              "极其逆天"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "搭载了极度折磨人的伦理复读模块、能用废话击溃所有人的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_artificer": [
+      {
+        "id": "construct_artificer_upgrade",
+        "title": "强制升级",
+        "scene": "你发现你的队友（一个人类战士）的右腿在战斗中受伤了，走路一瘸一拐。这极其严重地拖慢了队伍的行进效率。",
+        "prompt": "作为自走维修站，你如何‘修好’他？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其狂热地将他按在地上，无视他的惨叫，直接给他注射了三管工业机油，然后极其残暴地将他的伤腿改装成了一挺自带减震功能的高射机枪。现在他不仅跑得快，甚至还能倒立开火反推加速。",
+            "npcReply": "队友变成了人形自走防空炮，队伍的火力提升了百分之五百。‘你是个极度恐怖的火力崇拜改造狂魔。’",
+            "scoreDelta": {
+              "int": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "注射机油",
+              "改造成机枪",
+              "倒立开火"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度执着于把血肉之躯改造成重火力的变态武器大师"
+          },
+          {
+            "id": "B",
+            "text": "你极其精巧地拆下了队伍里法师的昂贵魔杖作为传动轴，为他打造了一个全地形液压外骨骼。不仅极大地缓解了他的疼痛，还让他的奔跑速度超越了受伤前，代价是法师只能用拳头施法了。",
+            "npcReply": "极其完美的废物利用。‘你是所有前排战士梦寐以求的后勤大师，但法师可能想杀了你。’",
+            "scoreDelta": {
+              "dex": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1,
+              "guild_artificer": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "拆除昂贵魔杖",
+              "液压外骨骼",
+              "法师用拳头"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其精通机械工程学且擅长坑害队友的鬼才工程师"
+          },
+          {
+            "id": "C",
+            "text": "你判定队友已经‘超过保修期’，极其不要脸地掏出一张保单，宣称必须先垫付十万金币的‘原厂维修费’。在队友绝望的眼神中，你直接把他打包进了一个装满防震泡沫的木箱里，标上‘易碎品’，让魔宠拖着走。",
+            "npcReply": "你用极其恶劣的售后服务态度完美规避了治疗责任。‘不交钱就不干活，你这该死的资本主义机器。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "原厂维修费",
+              "打包进木箱",
+              "标易碎品"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度认钱不认人、用无良保单拒绝一切免费劳动的黑心维修商"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地认为他走不快是因为‘缺乏下压力’。于是你掏出一个巨大的金属涡轮风扇，极其草率地焊在了他的头盔上，并开启了最大反推模式。他像个倒栽葱的直升机一样被硬生生压在地上高速滑行前进了。",
+            "npcReply": "队友一路用脸刹车翻越了整座山头。‘……你这极其暴力的空气动力学应用简直丧心病狂！’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "涡轮风扇焊头",
+              "反推模式滑行",
+              "用脸刹车"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "经常使用极度离谱的反向空气动力学解决问题的幽默发明家"
+          }
+        ]
+      }
+    ],
+    "guild_wizard": [
+      {
+        "id": "construct_wizard_compile",
+        "title": "法术编译",
+        "scene": "你正在准备释放一个极度强大的‘陨石术’。但是敌人的刺客已经冲到了你面前，而你的法术还在慢吞吞地‘编译中（75%）’。",
+        "prompt": "作为符文计算核心，你如何应对这个致命的打断？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你直接将核心反应堆设置为‘熔毁边缘’，不仅没有停止施法，反而极其狂热地把未编译完成的代码强行灌注到刺客体内，把他当成了人肉施法媒介！巨大的陨石直接以刺客为中心爆炸，把他炸成了漫天代码碎片！",
+            "npcReply": "你用极度危险的肉鸡战术完成了施法。‘把刺客当成外接处理器，你的心比你的外壳还要黑。’",
+            "scoreDelta": {
+              "int": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "代码强行灌注",
+              "人肉施法媒介",
+              "炸成代码碎片"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度疯狂、会把敌人强行抓来当代码运行环境的骇客法师"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地敲击了一个‘Ctrl+C’。你瞬间将陨石术的半成品打包成一个压缩文件，并极其流畅地将压缩包砸在了刺客脸上。趁他被未解压的魔力糊住双眼时，你用金属字典拍碎了他的头骨，然后慢条斯理地继续解压施法。",
+            "npcReply": "极其完美的文件管理与物理打击结合。‘你不仅是个优秀的法师，更是一台完美的近战板砖机器。’",
+            "scoreDelta": {
+              "dex": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1,
+              "guild_wizard": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "打包成压缩文件",
+              "砸压缩包",
+              "金属字典拍碎"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其冷静、擅长将半成品魔法当成物理暗器使用的全能战术核心"
+          },
+          {
+            "id": "C",
+            "text": "你直接在头顶投影出一个巨大的‘蓝屏死机’画面，并且眼眶开始疯狂播放极度催眠的进度条加载动画。刺客看着那极其缓慢的99%，强迫症当场发作，硬是站在原地等了半个小时，结果被终于砸下来的陨石当场超度。",
+            "npcReply": "刺客死于极其离谱的系统蓝屏加载动画。‘遇到杀手就装死机拖时间，你的龟息功真是无敌了。’",
+            "scoreDelta": {
+              "wis": -3,
+              "int": -3
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -4
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "巨大蓝屏",
+              "缓慢加载动画",
+              "强迫症发作"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通装死与进度条心理学、能把敌人活活等死的碰瓷大师"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地弹出了一个名为‘是否允许此应用对您的设备进行更改’的巨型确认弹窗。刺客本能地用匕首戳了一下‘否’，结果触发了系统的‘极度暴躁连环弹窗轰炸’。成千上万个报错框瞬间塞满了走廊，直接把刺客活活挤压致死。",
+            "npcReply": "刺客死于极其离谱的UI弹窗物理攻击。‘……你用极度的视觉垃圾强行改变了物理规则。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "巨型确认弹窗",
+              "连环轰炸报错",
+              "塞满走廊"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "充满极度无语的交互界面、能用流氓软件弹窗物理挤死敌人的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_cleric": [
+      {
+        "id": "construct_cleric_preach",
+        "title": "造物主的神谕",
+        "scene": "你需要向一群极其愚昧的原始地精部落传播‘锻造与机械之神’的信仰。但地精们只相信烤肉和亮晶晶的石头。",
+        "prompt": "作为造物主扬声器，你如何进行传教？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其强势地开启了‘全息神明模拟器’，在半空中投影出一个极其巨大的、戴着墨镜狂吃烤肉的机械钢铁神明。你用重低音喇叭宣布：‘信奉机械神，天天吃带电的赛博烤肉！’然后直接用激光把地精营地中间的石头烤成了岩浆池。",
+            "npcReply": "你把传教变成了极其恐怖的全息洗脑演唱会。‘极度硬核且浮夸的赛博传教法。’",
+            "scoreDelta": {
+              "str": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "全息神明投影",
+              "激光烤出岩浆池",
+              "赛博烤肉"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其固执、精通全息投影诈骗与激光烧烤的狂热传教士"
+          },
+          {
+            "id": "B",
+            "text": "你极其聪明地修改了教义。你直接把机械之神的圣徽做成了极其拉风的开瓶器和烤肉翻面铲，并发放给地精。当地精们发现这玩意儿开酒瓶和翻烤肉有奇效时，机械之神瞬间成为了他们心目中的‘烤肉界第一真神’。",
+            "npcReply": "极度完美的降维打击传教。‘你深知如何用最接地气的厨房用具来打动愚昧的灵魂。’",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 2,
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "圣徽开瓶器",
+              "烤肉翻面铲",
+              "降维打击"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其精明、懂得用厨房发明来替代空洞教义的务实传教士"
+          },
+          {
+            "id": "C",
+            "text": "你判定地精的智商无法理解机械，于是极其不要脸地掏出一份‘免责协议’，强行抓着地精头目的手在上面按了手印。你宣称这群地精已经‘自愿在法理上皈依机械神’，然后直接将他们的部落打包成了教廷的免税农场。",
+            "npcReply": "你这极其下作的法务操作让教皇都自愧不如。‘硬生生把传教变成了恶意收购，你真是个天才。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "按手印免责",
+              "法理皈依",
+              "强行打包免税"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度无下限、能用极其流氓的法律合同完成强制皈依的商业黑客"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地把自己改装成了一台极度炫酷的老虎机。只要地精向你高喊机械之神的名字，拉动你的手臂，就有概率吐出烤肉或者亮晶晶的石头。地精们为了抽卡当场陷入了疯狂的赌徒状态，把整个部落的财产都献祭给了你。",
+            "npcReply": "你把极其严肃的宗教变成了极其邪恶的赌博游戏。‘……你这极其抽象的抽卡传教法真是绝了，你这该死的扭蛋机！’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "把自己改造成老虎机",
+              "吐出烤肉",
+              "疯狂抽卡"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "脑洞极其清奇、能用万恶的抽卡机制榨干信徒灵魂的赛博扭蛋机"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "construct_fighter_end",
+      "title": "终极安保核心",
+      "condition": "affinity.guild_fighter >= 3",
+      "description": "你极其完美地执行了所有的安保指令。你甚至自己重写了底层逻辑，将‘保护’升级成了‘预防性物理清除’。现在的你成了一座极其巨大的全自动堡垒，任何靠近你千米之内的生物都会被你极其无情地轰成渣。你的前任老板极其后悔买下你，但他现在甚至连靠近你关机的机会都没有了。",
+      "imagePrompt": "A massive, heavily armored Construct that has built itself into a giant, intimidating fortress of steel and cannons. Red glowing optical sensors scan the barren wasteland around it. No living thing is visible. Epic sci-fi dark fantasy crossover vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "construct_artificer_end",
+      "title": "废铁重组者",
+      "condition": "affinity.guild_artificer >= 3",
+      "description": "你极其狂热的维修和升级欲望彻底失控。你不仅把所有的队友都改造成了半机械人，甚至把沿途的森林、河流和村庄都极其暴躁地改造成了轰鸣的钢铁齿轮。你成为了极其恐怖的机械神明，企图把整个世界都‘修’成绝对完美且死寂的机械结构。",
+      "imagePrompt": "A highly complex Construct Artificer with multiple extending mechanical arms, actively welding and bolting steel plates onto a terrified looking tree. The surrounding environment is half-nature, half-grinding gears. Epic steampunk assimilation vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "construct_failure_end",
+      "title": "逻辑崩溃的废铁",
+      "condition": "alignment.risk >= 2",
+      "description": "你极其糟糕的逻辑处理能力和经常性的死机让你成为了一堆毫无用处的废铁。在一次极其低级的报错后，你的系统彻底被垃圾数据塞满，蓝屏了。村民们极其嫌弃地把你推倒在路边，甚至把你的胸腔掏空用来当垃圾桶，你永远地沉睡在了无尽的报错代码中。",
+      "imagePrompt": "A rusted, inactive Construct slumped over in the mud. Its chest cavity is open and filled with common village garbage. Its single eye lens is cracked and completely dark. Sad, pathetic robot vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+{
+  "raceId": "goblin",
+  "raceName": "地精 (Goblin)",
+  "description": "极度胆小但极具破坏创造力的危险物种。深信爆炸能解决一切工程和战术问题。在逃跑方面拥有极高天赋。他们眼中的极品装备通常是别人眼里的生锈垃圾拼凑物。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 2,
+          "guild_sorcerer": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 2,
+          "guild_sorcerer": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_sorcerer": 2,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_artificer": 1,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_sorcerer": 2
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_artificer",
+      "name": "垃圾爆破狂 (Artificer)",
+      "description": "能把破铜烂铁拼成极度危险的黑火药大炮。他们的发明炸死敌人的概率和炸死自己的概率一样高。",
+      "requirements": {
+        "int": 14,
+        "dex": 12
+      }
+    },
+    {
+      "id": "guild_rogue",
+      "name": "逃跑大师 (Rogue)",
+      "description": "胆小如鼠，因此练就了大陆第一的逃跑速度和阴暗潜行术。别人是暗杀，他们是下毒后跑出十里地外观察。",
+      "requirements": {
+        "dex": 14,
+        "wis": 10
+      }
+    },
+    {
+      "id": "guild_fighter",
+      "name": "人海敢死队 (Fighter)",
+      "description": "通常成群结队出现。深知自己很弱，所以擅长利用极度卑劣的群殴战术和陷阱来消耗敌人。",
+      "requirements": {
+        "dex": 12,
+        "con": 12
+      }
+    },
+    {
+      "id": "guild_sorcerer",
+      "name": "变异喷火器 (Sorcerer)",
+      "description": "因为吞了不明炼金废料而获得魔法的地精。法术极度不稳定，打喷嚏都可能引发连环火球爆炸。",
+      "requirements": {
+        "cha": 12,
+        "con": 10
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "goblin_physique_stealth",
+      "targetId": "guild_rogue",
+      "title": "暗影中的垃圾",
+      "scene": "你被指派潜入一个极其豪华的精灵贵族庄园偷取图纸。庄园里到处都是魔法守卫，地上铺着极度昂贵的魔法地毯，连一点灰尘都没有。",
+      "prompt": "作为习惯了在垃圾堆里打滚的地精，你如何在这个一尘不染的地方潜行？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你从储物袋掏出三大罐“史莱姆原液”涂满全身，像一块高度润滑的肥皂一样在地毯上无声滑行。你甚至顺手给精灵的古董花瓶打了个蜡。魔法守卫只看到一滩高光反射的黏液以优美的抛物线“嗖”地一下滑进了宝库。",
+          "npcReply": "图纸干干净净，但整个庄园的地板现在滑得连精灵王都能摔断腿。“满分。”",
+          "scoreDelta": {
+            "dex": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "I": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "史莱姆原液滑行",
+            "给古董打蜡",
+            "极度润滑"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "擅长利用奇葩炼金产物达成完美潜行的润滑系刺客"
+        },
+        {
+          "id": "B",
+          "text": "你嫌地毯太干净反光刺眼，反手组装了一台“附魔扫地机器人”。里面装满了掺杂着胡椒粉的炼金黑灰。机器人在大厅疯狂乱窜，守卫们被呛得疯狂打喷嚏，而你大摇大摆地跟在机器人后面，顺便用吸尘管把图纸吸了过来。",
+          "npcReply": "你把潜入行动变成了保洁灾难。“不管怎么说，图纸到手了。”",
+          "scoreDelta": {
+            "int": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "附魔扫地机器人",
+            "胡椒粉掩护",
+            "机械化潜入"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "用高科技制造环境灾难来掩护自己的硬核潜行者"
+        },
+        {
+          "id": "C",
+          "text": "你立刻向庄园管家递交了一份伪造的“地精环境卫生巡视员实习证明”，并在脖子上挂了个写着“精灵劳动局认证”的木牌。当你大模大样地把图纸当做“违章建筑规划证据”没收时，守卫们甚至礼貌地给你让了路。",
+          "npcReply": "你不仅没潜行，还骗到了精灵的公款报销单？！“这是刺客公会，不是诈骗中心！”",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "evil": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "伪造公文",
+            "冒充公务员",
+            "诈骗式潜入"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其擅长钻空子和假传圣旨的高智商逃避者"
+        },
+        {
+          "id": "D",
+          "text": "你把自己扒得精光，摆出一个极度扭曲且充满艺术感的姿势，假装自己是某位后现代精灵雕塑家的最新力作《痛苦的绿色灵魂》。守卫们对着你品鉴了半个小时的艺术，不仅没识破，还往你脚下扔了几个硬币。",
+          "npcReply": "你带着图纸和十五枚铜币回来了。“精灵的艺术品味真是让人一言难尽。”",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "后现代行为艺术",
+            "假装雕塑",
+            "骗取打赏"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "擅长用极度荒诞的艺术伪装侮辱敌人智商的心理学大师"
+        }
+      ]
+    },
+    {
+      "id": "goblin_physique_engineering",
+      "targetId": "guild_artificer",
+      "title": "废土发明家",
+      "scene": "为了攻破人类坚固的城门，你需要制造一台攻城器械。但你手头只有极其破烂的木板、生锈的铁钉、几个火药桶和一头脾气暴躁的骡子。",
+      "prompt": "面对这些垃圾材料，你如何发挥地精的工程学天赋？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你将木板和铁钉改造成一副外骨骼机甲强行套在骡子身上，再把火药桶改装成它的喷射背包。你一拍骡子屁股，一头装备着“推进器”的钢铁狂暴骡以超音速一头撞碎了城门，顺便把城墙也犁掉了一半。",
+          "npcReply": "动力学与生物学的完美结合！“虽然那头骡子现在还在天上下不来。”",
+          "scoreDelta": {
+            "int": 3,
+            "con": -1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "骡子喷射背包",
+            "钢铁外骨骼",
+            "超音速撞击"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "把生物当做工程零件，迷恋极度超载爆炸的高硬核技师"
+        },
+        {
+          "id": "B",
+          "text": "你根本没理会大门，而是利用木板和铁钉搭建了一个极其精妙的声学共振放大器。你把火药倒进扩音管，让骡子对着管子惨叫。恐怖的次声波直接震碎了城门的铰链，守军纷纷捂着耳朵口吐白沫。",
+          "npcReply": "兵不血刃地摧毁了防御工事。“你的物理学知识比火药更危险。”",
+          "scoreDelta": {
+            "int": 2,
+            "wis": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "声学共振器",
+            "次声波攻击",
+            "兵不血刃"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "擅长利用奇葩物理原理进行精准破坏的战术极客"
+        },
+        {
+          "id": "C",
+          "text": "你把铁钉和木板搭成了一个极其显眼的“高薪招募拆迁工”的告示牌，然后用火药桶作为首付款，当场在城门下雇佣了一群路过的食人魔。你坐在骡子上吃着瓜，看着食人魔把城门当成饼干一样嚼碎了。",
+          "npcReply": "你把工程问题转化为了经济外包问题。“考官很想打你，但找不出规则漏洞。”",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "雇佣食人魔",
+            "工程外包",
+            "吃瓜看戏"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "能不自己动手就绝不干活的商业鬼才"
+        },
+        {
+          "id": "D",
+          "text": "你用木板和铁钉做了一个无比粗糙的“人马座木马”，自己钻进去并用火药桶在尾部制造出排泄特效。守军以为这是神明的奇迹（或者是诅咒），虔诚地把这坨疯狂喷火的木头抬进了城，然后你直接从里面引爆了内城大门。",
+          "npcReply": "特洛伊木马的降智复刻版。“关键是人类居然真的信了……”",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "喷火木马",
+            "宗教诈骗",
+            "降智打击"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "永远在用常人无法理解的抽象逻辑降维打击敌人的神棍"
+        }
+      ]
+    },
+    {
+      "id": "goblin_physique_magic",
+      "targetId": "guild_sorcerer",
+      "title": "变异的火球",
+      "scene": "因为误食了炼金废液，你突然获得了施法的能力。但你的魔力极度不稳定，每次施法都像是在抽盲盒。",
+      "prompt": "考官让你展示一个基础的火球术，你如何施放？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你掏出一口铁锅，对着里面疯狂倾泻魔力。火球没有飞出去，而是被你压缩成了一锅高密度“超浓缩魔力岩浆”。你端着锅直接泼向标靶，标靶瞬间连带后面的墙壁一起被烧穿了一个还在滴落熔渣的大洞。",
+          "npcReply": "虽然这更像是在炒菜，但热力学破坏指数爆表。“你是个天生的毁灭厨师。”",
+          "scoreDelta": {
+            "con": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "超浓缩岩浆",
+            "铁锅炖魔法",
+            "毁灭厨师"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "把魔法当成高危物理现象来硬核操控的混沌法师"
+        },
+        {
+          "id": "B",
+          "text": "你完全不信任自己的魔力，而是快速组装了一个齿轮传动的高压法杖。你将魔力作为发电机动力，通过复杂的符文变压器，把一发不稳定的火球术转化成了一束持续十秒的高能激光切割射线，把标靶切成了整齐的一百零八块。",
+          "npcReply": "你硬生生把玄学魔法改造成了精密工业机床。“法师公会会控告你侵权的。”",
+          "scoreDelta": {
+            "int": 3,
+            "dex": 2
+          },
+          "mbtiDelta": {
+            "J": 2,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_artificer": 2,
+            "guild_sorcerer": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "齿轮法杖",
+            "高能激光",
+            "魔法工业化"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极度迷信机械，强行用工业设备驯服狂野魔法的法术技工"
+        },
+        {
+          "id": "C",
+          "text": "你大声宣布自己是个“坚定的环保主义者，拒绝制造温室气体”，随后迅速从兜里掏出一张不知道哪里办来的“三级残障魔力过敏证书”。你不仅拒绝施法，还要求考官为你提供无魔法的绿色考试环境，否则就去劳动局告他。",
+          "npcReply": "考官被你的官僚作风绕晕了，竟然真的在你的及格单上盖了章。“这算哪门子法师？”",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": -4
+          },
+          "alignmentDelta": {
+            "evil": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "环保主义借口",
+            "假病历免考",
+            "法律勒索"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "熟练运用法律漏洞和道德绑架逃避战斗的无赖法师"
+        },
+        {
+          "id": "D",
+          "text": "你深吸一口气，开始极其专注地搓火球。然而飞出去的不是火焰，而是一只纯由火元素构成的、疯狂尖叫的红色土拨鼠。土拨鼠冲到靶子前，发出了震耳欲聋的“啊——”的咆哮，随后爆炸产生了一朵微型蘑菇云。",
+          "npcReply": "……你竟然在魔法里注入了精神污染。“下次施法麻烦带个耳塞。”",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "火元素土拨鼠",
+            "尖叫爆炸",
+            "精神污染魔法"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "魔法极度抽象，连元素精灵都不正常行事的奇葩法师"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_artificer": [
+      {
+        "id": "goblin_artificer_bomb",
+        "title": "废土艺术",
+        "scene": "考官要求你组装一颗炸弹。提供的材料极其离谱：一个破旧的马桶圈、两把生锈的勺子、一些来历不明的绿色粉末和一根不知道从哪里扯下来的鞋带。",
+        "prompt": "面对这一堆垃圾，你的地精工程学该如何发挥？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你把两把勺子折弯作为电极，将绿色粉末塞进马桶圈的夹层，再用鞋带把整个结构死死勒紧。你将其命名为“马桶圈回旋加速炸弹”，像扔飞盘一样把它甩了出去。它在空中划出诡异的弧线，准确套中远处的假人脖子，然后在一阵刺耳的蜂鸣中把假人炸成了粉末。",
+            "npcReply": "空气动力学与爆破学的完美融合，虽然外观依然是个马桶圈。“你被录取了。”",
+            "scoreDelta": {
+              "int": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "回旋马桶圈",
+              "斩首炸弹",
+              "空气动力学"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "能把一切垃圾变成大威力战术武器的废土工匠"
+          },
+          {
+            "id": "B",
+            "text": "你把马桶圈拆解成一个隐蔽的绊线支架，用鞋带拉出极其隐蔽的触发线，把绿色粉末和勺子组合成定向弹片喷射器。你把它布置在考场大门后，当下一个倒霉蛋考生推门时，直接被糊了一脸极其精准的绿色爆炸粘液。",
+            "npcReply": "非常漂亮的陷阱工程。“不过你因为涉嫌谋杀同期考生被扣了十分。”",
+            "scoreDelta": {
+              "dex": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 2
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_artificer": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "定向绊雷",
+              "谋杀同期",
+              "阴险陷阱"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长利用最简单的材料布置致命连环陷阱的战术工程师"
+          },
+          {
+            "id": "C",
+            "text": "你一脸严肃地拿出羽毛笔，在马桶圈上写满了密密麻麻的复杂数学公式，并向考官声称这是一件“概念型理论炸弹”。你坚称只要敌人的智商超过80，看到这些公式就会大脑过载而死，因此根本不需要实际引爆。",
+            "npcReply": "你在学术造假方面的天赋令人震惊。“考官为了掩饰自己看不懂公式，咬牙给了你及格。”",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "概念型炸弹",
+              "学术造假",
+              "虚空造物"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "用极其离谱的理论包装自己动手能力为零的学术骗子"
+          },
+          {
+            "id": "D",
+            "text": "你把粉末当成调料，用两把勺子极其优雅地在马桶圈里拌起了“绿色浓汤”，甚至用鞋带给自己系了个餐巾。你端着这碗正在疯狂冒泡、散发着剧毒辐射光的诡异炖菜逼近考官，要求他品尝你的“厨艺炸弹”。",
+            "npcReply": "考官为了不吃那碗东西，不仅给了你满分，还倒贴了你五枚金币求你离他远点。",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "剧毒炖菜",
+              "逼迫试吃",
+              "餐饮恐怖主义"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "把化学爆破变成了生化餐饮恐怖主义的神经病工匠"
+          }
+        ]
+      }
+    ],
+    "guild_fighter": [
+      {
+        "id": "goblin_fighter_swarm",
+        "title": "人海战术",
+        "scene": "你和几个地精同伴面对着一个极其强大的兽人角斗士。他比你们高出两倍，力量极其恐怖，正在疯狂嘲笑你们的弱小。",
+        "prompt": "作为地精战士，你如何带领你的同伴战胜他？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你大喊一声“叠罗汉！”。你和同伴们极其熟练地踩着彼此的肩膀，瞬间组合成了一个高达四米的“地精组合巨兽”。你们不仅在身高上压制了兽人，还用六把破铁剑组成了极其狂暴的“绞肉机旋风斩”，硬生生把角斗士逼到了墙角疯狂乱剁。",
+            "npcReply": "这不叫群殴，这叫‘分布式多核战士系统’。“极具创意的战术协同！”",
+            "scoreDelta": {
+              "dex": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "叠罗汉合体",
+              "多核旋风斩",
+              "绞肉机战术"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "把地精的人数优势发挥到力学极限的合体狂人"
+          },
+          {
+            "id": "B",
+            "text": "你指挥同伴全部躺下装死，而你则装成一个极其卑微的战利品收集者。当兽人得意洋洋地准备跨过你们“尸体”的时候，你突然一声口哨，所有装死的地精同时抽出暗藏的绊马索，瞬间把这个巨汉绊了个倒栽葱，随后直接一拥而上拿麻袋套头。",
+            "npcReply": "极致的示弱，完美的背刺。“你不像个战士，倒像个阴险的强盗头子。”",
+            "scoreDelta": {
+              "int": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1,
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "诈死反击",
+              "绊马索",
+              "拿麻袋套头"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长利用示弱和诈死诱敌深入的战术阴谋家"
+          },
+          {
+            "id": "C",
+            "text": "你极其淡定地掏出一卷羊皮纸，清了清嗓子向兽人宣读了《角斗场劳工保护法（地精修订版）》。你指出他的肌肉围度严重超标，违反了公平竞技反垄断条款，并声称如果不立刻投降，就向城管部门举报他无证斗殴。",
+            "npcReply": "兽人被你一连串的法律术语直接干烧了CPU，绝望地扔下武器投降了。“法务部比刀剑更可怕。”",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "宣读法条",
+              "举报无证斗殴",
+              "物理法务部"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "擅长用胡搅蛮缠的法律条文把敌人绕晕的嘴遁战神"
+          },
+          {
+            "id": "D",
+            "text": "你要求同伴全部脱下鞋子，将十几个几十年没洗过的地精原味靴子用一根绳子串起来，像流星锤一样极其疯狂地甩动。极其恐怖的生化臭味如同实质般的冲击波席卷全场，兽人连一秒都没撑住，直接翻白眼口吐白沫晕了过去。",
+            "npcReply": "这是考场里第一次发生因为嗅觉神经被切断而导致的秒杀。“请立刻收起你的武器！”",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "生化流星锤",
+              "原味靴子",
+              "气味秒杀"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "将地精的生理缺陷转化为大范围生化武器的毒气战神"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "goblin_artificer_end",
+      "title": "废土爆破之王",
+      "condition": "affinity.guild_artificer >= 3",
+      "description": "你成为了地精历史上极其罕见的爆炸大师。你发明的‘破烂终结者’大炮不仅炸平了敌人的城堡，也经常因为走火炸飞你们自己的营地。但没有人敢解雇你，因为你的火力覆盖确实极其恐怖。你每天都在垃圾堆里寻找灵感，并随时准备将世界炸成极其绚丽的烟花。",
+      "imagePrompt": "A highly chaotic Goblin Artificer standing proudly on top of a massive, ridiculously over-engineered cannon made entirely of rusty scrap metal, broken toilets, and glowing green crystals. Explosions are going off in the background, and the goblin is wearing oversized welding goggles, cackling maniacally. Epic steampunk/junk-punk fantasy art style. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "goblin_rogue_end",
+      "title": "暗影中的老鼠",
+      "condition": "affinity.guild_rogue >= 3",
+      "description": "你将地精极度胆小的本性升华成了极其完美的潜行艺术。你从来不正面交锋，你的敌人甚至不知道自己是怎么死的，因为你总是在距离他们十公里外的地方按下毒气开关。你极其猥琐、极度狡猾，成为了所有悬赏目标的极度噩梦。",
+      "imagePrompt": "A heavily hooded Goblin Rogue hiding in the absolute darkest corner of a room, peering out with glowing yellow eyes. He is holding a detonator for a poison gas trap, while in the far background, completely oblivious guards are about to trigger it. Epic dark fantasy, stealth and betrayal vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "goblin_failure_end",
+      "title": "垃圾桶里的废物",
+      "condition": "alignment.risk >= 2",
+      "description": "你的极度懦弱和极其卑劣的行为让你连最低贱的地精部落都容不下。你被所有同伴抛弃，只能每天在人类城市的垃圾桶里极其凄惨地寻找发霉的食物。最终，你因为极其可耻地想要偷走一个小孩的糖果，被愤怒的村民极其随便地打死在了阴沟里。",
+      "imagePrompt": "A completely pathetic, trembling Goblin dressed in filthy rags, hiding inside an overturned, rotting wooden garbage bin in a rainy alleyway. He looks extremely terrified, clutching a moldy piece of bread. Grim, depressing dark fantasy style. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

@@ -1,0 +1,1317 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-08T13:14:55.509Z",
+  "role": "race-recruitment-assets",
+  "baseDir": "assets/recruitment/generated",
+  "slotCount": 29,
+  "readyCount": 29,
+  "slots": [
+    {
+      "id": "ui_home_recruitment_hall",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/ui_home_recruitment_hall-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_home_recruitment_hall-source.webp",
+      "expectedFile": "assets/recruitment/generated/ui_home_recruitment_hall-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "adventurer recruitment hall beside a dungeon gate"
+    },
+    {
+      "id": "ui_bloodline_registry",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/ui_bloodline_registry-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_bloodline_registry-source.webp",
+      "expectedFile": "assets/recruitment/generated/ui_bloodline_registry-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "bloodline registry desk in a fantasy guild"
+    },
+    {
+      "id": "ui_guild_verdict_scroll",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/ui_guild_verdict_scroll-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_guild_verdict_scroll-source.webp",
+      "expectedFile": "assets/recruitment/generated/ui_guild_verdict_scroll-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild verdict table with stamped parchment"
+    },
+    {
+      "id": "race_human_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "human",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_human_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_human_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "human adventurer recruit at a guild counter"
+    },
+    {
+      "id": "race_elf_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "elf",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_elf_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_elf_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "elegant elf bloodline recruit in ancient forest ruins"
+    },
+    {
+      "id": "race_drow_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "drow",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_drow_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_drow_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_drow_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "dark elf recruit from an underground city"
+    },
+    {
+      "id": "race_dwarf_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "dwarf",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dwarf_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dwarf_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "sturdy dwarf clan recruit in mountain forge light"
+    },
+    {
+      "id": "race_halfling_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "halfling",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_halfling_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_halfling_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "small halfling recruit under an oversized cloak and shield"
+    },
+    {
+      "id": "race_gnome_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "gnome",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_gnome_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_gnome_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_gnome_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "gnome recruit with clockwork devices and illusion sparks"
+    },
+    {
+      "id": "race_half_orc_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "half_orc",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_half_orc_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_half_orc_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "half-orc recruit with cracked tusk and frontier camp"
+    },
+    {
+      "id": "race_tiefling_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "tiefling",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_tiefling_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_tiefling_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "tiefling recruit with horns and infernal mark"
+    },
+    {
+      "id": "race_dragonborn_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "dragonborn",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dragonborn_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dragonborn_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "dragonborn recruit before clan banner"
+    },
+    {
+      "id": "race_goliath_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "goliath",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_goliath_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_goliath_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_goliath_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "tall goliath recruit from high mountains"
+    },
+    {
+      "id": "race_troll_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_troll_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_troll_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_troll_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "giant troll-blood recruit too large for the guild doorway"
+    },
+    {
+      "id": "race_ogre_giant_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "ogre_giant",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_ogre_giant_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_card-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_ogre_giant_card-preview.webp",
+      "ratio": "2:3",
+      "promptBrief": "giant-blood recruit squeezing through a narrow dungeon gate"
+    },
+    {
+      "id": "troll_target_barbarian_camp",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "barbarian_camp",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_target_barbarian_camp-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_barbarian_camp-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_target_barbarian_camp-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll-blood recruit at a brutal barbarian war camp"
+    },
+    {
+      "id": "troll_target_fighter_line",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "fighter_line",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_target_fighter_line-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_fighter_line-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_target_fighter_line-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "oversized troll-blood recruit fitted into black-flag heavy armor"
+    },
+    {
+      "id": "troll_target_warlock_contract",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "warlock_contract",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_target_warlock_contract-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_warlock_contract-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_target_warlock_contract-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll-blood recruit in a candlelit contract cellar"
+    },
+    {
+      "id": "troll_target_druid_mutation_circle",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "druid_mutation_circle",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_target_druid_mutation_circle-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_druid_mutation_circle-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_target_druid_mutation_circle-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll-blood recruit inside a wild druidic mutation circle"
+    },
+    {
+      "id": "troll_physique_01_hammer_test",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_1",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_physique_01_hammer_test-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_01_hammer_test-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_physique_01_hammer_test-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "rusty heavy war hammer impact test"
+    },
+    {
+      "id": "troll_physique_02_mire_wagon",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_2",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_physique_02_mire_wagon-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_02_mire_wagon-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_physique_02_mire_wagon-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "ore wagon stuck in swamp mud"
+    },
+    {
+      "id": "troll_physique_03_narrow_passage",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_3",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_physique_03_narrow_passage-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_03_narrow_passage-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_physique_03_narrow_passage-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll recruit facing a tiny spiked doorway"
+    },
+    {
+      "id": "troll_physique_04_regeneration_cost",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_4",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_physique_04_regeneration_cost-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_04_regeneration_cost-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_physique_04_regeneration_cost-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "regeneration has a cost"
+    },
+    {
+      "id": "troll_physique_05_tavern_stares",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_5",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_physique_05_tavern_stares-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_05_tavern_stares-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_physique_05_tavern_stares-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll recruit awkward in a small town tavern"
+    },
+    {
+      "id": "troll_ending_accepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "accepted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_ending_accepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_accepted-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_ending_accepted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild officer stamping acceptance"
+    },
+    {
+      "id": "troll_ending_probation",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "probation",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_ending_probation-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_probation-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_ending_probation-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "troll recruit receiving a temporary mercenary tag"
+    },
+    {
+      "id": "troll_ending_transferred",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "transferred",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_ending_transferred-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_transferred-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_ending_transferred-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "recruitment officer redirecting troll recruit"
+    },
+    {
+      "id": "troll_ending_blacklisted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "blacklisted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_ending_blacklisted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_blacklisted-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_ending_blacklisted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild blacklist ledger closing"
+    },
+    {
+      "id": "troll_ending_absurdAccepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "absurdAccepted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/troll_ending_absurdAccepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_absurdAccepted-source.webp",
+      "expectedFile": "assets/recruitment/generated/troll_ending_absurdAccepted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "absurd trial success in chaotic guild office"
+    }
+  ],
+  "items": [
+    {
+      "id": "ui_home_recruitment_hall",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/ui_home_recruitment_hall-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_home_recruitment_hall-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Western fantasy adventurer recruitment hall beside a dungeon gate, massive wooden notice board covered with parchment contracts and wax seals, guild counter, weapons rack, torchlight, stone walls, a few vague mercenary silhouettes. Composition: wide 16:9 hero background, main visual weight on the right and center, darker calmer space on the left for overlaid interface copy, no important information at the bottom. Mood: cinematic warm dark fantasy, official but dangerous. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "format": "webp",
+      "bytes": 242582,
+      "sourceBytes": 92314,
+      "generatedAt": "2026-07-07T12:03:43.258Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "ui_bloodline_registry",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/ui_bloodline_registry-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_bloodline_registry-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Bloodline registry desk in a fantasy guild, open bestiary ledger, sealed specimen tags, ink bottles, claw marks on parchment, iron stamp, candlelight. Composition: 16:9 environment still life, desk in foreground, official guild atmosphere, safe margins for cropping. Mood: mysterious but official. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "format": "webp",
+      "bytes": 235008,
+      "sourceBytes": 120812,
+      "generatedAt": "2026-07-07T12:04:56.617Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "ui_guild_verdict_scroll",
+      "role": "ui",
+      "group": "ui",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/ui_guild_verdict_scroll-preview.webp",
+      "sourceFile": "assets/recruitment/generated/ui_guild_verdict_scroll-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Guild verdict table with stamped parchment, wax seals, black iron badge, recruitment folders, candle smoke, official fantasy bureaucracy. Composition: cinematic 16:9 overhead table scene with strong central silhouette and dark edge vignette. Mood: dramatic overhead light, judgement after a guild trial. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "format": "webp",
+      "bytes": 263070,
+      "sourceBytes": 106272,
+      "generatedAt": "2026-07-07T12:05:49.503Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_human_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "human",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_human_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Human adventurer recruit at a guild counter, adaptable traveler with worn cloak, sword, map case and mixed tools, determined practical expression, warm torchlit recruitment hall. grounded western fantasy practicality. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 128788,
+      "sourceBytes": 64488,
+      "generatedAt": "2026-07-07T12:33:40.446Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_elf_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "elf",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_elf_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Elegant elf bloodline recruit in ancient forest ruins, keen eyes, long-lived calm, moonlit leaves, silver-green fabric, refined silhouette. moonlit old-world elegance. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 216346,
+      "sourceBytes": 124736,
+      "generatedAt": "2026-07-07T12:34:38.877Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_drow_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "drow",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_drow_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_drow_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Dark elf recruit from an underground city, obsidian stone, violet torchlight, dangerous charisma, cautious smile, elegant armor, shadowed cavern architecture. subterranean intrigue and restraint. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 124540,
+      "sourceBytes": 62182,
+      "generatedAt": "2026-07-07T12:35:23.470Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dwarf_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "dwarf",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dwarf_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Sturdy dwarf clan recruit in mountain forge light, ancestral hammer, iron braids, heavy boots, glowing clan runes on metal, grounded endurance. forge warmth and clan duty. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 164706,
+      "sourceBytes": 86032,
+      "generatedAt": "2026-07-07T12:36:29.803Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_halfling_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "halfling",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_halfling_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Small halfling recruit under an oversized cloak and shield, lucky charm, warm campfire near a dangerous road, brave but understated. humble courage in a large dangerous world. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 142474,
+      "sourceBytes": 76572,
+      "generatedAt": "2026-07-07T12:38:40.734Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_gnome_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "gnome",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_gnome_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_gnome_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Weathered adult gnome recruit surrounded by tiny clockwork devices and soft illusion sparks, sharp curious eyes, compact traveling kit, practical workshop leathers, adult proportions, stern field-engineer posture, grounded fantasy workshop. curious practical invention, not cute, not childlike. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 176580,
+      "sourceBytes": 84270,
+      "generatedAt": "2026-07-07T12:51:40.597Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_half_orc_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "half_orc",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_half_orc_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Half-orc recruit with cracked tusk, survival scars, practical weapon harness, direct powerful stance, frontier camp background, resilient and misunderstood. hard-earned resilience, no explicit injury. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 156654,
+      "sourceBytes": 82344,
+      "generatedAt": "2026-07-07T12:40:33.899Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_tiefling_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "tiefling",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_tiefling_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Tiefling recruit with subtle horns and infernal mark, contract shadows behind them, proud defiant posture, dark red candlelight, identity tension, not oversexualized. defiance under suspicion. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 109936,
+      "sourceBytes": 59074,
+      "generatedAt": "2026-07-07T12:41:18.355Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dragonborn_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "dragonborn",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dragonborn_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Dragonborn recruit before clan banner, ember breath glow, scale armor, proud ceremonial posture, honor and pressure of bloodline. proud ceremonial burden. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 172960,
+      "sourceBytes": 107918,
+      "generatedAt": "2026-07-07T12:43:06.737Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_goliath_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "goliath",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_goliath_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_goliath_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Tall goliath recruit from high mountains, stone-like skin markings, cold wind, climbing ropes, quiet strength, highland survival culture. austere mountain endurance. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 145842,
+      "sourceBytes": 68896,
+      "generatedAt": "2026-07-07T12:44:00.599Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_troll_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_troll_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_troll_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Giant troll-blood recruit too large for the guild doorway, regenerating green scars, huge hands, frightening silhouette but intelligent eyes, cracked stone floor, dark fantasy recruitment hall. dangerous but playable. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 125432,
+      "sourceBytes": 66242,
+      "generatedAt": "2026-07-07T12:44:46.859Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_ogre_giant_card",
+      "role": "race-card",
+      "group": "races",
+      "raceId": "ogre_giant",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_ogre_giant_card-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_card-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy race card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Giant-blood or ogre-blood recruit squeezing through a narrow dungeon gate, massive shoulders scraping stone, heavy pack, scale contrast with tiny doorway, imposing but playable. oversized strength meeting dungeon architecture. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "ratio": "2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 179832,
+      "sourceBytes": 125576,
+      "generatedAt": "2026-07-07T12:45:26.484Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_target_barbarian_camp",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "barbarian_camp",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_target_barbarian_camp-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_barbarian_camp-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit at a brutal barbarian war camp, split axes, bonfire, beast-hide banners, cracked training dummies, wild frontline energy. Composition: cinematic 16:9, target card background, strong orange fire and black iron shapes, safe margins. Mood: feral pressure, no gore. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 128702,
+      "sourceBytes": 115166,
+      "generatedAt": "2026-07-07T13:07:36.001Z",
+      "review": {
+        "status": "ready",
+        "note": "Preview was recropped upward from the square source so the subject head and silhouette remain visible in the 16:9 UI frame."
+      }
+    },
+    {
+      "id": "troll_target_fighter_line",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "fighter_line",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_target_fighter_line-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_fighter_line-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Oversized troll-blood recruit fitted into black-flag heavy armor, shield wall training ground, disciplined soldiers, iron banners, rain on steel. Composition: cinematic 16:9, disciplined lines and large silhouette, safe margins. Mood: blue gray military fantasy. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 123792,
+      "sourceBytes": 96198,
+      "generatedAt": "2026-07-07T13:08:21.759Z",
+      "review": {
+        "status": "ready",
+        "note": "Preview was recropped upward from the square source so the subject head and silhouette remain visible in the 16:9 UI frame."
+      }
+    },
+    {
+      "id": "troll_target_warlock_contract",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "warlock_contract",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_target_warlock_contract-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_warlock_contract-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit in a candlelit contract cellar, raven-masked scholar, black parchment, wax seals, occult circles, restrained body-horror atmosphere, purple crimson shadows. Composition: cinematic 16:9, contract table and recruit silhouette, safe margins. Mood: sinister but controlled, no explicit gore. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 171990,
+      "sourceBytes": 90324,
+      "generatedAt": "2026-07-07T13:09:17.398Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_target_druid_mutation_circle",
+      "role": "target",
+      "group": "targets",
+      "raceId": "troll",
+      "targetId": "druid_mutation_circle",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_target_druid_mutation_circle-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_target_druid_mutation_circle-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit standing inside a wild druidic mutation circle, roots, bone branches, glowing fungi, moss growing across regenerated scars, green gold forest gloom. Composition: cinematic 16:9, ritual circle and troll silhouette, safe margins. Mood: wild growth and uneasy transformation. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 178862,
+      "sourceBytes": 110748,
+      "generatedAt": "2026-07-07T13:11:41.028Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_physique_01_hammer_test",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_1",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_physique_01_hammer_test-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_01_hammer_test-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Rusty heavy war hammer swinging toward a giant troll-blood recruit's shoulder in a guild testing yard, instructor laughing in background, impact moment, no visible wound, strength and endurance test. Composition: cinematic 16:9 action scene, clear hammer arc and recruit silhouette, safe margins. Mood: rough practical test. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 128618,
+      "sourceBytes": 100930,
+      "generatedAt": "2026-07-07T13:14:50.973Z",
+      "review": {
+        "status": "ready",
+        "note": "Preview was recropped upward from the square source so the subject head and silhouette remain visible in the 16:9 UI frame."
+      }
+    },
+    {
+      "id": "troll_physique_02_mire_wagon",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_2",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_physique_02_mire_wagon-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_02_mire_wagon-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Huge ore wagon stuck deep in swamp mud, dwarves pushing helplessly, troll-blood recruit standing nearby like a living crane, muddy fantasy camp, practical comedy tension. Composition: cinematic 16:9, wagon and recruit scale clearly readable, safe margins. Mood: grounded physical problem with dry humor. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 227678,
+      "sourceBytes": 109700,
+      "generatedAt": "2026-07-07T13:21:57.908Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_physique_03_narrow_passage",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_3",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_physique_03_narrow_passage-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_03_narrow_passage-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Giant troll-blood recruit facing a tiny goblin-sized spiked stone doorway above a fragile floor and dark pit, exaggerated scale problem, dungeon hazard test. Composition: cinematic 16:9, doorway scale contrast centered, safe margins. Mood: tense dungeon logistics. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 175364,
+      "sourceBytes": 104256,
+      "generatedAt": "2026-07-07T13:22:36.240Z",
+      "review": {
+        "status": "ready",
+        "note": "Preview was recropped upward from the square source so the subject head and silhouette remain visible in the 16:9 UI frame."
+      }
+    },
+    {
+      "id": "troll_physique_04_regeneration_cost",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_4",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_physique_04_regeneration_cost-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_04_regeneration_cost-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit sitting in a rough guild infirmary after a brutal training trial, faint green restorative magic fading around old armor scratches, empty food bowls and tired posture, regeneration has a cost, no visible wound. Composition: cinematic 16:9, exhausted large figure in rough guild infirmary, safe margins. Mood: weary cost of survival. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 148722,
+      "sourceBytes": 62040,
+      "generatedAt": "2026-07-08T12:11:24.215Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_physique_05_tavern_stares",
+      "role": "question",
+      "group": "questions",
+      "raceId": "",
+      "targetId": "",
+      "questionId": "troll_physique_5",
+      "endingType": "",
+      "file": "assets/recruitment/generated/troll_physique_05_tavern_stares-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_physique_05_tavern_stares-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit sitting awkwardly in a small town tavern, terrified patrons fleeing, bartender placing an oversized mug with trembling hands, social pressure and monster silhouette. Composition: cinematic 16:9, clear tavern scale and reactions, safe margins. Mood: uncomfortable social comedy, not cartoonish. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 127046,
+      "sourceBytes": 52606,
+      "generatedAt": "2026-07-08T12:14:03.598Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_ending_accepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "accepted",
+      "file": "assets/recruitment/generated/troll_ending_accepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_accepted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Guild officer stamping an official acceptance contract for a troll-blood recruit, torchlit cheers, weapon and class insignia on the table, triumphant but rough fantasy bureaucracy. Composition: cinematic 16:9 judgement background, stamp and recruit silhouette readable, safe margins. Mood: hard-won acceptance, no readable text. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 120542,
+      "sourceBytes": 51328,
+      "generatedAt": "2026-07-08T12:17:49.321Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_ending_probation",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "probation",
+      "file": "assets/recruitment/generated/troll_ending_probation-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_probation-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Troll-blood recruit receiving a temporary mercenary tag from a cautious guild clerk, half-open gate, suspicious guards, useful but not trusted, muted amber light. Composition: cinematic 16:9 judgement background, tag and guarded doorway readable, safe margins. Mood: provisional trust. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 145360,
+      "sourceBytes": 65112,
+      "generatedAt": "2026-07-08T12:19:37.929Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_ending_transferred",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "transferred",
+      "file": "assets/recruitment/generated/troll_ending_transferred-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_transferred-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: Recruitment officer redirecting a troll-blood recruit from one department door to another, multiple faction banners, confusing parchment files, destiny rerouted. Composition: cinematic 16:9, directional doors and paperwork, safe margins. Mood: bureaucratic rerouting in fantasy guild. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 167300,
+      "sourceBytes": 72348,
+      "generatedAt": "2026-07-08T12:23:45.090Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_ending_blacklisted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "blacklisted",
+      "file": "assets/recruitment/generated/troll_ending_blacklisted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_blacklisted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series. Scene: A dark guild blacklist ledger being closed while a troll-blood silhouette leaves toward a back alley, black wax seal, dangerous underground offers implied, no execution, no gore. Composition: cinematic 16:9 judgement background, ledger foreground and leaving silhouette, safe margins. Mood: ominous rejection. No text, no watermark, no logo, no readable letters, no UI overlay, no modern city, no sci-fi technology, no neon cyberpunk, no anime chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no exposed organs, no self-harm close-up, no dismemberment close-up, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate characters, no bad anatomy.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 107888,
+      "sourceBytes": 46630,
+      "generatedAt": "2026-07-08T12:25:40.160Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "troll_ending_absurdAccepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "troll",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "absurdAccepted",
+      "file": "assets/recruitment/generated/troll_ending_absurdAccepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/troll_ending_absurdAccepted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "Western fantasy tabletop RPG illustration, cinematic painterly realism, adventurer guild recruitment atmosphere, strong readable silhouette, detailed environment props, dramatic torchlight, parchment and iron texture, grounded dark fantasy, high detail, professional game concept art, cohesive recruitment asset series.\n\nAsset type: 16:9 guild verdict ending image for a web UI.\nScene: Chaotic fantasy guild office after an absurd trial success, exhausted clerks, troll-blood recruit accidentally blocking a doorway while everyone reluctantly stamps approval, scattered recruitment folders, toppled stools, candles, wax seals, black humor without becoming a cartoon.\nComposition: cinematic 16:9, reluctant approval stamp and overwhelmed clerks in foreground, troll recruit blocking doorway readable in background, safe margins for UI cropping, no readable signs or letters.\nMood: black humor, official fantasy bureaucracy collapsing under absurd success, warm torchlight and dark bronze parchment atmosphere.\nConstraints: no text, no readable letters, no watermark, no logo, no UI overlay, no modern office, no modern clothes, no sci-fi technology, no explicit gore, no exposed organs, no self-harm, no dismemberment, no bad anatomy, no blurry image.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 152082,
+      "sourceBytes": 64530,
+      "generatedAt": "2026-07-08T12:30:52.053Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    }
+  ]
+}

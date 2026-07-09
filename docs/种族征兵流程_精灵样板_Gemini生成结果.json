@@ -1,0 +1,4176 @@
+{
+  "meta": {
+    "version": 1,
+    "raceId": "elf",
+    "raceNameZh": "精灵",
+    "scope": "race_recruitment_full"
+  },
+  "raceCard": {
+    "raceId": "elf",
+    "raceNameZh": "精灵",
+    "raceNameEn": "Elf",
+    "title": "永恒的旁观者",
+    "oneLine": "几百年的寿命足以让人精通任何技艺，也足以让人对生命本身的重量感到麻木。",
+    "bodyText": "精灵拥有着这片大陆上最令人嫉妒的天赋：超越几个世纪的寿命、不受岁月侵蚀的容颜，以及流淌在血液里的魔法亲和力。他们不需要睡眠，只需在冥想中度过漫漫长夜；他们能在漆黑的森林中看清几里外飘落的树叶。\n\n然而，漫长的岁月是一把双刃剑。对短命种的共情正在他们身上慢慢消失。在公会考官看来，精灵最大的弱点往往不是肉体，而是那种高高在上、近乎冷酷的疏离感，以及因为觉得‘时间还有很多’而产生的致命拖延症。",
+    "tags": [
+      "长寿种",
+      "完美主义",
+      "感官敏锐",
+      "魔法血脉",
+      "情感疏离"
+    ],
+    "warningText": "警告：该种族个体极易在考核中表现出对考官权威的无视，并试图用他们祖父辈的逻辑来论证现代战术的错误。",
+    "recruiterQuote": "“我曾经带过一个精灵游侠。他的箭术完美无瑕，但当半兽人冲向阵地时，他竟然为了等待一阵完美的微风而错过了最佳射击时机。完美，有时候比愚蠢更致命。”"
+  },
+  "recruitTargets": [
+    {
+      "targetId": "guild_ranger",
+      "classNameZh": "幽林巡防营",
+      "classNameEn": "Ranger Guild",
+      "title": "无声之镝",
+      "oneLine": "与森林的每一次呼吸同频，将漫长的岁月化为绝对的精准。",
+      "recruiter": "‘夜风’伊兰尼尔，巡林客导师",
+      "recruitPitch": "“人类用城墙把自己围起来，而我们把整个森林变成我们的防线。你需要学会的不是如何杀死猎物，而是如何成为自然中不被察觉的一部分。”",
+      "acceptedStyle": "能在绝境中保持心如止水的狙击手与追踪大师。",
+      "likelyFailure": "极度吵闹、无法忍受长达数周的孤独潜伏的急躁者。",
+      "hiddenRoute": "如果表现出极端的猎杀本能，可能会被调往暗影刺客序列。",
+      "recommendedStats": [
+        "dex",
+        "wis",
+        "con"
+      ],
+      "riskTags": [
+        "深林迷失",
+        "社交退化",
+        "独狼综合征"
+      ]
+    },
+    {
+      "targetId": "guild_wizard",
+      "classNameZh": "苍穹尖塔",
+      "classNameEn": "Wizard Guild",
+      "title": "真理的编织者",
+      "oneLine": "魔法不是奇迹，它只是一门需要用几个世纪去解开的精密数学。",
+      "recruiter": "大法师维尔坎",
+      "recruitPitch": "“那些短命种把火球术当成某种戏法。但在这里，我们要研究的是火元素在第三层以太网道中的流体热力学方程。准备好你的脑子，或者滚回树上。”",
+      "acceptedStyle": "沉迷于知识的底层逻辑，能够精确控制法术变量的学术狂魔。",
+      "likelyFailure": "仅仅满足于丢几个火球听响声的肤浅施法者。",
+      "hiddenRoute": "过度探究禁忌知识，可能被吸纳进入研究古神遗迹的异端学会。",
+      "recommendedStats": [
+        "int",
+        "wis",
+        "dex"
+      ],
+      "riskTags": [
+        "知识诅咒",
+        "实验事故",
+        "傲慢反噬"
+      ]
+    },
+    {
+      "targetId": "guild_druid",
+      "classNameZh": "翠绿回环",
+      "classNameEn": "Druid Circle",
+      "title": "原始的代行者",
+      "oneLine": "放弃文明的安逸，拥抱野兽的本能与四季的残酷循环。",
+      "recruiter": "长者奥伦",
+      "recruitPitch": "“自然并不总是温柔的。它可以是春风，也可以是撕裂喉咙的狼牙。你需要忘记自己作为精灵的傲慢，重新学习如何作为一只野兽去觅食、去生存。”",
+      "acceptedStyle": "完美理解生态平衡，能随时舍弃人形沉浸入野性本能的德鲁伊。",
+      "likelyFailure": "有严重洁癖，无法忍受泥土、鲜血和生肉气味的娇贵精灵。",
+      "hiddenRoute": "如果表现出对腐朽与死亡的极度宽容，可能成为掌控孢子的腐化德鲁伊。",
+      "recommendedStats": [
+        "wis",
+        "con",
+        "int"
+      ],
+      "riskTags": [
+        "兽性吞没",
+        "文明脱节",
+        "生态偏执"
+      ]
+    },
+    {
+      "targetId": "guild_rogue",
+      "classNameZh": "无月之影",
+      "classNameEn": "Rogue Guild",
+      "title": "致命的优雅",
+      "oneLine": "如果寿命无限，那就有足够的时间去雕琢一次完美的谋杀。",
+      "recruiter": "‘织影者’瑟兰",
+      "recruitPitch": "“粗鄙的人类为了钱去杀人。而我们……我们把潜行和刺杀看作是一门极高雅的艺术。在目标察觉前将匕首送入他的心脏，整个过程不应惊动一片落叶。”",
+      "acceptedStyle": "冷静、冷酷且具有极高审美要求的潜行者与诡计大师。",
+      "likelyFailure": "喜欢正面硬刚或在任务中留下明显痕迹的莽夫。",
+      "hiddenRoute": "若展现出惊人的情报分析能力，可能会成为情报网的高级操盘手。",
+      "recommendedStats": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "riskTags": [
+        "悬赏目标",
+        "心理变态",
+        "阵营背叛"
+      ]
+    }
+  ],
+  "mbtiFilters": [
+    {
+      "groupId": "NT",
+      "title": "绝对的理智观测者",
+      "oneLine": "你用看待培养皿的眼光，看待这片大路上熙熙攘攘的短命种群。",
+      "evaluationStyle": "你把精灵的长寿转化为了一种恐怖的理性。你不会被短暂的情感波动所左右，所有的决策都基于几十年甚至上百年的长远收益。公会极度依赖你的分析能力，但也经常被你那种视万物为棋子的冷漠所战栗。",
+      "guild_rangerFlavor": "你射出的不是复仇的箭矢，而是物理学与空气动力学结合的绝对抹杀。",
+      "guild_wizardFlavor": "对你而言，魔法是一门可以被完全拆解和公式化的科学，哪怕这需要解剖一只恶魔。",
+      "guild_druidFlavor": "你理解自然的冷酷法则，你甚至觉得必要时清除一个人类小镇也是维持生态平衡的最优解。",
+      "guild_rogueFlavor": "你策划的刺杀不是出于仇恨，而像是在进行一场容错率为零的精密手术。",
+      "riskText": "当理智剥离了所有道德，你离成为下一个黑暗魔王只有一步之遥。"
+    },
+    {
+      "groupId": "NF",
+      "title": "岁月的共鸣者",
+      "oneLine": "你感受到了时间的重量，并试图在永恒中留下温柔的回音。",
+      "evaluationStyle": "在很多精灵因为长寿而变得麻木时，你却保持着极其敏锐的同理心。你能听到古树的叹息，也能共情那些只能活几十年的凡人的挣扎。你有一种能安抚灵魂的气质，这让你成为了小队中最不可或缺的精神寄托。",
+      "guild_rangerFlavor": "你的弓弦是为了守护而拉开的，你更愿意用箭矢警告敌人而非直接取其性命。",
+      "guild_wizardFlavor": "你不追求最具破坏力的禁咒，你更喜欢研究如何用防护魔法为战友构筑绝对的避风港。",
+      "guild_druidFlavor": "你是森林中治愈的微风，比起化身猛兽撕咬，你更擅长引导生命力的复苏。",
+      "guild_rogueFlavor": "你是个奇特的怪盗，偷窃不仅仅是为了财富，有时是为了归还，有时是为了揭露某个悲剧的真相。",
+      "riskText": "对所有生命过度泛滥的同情，有时会让你在需要痛下杀手时陷入致命的犹豫。"
+    },
+    {
+      "groupId": "SJ",
+      "title": "古老法则的守卫",
+      "oneLine": "你鄙视现代的变通，坚信几千年前的传统才是维系精灵尊严的唯一绳索。",
+      "evaluationStyle": "你是精灵中最古典、最刻板的那一类。你严格遵守着连考官都觉得繁琐的古老礼仪和规矩。你不信任那些新兴的火药或速成的战术，你只相信经历了岁月沉淀的传统技艺。你的存在让公会免于在混乱中迷失。",
+      "guild_rangerFlavor": "你拒绝使用任何涂毒的金属箭头，你只用亲手雕刻的骨箭和古老的猎手仪式去狩猎。",
+      "guild_wizardFlavor": "你坚持用最繁琐的古代精灵语念咒，哪怕语速稍慢，但法术的结构永远是最稳固的。",
+      "guild_druidFlavor": "你恪守最古老的林地誓约，即使面对极端的生态威胁也拒绝使用破坏性的催生魔法。",
+      "guild_rogueFlavor": "你遵守着极度严苛的‘刺客法典’，从不在背后动手，甚至在杀人前会发出一封优雅的预告函。",
+      "riskText": "极度的因循守旧让你很难适应每天都在发生剧变的人类战场节奏。"
+    },
+    {
+      "groupId": "SP",
+      "title": "永恒的体验派",
+      "oneLine": "既然生命这么漫长，如果不找点刺激的乐子，那不就无聊死了吗？",
+      "evaluationStyle": "你简直是精灵里的一个异类！你完全没有那些老古董的端庄和傲慢，你就像一阵极其多变的野风。你把漫长的寿命当成了一张可以无限试错的体验券。你热衷于尝试新奇的战术、结交奇怪的朋友，甚至不惜把自己置于险境。",
+      "guild_rangerFlavor": "你经常放着好好的弓箭不用，非要尝试从树上跳下来用匕首给猎物做个‘背部按摩’。",
+      "guild_wizardFlavor": "你最喜欢做的事情就是把两种理论上完全互斥的魔法元素揉在一起，看看究竟会炸出什么颜色的烟花。",
+      "guild_druidFlavor": "比起变成优雅的猎豹，你更喜欢变成一只极其聒噪的鹦鹉，在敌营上空疯狂散播谣言。",
+      "guild_rogueFlavor": "你把潜入当成了一场刺激的跑酷游戏，甚至会在偷走宝石后在原处留下一幅嘲讽的简笔画。",
+      "riskText": "你把一切都当成游戏，这种缺乏敬畏心的轻浮很容易让你付出惨痛的代价。"
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "elf_physique_trance",
+      "targetId": "guild_wizard",
+      "title": "冥想的间隙",
+      "scene": "精灵不需要像人类那样死气沉沉地睡上八个小时，只需四个小时的深度冥想。然而今晚，你们的小队遭到地精的连续骚扰，连一分钟的冥想时间都没留给你。",
+      "prompt": "面对四百年精灵生涯中极其罕见的‘重度疲劳’，当考官要求你立刻破解一个复杂的门锁法阵时，你会怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "睁开双眼强行建立星界连接，以灵魂出窍的姿态无视肉体疲劳，直接把锁芯的符文吃进脑子里进行精神重组。",
+          "npcReply": "你破解了法阵，但在接下来的半天里对任何外界刺激都反应迟缓。‘极其危险的灵魂剥离，但证明了你对精神的绝对掌控。’",
+          "scoreDelta": {
+            "int": 3,
+            "con": -1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 3
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "灵魂吃符文",
+            "无视肉体"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极其极端的精神派施法者"
+        },
+        {
+          "id": "B",
+          "text": "因为太困懒得施法，直接掏出矮人工程锤进行‘物理驱魔’，敲烂魔法锁并美其名曰‘反向奥术爆破’。",
+          "npcReply": "考官看着满地狼藉的古董锁陷入了沉思。‘……在脑子转不动的时候，让手替你干活，很务实的街头智慧。’",
+          "scoreDelta": {
+            "dex": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 2,
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "物理驱魔",
+            "反向爆破"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极其务实的物理流法师"
+        },
+        {
+          "id": "C",
+          "text": "极其傲慢地指责魔法锁的制造商不符合精灵的人体工学，要求考官出具精神损失费，不然就投诉到法师协会。",
+          "npcReply": "考官被你这倒打一耙的做派搞懵了。‘你用令人发指的傲慢强行拖延了时间，真有你的。’",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": -1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -1
+          },
+          "alignmentDelta": {
+            "expression": 2,
+            "risk": 1
+          },
+          "triggerTags": [
+            "人体工学",
+            "讹诈考官"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "试图用极度傲慢掩盖状态下滑的老赖"
+        },
+        {
+          "id": "D",
+          "text": "因为太困直接倒在锁上睡着了，结果梦游时流出的口水因为富含高阶精灵魔力，直接把锁给短路烧开了。",
+          "npcReply": "这极其离谱的举动竟然恰好触发了法阵的自毁程序。‘……离谱的狗屎运，你连流口水都是高魔抗。’",
+          "scoreDelta": {
+            "cha": 2,
+            "int": -1
+          },
+          "mbtiDelta": {
+            "F": 1,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_druid": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "高魔口水",
+            "梦游开锁"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "靠离谱的睡姿和高魔口水误打误撞过关"
+        }
+      ]
+    },
+    {
+      "id": "elf_physique_senses",
+      "targetId": "guild_ranger",
+      "title": "失控的感知",
+      "scene": "精灵的听觉和嗅觉远超人类。但在一场地精巢穴的遭遇战中，这成了致命的弱点。腐肉的恶臭和几百只地精刮擦铁器的刺耳噪音，让你的感官处于超载崩溃的边缘。",
+      "prompt": "在被恶臭和噪音折磨得几乎要发疯时，你要如何维持精准的射击？",
+      "options": [
+        {
+          "id": "A",
+          "text": "用精准的魔法封闭听觉与嗅觉，同时将所有感知集中在箭矢的震动上，靠‘气流的折射’盲狙地精头目。",
+          "npcReply": "箭矢精准命中。‘极其严苛的自我约束，你甚至能掌控自己的感官开关。’",
+          "scoreDelta": {
+            "wis": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "J": 1,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_ranger": 3
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "封闭感知",
+            "气流盲狙"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "展现出顶尖游侠绝对专注力的冷酷狙击手"
+        },
+        {
+          "id": "B",
+          "text": "把地精最爱吃的发酵臭泥果塞进耳朵和鼻孔里，完成‘同态隐形’，化身毫无破绽的地精同类进行近战刺杀。",
+          "npcReply": "你放弃了长项，但也排除了弱点。‘在战场上，懂得主动变臭也是一种高级生存智慧。’",
+          "scoreDelta": {
+            "dex": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_ranger": 1
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "同态变臭",
+            "融入恶心"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "不迷信天赋、极其务实的硬派战术家"
+        },
+        {
+          "id": "C",
+          "text": "掏出极其昂贵的精灵香水和静音卷轴在自己周围造了一个‘无菌结界’，结果发光发亮的结界成了地精的活靶子。",
+          "npcReply": "地精巢穴被你的光芒照亮了，队友差点被你害死。‘感官过载导致了危险的洁癖发作。你是一颗定时炸弹。’",
+          "scoreDelta": {
+            "cha": 2,
+            "wis": -3
+          },
+          "mbtiDelta": {
+            "F": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_druid": -2,
+            "guild_wizard": -1
+          },
+          "alignmentDelta": {
+            "risk": 2,
+            "chaotic": 1
+          },
+          "triggerTags": [
+            "无菌结界",
+            "洁癖发作"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "因严重洁癖和感官过载引发战地灾难的少爷"
+        },
+        {
+          "id": "D",
+          "text": "觉得既然噪音大那就加入，直接掏出战鼓开始敲出比地精还吵的重金属摇滚，靠音波攻击把地精全震晕。",
+          "npcReply": "地精们被你那比它们还炸裂的摇滚乐深深地震撼了，甚至有几只开始给你打拍子。‘……艺术，果然没有种族界限。’",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": -1
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "expression": 2
+          },
+          "triggerTags": [
+            "重金属摇滚",
+            "音波震晕"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "打不过就加入并用魔法重金属反杀的乐子人"
+        }
+      ]
+    },
+    {
+      "id": "elf_physique_charm_resist",
+      "targetId": "guild_rogue",
+      "title": "魅惑的免疫",
+      "scene": "精灵血统让你天生免疫睡眠魔法，且极难被魅惑。今晚，你们小队潜入了一座被高阶魅魔控制的古堡。当大门关上时，致命的魅惑浓雾瞬间放倒了你那三个可怜的人类队友。",
+      "prompt": "只有你还清醒。当魅魔微笑着向你走来，你将如何利用这个种族天赋破局？",
+      "options": [
+        {
+          "id": "A",
+          "text": "假装被魅惑，任由魅魔靠近，在对方试图吸取精气的瞬间，反向运行体内魔力，把魅魔吸成了干瘪的蝙蝠。",
+          "npcReply": "完美的伪装，致命的一击。‘你把种族抗性变成了一个极其卑鄙且高效的反向吸血陷阱。’",
+          "scoreDelta": {
+            "dex": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "control": 1,
+            "action": 1
+          },
+          "triggerTags": [
+            "假装中招",
+            "反向吸精"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "深谙伪装与反杀之道的顶尖刺客"
+        },
+        {
+          "id": "B",
+          "text": "拉开椅子坐下，掏出一份《跨物种情感诈骗防范指南》开始给魅魔普法，指出她的施法动作太老套。",
+          "npcReply": "魅魔被你激怒得完全失去了平日的优雅。‘兵不血刃的心理压制，这就是精灵的高傲。’",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "expression": 1
+          },
+          "triggerTags": [
+            "防骗普法",
+            "点评施法"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "具有极其强烈的上位者精神压迫感"
+        },
+        {
+          "id": "C",
+          "text": "极其熟练地跟魅魔开始谈生意，表示自己可以把队友的灵魂以八折卖给她，条件是分自己一半财宝。",
+          "npcReply": "魅魔震惊于你的无耻，居然真的被你勒索了一笔封口费。‘你比恶魔还要贪婪，公会该重新评估你的底线了。’",
+          "scoreDelta": {
+            "int": 2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "P": 2
+          },
+          "affinityDelta": {
+            "guild_rogue": -2
+          },
+          "alignmentDelta": {
+            "self": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "贩卖队友",
+            "恶魔交易"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "为了利益极度危险的刀尖舞者"
+        },
+        {
+          "id": "D",
+          "text": "以为魅魔是新来的女仆，不仅没被魅惑，还挑剔她的制服不够干净，硬生生逼着魅魔把古堡打扫了一遍。",
+          "npcReply": "魅魔愣住了，居然真的乖乖拿起扫把扫了一整夜的地。‘……你的脑回路可能连恶魔都无法理解。’",
+          "scoreDelta": {
+            "cha": 3,
+            "str": -1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_druid": -1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "职场PUA",
+            "逼迫打扫"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "极其没有紧张感的跨界精神资本家"
+        }
+      ]
+    },
+    {
+      "id": "elf_physique_longevity",
+      "targetId": "guild_wizard",
+      "title": "时间的重量",
+      "scene": "对精灵来说，人类的几十年不过是一次长一点的闭关。在你的漫长生涯中，你曾经的一位人类法师学徒已经白发苍苍，即将老死，而你看起来依旧像个少年。他临终前，颤抖着把一本没有写完的法术书交给你。",
+      "prompt": "面对这种独属于长寿种的‘送别’，你内心的真实写照是：",
+      "options": [
+        {
+          "id": "A",
+          "text": "撕下书页，用魔法将其铭刻在自己的骨骼上。向学徒承诺，只要自己的骨头不朽，他的智慧便永存。",
+          "npcReply": "考官微微点头：‘用寿命来承载短命种的智慧，这是精灵最温柔、也最沉重的责任。’",
+          "scoreDelta": {
+            "wis": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "J": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 3
+          },
+          "alignmentDelta": {
+            "good": 1,
+            "order": 1
+          },
+          "triggerTags": [
+            "刻骨铭心",
+            "智慧传承"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极具历史使命感和牺牲精神的星辰法师"
+        },
+        {
+          "id": "B",
+          "text": "冷静地收下书，顺手把学徒签了字的‘器官捐赠同意书’掏出来，准备一会趁热拿他的眼球做实验。",
+          "npcReply": "没有任何伤感，只有冰冷的逻辑交接。‘你已经被时间同化了。你是一个完美的学者，但缺乏一点人性。’",
+          "scoreDelta": {
+            "int": 3,
+            "cha": -1
+          },
+          "mbtiDelta": {
+            "T": 2,
+            "I": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "器官实验",
+            "冷酷剥削"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极其理智且略显冷酷的学术机器"
+        },
+        {
+          "id": "C",
+          "text": "嫌弃学徒临死前手抖把字写得太难看，不仅不感动，还大骂他没有用标准精灵斜体字，让他爬起来重写。",
+          "npcReply": "学徒死不瞑目。‘你空有一副长寿的躯壳，灵魂却比地精还要贪婪且刻薄。’",
+          "scoreDelta": {
+            "cha": -2,
+            "wis": -2
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": -3
+          },
+          "alignmentDelta": {
+            "self": 3
+          },
+          "triggerTags": [
+            "嫌弃字丑",
+            "毫无同理心"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "因长寿傲慢而堕落的刻薄巨婴"
+        },
+        {
+          "id": "D",
+          "text": "直接掏出死灵法书，强行把学徒转化成巫妖：‘你的带薪学习时间还没结束，休想用死来逃避科研！’",
+          "npcReply": "学徒硬生生被你从鬼门关拉了回来继续加班。‘……死灵法术是给你用来剥削劳动力的吗？’",
+          "scoreDelta": {
+            "int": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_wizard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "巫妖打工",
+            "强行复活加班"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "完全不按套路出牌的魔导资本家疯子"
+        }
+      ]
+    },
+    {
+      "id": "elf_physique_grace",
+      "targetId": "guild_rogue",
+      "title": "致命的优雅",
+      "scene": "体能考核：你需要穿过一片极其密集的‘铃铛引线’陷阱区。人类新兵还在地上缓慢地匍匐前进，满身泥水；而精灵的骨骼轻盈、重心极稳。",
+      "prompt": "面对这种极度考验身体控制力的测试，你要如何展现精灵的优势？",
+      "options": [
+        {
+          "id": "A",
+          "text": "将关节全部卸脱，像一摊没有骨头的软泥怪一样，以极其扭曲但诡异优雅的姿态滑过引线区。",
+          "npcReply": "毫无瑕疵的猎奇潜行艺术。‘你的每一步都踩在死神的盲区里，天生的暗影舞者。’",
+          "scoreDelta": {
+            "dex": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "脱臼潜行",
+            "诡异身法"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "动作优雅致命但极其惊悚的顶尖潜行者"
+        },
+        {
+          "id": "B",
+          "text": "嫌钻引线太掉价，直接从包里掏出三只老鼠扔进去，引线全部触发警报大作，然后趁乱光明正大地走过去。",
+          "npcReply": "考官抬头看着你：‘利用混乱来规避陷阱。很聪明的解法，但也极度傲慢。’",
+          "scoreDelta": {
+            "int": 2,
+            "dex": 2
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_ranger": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "老鼠趟雷",
+            "趁乱走过"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "喜欢用高智商碾压规则的游侠"
+        },
+        {
+          "id": "C",
+          "text": "觉得引线构成的几何图形很丑，试图在穿越时顺手把引线编织成一个完美的精灵中国结，结果把自己缠成了死结。",
+          "npcReply": "你确实没响铃，但你把自己挂在了半空中。‘为了毫无意义的审美强迫症葬送了整场行动，愚蠢透顶。’",
+          "scoreDelta": {
+            "dex": 1,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -2
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "编中国结",
+            "强迫症作死"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其容易因为奇怪审美而翻车的半吊子"
+        },
+        {
+          "id": "D",
+          "text": "发动‘潜行就是把看到我的人都杀光’原则，拔出大剑把引线和隐藏在暗处的考官一起砍了。",
+          "npcReply": "考官被你砍得满地找牙。‘……你确实没响铃，但你这叫哪门子的潜行？这叫灭口！’",
+          "scoreDelta": {
+            "str": 1,
+            "dex": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "物理潜行",
+            "砍死考官"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "披着潜行者外衣的狂暴战神"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_ranger": [
+      {
+        "id": "elf_ranger_tracking",
+        "title": "林地的足迹",
+        "scene": "你们在追捕一伙盗匪。精灵的敏锐让你发现，盗匪的足迹在一片泥泞地前突然消失了，而这片泥泞地是附近一个古老树人的领地，任何踩进去的人都会被树干绞杀。",
+        "prompt": "足迹断了，你要如何找到这群盗匪的去向？",
+        "options": [
+          {
+            "id": "A",
+            "text": "利用林地共生学，捕捉泥潭周围吸血蝇的飞行轨迹，顺着血液的味道在树冠层找到了精准的坐标。",
+            "npcReply": "你找到了他们留下的断绳。‘没有足迹，就去天上找。这就是巡林客的生态追踪视野。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "苍蝇追踪",
+              "生态推理"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有极其敏锐环境感知力的追踪大师"
+          },
+          {
+            "id": "B",
+            "text": "掏出一包极其珍贵的极品魔法肥料贿赂树人，让它主动把藏在树冠上的盗匪像抖虱子一样抖下来。",
+            "npcReply": "树人开心地把盗匪全晃了下来。‘善用森林的原住民，有时候肥料比刀剑更有效。’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "肥料贿赂",
+              "抖落盗匪"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其擅长利用环境势力的交涉型游侠"
+          },
+          {
+            "id": "C",
+            "text": "嫌泥地太脏，在报告上写‘因环境过于恶劣，盗匪判定自尽’，然后找个干净的树桩喝下午茶去了。",
+            "npcReply": "第二天盗匪洗劫了村庄，考官直接把你的考核表撕了。‘极度的洁癖和偷懒导致了判断失误。’",
+            "scoreDelta": {
+              "wis": -3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "洁癖弃考",
+              "伪造报告"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "脱离现实、过于娇贵的温室花朵"
+          },
+          {
+            "id": "D",
+            "text": "伪造了一张‘林地征收拆迁令’，大声向树人宣读，吓得盗匪以为要被一锅端，自己从树上跳下来投降。",
+            "npcReply": "树人和盗匪都被你这种官僚主义诈骗给吓懵了。‘……你的法条讹诈在这片林子里居然行得通。’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "expression": 2
+            },
+            "triggerTags": [
+              "征收拆迁",
+              "大声诈唬"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "试图在野外跟犯罪分子讲官僚拆迁的奇葩"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_ambush",
+        "title": "静默的呼吸",
+        "scene": "你埋伏在树冠上准备暗杀一个兽人军阀。你已经一动不动地潜伏了整整三天。就在目标进入射程的瞬间，一只极其罕见、剧毒无比的森林毒蜂落在你的鼻尖上，随时可能蛰你。",
+        "prompt": "深呼吸，你会如何处理这只致命的虫子？",
+        "options": [
+          {
+            "id": "A",
+            "text": "将心率降至冰点，体温与树皮同化，甚至让毒蜂误以为你是枯木并在上面筑巢，同时精准射杀目标。",
+            "npcReply": "完美的潜伏，连自然本身都被你欺骗了。‘这就是精灵游侠的最高境界：融入万物。’",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "枯木同化",
+              "鼻尖筑巢"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "具备绝对忍耐力与静默技巧的狙击手"
+          },
+          {
+            "id": "B",
+            "text": "果断弃弓，一口把毒蜂咬进嘴里嚼碎，借着毒液的刺激进入狂化状态，跳下去用匕首跟兽人肉搏。",
+            "npcReply": "你杀了军阀，但也中毒吐血。‘极其果断的止损，但这不是游侠的作风，你更像个狂战士。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_ranger": -1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "生嚼毒蜂",
+              "毒液狂化"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "缺乏耐心，喜欢物理破局的莽夫"
+          },
+          {
+            "id": "C",
+            "text": "吓得直接尖叫着一巴掌把毒蜂拍死在脸上，不仅自己中了剧毒肿成猪头，还被兽人一网打尽。",
+            "npcReply": "军阀看着树上掉下来个猪头精灵，开心地把你绑回了营地。‘三天的潜伏毁于极其业余的本能反应。’",
+            "scoreDelta": {
+              "dex": -3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "拍碎毒蜂",
+              "肿成猪头"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "心理素质极差的半吊子猎手"
+          },
+          {
+            "id": "D",
+            "text": "试图对毒蜂施展‘动物交谈’，结果一不小心跟毒蜂认了干亲，带着满头的新生蜜蜂小弟去蛰死了军阀。",
+            "npcReply": "毒蜂不仅没蛰你，还帮你创造了完美的击杀条件。‘……你这德鲁伊法术用得也太邪门了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "认蜂作父",
+              "蜂群奇袭"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "满脑子骚操作的生态认亲大师"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_archery",
+        "title": "风的偏折",
+        "scene": "最终射击考核：目标是一面挂在两百步外的狭小靶子。但此刻狂风大作，不仅视线极差，风向还在极其混乱地随时改变，正常人类连弓都拉不开。",
+        "prompt": "只有一次射击机会，你要如何命中靶心？",
+        "options": [
+          {
+            "id": "A",
+            "text": "不射箭，直接将箭矢附魔‘风暴之眼’，把它投掷进狂风的核心，让龙卷风的离心力自动将箭甩进靶心。",
+            "npcReply": "正中靶心。‘不依赖眼睛，而是相信风的轨迹。这是完美的精灵射术。’",
+            "scoreDelta": {
+              "wis": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "风暴离心力",
+              "魔法投掷"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将天赋感官运用到极致的神射手"
+          },
+          {
+            "id": "B",
+            "text": "放弃计算风向，掏出一把由地精科技改造的连发霰弹弩，用铺天盖地的物理弹幕覆盖整个靶区。",
+            "npcReply": "靶子连同后面的大树一起被打成了筛子。‘非常实用，但也非常耗钱。你是个懂火力的游侠。’",
+            "scoreDelta": {
+              "int": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "霰弹覆盖",
+              "火力覆盖"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "喜欢用科技火力和金钱暴力解题的重炮手"
+          },
+          {
+            "id": "C",
+            "text": "极其傲慢地拒绝射击，大骂考官不懂得尊重精灵的护肤需求，表示这种天气会吹坏自己刚做的发型。",
+            "npcReply": "考官在你的考核单上画了个大叉。‘在战场上，敌人可不会因为你发型乱了就停止攻击你。’",
+            "scoreDelta": {
+              "cha": 1,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "拒绝吹风",
+              "少爷病"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "娇生惯养、无法适应恶劣环境的精灵少爷"
+          },
+          {
+            "id": "D",
+            "text": "射出一只系着风筝线的特制箭，然后在风中放起了风筝，靠着极其妖娆的走位把风筝线缠在了靶心上。",
+            "npcReply": "考官们看着你牵着风筝线在狂风里跑来跑去，全体陷入了呆滞。‘……从某种意义上来说，你的抗风能力确实无敌了。’",
+            "scoreDelta": {
+              "dex": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "放风筝中靶",
+              "妖娆走位"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极其逆天的逆风操作公开作弊的放风筝大师"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_animal",
+        "title": "野性的谈判",
+        "scene": "你在巡林时，遇到一头因踩中猎人陷阱而极度狂躁的枭熊。它体型巨大，随时准备撕碎靠近的任何人。如果任由它发狂，会毁掉周围整片林地。",
+        "prompt": "你需要安抚这头狂躁的猛兽，你会怎么做？",
+        "options": [
+          {
+            "id": "A",
+            "text": "割破手腕，用混有高阶自然魔力的鲜血画出镇抚符文，在精神网道里与枭熊共享痛楚，令其安静并解开陷阱。",
+            "npcReply": "枭熊平静下来，甚至感激地蹭了蹭你。‘你展现了巡林客对自然生命的终极尊重和血的羁绊。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 3
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "血之羁绊",
+              "共享痛楚"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极具温柔底色的林地守护者"
+          },
+          {
+            "id": "B",
+            "text": "直接掏出一大块掺了强效麻醉剂的独角兽鲜肉塞进它嘴里，等它翻白眼晕过去后暴力拆掉陷阱。",
+            "npcReply": "极其高效的物理救助，没有多余的情感交流。‘你是个实用主义者，救命也讲究效率。’",
+            "scoreDelta": {
+              "int": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 1,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "麻醉投喂",
+              "暴力拆解"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "不善言辞但行动力极强的物理兽医"
+          },
+          {
+            "id": "C",
+            "text": "认为被陷阱困住的野兽不配活在森林里，冷酷地给它补了一刀，然后极其专业地把它剥皮抽筋卖钱。",
+            "npcReply": "极其残忍且极端的达尔文主义。考官对你的冷血感到震惊。‘你不是在维护自然，你只是在享受猎杀。’",
+            "scoreDelta": {
+              "str": 1,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -3
+            },
+            "alignmentDelta": {
+              "evil": 2,
+              "risk": 1
+            },
+            "triggerTags": [
+              "补刀剥皮",
+              "残酷倒卖"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "缺乏共情、手段极其残忍的盗猎者"
+          },
+          {
+            "id": "D",
+            "text": "穿上一套极其逼真的母枭熊玩偶服，跳起了充满求偶意味的诡异舞蹈，硬生生把狂躁的枭熊看懵了。",
+            "npcReply": "枭熊不仅没咬你，反而开始试图跟你生小熊。‘……用极其变态的求偶舞打败了野性，真有你的。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "色诱枭熊",
+              "母熊玩偶服"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "试图用跨物种求偶解决危机的变态巡林客"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_identification",
+        "title": "善恶的界线",
+        "scene": "你追踪一伙袭击精灵商队的凶手来到人类村庄。所有的证据都指向村里的几个饿极了的孤儿，他们为了几块发霉的面包参与了袭击。",
+        "prompt": "作为代表森林审判的游侠，面对这几个瑟瑟发抖的‘人类幼崽罪犯’，你的决定是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "用追踪术把孤儿们引向一个被通缉的强盗窝，让他们黑吃黑拿走强盗的财物，然后向上级报告强盗才是真凶。",
+            "npcReply": "你违背了刻板的职责，但做出了最完美的借刀杀人加慈善。‘你的长寿让你懂得如何圆滑地守住底线。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "F": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "good": 2,
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "引向黑吃黑",
+              "完美圆场"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有极高道德底线和实操手腕的游侠"
+          },
+          {
+            "id": "B",
+            "text": "法律就是法律。你极其冷血地把孤儿们绑成一串，甚至连他们胃里还没消化的面包残渣都记入了赃物清单。",
+            "npcReply": "考官被你那种跨越种族的冰冷理智所震撼。‘你是一个完美的执法机器，但你的血是冷的。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 2
+            },
+            "affinityDelta": {
+              "guild_wizard": 1,
+              "guild_ranger": 2
+            },
+            "alignmentDelta": {
+              "lawful": 2,
+              "order": 1
+            },
+            "triggerTags": [
+              "冷血抓捕",
+              "胃酸算赃物"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "严格遵守法则、毫无情感波动的秩序狂"
+          },
+          {
+            "id": "C",
+            "text": "利用孤儿的恐惧，把他们收编为自己的私人扒手团伙，教他们更高级的盗窃技巧，自己坐收七成利润。",
+            "npcReply": "你那精灵的高贵外表下隐藏着比流氓还下作的灵魂。‘你不仅背叛了誓言，还成了黑社会头子。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1,
+              "guild_ranger": -3
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "收编扒手团",
+              "抽七成"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其卑劣且毫无底线的黑社会头目"
+          },
+          {
+            "id": "D",
+            "text": "觉得抓小孩太麻烦，干脆掏出化妆盒把自己易容成孤儿的模样，混进他们里面一起吃起了发霉的面包。",
+            "npcReply": "追出来的精灵同僚看到你和孤儿们坐在一起抢饭吃，陷入了极度的沉默。‘你为了逃避考核，干脆连种族都不要了。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "加入丐帮",
+              "易容要饭"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "为了逃避选择而做出离谱举动的戏精"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_survival",
+        "title": "幽暗地域的生存",
+        "scene": "你跌入了一个没有光照的深渊洞穴，随身的补给全部丢失。你的面前只有一些长相极其诡异、散发着刺鼻气味的荧光蘑菇，且不确定是否有毒。",
+        "prompt": "在饥寒交迫的极限状态下，你要如何生存下去？",
+        "options": [
+          {
+            "id": "A",
+            "text": "捕获一只穴居盲鼠，切开它的胃分析它的消化酶，从而反向推导出蘑菇中安全可食用的微量营养成分。",
+            "npcReply": "教科书般的野外生存技能。‘不盲目，不慌乱，用科学解剖对抗未知。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "解剖盲鼠",
+              "推导营养"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "具备扎实理论基础和冷血手腕的求生专家"
+          },
+          {
+            "id": "B",
+            "text": "蘑菇算什么？你靠极其变态的潜行技巧摸到了一头深渊巨魔的巢穴，偷了它的烤肉排，甚至顺走了一瓶陈年地精酒。",
+            "npcReply": "你不仅没挨饿，甚至还吃了一顿极其丰盛的巨魔大餐。‘极其敏锐的觅食直觉，你天生属于黑暗。’",
+            "scoreDelta": {
+              "dex": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "偷巨魔大餐",
+              "极致潜行"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "不吃素、胆大包天的暗影求生者"
+          },
+          {
+            "id": "C",
+            "text": "因为极度的饥饿和恐慌，一边痛哭流涕大骂大自然不公平，一边抓起地上的毒蘑菇乱啃，最后吐着白沫晕死过去。",
+            "npcReply": "蘑菇含有强烈的致幻毒素，你最终因为幻觉从悬崖上跳了下去。‘脆弱的理智，在绝境中不堪一击。’",
+            "scoreDelta": {
+              "wis": -3,
+              "con": -1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "崩溃啃蘑菇",
+              "吐白沫"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "抗压能力极差，容易在逆境自爆的弱者"
+          },
+          {
+            "id": "D",
+            "text": "把荧光毒蘑菇捣碎涂在自己脸上画出极其恐怖的图腾，在洞穴里装神弄鬼，硬是吓得怪物们主动给你上供肉干。",
+            "npcReply": "怪物们被你这刺眼的荧光和发癫的步伐吓得集体跪拜。‘……用最硬核的邪教涂装打出了极其玄学的效果。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "装神弄鬼",
+              "邪教涂装"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "靠当深渊邪神骗吃骗喝的抽象大师"
+          }
+        ]
+      },
+      {
+        "id": "elf_ranger_final",
+        "title": "游侠的誓言",
+        "scene": "最终考核：你的导师将一把传承了七百年的名贵精灵长弓交到你手里。‘拿起它，你就不再是你自己。你将是这片森林不眠的眼睛，你将终生孤独。’",
+        "prompt": "在接过这把象征着无尽责任与孤独的长弓时，你的回应是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "划破手掌，将血滴在古弓上，以最恶毒的自然诅咒发誓：将化身荆棘与毒藤，绞杀一切敢于染指森林的生灵。",
+            "npcReply": "导师欣慰地点头，将游侠徽章别在你的披风上。‘愿鲜血指引你的箭矢，孩子。’",
+            "scoreDelta": {
+              "wis": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 4
+            },
+            "alignmentDelta": {
+              "order": 1,
+              "good": 1
+            },
+            "triggerTags": [
+              "鲜血诅咒誓言",
+              "极度忠诚"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "完美契合并愿意为游侠精神献祭的狂徒"
+          },
+          {
+            "id": "B",
+            "text": "接过长弓，极其熟练地检查了弓臂的弹性和防伪标识，并顺嘴问导师这把老古董在黑市上能抵押多少钱。",
+            "npcReply": "导师的脸黑了一下，但还是把徽章扔给了你。‘极其务实……希望你开弓的时候也像你算账时这么精明。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1,
+              "guild_ranger": 2
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "估价老古董",
+              "务实财迷"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "比起荣誉更看重古董估值的黑市游侠"
+          },
+          {
+            "id": "C",
+            "text": "嫌弃古董弓太土，不仅拒绝接弓，还当着导师的面掏出一把镶满水钻的粉色折叠连发弩，表示这才是新时代的潮流。",
+            "npcReply": "你拒绝了传承，甚至对精灵的审美嗤之以鼻。导师直接把你赶出了营地。‘你的庸俗配不上这把弓！’",
+            "scoreDelta": {
+              "cha": -2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -4,
+              "guild_artificer": 2
+            },
+            "alignmentDelta": {
+              "risk": 2,
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "粉色连发弩",
+              "审美灾难"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "被异端审美毒害的潮流小太妹"
+          },
+          {
+            "id": "D",
+            "text": "拿起长弓，反手将其当成了晾衣架，极其自然地把自己洗好的披风挂了上去，表示‘物尽其用才是最高境界’。",
+            "npcReply": "导师看着你那极其离谱的居家操作，陷入了深切的自我怀疑。‘……我突然觉得，把森林的安全交给你是个巨大的错误。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "expression": 3
+            },
+            "triggerTags": [
+              "传世晾衣架",
+              "居家神弓"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "把一切神圣物品当成家具的抽象艺术家"
+          }
+        ]
+      }
+    ],
+    "guild_wizard": [
+      {
+        "id": "elf_wizard_theory",
+        "title": "魔法的底层逻辑",
+        "scene": "尖塔的笔试：题目要求你论证‘为何火球术必须加入一小撮蝙蝠粪便作为施法材料’。大多数人类学徒都在背诵《法术施展指南》上的标准答案：为了沟通火焰位面的硫磺气息。",
+        "prompt": "拥有三百年代数魔法学经验的你，会如何在考卷上作答？",
+        "options": [
+          {
+            "id": "A",
+            "text": "提交了一份名为《论排泄物在以太网道中的能量跃迁》的硬核论文，证明了蝙蝠粪便中的微量硫磺是如何实现魔力杠杆效应的。",
+            "npcReply": "导师看着你的答卷，甚至拿出了放大镜。‘你撕开了魔法神秘主义的伪装，直击了法术的真理核心。’",
+            "scoreDelta": {
+              "int": 4,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "order": 1
+            },
+            "triggerTags": [
+              "硬核排泄学",
+              "魔力杠杆"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "具有极其扎实学术底蕴的理论物理学家"
+          },
+          {
+            "id": "B",
+            "text": "觉得理论太虚，直接在考场上用各种高爆材料搓了一个极其危险的定时炸弹，表示‘不用魔法也能听个响’。",
+            "npcReply": "你因为差点炸平考场被扣了分，但你的动手能力震撼了全场。‘非常暴力的解题思路，你是个合格的工匠。’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1,
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "手搓炸弹",
+              "不用魔法"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "懒得写字直接造炸弹的实操工程师"
+          },
+          {
+            "id": "C",
+            "text": "傲慢地在卷子上画了一个正在拉屎的蝙蝠，旁边写着‘只有你们这些脑容量不足的短命种才需要借用动物的排泄物’。",
+            "npcReply": "导师给了你零分。‘你的狂妄不仅掩盖了你的无知，更让你显得像个不可理喻的幼稚鬼。’",
+            "scoreDelta": {
+              "cha": -2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "画拉屎蝙蝠",
+              "傲慢交卷"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "被傲慢冲昏头脑的低素质画师"
+          },
+          {
+            "id": "D",
+            "text": "极其认真地推导论证了既然蝙蝠粪可以放火球，那把大法师的粪便收集起来是不是可以召唤陨石雨。",
+            "npcReply": "考官被你这极其危险且抽象的脑洞吓坏了，立刻没收了你的考卷。‘……你的学术研究方向涉嫌极其严重的恐怖主义。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "法师粪便陨石",
+              "危险推导"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "研究方向极其下三滥的疯狂科学家"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_backfire",
+        "title": "奥术的反噬",
+        "scene": "你正在协助导师进行一次高阶空间传送法阵的测试。就在法阵即将启动时，你凭借精灵的敏锐直觉发现阵眼的一个符文画错了一笔，如果强行启动，所有人都会被撕成碎片。",
+        "prompt": "法阵正在疯狂吸取魔力，还有三秒就会爆炸，你该如何补救？",
+        "options": [
+          {
+            "id": "A",
+            "text": "撕裂自己的灵魂空间，将爆炸的冗余魔力全部吸收到自己的精神海中，以承担重度精神污染的代价强行稳住法阵。",
+            "npcReply": "法阵安全停机。‘你用近乎自毁的方式拯救了整座尖塔。极其恐怖的精神承载力。’",
+            "scoreDelta": {
+              "int": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "good": 1,
+              "order": 1
+            },
+            "triggerTags": [
+              "吞噬魔力",
+              "精神污染"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "为了学术安全甘愿牺牲灵魂的真理探求者"
+          },
+          {
+            "id": "B",
+            "text": "极其果断地拔出匕首，一刀捅穿了法阵的核心能量石，引发了一场小规模的物理殉爆，但阻止了空间撕裂。",
+            "npcReply": "实验室没了，但你们活了下来。‘极其粗暴的物理断电。虽然粗暴，但非常有效。’",
+            "scoreDelta": {
+              "dex": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "捅爆能量石",
+              "物理断电"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其务实、只管断电不管设备的暴力法师"
+          },
+          {
+            "id": "C",
+            "text": "不仅不管法阵，反而趁机篡改了实验记录，把失误全推给导师，然后极其熟练地套上三层无敌护盾准备看戏。",
+            "npcReply": "导师被炸成了重伤，而你被查出伪造记录后遭到了全大陆魔法公会的通缉。‘极度自私且卑劣的学术小人。’",
+            "scoreDelta": {
+              "int": 1,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -3,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "篡改甩锅",
+              "看戏套盾"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无底线、趁火打劫的学术败类"
+          },
+          {
+            "id": "D",
+            "text": "觉得爆炸太单调，顺手扔进去了两吨大蒜和辣椒粉，试图让整个尖塔的人都体验一次极其辣眼睛的‘火锅味核爆’。",
+            "npcReply": "一声震天动地的巨响后，整座尖塔弥漫着极度刺鼻的火锅底料味。考官们一边流泪一边呆滞。‘……你的破坏欲比红龙还离谱。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "火锅底料爆破",
+              "辣瞎尖塔"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在死神面前还要搞厨艺展示的终极乐子人"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_counterspell",
+        "title": "傲慢的对决",
+        "scene": "实战对抗考核：你的对手是一个极度张狂的人类天才法师。一上场，他就用极快的语速准备朝你糊一个威力巨大的高阶连锁闪电。作为寿命是他十倍的精灵，你怎么接招？",
+        "prompt": "面对年轻人咄咄逼人的高阶魔法，你的反击策略是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "不屑于防御，直接用‘法术窃取’在对方闪电成型的瞬间夺走控制权，把对方的连锁闪电变成了给自己烫头的静电。",
+            "npcReply": "人类法师遭遇了严重的法力反噬，跪倒在地。‘兵不血刃的权限剥夺。这才是高阶法师的从容。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "法术窃取",
+              "烫头静电"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "精通底层逻辑、直接夺权的黑客法师"
+          },
+          {
+            "id": "B",
+            "text": "根本不念咒，一个滑铲逼近，极其熟练地从袍底掏出掺了石灰粉的闪光弹砸他脸上，趁他瞎了直接用大棒子敲闷棍。",
+            "npcReply": "人类天才被你这种毫无学术尊严的流氓打法气哭了。‘非常卑鄙，但也极其有效。’",
+            "scoreDelta": {
+              "dex": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "石灰闪光弹",
+              "物理敲闷棍"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "毫无施法者包袱的街头霸王"
+          },
+          {
+            "id": "C",
+            "text": "极其输不起，在对方施法时大声指责对方刚才没洗手，试图用极其荒谬的卫生规范来申请考官判对方违规。",
+            "npcReply": "考官不仅没有理会你的诬告，你还结结实实地挨了一发连锁闪电。‘不仅技不如人，还胡搅蛮缠。’",
+            "scoreDelta": {
+              "cha": -2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "卫生违规举报",
+              "场外撒泼"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "心胸狭隘且总找奇葩借口的无赖"
+          },
+          {
+            "id": "D",
+            "text": "掏出一把引雷的金属长枪直接插在裁判头上，让连锁闪电顺着导雷针把无辜的裁判劈成了爆炸头。",
+            "npcReply": "裁判被你劈得外焦里嫩，直接给了你一个红牌。‘……你对避雷针的理解是不是哪里不太对？’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "插避雷针",
+              "劈死裁判"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "利用无辜裁判当物理跳板的祸害"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_component",
+        "title": "古怪的材料",
+        "scene": "你的魔药学导师给你布置了一个近乎刁难的任务：寻找一滴‘谎言的眼泪’。这是一种极度抽象的魔法材料，市面上根本没有卖的。",
+        "prompt": "你要如何在一周内交出这个荒谬的施法材料？",
+        "options": [
+          {
+            "id": "A",
+            "text": "用幻术构建了一个极其真实的乌托邦梦境，让一个死囚在梦中经历完美一生，在他醒来发现一切皆是虚妄时，收集他绝望的眼泪。",
+            "npcReply": "你提交的样本魔力极度纯粹。‘用极其严谨的幻术去具象化谎言的概念，完美的魔法工程学。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "control": 1,
+              "evil": 1
+            },
+            "triggerTags": [
+              "乌托邦梦境",
+              "虚妄之泪"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "手段略显冷酷但盗梦技术一流的造梦师"
+          },
+          {
+            "id": "B",
+            "text": "切了半个极其刺鼻的深渊洋葱，硬生生把自己辣得泪流满面，然后声泪俱下地向导师控诉这洋葱是无辜的。",
+            "npcReply": "导师用这滴洋葱汁炸毁了半个坩埚。‘你不仅是个骗子，你的胆子还大得离谱。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "洋葱催泪",
+              "演戏骗导师"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "靠洋葱和演技骗过导师的乐子人"
+          },
+          {
+            "id": "C",
+            "text": "花高价在黑市买了一瓶所谓的‘真理药水’，结果不仅被骗了钱，喝下去之后还控制不住地对着导师说了一整天的大实话。",
+            "npcReply": "导师听完你私底下的腹诽，直接把你轰出了门。‘不仅人傻钱多，还没有辨别真伪的法师直觉。’",
+            "scoreDelta": {
+              "wis": -2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -2
+            },
+            "alignmentDelta": {
+              "risk": 1
+            },
+            "triggerTags": [
+              "喝假药",
+              "被迫吐真言"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "缺乏独立思考能力、极其容易踩雷的冤大头"
+          },
+          {
+            "id": "D",
+            "text": "直接抓了一只地精，用极其残忍的手段逼它发誓说自己是个绝世美男，然后收集它因为良心痛而流下的生理性眼泪。",
+            "npcReply": "导师看着这滴散发着违心与屈辱的眼泪陷入了极度的沉默。‘……你的逻辑形成了一种极其诡异的自洽。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "逼发违心誓",
+              "地精美男"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用极其抽象的物理逼迫法搞出哲学的暴君"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_diplomacy",
+        "title": "智慧的妥协",
+        "scene": "你和几个野蛮人队友在地下城触发了一个复杂的古老机关。机关要求在三十秒内解开一个极其复杂的几何魔法锁，否则房间就会被岩浆注满。而你的野蛮人队友正试图用斧头去劈那个锁。",
+        "prompt": "时间所剩无几，你要如何在这种混乱的队伍中发挥法师的作用？",
+        "options": [
+          {
+            "id": "A",
+            "text": "用‘重力翻转’将整个房间颠倒，让岩浆流向天花板，在绝对安全的环境下，一边喝着精灵红茶一边用魔法解开了锁芯。",
+            "npcReply": "门开了。‘在极度混乱的环境中，法师的大脑必须能颠覆常理去制造安全空间。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "重力翻转",
+              "颠倒解谜"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "能够在高压下从容修改物理法则的法神"
+          },
+          {
+            "id": "B",
+            "text": "极其务实地给野蛮人的斧头施加了‘极限冰冻’和‘破甲’附魔，让他用物理热胀冷缩的原理一斧子把门锁劈成了冰渣。",
+            "npcReply": "物理破解成功，大门被硬生生砸开。‘非常聪明的妥协，法师不一定要自己解题，也可以把队友变成工具。’",
+            "scoreDelta": {
+              "int": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 1,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "冰冻附魔",
+              "热胀冷缩劈锁"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "善于利用队友优势并加装插件的附魔师"
+          },
+          {
+            "id": "C",
+            "text": "在岩浆没过膝盖时，还在跟野蛮人极其傲慢地争论精灵语的正确发音，最后两人抱在一起变成了两具极其优美的焦炭。",
+            "npcReply": "你们一起被烤成了烧烤。‘在生死关头还要维护自己语言学高傲的死硬派蠢货。’",
+            "scoreDelta": {
+              "cha": -2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -2
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "发音争论",
+              "双双烧烤"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无团队协作、死于语言学优越感的废柴"
+          },
+          {
+            "id": "D",
+            "text": "极其淡定地掏出一块巨大的防火烤肉石板，利用涌进来的岩浆开始极其享受地烤起了和牛肉，顺便问野蛮人要不要撒孜然。",
+            "npcReply": "野蛮人被你这种极其离谱的松弛感刺激出了求生欲，一发狂化把门给撞碎了。‘……从某种玄学角度来说，你起到了拉仇恨激励作用。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "岩浆烤肉",
+              "松弛感拉满"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在岩浆里还能搞烧烤派对的究极摸鱼怪"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_final",
+        "title": "真理的门槛",
+        "scene": "最终面试：苍穹尖塔的大法师冷冷地看着你：‘我们不需要只会背诵咒语的复读机。告诉我，在你这几百年的漫长生命中，你认为魔法的本质到底是什么？’",
+        "prompt": "面对这个可能决定你一生命运的终极问题，你的回答是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "直视大法师：‘魔法是对这个满是漏洞的世界最优雅的黑客行为。我们不是在施法，我们是在利用造物主的BUG。’",
+            "npcReply": "大法师露出了满意的笑容，将尖塔的钥匙递给了你。‘欢迎来到探求真理的地狱，我的黑客。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 4
+            },
+            "alignmentDelta": {
+              "order": 1
+            },
+            "triggerTags": [
+              "世界BUG",
+              "魔法黑客"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "完美契合高阶法师唯物精神的黑客理论"
+          },
+          {
+            "id": "B",
+            "text": "‘本质？魔法就是一把更大号的、不用装填的火枪。能杀人、能点烟，除此之外它什么也不是。’",
+            "npcReply": "大法师皱了皱眉：‘你的境界很低，但你的生存概率很高。尖塔也需要你这种实用的火枪手。’",
+            "scoreDelta": {
+              "dex": 1,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1,
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "火枪论",
+              "超级工具"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "不追求形而上、只看重杀伤力的战斗狂"
+          },
+          {
+            "id": "C",
+            "text": "极其浮夸地赞颂魔法是高贵精灵统治的绝对神权，并极度疯狂地表示要用禁咒把所有不顺眼的半兽人全部清理掉。",
+            "npcReply": "大法师冷酷地打断了你。‘尖塔是研究真理的地方，不是种族清洗主义者的疯人院。滚出去。’",
+            "scoreDelta": {
+              "cha": -2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -4
+            },
+            "alignmentDelta": {
+              "risk": 2,
+              "evil": 1
+            },
+            "triggerTags": [
+              "种族清洗",
+              "狂热神权"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "满嘴暴论且价值观极其偏激的战犯"
+          },
+          {
+            "id": "D",
+            "text": "极其严肃地论证魔法其实是大脑产生的严重幻觉，并试图掏出一套精神病测试表给大法师做心理评估。",
+            "npcReply": "大法师被你这种极其超前且离谱的唯心主义学说震碎了三观。‘……你这病症有点意思，明天去精神科挂个专家号讲讲？’",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1,
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "集体幻觉",
+              "精神病测试"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "脑洞突破天际、试图给所有人治病的医生"
+          }
+        ]
+      },
+      {
+        "id": "elf_wizard_arrogance",
+        "title": "短命种的法阵",
+        "scene": "你被分配去修复一个人类法师留下来的城防法阵。你发现这个法阵的能量回路极其粗糙且浪费，但也正是因为这种粗糙的冗余，让它能够在人类极其恶劣的战场环境下稳定运行了十年。",
+        "prompt": "面对这种在学术上极其‘低级’但在实战中极其‘耐造’的人类魔法，你的态度是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其巧妙地在粗糙的回路中嵌入了极其隐蔽的‘魔力寄生符文’，不仅加固了法阵，还能暗中吸取法阵的冗余能量供自己当充电宝。",
+            "npcReply": "法阵的防御力翻倍了，你的魔力也充满了。‘你放下了精灵的学术洁癖，学会了极其高明的白嫖。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1,
+              "guild_fighter": 2
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "寄生充电宝",
+              "高明白嫖"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其务实、不拘泥传统还能顺手薅羊毛的黑客"
+          },
+          {
+            "id": "B",
+            "text": "强迫症发作把它彻底拆除，换上极其精密但毫无容错率的高级精灵结界，结果刚通电就因为能量过载碎了一地。",
+            "npcReply": "你建好的第二天，城墙就塌了。‘过于精密导致容错率极低。你的洁癖害了整座城。’",
+            "scoreDelta": {
+              "int": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": -1
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "强迫症拆毁",
+              "精密易碎"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "拥有严重学术洁癖、脱离实战的温室学者"
+          },
+          {
+            "id": "C",
+            "text": "不仅不修，还偷偷把法阵的自毁密码高价卖给城外的半兽人军阀，准备在城破的时候大赚一笔发国难财。",
+            "npcReply": "你把城防当成了敛财的提款机。‘你不仅是个学术流氓，还是个极其恶毒的叛国贼。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_wizard": -3
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "卖自毁密码",
+              "发国难财"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无底线、利用魔法知识进行叛国倒卖的败类"
+          },
+          {
+            "id": "D",
+            "text": "在法阵上极其显眼的地方画了一只巨大的嘲讽乌龟，并附魔了‘一旦触发就会循环播放人类法师是蠢蛋’的扩音魔法。",
+            "npcReply": "虽然你没修复法阵，但全城每天都能听到你辱骂同行的广播。‘……你用城防法阵搞全损音质的地图炮脱口秀是吧。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "画嘲讽乌龟",
+              "全城广播骂人"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "用城防设施搞抽象辱骂广播的狂人"
+          }
+        ]
+      }
+    ],
+    "guild_druid": [
+      {
+        "id": "elf_druid_wildshape",
+        "title": "野兽的本我",
+        "scene": "你变成了一头银狼去追踪猎物，但在森林里潜伏了整整两个月后，银狼的本能开始侵蚀你精灵的理智。你开始觉得生肉极其美味，甚至忘记了精灵语怎么说。",
+        "prompt": "当一队毫无防备的人类伐木工进入你的领地时，处于半失控边缘的你会怎么做？",
+        "options": [
+          {
+            "id": "A",
+            "text": "将狂野的兽性与精灵的智慧极其完美地融合。以人狼的姿态站立，用极其冰冷的声音宣读森林禁令，将伐木工直接吓瘫。",
+            "npcReply": "你控制了野兽，而不是被野兽控制。‘完美的形态统御，你既是森林的獠牙，也是威严的裁决者。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "人狼站立",
+              "冰冷宣判"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有极强自我认知与恐怖威慑力的高阶狼人"
+          },
+          {
+            "id": "B",
+            "text": "不变回人形，直接咬死伐木工拉车的马，用马的鲜血在木头上画出极其恐怖的德鲁伊警告图腾，然后隐入森林。",
+            "npcReply": "伐木工被吓得屁滚尿流连夜跑路。‘你保留了野兽的纯粹暴力，却守住了精灵的底线。很血腥的恐吓。’",
+            "scoreDelta": {
+              "str": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 1,
+              "guild_druid": 2
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "咬死马画图腾",
+              "物理恐吓"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "更喜欢用最原始的血腥手段解决问题的实干派"
+          },
+          {
+            "id": "C",
+            "text": "彻底沦为受食欲支配的野兽，极其残忍地把伐木工撕成了碎片，最终被愤怒的人类赏金猎人剥下了狼皮。",
+            "npcReply": "你永远地变成了一头疯狼。‘你失去了作为精灵的资格，沦为了被最低级本能驱使的怪物。’",
+            "scoreDelta": {
+              "str": 1,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "S": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "risk": 2,
+              "evil": 1
+            },
+            "triggerTags": [
+              "吃人疯狼",
+              "被剥皮"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "彻底迷失在变形法术中、极其凄惨的失败者"
+          },
+          {
+            "id": "D",
+            "text": "极其抽象地冲上去，像一条二哈一样极其疯狂地拆毁了他们的马车和帐篷，然后在他们的锅里撒了泡尿后扬长而去。",
+            "npcReply": "伐木工们惊呆了，甚至怀疑这是一条被谁家遗弃的神经病狗。考官在树上看得气血翻涌。‘……德鲁伊的狼格都被你变成了哈士奇！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "二哈拆家",
+              "锅里撒尿"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "堂堂银狼活成了极度抽象的拆迁大队长"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_balance",
+        "title": "残酷的平衡",
+        "scene": "一群逃荒的人类难民逃入你的森林。他们饿极了，开始大量捕杀林地里的鹿群，甚至挖树皮充饥。但如果把他们赶走，他们就会死在冬天的暴风雪里。",
+        "prompt": "作为这片林地的守护者，面对生态破坏与难民生存的冲突，你的决定是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "用德鲁伊法术催生了一场极其恐怖的瘟疫真菌，精准感染了所有过度捕猎的难民。生态法则面前，哪怕是人类也只能作为森林的养料。",
+            "npcReply": "你做出了极其残酷但符合生态法则的决定。‘德鲁伊不是保姆，万物皆是养料。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "真菌感染",
+              "人类也是养料"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度理智、恪守残酷自然法则的瘟疫播撒者"
+          },
+          {
+            "id": "B",
+            "text": "极其温和地引导他们去森林外围寻找可替代的食物，并用治愈法术治好了他们的病患，赢得了他们的极致崇拜。",
+            "npcReply": "你拯救了双方，还成了一方神明。‘虽然干涉了自然，但你的布道手段令人赞叹。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "F": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "温柔布道",
+              "赚取崇拜"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "充满神性、更倾向于精神PUA的林地教主"
+          },
+          {
+            "id": "C",
+            "text": "极其贪婪地向难民出售高价的劣质魔力面包，榨干了他们最后一丝财产后，冷酷地把他们踢出森林任其冻死。",
+            "npcReply": "森林因你而充满了怨气。‘你不仅是个奸商，还把吸血鬼的行径带入了这片净土。’",
+            "scoreDelta": {
+              "int": 1,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 1,
+              "guild_druid": -3
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "卖高价劣食",
+              "榨干踢走"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无底线、大发灾难财的吸血奸商"
+          },
+          {
+            "id": "D",
+            "text": "极其离谱地把难民全都变成了食草动物，让他们和森林里的鹿群一起愉快地吃草，完美解决了肉类短缺问题。",
+            "npcReply": "难民们啃着草皮不仅没走，还在你的带领下学会了反刍。考官看着这一切欲哭无泪。‘……你这物种转换简直是把人权按在地上摩擦！’",
+            "scoreDelta": {
+              "cha": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "变羊吃草",
+              "强制食草"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "强行让全员当素食主义者的抽象变形大师"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_decay",
+        "title": "腐朽的恩典",
+        "scene": "你发现林地深处有一片被死灵法术污染的区域。树木正在枯萎，泥土散发着恶臭。但你惊讶地发现，一种极其奇异的变异蘑菇在这种腐败中诞生了，它们甚至能治愈一些绝症。",
+        "prompt": "面对这种因‘污染’而诞生的‘奇迹’，你要如何处理这片区域？",
+        "options": [
+          {
+            "id": "A",
+            "text": "将自己的身体作为培养皿，吸纳了部分腐化孢子。掌握了通过枯萎来治愈、通过汲取生命力来复苏的极其危险的‘孢子共生’之道。",
+            "npcReply": "你触碰到了德鲁伊教义中最深邃的部分。‘以身为蛊，这是成为高阶腐化德鲁伊的完美潜质。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "以身为蛊",
+              "孢子共生"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其理智且学术造诣极深的恐怖毒师"
+          },
+          {
+            "id": "B",
+            "text": "带着极其极端的净化狂热，不顾森林的整体生态，召唤了烈焰风暴将方圆几里的森林连同蘑菇一起烧成了白地。",
+            "npcReply": "你抹杀了潜在的奇迹，但也保证了绝对的无菌。‘极其暴躁且毫无保留的烈火狂魔。’",
+            "scoreDelta": {
+              "wis": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_paladin": 1,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "烈焰洗地",
+              "绝对无菌"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "拥有严重洁癖和反社会倾向的放火狂"
+          },
+          {
+            "id": "C",
+            "text": "极其恶毒地将这种腐化真菌偷偷散播到敌对精灵家族的领地里，准备等他们病入膏肓时再天价出售解药。",
+            "npcReply": "你为了私仇把整片森林变成了生化武器试验场。‘你不再是德鲁伊，你是个极其恶劣的生化恐怖分子。’",
+            "scoreDelta": {
+              "int": 2,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "生化投毒",
+              "垄断解药"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度恶毒、利用生态搞种族清洗的生化魔王"
+          },
+          {
+            "id": "D",
+            "text": "极其兴奋地把这些五颜六色的变异蘑菇炖成了一锅极其致幻的毒蘑菇汤，然后拉着整个结社的德鲁伊一起喝下去集体修仙。",
+            "npcReply": "考官看着在毒瘴里满地乱爬、直呼看到太奶的德鲁伊们，大脑陷入了宕机。‘……你对污染的再利用方式简直是全村吃饭。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "毒蘑菇聚餐",
+              "集体见太奶"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "敢拿全村人的命去试毒的终极迷幻厨神"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_final",
+        "title": "翠绿的洗礼",
+        "scene": "最终试炼：长者将一颗代表着翠绿回环核心权力的‘世界树树种’放在你面前。‘服下它，你的经脉将与大地相连。你将失去一部分属于精灵的情感，但你将听到山脉的心跳。’",
+        "prompt": "面对这份可能剥夺人性的自然馈赠，你的选择是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "不吃种子，而是将其种在自己的心脏位置，让树根穿透血肉。以半人半树的极其古老而恐怖的姿态，成为森林永远的活体图腾。",
+            "npcReply": "你的眼睛里亮起了极其幽邃的绿光。‘以血肉饲养自然，你是最完美的活体祭坛。’",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 4
+            },
+            "alignmentDelta": {
+              "order": 1,
+              "control": 1
+            },
+            "triggerTags": [
+              "树根穿心",
+              "活体图腾"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其狂热、不惜把自己变成盆栽的核心骨干"
+          },
+          {
+            "id": "B",
+            "text": "拒绝被大自然同化，极其务实地把种子打造成了一把蕴含极高魔力的木质法杖，把信仰变成了实用的武器。",
+            "npcReply": "长者有些意外，但被你的实用主义说服了。‘你拒绝了寄生，但掌握了极其强大的火力。很务实。’",
+            "scoreDelta": {
+              "wis": 1,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 1,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "当材料打装备",
+              "武器化信仰"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其具有工匠精神、一切为了火力的实用派"
+          },
+          {
+            "id": "C",
+            "text": "趁长者不备，极其无耻地抢走树种，并联系了地精黑市商，准备把它雕刻成一件极其俗气的土豪首饰卖给人类国王。",
+            "npcReply": "你激怒了整个德鲁伊结社，哪怕你逃到天涯海角，也会遭到树木无尽的鞭打。‘极其低级的暴发户贪婪。’",
+            "scoreDelta": {
+              "dex": 1,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "risk": 3,
+              "evil": 1
+            },
+            "triggerTags": [
+              "黑市倒卖",
+              "俗气雕刻"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "为了极其低级的审美连命都不要的暴发户"
+          },
+          {
+            "id": "D",
+            "text": "掏出一把极其精美的胡桃夹子，极其生猛地把世界树树种当成坚果给夹碎了，然后抱怨里面怎么没有果仁。",
+            "npcReply": "长者的胡子都被你气得着了火，他差点一发阳炎爆把你轰成渣。‘……你这吃货的脑子里除了消化液还有什么？！’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "当核桃夹碎",
+              "嫌弃没果仁"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "试图品鉴世界树果仁的极其逆天的干饭人"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_civilization",
+        "title": "伐木场冲突",
+        "scene": "一群人类难民为了过冬，在森林边缘建立了一个伐木场。他们没有越过你划定的红线，但每天极其吵闹的锯木声让森林里的一些敏感精灵极其烦躁，要求你召唤狼群把他们赶走。",
+        "prompt": "面对同族的抱怨和人类的求生需求，你作为区域德鲁伊如何处理？",
+        "options": [
+          {
+            "id": "A",
+            "text": "施展极其宏大的‘活化植物’法术，让森林里的树木长出极其恐怖的尖刺和人脸。人类不仅不敢砍树，甚至开始把树当神明来上贡。",
+            "npcReply": "你平息了冲突，甚至极其顺利地让人类开始给你交保护费。‘极其高明的生态恐怖主义PUA。’",
+            "scoreDelta": {
+              "wis": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3
+            },
+            "alignmentDelta": {
+              "good": 1,
+              "order": 1
+            },
+            "triggerTags": [
+              "人脸树皮",
+              "强制拜神"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其擅长利用视觉恐怖进行信仰统治的教祖"
+          },
+          {
+            "id": "B",
+            "text": "懒得废话，直接召唤了一场极其精准的局部泥石流，极其克制地把他们的伐木机器和加工厂全给淹了，但没伤人。",
+            "npcReply": "极其高效的物理防线。‘你是个极其残暴的环保主义者，用极其昂贵的机器换取了和平。’",
+            "scoreDelta": {
+              "int": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 1,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "定点泥石流",
+              "砸机器"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其讨厌噪音的硬核环保强拆队长"
+          },
+          {
+            "id": "C",
+            "text": "极其下作地两头吃回扣。一边向人类收买路钱，一边又向精灵同族收取安抚费，最后还偷偷把树卖给兽人。",
+            "npcReply": "你把神圣的自然争端变成了极其成熟的跨国黑市产业链。‘你是个极其不要脸的双面间谍。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "三头吃回扣",
+              "商业奇才"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无自然底线的终极黑心二道贩子"
+          },
+          {
+            "id": "D",
+            "text": "极其抽象地在人类伐木场旁边开了一家极其吵闹的森林摇滚酒吧，天天晚上带着一群熊和猴子在那里狂欢，硬是把人类吵得受不了搬走了。",
+            "npcReply": "森林确实安静了，但周围十里的动物全都养成了极其恶劣的酗酒习惯。‘……你这叫以毒攻毒的魔音贯耳。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "摇滚轰炸",
+              "带领猴子蹦迪"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "靠办演唱会逼疯周边住户的噪音主唱"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_fey",
+        "title": "妖精的恶作剧",
+        "scene": "一群来自妖精荒野的皮克精在你的辖区里疯狂恶作剧，他们不仅把熊的毛染成了粉红色，还把过路冒险者的鞋带全绑在了一起。这引起了极大的生态和外交混乱。",
+        "prompt": "面对这群无法用常理沟通、且受到古老契约保护的调皮妖精，你怎么办？",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其精明地利用了妖精不能违背誓言的特性，设下一个极其烧脑的逻辑陷阱，诱骗皮克精签下了一份长达三百页的卖身契，让他们天天在林子里捡垃圾。",
+            "npcReply": "皮克精最怕契约。你用极其恐怖的资本家手段压榨了最调皮的生物。‘你非常懂得如何用合同欺负文盲。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 2,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "霸王条款",
+              "骗签卖身契"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其精通合同诈骗的高学历法务代表"
+          },
+          {
+            "id": "B",
+            "text": "极其阴险地把皮克精染色的熊引到了巨魔的领地，利用巨魔极其暴躁的脾气，借刀杀人把这群烦人的妖精打得满地找牙。",
+            "npcReply": "你借刀杀人的手法极其熟练。‘非常不要脸，但极其有效地让另一帮流氓治了流氓。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "祸水东引",
+              "流氓互殴"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其腹黑、擅长制造流氓火拼的搅屎棍"
+          },
+          {
+            "id": "C",
+            "text": "觉得皮克精的染料很有商业价值，不仅没有阻止，反而抓了几只关在笼子里，强迫他们没日没夜地挤出魔法染料去卖黑市。",
+            "npcReply": "你触怒了整个妖精荒野，妖精女王亲自对你下达了每天掉头发的恶毒诅咒。‘你的压榨让你无视了跨国法。’",
+            "scoreDelta": {
+              "int": 1,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "血汗工厂",
+              "强挤染料"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "胆大包天、连外星友人都要压榨的黑心老板"
+          },
+          {
+            "id": "D",
+            "text": "极其兴奋地掏出一大桶极其刺眼的荧光粉，和皮克精一起去把人类国王的城堡染成了极其辣眼睛的死亡芭比粉。",
+            "npcReply": "人类国王气得发动了讨伐战争。‘……你这已经是跨国恐怖主义的行为了！’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "带头作案",
+              "粉刷城堡"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "完全放弃治安、直接当了恐怖分子头目的卧底"
+          }
+        ]
+      },
+      {
+        "id": "elf_druid_healing",
+        "title": "生命的残缺",
+        "scene": "你遇到一只刚出生就失去了一条腿的小鹿。在残酷的自然法则中，它绝对活不过第一个冬天。你的导师看着你：‘自然淘汰是痛苦的，但也是必须的。’",
+        "prompt": "面对这种注定要被淘汰的残缺生命，你的抉择是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "不用假肢，而是用极其高深的生命法术，将一只战死凶狼的强壮大腿极其完美地嫁接到了小鹿身上，造就了一只极具攻击性的食肉鹿。",
+            "npcReply": "小鹿极其凶悍地站了起来，甚至咬碎了旁边的石头。‘你不仅干涉了自然，还创造了极其恐怖的新物种。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_druid": 3,
+              "guild_artificer": 1
+            },
+            "alignmentDelta": {
+              "good": 1
+            },
+            "triggerTags": [
+              "物种嫁接",
+              "食肉狂鹿"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极具弗兰肯斯坦精神和生命干涉狂热的禁忌法师"
+          },
+          {
+            "id": "B",
+            "text": "极其冷酷地遵循淘汰法则，不仅杀了小鹿，还极其专业地把它做成了风干鹿肉干，表示这是为了让它回归大自然的胃里。",
+            "npcReply": "你执行了最血腥的自然循环。‘没有一丝伪善的情感，你是极其冷酷的食材处理师。’",
+            "scoreDelta": {
+              "str": 1,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 2,
+              "guild_druid": 1
+            },
+            "alignmentDelta": {
+              "order": 2
+            },
+            "triggerTags": [
+              "做成肉干",
+              "极致循环"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其理智且满脑子都是食谱的野味大师"
+          },
+          {
+            "id": "C",
+            "text": "极其贪婪地把残疾小鹿当成碰瓷工具，故意把它扔在人类商队的路上，然后跳出来极其嚣张地敲诈人类的‘珍稀动物保护费’。",
+            "npcReply": "你将自然的弱者变成了极其下作的敛财工具。‘你不仅是个变态，还是个极其不要脸的碰瓷王。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_druid": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "放长线碰瓷",
+              "收保护费"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "利用残疾动物大发横财的黑心无赖"
+          },
+          {
+            "id": "D",
+            "text": "极其离谱地给小鹿绑上了几个极其不靠谱的地精火箭推进器，试图用物理推力解决它的出行问题，结果小鹿直接原地升天。",
+            "npcReply": "这只小鹿确实跑得快了，但它现在飞在天上拉屎。‘……你这动物改装法涉嫌极其严重的虐待动物罪。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_wizard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "火箭小鹿",
+              "一飞冲天"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "给动物装火箭发射器的重度科技迫害狂"
+          }
+        ]
+      }
+    ],
+    "guild_rogue": [
+      {
+        "id": "elf_rogue_infiltration",
+        "title": "优雅的刺客",
+        "scene": "暗杀任务：目标是一位极具权势的人类亲王，他正在一座极其奢华的庄园里举办化装舞会。庄园外围布满了魔法守卫和反潜行结界，硬闯必死无疑。",
+        "prompt": "拥有几百年寿命和出众容貌的精灵，你会如何完成这次刺杀？",
+        "options": [
+          {
+            "id": "A",
+            "text": "将剧毒极其巧妙地涂在嘴唇上。在舞池中央与目标深情拥吻，利用自己极其强悍的毒素抗性，极其香艳且致命地带走目标。",
+            "npcReply": "完美融合了致命毒药与极度色诱。‘最高级的潜行，就是让目标主动贴近你的毒牙。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3,
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "毒唇拥吻",
+              "香艳绝杀"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "将自身美貌化为最致命武器的毒蜘蛛"
+          },
+          {
+            "id": "B",
+            "text": "极其务实地伪装成修化粪池的矮人，浑身散发着极其刺鼻的恶臭，硬生生把反潜行结界给熏出了一个漏洞，用通厕所的皮搋子闷死了目标。",
+            "npcReply": "极其生硬且极具味道的刺杀，虽然极其狼狈，但防不胜防。‘为了暗杀能忍受自己变臭，你是个狠角色。’",
+            "scoreDelta": {
+              "con": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "化粪池伪装",
+              "皮搋子闷杀"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "不辞劳苦、极其重口味的实用主义刺客"
+          },
+          {
+            "id": "C",
+            "text": "极其丧心病狂地在舞会大厅的酒水里下满剧毒，为了杀一个人，极其残忍地拉着全场数百名无辜贵族一起倒沫子。",
+            "npcReply": "你确实杀了目标，但也制造了百年难遇的大屠杀。‘公会不需要你这种毫无控制力的无差别杀人狂。’",
+            "scoreDelta": {
+              "str": 1,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -2
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "无差别投毒",
+              "拉人陪葬"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "为达目的极其残忍且滥杀无辜的屠夫"
+          },
+          {
+            "id": "D",
+            "text": "极其离谱地在舞池中央跳起了一段极其辣眼睛的精灵钢管舞，亲王在极度震惊和辣眼睛的双重打击下，突发脑溢血当场去世。",
+            "npcReply": "你站在尸体旁，甚至都没拔出匕首。‘……你这叫极其纯粹的精神物理双重打击刺杀术。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "辣眼钢管舞",
+              "活活看死"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "靠极其逆天的舞蹈把目标直接送走的舞娘"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_trap",
+        "title": "时间的锁孔",
+        "scene": "你需要打开一个矮人大师打造的连环密齿保险箱。里面不仅有九十九道极其精密的机械锁，甚至还绑定了自毁符文。哪怕是最快的人类盗贼，也需要几个月才能解开。",
+        "prompt": "面对这个几乎无法在任务期限内打开的保险箱，你的决定是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "利用精灵的微观视觉，极其变态地将酸液精确滴入那微米级别的缝隙中，在极其完美的腐蚀曲线上，兵不血刃地化解了所有的机械结构。",
+            "npcReply": "你用化学和极致的微操打破了矮人防盗界的神话。‘极致的专注力，这就是微雕级的精灵神偷。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "酸液微操",
+              "微观解锁"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "拥有超越机械精度的化学微操大师"
+          },
+          {
+            "id": "B",
+            "text": "极其精明地绑架了保险箱设计师的儿子，极其礼貌地逼迫他父亲画出了极其详细的结构图纸，然后照着图纸一分钟开锁。",
+            "npcReply": "你没在锁上费功夫，全用在人身上了。‘非常聪明的绑票工程学，用人质打败规则。’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "绑架设计师",
+              "图纸开锁"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "深谙黑社会做派、极其会找捷径的悍匪"
+          },
+          {
+            "id": "C",
+            "text": "极其暴躁地掏出攻城锤开始狂砸，结果不仅触发了极其猛烈的自毁符文被炸飞，还极其丢脸地被闻声赶来的警卫队当场抓获。",
+            "npcReply": "东西毁了，你人也进去了。‘极度的急躁和对爆炸的无知，让你成了年度最蠢盗贼。’",
+            "scoreDelta": {
+              "int": -3,
+              "dex": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -3
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "攻城锤狂砸",
+              "炸飞被抓"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "毫无技术含量、满脑子肌肉的低级毛贼"
+          },
+          {
+            "id": "D",
+            "text": "极其抽象地掏出一个极其巨大的马桶搋子，极其用力地吸在保险箱的门上，试图用极其离谱的物理负压把门给连根拔出来。",
+            "npcReply": "考官看着你极其费力地拔马桶搋子，陷入了沉默。‘……你这属于是极其不要脸的物理降维打击。’",
+            "scoreDelta": {
+              "str": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "guild_fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "马桶搋吸门",
+              "离谱负压"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "试图用洁具解决所有防盗难题的抽象水管工"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_betrayal",
+        "title": "长寿的代价",
+        "scene": "你被人类警卫队抓获了。负责审讯你的警卫队长，正是你五十年前救过的一个人类小孩的孙子。他并不知道你是谁，只是恶狠狠地要求你供出公会的情报，否则就动刑。",
+        "prompt": "面对这个寿命不过是你零头、却掌握你生死的‘故人之后’，你会怎么做？",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其阴冷地微笑着，用极其精准的精神魔法勾起他潜意识中最深层的童年阴影，在不用一根手指的情况下，极其恐怖地摧毁了他的心理防线。",
+            "npcReply": "你用魔法实施了完美的逆向审讯。‘在精灵的精神碾压面前，人类的意志如同薄纸。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "引爆童年阴影",
+              "精神反杀"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "深谙心理折磨和精神摧残的审讯专家"
+          },
+          {
+            "id": "B",
+            "text": "极其果断地折断自己被铐住的大拇指，极其血腥地挣脱手铐，极其利落地用断骨刺穿了他的大腿，然后在极度震惊的目光中翻窗逃离。",
+            "npcReply": "极其残忍的对自己和对敌人的双重伤害。‘你是个没有痛觉的怪物，极其凶悍。’",
+            "scoreDelta": {
+              "dex": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "折断大拇指",
+              "断骨刺腿"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "对自己比对敌人还狠的硬汉脱逃大师"
+          },
+          {
+            "id": "C",
+            "text": "极其没骨气地跪地求饶，极其下贱地表示自己愿意去舔他的靴子，极其无耻地出卖了公会所有战友的底裤颜色。",
+            "npcReply": "你活下来了，但公会第二天就派人把你的舌头喂了狗。‘毫无骨气，你不配活那么久。’",
+            "scoreDelta": {
+              "cha": -3,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "evil": 1,
+              "risk": 3
+            },
+            "triggerTags": [
+              "舔靴子",
+              "出卖底裤"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度懦弱、毫无尊严的纯正软骨头"
+          },
+          {
+            "id": "D",
+            "text": "极其兴奋地掏出一副极其劣质的扑克牌，试图用极其离谱的魔术和烂笑话强行转移注意力，硬是把审讯室变成了极其尴尬的春晚现场。",
+            "npcReply": "警卫队长被你这密集的烂活轰炸得精神崩溃，直接把你踹出了大门。‘……用极其油腻的才艺把审讯官逼疯，这也是一种天赋。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "劣质魔术",
+              "尴尬春晚"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "靠极其尴尬的表演能力逼人释放的话痨"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_final",
+        "title": "暗影的誓约",
+        "scene": "最终考核：‘无月之影’的导师递给你一杯极其香醇的精灵红酒。‘喝下它，意味着你自愿舍弃属于阳光下精灵的荣耀，你的名字将被抹去，你将在阴沟和暗杀中度过余下几个世纪的寿命。’",
+        "prompt": "在加入这个可能是全精灵社会中最受人唾弃的公会前，你的回应是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "将酒液倒在匕首上，极其冷酷地划破脸颊，用极其沙哑的声音宣告：‘精灵的容貌是光明的累赘，我将化身极夜中最锋利的獠牙。’",
+            "npcReply": "导师满意地为你披上极其黑暗的斗篷。‘欢迎来到不需要脸皮的真实世界。’",
+            "scoreDelta": {
+              "int": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 4
+            },
+            "alignmentDelta": {
+              "control": 1,
+              "evil": 1
+            },
+            "triggerTags": [
+              "毁容立誓",
+              "绝杀獠牙"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "彻底看透世俗虚伪、极其残酷的暗影收割者"
+          },
+          {
+            "id": "B",
+            "text": "极其务实地要求导师先付一笔极其高昂的安家费，并且极其精明地要求在公会合同上加上‘节假日接单双倍工资’的条款。",
+            "npcReply": "导师苦笑着签了字。‘你的技术很过硬，但你的极其算计的头脑更让人害怕。’",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "讨要双倍工资",
+              "精明算计"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其在乎劳动法权益的打工人刺客"
+          },
+          {
+            "id": "C",
+            "text": "极其嚣张地把酒泼在导师脸上，极其狂妄地大骂公会的规矩都是放屁，极其作死地试图凭一己之力挑翻整个暗杀公会的高层。",
+            "npcReply": "你极其豪迈地放了狠话，然后极其迅速地被三十二把毒刃捅成了马蜂窝。‘极度的狂妄，你根本是个白痴。’",
+            "scoreDelta": {
+              "cha": -2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "泼酒大骂",
+              "当场被捅死"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "完全不看场合发疯的狂妄送死鬼"
+          },
+          {
+            "id": "D",
+            "text": "极其嫌弃地表示这红酒极其难喝，极其专业地掏出一瓶极其便宜的八二年的雪碧，极其离谱地要求导师必须兑着喝才符合你的档次。",
+            "npcReply": "导师被你这极其降维的兑酒作风搞得极其无语。‘……你到底是来当刺客的，还是来当大排档推销员的？’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "红酒兑雪碧",
+              "降维品鉴"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在极其严肃的关头强行推销雪碧的抽象怪"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_investigation",
+        "title": "致命的沉默",
+        "scene": "你潜入一个黑市商人的豪宅寻找情报。你发现商人不仅死了，而且周围布满了属于另一个更强大刺客公会的标记。显然，有人捷足先登，而且故意留下了线索想引你入局。",
+        "prompt": "面对这种极其明显的陷阱和挑衅，作为游荡者的你会怎么做？",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其敏锐地察觉到空气中极其微弱的魔法波动，极其果断地反向追踪设局者的精神印记，极其恐怖地摸到了对方老巢将其反杀。",
+            "npcReply": "你不仅没入局，还极其凶狠地端了对面的老窝。‘极其冷酷且致命的反侦察猎手。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "精神反潜",
+              "摸老巢反杀"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其强悍且绝不吃亏的顶尖逆向猎头"
+          },
+          {
+            "id": "B",
+            "text": "极其阴险地在现场布置了极其繁琐且极其致命的连环屎壳郎诡雷，然后极其嚣张地留下一张字条：‘你们的陷阱太没有味道了，尝尝这个。’",
+            "npcReply": "你把一个极其严肃的局中局变成了一个极其恶臭的灾难现场。‘非常下作，但极其有效地让对方产生了心理阴影。’",
+            "scoreDelta": {
+              "cha": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "屎壳郎诡雷",
+              "恶臭留书"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其腹黑、极其喜欢恶心同行的生化刺客"
+          },
+          {
+            "id": "C",
+            "text": "极其自负地以为自己能看穿一切，极其愚蠢地踩中了极其明显的诱饵陷阱，极其可悲地被吊在天花板上荡了一晚上秋千。",
+            "npcReply": "你不仅没拿到情报，还极其丢人地被巡逻队发现了。‘极度狂妄但极其眼瞎的菜鸟。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "risk": 3,
+              "evil": 1
+            },
+            "triggerTags": [
+              "自大踩雷",
+              "倒吊秋千"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其自负且眼神极其不好的杂鱼"
+          },
+          {
+            "id": "D",
+            "text": "极其抽象地在现场开了一场极其嗨皮的死人换装派对，极其离谱地给商人的尸体穿上极其性感的蕾丝比基尼，把挑衅者恶心到当场抠瞎双眼。",
+            "npcReply": "敌对公会的刺客回来检查时，看着极其辣眼睛的尸体陷入了极度的自我怀疑。‘……你这属于是对死者和同行极其恶劣的视觉霸凌。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "尸体穿蕾丝",
+              "视觉霸凌"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "在极其危险的现场大搞变态换装的神经病"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_blackmail",
+        "title": "贪婪的尺度",
+        "scene": "你潜入了一个贪腐主教的密室，不仅拿到了他与恶魔交易的罪证，还发现了一个装满宝石的隐藏保险箱。公会的任务只要求你带回罪证。",
+        "prompt": "面对这笔能让你挥霍十年的意外之财，你的尺度是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其克制地只带走罪证，并且极其恐怖地在每颗宝石上都用极细的毒针刻上了主教的名字，一旦他去变卖就会当场毒发身亡。",
+            "npcReply": "极其阴狠的后手。‘你不是个单纯的小偷，你是个极其精于算计的连环杀手。’",
+            "scoreDelta": {
+              "wis": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "I": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 2,
+              "lawful": 1
+            },
+            "triggerTags": [
+              "宝石刻毒针",
+              "算计未来"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "为了任务可以绝对克制并设下恶毒连环套的杀手"
+          },
+          {
+            "id": "B",
+            "text": "极其熟练地拿走最值钱的大宝石，极其缺德地在里面塞满了极其廉价的彩色玻璃渣子，主打一个极其不讲武德的黑吃黑。",
+            "npcReply": "标准的游荡者作风。‘任务要完成，外快也要赚，还要极其恶劣地侮辱一下对手的智商。’",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "action": 1
+            },
+            "triggerTags": [
+              "玻璃换宝石",
+              "黑吃黑"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "业务极其熟练且极具缺德风格的怪盗"
+          },
+          {
+            "id": "C",
+            "text": "极其贪得无厌地把宝石全吞了，极其作死地试图用罪证去敲诈恶魔，结果极其悲惨地被恶魔极其残忍地抽出了灵魂做成鞋垫。",
+            "npcReply": "恶魔非常感谢你的极其愚蠢的主动上门。‘在极度贪婪的深渊里玩火，活该变成恶魔的脚底板。’",
+            "scoreDelta": {
+              "int": -2,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -3
+            },
+            "alignmentDelta": {
+              "risk": 3,
+              "evil": 2
+            },
+            "triggerTags": [
+              "敲诈恶魔",
+              "做成鞋垫"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "被极度贪婪蒙蔽双眼、花式作死的小人"
+          },
+          {
+            "id": "D",
+            "text": "极其离谱地把宝石全碾成了极其昂贵的发光粉，极其抽象地在密室墙上画了一个极其巨大的极其侮辱人的‘地精比中指’涂鸦。",
+            "npcReply": "公会高层看到这份极其炸裂的现场调查报告后集体陷入了头疼。‘……你这极其抽象的破坏力到底是为了什么？’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "碾碎宝石",
+              "中指涂鸦"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极其热衷于搞极其烧钱行为艺术的破坏王"
+          }
+        ]
+      },
+      {
+        "id": "elf_rogue_escape",
+        "title": "暴露的瞬间",
+        "scene": "在一次极其重要的潜伏中，你不小心踩断了一根枯枝，声音在安静的走廊里极其刺耳。两名全副武装的精灵守卫立刻拔剑朝你藏身的阴影走来。",
+        "prompt": "在即将被发现的这极短的三秒钟内，你的应急预案是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "极其冷静地闭上眼睛，极其精准地模拟出走廊深处极其逼真的长官咆哮声，极其完美地转移了守卫的注意力并极其优雅地倒挂在天花板上隐形。",
+            "npcReply": "你不仅摆脱了危机，甚至极其嚣张地在他们头顶看他们四处乱转。‘极其恐怖的口技伪装与心理操控。’",
+            "scoreDelta": {
+              "dex": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "口技假传圣旨",
+              "倒挂隐形"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其精通心理盲区与仿声艺术的极品戏精刺客"
+          },
+          {
+            "id": "B",
+            "text": "极其暴躁地不退反进，极其刚猛地一脚踹飞了极其沉重的金属盔甲架，极其野蛮地砸断了守卫的腿，然后极其嚣张地顺手牵羊拿走他们的佩剑。",
+            "npcReply": "极其刚猛的物理清场。‘既然潜行失败了，那就把目击者极其残暴地打残，然后顺带赚点外快。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 1,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "踹盔甲架",
+              "顺走佩剑"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其果断、精通物理断腿术的狂暴悍匪"
+          },
+          {
+            "id": "C",
+            "text": "极其懦弱地发出一声极其尖锐的惨叫，极其丢人地瘫软在地，极其没出息地尿了裤子，极其绝望地把自己裹在披风里等死。",
+            "npcReply": "守卫被你极其凄惨且极具异味的投降方式恶心到了。‘公会极其后悔当初没有把你直接扔进粪坑里。’",
+            "scoreDelta": {
+              "cha": -2,
+              "wis": -3
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "尿裤子投降",
+              "极度没骨气"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "一有风吹草动就极其丢人现眼的尿裤子软蛋"
+          },
+          {
+            "id": "D",
+            "text": "极其淡定地掏出一把极其破旧的扫帚，极其入戏地开始疯狂扫地，极其理直气壮地大骂守卫踩脏了极其名贵的公款地毯。",
+            "npcReply": "两个守卫被你极其高傲的保洁大妈气场给震慑住了，竟然极其乖巧地退出去擦鞋了。‘……你极其深厚的脸皮堪称护体神功。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "伪装狂暴保洁",
+              "骂退守卫"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "靠极其强大的无理取闹气场反向制裁守卫的影帝"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "endingId": "elf_accepted_ranger",
+      "endingType": "accepted",
+      "title": "幽林的冷箭",
+      "verdictLine": "你将漫长的生命化为了极致的精准，你是森林中不讲理的死神。",
+      "explanation": "巡防营接纳了你。导师在你身上看到了游侠最可怕的特质：不受任何情感干扰的绝对猎杀本能。你不再是那个会在花前月下弹琴的精灵，你是一台精密计算风速与魔力轨道的狙击机器。你会被派往最危险的边境森林，独自面对成群的半兽人，而他们连你的影子都摸不到。",
+      "tableFunction": "队伍中绝对的远程核心输出与环境侦查大师，能在超远距离完成狙杀。",
+      "playableFlaw": "极度的战术洁癖，极其厌恶在泥泞的近战中弄脏自己的披风，且有严重的独狼倾向。",
+      "nextHook": "你被派去追捕一只据说活了千年的灵体白鹿，但你发现这只鹿的角上挂着一枚属于失踪精灵王的戒指。",
+      "recommendedClass": [
+        "guild_ranger"
+      ],
+      "tags": [
+        "冷酷狙击手",
+        "极致精准",
+        "孤独巡林"
+      ]
+    },
+    {
+      "endingId": "elf_accepted_wizard",
+      "endingType": "accepted",
+      "title": "真理的裁决者",
+      "verdictLine": "魔法在你手中不再是奇迹，而是可以被随意拆解和重组的冰冷代码。",
+      "explanation": "苍穹尖塔的大门向你敞开。你对魔法底层逻辑的惊人解析力让那些还在死记硬背咒语的人类法师相形见绌。你不会因为释放了一个火球术而沾沾自喜，你更关心如何将火球术的爆炸范围在数学层面上再扩大百分之二。你是一个极其纯粹的学者，也是一个极其可怕的施法机器。",
+      "tableFunction": "依靠严密逻辑施法的高阶法师，精通法术反制与魔力效率优化。",
+      "playableFlaw": "因为过度沉迷于魔法方程式的推导，经常在队友急需掩护时还在算哪种法术的‘性价比’最高。",
+      "nextHook": "你推推导出了一个能撕裂半位面的禁忌方程，但实验材料需要一颗鲜活的红龙心脏。你把目光投向了队友的钱包。",
+      "recommendedClass": [
+        "guild_wizard"
+      ],
+      "tags": [
+        "学术狂魔",
+        "法术反制大师",
+        "魔法工程学"
+      ]
+    },
+    {
+      "endingId": "elf_accepted_druid",
+      "endingType": "accepted",
+      "title": "生态的暴君",
+      "verdictLine": "你剥离了文明的伪善，化身为自然最残酷也最真实的牙齿。",
+      "explanation": "翠绿回环不仅接纳了你，甚至将你视作未来的长老候选人。你完美地理解了‘平衡即是杀戮与新生的循环’。你不再纠结于个体的生死，你能毫无心理负担地化作银狼撕碎入侵者，也能化作微风治愈枯萎的古树。你的灵魂已经与这片森林的意志彻底融为一体。",
+      "tableFunction": "极具统治力的前排变形者与战场控制大师，能够适应任何生态环境。",
+      "playableFlaw": "在人类城镇中会表现出极度的不适感，经常因为人类的浪费行为而突然进入狂怒状态。",
+      "nextHook": "森林深处出现了一种连德鲁伊法术都无法治愈的奇怪‘晶化瘟疫’，而源头似乎指向了一个古老的地下矮人遗迹。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "生态平衡",
+        "绝对野性",
+        "无情自然"
+      ]
+    },
+    {
+      "endingId": "elf_accepted_rogue",
+      "endingType": "accepted",
+      "title": "月光的背面",
+      "verdictLine": "如果暗杀是一门艺术，那你的作品足以在精灵皇家博物馆里展览。",
+      "explanation": "无月之影公会为你披上了属于高阶刺客的黑袍。你证明了精灵即使从事最肮脏的职业，也能保持最致命的优雅。你不会在现场留下任何粗暴的痕迹，你的猎物通常在看到你那无瑕的容貌时就已经停止了呼吸。你被分配去处理那些连王国正规军都不敢碰的‘大人物’。",
+      "tableFunction": "极其优雅且高致命性的单体刺客与潜入专家。",
+      "playableFlaw": "即使在逃命时也必须保持发型和仪态的完美，拒绝使用任何极其恶心但有效的下三滥手段（比如钻粪坑）。",
+      "nextHook": "你接到的下一个暗杀目标，竟然是你自己失散多年的、已经变成吸血鬼领主的双胞胎兄弟。",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "优雅刺杀",
+        "艺术犯罪",
+        "无痕潜入"
+      ]
+    },
+    {
+      "endingId": "elf_probation_ranger",
+      "endingType": "probation",
+      "title": "迷失的旅人",
+      "verdictLine": "你的弓术无可挑剔，但你的眼神里充满了对外面世界过度的好奇。",
+      "explanation": "导师认为你还不具备成为核心游侠的孤独抗性。你总是容易被人类城镇里的新鲜玩意儿吸引，甚至在潜伏时偷偷看人类的流行小说。你被编入了外围巡防队，负责在森林边缘和人类商队打交道，直到你学会如何真正沉下心来。",
+      "tableFunction": "负责侦查和边缘支援的轻装射手，有一定的交涉能力。",
+      "playableFlaw": "容易在任务中被奇奇怪怪的支线或者闪闪发光的小玩意儿分散注意力。",
+      "nextHook": "你在边境巡逻时，截获了一个人类商队，里面有一件被重重封印的古代精灵乐器，它正在呼唤你。",
+      "recommendedClass": [
+        "guild_ranger"
+      ],
+      "tags": [
+        "不够专注",
+        "好奇心过剩",
+        "外围侦查"
+      ]
+    },
+    {
+      "endingId": "elf_probation_wizard",
+      "endingType": "probation",
+      "title": "傲慢的半吊子",
+      "verdictLine": "你把太多时间花在了吹嘘自己的血统上，而不是用来背诵最基础的防护法阵。",
+      "explanation": "尖塔的考官对你那华而不实的施法风格极其反感。你以为凭借精灵的天赋就可以跳过繁琐的学术论证，直接去玩弄高阶元素，结果在考核中差点炸毁了半个考场。你被降级为见习档案管理员，在抄写完一万遍《基础魔力传导安全规范》之前，禁止碰触任何有杀伤力的法杖。",
+      "tableFunction": "掌握大量杂学知识但实战极其不靠谱的后排辅助。",
+      "playableFlaw": "施法极度不稳定，越想炫技越容易引发灾难性的法术反噬。",
+      "nextHook": "你在档案室深处打扫卫生时，不小心用抹布蹭掉了一本禁忌黑魔法书上的封印符文。",
+      "recommendedClass": [
+        "guild_wizard"
+      ],
+      "tags": [
+        "眼高手低",
+        "学术不端",
+        "档案室罚抄"
+      ]
+    },
+    {
+      "endingId": "elf_probation_druid",
+      "endingType": "probation",
+      "title": "温室的园丁",
+      "verdictLine": "你太爱惜这片森林，以至于你不敢看到它流血。",
+      "explanation": "你的同理心过于泛滥了。你无法接受大自然残酷的淘汰法则，甚至试图去治愈每一只受重伤的兔子，这导致了你负责的区域生态彻底失衡。长者拒绝传授你高阶的变形法术，只允许你留在回环的后花园里负责照料魔法草药。",
+      "tableFunction": "提供极其稳定后勤治疗的草药师，但极度缺乏战斗力。",
+      "playableFlaw": "在看到任何生物受苦时都会陷入极度的心理内耗，无法对残血敌人进行补刀。",
+      "nextHook": "你在后花园里培育出了一株拥有极高智慧的食人花，而它似乎并不满足于只吃化肥。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "同情心泛滥",
+        "拒绝残酷",
+        "草药园丁"
+      ]
+    },
+    {
+      "endingId": "elf_probation_rogue",
+      "endingType": "probation",
+      "title": "心软的蟊贼",
+      "verdictLine": "你虽然穿着刺客的黑袍，但你的匕首却怎么也刺不穿那些无辜者的喉咙。",
+      "explanation": "你的潜行技术极其出色，但你的道德底线成了你最大的绊脚石。在最后一次考核中，你不仅放跑了目标，甚至还把雇主给你的定金留给了目标那可怜的女儿。公会本想抹杀你，但看在你的天赋上，决定让你去干点不需要杀人的活儿——比如去敌国皇宫偷点不那么重要的情报文件。",
+      "tableFunction": "极度精通开锁与潜入的怪盗，但绝对不会造成致命伤害。",
+      "playableFlaw": "盗亦有道。在偷窃前必须做极其繁琐的‘道德审查’，如果觉得对方是个好人，甚至会反过来倒贴钱。",
+      "nextHook": "你去皇宫偷文件，却意外偷到了王后写给半兽人酋长的绝密情书，现在整个皇室都在追杀你。",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "侠盗滤镜",
+        "拒绝杀戮",
+        "情报小偷"
+      ]
+    },
+    {
+      "endingId": "elf_transferred_fighter",
+      "endingType": "transferred",
+      "title": "折翼的舞者",
+      "verdictLine": "你没有耐心去感受森林的呼吸，你只想用最简单粗暴的方式把敌人的头颅砍下来。",
+      "explanation": "游侠公会认为你缺乏最基本的静默潜伏素质。你的血液里流淌着一种令人不安的狂躁，相比于在树冠上趴三天，你更喜欢拔出双刀直接冲进半兽人的军阵里大开杀戒。你被踢出了游侠营，但佣兵团极其欢迎你这种极其敏捷且致命的近战绞肉机。",
+      "tableFunction": "依靠极高敏捷度进行恐怖双持输出的近战剑舞者。",
+      "playableFlaw": "极其讨厌任何需要耐心的侦查任务，喜欢直接踹门开战。",
+      "nextHook": "你接到了一个护送人类贵族的任务，但这个贵族一路上都在极其傲慢地评价精灵的剑术，你的忍耐已经到了极限。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "rejectedClass": "guild_ranger",
+      "tags": [
+        "缺乏耐心",
+        "剑舞者",
+        "踹门狂魔"
+      ]
+    },
+    {
+      "endingId": "elf_transferred_artificer",
+      "endingType": "transferred",
+      "title": "魔导工程师",
+      "verdictLine": "你对魔法底层原理的解构过于激进，以至于你觉得传统的施法方式简直是浪费生命。",
+      "explanation": "你在尖塔的考试中不仅没有使用法杖，反而掏出了一个用几百个发条和符文拼凑出来的‘便携式火球发射器’。高阶法师们认为你亵渎了奥术的纯洁，将你赶出了尖塔。但底层的工匠塔却将你奉为天才，他们需要你这种能将魔法与齿轮完美结合的疯子。",
+      "tableFunction": "掌握大量魔导器械制造技术的火力手，能用物理手段量产魔法。",
+      "playableFlaw": "极其迷信自己制造的器械，如果装备卡壳，会瞬间陷入不知所措的恐慌。",
+      "nextHook": "你研发的新型‘魔能单兵装甲’在试运行时突然暴走，带着你在精灵王都的街道上横冲直撞。",
+      "recommendedClass": [
+        "guild_artificer"
+      ],
+      "rejectedClass": "guild_wizard",
+      "tags": [
+        "物理施法",
+        "科技异端",
+        "爆炸美学"
+      ]
+    },
+    {
+      "endingId": "elf_transferred_cleric",
+      "endingType": "transferred",
+      "title": "星辰的牧首",
+      "verdictLine": "相比于化身野兽去撕咬，你更愿意仰望星空，倾听神明对这片苦难大地的叹息。",
+      "explanation": "翠绿回环认为你缺乏野性的本能。你总是在试图治愈一切，甚至连一只死去的飞虫都要为它祈祷。这种对生命的极度珍视让你无法在残酷的自然循环中立足。但精灵的星辰教廷却向你张开了双臂，他们需要你这种拥有无限悲悯之心的高阶祭司去安抚那些受伤的灵魂。",
+      "tableFunction": "极具神圣气息的终极治疗者与团队精神支柱。",
+      "playableFlaw": "无法容忍任何亵渎尸体或虐待俘虏的行为，甚至会为了保护敌人的尸体和队友起冲突。",
+      "nextHook": "你被派往一个刚刚经历过屠杀的战场进行净化，但在那座堆满尸体的万人坑里，你听到了一个不属于神明的低语。",
+      "recommendedClass": [
+        "guild_cleric"
+      ],
+      "rejectedClass": "guild_druid",
+      "tags": [
+        "悲悯之心",
+        "极致治愈",
+        "拒绝野性"
+      ]
+    },
+    {
+      "endingId": "elf_transferred_bard",
+      "endingType": "transferred",
+      "title": "喋血的歌者",
+      "verdictLine": "你那张嘴太能忽悠了，以至于公会觉得让你去当个见不得光的刺客简直是浪费人才。",
+      "explanation": "在暗杀考核中，你不仅没有动手，反而用极其离谱的口才说服了目标把遗产全部转让给你，然后目标自己羞愧地跳楼了。刺客公会觉得你的行事风格实在太高调了。他们把你引荐给了诗学苑，认为你在那里更能发挥你那‘用语言杀人’的恐怖天赋。",
+      "tableFunction": "极度危险的社交操盘手和心理战大师，能用几句话挑起一场战争。",
+      "playableFlaw": "极其享受在聚光灯下的感觉，无论多危险的任务都必须表现得像是在开个人演唱会。",
+      "nextHook": "你受邀去敌国宫廷表演，但你的真实任务是用一首蕴含着隐秘魔法的诗歌，在晚宴上让国王当众发疯。",
+      "recommendedClass": [
+        "guild_bard"
+      ],
+      "rejectedClass": "guild_rogue",
+      "tags": [
+        "语言杀人",
+        "高调刺杀",
+        "社交恐怖分子"
+      ]
+    },
+    {
+      "endingId": "elf_blacklisted_arrogant",
+      "endingType": "blacklisted",
+      "title": "傲慢的蠢货",
+      "verdictLine": "你完美诠释了什么是‘活得越久，脑子越空’。你被自己的种族优越感彻底毒害了。",
+      "explanation": "在面对考官的刁难时，你不仅没有展现出解决问题的能力，反而极其狂妄地辱骂考官的血统不够纯正。你以为自己是高贵的精灵就可以免于考核，但现实给了你一记响亮的耳光。你被所有正规公会永久拉黑，成了连人类雇佣兵都嫌弃的废柴精灵。",
+      "tableFunction": "毫无实战能力，只会到处摆谱惹人厌的贵族累赘。",
+      "playableFlaw": "无论处于何种绝境，都保持着令人极其作呕的种族优越感，极其容易在酒馆里被矮人揍。",
+      "nextHook": "因为破产，你不得不去一个矮人矿坑里当苦力，而你的工头恰好是一个极其讨厌精灵的暴躁矮人。",
+      "recommendedClass": [
+        "guild_fighter"
+      ],
+      "tags": [
+        "纯血傲慢",
+        "眼高手低",
+        "社会性死亡"
+      ]
+    },
+    {
+      "endingId": "elf_blacklisted_pyramid_scheme",
+      "endingType": "blacklisted",
+      "title": "奥术传销大师",
+      "verdictLine": "你用你那聪明的精灵大脑，在公会内部搞出了一个极其恶劣的魔法庞氏骗局。",
+      "explanation": "你向低阶学徒兜售号称可以‘缩短冥想时间、直接增加智力’的假冒魔力水晶，并采用拉人头提成的方式，成功骗光了半个公会的经费。当大法师发现真相时，你已经卷款跑路了。你现在是全大陆赏金最高的诈骗犯，连魔鬼都想向你请教如何搞金融剥削。",
+      "tableFunction": "极度贪婪且极具煽动力的金融诈骗犯，随身携带巨额赃款。",
+      "playableFlaw": "只要看到赚钱的机会，不管多危险都会忍不住去插一脚，极其容易暴露行踪。",
+      "nextHook": "你的骗局崩盘了，一群被你骗光了家底的高阶法师正拿着各种毁灭性法杖满世界找你算账。",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "魔法传销",
+        "卷款跑路",
+        "金融巨鳄"
+      ]
+    },
+    {
+      "endingId": "elf_blacklisted_necromancer",
+      "endingType": "blacklisted",
+      "title": "腐化的窃骨者",
+      "verdictLine": "你为了追求永恒，触碰了连精灵王室都严厉禁止的死灵禁忌。",
+      "explanation": "公会发现了你在地下室里解剖同族的尸体，甚至试图将精灵漫长的寿命通过法阵转移给自己的人类伴侣。这种违逆生死的禁忌实验让你遭到了最严厉的绝罚。你不仅被驱逐，还被烙上了代表异端的印记。你只能在乱葬岗和地下陵墓中继续你那疯狂的研究。",
+      "tableFunction": "掌握着极其危险和亵渎法术的死灵学者。",
+      "playableFlaw": "你的身上常年散发着无法掩盖的尸臭味，且必须定期吸收他人的生命力来维持自身的精神不崩溃。",
+      "nextHook": "你的人类伴侣还是死了，你决定潜入一座极其危险的巨龙陵墓，试图用龙骨来完成你的复活法阵。",
+      "recommendedClass": [
+        "guild_wizard"
+      ],
+      "tags": [
+        "死灵禁忌",
+        "窃取寿命",
+        "亵渎者"
+      ]
+    },
+    {
+      "endingId": "elf_blacklisted_betrayer",
+      "endingType": "blacklisted",
+      "title": "暗影的叛徒",
+      "verdictLine": "你为了活命，不仅出卖了雇主，还把公会的刺杀名单卖给了敌国情报局。",
+      "explanation": "在一次极其危险的潜伏任务中被抓后，你那高贵的精灵骨气瞬间荡然无存。你用极快的语速像倒豆子一样交代了公会所有的秘密撤离点。虽然你保住了小命，但刺客公会对你发出了最高级别的追杀令。你现在只能在极度的恐慌中四处逃窜，连睡觉都不敢闭眼。",
+      "tableFunction": "毫无底线、为了活命可以出卖一切的卑劣叛徒。",
+      "playableFlaw": "极度神经质，任何人（哪怕是队友）站在你的背后都会让你产生被背刺的恐慌。",
+      "nextHook": "你躲进了一个据说绝对安全的‘避难所’，但你发现这个避难所的老板正是被你出卖过的公会前任长老。",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "彻底背叛",
+        "出卖名单",
+        "极度恐慌"
+      ]
+    },
+    {
+      "endingId": "elf_absurd_loophole",
+      "endingType": "absurdAccepted",
+      "title": "法条主义的胜利",
+      "verdictLine": "你用三本古老的《公会法典》和极其诡辩的逻辑，硬生生把主考官逼到了精神崩溃，从而免试过关。",
+      "explanation": "你根本没有参加任何实战考核。你极其认真地指出了考场的布置违反了精灵王国第421条消防规范，并论证了主考官的考核标准存在极其严重的逻辑漏洞。在长达七个小时的密集法条轰炸后，主考官为了能赶紧下班，流着眼泪在你的执照上盖了章。",
+      "tableFunction": "极其精通钻规则空子和利用程序恶心敌人的诡辩大师。",
+      "playableFlaw": "做任何决定之前都必须先找相关的法律依据，甚至在被怪物追杀时还要停下来警告怪物‘这违反了野生动物保护法’。",
+      "nextHook": "公会派你去和一个极其狡猾的魔鬼领主签订领地转让契约，因为他们觉得只有你的法条能恶心到魔鬼。",
+      "recommendedClass": [
+        "guild_wizard"
+      ],
+      "tags": [
+        "法条轰炸",
+        "逼疯考官",
+        "免试过关"
+      ]
+    },
+    {
+      "endingId": "elf_absurd_lucky_trickster",
+      "endingType": "absurdAccepted",
+      "title": "薛定谔的潜行",
+      "verdictLine": "你用极其离谱且吵闹的方式完成了潜入，考官甚至不知道该给你打满分还是直接掐死你。",
+      "explanation": "在潜入考核中，你不仅带了各种发出响声的锅碗瓢盆，甚至还迷路了。但极其离谱的是，你每一次跌倒，都恰好避开了致命的魔法陷阱；你每一次不小心弄出噪音，都恰好掩盖了更致命的警报声。你就像一个被幸运女神附体的灾星，一路磕磕绊绊地滚到了终点。",
+      "tableFunction": "凭借极其逆天的狗屎运和各种意外巧合来解决问题的玄学盗贼。",
+      "playableFlaw": "坚信自己拥有极其高超的潜行技术，完全没意识到自己只是单纯的运气好。",
+      "nextHook": "你的好运似乎到头了。你今天刚出门就不小心踩翻了魔法公会的药锅，现在一只暴走的变异九头蛇正在追杀你。",
+      "recommendedClass": [
+        "guild_rogue"
+      ],
+      "tags": [
+        "逆天狗屎运",
+        "物理吵闹潜行",
+        "玄学过关"
+      ]
+    },
+    {
+      "endingId": "elf_absurd_art_critic",
+      "endingType": "absurdAccepted",
+      "title": "战场上的影评人",
+      "verdictLine": "你把极其严肃的实战考核，变成了一场你单方面的、令人极其不适的战术品鉴会。",
+      "explanation": "面对冲锋的怪物，你不仅不拔剑，反而搬了个小马扎坐在一旁，极其做作地开始点评怪物的奔跑姿势不够优雅、咆哮的声音缺乏层次感。怪物被你这种极其降维的鄙视态度彻底激怒，结果在冲向你时因为太过急躁而自己摔进了陷阱。你靠着‘刻薄的品鉴’赢得了考核。",
+      "tableFunction": "拥有极其毒舌的嘲讽技能，能用几句话让敌人的理智值直接清零的奇葩游侠。",
+      "playableFlaw": "在任何危机时刻都会忍不住对敌人的衣着和战术品头论足，极其容易拉仇恨。",
+      "nextHook": "你在一场关乎帝国存亡的战役中，因为指责敌方统帅的盔甲颜色搭配太难看，被敌方全军集火追杀了三个山头。",
+      "recommendedClass": [
+        "guild_ranger"
+      ],
+      "tags": [
+        "毒舌品鉴",
+        "降维嘲讽",
+        "兵不血刃"
+      ]
+    },
+    {
+      "endingId": "elf_absurd_animal_whisperer",
+      "endingType": "absurdAccepted",
+      "title": "万物皆可撸",
+      "verdictLine": "你对毛茸茸生物的狂热执念，让你硬生生把一个高危难度的生态平息任务，变成了一场大型吸猫现场。",
+      "explanation": "你需要降服一头狂躁的变异狮鹫。你没有使用任何高阶德鲁伊法术，而是极其娴熟地掏出了一把特制的‘巨型猫薄荷刷子’，在极度危险的距离下强行给狮鹫梳毛。狮鹫在短暂的懵逼后，竟然真的发出了呼噜呼噜的声音，像一只大猫一样倒在了你怀里。考官看着这一幕，三观碎了一地。",
+      "tableFunction": "能用极其奇怪的物理手段（如撸毛、投喂）强行降服可怕魔物的功能性德鲁伊。",
+      "playableFlaw": "只要看到带毛的生物（哪怕是一头正在吃人的巨熊）都会忍不住冲上去摸一把，完全没有危险意识。",
+      "nextHook": "你听说深渊里有一只长着三个脑袋的地狱犬，你极其兴奋地带着三把大刷子踏上了寻找它的旅途。",
+      "recommendedClass": [
+        "guild_druid"
+      ],
+      "tags": [
+        "物理撸毛",
+        "强行降服",
+        "毛绒控晚期"
+      ]
+    }
+  ]
+}

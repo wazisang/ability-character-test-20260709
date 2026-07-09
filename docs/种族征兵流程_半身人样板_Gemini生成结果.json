@@ -1,0 +1,1039 @@
+{
+  "raceId": "halfling",
+  "raceName": "半身人 (Halfling)",
+  "description": "拥有逆天运气的乐天派。对他们来说，一日六餐比拯救世界重要得多。擅长在最危险的战场上做出一锅美味的炖肉，并在致命陷阱里奇迹般地生还。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_bard": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_ranger": 2,
+          "guild_warlock": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_ranger": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_warlock": 2,
+          "guild_bard": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 1,
+          "guild_ranger": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_bard": 2,
+          "guild_warlock": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_ranger": 2,
+          "guild_warlock": -1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_bard": 2
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_rogue",
+      "name": "天命神偷 (Rogue)",
+      "description": "别人靠潜行，他们靠运气。经常在滑倒的时候顺便躲过了致命一击，并阴差阳错地踩死了Boss。",
+      "requirements": {
+        "dex": 14,
+        "cha": 12
+      }
+    },
+    {
+      "id": "guild_bard",
+      "name": "战地厨神 (Bard)",
+      "description": "用锅碗瓢盆演奏战歌。他们的美食能让即将阵亡的战友垂死病中惊坐起，只为了再吃一口炖肉。",
+      "requirements": {
+        "cha": 14,
+        "con": 10
+      }
+    },
+    {
+      "id": "guild_ranger",
+      "name": "狗骑士 (Ranger)",
+      "description": "骑着大黄狗冲锋陷阵。由于体型太小，经常被敌人当成极其烦人的蚊子，但他们的短弓极其致命。",
+      "requirements": {
+        "dex": 12,
+        "wis": 12
+      }
+    },
+    {
+      "id": "guild_warlock",
+      "name": "契约骗子 (Warlock)",
+      "description": "能厚颜无耻地和恶魔签订契约，并在恶魔想要收割灵魂时用一顿美味的烤肉蒙混过关。",
+      "requirements": {
+        "cha": 14,
+        "int": 10
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "halfling_physique_stealth",
+      "targetId": "guild_rogue",
+      "title": "致命的喷嚏",
+      "scene": "你正潜伏在巨魔的营地里偷取钥匙。正当你即将得手时，空气中飘来一阵胡椒粉味，你忍不住打了个巨大的喷嚏。",
+      "prompt": "巨魔猛地转过头来，你如何化解这个危机？",
+      "options": [
+        {
+          "id": "A",
+          "text": "“阿嚏！”喷嚏打出的瞬间，你顺势把一把辣椒面全撒进巨魔鼻孔里，然后声情并茂地大喊：“这是最新的法式洞穴香氛，先生！免费试用！”",
+          "npcReply": "巨魔被辣得泪流满面，一边打喷嚏一边给你塞小费。‘你的临场推销能力堪称一绝。’",
+          "scoreDelta": {
+            "cha": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "推销香氛",
+            "撒辣椒面"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "擅长用极其离谱的推销话术化解危机的带货大师"
+        },
+        {
+          "id": "B",
+          "text": "喷嚏打出的一瞬间，你借助后坐力完成了一个极其华丽的三周半转体，精准落入巨魔喝剩的空酒桶里，并顺手给自己盖上了盖子。",
+          "npcReply": "巨魔迷茫地环顾四周，只觉得刚才有只灵活的耗子飞了过去。‘极其精妙的物理规避动作。’",
+          "scoreDelta": {
+            "dex": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "三周半转体",
+            "盖桶隐蔽"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "反应极快、能把任何失误化为体操动作的技术流刺客"
+        },
+        {
+          "id": "C",
+          "text": "面对惊醒的巨魔，你立刻掏出一本《巨魔洞穴卫生管理条例》，戴上金丝眼镜严肃地记录：“乱扔骨头、通风不良、有致敏原...我要给你开罚单了！如果不交罚款，我就把隔壁山头的哥布林全引过来吃你的存粮！”",
+          "npcReply": "巨魔被你强大的官僚气场和恶毒的威胁吓住了，乖乖交了保护费。‘你用极其恶劣的行政敲诈逃避了战斗。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "卫生检查罚单",
+            "行政敲诈"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其擅长用伪造公文和官僚主义吓退敌人的混子"
+        },
+        {
+          "id": "D",
+          "text": "你大摇大摆地走出来，指着巨魔火堆上的烤肉痛心疾首：“火候全错了！让开，我来教你什么叫做低温慢烤和美拉德反应！”",
+          "npcReply": "巨魔被你专业的厨师气场镇住了，乖乖退到一边拿起了小本本。‘你用厨艺征服了巨魔的胃。’",
+          "scoreDelta": {
+            "cha": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "E": 2,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 3
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "现场指导烧烤",
+            "美拉德反应"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "不管什么危机都能转化成烹饪教学的战地厨神"
+        }
+      ]
+    },
+    {
+      "id": "halfling_physique_fear",
+      "targetId": "guild_warlock",
+      "title": "恶魔的恐吓",
+      "scene": "你意外召唤出了一只深渊炎魔。它喷吐着硫磺的烈焰，威胁要吞噬你的灵魂，并让你体验永恒的折磨。",
+      "prompt": "面对这种绝对力量的恐吓，你的第一反应是：",
+      "options": [
+        {
+          "id": "A",
+          "text": "你两眼放光地看着炎魔身上的烈焰：“这温度太完美了！老铁，借你的火炖个龙骨汤行不行？我分你一碗，保准比灵魂好吃！”",
+          "npcReply": "炎魔被你离谱的要求整不会了，竟然真的老老实实当起了人形煤气灶。‘你成功把恶魔变成了后厨小弟。’",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 2,
+            "guild_warlock": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "恶魔炖汤",
+            "人形煤气灶"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "神经大条、能把深渊领主当成优质热源的乐天派"
+        },
+        {
+          "id": "B",
+          "text": "你冷静地掏出一沓厚厚的羊皮纸：“吞噬灵魂太低效了。我这里有一份《深渊魔法特许经营权转让协议》，包你年化收益率300%，签吗？”",
+          "npcReply": "炎魔不仅没杀你，还戴上老花镜仔细看起了协议条款。‘你是天生的恶魔资本家。’",
+          "scoreDelta": {
+            "int": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_warlock": 3
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "特许经营协议",
+            "恶魔资本家"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极度精明、能把恶魔忽悠进金融陷阱的法务术士"
+        },
+        {
+          "id": "C",
+          "text": "你立刻掏出一张伪造的《异界遣返令》，指着炎魔大喊：“你的跨位面签证已经过期了！立刻把力量交出来作为保释金，否则我马上向时空管理局举报你非法滞留！”",
+          "npcReply": "炎魔愣了一下，骂骂咧咧地扔下力量撕开传送门溜了。‘你用极具压迫感的行政诈骗敲诈了恶魔。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_warlock": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "异界遣返令",
+            "签证过期诈骗"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其擅长利用伪造公文和跨界法律进行敲诈的法棍"
+        },
+        {
+          "id": "D",
+          "text": "你嫌恶地捏住鼻子，掏出一瓶特大号的‘晨露花香空气清新剂’对着炎魔的脸疯狂喷洒：“太臭了！你这硫磺味严重超标！给我香起来！”",
+          "npcReply": "炎魔被花香味呛得连连咳嗽，含泪逃回了深渊。‘你用保洁阿姨的手段击退了深渊领主。’",
+          "scoreDelta": {
+            "dex": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_ranger": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "空气清新剂攻击",
+            "嫌弃恶魔臭"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "脑洞清奇、能用生活用品打出魔法伤害的奇葩"
+        }
+      ]
+    },
+    {
+      "id": "halfling_physique_agility",
+      "targetId": "guild_ranger",
+      "title": "失控的马车",
+      "scene": "一辆失控的重型马车正在集市上横冲直撞，眼看就要撞上你。你的半身人短腿根本跑不过它。",
+      "prompt": "在千钧一发之际，你如何保命？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你不退反进，极其精准地一个滑铲钻进马车底下，双手死死抱住传动轴，像考拉一样挂在车底，顺便用匕首撬下了车底盘上的一块纯金零件。",
+          "npcReply": "马车最终撞墙停下，而你不仅毫发无损，还发了一笔横财。‘极度疯狂的规避与顺手牵羊。’",
+          "scoreDelta": {
+            "dex": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "P": 2
+          },
+          "affinityDelta": {
+            "guild_rogue": 2,
+            "guild_ranger": 1
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "滑铲挂车底",
+            "顺手牵羊"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极其喜欢在生死边缘疯狂试探和发财的极限神偷"
+        },
+        {
+          "id": "B",
+          "text": "你吹响一声极其响亮的口哨，你的圣伯纳犬坐骑瞬间狂奔而至，一口叼住你的裤腰带，将你极其粗暴但精准地甩到了旁边的二楼阳台上。",
+          "npcReply": "极其狂野的人犬配合。‘你可能跑不过马车，但你有一只能把你当沙包扔的狗。’",
+          "scoreDelta": {
+            "wis": 2,
+            "dex": 2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "S": 1
+          },
+          "affinityDelta": {
+            "guild_ranger": 3
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "狗叼裤腰带",
+            "狂野甩飞"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "与坐骑配合极其默契、战术极其粗暴的游侠骑士"
+        },
+        {
+          "id": "C",
+          "text": "你瞬间趴在地上，从包里掏出一块印着“施工重地，前方塌陷”的醒目路牌挡在身前，并极其专业地给自己戴上了一顶黄色安全帽。",
+          "npcReply": "受惊的马看到了路牌竟然本能地急转弯，撞向了旁边的水果摊。‘极其高效的交通欺诈手段。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -3
+          },
+          "mbtiDelta": {
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_ranger": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "伪造施工路牌",
+            "交通欺诈"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "随身携带各种警示牌进行物理诈骗的安全员"
+        },
+        {
+          "id": "D",
+          "text": "你随手从旁边的水果摊抄起一个极其巨大的南瓜，利用完美的抛物线将其精准卡入马车车轮的辐条中，瞬间导致车轮卡死，马车原地起飞。",
+          "npcReply": "你拍了拍手上的南瓜汁，深藏功与名。‘你对物理学和抛射物轨迹的理解已经登峰造极。’",
+          "scoreDelta": {
+            "int": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "南瓜卡车轮",
+            "离谱物理学"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "总能用廉价瓜果制造极其惊人破坏力的几何学大师"
+        }
+      ]
+    },
+    {
+      "id": "halfling_physique_stamina",
+      "targetId": "guild_bard",
+      "title": "沙漠的考验",
+      "scene": "你们在沙漠中迷路了三天，水和食物都已经耗尽。其他高大的队友已经接连倒下，而你凭借着半身人极低的消耗还在坚持。",
+      "prompt": "在绝境中，你做出了什么举动？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你掏出破木吉他，开始在烈日下以最大的音量弹唱极其魔性的半身人摇滚乐。极度穿脑的魔音硬生生把昏迷的队友全给烦醒了，愤怒地爬起来要揍你。",
+          "npcReply": "虽然你的音乐毫无美感，但成功激起了队友‘想活下去揍你一顿’的求生欲。‘极其硬核的战地物理鼓舞。’",
+          "scoreDelta": {
+            "cha": 3,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "E": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "摇滚魔音",
+            "仇恨唤醒"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "用极度扰民的方式强行给团队续命的灵魂乐手"
+        },
+        {
+          "id": "B",
+          "text": "你凭借半身人的荒野本能，敏锐地在沙丘深处挖出了几条极其肥美的多汁沙虫，不仅自己美美地生吃了，还贴心地把虫汁挤进队友嘴里。",
+          "npcReply": "队友醒来后极其感激，直到他们知道自己喝了什么。‘你出色的荒野求生能力拯救了小队。’",
+          "scoreDelta": {
+            "wis": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "S": 2
+          },
+          "affinityDelta": {
+            "guild_ranger": 2,
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "order": 1
+          },
+          "triggerTags": [
+            "生吃沙虫",
+            "喂虫汁"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "生存能力极强、能把荒野求生变成吃播的游侠"
+        },
+        {
+          "id": "C",
+          "text": "你直接掏出一把折叠躺椅和太阳伞躺下，并且立起一块牌子：“顶级沙漠遗嘱代写及遗物回收服务，收费合理”。你极其悠闲地等着回收他们的装备。",
+          "npcReply": "你的队友们被你丧心病狂的商业行为气得回光返照，硬是爬起来把你揍了一顿。‘令人发指的发死人财商业头脑。’",
+          "scoreDelta": {
+            "int": 1,
+            "wis": -3
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "I": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -2
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "发死人财",
+            "遗物回收"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极其擅长在绝境中就地开展离谱商业活动的奸商"
+        },
+        {
+          "id": "D",
+          "text": "你走着走着，极其离谱地被一根仙人掌绊倒，脸朝下砸在沙地上，结果直接砸穿了一层薄沙，掉进了一个极其隐蔽的清凉地下绿洲里。",
+          "npcReply": "考官极其崩溃。‘别人靠毅力和技能求生，你靠平地摔找绿洲。你的运气简直是个bug。’",
+          "scoreDelta": {
+            "dex": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "P": 2
+          },
+          "affinityDelta": {
+            "guild_rogue": 2
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "平地摔找绿洲",
+            "逆天狗屎运"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "运气好到连老天爷都嫉妒的逆天之子"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_rogue": [
+      {
+        "id": "halfling_rogue_heist",
+        "title": "金库的诱惑",
+        "scene": "你潜入了一个防守极其严密的矮人金库。这里到处都是魔法警报和机械陷阱。你的目标是偷走最中央展览台上的那颗价值连城的‘龙眼红宝石’。",
+        "prompt": "面对复杂的安保系统，你如何把宝石偷到手？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你对复杂的魔法锁一窍不通，直接拿出一根牙签闭着眼睛在锁眼里一顿狂搅。结果机括发出一声脆响，不仅门开了，连带着金库的自毁系统也一起短路了。",
+            "npcReply": "监控室里的矮人工程师看着乱码的面板当场辞职。‘你用极其抽象的运气降维打击了矮人科技。’",
+            "scoreDelta": {
+              "dex": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "牙签狂搅",
+              "降维打击科技"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其依赖逆天运气、能把开锁变成玄学的神偷"
+          },
+          {
+            "id": "B",
+            "text": "你利用体型优势极其冷静地穿过激光网，用一块重量分毫不差的石头极其丝滑地替换了红宝石，甚至还好心地顺手帮矮人修复了两个报警器的故障。",
+            "npcReply": "极其完美的教科书级潜入。‘你不仅偷走了宝石，还免费做了一次安保系统维护。’",
+            "scoreDelta": {
+              "dex": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "control": 1,
+              "order": 1
+            },
+            "triggerTags": [
+              "偷天换日",
+              "顺手修报警器"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "技术极其精湛、甚至还有强迫症的技术流大盗"
+          },
+          {
+            "id": "C",
+            "text": "你转过身，从包里翻出一套劣质的假胡子粘在脸上，然后极其嚣张地揪住同伙的衣领，对赶来的守卫大喊：“长官！我抓住了这个试图破坏矮人伟大工艺的窃贼！申请赏金！”",
+            "npcReply": "你的同伙被当场抓获，而你极其可耻地拿着赏金逃脱了。‘你是个极其熟练且毫无底线的出卖者。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "贴假胡子",
+              "贼喊捉贼"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其擅长伪装成群众进行极度嚣张诈骗的戏精"
+          },
+          {
+            "id": "D",
+            "text": "你直接换上一套外卖员制服，提着两盒极其香浓的烤肉串大摇大摆地走进去，不仅和守卫们打成一片，最后还通过斗地主把那颗红宝石当赌注赢走了。",
+            "npcReply": "考官看着你拿回来的宝石和赢来的金币陷入沉思。‘你用极其离谱的社交诈骗完全取代了潜行技能。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "外卖员制服",
+              "斗地主赢宝石"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极其擅长利用社交牛逼症完成盗窃的抽象大师"
+          }
+        ]
+      }
+    ],
+    "guild_bard": [
+      {
+        "id": "halfling_bard_battle_cooking",
+        "title": "战地食堂",
+        "scene": "你们的小队被困在战壕里，士气极其低落。没有援军，没有音乐，只有极其难吃的硬面饼。作为队伍里的吟游诗人，你需要提振士气。",
+        "prompt": "面对极其恶劣的条件，你如何发挥你的特长？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你一脚踢飞了没用的乐器，极其狂热地支起一口大铁锅，把硬面饼和野菜煮成了一锅极其香浓的乱炖。那极其致命的香味瞬间唤醒了所有人的野性。",
+            "npcReply": "战友们喝完汤后像狂化了一样冲出战壕。‘对于半身人来说，一锅好汤就是最顶级的群体狂暴术。’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "大锅乱炖",
+              "群体狂暴术"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其擅长用高热量美食施展群体狂暴术的战地厨神"
+          },
+          {
+            "id": "B",
+            "text": "你掏出一支极其破旧的陶笛，极其深情地吹奏了一曲极其悲凉的《老妈的苹果派》。极其催泪的旋律让所有硬汉嚎啕大哭，誓死要打赢这场仗回家吃饭。",
+            "npcReply": "你完美地用思乡之情完成了情绪操控。‘极其正统且极具杀伤力的情感共鸣。’",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "悲凉陶笛",
+              "老妈的苹果派"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其擅长用音乐精准打击战友泪腺的情感大师"
+          },
+          {
+            "id": "C",
+            "text": "你极其严肃地拿出一叠《战地资源优化报告》，论证‘高级指挥官需要消耗所有剩余肉干以维持决策能力’，然后当着饥肠辘辘的战友面把肉干吃得吧唧作响。",
+            "npcReply": "你极其卑劣且厚颜无耻的贪污行为引发了哗变，你被战友们愤怒地扔出了战壕。‘极其令人作呕的官僚主义吸血鬼。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_bard": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "战地资源优化",
+              "官僚主义贪污"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其擅长用严密的学术伪装进行大规模战地摆烂的诡辩家"
+          },
+          {
+            "id": "D",
+            "text": "你觉得面饼太硬，于是极其欢乐地把它们当成飞盘，在战壕里和你的大黄狗玩起了极其弱智的抛接游戏，并发出极其极具感染力的杠铃般笑声。",
+            "npcReply": "对面的敌军看着你们极度智障的欢乐互动，感到极其迷惑并停止了射击。‘你用纯粹的抽象行为达成了战地停火。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "面饼飞盘",
+              "智障欢乐互动"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极其擅长用极度智障的欢乐行为瓦解战场严肃气氛的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_ranger": [
+      {
+        "id": "halfling_ranger_steed",
+        "title": "狗骑士的冲锋",
+        "scene": "作为半身人游侠，你的专属坐骑是一只体型巨大的圣伯纳犬。在一次突袭行动中，前方出现了由全副武装的人类重装步兵组成的盾墙。你们必须突破这道防线。",
+        "prompt": "面对这种体型上极其悬殊的战斗，你如何指挥你的猎犬冲锋？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其冷静地指挥猎犬利用底盘极低的优势滑铲过去，而你则极其敏捷地倒挂在狗肚皮底下，双手挥舞短剑，极其精准地割断了所有重装步兵的裤腰带。",
+            "npcReply": "盾墙瞬间因为集体提裤子而土崩瓦解。‘极其精准的下三路战术攻击。体型劣势成了你最致命的武器。’",
+            "scoreDelta": {
+              "dex": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 3
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "倒挂狗肚皮",
+              "割裤腰带"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其擅长利用体型优势进行下三路精准打击的战术游侠"
+          },
+          {
+            "id": "B",
+            "text": "你狂热地嚎叫着，指挥体型巨大的圣伯纳犬像一台发疯的推土机般直接用狗头撞开盾墙！而你自己则踩着狗背高高跃起，在半空中极其拉风地疯狂放箭。",
+            "npcReply": "盾墙被硬生生撞碎，狗眼冒金星。‘极其狂野的战斗方式，你把坐骑当成了活体破城槌。’",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "狗头撞盾墙",
+              "跃起放箭"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "战斗风格极其彪悍、把狗当成重型攻城武器的狂放骑士"
+          },
+          {
+            "id": "C",
+            "text": "你立刻吹响极其尖锐的警报哨，掏出一卷警戒线拉开，并极其惊恐地大喊：“小心！这狗得了极其高传染性的深渊狂犬病！谁碰谁死！”然后自己戴上防毒面具先溜了。",
+            "npcReply": "全副武装的人类步兵被你极其逼真的生化危机警告吓得四散奔逃。‘极度无耻但极其有效的战术欺诈，你连狗都骗。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_ranger": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "深渊狂犬病谎言",
+              "生化危机欺诈"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其擅长利用生化恐吓和战术谎言瓦解敌军的骗子"
+          },
+          {
+            "id": "D",
+            "text": "你极其从容地从包里掏出一根极其巨大的恐龙骨头，用尽全力抛向人类盾墙的正后方。你的猎犬瞬间双眼血红，为了抢骨头直接把整排步兵撞飞到了天上。",
+            "npcReply": "考官看着满地找牙的人类步兵陷入沉默。‘你这不是冲锋，你这是在利用吃货的本能进行物理清场。’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "扔恐龙骨头",
+              "吃货物理清场"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "非常善于利用动物本能进行极其抽象的大规模物理破坏的奇葩"
+          }
+        ]
+      }
+    ],
+    "guild_warlock": [
+      {
+        "id": "halfling_warlock_pact",
+        "title": "欺诈的契约",
+        "scene": "你正在与一名深渊领主进行契约谈判。他要求你用一半的灵魂换取他那毁灭性的黑暗魔法。如果不答应，他立刻就会把你烧成灰烬。",
+        "prompt": "面对这种强买强卖的恶魔契约，你如何施展半身人的‘契约魔法’？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其专业地戴上单片眼镜，翻开厚厚的《多元宇宙契约法典》，极其犀利地指出契约中关于“灵魂交付时间”的漏洞，硬生生把代价砍成了“在宇宙毁灭后的三个工作日内支付”。",
+            "npcReply": "深渊领主被你极度严密的法律逻辑绕晕，竟然签了字。‘你是个极其可怕的法务术士，恶魔都在你的合同里吃了亏。’",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_warlock": 3
+            },
+            "alignmentDelta": {
+              "order": 1,
+              "control": 2
+            },
+            "triggerTags": [
+              "契约法典",
+              "交付时间漏洞"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极其精通各种商业套路与契约漏洞的法务型术士"
+          },
+          {
+            "id": "B",
+            "text": "你装出极度恐惧的样子满口答应，但在签字的瞬间，你极其敏捷地使用了偷梁换柱的手法，用极其逼真的幻象魔法把名字签在了一张写着“赠与凭证”的废纸上。",
+            "npcReply": "你骗取了力量却没有付出任何代价。‘极其胆大包天的老千，深渊法庭已经向你发出了跨界通缉令。’",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2,
+              "guild_warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "action": 1
+            },
+            "triggerTags": [
+              "偷梁换柱",
+              "签署赠与凭证"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其胆大包天、擅长用魔术手法进行空手套白狼的老千"
+          },
+          {
+            "id": "C",
+            "text": "你极其严肃地掏出一份《深渊劳动者权益保障宣言》，警告深渊领主他索要灵魂的行为严重违反了最低工资标准，并威胁如果不给你双倍的黑魔法力量，就向位面劳工局举报他虐待员工。",
+            "npcReply": "深渊领主被你极其离谱的反向敲诈震慑，为了避免惹上跨位面官司，只能咬牙给了你双倍力量。‘极度恶劣的维权敲诈。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_warlock": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "劳动者维权",
+              "反向敲诈双倍力量"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其擅长利用跨界劳动法对恶魔进行反向敲诈的维权斗士"
+          },
+          {
+            "id": "D",
+            "text": "你极其热情地掏出一份极其精美的PPT，口若悬河地向领主介绍起名为“深渊灵魂裂变计划”的庞氏骗局，竟然试图把这个古老恶魔发展成你的下线。",
+            "npcReply": "深渊领主不仅没有杀你，反而极其激动地表示要拉拢整个深渊高层加入你的计划。‘你用极度离谱的传销手段完成了对恶魔的反向洗脑。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "深渊PPT",
+              "庞氏骗局"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极其擅长传销洗脑、连深渊领主都能忽悠瘸的神级骗子"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "halfling_rogue_end",
+      "title": "天命神偷",
+      "condition": "affinity.guild_rogue >= 3",
+      "description": "你凭借着逆天狗屎运成为了全大陆最富有、但也最让人摸不着头脑的神偷。你从来不去研究复杂的锁具，每次去偷东西都是平地摔然后刚好撞开了保险库的门。那些自诩为顶尖安保大师的人类工程师在你的离谱运气面前纷纷辞职。你成了所有同行的噩梦，因为他们苦练十年技术，还不如你出门踩个狗屎的收益高。",
+      "imagePrompt": "A cheerful halfling rogue with completely mismatched, unstealthy clothes, walking away from a heavily secured, complex bank vault whose door has inexplicably fallen off its hinges. The halfling is happily eating an apple, while an intricate trap system behind him collapses on itself in a comical chain reaction. Epic fantasy art style, bright and comic atmosphere. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "halfling_bard_end",
+      "title": "深渊美食品鉴家",
+      "condition": "affinity.guild_bard >= 3",
+      "description": "你彻底将战地音乐改造成了战地食堂。你带着极其巨大的铁锅走遍了各个危险的位面。无论是巨龙的尾巴还是深渊恶魔的触手，在你的锅里都会变成顶级的美味。无数凶残的怪物为了抢夺你熬的一碗汤而自相残杀，你硬生生地用厨艺完成了世界和平的壮举。",
+      "imagePrompt": "A jolly halfling bard standing on top of a slain demon, using its fiery horns to boil a massive cast-iron pot of glowing, delicious-looking stew. Various terrifying monsters are sitting around politely with empty bowls, waiting for a serving. Epic fantasy art style, warm lighting, absurd but wholesome. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "halfling_failure_end",
+      "title": "餐盘上的小丑",
+      "condition": "alignment.risk >= 2",
+      "description": "你不仅失去了半身人的运气，还展现出了令人极度作呕的懦弱和背叛。最终，你因为极其愚蠢地试图在深渊领主的餐桌上出卖队友，被领主嫌弃肉质太差，直接做成了一盘极度难吃的黑胡椒烤半身人。可悲的是，连恶魔都不愿意吃你，你的肉体和灵魂一起被扔进了垃圾桶。",
+      "imagePrompt": "A pathetic, treacherous halfling tied to a giant roasting spit in a demonic kitchen, looking absolutely terrified and humiliated. The demons around are making gestures of disgust, refusing to even eat him because he looks so unappetizing and cowardly. Dark, grim fantasy style. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

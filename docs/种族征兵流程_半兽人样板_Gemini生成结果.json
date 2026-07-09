@@ -1,0 +1,962 @@
+{
+  "raceId": "orc",
+  "raceName": "半兽人 (Orc)",
+  "description": "信奉‘俺寻思之力’与绝对武力。能动手绝不动脑，如果动手解决不了，说明力气还不够大。对他们来说，最完美的潜行就是把所有目击者都杀光。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_barbarian": 2,
+          "guild_fighter": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_cleric": 2,
+          "guild_barbarian": -1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_barbarian": 2,
+          "guild_cleric": 2
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_fighter": 2,
+          "guild_cleric": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_barbarian": 2,
+          "guild_rogue": 2
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_barbarian",
+      "name": "血怒狂暴者 (Barbarian)",
+      "description": "只要愤怒值叠满，连巨龙的头盖骨都能徒手掀开。他们的战术面板上只有一个极其巨大的‘WAAAGH！’。",
+      "requirements": {
+        "str": 14,
+        "con": 12
+      }
+    },
+    {
+      "id": "guild_fighter",
+      "name": "碎骨督军 (Fighter)",
+      "description": "除了蛮力，他们还有极其残忍的战斗智商。懂得用最有效率的方式拆卸敌人的关节，或者用队友的盾牌当投掷武器。",
+      "requirements": {
+        "str": 12,
+        "con": 12,
+        "dex": 10
+      }
+    },
+    {
+      "id": "guild_rogue",
+      "name": "物理刺客 (Rogue)",
+      "description": "掌握了半兽人特有的潜行技巧：只要把方圆十里内所有能喘气的生物全部物理超度，就没人知道我潜入过。",
+      "requirements": {
+        "str": 12,
+        "dex": 12
+      }
+    },
+    {
+      "id": "guild_cleric",
+      "name": "先祖萨满 (Cleric)",
+      "description": "用极其暴力的‘肌肉神术’跟先祖之灵交流。治疗法术通常伴随着极其剧烈的巴掌和‘赶紧给老子站起来’的怒吼。",
+      "requirements": {
+        "str": 10,
+        "wis": 12,
+        "cha": 12
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "orc_physique_locked_door",
+      "targetId": "guild_barbarian",
+      "title": "复杂的门锁",
+      "scene": "你的小队被一扇极其厚重的精钢大门挡住了去路。大门上有一个极其复杂的九宫格魔法密码锁，如果三次输错就会触发毁灭性的连环爆炸陷阱。盗贼队友正在满头大汗地计算密码。",
+      "prompt": "面对这种极其考验智商和耐心的解谜环节，你的‘半兽人式’破局方法是：",
+      "options": [
+        {
+          "id": "A",
+          "text": "你一把推开还在算概率的盗贼，往手心吐了口唾沫，大喝一声：‘俺寻思这门轴也是需要呼吸的！’随后抡起三百斤的重锤，连带着墙皮、门轴和魔法锁一起砸成了稀烂。密码？密码就是物理学！",
+          "npcReply": "大门轰然倒塌，密码锁被物理超度。陷阱甚至连判定都没来得及走完。‘这才是最纯粹的物理骇客，没有门，自然就不需要开门。’",
+          "scoreDelta": {
+            "str": 3,
+            "wis": -1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 3,
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "物理骇客",
+            "俺寻思之力",
+            "门轴呼吸法"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "坚信‘大力出奇迹’的物理爆破专家"
+        },
+        {
+          "id": "B",
+          "text": "你冷静地拦住想要暴捶密码锁的队友，用指关节敲了敲大门旁边的承重墙。‘兄弟们，防盗门防的是盗贼，不是拆迁办。’紧接着你掏出破甲镐，在墙壁上精准地凿出了一个可供两人并排走的巨洞。",
+          "npcReply": "盗贼看着墙上的大洞，默默合上了密码本。‘卓越的空间战术思维。你重新定义了什么是绕后。’",
+          "scoreDelta": {
+            "str": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "拆迁办思维",
+            "精准破墙",
+            "物理绕后"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "粗暴但带有极强战术思维的拆墙狂人"
+        },
+        {
+          "id": "C",
+          "text": "‘爆……爆炸？！’你猛地打了个哆嗦，迅速从背包里掏出一份盖着假章的《半兽人战后创伤应激障碍诊断书》，一边浑身抽搐一边大喊：‘我PTSD犯了！医生说我不能接触闪光和巨响！’然后麻溜地钻进了远处的防爆桶里。",
+          "npcReply": "队友们面无表情地看着你在防爆桶里瑟瑟发抖。‘你的战术规避动作很熟练，但你的尊严已经和那张假病历一起碎了一地。’",
+          "scoreDelta": {
+            "con": -2,
+            "cha": -3
+          },
+          "mbtiDelta": {
+            "F": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": -4
+          },
+          "alignmentDelta": {
+            "risk": 2,
+            "evil": 1
+          },
+          "triggerTags": [
+            "假病历",
+            "战术钻桶",
+            "PTSD遁法"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "随身携带假病历本的战术规避达人"
+        },
+        {
+          "id": "D",
+          "text": "你盯着密码锁沉思了片刻，然后从怀里掏出一大块还在滴油的变质烤野猪肉，硬生生顺着密码锁的缝隙塞了进去。‘只要油水够大，锁芯也会滑肠。’你一边用力挤压脂肪一边一本正经地解释。",
+          "npcReply": "变质烤肉的酸腐油脂奇迹般地导致魔法锁内的精巧齿轮发生严重卡壳，大门‘咔哒’一声弹开了。‘这不可名状的开锁手法，简直是对炼金学的莫大侮辱。’",
+          "scoreDelta": {
+            "dex": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 2
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "变质烤肉",
+            "脂肪润滑",
+            "炼金侮辱"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "总能用令人倒胃口的方式触发奇迹的奇葩"
+        }
+      ]
+    },
+    {
+      "id": "orc_physique_stealth",
+      "targetId": "guild_rogue",
+      "title": "半兽人的潜行",
+      "scene": "前方有一座极其严密的地精岗哨。作为队伍里被指派的潜行者，你需要极其安静地穿过这片区域去拉下吊桥。但你穿着极其沉重的钉刺皮甲，甚至走起路来都在‘哐哐’作响。",
+      "prompt": "面对这种极其不适合你的潜行任务，你如何执行你的‘暗杀’？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你光明正大地从正面走到岗哨中央，在警报拉响前，用巨斧以极其骇人的效率将哨塔连同十二个地精全部劈成肉泥。完事后你优雅地擦了擦手：‘没人看见我潜行进来了，因为活着的目击者已经归零了。’",
+          "npcReply": "血流成河，鸦雀无声。‘无懈可击的逻辑闭环。只要死人不会说话，这就是最顶级的潜行。’",
+          "scoreDelta": {
+            "str": 3,
+            "dex": -1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3,
+            "guild_barbarian": 1
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "目击者清零",
+            "物理潜行",
+            "正面暗杀"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "精通‘目击者清零’法则的物理潜行大师"
+        },
+        {
+          "id": "B",
+          "text": "你从附近的泥坑里抓起两只尖叫的野猪，给它们的尾巴点上火，然后精准地投掷进地精岗哨的军火库方向。趁着地精们为了救火乱作一团，你像个大爷一样悠闲地踱步过去，把吊桥的拉杆拽了下来。",
+          "npcReply": "极度混乱的场面掩盖了你沉重的脚步声。‘虽然做法粗暴到了极点，但这确实是一次完美的战术声东击西。’",
+          "scoreDelta": {
+            "str": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 2,
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "投掷火猪",
+            "战术遛弯",
+            "声东击西"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "擅长用极致混乱制造隐蔽空间的战术大师"
+        },
+        {
+          "id": "C",
+          "text": "潜行太危险了！你毫不犹豫地吹响了一个劣质的哨子，指着盗贼队友大喊：‘长官！我抓到了一个联盟间谍！申请减刑和全额赏金！’趁着地精们全副武装扑向懵逼的队友，你头也不回地跑路了。",
+          "npcReply": "盗贼在被淹没前对你竖起了中指。‘你对卖队友的业务熟练得让人心寒。这已经不是懦弱，是纯粹的无耻。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "倒打一耙",
+            "间谍指控",
+            "卖队友"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "为了保命随时随地转做二五仔的极品人渣"
+        },
+        {
+          "id": "D",
+          "text": "你扯下旁边的巨大树叶和藤蔓，把自己裹得像个绿色的粽子，然后大摇大摆地走进地精岗哨，闭着眼睛开始进行极其诡异的光合作用。‘别看我，我只是一棵长着獠牙的盆栽。’",
+          "npcReply": "地精守卫们盯着这棵流着口水、肌肉贲张的‘盆栽’，集体陷入了长达五分钟的大脑宕机。趁他们怀疑人生时，你已经顺手拉下了吊桥。‘拟态伪装的至高境界，就是让敌人以为自己疯了。’",
+          "scoreDelta": {
+            "con": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "拟态盆栽",
+            "光合作用",
+            "精神污染"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "能够随时随地进行精神污染的抽象伪装者"
+        }
+      ]
+    },
+    {
+      "id": "orc_physique_magic_resist",
+      "targetId": "guild_barbarian",
+      "title": "法爷的噩梦",
+      "scene": "对练场上，一个极其高傲的人类法师对你释放了一个极其复杂的‘高阶恐惧术’。这种法术通常能让意志不坚的人极其崩溃地跪地求饶。",
+      "prompt": "当极其恐怖的幻象侵入你的大脑时，你的半兽人神经会如何反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "法术制造的恐怖骷髅幻象，在你不带任何褶皱的大脑处理下，被自动过滤成了香喷喷的骨头熬汤。你甚至馋得直流口水，顶着精神压迫一路狂奔，一口咬断了法师施法的橡木法杖。‘这排骨怎么是木头味的？！’",
+          "npcReply": "法师被你眼冒绿光、吃干抹净的恐怖食欲吓得当场解除了法术。‘你的智商低得恰到好处，完美免疫了所有需要想象力的精神攻击。’",
+          "scoreDelta": {
+            "con": 3,
+            "int": -1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "智商豁免",
+            "啃噬法杖",
+            "食欲克制恐惧"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "用极其单薄的智力完美豁免精神攻击的狂战"
+        },
+        {
+          "id": "B",
+          "text": "你强忍着幻象带来的不适，拔出腰间的飞斧，一个精准的战术投掷直接剁在了法师的脚趾头上。法师顿时发出一声惨绝人寰的尖叫，什么高阶恐惧术瞬间烟消云散。‘法术需要专注，而断掉的脚趾是专注最大的敌人。’",
+          "npcReply": "法师抱着脚趾在地上疯狂打滚。‘简单、粗暴且极度高效的打断技。你向所有人证明了战士的禁魔领域叫做物理创伤。’",
+          "scoreDelta": {
+            "str": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_barbarian": 1
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "剁脚趾打断",
+            "物理禁魔",
+            "战术飞斧"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "深谙物理打断法术施法的暴力专家"
+        },
+        {
+          "id": "C",
+          "text": "恐怖幻象刚一出现，你立马闭上眼睛疯狂倒地装死。为了让装死看起来更逼真，你甚至硬生生憋气憋到脸色发紫，连心跳都慢了下来，主打一个‘只要我没有意识，精神攻击就打不中我’。",
+          "npcReply": "法师看着地上那具直挺挺的、甚至开始发臭的‘尸体’，默默取消了法术。‘用极其硬核的龟息功来逃避现实，真是难为你了。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "F": 2
+          },
+          "affinityDelta": {
+            "guild_barbarian": -4
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "憋气装死",
+            "断气规避",
+            "硬核龟息"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "熟练掌握断气装死神功的绝对逃避者"
+        },
+        {
+          "id": "D",
+          "text": "幻象中的恐怖怪物张牙舞爪，而你直接在幻象里原地开始跳起了一段极其妖娆、辣眼睛的半兽人钢管舞。你甚至对那些恐怖幻象抛起了媚眼。这种超越了碳基生物底线的画面，顺着精神链接直接反向输入了法师的脑海。",
+          "npcReply": "法师‘哇’地一声吐了一地，精神连接瞬间崩溃。‘你用不可名状的扭曲舞姿，完成了对施法者的反向精神污染。’",
+          "scoreDelta": {
+            "cha": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "E": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "妖娆钢管舞",
+            "反向精神污染",
+            "辣眼睛反杀"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "擅长用辣眼睛行为反制法术的抽象奇葩"
+        }
+      ]
+    },
+    {
+      "id": "orc_physique_diet",
+      "targetId": "guild_cleric",
+      "title": "铁胃的试炼",
+      "scene": "先祖萨满的试炼极其硬核：考官端上来一盘极其极其令人作呕的‘剧毒魔沼蛙刺身’。这种蛙的毒液极其猛烈，通常只有生命力极其顽强的人才能活下来与先祖沟通。",
+      "prompt": "面对这盘还在极其诡异地抽搐、散发着极其恶臭的食物，你的选择是：",
+      "options": [
+        {
+          "id": "A",
+          "text": "你毫无犹豫地抓起那只还在抽搐的毒蛙，连咀嚼都省了，直接一口囫囵吞下。剧毒瞬间引发了强烈的胃痉挛，你一边翻着白眼口吐白沫，一边兴奋地大吼大叫：‘先祖保佑！这蛤蟆够劲儿！’",
+          "npcReply": "你强大的肉体生生扛住了毒素，并在毒性幻觉中与先祖完成了热烈的交谈。‘极其纯粹的肌肉神术觉醒者，你的胃袋比钢板还要坚固。’",
+          "scoreDelta": {
+            "con": 3,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "活吞毒蛙",
+            "口吐白沫",
+            "硬扛剧毒"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "拥有变态体质、用物理硬扛剧毒的硬核萨满"
+        },
+        {
+          "id": "B",
+          "text": "你嫌弃地挑开刺身，从背包里掏出一把深渊辣椒面和重度孜然，给这只蛙来了个里外涂抹，然后架在篝火上烤至焦炭状。‘我只信奉一个真理：只要火候够大，一切毒素都会转化成嘎嘣脆的优质蛋白。’",
+          "npcReply": "你吃下了焦炭，虽然没看到先祖，但完美中和了毒性。‘你用重口味的美拉德反应战胜了自然界的剧毒，令人敬佩的野外生存学。’",
+          "scoreDelta": {
+            "str": 2,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_fighter": 2,
+            "guild_cleric": 1
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "孜然烧烤",
+            "高温去毒",
+            "嘎嘣脆蛋白"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "深谙高温消毒原理的狂暴美食家"
+        },
+        {
+          "id": "C",
+          "text": "你盯着那盘毒蛙，忽然灵机一动，掏出一本厚厚的《半兽人劳动法》，指着条款大声控诉：‘这属于未提供安全劳保用品的违规试炼！我要向部落仲裁庭起诉你们职场霸凌！’然后趁考官愣神，一脚踢翻了盘子。",
+          "npcReply": "考官被你的法律名词轰炸得陷入了沉思，完全忘记了你根本没吃毒蛙的事实。‘你用极其狡猾的规则漏洞，狠狠践踏了先祖的传统。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "E": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "劳动法遁",
+            "起诉考官",
+            "职场霸凌指控"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "熟读劳动法、用规则漏洞躲避试炼的法棍"
+        },
+        {
+          "id": "D",
+          "text": "你把魔沼蛙顶在头顶上，然后开始疯狂地拍打自己极其滚圆的肚皮，敲出了一段动感十足的B-Box节奏。你宣称这是古老的‘肚皮共振解毒法’，企图用声波在体外把蛙的毒腺直接震碎。",
+          "npcReply": "你的肚皮被拍得青紫，但魔沼蛙却被你震得晕了过去，毒液全吐在了地上。‘先祖可能都被你这种匪夷所思的操作给逗乐了，竟然真的没中毒。’",
+          "scoreDelta": {
+            "con": 2,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "肚皮BBox",
+            "共振解毒",
+            "震晕毒蛙"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "总能用极其抽象的物理操作达成玄学效果的奇物"
+        }
+      ]
+    },
+    {
+      "id": "orc_physique_interrogation",
+      "targetId": "guild_rogue",
+      "title": "粗暴的审讯",
+      "scene": "你们极其艰难地抓获了一名极其极其嘴硬的高等精灵斥候。他极其极其高傲地闭口不言，完全无视了人类骑士极其极其极其文明的审讯手段。",
+      "prompt": "作为队伍里的物理刺客/拷问专家，轮到你上场了。你会如何让他极其极其极其快地开口？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你大步走上前，一言不发地拿起精灵那把极其精美的传家宝长弓，当着他的面，用你粗糙的大手一点、一点地把它撅成了两段。然后你拿起带有精灵铭文的木刺，顶在精灵引以为傲的下巴上：‘是你的嘴硬，还是这块破木头硬？’",
+          "npcReply": "精灵眼中的高傲瞬间崩溃，心痛地惨叫出声，随后极其配合地交代了所有情报。‘精准打击敌人的心理防线，极致的冷酷无情。’",
+          "scoreDelta": {
+            "str": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "J": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3,
+            "guild_fighter": 1
+          },
+          "alignmentDelta": {
+            "control": 2,
+            "action": 1
+          },
+          "triggerTags": [
+            "折断长弓",
+            "心理破防",
+            "冷酷无情"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极其残忍、深谙毁坏贵重物品施压的拷问大师"
+        },
+        {
+          "id": "B",
+          "text": "你根本懒得废话，直接伸手捏住精灵那纤细的脖子，把他整个人像小鸡一样提到了半空中。你张开满是獠牙的大嘴，口水混合着大蒜的臭气直接喷在他脸上：‘不说？那就拿你当今天的饭后甜点！’",
+          "npcReply": "精灵被你恐怖的食欲和严重的口臭直接熏晕了过去，虽然没问出完整情报，但搜身时他已经无力反抗。‘极其直接的野蛮威慑，纯粹的恐惧投射。’",
+          "scoreDelta": {
+            "con": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_barbarian": 2
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "锁喉生吞",
+            "口臭攻击",
+            "野蛮威吓"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "缺乏耐心、只懂用野蛮威吓和口臭解决问题的暴徒"
+        },
+        {
+          "id": "C",
+          "text": "你凑到精灵耳边，压低声音说：‘两千金币，外加你那套精灵丝绸内衣，我立马在牢房后墙挖个洞放你走。’精灵为了保命立刻签了魔法欠条。你拿到欠条后，真的在墙上挖了个洞，让他滚蛋了。",
+          "npcReply": "骑士发现犯人不见时，你正数着金币装傻充愣。‘为了金币你可以出卖一切，你的道德底线比地精的个头还要矮。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -2
+          },
+          "mbtiDelta": {
+            "P": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "evil": 3
+          },
+          "triggerTags": [
+            "索要贿赂",
+            "私放囚犯",
+            "贪婪无底线"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "见钱眼开、随时可以进行肮脏交易的腐败分子"
+        },
+        {
+          "id": "D",
+          "text": "你掏出一把生了锈的破锯子，没有去锯精灵，而是走到旁边生满铁锈的铁门前，开始用锯子疯狂地来回摩擦。那极其刺耳、令人牙酸的金属刮擦声在密闭的审讯室里疯狂回荡。",
+          "npcReply": "拥有超强听觉的精灵双手捂住耳朵，痛苦地满地打滚，不到五秒就哭喊着招供了。‘这极其缺德的音波折磨，绝对算得上是精神污染领域的奇迹。’",
+          "scoreDelta": {
+            "int": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_cleric": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "锯铁门",
+            "音波精神污染",
+            "物理折磨听觉"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "极其擅长利用非人折磨手段和音波攻击的恶鬼"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_barbarian": [
+      {
+        "id": "orc_barb_rage_trigger",
+        "title": "沸腾之血",
+        "scene": "血怒试炼的第一关，考官命令几个地精拿着极其尖锐的长矛不断戳刺你的大腿，试图激发出你最原始的狂化状态。",
+        "prompt": "面对这种极其屈辱的疼痛，你要如何释放你的怒火？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你发出一声如同雷鸣般的狂吼，肌肉猛然膨胀。你不仅没有躲避，反而迎着长矛往前走，徒手一把抓住矛杆，硬生生把那个地精拽到半空中，然后一记势大力沉的头槌直接把对方砸得眼冒金星。",
+            "npcReply": "疼痛成了你最完美的兴奋剂。‘这才是最纯粹的狂化，你的怒火足以融化钢铁。’",
+            "scoreDelta": {
+              "str": 3,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "徒手夺矛",
+              "迎难而上",
+              "致命头槌"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "在痛苦中爆发恐怖战斗力的纯粹狂战士"
+          },
+          {
+            "id": "B",
+            "text": "你冷冷地拔出腿上的长矛，连眉头都没皱一下。你不屑于对弱小的地精发脾气，而是转身一脚踹飞了旁边重达千斤的青铜巨鼎。巨鼎砸穿了墙壁，你用这种绝对霸道的方式宣告了你的力量。",
+            "npcReply": "地精们吓得丢下武器跪地求饶。‘极度傲慢的力量展示，你不屑于向蝼蚁宣泄愤怒。’",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "control": 1
+            },
+            "triggerTags": [
+              "踹飞巨鼎",
+              "冷酷无视",
+              "力量碾压"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "自负傲慢、不屑于欺凌弱小的高傲暴徒"
+          },
+          {
+            "id": "C",
+            "text": "长矛刚戳破一点皮，你立马杀猪般地惨叫起来。你火速掏出一张皱巴巴的《和平主义者豁免证明》，高喊着：‘我有免战金牌！打人犯法！我要投诉你们使用管制刀具！’然后抱头鼠窜，一溜烟逃出了考场。",
+            "npcReply": "地精们举着长矛在风中凌乱。‘你用极其娴熟的法律武器，成功捍卫了自己那少得可怜的痛觉神经，可惜丢光了兽人的脸。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_barbarian": -4
+            },
+            "alignmentDelta": {
+              "risk": 2
+            },
+            "triggerTags": [
+              "和平主义证明",
+              "投诉管制刀具",
+              "抱头鼠窜"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "精通利用免战声明逃避一切肉体痛苦的滑头"
+          },
+          {
+            "id": "D",
+            "text": "你不仅没有狂化，反而因为疼痛触发了某种奇怪的开关。你猛吸一口气，扯开破锣嗓子，开始深情且极度跑调地高唱《兽人十八摸》。那魔音穿脑的歌声化作实质的物理伤害，无差别攻击在场所有人。",
+            "npcReply": "地精们捂着流血的耳朵疯狂逃窜。‘不可思议……你竟然用声带完成了狂暴战的群体恐惧效果。’",
+            "scoreDelta": {
+              "cha": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "跑调战歌",
+              "魔音穿脑",
+              "声波恐惧"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "能把疼痛转化为魔音穿脑进行群伤的抽象歌手"
+          }
+        ]
+      }
+    ],
+    "guild_rogue": [
+      {
+        "id": "orc_rogue_assassination",
+        "title": "暗杀的奥义",
+        "scene": "作为潜行者，你的目标是暗杀一个被重兵把守的兽人军阀。他正躲在极其坚固的堡垒里。",
+        "prompt": "你要如何极其完美地完成这次暗杀？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你一脚踹碎了堡垒的大门，手持两把涂满烈性毒药的重型开山刀，一路像绞肉机一样从正门狂砍到顶楼。在所有人震惊的目光中，你一刀砍下了军阀的脑袋。‘这就是我的潜行，绝对没人活着出去通风报信！’",
+            "npcReply": "堡垒内尸横遍野，血流成河。‘把暗杀硬生生玩成了攻城战，你完美定义了什么是物理潜行。’",
+            "scoreDelta": {
+              "str": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3,
+              "guild_barbarian": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "正门绞肉机",
+              "物理清场",
+              "硬核暗杀"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "坚信‘杀光目击者就是潜行’的绞肉机刺客"
+          },
+          {
+            "id": "B",
+            "text": "你摸清了军阀的饮食规律，在几公里外的一处高地，用特制的巨型机弩把一发装满剧毒孢子的箭矢精准射入了他的烤肉帐篷里。然后你悠闲地泡了杯茶，用望远镜冷酷地看着堡垒内部乱作一团。",
+            "npcReply": "军阀毒发身亡，卫兵连敌人的影子都没看到。‘运筹帷幄的超视距暗杀，极其阴毒且高效。’",
+            "scoreDelta": {
+              "int": 2,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "超视距投毒",
+              "机弩狙击",
+              "运筹帷幄"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "擅长超视距打击和精准投毒的老硬币"
+          },
+          {
+            "id": "C",
+            "text": "你费劲千辛万苦潜入堡垒，结果一看到军阀那夸张的肌肉就怂了。你立刻双膝跪地，双手奉上雇主的名单和所有暗杀计划，声泪俱下地大喊：‘大王！我是来投诚的！这就是那个想杀您的混蛋！’",
+            "npcReply": "军阀极其满意地收编了你，而你的前雇主很快被满门抄斩。‘只要滑跪得够快，敌人的大腿就是你最稳固的靠山。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "evil": 3
+            },
+            "triggerTags": [
+              "滑跪投诚",
+              "出卖雇主",
+              "职业反骨仔"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其熟练掌握滑跪投诚技巧的职业反骨仔"
+          },
+          {
+            "id": "D",
+            "text": "你穿上一身西装，夹着公文包，大摇大摆地敲开堡垒大门，自称是‘地精联合保险公司’的高级理赔员。你靠着极其离谱的嘴遁和话术，硬生生把军阀忽悠得买了一份‘意外死亡险’，并在签字笔的墨水里下了见血封喉的剧毒。",
+            "npcReply": "军阀签完字后毒发身亡，而你甚至还合法地拿走了他的第一笔保费。‘这是一种超越了碳基生物理解范畴的金融诈骗式暗杀。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "E": 1
+            },
+            "affinityDelta": {
+              "guild_cleric": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "保险推销",
+              "理赔员伪装",
+              "合同下毒"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "能把商业诈骗玩成夺命暗杀的超级神棍"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "orc_barbarian_end",
+      "title": "碎骨的狂怒",
+      "condition": "affinity.guild_barbarian >= 3",
+      "description": "你完美地成为了极其暴力的碎骨狂魔。你喜欢用物理毁灭一切。WAAAGH！",
+      "imagePrompt": "A highly detailed, brutal Orc barbarian mid-roar, muscles bulging, covered in tribal war paint. He is wielding a massive, jagged bone-cleaver. Background is a chaotic, bloody battlefield filled with destruction and raging fire. Epic dark fantasy style, intense and terrifying. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "orc_rogue_end",
+      "title": "绝对的潜行",
+      "condition": "affinity.guild_rogue >= 3",
+      "description": "你完美地诠释了物理潜行。只要杀光所有目击者，就是潜行。",
+      "imagePrompt": "A terrifying Orc rogue standing amidst a pile of defeated guards. He is heavily muscled, dual-wielding massive poisoned axes, completely ignoring traditional stealth. He has a cruel, confident grin. Epic dark fantasy style, brutal and ironic stealth. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "orc_failure_end",
+      "title": "断牙的耻辱",
+      "condition": "alignment.risk >= 2",
+      "description": "你极其懦弱丢脸。你被剥夺了獠牙。",
+      "imagePrompt": "A pathetic, cowardly Orc with his iconic tusks completely broken off. He is cowering in a corner, wearing rags, looking terrified and humiliated. Dark and gloomy atmosphere. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

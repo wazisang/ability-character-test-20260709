@@ -1,0 +1,956 @@
+{
+  "raceId": "tiefling",
+  "raceName": "提夫林 (Tiefling)",
+  "description": "拥有恶魔血统的非主流边缘人。喜欢用极其夸张的‘中二病’言辞掩饰内心的不安。坚信深色的衣服和拉风的角能增加战斗力。经常在自我感动的忧郁中不小心把酒馆烧了。",
+  "mbtiFilters": [
+    {
+      "axis": "E_I",
+      "condition": "E",
+      "modifier": {
+        "affinity": {
+          "guild_bard": 2,
+          "guild_sorcerer": 1
+        }
+      }
+    },
+    {
+      "axis": "E_I",
+      "condition": "I",
+      "modifier": {
+        "affinity": {
+          "guild_warlock": 2,
+          "guild_rogue": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "S",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_sorcerer": 1
+        }
+      }
+    },
+    {
+      "axis": "S_N",
+      "condition": "N",
+      "modifier": {
+        "affinity": {
+          "guild_warlock": 2,
+          "guild_bard": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "T",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 1,
+          "guild_warlock": 1
+        }
+      }
+    },
+    {
+      "axis": "T_F",
+      "condition": "F",
+      "modifier": {
+        "affinity": {
+          "guild_bard": 2,
+          "guild_sorcerer": 1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "J",
+      "modifier": {
+        "affinity": {
+          "guild_warlock": 1,
+          "guild_sorcerer": -1
+        }
+      }
+    },
+    {
+      "axis": "J_P",
+      "condition": "P",
+      "modifier": {
+        "affinity": {
+          "guild_rogue": 2,
+          "guild_bard": 2
+        }
+      }
+    }
+  ],
+  "recruitTargets": [
+    {
+      "id": "guild_warlock",
+      "name": "深渊签单员 (Warlock)",
+      "description": "比起使用魔法，他们更享受向别人推销‘你要不要也跟我的宗主签个约’的过程。深渊传销大师。",
+      "requirements": {
+        "cha": 14,
+        "int": 12
+      }
+    },
+    {
+      "id": "guild_rogue",
+      "name": "暗影中二病 (Rogue)",
+      "description": "潜行前必须先念一段极其尴尬的暗影台词。如果没人听到他的帅气登场，他会觉得潜行毫无意义。",
+      "requirements": {
+        "dex": 14,
+        "cha": 10
+      }
+    },
+    {
+      "id": "guild_bard",
+      "name": "重金属地狱火 (Bard)",
+      "description": "用附带火焰伤害的电吉他进行演奏。他们的音乐通常不需要听懂，只需要感受耳膜被震碎的快感。",
+      "requirements": {
+        "cha": 14,
+        "con": 12
+      }
+    },
+    {
+      "id": "guild_sorcerer",
+      "name": "混沌纵火犯 (Sorcerer)",
+      "description": "任何法术在他们手里最终都会变成不同颜色的火球。他们声称这是混沌的意志，其实只是因为火球最拉风。",
+      "requirements": {
+        "cha": 14,
+        "dex": 10
+      }
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "tiefling_physique_horns",
+      "targetId": "guild_rogue",
+      "title": "恶魔之角的烦恼",
+      "scene": "作为潜行者，你正试图钻过一个极其狭窄的通风管道。但是你那对极其夸张、极其拉风的恶魔之角死死地卡在了管道的拐角处，进退两难。",
+      "prompt": "面对这种因为追求造型而导致的极其尴尬的局面，你如何脱困？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你施展了一记『法师之手』，将深渊史莱姆粘液完美地涂抹在角上，并附带『魔法伎俩』播放史诗级登场BGM，随后以极其符合流体力学的『火影跑』姿势，像一条黄油泥鳅般丝滑地滑出了管道。",
+          "npcReply": "极致的物理润滑与满分的登场特效。‘你对潜行的理解比泥鳅还要丝滑。’",
+          "scoreDelta": {
+            "dex": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "J": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 3
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "法师之手",
+            "物理润滑",
+            "丝滑潜行"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极度在乎排面、善用魔法物理双重润滑的特种刺客"
+        },
+        {
+          "id": "B",
+          "text": "你极其果断地对通风管施展了『粉碎音波』，瞬间将周围的承重墙炸成废墟。你从灰尘中优雅地走出，整理了一下发型：‘只要干掉所有目击者，就是完美的潜行。’",
+          "npcReply": "你完美解决了‘潜行被卡’的问题，顺便摧毁了一栋楼。‘极度硬核的物理爆破潜行大师。’",
+          "scoreDelta": {
+            "int": 2,
+            "wis": 2
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_warlock": 2,
+            "guild_rogue": 1
+          },
+          "alignmentDelta": {
+            "action": 1
+          },
+          "triggerTags": [
+            "粉碎音波",
+            "爆破潜行",
+            "物理硬核"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极度信奉“杀光所有目击者就是完美潜行”的狂暴刺客"
+        },
+        {
+          "id": "C",
+          "text": "你直接摆烂拒绝通过。你摸出一张全量伪造的《地下城幽闭空间安全许可证》，隔着管道大声警告卫兵这里的犄角净空不达标，并扬言要进行劳工仲裁，成功骗到三个月带薪病假。",
+          "npcReply": "盗贼公会第一次收到了带薪休假的劳工仲裁申请。‘你用极度严密的法律武器保护了你的角。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -3
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": -4
+          },
+          "alignmentDelta": {
+            "risk": 2
+          },
+          "triggerTags": [
+            "劳工仲裁",
+            "伪造证件",
+            "带薪休假"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "精通劳动法、善于用工伤骗保来逃避战斗的法务型盗贼"
+        },
+        {
+          "id": "D",
+          "text": "你不仅没想出来，反而把卡住的通风管当成了音响放大器，开始播报长达三个小时的《论深色衣物与有角种族在现代建筑中的边缘化》播客，直到卫兵受不了噪音主动把墙砸了求你闭嘴。",
+          "npcReply": "卫兵们为了阻止你的精神污染主动帮你拆了墙。‘……你用极度的废话重塑了建筑结构。’",
+          "scoreDelta": {
+            "cha": 3,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "播客广播",
+            "精神污染",
+            "废话拆墙"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "随时随地都能进行高强度精神污染的播客奇葩"
+        }
+      ]
+    },
+    {
+      "id": "tiefling_physique_stigma",
+      "targetId": "guild_warlock",
+      "title": "异类的狂欢",
+      "scene": "你走进了一个极其排外的人类村庄。村民们看到你头上的角和红色的皮肤，极其极其恐惧地举起了粪叉和火把，试图将你驱逐。",
+      "prompt": "面对这种充满恶意的歧视，你作何反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你极其兴奋地凑上前，双眼冒出红光，掏出一份长达五十页的《深渊灵魂分时度假协议》。你极度专业地向愤怒的村民推销，指出用粪叉太落后了，不如加入你的地狱房地产传销网络，下线拉满三人即可免除火刑。",
+          "npcReply": "村民们扔下火把，开始疯狂地互相拉下线。‘你把致命的种族仇恨转化为了极其残暴的下线业绩。’",
+          "scoreDelta": {
+            "cha": 3,
+            "int": 1
+          },
+          "mbtiDelta": {
+            "E": 2,
+            "T": 1
+          },
+          "affinityDelta": {
+            "guild_warlock": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "灵魂分时度假",
+            "地狱房地产",
+            "传销网络"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极度擅长将一切危机转化为深渊传销机会的恶魔销冠"
+        },
+        {
+          "id": "B",
+          "text": "你极其冷静地施展了『次级幻影』，让村民手里的粪叉和火把不仅看起来像刚出炉的法棍面包，甚至还散发着迷人的黄油香气。饥饿的暴民瞬间陷入混乱开始啃咬武器，而你优雅地从满地找牙的人群中穿过。",
+          "npcReply": "你用碳水化合物的幻象瓦解了信仰的狂热。‘极度实用且极其缺德的战术解围。’",
+          "scoreDelta": {
+            "wis": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "T": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 2,
+            "guild_warlock": 1
+          },
+          "alignmentDelta": {
+            "control": 2
+          },
+          "triggerTags": [
+            "法棍幻影",
+            "碳水瓦解",
+            "缺德解围"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极度狡诈、擅长用缺德幻术制造混乱的战术大师"
+        },
+        {
+          "id": "C",
+          "text": "你立刻原地倒下施展『假死术』，但为了确保万无一失，你在倒下前极其熟练地往自己身上挤满了番茄酱，甚至掏出了一份提前写好的《遗嘱》，大声控诉村长就是谋杀你的主谋。村民们怕惹上命案当场作鸟兽散。",
+          "npcReply": "村民们看着满地的番茄酱和遗书陷入了极度的恐慌。‘你的碰瓷技术极其登峰造极。’",
+          "scoreDelta": {
+            "wis": -3,
+            "cha": -3
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_warlock": -4
+          },
+          "alignmentDelta": {
+            "evil": 2,
+            "risk": 2
+          },
+          "triggerTags": [
+            "番茄酱假死",
+            "遗嘱碰瓷",
+            "物理讹诈"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极度擅长碰瓷、用物理级装死讹诈全世界的高端骗子"
+        },
+        {
+          "id": "D",
+          "text": "你极其离谱地夺过带头大哥的粪叉，用深渊之火将其点燃当作麦克风支架。你不仅没有逃跑，反而原地开启了一场名为“燃烧吧凡人”的重金属摇滚死亡派对，极度狂热的音浪硬生生把暴民变成了互相冲撞的狂热粉丝。",
+          "npcReply": "村民们在极度重金属的音浪中疯狂甩头互殴。‘……你用极度的狂乱重塑了村庄的民俗。’",
+          "scoreDelta": {
+            "cha": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 2
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "粪叉麦克风",
+            "重金属派对",
+            "暴民粉丝化"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "极度狂热、能把火刑现场变成重金属音乐节的节奏大师"
+        }
+      ]
+    },
+    {
+      "id": "tiefling_physique_music",
+      "targetId": "guild_bard",
+      "title": "恶魔的品味",
+      "scene": "为了潜入一个极其极其极其高雅的精灵贵族宴会，你需要伪装成一名乐手。精灵们极其极其极其极其期待你能演奏一曲极其极其极其极其优美的竖琴独奏。",
+      "prompt": "作为极其极其极其推崇重金属和爆炸艺术的提夫林，你如何度过这个难关？",
+      "options": [
+        {
+          "id": "A",
+          "text": "你直接对着竖琴施展了『灼热金属』，把它当成一把燃烧的电贝斯。你极其狂热地扫弦，用一段高BPM的死亡金属Solo让全场下起火雨和血色花瓣，震耳欲聋的深渊音波直接让精灵贵族的耳膜经历了重金属洗礼。",
+          "npcReply": "精灵贵族们在极度的音波震撼中疯狂甩头，彻底抛弃了仪态。‘你用真理般的重金属摧毁了高雅的虚伪。’",
+          "scoreDelta": {
+            "cha": 3,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "E": 2,
+            "P": 1
+          },
+          "affinityDelta": {
+            "guild_bard": 3
+          },
+          "alignmentDelta": {
+            "action": 2
+          },
+          "triggerTags": [
+            "灼热金属",
+            "燃烧贝斯",
+            "死亡金属"
+          ],
+          "outcomeTone": "合格",
+          "branchHint": "极度硬核、能让精灵贵族都为之疯狂甩头的重金属教父"
+        },
+        {
+          "id": "B",
+          "text": "你极其精明地在琴弦上绑定了极其微小的隐形丝线，召唤出一只受过严格音乐训练的深渊剧毒蜘蛛在琴弦间快速穿梭，弹出完美的古典奏鸣曲。而你本人则只需极其做作地在前面假弹，甚至有空向最富有的贵族抛媚眼。",
+          "npcReply": "极其完美的假弹，蜘蛛的指法超越了所有精灵大师。‘你用极度狡猾的深渊外包工程完成了高雅艺术。’",
+          "scoreDelta": {
+            "int": 2,
+            "wis": 2
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "guild_rogue": 2,
+            "guild_bard": 1
+          },
+          "alignmentDelta": {
+            "control": 1
+          },
+          "triggerTags": [
+            "隐形丝线",
+            "蜘蛛外包",
+            "做作假弹"
+          ],
+          "outcomeTone": "偏离",
+          "branchHint": "极度精明、擅长将所有技术活外包给召唤物的伪装大师"
+        },
+        {
+          "id": "C",
+          "text": "你极其理直气壮地拒绝演奏，并掏出一份长达十页的医学证明，声称自己患有‘急性琴弦创伤后应激障碍(PTSD)’，控诉现场的竖琴唤醒了你祖母被魔法竖琴吃掉的悲惨童年，反向要求精灵领主支付巨额精神损失费。",
+          "npcReply": "精灵领主不仅没有怪罪你，反而向你支付了巨额的心理赔偿金。‘你用极其无赖的政治正确榨干了贵族。’",
+          "scoreDelta": {
+            "wis": -3,
+            "dex": -2
+          },
+          "mbtiDelta": {
+            "F": 1
+          },
+          "affinityDelta": {
+            "guild_bard": -4
+          },
+          "alignmentDelta": {
+            "evil": 3,
+            "risk": 2
+          },
+          "triggerTags": [
+            "急性PTSD",
+            "反向索赔",
+            "精神损失费"
+          ],
+          "outcomeTone": "危险",
+          "branchHint": "极度擅长利用政治正确和心理疾病进行敲诈勒索的无赖"
+        },
+        {
+          "id": "D",
+          "text": "你极其离谱地尝试注入一丝狂野魔法，结果竖琴不仅没有发出声音，反而长出了六条木头腿变成了一只巨大的木螃蟹。这只竖琴螃蟹开始极其狂躁地自己弹奏自己，并追着宴会上的侍者疯狂索要开胃小菜。",
+          "npcReply": "宴会变成了极其离谱的竖琴螃蟹追逐战。‘……你的音乐甚至能赋予无机物极度离谱的食欲。’",
+          "scoreDelta": {
+            "cha": 2,
+            "con": 2
+          },
+          "mbtiDelta": {
+            "P": 2,
+            "N": 1
+          },
+          "affinityDelta": {
+            "guild_sorcerer": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 3
+          },
+          "triggerTags": [
+            "狂野魔法",
+            "竖琴螃蟹",
+            "活化索食"
+          ],
+          "outcomeTone": "荒诞",
+          "branchHint": "极度混乱、随时能把高雅乐器变成生化危机的活化大师"
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "guild_warlock": [
+      {
+        "id": "tiefling_warlock_contract",
+        "title": "恶魔的KPI",
+        "scene": "你的宗主（一位深渊领主）向你下达了本月的灵魂收割KPI，要求你在三天内拉拢十个信徒。否则他将收回你的法力。",
+        "prompt": "面对这种充满压榨的职场要求，你如何完成指标？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其硬核地无视了活人市场，直接冲进死灵法师的墓地。你施展『死者交谈』，极其强硬地跟十具刚复活的骷髅签了深渊契约，并向宗主狡辩：‘死人的灵魂在法律意义上也是灵魂，甚至还不需要交社保。’",
+            "npcReply": "深渊领主看着这批毫无生气的骷髅信徒陷入了长久的沉默。‘你用极度硬核的卡bug方式完成了KPI。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_warlock": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "死者交谈",
+              "骷髅契约",
+              "法律卡bug"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度钻营、连死人羊毛都要薅的契约漏洞大师"
+          },
+          {
+            "id": "B",
+            "text": "你极其精明地在主城开了一家完全合法的‘圣骑士心理创伤免费疗养院’。在极其复杂的患者入院登记表背面，你用极其微小的字号规定：接受抗焦虑药水八五折优惠的前提是自愿转让灵魂所有权。精准收割。",
+            "npcReply": "你极其精准地收割了圣骑士的灵魂，甚至还赚了他们的医药费。‘你是个极度冷血且高效的心理学恶魔。’",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_warlock": 2,
+              "guild_rogue": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "心理疗养院",
+              "隐蔽条款",
+              "优惠收割"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极度精明、将心理治疗与灵魂收割完美结合的商业奇才"
+          },
+          {
+            "id": "C",
+            "text": "你不仅没有去拉人，反而极其熟练地向宗主提交了一份‘不可抗力免责声明’，声称当地的冒险者公会已经垄断了下沉市场，要求宗主在指派KPI前先提供一笔极其庞大的‘市场下沉开拓补贴’，成功反向白嫖了一大笔经费。",
+            "npcReply": "你不仅没干活，反而成功从宗主那里骗到了一大笔活动经费。‘你用极其油滑的商业套话反向白嫖了魔王。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_warlock": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "不可抗力",
+              "市场开拓补贴",
+              "反向白嫖"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度圆滑、精通职场甩锅与反向白嫖经费的糊弄学宗师"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地完全无视了KPI，转手写了一部风靡大陆的音乐剧《汉密尔顿：深渊领主》。你把宗主捧成了全大陆最火的顶流偶像，导致成千上万的狂热粉丝主动把灵魂抵押给你，只为了换取一张极其珍贵的VIP后台握手券。",
+            "npcReply": "深渊领主被迫出道成为了位面顶级偶像。‘……你用极度离谱的饭圈文化超额完成了深渊指标。’",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "音乐剧",
+              "顶流偶像",
+              "饭圈收割"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极度离谱、能把恶魔契约变成饭圈打榜的超级制作人"
+          }
+        ]
+      }
+    ],
+    "guild_rogue": [
+      {
+        "id": "tiefling_rogue_shadow",
+        "title": "中二的潜行",
+        "scene": "你正在执行暗杀任务，目标就在前方的阳台上。但此时月光极其明亮，照亮了整个庭院，完全没有任何阴影可以隐蔽。",
+        "prompt": "作为自诩为‘黑夜之子’的提夫林盗贼，你如何靠近目标？",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其张狂地走到庭院对面，用『魔法伎俩』放了一场极度刺眼、极其夸张的连环烟花秀。趁着所有守卫和目标都被强光致盲并大喊‘哇哦’的时候，你大摇大摆地走过去，在光天化日之下极其高调地完成了暗杀。",
+            "npcReply": "极其高调的掩护，极其低调的刺杀。‘你证明了只要光线足够亮，亮到致盲，那它就是绝对的暗影。’",
+            "scoreDelta": {
+              "dex": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "致盲烟花",
+              "光天化日",
+              "反向暗影"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度张狂、善用光污染制造“反向暗影”的战术刺客"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷静地施展了『易容术』，完美伪装成目标的贴身保镖。你直接走到目标面前，极其严厉地大喊：‘大人，这里不安全！’然后极其顺滑地护送他进入了一个极度黑暗的安全屋，在没有任何人看见的地方解决了问题。",
+            "npcReply": "极其顺滑的渗透。‘你不寻找阴影，你直接把目标带进了你准备好的阴影里。’",
+            "scoreDelta": {
+              "wis": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": 2
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "易容保镖",
+              "骗入暗室",
+              "顺滑渗透"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极度冷静、精通心理战术与身份伪装的渗透大师"
+          },
+          {
+            "id": "C",
+            "text": "你极其无赖地掏出一个安全帽戴上，拿出一个小本本，以‘刺客公会职业安全与健康(OHS)监察员’的身份走到目标面前。你极其严肃地对其庭院‘过度照明’开出了一笔巨额罚单，拿着罚款潇洒离去，并在任务报告里写上‘客户不配合调查，任务取消’。",
+            "npcReply": "你不仅没有完成暗杀，还极其无赖地收了一笔合规罚款。‘你用极其荒诞的合规检查逃避了战斗。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_rogue": -4
+            },
+            "alignmentDelta": {
+              "evil": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "合规检查",
+              "过度照明罚单",
+              "职业安全"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度狡诈、擅长用虚假合规名义进行敲诈勒索的法棍盗贼"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地直接把『黑暗术』释放在自己的头顶，导致自己完全变成了一个瞎子。接着你像个极其狂躁的保龄球一样，在庭院里一边狂奔一边尖叫‘我就是黑夜！’，最后居然靠着极其纯粹的狗屎运，把目标从阳台上撞飞了出去。",
+            "npcReply": "全场的守卫都被你这极度抽象的自爆式袭击震撼得忘记了阻拦。‘……你用极度薛定谔的潜行法完成了任务。’",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "自带黑暗术",
+              "自爆式冲锋",
+              "薛定谔潜行"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极度混乱、全靠瞎猫碰死耗子进行硬核暗杀的抽象刺客"
+          }
+        ]
+      }
+    ],
+    "guild_sorcerer": [
+      {
+        "id": "tiefling_sorcerer_chaos",
+        "title": "混沌的火球",
+        "scene": "你被要求展示你对魔法的精确控制。考官在五十米外放了一个极其微小的苹果，要求你用一发魔法飞弹精确击中它，不能伤及其他。",
+        "prompt": "作为提夫林术士，你的魔法展示是：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其狂妄地冷笑一声，直接施展『变大/缩小术』将整个五十米的考场缩小成一个鞋盒大小。你极其随意地捏起那个变得只有细菌大小的苹果，用附带了『魔法飞弹』的牙签极其暴力地将其捅穿，然后又把考场恢复了原状。",
+            "npcReply": "考官看着你极其嚣张的物理命中陷入了沉思。‘你用极其暴力的空间折叠抹平了准星不够的缺陷。’",
+            "scoreDelta": {
+              "cha": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "缩小考场",
+              "牙签捅穿",
+              "空间折叠"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度狂妄、善用降维打击解决精确度问题的空间狂徒"
+          },
+          {
+            "id": "B",
+            "text": "你极其冷血地召唤出一只微型小魔鬼，把『魔法飞弹』的水晶塞进它手里，命令它极其精准地飞过去，把飞弹直接塞进苹果的中心。为了销毁作弊证据，你甚至在命中的瞬间顺手把小魔鬼和苹果一起炸成了灰。",
+            "npcReply": "极其残忍且极度高效的战术外包。‘你不相信自己的准头，但你极度相信资本与剥削的力量。’",
+            "scoreDelta": {
+              "int": 3,
+              "dex": 2
+            },
+            "mbtiDelta": {
+              "J": 2,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 2,
+              "guild_warlock": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "小魔鬼外包",
+              "塞进苹果",
+              "销毁证据"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极度冷血、为达目的随时牺牲召唤物的实用主义法师"
+          },
+          {
+            "id": "C",
+            "text": "你极其虚伪地掏出一份满是折痕的《咒法系过敏症诊断书》，在考官面前开始了极其浮夸的表演。你假装一看到苹果就诱发了极度严重的深渊哮喘，疯狂咳嗽直到口吐白沫，硬生生逼得考官为了避免摊上医疗事故而给了你及格。",
+            "npcReply": "你用极其精湛的演技和一份伪造病历骗过了魔法测试。‘你的厚脸皮比任何防御法术都坚不可摧。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": -4
+            },
+            "alignmentDelta": {
+              "evil": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "过敏诊断书",
+              "深渊哮喘",
+              "碰瓷及格"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度无赖、精通伪造病历和装病逃避考核的戏精术士"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地在魔法飞弹里混入了一大团狂野魔法。飞弹不仅没有击碎苹果，反而极其生草地把苹果变成了一只会跳踢踏舞且具有极度攻击性的追踪信鸽。信鸽扑腾着翅膀，极其精准地一头撞死在考官的脸上，爆开漫天的苹果汁。",
+            "npcReply": "考官擦掉脸上的苹果汁，给了你满分。‘……你用极其离谱的双向奔赴重新定义了命中率。’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "狂野魔法",
+              "信鸽苹果",
+              "脸部爆破"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极度抽象、脑洞极其清奇的活化魔改大师"
+          }
+        ]
+      }
+    ],
+    "guild_bard": [
+      {
+        "id": "tiefling_bard_concert",
+        "title": "重金属地狱火",
+        "scene": "你们小队被一群狂暴的半兽人包围了。战士们已经力竭，必须有人站出来吸引敌人的注意力，争取突围的时间。",
+        "prompt": "作为队伍里的提夫林重金属乐手，你的个人演唱会开始了：",
+        "options": [
+          {
+            "id": "A",
+            "text": "你极其狂热地施展了『奇术』，将自己的嗓门放大了三百倍，同时掏出一把长满尖刺的深渊肩背式键盘。你极其嚣张地在满是油腻术的泥坑里滑跪，奏响了一段极其硬核的融脸级死亡金属。半兽人的大脑在极度的音波震撼中直接蓝屏当机了。",
+            "npcReply": "半兽人们丢下武器，疯狂地向你抛掷战利品以示膜拜。‘你用极度硬核的重金属魅力征服了战场。’",
+            "scoreDelta": {
+              "cha": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 3
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "奇术扩音",
+              "深渊键盘",
+              "蓝屏当机"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "极度狂热、能把绝命突围变成万人演唱会的重金属巨星"
+          },
+          {
+            "id": "B",
+            "text": "你极其精明地施展了『奥图迷舞』，并极其巧妙地将其混入了一首极度洗脑的动感迪斯科神曲中。整个狂暴的半兽人大军极其诡异地被强制拉平了智商，开始极其整齐划一地跳起了大型广场舞，为你队友的撤退铺平了极其宽阔的道路。",
+            "npcReply": "极度优雅且极其高效的群体控场。‘你把血腥的修罗场变成了极度欢乐的广场舞大妈阵地。’",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "guild_bard": 2,
+              "guild_warlock": 1
+            },
+            "alignmentDelta": {
+              "control": 2
+            },
+            "triggerTags": [
+              "奥图迷舞",
+              "迪斯科神曲",
+              "群体广场舞"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极度精明、擅长用强制性欢乐魔法进行群体降智的控场大师"
+          },
+          {
+            "id": "C",
+            "text": "你极其自私地秒开了一个仅限单人的『隐形术』，随后极其熟练地扔出一个预先录制好“救命啊！我们在这里！”的魔法留声机。在留声机把所有半兽人都吸引到反方向时，你极其淡定地吃着三明治，大摇大摆地独自撤离了战场。",
+            "npcReply": "你的队友和半兽人看着你留下的留声机，陷入了极度的迷茫。‘你用极其冷血的声东击西保全了自己。’",
+            "scoreDelta": {
+              "wis": -3,
+              "cha": -3
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_bard": -4
+            },
+            "alignmentDelta": {
+              "evil": 3,
+              "risk": 2
+            },
+            "triggerTags": [
+              "单人隐形",
+              "留声机诱饵",
+              "卖队友撤离"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极度自私、随时准备用假死或隐身卖队友的高阶跑路大师"
+          },
+          {
+            "id": "D",
+            "text": "你极其离谱地对着战场中央施展了『反转重力』，同时极其狂躁地吹起了一把走音极其严重的大号。所有的半兽人极其无助地飘向半空，像愤怒的陀螺一样不停旋转，而你极其生草地为他们配上了极其欢乐的马戏团受苦BGM。",
+            "npcReply": "半兽人在极度离谱的失重音乐会中呕吐不止。‘……你用极度的混乱和黑色幽默瓦解了敌军的尊严。’",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "P": 2,
+              "F": 1
+            },
+            "affinityDelta": {
+              "guild_sorcerer": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 3
+            },
+            "triggerTags": [
+              "反转重力",
+              "大号伴奏",
+              "失重马戏团"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "极度抽象、总能把严肃战斗变成极其生草的马戏团表演的奇葩"
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "id": "tiefling_bard_end",
+      "title": "重金属地狱火",
+      "condition": "affinity.guild_bard >= 3",
+      "description": "你成了全大陆最臭名昭著但也最受欢迎的重金属巡演乐手。你的演唱会经常因为舞台上的恶魔火焰失控而把整个剧院烧成白地，但票依然供不应求。甚至连一些无聊的深渊领主都会偷偷跨越位面来听你弹电吉他，你的音乐成了沟通两界的唯一和平桥梁（虽然极其扰民）。",
+      "imagePrompt": "A highly charismatic Tiefling bard with glowing red skin, dark jagged horns, and edgy, gothic clothing. He is shredding on a massive electric guitar made from demon bones, which is literally shooting out jets of green hellfire. He is performing on a stage that is partially on fire, with a wild, screaming crowd in the background. Epic dark fantasy rock concert vibe. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "tiefling_warlock_end",
+      "title": "深渊销冠",
+      "condition": "affinity.guild_warlock >= 3",
+      "description": "你凭借着极其严密的商业漏洞和传销手段，成功架空了你的深渊宗主。你不仅没有被收割灵魂，反而把整个地狱的恶魔都发展成了你的下线，让他们每天去主物质位面发传单拉业务。你成了地狱历史上第一个靠PPT和KPI统治深渊的魔王。",
+      "imagePrompt": "A sharp-dressed, cunning Tiefling Warlock in a tailored, dark suit holding a glowing magical clipboard. He is standing in hell, presenting a complicated pie chart to a group of confused and terrified giant demons who are taking notes. The tiefling looks extremely confident and manipulative. Epic dark fantasy, corporate satire. isolated on a solid chroma key green background",
+      "isGoodEnd": true
+    },
+    {
+      "id": "tiefling_failure_end",
+      "title": "褪色的恶魔",
+      "condition": "alignment.risk >= 2",
+      "description": "你的极度怯懦和毫无底线的背叛不仅让人类唾弃你，连深渊都觉得你丢人。你引以为傲的恶魔之角萎缩成了两个滑稽的小鼓包，你那拉风的红皮肤也褪成了极其难看的病态粉色。你成了一个连哥布林都敢欺负的流浪汉，整天在酒馆角落里吹嘘自己以前多厉害，然后被人像扔垃圾一样扔出去。",
+      "imagePrompt": "A pathetic, cowardly Tiefling whose horns have shrunk into tiny, ridiculous bumps and whose skin has faded to a sickly pale pink. He is cowering in a dirty alleyway, wearing tattered rags and looking up with an expression of extreme humiliation and fear. Dark, depressing atmosphere. isolated on a solid chroma key green background",
+      "isGoodEnd": false
+    }
+  ]
+}

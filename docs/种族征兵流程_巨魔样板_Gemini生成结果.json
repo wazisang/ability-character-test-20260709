@@ -1,0 +1,4107 @@
+{
+  "meta": {
+    "version": 1,
+    "raceId": "troll",
+    "raceNameZh": "巨魔",
+    "scope": "race_recruitment_sample"
+  },
+  "raceCard": {
+    "raceId": "troll",
+    "raceNameZh": "巨魔",
+    "raceNameEn": "Troll-blood",
+    "title": "死不掉的庞大怪胎",
+    "oneLine": "带着被诅咒的怪物体格与极其顽强的再生能力，试图在文明的边缘砸出一条生路。",
+    "bodyText": "巨魔的血脉是一种祝福也是诅咒。你拥有令凡人绝望的愈合速度，连断肢都能在令人不安的烟气中重生。但这副庞大、畸形且充满压迫感的身躯，让你很难走进任何一家正经旅店。在征兵处，大部分人只把你当成一件耐用的一次性破城锤。你可以选择成为一个没有感情的肉盾，或者利用这具令人畏惧的外壳，寻找自己的荒野逻辑。",
+    "tags": [
+      "再生",
+      "怪物外壳",
+      "巨型体格",
+      "难以致死",
+      "文明边缘",
+      "震慑力"
+    ],
+    "warningText": "巨魔体型庞大但不一定拥有对应的神力，再生能力也并非毫无代价，你的体质、力量、智力反差将决定你在战场上的真实功能。",
+    "recruiterQuote": "行了，先把头缩一下别撞坏门框。只要你别把桌子和考官一起啃了，我管你是巨魔还是食人魔，签下你的名字！"
+  },
+  "recruitTargets": [
+    {
+      "targetId": "barbarian_camp",
+      "classNameZh": "蛮子营地",
+      "classNameEn": "Barbarian Camp",
+      "title": "裂斧前线突击营",
+      "oneLine": "这里不需要礼仪，只需要能把大门连着守卫一起撞开的疯子。",
+      "recruiter": "断牙军士长",
+      "recruitPitch": "别跟我讲什么战术列阵！如果你觉得一把双刃巨斧还不够解决问题，那就再加上你的怪物拳头和不要命的再生速度。我们营地里最聪明的家伙，也只会数到十而已！",
+      "acceptedStyle": "以完全不设防的姿态撞入敌阵，利用超常的体质与狂暴来强行换血。",
+      "likelyFailure": "沉迷于肉体蛮力而忘记了巨魔发力链条的脆弱，导致在关键力量判定中掉链子。",
+      "hiddenRoute": "如果你的脑子比肌肉好使，可能会被丢去当‘危险品看守’或‘战术沙袋’。",
+      "recommendedStats": [
+        "str",
+        "con"
+      ],
+      "riskTags": [
+        "高致死率",
+        "敌我不分",
+        "误伤队友",
+        "炮灰前排"
+      ]
+    },
+    {
+      "targetId": "fighter_line",
+      "classNameZh": "战士前线",
+      "classNameEn": "Fighter Frontline",
+      "title": "黑旗重装防线",
+      "oneLine": "军纪、铁盾和服从，把怪物之躯锁进纪律的枷锁里。",
+      "recruiter": "铁面百夫长",
+      "recruitPitch": "我不管你在荒野里是多么无法无天的巨怪，既然穿上了这身重甲，你就是一堵城墙。学会克制你把问题咬碎的本能，听从号角前进，你那副死不掉的身体才是军团最大的财富。",
+      "acceptedStyle": "成为队伍中永远不会溃散的核心防线，用怪物的压迫感和纪律镇压一切。",
+      "likelyFailure": "军规与怪物本能发生冲突，无法忍受阵地战的枯燥而暴走。",
+      "hiddenRoute": "如果军纪束缚不住你，有可能会被强制遣送回蛮子营地，或被当成移动军械库。",
+      "recommendedStats": [
+        "con",
+        "wis"
+      ],
+      "riskTags": [
+        "刻板纪律",
+        "重甲惩罚",
+        "违抗军令",
+        "移动拒马"
+      ]
+    },
+    {
+      "targetId": "warlock_contract",
+      "classNameZh": "术士契约所",
+      "classNameEn": "Warlock Contract Bureau",
+      "title": "深渊债务掮客",
+      "oneLine": "你的肉体和灵魂都很值钱，甚至你的再生能力本身就是一笔利息。",
+      "recruiter": "苍白学者",
+      "recruitPitch": "那些挥舞铁片的人根本不懂你这具身体的价值。再生？多奇妙的天赋。签下这卷羊皮纸，用你不断生长的血肉去交换来自深渊或旧神的知识吧，痛苦只是微不足道的利息。",
+      "acceptedStyle": "利用自己的高体质和再生能力，毫无顾忌地支付施法代价，成为血肉引擎。",
+      "likelyFailure": "发现契约条款极其恶毒，最终连自己的意识都被宗主一并收割。",
+      "hiddenRoute": "如果你的智商过低，可能只会被当作‘盛放魔能的劣质肉器’而非施法者。",
+      "recommendedStats": [
+        "cha",
+        "con"
+      ],
+      "riskTags": [
+        "灵魂抵押",
+        "血肉献祭",
+        "高额负债",
+        "畸变风险"
+      ]
+    },
+    {
+      "targetId": "druid_mutation_circle",
+      "classNameZh": "德鲁伊异变环",
+      "classNameEn": "Druid Mutation Circle",
+      "title": "荒野共生林地",
+      "oneLine": "探索你体内失控的血脉，让它与狂野的大自然融为一体。",
+      "recruiter": "盲眼鹿神官",
+      "recruitPitch": "文明将你视为怪物，但森林不会。你的血液里流淌着古老而疯狂的生命力，这是自然的恩赐，也是失控的源泉。加入我们，学会倾听血肉深处的野性，而不是一味压制它。",
+      "acceptedStyle": "研究并主动控制巨魔的再生与变异特性，融合毒素、孢子或兽性进行战斗。",
+      "likelyFailure": "无法控制再生造成的畸变，最终失去理智，退化为只知进食的森林魔物。",
+      "hiddenRoute": "如果能在变异中保持极其清醒的头脑，可能会开启研究自身血肉的‘病理学者’路线。",
+      "recommendedStats": [
+        "wis",
+        "con"
+      ],
+      "riskTags": [
+        "肉体畸变",
+        "野性失控",
+        "排斥文明",
+        "怪异共生"
+      ]
+    }
+  ],
+  "physiqueChecks": [
+    {
+      "id": "troll_physique_1",
+      "title": "敲击测试",
+      "scene": "教官抡起一把生锈的重型破甲锤，毫无预兆地砸向你的肩膀。‘让我看看你的皮有多厚！’他狂笑着咆哮道，锤风呼啸而至。",
+      "prompt": "面对这劈头盖脸的沉重一击，你身体的本能反应是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "张开血盆大口，在锤子砸中肩膀前死死咬住锤头，顺便嚼碎了一半铁块当补铁零食。",
+          "npcReply": "考官看着手里光秃秃的锤柄，冷汗直流：‘后勤部会因为你破产的，去隔壁领套加固牙套吧。’",
+          "branchHint": "展现了令人发指的肉体强度与异食癖，极具蛮子风范",
+          "scoreDelta": {
+            "str": 1,
+            "con": 3
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 2,
+            "fighter": 2
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "吞噬武器",
+            "离谱补铁"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "顺势借力往下一缩，让锤子砸在背后的承重柱上，然后精准地指出教官发力姿势的三个解剖学漏洞。",
+          "npcReply": "承重柱轰然倒塌，教官被埋在废墟里骂娘：‘哪个混蛋把这头懂人体工程学的怪物招进来的！’",
+          "branchHint": "利用高智商与身法化解危机，带有强烈的战术嘲讽意味",
+          "scoreDelta": {
+            "con": 1,
+            "wis": 2,
+            "dex": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "fighter": 3
+          },
+          "alignmentDelta": {
+            "lawful": 1
+          },
+          "triggerTags": [
+            "借力打力",
+            "战术指导"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "任由他砸碎肩骨，然后在伤口喷血的瞬间，控制高压血柱在教官脸上精准喷出一个深渊大公的法阵。",
+          "npcReply": "教官一边惨叫一边拿石灰洗脸：‘这血里的酸性比酒馆的劣质麦酒还高！你被施法者部门征用了！’",
+          "branchHint": "极其病态且高效的血液利用法，完美契合术士",
+          "scoreDelta": {
+            "con": 1,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "warlock": 3
+          },
+          "alignmentDelta": {
+            "chaotic": 1
+          },
+          "triggerTags": [
+            "高压血柱",
+            "即兴画阵"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "掏出一张皱巴巴的《怪物劳动法》，严肃声明在未签订工伤免责协议前，任何敲击测试都涉嫌违规操作。",
+          "npcReply": "教官被你的法务意识震慑了，锤子悬在半空：‘老天，现在连巨魔都学会打官司了？’",
+          "branchHint": "用不可思议的现代法务思维逃避了物理测试，极其荒诞",
+          "scoreDelta": {
+            "cha": 2,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 2,
+            "druid": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 1
+          },
+          "triggerTags": [
+            "法务护体",
+            "文明怪物"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troll_physique_2",
+      "title": "泥沼马车",
+      "scene": "营地的一架满载铁矿石的重型辎重车深深陷进了烂泥里。几名矮人推得满头大汗却纹丝不动，他们转过头，充满期待地看着像一座肉山一样杵在旁边的你。",
+      "prompt": "你该如何把这辆马车弄出来？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我不仅不推，我还要跳进车厢里和铁矿石一起躺着，用意念暗示矮人们：‘再不推快点我就把你们当矿石嚼了。’",
+          "npcReply": "在极度恐惧的激发下，矮人们爆发出惊人的潜能，连人带车拉出了泥沼。你甚至没弄脏指甲。",
+          "branchHint": "极致的白嫖与恐吓管理学，完美的混乱邪恶",
+          "scoreDelta": {
+            "str": 3,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "S": 1
+          },
+          "affinityDelta": {
+            "barbarian": 3,
+            "fighter": 1
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "精神鞭策",
+            "懒惰暴君"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "用庞大的身躯挡住河流上游，硬生生造出一个临时水坝，然后开闸放水，利用洪流把马车冲刷出来。",
+          "npcReply": "马车是出来了，但整个后勤营地也被淹了。军需官在水里扑腾：‘你的脑洞比你的肌肉还危险！’",
+          "branchHint": "用环境改造解决物理问题，极其宏大的工程脑洞",
+          "scoreDelta": {
+            "int": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "fighter": 2,
+            "druid": 1
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "人肉水坝",
+            "洪流冲刷"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "向矿石上滴注自己的高活性血液，让铁矿石长出粗壮的触手和肉瘤，自己从泥潭里‘爬’出来。",
+          "npcReply": "矮人们尖叫着逃离了这辆正在呼吸的矿车。后勤官直接跪地祈祷：‘你把物资变成活物了！’",
+          "branchHint": "极其猎奇的生命赋予，术士或德鲁伊的狂野应用",
+          "scoreDelta": {
+            "str": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 2
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "血肉附魔",
+            "矿车变异"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "掏出两枚金币雇佣旁边路过的食人魔雇佣兵帮我推车，我则在一旁负责给他们唱跑调的啦啦队战歌。",
+          "npcReply": "你的歌声比食人魔还难听，但资本的力量解决了泥沼。矮人们看着你用金钱开道，三观尽毁。",
+          "branchHint": "用金钱和魔音双重解决问题的高智商逃避路线",
+          "scoreDelta": {
+            "cha": 2,
+            "int": -1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "warlock": 2
+          },
+          "alignmentDelta": {
+            "self": 2
+          },
+          "triggerTags": [
+            "资本力量",
+            "魔音贯耳"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troll_physique_3",
+      "title": "狭窄通道",
+      "scene": "前方是一扇专为地精设计的低矮石门，通道的墙壁上布满了有毒的倒刺，而地板看起来薄脆得像饼干，下面就是无底深渊。",
+      "prompt": "你这副庞大的身躯该如何通过这片区域？",
+      "options": [
+        {
+          "id": "A",
+          "text": "把关节全部掰脱臼，像一张巨大的肉毯一样平铺在地上，贴着毒刺和脆饼干地板蠕动过去，到了对面再咔咔接好。",
+          "npcReply": "队友们看着你这极其下饭的移动方式，纷纷把隔夜饭吐了出来：‘你比陷阱本身还要恐怖！’",
+          "branchHint": "极致的生理控制力与再生应用，画风极度惊悚",
+          "scoreDelta": {
+            "dex": 2,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "fighter": 1,
+            "druid": 2
+          },
+          "alignmentDelta": {
+            "lawful": 1
+          },
+          "triggerTags": [
+            "软体巨魔",
+            "惊悚脱臼"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "直接抡起那个体重最轻的队友，把他像保龄球一样砸向毒刺墙壁，利用他滚出的平坦血肉大道安全通过。",
+          "npcReply": "队友在墙上被刮得惨不忍睹。你不仅通过了陷阱，还成功成为了队伍里最不可信任的恶棍。",
+          "branchHint": "毫无底线的队友利用法，展现了纯粹的混乱邪恶",
+          "scoreDelta": {
+            "str": 3
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 3
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "队友铺路",
+            "绝对利己"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "深吸一口气，让身体像热气球一样鼓满沼气，直接悬浮飘过深渊，顺便用放屁控制飞行方向。",
+          "npcReply": "整个地宫弥漫着无法呼吸的恶臭，但你竟然真的利用生化物理学飞了过去。队伍要求加薪。",
+          "branchHint": "利用沼气实现悬浮的奇葩脑洞，极具槽点",
+          "scoreDelta": {
+            "int": 2,
+            "wis": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "warlock": 2,
+            "druid": 1
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "沼气悬浮",
+            "生化飞行"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "闭着眼睛假装自己是一只只有拳头大小的蝴蝶，一边默念‘我很小我很轻’，一边用脚尖跳着芭蕾舞通过脆地板。",
+          "npcReply": "地板竟然没塌！你用这种令人瞎眼的优美姿态完成了判定，物理学在这个瞬间陷入了沉默。",
+          "branchHint": "靠强烈的自我催眠和极具反差的动作过关，荒诞不经",
+          "scoreDelta": {
+            "con": 2,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 1,
+            "druid": 2
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "巨魔芭蕾",
+            "物理学奇迹"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troll_physique_4",
+      "title": "再生的代价",
+      "scene": "在昨晚惨烈的守卫战中，你被攻城兽撞断了三根肋骨，甚至内脏都有破损。今早它们已经愈合如初，但伴随而来的是强烈的副作用。",
+      "prompt": "极其不讲理的再生能力，给你带来了什么代价？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我的左手长出了独立的意识，现在它正试图用我的备用匕首给我削苹果，虽然它刚才差点割了我的喉咙。",
+          "npcReply": "队友们惊恐地看着你和自己的左手打了一架才吃上苹果：‘你这是共生体还是精神分裂？’",
+          "branchHint": "极具趣味的肢体异变表现，非常适合术士或德鲁伊",
+          "scoreDelta": {
+            "con": 2,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "S": 1
+          },
+          "affinityDelta": {
+            "barbarian": 2,
+            "fighter": 1
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "肢体独立",
+            "内讧危机"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "每次呼吸都会喷出高浓度的麻醉花粉，我现在连打个喷嚏都能让半个营地的人睡上三天三夜。",
+          "npcReply": "军医带着防毒面具给你发了一堆塞鼻子的棉花：‘你现在是军团最可怕的生化武器！’",
+          "branchHint": "把再生代价转化为强力群控，生化巨魔的最佳范例",
+          "scoreDelta": {
+            "con": 1,
+            "cha": 2
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "F": 1
+          },
+          "affinityDelta": {
+            "warlock": 3
+          },
+          "alignmentDelta": {
+            "chaotic": 1
+          },
+          "triggerTags": [
+            "群体麻醉",
+            "移动瘟疫"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "新长出来的骨头居然是纯粹的黑铁材质。我现在的体重翻了三倍，走路自带打桩机音效，还能挡弓箭。",
+          "npcReply": "军需官狂喜地敲了敲你的肋骨：‘纯天然的重甲步兵！我们连给你打盔甲的钱都省了！’",
+          "branchHint": "把代价变成了极其稳定的重装收益，非常契合战士阵线",
+          "scoreDelta": {
+            "con": 2,
+            "dex": -2
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "fighter": 3
+          },
+          "alignmentDelta": {
+            "lawful": 1
+          },
+          "triggerTags": [
+            "黑铁骨骼",
+            "打桩步伐"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "代价是我开始极度渴望考究的下午茶和诗歌朗诵。我强迫战俘给我泡红茶，不然我就吃掉他们。",
+          "npcReply": "看着一个三米高的巨怪翘着兰花指喝茶并朗诵蹩脚十四行诗，战俘们宁愿选择立刻去死。",
+          "branchHint": "极致的精神反差，将可怕的怪物变成荒谬的贵族",
+          "scoreDelta": {
+            "str": 2,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 3,
+            "druid": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 1
+          },
+          "triggerTags": [
+            "贵族病",
+            "荒诞反差"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troll_physique_5",
+      "title": "酒馆的目光",
+      "scene": "你在镇子里的酒馆刚坐下，原本热闹的周围瞬间死寂。平民们惊恐地尖叫着逃出大门，酒保哆嗦着端上一大桶劣质麦酒，连酒钱都不敢要。",
+      "prompt": "面对这些充满恐惧与排斥的目光，你的反应是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "从兜里掏出一副特制的微型单片眼镜戴上，用优雅的贵族腔调抱怨酒杯的弧度破坏了麦芽的醇香。",
+          "npcReply": "酒保的世界观当场粉碎，他甚至结结巴巴地问你需不需要一份当天的金融报纸。",
+          "branchHint": "用极致的装腔作势粉碎了所有人的刻板印象",
+          "scoreDelta": {
+            "cha": 3,
+            "str": 1
+          },
+          "mbtiDelta": {
+            "E": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 2,
+            "warlock": 1
+          },
+          "alignmentDelta": {
+            "chaotic": 2
+          },
+          "triggerTags": [
+            "单片眼镜",
+            "优雅怪物"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "拿出随身携带的健康证和公会无害证明，将其钉在吧台上，大声朗读自己按时纳税的良好公民记录。",
+          "npcReply": "酒馆里陷入了比刚才更加诡异的死寂，随后几个老主顾试探性地坐了回来，请你喝了一杯。",
+          "branchHint": "用不可思议的守法记录进行自我辩护，出人意料的守序",
+          "scoreDelta": {
+            "wis": 2,
+            "con": 1
+          },
+          "mbtiDelta": {
+            "I": 1,
+            "J": 1
+          },
+          "affinityDelta": {
+            "fighter": 2,
+            "druid": 2
+          },
+          "alignmentDelta": {
+            "lawful": 2
+          },
+          "triggerTags": [
+            "遵纪守法",
+            "纳税怪物"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "微笑着抓起那桶劣质麦酒，连桶带酒倒在旁边那个吓晕的平民头上：‘既然请客，就该一视同仁。’",
+          "npcReply": "那个平民尖叫着醒来，而酒保吓得把柜台里的所有高档酒全推了出来。你免费获得了最好的服务。",
+          "branchHint": "极其恶劣但高效的施压手段，混乱与威慑并存",
+          "scoreDelta": {
+            "int": 3,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "N": 1,
+            "T": 1
+          },
+          "affinityDelta": {
+            "warlock": 2,
+            "fighter": 1
+          },
+          "alignmentDelta": {},
+          "triggerTags": [
+            "强制分享",
+            "白嫖服务"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "立刻倒在地上碰瓷，大喊自己的脆弱心灵受到了严重的歧视创伤，要求酒馆赔偿三桶顶级朗姆酒作精神损失费。",
+          "npcReply": "为了不惹上这个随时可能暴起的‘脆弱巨婴’，酒保含泪交出了店里最好的酒。",
+          "branchHint": "把怪物威慑力转化为厚颜无耻的碰瓷，绝对的不要脸",
+          "scoreDelta": {
+            "dex": 2,
+            "cha": 1
+          },
+          "mbtiDelta": {
+            "S": 1,
+            "P": 1
+          },
+          "affinityDelta": {
+            "barbarian": 1
+          },
+          "alignmentDelta": {
+            "self": 2
+          },
+          "triggerTags": [
+            "怪物碰瓷",
+            "精神损失"
+          ]
+        }
+      ]
+    }
+  ],
+  "trialSets": {
+    "barbarian_camp": [
+      {
+        "id": "barbarian_gate_blockade",
+        "targetId": "barbarian_camp",
+        "title": "门前的怪物队列",
+        "scene": "地城深处，一群手持尖刺的哥布林堵在铁门前。队友正压低声音讨论如何潜行，而你庞大的影子已经把半条走廊盖住了。裂斧营考官抱着木板站在旁边，似乎只想知道你会不会把问题变简单。",
+        "prompt": "你准备怎么让队伍抵达那扇门？",
+        "options": [
+          {
+            "id": "A",
+            "text": "把队友当做武器扔过去！在哥布林陷入混乱的瞬间，我再像一辆重型战车一样碾压过所有障碍。",
+            "npcReply": "考官在木板上重重画了个勾：‘非常好！你不仅破坏了门，还充分利用了随处可见的掩体（指队友）！’",
+            "branchHint": "极其野蛮的突进方式，完美符合蛮子营地的录取标准",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "str": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3,
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "掷出队友",
+              "人肉战车"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出一块写着‘深渊城管，例行检查’的牌子，用震耳欲聋的声音要求哥布林出示防御工事许可证。",
+            "npcReply": "哥布林完全听不懂，但被你理直气壮的咆哮吓得丢下武器四散而逃。考官陷入了长久的沉默。",
+            "branchHint": "利用奇怪的身份压制敌人，非常不讲武德",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 2,
+              "barbarian": -1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "城管执法",
+              "离谱震慑"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "当着它们的面，嘎嘣脆地把铁门的一角掰下来吃掉，暗示如果它们不让开，下一个被吃的就是它们。",
+            "npcReply": "铁门的缺口还在滴着酸液。哥布林直接吓哭了。考官赞许地拍了拍你的肚子：‘好胃口，好手段！’",
+            "branchHint": "以不可思议的异食癖震慑敌人，充满野性魅力",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "啃食铁门",
+              "极致威吓"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "假装突然羊癫疯发作，在走廊里疯狂打滚，利用庞大的体型把地精连同铁门一起像碾面团一样碾平。",
+            "npcReply": "你以极其丢脸的姿态完成了清场，虽然弄了一身灰，但效率奇高。考官：‘这……也算一种冲锋吧？’",
+            "branchHint": "用最滑稽的无赖方式解决了物理问题",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "打滚清场",
+              "丢脸突围"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_strength_test",
+        "targetId": "barbarian_camp",
+        "title": "外强中干的巨兽",
+        "scene": "考官指着广场中央一块需要三人合抱的巨石，要求你把它搬到五十步开外。但你心里清楚，你最近再生过度，虽然看着像座山，实际上连一块墓碑都举得很吃力。",
+        "prompt": "在众人期待的目光下，你要如何处理这块巨石？",
+        "options": [
+          {
+            "id": "A",
+            "text": "一头撞向巨石，用自己的脑袋把石头撞得粉碎！搬不走我还不能把它变成满地的碎石子吗？",
+            "npcReply": "你满头鲜血地站在碎石堆里，咧嘴大笑。考官咽了口唾沫：‘够疯，脑震荡也挡不住你的破坏欲。’",
+            "branchHint": "用极其自残的方式掩盖了力量不足的事实",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "str": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "fighter": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "铁头碎石",
+              "暴力粉碎"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "利用巨石周围的泥土松动，掏出铁锹在旁边挖个坑，然后极其自然地把巨石踹进坑里埋了。",
+            "npcReply": "考官看着平整的地面：‘我让你搬走它，你把它安葬了？不过……这也算清理了障碍。’",
+            "branchHint": "用工程学思维物理隐藏问题，高智商偷懒",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "cha": 2,
+              "str": -2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 1,
+              "barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 1
+            },
+            "triggerTags": [
+              "就地掩埋",
+              "物理消除"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "声称这块石头受到了古代邪神的诅咒，谁碰谁倒霉，要求在场的所有人离它至少五十步远。",
+            "npcReply": "你把所有人吓退了五十步，然后得意地宣布任务完成：石头和大家的距离达标了。考官气得跳脚。",
+            "branchHint": "玩弄距离概念的文字游戏，极其无耻的逃避",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "str": 1,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "诅咒谎言",
+              "反向距离"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "假装由于旧伤复发当场晕倒，利用巨魔庞大身躯倒下的惯性，精准地砸在巨石上把它崩飞。",
+            "npcReply": "你用一次完美的战术晕厥完成了搬运工作。考官看破不说破：‘碰瓷都能碰出战术价值，厉害。’",
+            "branchHint": "把丢脸的晕倒转化成了物理冲击力",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "str": -1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "barbarian": -1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "战术晕倒",
+              "惯性搬运"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_complex_plan",
+        "targetId": "barbarian_camp",
+        "title": "多余的战术板",
+        "scene": "深夜的战前会议上，小队的法师正在用发光的粉末在沙盘上画着极其复杂的潜行、诱敌、绕后路线，讲了足足半个小时。",
+        "prompt": "听着这些让人昏昏欲睡的战术，你的反应是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "一把抓起沙盘上的发光粉末塞进嘴里，告诉他们：‘现在我是最亮的发光体，他们都会来打我，战术简化完毕！’",
+            "npcReply": "你整个人都散发着蓝光，法师崩溃大哭。考官却暗中点头：‘极其出色的自我牺牲式嘲讽！’",
+            "branchHint": "极其粗暴但有效的拉仇恨方式，蛮子标杆",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "str": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "吃掉战术",
+              "高亮嘲讽"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "拿出炭笔，直接在沙盘最边缘画一条直线通向敌方首领大帐。‘我就走这条线，剩下的你们随意。’",
+            "npcReply": "法师精心设计的战术被一条直线切断了。这是一种极致的自信与狂妄。",
+            "branchHint": "极其干脆利落的直线战术，展现了蛮子的纯粹",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 2,
+              "barbarian": -2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "直线思维",
+              "无视地形"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "以极高的学术修养指出法师使用的发光粉末含有致癌物质，强烈要求更换环保型战术沙盘。",
+            "npcReply": "会议被迫中止。你成功用奇怪的关注点摧毁了法师的讲课热情。考官觉得你脑子有大病。",
+            "branchHint": "用现代环保理念破坏奇幻战术，荒诞感拉满",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 1,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "环保抗议",
+              "重点错乱"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "听困了，直接靠在法师身上打呼噜，口水流了一整个沙盘，把法师画的路线全变成了泥石流。",
+            "npcReply": "法师差点被你压死。考官踹了你一脚：‘虽然你什么都没听，但你成功瓦解了敌我双方的战术！’",
+            "branchHint": "以极其无赖的生理反应解决复杂的讨论",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 1
+            },
+            "triggerTags": [
+              "口水洗地",
+              "强制下播"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_meat_shield_taunt",
+        "targetId": "barbarian_camp",
+        "title": "肉盾的尊严",
+        "scene": "一个全副武装的敌方大骑士在阵前嘲笑你：‘看看这头只会愈合的恶心肉块！你除了挨打还会什么？你的剑甚至连我的板甲都碰不到！’",
+        "prompt": "面对这种侮辱，你要如何回应？",
+        "options": [
+          {
+            "id": "A",
+            "text": "张开双臂硬吃他一记骑士枪，然后用胸腔发达的肌肉死死卡住枪头，带着他的武器直接冲撞他的战马！",
+            "npcReply": "骑士连人带马被你撞飞了。考官在后面疯狂鼓掌：‘用身体缴械，这才是完美的巨魔肉盾！’",
+            "branchHint": "完美结合了肉盾特性与反击狂暴，极其吸睛",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "str": 2,
+              "con": 2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "肌肉缴械",
+              "冲撞反击"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "大声嘲笑他：‘至少我这身肉不用每天花三个小时打蜡抛光，而且我上厕所从来不用求别人帮忙脱壳！’",
+            "npcReply": "骑士气得满脸通红，直接失去了理智。考官笑得前仰后合：‘你的嘴巴比斧头还毒。’",
+            "branchHint": "用现实生活的尴尬点破防了高贵的骑士",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "dex": 2,
+              "int": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "barbarian": -1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "语言破防",
+              "脱壳羞辱"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "扯下身上一块快要愈合的烂肉，像丢水球一样精准地甩在他的面甲缝隙里，用生化武器糊他一脸。",
+            "npcReply": "骑士被恶心得疯狂呕吐，连人带马摔在地上。你赢得了这场令人作呕的胜利。",
+            "branchHint": "极具侮辱性的肉体投掷，混乱邪恶的典范",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": -2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "F": 2,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "烂肉投掷",
+              "生化糊脸"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "我立刻跪下痛哭，承认自己只是个毫无尊严的肉块，求他大发慈悲收我当战马。趁他得意时一口咬断他的腿！",
+            "npcReply": "极其卑劣的背刺战术！骑士甚至来不及惨叫就被你废了。考官：‘你这无下限的战术到底跟谁学的？’",
+            "branchHint": "用毫无底线的屈服换来致命一击，高智商阴招",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 1
+            },
+            "triggerTags": [
+              "诈降反咬",
+              "卑劣反杀"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_narrow_defense",
+        "targetId": "barbarian_camp",
+        "title": "卡住的要塞",
+        "scene": "敌军正在猛攻要塞，指挥官命令你死守住唯一的一道石门。但问题是，你那庞大的身躯刚塞进石门，就被卡得死死的，进退两难。",
+        "prompt": "被卡在门里的你，要如何阻挡如潮水般涌来的敌人？",
+        "options": [
+          {
+            "id": "A",
+            "text": "既然卡住了，我就干脆深吸一口气，把胸腔撑到最大，直接让自己变成一扇彻底堵死大门的肉体软木塞！",
+            "npcReply": "敌人的刀剑砍在你撑得紧绷的皮肉上，但你硬是纹丝不动。你成为了一道完美的叹息之墙。",
+            "branchHint": "化被动为主动的极佳防御策略，硬核死守",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "dex": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "fighter": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "肉体木塞",
+              "绝对死守"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出辣椒粉涂在自己身上，让卡在门里的自己变成一个极其辛辣、疯狂打喷嚏的胡椒毒气发生器。",
+            "npcReply": "前排的敌人被辣得涕泪横流。你一边疯狂打喷嚏一边守住了门，场面滑稽又惨烈。",
+            "branchHint": "用生化手段制造群体控制，极其荒诞但有效",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "str": 3
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "胡椒毒气",
+              "辛辣掩护"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "双手扒住门框，疯狂扭动屁股，试图用极其辣眼睛的舞蹈动作分散敌军注意力，拖延时间。",
+            "npcReply": "敌军看傻了眼，硬生生停下了冲锋的脚步。指挥官捂着眼睛：‘虽然有效，但这太丢人了！’",
+            "branchHint": "靠精神污染拖延时间，无视尊严的战术",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 2,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "辣眼扭动",
+              "精神污染"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "向敌军大喊：‘有话好说！只要你们帮忙把我从门里拽出去，我就把这扇门让给你们！’",
+            "npcReply": "敌军居然真的相信了，拼命往外拔你。等你被拔出来后，你一屁股把他们全坐扁了。",
+            "branchHint": "利用敌人的同情心进行反杀，高智商诈骗",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "barbarian": -2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "诈骗借力",
+              "恩将仇报"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_friendly_fire",
+        "targetId": "barbarian_camp",
+        "title": "失控的余波",
+        "scene": "在一次血腥的清剿中，你陷入了极度的狂暴，一斧头劈碎了巨兽的头颅。但你也意识到，在血红的视野边缘，你差点把治疗你的牧师也劈成两半。",
+        "prompt": "从狂暴中清醒后，你要如何面对瑟瑟发抖的队友？",
+        "options": [
+          {
+            "id": "A",
+            "text": "一把将牧师抱进怀里，用带有浓重血腥味的巨魔拥抱安慰他：‘别怕！只要我没把你劈死，我就能保护你！’",
+            "npcReply": "牧师被勒得差点窒息，但奇迹般地感受到了一种扭曲的安全感。考官：‘这安抚方式很粗暴，但管用。’",
+            "branchHint": "极其粗线条的狂战士同理心，充满力量感",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "str": 1,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "窒息拥抱",
+              "粗暴安抚"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "立刻跪在牧师面前，强迫他用圣水给我洗脸，以洗清我的‘罪恶’，顺便洗掉脸上的怪兽血迹。",
+            "npcReply": "牧师一边哭一边给你倒圣水。考官觉得你这种强行给自己加戏的戏精行为非常古怪。",
+            "branchHint": "靠夸张的仪式感转移队友恐慌，极具表演型人格",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "wis": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 2,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "good": 1
+            },
+            "triggerTags": [
+              "强行洗礼",
+              "戏精附体"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "理直气壮地指责牧师走位太差，如果他不学会像盗贼一样灵活躲避，下次就不止是擦伤了！",
+            "npcReply": "牧师气得当场罢工。考官摇头：‘你这种倒打一耙的甩锅技巧，不去当政客可惜了。’",
+            "branchHint": "极致的无理取闹与甩锅，将责任完美转移",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "int": 1,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "barbarian": -1,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "倒打一耙",
+              "强制走位"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "赶紧假装自己其实是个瞎子，一路摸索着空气大喊：‘谁在那儿？我刚才砍到了什么东西吗？’",
+            "npcReply": "队友们全无语了。考官扶额：‘你那么大两个眼睛当瞎子，真当我们智力只有五吗？’",
+            "branchHint": "用令人智熄的伪装掩盖错误，滑稽逃避",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "装瞎甩锅",
+              "侮辱智商"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "barbarian_final_proof",
+        "targetId": "barbarian_camp",
+        "title": "不仅仅是蛮力",
+        "scene": "最终考核，断牙军士长站在你面前。‘每个巨魔都会挥斧头，’他说，‘但我凭什么相信你不会在第一场硬仗中就因为没脑子而送掉整个小队？证明给我看，蛮子不只有蛮力。’",
+        "prompt": "你准备如何向他证明？",
+        "options": [
+          {
+            "id": "A",
+            "text": "一把夺过他手里的火绳枪，三两下把它拆成一堆零件，然后用斧头把零件全砸了：‘因为我从不相信这种花里胡哨的垃圾！’",
+            "npcReply": "军士长看着满地零件，眼角狂跳：‘虽然你是个反智主义者，但你对冷兵器的忠诚打动了我。合格。’",
+            "branchHint": "用极其暴力的反传统方式证明了自己对暴力的忠诚",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "反智狂暴",
+              "冷兵器忠诚"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "用极其标准的军姿敬礼，然后背诵出裂斧营建军以来的所有阵亡名单，证明我对战友生命的敬畏。",
+            "npcReply": "军士长愣住了，这头粗鲁的巨魔竟然有一颗极其细腻的心。‘你是个懂得死亡分量的士兵。’",
+            "branchHint": "极致的感情牌与反差记忆力，令人肃然起敬",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "int": 3
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 2,
+              "barbarian": -2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "死亡记忆",
+              "铁汉柔情"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "直接掏出一大袋从其他营地偷来的高级军粮贿赂他：‘因为我不仅能打，我还能让兄弟们吃上好肉。’",
+            "npcReply": "军士长毫不犹豫地收下了肉，顺手给你盖了章：‘这才是最核心的战斗力！’",
+            "branchHint": "深谙职场潜规则的巨魔，极其圆滑",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "dex": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "贪污军需",
+              "后勤贿赂"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "指着自己的脑袋说：‘因为我这里面塞满了炸药，谁要是敢坑我，我就拉着全队一起升天。’",
+            "npcReply": "军士长看着你疯狂的眼神，决定把你派去最远的前线。‘你就是个人形自走炸弹。’",
+            "branchHint": "以同归于尽的疯狂保证了自己的‘价值’",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 1,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": -2,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 2
+            },
+            "triggerTags": [
+              "人体炸弹",
+              "玉石俱焚"
+            ]
+          }
+        ]
+      }
+    ],
+    "fighter_line": [
+      {
+        "id": "fighter_line_advance",
+        "targetId": "fighter_line",
+        "title": "重甲步伐",
+        "scene": "百夫长下令全排推进。你穿着专门为你打制的超大号重甲，每走一步地面都在震颤。对面的箭雨射在你的装甲上叮当响，但你感到体内的怪物血液正因为压抑的步调而沸腾。",
+        "prompt": "在漫长而克制的推进中，你如何处理翻涌的本能？",
+        "options": [
+          {
+            "id": "A",
+            "text": "用重剑在自己的重型塔盾上刻下正字，把每一轮射来的箭矢当成计数的鼓点，强行将狂暴转化为枯燥的统计学游戏。",
+            "npcReply": "百夫长看着你盾牌上密密麻麻的刻痕，对你这种诡异的专注力感到毛骨悚然但极其满意。",
+            "branchHint": "将狂暴本能转化为极致的刻板纪律，极具重装风范",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 2
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "划痕计数",
+              "枯燥转移法"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "故意踩出极其规律的重低音脚步，带动身边的队友一起共振，用这种压迫感极强的行军步伐震慑敌军。",
+            "npcReply": "敌人的箭阵在你们的整齐步伐中开始动摇。这是一种把克制转化为精神武器的高级战术。",
+            "branchHint": "利用体型优势制造团队共鸣压迫",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "int": 1,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "fighter": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "步频共振",
+              "行军压迫"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "一边走一边疯狂地收集射在自己身上的箭，然后在走到前线时，把它们像刺猬发射器一样全砸回去！",
+            "npcReply": "你这手‘草船借箭’的暴力版直接把敌军前排砸懵了。百夫长：‘粗俗，但是有效！’",
+            "branchHint": "用化解敌方攻击作为泄愤出口，极其暴力的反击",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 3,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "barbarian": 3,
+              "fighter": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "草船借箭",
+              "刺猬反击"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "大声向敌军喊话抱怨这身盔甲太重，要求中场休息十分钟，并威胁如果不答应我就要脱衣服了。",
+            "npcReply": "敌军没见过在冲锋路上要求休息的怪物，防线出现了可笑的停滞。你成功靠不要脸拖延了时间。",
+            "branchHint": "靠极端无厘头的要求破坏了战场气氛",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "战场休假",
+              "脱衣威胁"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_impact_test",
+        "targetId": "fighter_line",
+        "title": "冲击承受",
+        "scene": "一头失控的地行龙正朝着军团的防线冲来。所有人都下意识地后退，只有你，庞大的身躯正好堵在了它冲锋的必经之路上。",
+        "prompt": "面对地行龙的冲撞，你的选择是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "半蹲马步，把双手直接插进地面的岩石里锁定自己，像一座真正的山峰一样去迎接地行龙的头槌！",
+            "npcReply": "伴随着骨骼断裂和地行龙哀嚎的声音，你硬生生让它停了下来。你的双臂粉碎了，但防线保住了。",
+            "branchHint": "极致的物理死守，充满了惨烈的美学",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "锁地成山",
+              "硬核对撞"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出一面画着极其艳丽母龙图腾的红布，用极其专业的斗牛士姿态引导地行龙一头撞上旁边的哨塔。",
+            "npcReply": "地行龙连哨塔都撞塌了。百夫长惊呆了：‘你是不是在荒野里兼职过斗牛士？’",
+            "branchHint": "充满喜剧色彩的战术化解，高智商规避",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "dex": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "fighter": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "怪兽斗牛",
+              "图腾诱导"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "直接躺下装死，并在身上迅速盖满泥土，把自己伪装成一个大土包，让地行龙顺着我的背当成斜坡飞过去。",
+            "npcReply": "地行龙真的踩着你起飞了，然后重重摔在后方。你用毫无尊严的方式完成了一次完美的绊马索防御。",
+            "branchHint": "利用体型进行极其不要脸的地形伪装",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "fighter": -1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "人肉斜坡",
+              "装死绊马"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "大声冲地行龙咆哮：‘你没买交强险！撞坏了我你赔不起！’试图用法理学把它吓停。",
+            "npcReply": "地行龙显然不懂什么是交强险，但你诡异的声线让它在最后关头滑倒了。一切都充满了巧合。",
+            "branchHint": "荒谬的法律恐吓，靠运气和怪异过关",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "dex": 1,
+              "con": -2
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "fighter": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "法盲巨兽",
+              "虚假索赔"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_instinct_vs_order",
+        "targetId": "fighter_line",
+        "title": "直觉与军令",
+        "scene": "夜间站岗时，你的怪物直觉告诉你，左侧的阴影里藏着一只危险的暗杀虫。但百夫长临走前下过死命令：‘任何人不得离开岗哨半步，违令者斩。’",
+        "prompt": "你要如何处理潜伏的威胁？",
+        "options": [
+          {
+            "id": "A",
+            "text": "不离岗哨，但我咬破手指，在岗哨周围画满了一个个血肉陷阱。只要它敢过来，就把它腐蚀成渣。",
+            "npcReply": "暗杀虫踩到了陷阱，被酸血烧成了灰烬。巡查的百夫长对你这种卡军令Bug的防守方式表示高度赞赏。",
+            "branchHint": "完美结合了死守命令与变通防守的策略",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "wis": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "J": 2
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "血肉陷阱",
+              "防守反击"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "既然不让离开，那我就把脚下的哨塔直接拔起来扛着走！只要我不离开哨塔，我就没有违背军令！",
+            "npcReply": "你扛着整个哨塔冲向了阴影，把暗杀虫砸成了肉泥。百夫长直接看傻了，一时竟不知该如何处罚你。",
+            "branchHint": "极其野蛮且荒唐的逻辑自洽，物理层面的死磕规矩",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "int": 1,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "移动哨塔",
+              "逻辑诡辩"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "直接向阴影里大喊：‘喂！百夫长让你来接班是吧？太好了，我下班了！’然后扭头就走去睡觉。",
+            "npcReply": "你把暗杀虫当成了换防队友。虫子在风中凌乱，错过了最佳刺杀时机。百夫长决定扣你两个月军饷。",
+            "branchHint": "极致的摆烂与甩锅，利用误会解除危机",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "fighter": -1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "强行换防",
+              "消极怠工"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "疯狂地模仿一只发情的母暗杀虫的声音，试图把它吸引出阴影并与之建立跨物种的深厚友谊。",
+            "npcReply": "这凄厉的怪叫不仅引出了暗杀虫，还惊动了整个营地。虫子最终因精神崩溃而自尽了。",
+            "branchHint": "靠极端猎奇的模仿秀完成了防守任务",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "跨物种诱惑",
+              "精神污染"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_team_fear",
+        "targetId": "fighter_line",
+        "title": "恐惧的袍泽",
+        "scene": "你的同排新兵总是害怕你。他们觉得你身上的疤痕太狰狞，而且伤口愈合时的烟气闻起来像腐肉。在列阵时，没人愿意站在你的旁边。",
+        "prompt": "你要如何在这个排挤你的团队中维持防线？",
+        "options": [
+          {
+            "id": "A",
+            "text": "用重盾把他们全部像赶羊一样挤在一起，自己像一堵墙一样包在最外围。‘谁敢乱跑我就踩碎谁的脚趾！’",
+            "npcReply": "新兵们被你像护崽的老母鸡一样圈在盾墙后。虽然被吓得瑟瑟发抖，但阵型竟然异常坚固。",
+            "branchHint": "用霸凌的方式完成保护，极其硬核的守护神",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 2,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "self": 1
+            },
+            "triggerTags": [
+              "硬核护崽",
+              "强制合围"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "悄悄花钱雇了几个吟游诗人在营地里散播谣言，说我其实是受到诅咒的落难精灵王子，身上的烟气是贵族的香水味。",
+            "npcReply": "新兵们看你的眼神从恐惧变成了同情甚至仰慕。你靠花钱洗白了自己的怪物身份。",
+            "branchHint": "用高智商公关手段解决职场霸凌问题",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "F": 2
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "公关洗白",
+              "虚假人设"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "既然嫌弃我，我就每天晚上潜入他们的营帐，在他们床头放一朵用酸血腐蚀出来的诡异小花，让他们知道害怕的真正含义。",
+            "npcReply": "新兵们接连精神衰弱，防线还没开打就崩溃了一半。你被督战队重点关照了。",
+            "branchHint": "用病态的恶作剧报复队友，完全反团队的作风",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "str": 2,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "午夜恐吓",
+              "变态报复"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "在头盔上绑两个毛茸茸的粉色兔耳朵，试图通过强烈的反差萌来拉近与新兵的距离。",
+            "npcReply": "这幅极其辣眼睛的画面反而让新兵们觉得你脑子不太正常，出于同情，他们竟然接纳了你。",
+            "branchHint": "用令人智熄的卖萌战术消除了距离感",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 1,
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "good": 1
+            },
+            "triggerTags": [
+              "硬核卖萌",
+              "智熄粉色"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_armor_limit",
+        "targetId": "fighter_line",
+        "title": "重甲的枷锁",
+        "scene": "在攻城战中，军团为你特制的超大号重甲不仅重如山岳，而且扣带在剧烈运动中崩断了。此时你正卡在通往城墙顶端狭窄的盘旋楼梯上，上方的敌军正准备倾倒滚烫的沸油。",
+        "prompt": "面对这极度受限的空间和即将落下的致命攻击，你的决断是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "把崩断的重甲直接像蚌壳一样合拢，自己缩成一个铁球，任由沸油浇灌，然后顺着楼梯轰隆隆地滚上去碾压敌人！",
+            "npcReply": "你像一颗滚烫的保龄球一样碾碎了楼梯顶端的守军。这种把绝境转化为动能的战术令人叫绝。",
+            "branchHint": "极限物理变通，展现了重甲步兵的终极机动性",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "good": 1
+            },
+            "triggerTags": [
+              "滚烫保龄",
+              "蚌壳碾压"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "迅速解下重甲，用巨大的力量将其倒置过来卡在墙缝间，做成一个完美的接油槽，把沸油全收集起来反泼回去。",
+            "npcReply": "你不仅没被烫伤，还反向送了敌人一波热油淋浴。百夫长惊叹：‘绝妙的阵地工程学！’",
+            "branchHint": "冷静处理装备故障，化腐朽为神奇的工程战术",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "warlock": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "逆向接油",
+              "工程化解"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "沸油？太好了！我正觉得刚才吃的生肉没熟！张开大嘴去迎接沸油，顺便在肚子里涮个火锅！",
+            "npcReply": "你吐出了几个滚烫的烟圈。敌军看着你在沸油里打饱嗝，吓得连油锅都扔了。",
+            "branchHint": "极端异食癖与物理防御的双重展示",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": -2,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "沸油火锅",
+              "食人魔属性"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "大声向上面喊：‘等等！这套盔甲可是租来的！烧坏了你们赔吗！’然后立刻趴下装死。",
+            "npcReply": "你的市侩发言让敌军愣了一秒，沸油倒歪了。你靠不要脸躲过了一劫。",
+            "branchHint": "靠极端吝啬的言论拖延了时间",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "讹诈战术",
+              "租借盔甲"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_defense_choice",
+        "targetId": "fighter_line",
+        "title": "防线的抉择",
+        "scene": "阵线被撕开了一个口子。你的左侧是正遭遇突袭的后排法师，右侧是暴露了空档的敌方主将，而正前方是正汹涌涌入的重装步兵。指挥官已经倒下，无法下达命令。",
+        "prompt": "在这极其混乱的战场上，你庞大的身躯该移动到哪个位置？",
+        "options": [
+          {
+            "id": "A",
+            "text": "我把自己当成最后一根承重柱，直挺挺地钉在正前方的缺口，哪怕被砍成肉泥也绝不退后半寸。这是纪律。",
+            "npcReply": "你承受了最惨烈的集火，但法师因此得救，敌方主将也被友军收割。你的坚守奠定了胜局。",
+            "branchHint": "完美的阵地战觉悟，为了防线可以放弃一切机会",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "wis": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "J": 2
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "终极承重柱",
+              "死守不退"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "我一把抓起左侧的法师，把他像标枪一样扔向右侧的敌方主将，然后自己去堵前面的缺口。一箭三雕！",
+            "npcReply": "法师在空中尖叫着放出了大招，主将惨死，你守住了缺口。所有人都在震撼你的全能战术。",
+            "branchHint": "脑洞大开的高智商协同战术，法师体验极差",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "fighter": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "good": 1
+            },
+            "triggerTags": [
+              "法师标枪",
+              "空间战术"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "什么防线？老子去搜刮指挥官的尸体，说不定他身上藏着好酒或者私房钱呢！",
+            "npcReply": "你在战场中心摸尸体的举动彻底激怒了所有人。虽然你捡到了钱，但你被双方法庭联合通缉了。",
+            "branchHint": "要钱不要命的绝对自私行为，混乱极致",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 3,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "barbarian": 3,
+              "fighter": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "火线摸尸",
+              "贪婪无度"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "立刻跪在地上大喊：‘我不是军人！我只是个路过的超大型盆栽！’试图通过静止不动逃避所有伤害。",
+            "npcReply": "混乱的战场上竟然真的没人去管一坨安静的肉块。你苟活到了最后，成为了战场奇观。",
+            "branchHint": "极端猥琐的装死技巧，滑稽度拉满",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 2,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "self": 1
+            },
+            "triggerTags": [
+              "静止盆栽",
+              "隐身术"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fighter_final_proof",
+        "targetId": "fighter_line",
+        "title": "最后的军规",
+        "scene": "考核结束时，百夫长冷冷地看着你：‘很多人认为你只是一头套上盔甲的野兽，只要闻到血腥味就会把阵型抛到脑后。你要如何证明，你能理解黑旗军团的重量？’",
+        "prompt": "面对百夫长的终极质问，你的回答是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "用匕首在自己胸口划出黑旗军团的徽章，任由它愈合后再划开，循环往复：‘纪律，就是永不愈合的伤痕。’",
+            "npcReply": "百夫长被你这偏执且惨烈的宣誓震撼了：‘入列吧，活体城墙。’",
+            "branchHint": "极其硬核的誓言方式，完美的重装步兵",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 3
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "血肉徽章",
+              "惨烈誓言"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "递上一份我花了三个晚上写的《论巨魔体型在密集方阵中的受力分析与优化走位指南》。",
+            "npcReply": "百夫长看着这厚厚的一叠学术论文，陷入了怀疑人生的沉默：‘去参谋部报到吧。’",
+            "branchHint": "用不可思议的学术修养击碎了考官的偏见",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "str": -1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "战术论文",
+              "高知巨魔"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "掏出一大袋金币砸在桌上：‘少废话！我出钱买下这个排的装备维护权，我就是这里的重量！’",
+            "npcReply": "百夫长默默收起了金币，清了清嗓子：‘军团也是需要商业赞助的，你及格了。’",
+            "branchHint": "用资本的力量强行诠释了军团的重量，极端现实",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "dex": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "fighter": -1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "带资进组",
+              "钞能力"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "我立刻蹲下，抱着百夫长的大腿大声干嚎：‘求求你收了我吧！外面的人都想打我，只有这里的铁饭碗能保命啊！’",
+            "npcReply": "百夫长被你抱得完全无法动弹，为了自己的面子，他只能咬牙让你通过。",
+            "branchHint": "丢弃所有尊严的软饭硬吃法",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "wis": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "fighter": 1
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "抱大腿",
+              "铁饭碗执念"
+            ]
+          }
+        ]
+      }
+    ],
+    "warlock_contract": [
+      {
+        "id": "warlock_sell_secret",
+        "targetId": "warlock_contract",
+        "title": "血肉的开价",
+        "scene": "契约所的地下室内，一个戴着乌鸦面具的学者递给你一份羊皮纸。‘我不需要你的灵魂，我只需要你每隔三天，切下一根手指供我研究巨魔的再生。报酬是这本深渊法术书。’",
+        "prompt": "面对这份略显惊悚的交易，你的决定是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "当场掏出斧头把左手全部剁下来扔给他：‘这一打手指够付半年的利息了，现在把法术书交出来。’",
+            "npcReply": "学者被你这批发式的肢体交易吓了一跳，颤抖着递上法术书：‘你是个可怕的商人。’",
+            "branchHint": "极致的痛觉麻木与批发式交易，极其硬核",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "self": 1
+            },
+            "triggerTags": [
+              "批发手指",
+              "硬核预付"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "提出反向对赌：我不仅给手指，如果你研究不出来再生原理，你得倒赔我两本法术书作为专利费。",
+            "npcReply": "面具后的眼睛眯了起来：‘有趣的法务精神，契约所正缺你这种懂得保护知识产权的怪物。’",
+            "branchHint": "利用现代专利意识反向讹诈深渊学者",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "int": 3
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "专利索赔",
+              "商业对赌"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "直接抓起那张羊皮纸吃进肚子里，咀嚼着宣告：‘既然进了我的肚子，这份契约的最终解释权归我的胃所有！’",
+            "npcReply": "学者看着你把附魔的羊皮纸咽下去，当场破防：‘你这个野蛮的法盲！滚出去！’",
+            "branchHint": "用纯粹的野蛮物理破坏契约，法系终结者",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 3,
+              "warlock": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "吞噬契约",
+              "物理毁约"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "问他接不接受‘二手’手指，我刚好认识几个地精朋友，他们的手指也可以当成我的‘代理手指’。",
+            "npcReply": "学者被你这偷换概念的外包操作整无语了：‘我们这不接受生物质外包服务！’",
+            "branchHint": "企图将深渊代价外包的滑稽操作",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "外包代价",
+              "偷换概念"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_pain_for_power",
+        "targetId": "warlock_contract",
+        "title": "痛苦的转化",
+        "scene": "你刚签下契约，宗主的声音就在你脑海中炸开。他要求你主动承受一次烈火焚烧的痛苦，以此来激发法术回路的成型。但你知道巨魔最怕的就是火。",
+        "prompt": "为了获得这股力量，你要如何面对致命的火焰？",
+        "options": [
+          {
+            "id": "A",
+            "text": "脱光衣服主动走进火里，并且随手抓一把孜然和盐洒在自己身上，以极具挑衅的姿态完成仪式。",
+            "npcReply": "宗主被你这种极其亵渎且带有自嘲的疯狂折服了：‘你简直是个不畏生死的神经病，力量归你了。’",
+            "branchHint": "将极端痛苦化作荒诞的烧烤表演，极致挑衅",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "烧烤自己",
+              "变态挑衅"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "戴上墨镜，拿出隔热炼金垫，以极其科学的角度只让身体的边缘接触火焰，精准控制烧伤面积在9.9%。",
+            "npcReply": "宗主感到非常憋屈，因为你虽然过了关，但他没有感受到预期的折磨快感。",
+            "branchHint": "用科学的风险管理卡了宗主的仪式Bug",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "con": -1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "精准卡Bug",
+              "风控管理"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "立刻抱紧身边监督仪式的学者，大喊‘要死一起死！’，试图用同归于尽的方式逼迫宗主降温。",
+            "npcReply": "学者惨叫着发动了冰霜法术。你靠着强行绑架NPC活了下来，但名声彻底臭了。",
+            "branchHint": "无底线的绑架要挟，极其卑劣的生存法",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "dex": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "warlock": -2,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "self": 1
+            },
+            "triggerTags": [
+              "绑架要挟",
+              "卑劣求生"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "掏出一大袋棉花糖，在火上愉快地烤了起来，假装这只是一场普通的营火晚会，企图萌混过关。",
+            "npcReply": "宗主在精神链接里陷入了极度的沉默，最后实在受不了你这种白痴行为，主动撤销了火焰。",
+            "branchHint": "用棉花糖摧毁了深渊仪式的严肃性",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 3,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "营火晚会",
+              "降智打击"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_human_promise",
+        "targetId": "warlock_contract",
+        "title": "褪去怪胎之皮",
+        "scene": "一位魔鬼代理人微笑着向你展示了一副完美的人类皮囊。‘只要签下这份灵魂转让协议，我就剥去这副被世人畏惧的巨魔外壳，让你作为一个俊美的贵族人类重生。’",
+        "prompt": "面对这个极具诱惑力的提议，你的态度是？",
+        "options": [
+          {
+            "id": "A",
+            "text": "指出这副人类皮囊缺乏核心竞争力。要求魔鬼在人类皮囊上加装巨魔的再生腺体和食人魔的消化系统，否则免谈。",
+            "npcReply": "魔鬼气急败坏：‘我这是灵魂交易，不是非法地下义体改造工作室！’",
+            "branchHint": "用甲方的极其刁钻的定制要求逼疯了魔鬼",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "cha": 3,
+              "con": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "warlock": 3,
+              "barbarian": -2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "甲方思维",
+              "离谱定制"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "拿出一本《反不正当竞争法》，指责魔鬼推销虚假美容产品，并威胁要向深渊消协举报他。",
+            "npcReply": "魔鬼吓得赶紧收起了皮囊。你不仅保住了灵魂，还成功讹了他一笔封口费。",
+            "branchHint": "法治社会的巨魔给深渊带来了一点小小的震撼",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2
+            },
+            "affinityDelta": {
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "self": 1
+            },
+            "triggerTags": [
+              "深渊消协",
+              "普法教育"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "一把抢过那副人类皮囊，当场像套丝袜一样硬套在自己三米高的身体上，把它撑得稀巴烂！",
+            "npcReply": "魔鬼看着价值连城的魔法皮囊变成了破布，尖叫着对你释放了诅咒，随后逃之夭夭。",
+            "branchHint": "用最纯粹的暴力践踏了诱惑，狂野且破坏力惊人",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "cha": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": -2,
+              "barbarian": 2
+            },
+            "alignmentDelta": {
+              "good": 1
+            },
+            "triggerTags": [
+              "撕裂诱惑",
+              "暴力试穿"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "我问魔鬼能不能不换皮，而是给我来一套深渊名媛的化妆教程，我想学怎么修容显脸小。",
+            "npcReply": "魔鬼看着你那张坑坑洼洼的大脸，绝望地闭上了眼睛：‘你这超出了我的业务范围。’",
+            "branchHint": "极具槽点的美妆诉求让深渊交易变成了美妆频道",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "深渊美妆",
+              "物理难点"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_dirty_clause",
+        "targetId": "warlock_contract",
+        "title": "恶毒的漏洞",
+        "scene": "你的队友偷偷看了你的契约，发现上面用极小的古精灵语写着：‘当宿主受到致命伤时，宗主有权永久征用该躯体。’这意味着你一直在帮别人养护这具不死的肉身。",
+        "prompt": "得知这个恶毒的漏洞后，你打算怎么办？",
+        "options": [
+          {
+            "id": "A",
+            "text": "故意去染上一身极难根治的性病和脚气，并且疯狂喝酒把肝吃坏。我倒要看看他征用过去之后怎么治！",
+            "npcReply": "宗主在精神链接里发出了一声痛苦的叹息，默默删除了那条征用条款，他嫌脏。",
+            "branchHint": "通过恶意毁坏‘抵押物’来抗拒执行，无赖至极",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "破坏抵押物",
+              "互相恶心"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "在契约的空白处用同样微小的字迹补充：‘一旦征用，宗主必须继承宿主在各大酒馆和黑市的所有巨额债务。’",
+            "npcReply": "当你把那长长的债务清单展示给宗主时，他果断撕毁了那条附加协议，宣布破产。",
+            "branchHint": "利用债务转移完成惊天反杀，商业奇才",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 2,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "lawful": 2
+            },
+            "triggerTags": [
+              "债务转移",
+              "反向套牢"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "当场暴走，把那个偷看我契约的队友暴揍一顿：‘谁让你多管闲事！老子就算被征用也要当最强的被征用者！’",
+            "npcReply": "队友被打得鼻青脸肿。你虽然保住了狂妄，但失去了团队中唯一关心你的人。",
+            "branchHint": "好心当驴肝肺的狂躁反应，孤立无援的开始",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "wis": -1,
+              "con": -2
+            },
+            "mbtiDelta": {
+              "F": 1
+            },
+            "affinityDelta": {
+              "warlock": -2
+            },
+            "alignmentDelta": {
+              "good": 1
+            },
+            "triggerTags": [
+              "迁怒队友",
+              "狂妄固执"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "每天给身体涂满黏糊糊的臭泥和鼻涕，试图在物理层面降低躯体的‘二手转让价值’，让宗主倒胃口。",
+            "npcReply": "不仅宗主觉得恶心，连你的队友都不愿意和你走在同一条街上。你成功变成了无人问津的垃圾。",
+            "branchHint": "用纯粹的物理恶心逃避了深渊剥削",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "降低折旧率",
+              "自降身价"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_debt_collection",
+        "targetId": "warlock_contract",
+        "title": "恶毒的催收",
+        "scene": "战斗刚结束，你精疲力竭。宗主冰冷的声音突然在脑海中回响，要求你提前支付本月利息：一块正处于活性再生状态的脾脏，否则就立刻收回你的施法能力。",
+        "prompt": "面对这种趁火打劫的催收，你要怎么处理？",
+        "options": [
+          {
+            "id": "A",
+            "text": "一刀捅进肚子里，准确地搅碎脾脏，大笑：‘自己来拿啊！我已经把它弄成肉泥了，看你怎么拼！’",
+            "npcReply": "宗主被你这种宁为玉碎的变态反应震慑住了。他在精神链接里骂了一句疯子，放弃了催收。",
+            "branchHint": "用自毁式的疯狂反击了恶劣催收，令人胆寒",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "捣碎抵押物",
+              "玉石俱焚"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "熟练地掏出魔法留影水晶：‘我已经开启了录像，你这种暴力催收行为将作为证据递交跨位面纠纷仲裁庭。’",
+            "npcReply": "宗主的虚影闪烁了一下。他显然没想到一个巨魔还能懂得留存电子证据，催收不了了之。",
+            "branchHint": "执法记录仪式的降维打击，现代法务再下一城",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 2,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "取证维权",
+              "仲裁警告"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "恼羞成怒，抓起地上一把沾满大粪的武器，试图顺着契约链接反向丢进宗主的精神世界里恶心他。",
+            "npcReply": "你确实恶心到了宗主，但也激怒了他，你的魔力被切断了整整一个星期作为惩罚。",
+            "branchHint": "精神污染的跨界攻击，导致了严厉的反噬",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "粪便制裁",
+              "跨界攻击"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "假装信号不好，在脑海里不断发出‘嘟……嘟……您呼叫的巨魔不在服务区……’的机械提示音。",
+            "npcReply": "宗主被你这极其劣质的伪装气得直接切断了通话。你用智障般的演技逃过一劫。",
+            "branchHint": "极具槽点的电信逃避法，滑稽度爆表",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1,
+              "self": 1
+            },
+            "triggerTags": [
+              "伪装信号差",
+              "拔网线"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_forbidden_knowledge",
+        "targetId": "warlock_contract",
+        "title": "禁忌的载体",
+        "scene": "你在契约所的地下室发现了一本被焚毁了一半的禁忌法术书。上面的魔法过于强大，任何试图抄写它的纸张都会在落笔瞬间自燃。",
+        "prompt": "为了把这些知识带出去，你做出了一个疯狂的决定：",
+        "options": [
+          {
+            "id": "A",
+            "text": "强行将法术书的残页缝进自己的掌心肉里，让自己的血液与纸张融合，用生命力去压制那股自燃的力量。",
+            "npcReply": "你的手心长出了诡异的文字。你不仅带出了知识，还让自己拥有了一只能直接释放禁忌法术的左手。",
+            "branchHint": "将自身化作法器的硬核操作，充满血肉术士的美感",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "掌心缝合",
+              "肉体法器"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "发现文字只能存在于耐高温材质上，于是我拿出一套雕刻刀，把法术全刻在了地下室的马桶圈上带走。",
+            "npcReply": "契约所的导师看着你扛着一个刻满高级奥术符文的马桶圈招摇过市，三观遭遇了毁灭性打击。",
+            "branchHint": "极其无厘头但符合逻辑的载体选择，实用且下流",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "str": -1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "warlock": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "附魔马桶",
+              "物理破解"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "直接抓起一个新来的学徒，用烙铁把符文全烫在他背上，只要他不死，我随时可以翻看这本‘人皮书’。",
+            "npcReply": "学徒在惨叫中晕死过去。这种极其残忍且毫无人性的做法让你成为了契约所里的危险分子。",
+            "branchHint": "极度冷血无情的黑魔法操作，触碰道德底线",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "int": 1,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "人皮复印机",
+              "残忍暴行"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "拿出一块留影水晶，一边翻书一边大喊：‘老铁们看好了，深渊禁术大揭秘，喜欢的老铁点个双击！’",
+            "npcReply": "法术书不堪受辱，直接爆发出强光自毁了。你虽然没带出知识，但留下了一段极其珍贵的整活录像。",
+            "branchHint": "用现代直播流氓手段亵渎了古老魔法",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "直播解密",
+              "气死魔法"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warlock_final_proof",
+        "targetId": "warlock_contract",
+        "title": "反客为主",
+        "scene": "宗主的投影降临，它试图越过契约的界限，直接占据你这具强大的肉身，把你彻底变成一个供其驱使的无意识血囊。",
+        "prompt": "在意识即将被剥夺的最后时刻，你要如何反制？",
+        "options": [
+          {
+            "id": "A",
+            "text": "主动切断自己一半的脑神经，让自己变成一个毫无思维逻辑、只剩下无尽疯狂和饥饿的纯粹野兽来反噬他！",
+            "npcReply": "宗主的意识在你那充满狂乱的脑海中瞬间迷失并被同化。你以自残智力为代价，吞噬了深渊的投影。",
+            "branchHint": "用纯粹的疯狂战胜了深渊的入侵，代价惨烈但极其有效",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "cha": 2
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "warlock": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "切断脑神经",
+              "反向吞噬"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "在意识深处构建出连环微积分和量子力学的高数题库，强迫宗主的意志进来解题，把它死死困在知识的海洋里。",
+            "npcReply": "宗主虽然是深渊霸主，但显然没上过大学，它的投影在第四道高数题面前崩溃消散了。你用学术完成了防守。",
+            "branchHint": "用高维现代科学知识降维打击魔法生物，极具创意",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "学术防御",
+              "高数困阵"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "绝望之下直接掏出炸药桶，准备和宗主的投影同归于尽。‘想要这具身体？那就去地狱里捡碎片吧！’",
+            "npcReply": "剧烈的爆炸不仅摧毁了投影，也把你的身体炸掉了一半。你幸存了下来，但再生过程需要极其漫长的时间。",
+            "branchHint": "纯粹的物理自爆抗拒，极具毁灭性",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 2,
+              "warlock": -1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "人体炸弹",
+              "宁死不屈"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "在意识里向宗主推销这具身体上附带的房贷、车贷和巨额网贷。告诉他一旦占据身体，就要按月还钱。",
+            "npcReply": "宗主仔细查阅了你的债务清单后，发出了一声倒吸凉气的惊呼，以光速解除了附身，生怕沾染上这可怕的契约。",
+            "branchHint": "利用现代债务恐吓成功吓退了深渊领主，荒诞不经",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 3,
+              "con": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "self": 1
+            },
+            "triggerTags": [
+              "房贷吓退",
+              "债务转移法"
+            ]
+          }
+        ]
+      }
+    ],
+    "druid_mutation_circle": [
+      {
+        "id": "druid_nature_anomaly",
+        "targetId": "druid_mutation_circle",
+        "title": "林地的排斥",
+        "scene": "你试图进入德鲁伊的林地，但周围的植物对你那异于常人的再生血液产生了剧烈反应。藤蔓像蛇一样退开，老树也发出不安的吱嘎声。你被视为了一种‘自然污染’。",
+        "prompt": "面对森林的排斥，你要如何证明自己的资格？",
+        "options": [
+          {
+            "id": "A",
+            "text": "大步上前，强行抱住那棵最老、最抗拒我的古树，用巨魔的心跳去强行同化它的脉动，哪怕被树枝刺穿！",
+            "npcReply": "古树试图反抗，但最终被你那不讲理的顽强生命力所折服，长出了带着你血液颜色的新叶。",
+            "branchHint": "用霸道总裁式的强硬同化征服了大自然",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "霸道同化",
+              "强拥古树"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出随身携带的土壤酸碱度检测仪和营养液，向长老们展示我这特殊的血液可以作为某种极品化肥促进濒危植物生长。",
+            "npcReply": "长老们看着你用血液成功救活了一株极其娇贵的魔力兰花，陷入了深深的学术沉思。",
+            "branchHint": "用现代农学思路将排斥化为有价值的肥料学",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "druid": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "科学种田",
+              "行走的化肥"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "既然嫌弃我，我就放火！掏出火把在林地边缘乱挥：‘你们不接纳我，我就让你们变成木炭！’",
+            "npcReply": "大德鲁伊愤怒地召唤了一场暴雨浇灭了你，并将你打飞出林地：‘滚出去，纵火犯！’",
+            "branchHint": "极端暴躁的纵火抗议，彻底搞砸了面试",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "druid": -2,
+              "barbarian": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "纵火威胁",
+              "破坏分子"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "顺势倒在地上，假装自己已经是一具滋养大地的死尸，试图用极其精湛的装死技巧融入自然环境。",
+            "npcReply": "几只食腐鸟落在了你头上拉屎，但周围的藤蔓慢慢爬了过来掩盖你。你用最丢脸的方式过关了。",
+            "branchHint": "凭借满级的装死技巧和不要脸精神融入生态圈",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "装死大师",
+              "融入土壤"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_civilization_reject",
+        "targetId": "druid_mutation_circle",
+        "title": "两难的缝隙",
+        "scene": "你因为身上长出了诡异的树皮和藤蔓，被城镇守卫当成瘟疫源驱逐。但当你逃进荒野时，普通的野兽又把你当成两足行走的怪物而疯狂攻击你。",
+        "prompt": "在文明与荒野的夹缝中，你要怎么生存？",
+        "options": [
+          {
+            "id": "A",
+            "text": "既然都不欢迎我，那我就建立我自己的生态！我跑到深山里，用再生血液强行变异出一批极其凶残的藤蔓巨兽当小弟，自立为王！",
+            "npcReply": "你成为了让城镇和荒野都闻风丧胆的禁区之主。林地议会不得不派专员来和你进行平等的领土谈判。",
+            "branchHint": "建立独立生态圈，充满魄力的孤王路线",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "str": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "druid": 3,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1,
+              "self": 1
+            },
+            "triggerTags": [
+              "自建生态",
+              "异变之王"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "巧妙利用身上的树皮作为天然隐蔽物，在城镇守卫换班的死角开设午夜黑市，高价出售荒野稀有的附魔草药。",
+            "npcReply": "你成为了传说中的‘树人商人’。白天你是荒野的幽灵，晚上你是贪婪法师们最爱的供货商。",
+            "branchHint": "游走于边界的极佳商业头脑，两头通吃",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "wis": 2,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "J": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "druid": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1,
+              "good": 1
+            },
+            "triggerTags": [
+              "边界黑市",
+              "树皮伪装"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "一怒之下直接冲击城镇大门，把那些赶我出来的守卫揍个半死：‘老子今天偏要睡在城里最好的旅馆！’",
+            "npcReply": "你虽然揍爽了，但引来了公会的大批讨伐队，最终只能狼狈逃回荒野深处舔舐伤口。",
+            "branchHint": "无脑宣泄暴力的结果就是两边不讨好",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 1,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "S": 1
+            },
+            "affinityDelta": {
+              "druid": -2,
+              "fighter": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "暴力闯关",
+              "无脑泄愤"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "跑到两方交界处的关卡，身上挂个牌子‘珍稀变异巨魔，门票五枚铜币，投食加两币’，搞起了个人展览。",
+            "npcReply": "你不仅没饿死，反而靠卖门票和被投食发了笔小财。这种极其不要脸的商业头脑让大德鲁伊都沉默了。",
+            "branchHint": "将排挤转化为商机，无视尊严的生存大师",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 3,
+              "wis": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 1,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 1
+            },
+            "triggerTags": [
+              "个人展览",
+              "收门票"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_hunger_control",
+        "targetId": "druid_mutation_circle",
+        "title": "野性的饥饿",
+        "scene": "你被分配去照顾一只受伤的珍稀飞马。但这几天你的再生能力消耗了大量能量，你正处于极度饥饿、野性本能快要失控的边缘。飞马的血腥味在不断刺激你的神经。",
+        "prompt": "你要如何克制把病患视作补给的冲动？",
+        "options": [
+          {
+            "id": "A",
+            "text": "果断从自己大腿上割下一大块肉，一边嚼自己的肉一边狠狠盯着飞马，用这种极其自虐且凶残的方式压制本能。",
+            "npcReply": "飞马被你这种自食其肉的狠劲吓得缩在角落里瑟瑟发抖。神官看着你满嘴自己的血，倒吸一口凉气。",
+            "branchHint": "极其病态的自给自足，充满了自毁与克制的张力",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {
+              "good": 1,
+              "lawful": 1
+            },
+            "triggerTags": [
+              "自食其肉",
+              "硬核止饿"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "迅速利用周围的草药调配出一剂极效麻醉剂给自己灌下去，强行让自己陷入昏迷，逃避饥饿的煎熬。",
+            "npcReply": "你睡得像死猪一样，口水流了一地。虽然很不体面，但你用科学的药理学保护了飞马的安全。",
+            "branchHint": "用炼金手段强行关机，非常理性的逃避方法",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "str": 2,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 1,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "自我麻醉",
+              "物理关机"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "忍不住了！飞马算什么？我直接拔掉它两根最漂亮的羽毛塞嘴里解馋，就算不吃肉我也得嚼点什么！",
+            "npcReply": "飞马疼得惨叫，它的翅膀废了。神官对你极其失望：‘你连一头野兽都不如！’",
+            "branchHint": "控制不住本能的半吊子破坏，引发极其负面的后果",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "con": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "P": 2
+            },
+            "affinityDelta": {
+              "druid": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 2
+            },
+            "triggerTags": [
+              "拔毛解馋",
+              "伤害病患"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "开始疯狂给飞马做马杀鸡，试图用高强度的劳动来转移自己的注意力，顺便给肉质……不，给它放松肌肉。",
+            "npcReply": "飞马被你按得极其舒服甚至打起了呼噜，而你累得虚脱倒地。你用按摩拯救了彼此。",
+            "branchHint": "靠极端离谱的注意力转移法化解了危机",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "con": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 2
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "极致马杀鸡",
+              "劳动转移法"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_pure_proof",
+        "targetId": "druid_mutation_circle",
+        "title": "污染源的质询",
+        "scene": "最终的入环仪式上，三位长老审视着你：‘巨魔的血肉往往伴随着瘟疫、腐败和失控。你凭什么证明，你体内的异变不是大自然的毒瘤，而是新生的循环？’",
+        "prompt": "你要如何回答这个哲学与生理的双重拷问？",
+        "options": [
+          {
+            "id": "A",
+            "text": "猛然捏碎一颗剧毒的瘴气果实吞下，然后在他们面前，硬生生把毒素通过皮肤逼出来，催生出一朵散发着恶臭但极其绚丽的冥界之花。",
+            "npcReply": "长老们被这种将致命毒素转化为极致生命力的野蛮美学震撼了：‘这是最纯粹的置之死地而后生。’",
+            "branchHint": "用最具视觉冲击力的自残式演示证明了自己",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 2,
+              "wis": 2
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "F": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "吞毒生花",
+              "暴力转化"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出一叠详尽的《真菌寄生与巨魔细胞共生可行性分析报告》，用扎实的数据证明我不仅无害，还能降解环境污染。",
+            "npcReply": "长老们看着这沓带着泥巴的论文，陷入了极其漫长的学术沉默：‘我们是德鲁伊，不是科学院。’",
+            "branchHint": "用不可思议的现代学术报告碾压了传统的自然哲学",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "druid": 2
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "学术报告",
+              "降维打击"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "大声嘲笑他们迂腐：‘大自然连一坨屎都能当肥料，怎么就包容不了我？你们比城里人还虚伪！’",
+            "npcReply": "长老们气得胡子发抖。你的地图炮成功得罪了所有人，他们直接召来雷电把你轰了出去。",
+            "branchHint": "无脑开群嘲的结果就是被直接开除",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "str": 3,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "S": 1
+            },
+            "affinityDelta": {
+              "druid": -2,
+              "barbarian": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "直球辱骂",
+              "开群嘲"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "不说话，默默地在他们面前劈了个极其标准的叉，并用头顶了一碗水展示自己拥有无与伦比的生态平衡感。",
+            "npcReply": "三位长老看着一个三米高的巨魔在他们面前玩杂技，表情已经完全麻木了：‘……你赢了，走吧。’",
+            "branchHint": "用极度滑稽且离题的杂技表演逃避了哲学拷问",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "巨魔劈叉",
+              "杂技大师"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_toxin_symbiosis",
+        "targetId": "druid_mutation_circle",
+        "title": "花开血肉",
+        "scene": "在吸收了沼泽瘴气后，你的左臂不仅再生了，而且还长满了一丛丛散发着致幻孢子的奇异毒花。这种花粉让你自己都经常产生诡异的幻觉。",
+        "prompt": "你要如何处理这种不受控制的植物共生体？",
+        "options": [
+          {
+            "id": "A",
+            "text": "主动切断左臂的痛觉神经，任由毒花扎根骨髓。在幻觉中与植物的意志搏斗，直到把这丛毒花彻底驯服成我的专属共生武器！",
+            "npcReply": "大德鲁伊看着你布满青筋和藤蔓的左手：‘你不是在共生，你是在征服。但不得不承认，你成功了。’",
+            "branchHint": "极具攻击性的驯服手段，将异变化为强大的兵器",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "精神搏斗",
+              "强行征服"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "小心翼翼地修剪毒花，将收集起来的致幻孢子提纯打包，准备在下一次进入城镇时高价卖给那些寻求刺激的贵族。",
+            "npcReply": "你成为了游走在林地和黑市边缘的危险毒枭。大德鲁伊对你的商业头脑表示极其头疼。",
+            "branchHint": "将自然异变完美转化为商业利润的鬼才操作",
+            "outcomeTone": "转岗",
+            "scoreDelta": {
+              "int": 2,
+              "cha": 1
+            },
+            "mbtiDelta": {
+              "N": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "druid": -1,
+              "warlock": 2
+            },
+            "alignmentDelta": {
+              "self": 2
+            },
+            "triggerTags": [
+              "毒枭头脑",
+              "孢子提纯"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "幻觉让我觉得这手臂是个累赘，直接拿斧头把整条左臂齐根砍下扔进火堆！老子是巨魔，大不了再长一条没有花的！",
+            "npcReply": "虽然手臂重新长出来了，但你这种粗暴拒绝自然的态度引起了林地的严重不满。你失去了晋升机会。",
+            "branchHint": "极其野蛮且毫无耐心的自我截肢，拒绝沟通",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "con": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "druid": -2,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "物理断臂",
+              "简单粗暴"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "觉得幻觉还挺有意思的，干脆每天趴在左手上吸两口，把它当成随身携带的VR体验机，快乐得无法自拔。",
+            "npcReply": "同伴们经常看到你抱着自己的手臂傻笑，甚至在战斗中还会走神去跟空气里的蝴蝶打招呼。",
+            "branchHint": "毫无进取心地沉沦于迷幻体验，滑稽又悲哀",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "str": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "S": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "druid": 1
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "吸花成瘾",
+              "自带VR"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_swamp_purification",
+        "targetId": "druid_mutation_circle",
+        "title": "腐化海绵",
+        "scene": "大德鲁伊指着一片被死灵魔法彻底腐化的黑色水潭，要求你利用巨魔强悍的生命力走进去，像一块海绵一样‘吸收’并转化这些污染，以净化林地。",
+        "prompt": "你站在这片散发着恶臭的死水前，迈出了第一步：",
+        "options": [
+          {
+            "id": "A",
+            "text": "毫不犹豫地纵身跃入最深处，放开全身毛孔，像一台狂暴的抽水机一样，任由死灵魔法腐蚀肉体，再用不可思议的再生速度强行将污染碾碎！",
+            "npcReply": "潭水在你的惨叫声中逐渐清澈，而你蜕下了一整层如同黑炭般的死皮。这是一种神迹般的粗暴净化。",
+            "branchHint": "极致的肉身献祭与暴力过滤，完美体现巨魔特质",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "con": 3,
+              "wis": 1
+            },
+            "mbtiDelta": {
+              "F": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {
+              "good": 2
+            },
+            "triggerTags": [
+              "肉体抽水机",
+              "脱皮净化"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "掏出一堆竹管、木炭和细沙，在水潭边快速搭建了一个三级简易过滤系统，然后只用手蘸一蘸最后流出的清水表示我已经‘吸收’了。",
+            "npcReply": "大德鲁伊看着你的净水工程，眼角狂跳：‘虽然水是干净了，但我让你用生命力净化，没让你搞物理过滤！’",
+            "branchHint": "用现代野外求生技巧规避了魔法伤害，极度机智",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 3,
+              "con": -1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "druid": 1,
+              "warlock": 1
+            },
+            "alignmentDelta": {
+              "lawful": 1
+            },
+            "triggerTags": [
+              "物理过滤",
+              "科技改变魔法"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "觉得这水潭太恶心了，直接扛起旁边的一块巨石狠狠砸进去，试图用飞溅的泥水把污染物理转移到站得远远的考官身上！",
+            "npcReply": "大德鲁伊被泼了一身黑泥。你没能净化水潭，反而成功让自己被全林地通缉了。",
+            "branchHint": "毫无责任心且恶意满满的物理逃避法",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 2
+            },
+            "affinityDelta": {
+              "barbarian": 1,
+              "druid": -2
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "恶意泼水",
+              "极度自私"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "大声宣布自己最近肠胃不好，怕拉肚子，试图拿出一张三甲医疗法师开的假病假条来逃避下水。",
+            "npcReply": "大德鲁伊看着那张写着‘禁止接触凉水’的假条，实在不知道该如何吐槽一头巨魔的‘娇贵’。",
+            "branchHint": "用不可思议的现代职场请假技巧逃脱了试炼",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "P": 1
+            },
+            "affinityDelta": {
+              "druid": -1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "请假条假遁",
+              "娇贵巨魔"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "druid_protect_vs_prey",
+        "targetId": "druid_mutation_circle",
+        "title": "守护与饥饿",
+        "scene": "你受命保护一窝极其稀有的月光狐幼崽。但你现在已经三天没吃东西了，巨魔的再生系统正因为极度饥饿而在疯狂抽取你的理智，幼狐的血肉香味正不断钻进你的鼻腔。",
+        "prompt": "你要如何在撕裂理智的本能中守住自己的誓言？",
+        "options": [
+          {
+            "id": "A",
+            "text": "为了防止自己失控，我毫不犹豫地拿起石头把自己的满口尖牙全部砸碎！没有牙齿，我就算彻底疯狂也咬不死它们！",
+            "npcReply": "你满嘴是血地护在幼狐身前。神官被这种极其残忍但绝对忠诚的自我约束震撼得无以复加。",
+            "branchHint": "极致残酷的自我防范机制，以自残换取绝对安全",
+            "outcomeTone": "合格",
+            "scoreDelta": {
+              "wis": 3,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "J": 1
+            },
+            "affinityDelta": {
+              "druid": 3
+            },
+            "alignmentDelta": {
+              "good": 1,
+              "lawful": 1
+            },
+            "triggerTags": [
+              "砸碎满牙",
+              "绝对守护"
+            ]
+          },
+          {
+            "id": "B",
+            "text": "迅速用随身带的面粉和蜂蜜，在旁边捏了几只假的‘面团狐狸’，在饿得发慌时疯狂咀嚼面团来骗过自己的大脑。",
+            "npcReply": "你虽然吃了一肚子难吃的生面团，但成功骗过了本能。你的手工技巧在这个时候救了大家的命。",
+            "branchHint": "用极具创意的手工伪造食物骗过生理机制",
+            "outcomeTone": "偏离",
+            "scoreDelta": {
+              "int": 2,
+              "con": 1
+            },
+            "mbtiDelta": {
+              "T": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "druid": 2
+            },
+            "alignmentDelta": {},
+            "triggerTags": [
+              "面团替身",
+              "视觉欺骗"
+            ]
+          },
+          {
+            "id": "C",
+            "text": "去他的誓言！再不吃点什么我就会因为再生能力透支而死！我一把抓起旁边最弱小的一只幼狐直接吞了下去！",
+            "npcReply": "你的饥饿缓解了，但当你回到营地时，等待你的是数十名德鲁伊的复仇怒火。",
+            "branchHint": "彻底屈服于本能，犯下无可挽回的罪行",
+            "outcomeTone": "危险",
+            "scoreDelta": {
+              "str": 2,
+              "wis": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "F": -1
+            },
+            "affinityDelta": {
+              "druid": -2,
+              "barbarian": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2,
+              "self": 2
+            },
+            "triggerTags": [
+              "屈服食欲",
+              "残杀幼弱"
+            ]
+          },
+          {
+            "id": "D",
+            "text": "疯狂地揪自己的头发和腿毛吃，试图用这种极其诡异且没有营养的方式来强行填饱肚子。",
+            "npcReply": "第二天早上，神官发现了一个快秃了的巨魔和安然无恙的幼狐。你用脱发守住了誓言。",
+            "branchHint": "靠极端滑稽的异食癖勉强维持了理智",
+            "outcomeTone": "荒诞",
+            "scoreDelta": {
+              "cha": 2,
+              "int": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "N": 1
+            },
+            "affinityDelta": {
+              "druid": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 1
+            },
+            "triggerTags": [
+              "揪毛充饥",
+              "秃头守护"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "endingTemplates": [
+    {
+      "endingId": "troll_accepted_barbarian",
+      "endingType": "accepted",
+      "title": "狂血重坦",
+      "verdictLine": "裂斧营非常满意，他们正缺一个不需要修补的破城锤。",
+      "explanation": "你在考核中展现出了惊人的破坏欲和与其匹配的承受力。考官不在乎你懂不懂兵法，只要你能在战场上把敌人的大门连同守卫一起砸碎，还能自己把断掉的手臂接回去，你就是他们最完美的士兵。",
+      "tableFunction": "在队伍最前方吸收成吨伤害的肉盾，以及关键时刻的暴力输出核心。",
+      "playableFlaw": "极度容易上头，一打起来就忘记防守和战术。",
+      "nextHook": "军士长让你带队去清剿一个布满陷阱的哥布林巢穴，‘用你的肉体把陷阱全趟平’。",
+      "recommendedClass": [
+        "barbarian_camp"
+      ],
+      "tags": [
+        "核心肉盾",
+        "狂暴",
+        "暴力美学"
+      ]
+    },
+    {
+      "endingId": "troll_accepted_fighter",
+      "endingType": "accepted",
+      "title": "活体城墙",
+      "verdictLine": "军团最终决定，将整条防线的生死，托付给你这具庞大的怪物躯体。",
+      "explanation": "你证明了最野蛮的血肉也能被锻造成最坚不可摧的堡垒。你没有被冲动吞噬，而是用巨魔的承受力完美执行了守卫的职责。在袍泽眼中，你不再是令人恐惧的异类，而是代表着绝对安全的黑色巨墙。",
+      "tableFunction": "极其稳定的主坦克，不会被轻易恐惧或魅惑，能完美执行阵地战。",
+      "playableFlaw": "过度依赖护甲和阵型，一旦落单或遭遇高机动敌人就会变得迟钝。",
+      "nextHook": "你被分配去守卫一段最危险的城墙，据说那里每晚都会遭到大型魔物的冲击。",
+      "recommendedClass": [
+        "fighter_line"
+      ],
+      "tags": [
+        "守序",
+        "重装堡垒",
+        "阵地战"
+      ]
+    },
+    {
+      "endingId": "troll_accepted_warlock",
+      "endingType": "accepted",
+      "title": "深渊储血罐",
+      "verdictLine": "你成功给自己的再生能力定出了天价，并在宗主面前保留了谈判权。",
+      "explanation": "你不仅拥有巨魔的肉体，更有着极其危险的算计能力。你成功地把自己的痛苦、血液甚至断肢变成了与魔鬼交易的筹码，并且没有让自己沦为廉价的血肉傀儡。契约所对你这种既懂魔法又懂榨取自身价值的狠角色十分赏识。",
+      "tableFunction": "可以毫无顾忌支付生命值代价来释放强力魔法的法系炮台。",
+      "playableFlaw": "身上总是带着奇怪的契约印记，必须定期支付血肉利息来偿还深渊债务。",
+      "nextHook": "宗主突然要求你支付一块‘靠近心脏的肉’作为利息，你必须决定如何交付。",
+      "recommendedClass": [
+        "warlock_contract"
+      ],
+      "tags": [
+        "血肉代价",
+        "法术炮台",
+        "债务人"
+      ]
+    },
+    {
+      "endingId": "troll_accepted_druid",
+      "endingType": "accepted",
+      "title": "畸变共生体",
+      "verdictLine": "你将失控的异变纳入了生态的循环，荒野接纳了你这株行走的巨型毒蘑菇。",
+      "explanation": "你没有试图切除身上的异变，而是让它们与自然深度融合。你的皮肤下钻出了藤蔓，伤口处开出了剧毒的花朵，而你完美地控制了它们。大德鲁伊认为你展现了生命最野性、最原初的韧性，你成为了林地中最令人敬畏的守护者。",
+      "tableFunction": "自带环境控制、毒素伤害和极强自我恢复能力的近战法系多面手。",
+      "playableFlaw": "走在文明城镇里极易招惹平民的恐慌，常被当成移动瘟疫源。",
+      "nextHook": "一片森林正在遭受死灵魔法的腐化，大德鲁伊派你去‘吸收’那些腐化源。",
+      "recommendedClass": [
+        "druid_mutation_circle"
+      ],
+      "tags": [
+        "异变躯体",
+        "自然共生",
+        "生化伤害"
+      ]
+    },
+    {
+      "endingId": "troll_probation_unstable",
+      "endingType": "probation",
+      "title": "高危起爆器",
+      "verdictLine": "你力大无穷但毫无理智可言，长官决定先让你当个临时工看看情况。",
+      "explanation": "你的力量数值极其惊人，但智力和感知低得可怕。在测试中你展现了毁灭性的破坏力，但也多次差点砸死考官。为了不浪费这身怪力，招募处给你挂了个‘见习’牌子，把你丢进了最危险的敢死队。",
+      "tableFunction": "极高输出但随时可能暴走的定时炸弹，极其考验队友的牵扯能力。",
+      "playableFlaw": "战斗中极易陷入混乱，经常需要队友花一个动作来把你喊醒。",
+      "nextHook": "你被戴上了一个能电击你的抑制项圈，交由一个小队‘试用’。",
+      "recommendedClass": [
+        "barbarian_camp"
+      ],
+      "tags": [
+        "见习",
+        "输出极高",
+        "误伤风险"
+      ]
+    },
+    {
+      "endingId": "troll_probation_slow_shield",
+      "endingType": "probation",
+      "title": "迟缓的移动盾座",
+      "verdictLine": "你进攻迟缓，但这副庞大的身体仍能成为可靠的防线支点。",
+      "explanation": "你的体质分数无可挑剔，但敏捷和力量却差强人意。你挥不动沉重的战锤，也躲不开灵活的盗贼。但你真的很能挨打。长官叹了口气，把你留在了营地，作为‘移动掩体’或‘特殊陪练’见习留用。",
+      "tableFunction": "放弃所有攻击动作，纯粹依靠庞大体积和高血量为队友提供掩护。",
+      "playableFlaw": "速度极慢，经常在战斗结束时才刚刚跑到前线。",
+      "nextHook": "你被分配去护送一辆装满易爆炼金药剂的马车，唯一的任务就是用身体挡住所有流矢。",
+      "recommendedClass": [
+        "fighter_line"
+      ],
+      "tags": [
+        "见习",
+        "纯挨打",
+        "极度迟缓"
+      ]
+    },
+    {
+      "endingId": "troll_probation_cowardly",
+      "endingType": "probation",
+      "title": "心有余悸的巨兽",
+      "verdictLine": "你对战场代价看得太清楚，公会决定暂时让你以见习身份学习站稳。",
+      "explanation": "你对痛苦极其敏感，或者过于聪明导致你看透了战争的惨烈。在考核中你总是试图规避伤害，这让崇尚暴力的考官非常不爽。但考虑到你庞大的体格，他们还是捏着鼻子让你见习，希望实战能逼出你的野性。",
+      "tableFunction": "一个总是在后面指挥或丢石头的奇怪巨魔，偶尔爆发时也有威慑力。",
+      "playableFlaw": "遇到强敌时第一反应是战术撤退，或者把体型较小的队友藏在怀里逃跑。",
+      "nextHook": "你的小队遇到了真正的死局，你终于要面临‘逃跑还是扛伤’的终极选择。",
+      "recommendedClass": [
+        "fighter_line",
+        "druid_mutation_circle"
+      ],
+      "tags": [
+        "见习",
+        "怯懦",
+        "反差性格"
+      ]
+    },
+    {
+      "endingId": "troll_probation_stubborn",
+      "endingType": "probation",
+      "title": "不听使唤的破城锤",
+      "verdictLine": "你的破坏力很棒，但因为你总是按自己的想法砸门，暂时只能算编外人员。",
+      "explanation": "你极度自信且充满野性，完全不听从长官的指令。虽然你完成了任务，但过程让所有人血压飙升。招募处不愿放弃你这个战力，但也不敢让你立刻转正，只能先让你以‘编外佣兵’的身份跟着队伍混。",
+      "tableFunction": "经常能打出神来之笔的近战，但也经常因为不听指挥而破坏原有计划。",
+      "playableFlaw": "总是觉得自己比指挥官聪明，经常在战斗中提出极其离谱的战术建议。",
+      "nextHook": "因为抗命你被罚去清理下水道，结果你在里面发现了一个巨大的怪物蛋。",
+      "recommendedClass": [
+        "barbarian_camp",
+        "warlock_contract"
+      ],
+      "tags": [
+        "编外",
+        "自大",
+        "不服管教"
+      ]
+    },
+    {
+      "endingId": "troll_transferred_savage",
+      "endingType": "transferred",
+      "title": "脱缰的野兽",
+      "verdictLine": "军团的纪律锁不住你，你骨子里的疯狂只适合最野蛮的泥沼。",
+      "explanation": "你原本想当个守纪律的战士，但考核中你失控的狂暴、抛弃阵型发起冲锋的本能彻底暴露了。考官们一致认为你完全不适合任何需要耐心和纪律的职业，直接把你打包送给了隔壁只会咆哮的蛮子营地。",
+      "tableFunction": "放弃了防御和策略，纯粹用血肉和怒火进行压制的狂战士。",
+      "playableFlaw": "一旦闻到血腥味就极难控制情绪，经常在不该开战的场合强行开团。",
+      "nextHook": "蛮子营地的大佬要求你空手打赢一头熊，以此作为你入营的真正仪式。",
+      "recommendedClass": [
+        "barbarian_camp"
+      ],
+      "rejectedClass": "fighter_line",
+      "tags": [
+        "转岗",
+        "彻底失控",
+        "纯粹野性"
+      ]
+    },
+    {
+      "endingId": "troll_transferred_naturalist",
+      "endingType": "transferred",
+      "title": "畸变学者",
+      "verdictLine": "你比起经营契约和出卖灵魂，更像是在狂热地研究自己身上的异变。",
+      "explanation": "你本想去契约所当个高冷术士，但考核中你对自身再生机制、毒素和躯体异变的探究欲，远大于对恶魔契约的兴趣。契约所的导师看着你像被孢子谜题迷住的异变学者一样鼓捣孢子，毫不犹豫地把你推荐给了德鲁伊异变环。",
+      "tableFunction": "精通生物毒素与躯体改造的施法者，能用自身的血肉组织施放自然法术。",
+      "playableFlaw": "对一切生命异变抱有过度的好奇心，经常在战斗中停下来观察敌人的伤口。",
+      "nextHook": "大德鲁伊给了你一颗正在腐烂的种子，让你用自己的血把它‘种活’。",
+      "recommendedClass": [
+        "druid_mutation_circle"
+      ],
+      "rejectedClass": "warlock_contract",
+      "tags": [
+        "转岗",
+        "探究生命",
+        "狂热学者"
+      ]
+    },
+    {
+      "endingId": "troll_transferred_trader",
+      "endingType": "transferred",
+      "title": "冷血生态商",
+      "verdictLine": "你把自然的循环写成了冷酷的交易，契约所的星探向你抛出了橄榄枝。",
+      "explanation": "你原本在德鲁伊的林地接受考核，但你解决问题的方式太过精算和逐利。你把孢子当成商品，把生态循环视为筹码。大德鲁伊对你的世俗和冷酷感到失望，但潜伏的术士掮客却认为你是个不可多得的商业奇才。",
+      "tableFunction": "善于利用法术和契约控制敌人，同时自己也有不俗生存能力的施法者。",
+      "playableFlaw": "不管干什么都要算计利益，极度不讨队友喜欢，经常被怀疑随时会背叛。",
+      "nextHook": "你接到了第一份工作：去向一个快破产的男爵讨要他抵押给深渊的长子。",
+      "recommendedClass": [
+        "warlock_contract"
+      ],
+      "rejectedClass": "druid_mutation_circle",
+      "tags": [
+        "转岗",
+        "利益至上",
+        "契约专家"
+      ]
+    },
+    {
+      "endingId": "troll_transferred_shield",
+      "endingType": "transferred",
+      "title": "清醒的叹息之墙",
+      "verdictLine": "你比预期中稳重太多，蛮荒的嗜血不适合你，重甲防线才是你的归宿。",
+      "explanation": "你本想去蛮子营地或别的什么地方大杀四方，但考官发现你在危机面前的第一反应总是‘保护’和‘稳住’，而不是‘摧毁’。这种冷静克制被认为是对狂暴血脉的亵渎，于是你被转手推荐给了最需要定海神针的重装防线。",
+      "tableFunction": "非常可靠的守护者，能够敏锐地察觉战场局势并挡在最需要的地方。",
+      "playableFlaw": "缺乏爆发伤害，总是被迫陷入漫长的消耗战，承受最多的痛苦。",
+      "nextHook": "你被分配到了一个全是由冲动的新兵组成的小队，你成了他们痛苦的老父亲。",
+      "recommendedClass": [
+        "fighter_line"
+      ],
+      "rejectedClass": "barbarian_camp",
+      "tags": [
+        "转岗",
+        "守护者",
+        "温和巨物"
+      ]
+    },
+    {
+      "endingId": "troll_blacklisted_butcher",
+      "endingType": "blacklisted",
+      "title": "血腥屠夫",
+      "verdictLine": "正规军不可能招募一个在考核中肆意残杀甚至把队友也纳入饥饿本能的猎物范围的屠夫。",
+      "explanation": "你在测试中展现出的极度嗜血、残忍以及对生命的漠视，彻底触碰了正规营地的底线。你被愤怒的教官们联手打出了大门。但没关系，当天晚上，一群信仰邪神的狂徒在下水道里找到了你，尊你为他们的神选打手。",
+      "tableFunction": "完全走邪恶阵营路线的狂战或术士，以残忍的手段恐吓敌人。",
+      "playableFlaw": "只要出现在城镇里就有被守卫逮捕的风险，声名狼藉。",
+      "nextHook": "邪教徒们要求你去绑架一名高阶圣武士，作为献给邪神的祭品。",
+      "recommendedClass": [
+        "barbarian_camp"
+      ],
+      "tags": [
+        "黑名单",
+        "混乱邪恶",
+        "屠夫本能"
+      ]
+    },
+    {
+      "endingId": "troll_blacklisted_monster",
+      "endingType": "blacklisted",
+      "title": "荒野异生种",
+      "verdictLine": "你的异变和暴躁彻底切断了你与文明的联系，荒野深处才是你的归宿。",
+      "explanation": "无论是纪律、契约还是考核规则，对你来说都像是废纸。你肆意释放着自身的毒素与怒火，打烂了考场，咆哮着冲回了森林。正规公会永久拉黑了你。凭着这副恐怖的巨魔之躯，你成功在一处深林里收服了一群地精和豺狼人，占山为王。",
+      "tableFunction": "自带小弟和野外生存特长的怪物领主，非常适合荒野剧本。",
+      "playableFlaw": "文盲且极度缺乏社交常识，在任何文明设施中都会引发混乱。",
+      "nextHook": "有一队自称‘英雄’的冒险者闯进了你的地盘，你决定给他们上生动的一课。",
+      "recommendedClass": [
+        "druid_mutation_circle",
+        "barbarian_camp"
+      ],
+      "tags": [
+        "黑名单",
+        "回归野性",
+        "怪物首领"
+      ]
+    },
+    {
+      "endingId": "troll_blacklisted_coward",
+      "endingType": "blacklisted",
+      "title": "背誓的佣兵",
+      "verdictLine": "一个会在关键时刻把队友当做挡箭牌或垫脚石的巨魔？公会决定全行业封杀你。",
+      "explanation": "你极度自私且背信弃义的表现让所有考官感到作呕。没人愿意把后背交给一个随时会卖队友的庞然大物。你被灰溜溜地赶了出去。不过，地下黑市的雇佣兵团对你很感兴趣，他们那里的规矩就是没有规矩，只要你能活下来就行。",
+      "tableFunction": "专注于生存和坑人的灰色地带角色，擅长在混战中保全自己。",
+      "playableFlaw": "极度容易触发信任危机，无论做什么都会被队友怀疑别有用心。",
+      "nextHook": "黑市老板派你去执行一项必死的诱饵任务，你必须再次想办法‘活下来’。",
+      "recommendedClass": [
+        "warlock_contract",
+        "fighter_line"
+      ],
+      "tags": [
+        "黑名单",
+        "自私自利",
+        "黑市佣兵"
+      ]
+    },
+    {
+      "endingId": "troll_blacklisted_weapon",
+      "endingType": "blacklisted",
+      "title": "失控攻城锤",
+      "verdictLine": "公会拒绝录用，但某些极端的地下攻城承包商已经盯上了你的破坏力。",
+      "explanation": "你在整个流程中除了破坏、咆哮和极其狂暴的冲撞，没有展现出任何克制力。招募处无奈之下，直接联系了地下黑市。你被戴上沉重的枷锁，雇给了一支正在进行非法攻城的军阀，成为了一台每天只管吃肉和撞门的活体兵器。",
+      "tableFunction": "受雇于危险组织，拥有绝对物理破坏力但处境堪忧的特殊角色。",
+      "playableFlaw": "必须随时受到控制符文或‘监督者’的压制，行动受限严重。",
+      "nextHook": "在一场惨烈的攻城战中，控制你的符文意外碎裂，你获得了自由，现在你该干嘛？",
+      "recommendedClass": [
+        "fighter_line",
+        "barbarian_camp"
+      ],
+      "tags": [
+        "黑名单",
+        "活体兵器",
+        "地下军阀"
+      ]
+    },
+    {
+      "endingId": "troll_absurd_sleeping",
+      "endingType": "absurdAccepted",
+      "title": "鼾声退敌",
+      "verdictLine": "因为你卡在要道上睡着了，敌军一晚上没能攻进来，你居然因为‘防守有功’被录取了。",
+      "explanation": "这是招募处有史以来最荒谬的记录。你不仅没有展现出任何战斗技巧，甚至在最关键的测试中因为体质问题直接呼呼大睡。但你庞大且恶臭的身体完美地堵住了通道。考官捏着鼻子给你盖了合格章：‘至少他很占地方。’",
+      "tableFunction": "经常在不合时宜的时候挂机，但仅凭体积和极高的体质就能恶心敌人的喜剧角色。",
+      "playableFlaw": "极度嗜睡，随时可能在战斗中需要进行‘保持清醒’的判定。",
+      "nextHook": "你被当成某种吉祥物兼堵门工具，派去防守一个传闻有恶魔出没的地窖。",
+      "recommendedClass": [
+        "barbarian_camp",
+        "fighter_line"
+      ],
+      "tags": [
+        "荒诞通过",
+        "挂机战术",
+        "意外之喜"
+      ]
+    },
+    {
+      "endingId": "troll_absurd_merchant",
+      "endingType": "absurdAccepted",
+      "title": "黑心军需商",
+      "verdictLine": "你用极其不要脸的推销手段，把考核变成了一场军需采购，军需官决定收编你。",
+      "explanation": "谁能想到一个巨魔会在考核中推销自己的洗劫战利品或怪异草药？你不仅没有按套路打架，反而凭借着惊人的厚脸皮和一点小聪明，把考官给绕晕了。后勤部觉得你这不要脸的劲头绝对能把敌军的物资全黑过来，于是破格录取了你。",
+      "tableFunction": "一个拥有惊人怪力和体质，但比起打架更喜欢摸尸体和搜刮财物的后勤达人。",
+      "playableFlaw": "极度贪财，在任何危险的地方第一反应都是‘这东西能不能卖钱’。",
+      "nextHook": "军需官让你去敌军后方‘采购’一批高等精灵的军粮，不管你用什么手段。",
+      "recommendedClass": [
+        "druid_mutation_circle",
+        "warlock_contract"
+      ],
+      "tags": [
+        "荒诞通过",
+        "商业奇才",
+        "不务正业"
+      ]
+    },
+    {
+      "endingId": "troll_absurd_scary",
+      "endingType": "absurdAccepted",
+      "title": "纯粹的精神污染",
+      "verdictLine": "你没动手，但你那些难以预测的奇葩手段让考官心理防线崩溃，被迫让你及格赶你走。",
+      "explanation": "你把巨魔令人作呕或极度诡异的特质发挥到了极限。你用极其荒诞、怪异甚至辣眼睛的行为瓦解了整个考场的严肃氛围。为了不让你继续折磨其他新兵的心理健康，考官迅速给了你一个及格，把你踢去了最远的前线。",
+      "tableFunction": "依靠恐吓、恶心和难以预测的怪异手段来吸引仇恨的诡异肉盾。",
+      "playableFlaw": "魅力极低且行为难以预测，多数公会书记员在给你登记前，都得先做一次意志豁免。",
+      "nextHook": "你被派去审问一个极其顽固的俘虏，长官要求你‘自由发挥’。",
+      "recommendedClass": [
+        "warlock_contract",
+        "barbarian_camp"
+      ],
+      "tags": [
+        "荒诞通过",
+        "精神污染",
+        "奇葩脑洞"
+      ]
+    },
+    {
+      "endingId": "troll_absurd_mascot",
+      "endingType": "absurdAccepted",
+      "title": "凶暴吉祥物",
+      "verdictLine": "你表现出了与体型完全不符的滑稽反差感，你成为了被老兵联名保下的危险新人。",
+      "explanation": "本来你已经被淘汰了，但你那笨拙、努力试图融入却频频闹笑话的举动，意外地戳中了这群在生死边缘摸爬滚打的老兵的奇怪萌点。他们向长官联名保释了你。你现在是整个营地最庞大、最暴力的营地招牌。",
+      "tableFunction": "为了保护身边的‘小不点’队友，偶尔能爆发出惊人潜力的守护者。",
+      "playableFlaw": "因为体型庞大且容易闹笑话，经常在关键时刻破坏潜行或弄碎贵重物品。",
+      "nextHook": "老兵们凑钱给你打造了一把刻着小花的巨锤，并要求你带着它去敲碎一头巨龙的脑壳。",
+      "recommendedClass": [
+        "fighter_line"
+      ],
+      "tags": [
+        "荒诞通过",
+        "反差萌",
+        "营地吉祥物"
+      ]
+    }
+  ],
+  "mbtiFilters": [
+    {
+      "groupId": "NT",
+      "title": "冰冷算计的庞大沙漏",
+      "oneLine": "怪物的外壳下，藏着一台精密计算血肉损耗的战术引擎。",
+      "evaluationStyle": "你并不像刻板印象中的巨魔那般无脑。你非常清楚自己庞大身躯的价值和再生能力的界限。你把每一次冲锋、挨打甚至断肢，都当做可以计算和交换的战术筹码。",
+      "barbarianFlavor": "你的狂暴不是发泄，而是经过计算的承伤。你知道该替哪个队友挡刀才能换来最大的战果。",
+      "fighterFlavor": "你对防线有自己独特的理解，甚至会刻意暴露巨魔身体的弱点来引诱敌人落入包围圈。",
+      "warlockFlavor": "你冷静地阅读着契约，精打细算地用再生的肉块向宗主支付代价，像一个精明的债务人。",
+      "druidFlavor": "你将自己的肉体当成实验室，观察再生与异变的过程，以纯粹理性的目光解构野性的力量。",
+      "riskText": "过于理性的算计容易让你在关键时刻显得冷酷，甚至把队友也当成算盘上的消耗品。"
+    },
+    {
+      "groupId": "NF",
+      "title": "背负罪业的残破城墙",
+      "oneLine": "为了庇护身后的微弱火光，甘愿让这副被世人畏惧的怪物外壳千疮百孔。",
+      "evaluationStyle": "文明对你的排斥反而催生了你深沉的情感。你清楚别人如何看待这副被世人称作怪物的躯壳，因此你更想用血肉来证明自己的灵魂。你承受痛苦，不仅是为了生存，更是为了赎罪或守护那些接纳你的人。",
+      "barbarianFlavor": "你愤怒的源泉不是杀戮欲，而是看到弱者受难时的共情，你的狂暴是一场悲壮的献祭。",
+      "fighterFlavor": "你是队伍里最让人心安的盾牌。只要还有一口气在，你就绝不会让敌人跨过你残破的身体。",
+      "warlockFlavor": "你为了拯救某人而被迫签下契约，把灵魂的折磨和肉体的痛苦都视为自己必须背负的十字架。",
+      "druidFlavor": "你把巨魔外壳当成保护自然的屏障，对生命有着极其悲悯的理解，试图抚平荒野与文明的裂痕。",
+      "riskText": "极易陷入自我感动的殉道者情结，甚至会为了证明自己的高尚而盲目承受不该承受的致命伤。"
+    },
+    {
+      "groupId": "SJ",
+      "title": "铁律束缚的重装拒马",
+      "oneLine": "用刻板的规章与绝对的纪律，给体内的怪物本能套上冰冷的铁笼。",
+      "evaluationStyle": "你极其渴望秩序。由于深知巨魔血脉中蕴含着怎样混乱与失控的破坏欲，你比普通人更加严格地遵守规则、军规与流程。你试图用外在的条条框框，把这副危险的肉体锻造成守卫秩序的基石。",
+      "barbarianFlavor": "哪怕在狂暴状态下，你也会刻板地遵循着‘不越界、不误伤’的自我暗示，形成一种极其诡异的克制狂暴。",
+      "fighterFlavor": "你是指挥官最完美的工具，一丝不苟地执行着‘死守阵地’的命令，直到再生能力被彻底耗尽。",
+      "warlockFlavor": "你会把契约当成神圣不可侵犯的守则，极其死板地按月、按量向宗主上贡自己的血肉。",
+      "druidFlavor": "你排斥无序的异变，试图在自然与肉身之间建立一种极其刻板的循环平衡规程。",
+      "riskText": "一旦赖以维持理智的规则被打破，或者军令出现自相矛盾，你防线崩塌的速度会比任何人都快。"
+    },
+    {
+      "groupId": "SP",
+      "title": "狂舞废墟的嗜血浪客",
+      "oneLine": "把再生的痛苦当成下酒菜，在刀光血影中踩出属于怪物的野性律动。",
+      "evaluationStyle": "你完全不在乎文明社会的眼光，只凭直觉和冲动行事。巨魔的体质给了你肆意妄为的资本，你把探险当成一场刺激的街头互殴。无论是在酒馆斗殴还是地城厮杀，你都享受那种拳拳到肉、鲜血飞溅的即兴狂欢。",
+      "barbarianFlavor": "你的战斗毫无章法，纯粹是随着情绪的高涨而肆意挥洒怪力，甚至会大笑着把折断的骨头硬接回去。",
+      "fighterFlavor": "你觉得阵地战无聊透顶，总是仗着体质硬扛伤害冲出防线，去寻找最惊险刺激的近身肉搏。",
+      "warlockFlavor": "你根本不看契约的细则，只觉得用点血肉换个能喷火的戏法简直酷毙了，完全不顾后续的代价。",
+      "druidFlavor": "你极其享受变异带来的新鲜感，把异化当成一种野性的游戏，毫不克制地释放本能的欲望。",
+      "riskText": "为了追求肾上腺素的飙升，你经常主动往最致命的陷阱里跳，迟早会因为玩火自焚而丧命。"
+    }
+  ]
+}

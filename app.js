@@ -58,8 +58,8 @@ const ATTRIBUTES = [
     intro: "侦察、察觉、追踪和专注。感知检定看你能不能发现异色、追住目标、按顺序扫完整片场地。",
     stages: [
       { id: "wis_color", title: "异色侦测", type: "colorLadder", difficulty: "低 / 中 / 高", weight: 0.26 },
-      { id: "wis_dual", title: "双星追踪", type: "dualBall", difficulty: "中 / 高", weight: 0.36 },
-      { id: "wis_schulte", title: "侦察方格", type: "schulte", difficulty: "低 / 中 / 高", weight: 0.38 },
+      { id: "wis_dual", title: "双星追踪", type: "dualBall", difficulty: "低 / 中 / 高", weight: 0.36 },
+      { id: "wis_schulte", title: "侦察方格", type: "schulte", difficulty: "低 / 中 / 高 / 极限", weight: 0.38 },
     ],
   },
   {
@@ -210,6 +210,139 @@ const MBTI_TYPES = [
   "ESFP",
 ];
 
+const FANTASY_ANCESTRIES = [
+  {
+    id: "auto",
+    name: "不指定",
+    size: "自动",
+    label: "交给测试结果",
+    note: "不预设种族，结果只按体型、职业和扮演滤镜生成。",
+    trait: "开放设定",
+    scoreMod: 0,
+    tags: ["自由设定", "交给骰子"],
+  },
+  {
+    id: "human",
+    name: "人类",
+    size: "中型",
+    label: "普通类人生物",
+    note: "人类锚点强调适应、野心和短寿命带来的行动紧迫感。",
+    trait: "适应力",
+    scoreMod: 0,
+    tags: ["适应力", "野心", "短寿种"],
+  },
+  {
+    id: "elf",
+    name: "精灵",
+    size: "中型",
+    label: "精灵血脉",
+    note: "精灵锚点适合写成长寿、审美、敏锐感官和与世界保持距离的优雅感。",
+    trait: "敏锐感官",
+    scoreMod: 0.04,
+    tags: ["长寿感", "敏锐感官", "优雅"],
+  },
+  {
+    id: "drow",
+    name: "暗精灵",
+    size: "中型",
+    label: "幽暗地域血脉",
+    note: "暗精灵锚点更适合潜行、社交博弈、危险魅力和地下世界背景。",
+    trait: "幽暗适应",
+    scoreMod: 0.04,
+    tags: ["幽暗地域", "潜行", "危险魅力"],
+  },
+  {
+    id: "dwarf",
+    name: "矮人",
+    size: "中型",
+    label: "山脉氏族血脉",
+    note: "矮人锚点强调重心、耐受、工艺、氏族承诺和一锤一锤攒出来的硬底子。",
+    trait: "坚韧根基",
+    scoreMod: 0.12,
+    tags: ["耐受", "工艺", "氏族"],
+  },
+  {
+    id: "halfling",
+    name: "半身人",
+    size: "小型",
+    label: "小型幸运血脉",
+    note: "半身人锚点适合低存在感、好运气、灵巧绕行和在大麻烦里活下来的本事。",
+    trait: "小型幸运",
+    scoreMod: 0.03,
+    tags: ["小型", "幸运", "低存在感"],
+  },
+  {
+    id: "gnome",
+    name: "侏儒",
+    size: "小型",
+    label: "机关与幻术血脉",
+    note: "侏儒锚点适合好奇心、机关直觉、幻术玩心和小体型带来的灵活解法。",
+    trait: "机巧脑袋",
+    scoreMod: 0.03,
+    tags: ["机关", "幻术", "好奇心"],
+  },
+  {
+    id: "half_orc",
+    name: "半兽人",
+    size: "中型",
+    label: "蛮力与求生血脉",
+    note: "半兽人锚点强调压迫感、伤后反扑、直接行动和被误解后的自证欲。",
+    trait: "伤后反扑",
+    scoreMod: 0.1,
+    tags: ["压迫感", "反扑", "蛮力"],
+  },
+  {
+    id: "tiefling",
+    name: "提夫林",
+    size: "中型",
+    label: "异界血脉",
+    note: "提夫林锚点适合禁忌气质、被凝视的身份、交易感和不愿被出身定义的张力。",
+    trait: "异界烙印",
+    scoreMod: 0.02,
+    tags: ["异界烙印", "禁忌气质", "身份张力"],
+  },
+  {
+    id: "dragonborn",
+    name: "龙裔",
+    size: "中型",
+    label: "龙血氏族",
+    note: "龙裔锚点强调威仪、吐息、荣耀感和把血脉压力扛成正面气场。",
+    trait: "龙血威仪",
+    scoreMod: 0.1,
+    tags: ["威仪", "吐息", "荣耀"],
+  },
+  {
+    id: "goliath",
+    name: "哥利亚",
+    size: "中型+",
+    label: "山岳巨人后裔",
+    note: "哥利亚锚点适合高海拔生存、竞赛文化、强壮体格和用沉默扛住压力。",
+    trait: "山岳体格",
+    scoreMod: 0.14,
+    tags: ["山岳", "强壮", "竞赛文化"],
+  },
+  {
+    id: "troll",
+    name: "巨魔",
+    size: "大型",
+    label: "再生怪物血脉",
+    note: "巨魔锚点适合再生、怪物体魄、吓人的外壳，以及力量与体质不匹配时的反差戏。",
+    trait: "再生外壳",
+    scoreMod: 0.18,
+    tags: ["再生", "怪物感", "体质反差"],
+  },
+  {
+    id: "ogre_giant",
+    name: "食人魔 / 巨人",
+    size: "大型",
+    label: "巨体血脉",
+    note: "食人魔或巨人锚点适合高承重、高压迫感、地城适配困难，以及大体型带来的可演代价。",
+    trait: "巨体压迫",
+    scoreMod: 0.2,
+    tags: ["巨体", "承重", "空间限制"],
+  },
+];
+
 const MBTI_ARCHETYPES = {
   INTJ: { job: "战略法师", face: "冷静、长线布局、星盘与黑金法袍" },
   INTP: { job: "秘仪研究者", face: "散漫学者、符文手稿、实验室蓝光" },
@@ -228,6 +361,111 @@ const MBTI_ARCHETYPES = {
   ESTP: { job: "破局决斗者", face: "短披风、挑衅笑容、竞技场火光" },
   ESFP: { job: "舞台吟游诗人", face: "华丽外套、聚光灯、观众与乐器" },
   未知: { job: "未定冒险者", face: "半遮面轮廓、未完成角色草图、多色光" },
+};
+
+const MBTI_ROLE_FLAVORS = {
+  INTJ: {
+    entrance: "他不是冲进传说的人，而是提前把传说拆成三步计划的人",
+    method: "会把这门职业当成一套可复盘的战术系统",
+    function: "擅长预设资源、控制风险、把队友的行动排成更锋利的顺序",
+    flaw: "可演的代价是过度掌控，偶尔会把活人也当成棋盘上的变量",
+  },
+  INTP: {
+    entrance: "他像误入战场的秘仪学者，边躲火球边研究火球为什么会拐弯",
+    method: "会把这门职业玩成实验台，先理解机制，再发明离谱但有效的用法",
+    function: "擅长拆规则、找漏洞、用知识和临场试错开出新路线",
+    flaw: "可演的代价是行动慢半拍，灵感太多时容易忘了战斗还在继续",
+  },
+  ENTJ: {
+    entrance: "他一登场就像远征军的号角，连沉默都带着调度命令",
+    method: "会把这门职业用成指挥权，把个人能力扩展成全队推进力",
+    function: "擅长分配任务、压住局面、把胜利条件从混乱里拽出来",
+    flaw: "可演的代价是强势与控制欲，队友可能先被他救下，再被他安排明白",
+  },
+  ENTP: {
+    entrance: "他像带着火星进酒馆的人，下一秒可能救场，也可能让场面更有趣",
+    method: "会把这门职业演成一套破局花招，专门拿规则边缘做杠杆",
+    function: "擅长诱导、干扰、临场变招和把敌人的计划拧成自己的机会",
+    flaw: "可演的代价是手痒和冒险，明明有稳妥答案，也总想试试更漂亮的那种",
+  },
+  INFJ: {
+    entrance: "他像从预言残页里走出来的人，温和地说出很难违抗的话",
+    method: "会把这门职业变成使命感，用能力处理事件背后的动机和代价",
+    function: "擅长读人心、稳住道德方向、在长线剧情里埋下回响",
+    flaw: "可演的代价是背负感太重，容易把每个选择都看成命运审判",
+  },
+  INFP: {
+    entrance: "他像护着一盏小灯穿过战场的人，柔软，但不是能随便踩碎的那种",
+    method: "会把这门职业演成个人信念的外化，为了某个价值突然变得不可撼动",
+    function: "擅长共情、守护、唤起队友动机和把剧情冲突写进内心誓言",
+    flaw: "可演的代价是理想与现实拉扯，越重要的选择越容易刺痛他",
+  },
+  ENFJ: {
+    entrance: "他像把晨光带进围城的人，出现时队伍会下意识重新站成阵型",
+    method: "会把这门职业变成号召力，让个人行动成为集体士气的开关",
+    function: "擅长鼓舞、协调、公开承诺和把散掉的人重新组织起来",
+    flaw: "可演的代价是太习惯承担，容易把别人的崩溃也算进自己的责任",
+  },
+  ENFP: {
+    entrance: "他像从冒险故事边角跳出来的火花，先照亮道路，再顺手点燃气氛",
+    method: "会把这门职业演成灵感现场，越未知越能激发奇招",
+    function: "擅长带动节奏、打开可能性、把失败局面讲成下一幕的开头",
+    flaw: "可演的代价是容易追逐新鲜感，计划刚成形就想给它加一扇窗",
+  },
+  ISTJ: {
+    entrance: "他像守着古老誓约的档案官，剑可以出鞘，账也一定会记清",
+    method: "会把这门职业用成可靠流程，一步一步把混乱压回秩序",
+    function: "擅长守规则、控风险、执行长期任务和让队伍有稳定底盘",
+    flaw: "可演的代价是太信既定路径，突发奇想型队友会不断考验他的耐心",
+  },
+  ISFJ: {
+    entrance: "他像营火旁最后一个不睡的人，安静，但总能在崩盘前补上缺口",
+    method: "会把这门职业演成照料与守护，把强度藏在细节里",
+    function: "擅长补位、续航、记住风险点和让队伍在长线冒险里不散架",
+    flaw: "可演的代价是过度照顾，容易把自己的需求排到队伍清单最后",
+  },
+  ESTJ: {
+    entrance: "他像临时接管战场的军需官，三句话就能让所有人知道该站哪",
+    method: "会把这门职业用成执行机器，目标、资源、责任都会被他钉在桌上",
+    function: "擅长现场管理、压缩混乱、建立规则和推动团队按时完成目标",
+    flaw: "可演的代价是强硬和不耐烦，遇到暧昧剧情时会本能地想立刻定责",
+  },
+  ESFJ: {
+    entrance: "他像宴会厅里最会救场的人，能一边递酒杯，一边把危机悄悄挪走",
+    method: "会把这门职业演成关系网络，用人情、照料和场面感推动局势",
+    function: "擅长协调队友、安抚 NPC、维持队伍状态和让合作重新发生",
+    flaw: "可演的代价是太在意关系温度，必要的冷处理会让他不舒服",
+  },
+  ISTP: {
+    entrance: "他像蹲在机关旁的冷脸专家，别人还在争论，他已经听见齿轮哪里卡住",
+    method: "会把这门职业用成工具箱，能动手就少说废话",
+    function: "擅长临场拆解、精确行动、处理危险装置和用效率解决麻烦",
+    flaw: "可演的代价是情绪表达偏少，队友可能要等事后才知道他其实在意",
+  },
+  ISFP: {
+    entrance: "他像月光下不留脚印的旅人，安静地靠近，然后用很个人的方式改变现场",
+    method: "会把这门职业演成感官与直觉的技艺，行动带着独特审美",
+    function: "擅长观察氛围、灵巧处理、避开正面冲突和做出漂亮但不张扬的选择",
+    flaw: "可演的代价是边界感强，不喜欢被催着解释自己的判断",
+  },
+  ESTP: {
+    entrance: "他像掷出骰子前已经冲上桌的人，胆量、反应和笑声一起到场",
+    method: "会把这门职业玩成现场破局，越危险越能抓住一瞬间的机会",
+    function: "擅长突入、诱敌、抢节奏和用行动把僵局撞出裂缝",
+    flaw: "可演的代价是爱赌窗口期，精彩操作和危险后果常常一起上桌",
+  },
+  ESFP: {
+    entrance: "他像把聚光灯带进地城的人，战斗还没开打，所有人的注意力已经被他拿走",
+    method: "会把这门职业演成舞台行动，靠存在感、节奏和互动改变局面",
+    function: "擅长吸引注意、带动士气、制造机会和把战斗变成可控的表演",
+    flaw: "可演的代价是容易过度显眼，暗处的敌人会很快记住他的名字",
+  },
+  未知: {
+    entrance: "他像还没写完名字的冒险者，身上已经有故事开始发光",
+    method: "会把这门职业先演成能力轮廓，再等剧情决定真正的形状",
+    function: "擅长作为开放角色胚子，给后续设定保留弹性",
+    flaw: "可演的代价是身份尚未落定，需要靠几场冒险把自己写清楚",
+  },
 };
 
 const RESULT_CONTENT = {
@@ -487,6 +725,8 @@ const DND_CLASS_POOL = [
     role: "法术控制、谜题拆解、远程规划",
     baseSubclasses: ["占卜学派", "抄写学派", "幻术学派", "战争魔法"],
     why: "当智力和判断链条占优时，角色更适合把战斗、调查和资源管理当成可推演系统。",
+    flavor: "法师的气质是把世界当作可拆解的规则书，冷静、好奇，习惯先找机制再出手。",
+    specialty: "擅长控场、信息推演、法术资源管理和用知识改变战斗地形。",
   },
   {
     className: "战士",
@@ -495,6 +735,8 @@ const DND_CLASS_POOL = [
     role: "前线推进、武器专精、稳定输出",
     baseSubclasses: ["战斗大师", "冠军", "骑士"],
     why: "力量、敏捷或体质任何一侧足够突出，都可以转译成可靠的武技路线。",
+    flavor: "战士的气质是可靠、直接、能把压力扛在明面上，适合写成队伍的战术支点。",
+    specialty: "擅长武器压制、阵线推进、保护队友和稳定制造伤害窗口。",
   },
   {
     className: "游荡者",
@@ -503,6 +745,8 @@ const DND_CLASS_POOL = [
     role: "潜入侦察、机关处理、机会爆发",
     baseSubclasses: ["盗贼", "诡术师", "刺客"],
     why: "敏捷高且有一定判断或社交读场时，角色更适合在信息缝隙里创造优势。",
+    flavor: "游荡者的气质是敏锐、谨慎、会把别人忽略的缝隙变成出手机会。",
+    specialty: "擅长潜行、侦察、开锁拆机关、背刺爆发和用位置差制造优势。",
   },
   {
     className: "游侠",
@@ -511,6 +755,8 @@ const DND_CLASS_POOL = [
     role: "追踪侦察、野外生存、远程压制",
     baseSubclasses: ["幽域追踪者", "妖精流浪者", "猎人"],
     why: "敏捷与感知组合突出时，角色会更像用环境、路径和预判作战的猎手。",
+    flavor: "游侠的气质是清醒、耐心、熟悉环境，像总能提前半步读到风向的人。",
+    specialty: "擅长追踪、伏击、野外生存、远程压制和把战场变成自己的地形。",
   },
   {
     className: "牧师",
@@ -519,6 +765,8 @@ const DND_CLASS_POOL = [
     role: "治疗支援、价值锚定、团队续航",
     baseSubclasses: ["生命领域", "知识领域", "秩序领域", "和平领域"],
     why: "感知、共情和稳定性较强时，角色适合承担判断、守护和队伍恢复责任。",
+    flavor: "牧师的气质是有信念、有判断，也能在混乱里给队伍一个继续站稳的理由。",
+    specialty: "擅长治疗、祝福、驱散、价值判断和把队伍从崩盘边缘拉回来。",
   },
   {
     className: "德鲁伊",
@@ -527,6 +775,8 @@ const DND_CLASS_POOL = [
     role: "自然调和、形态适应、持续控制",
     baseSubclasses: ["星辰结社", "梦境结社", "月亮结社"],
     why: "感知和体质较好时，角色会更像能适应环境、维持节奏并用直觉读局的人。",
+    flavor: "德鲁伊的气质是顺势而动、重视循环和代价，常像自然本身一样温和又危险。",
+    specialty: "擅长环境控制、形态变化、持续消耗、治疗补位和野外问题处理。",
   },
   {
     className: "圣武士",
@@ -535,6 +785,8 @@ const DND_CLASS_POOL = [
     role: "誓言压阵、前线保护、气场威慑",
     baseSubclasses: ["献身誓言", "王冠誓言", "征服誓言", "救赎誓言"],
     why: "魅力与身体轴同时有支撑时，角色适合把信念、压迫感和保护欲写成行动力。",
+    flavor: "圣武士的气质是强烈、公开、带着誓言行动，像把个人信念铸成盔甲的人。",
+    specialty: "擅长前线保护、爆发惩击、气场支援、压场谈判和承担道德冲突。",
   },
   {
     className: "吟游诗人",
@@ -543,6 +795,8 @@ const DND_CLASS_POOL = [
     role: "社交破局、灵感支援、现场节奏",
     baseSubclasses: ["雄辩学院", "逸闻学院", "魅惑学院", "剑舞学院"],
     why: "魅力高时，角色可以通过语言、表演、谈判或情绪调度改变局面。",
+    flavor: "吟游诗人的气质是会读空气、会造气氛，也会把故事本身变成武器。",
+    specialty: "擅长交涉、鼓舞、控场、情报流转和把失败局面改写成新舞台。",
   },
   {
     className: "术士",
@@ -551,6 +805,8 @@ const DND_CLASS_POOL = [
     role: "契约博弈、奇术干扰、危险交易",
     baseSubclasses: ["妖精宗主", "古老支配者", "邪魔宗主"],
     why: "魅力和抽象判断同时较强时，角色适合走高风险、高风格化的契约路线。",
+    flavor: "术士围绕契约、禁忌知识与代价展开，核心气质是诱惑、交换和高风险控制。",
+    specialty: "擅长奇术干扰、心智压迫、短促爆发、禁忌知识和用代价换取破局能力。",
   },
   {
     className: "武僧",
@@ -559,6 +815,8 @@ const DND_CLASS_POOL = [
     role: "机动连击、专注控制、近身游走",
     baseSubclasses: ["散打宗", "影宗", "醉拳宗"],
     why: "敏捷、感知和稳定专注一起出现时，角色更像依靠身体节奏和心流作战。",
+    flavor: "武僧的气质是克制、敏捷、把身体训练成判断工具，越混乱越能找到节奏。",
+    specialty: "擅长机动连击、控制关键目标、闪避穿插和用专注打断敌方节奏。",
   },
   {
     className: "野蛮人",
@@ -567,6 +825,8 @@ const DND_CLASS_POOL = [
     role: "爆发承伤、正面突破、压力释放",
     baseSubclasses: ["狂战士道途", "图腾战士道途", "祖灵守护者"],
     why: "力量和体质双高时，角色适合把冲击力、承伤和原始意志写成核心武器。",
+    flavor: "野蛮人的气质是直面压力、情绪强烈、把愤怒和本能转成战场推进力。",
+    specialty: "擅长承伤、突破、近战爆发、吸引火力和把僵局撕开缺口。",
   },
   {
     className: "工匠",
@@ -575,6 +835,8 @@ const DND_CLASS_POOL = [
     role: "装置制造、战术道具、系统改造",
     baseSubclasses: ["战斗铁匠", "炼金术士", "炮铳师"],
     why: "智力与精细操作一起突出时，角色适合通过工具、装备和系统理解来解决问题。",
+    flavor: "工匠的气质是务实、爱改造、相信问题都有结构，也相信工具能改变命运。",
+    specialty: "擅长制造装置、强化装备、炼金支援、战术道具和把场景改成可控系统。",
   },
 ];
 
@@ -658,6 +920,146 @@ function getPortraitAsset(resource) {
   return resource.file || "";
 }
 
+const QUIZ_COPY = globalThis.QUIZ_COPY || { modules: {}, mbtiProbe: null };
+const CONSTITUTION_COPY = globalThis.CONSTITUTION_COPY || { base: {}, triggers: {} };
+const DEFECT_CARD_ASSETS = globalThis.DEFECT_CARD_ASSETS || { byId: {} };
+const RACE_RECRUITMENT_DATA = globalThis.RACE_RECRUITMENT_DATA || null;
+const RACE_RECRUITMENT_ASSETS = globalThis.RACE_RECRUITMENT_ASSETS || {
+  ui: {},
+  races: {},
+  targets: {},
+  questions: {},
+  endings: {},
+  byId: {},
+};
+const CONSTITUTION_TIER_LABELS = {
+  frail: "残烛体质",
+  light: "轻装体质",
+  mortal: "凡人体质",
+  steady: "稳健体质",
+  iron: "钢骨体质",
+  monster: "怪物体质",
+};
+
+const RECRUITMENT_TARGET_CLASS = {
+  barbarian_camp: "野蛮人",
+  fighter_line: "战士",
+  warlock_contract: "术士",
+  druid_mutation_circle: "德鲁伊",
+};
+
+const RECRUITMENT_TARGET_ALIASES = {
+  barbarian: "barbarian_camp",
+  fighter: "fighter_line",
+  warlock: "warlock_contract",
+  druid: "druid_mutation_circle",
+};
+
+const RECRUITMENT_CALIBRATION_STAGE_IDS = {
+  str: "str_burst",
+  dex: "dex_reaction",
+  con: "con_focus",
+  int: "int_memory",
+  wis: "wis_color",
+  cha: "cha_dialogue",
+};
+
+const RECRUITMENT_THEME = {
+  barbarian_camp: {
+    name: "蛮子营地",
+    className: "trial-barbarian",
+    accent: "#d85d4a",
+    secondary: "#e4bf62",
+    seal: "AXE",
+    texture: "兽皮、火堆、黑铁斧痕",
+  },
+  fighter_line: {
+    name: "战士前线",
+    className: "trial-fighter",
+    accent: "#7f95b7",
+    secondary: "#d8b66a",
+    seal: "SHIELD",
+    texture: "盾墙、军令、钢铁旗帜",
+  },
+  warlock_contract: {
+    name: "术士契约所",
+    className: "trial-warlock",
+    accent: "#9b6ad6",
+    secondary: "#d85d78",
+    seal: "PACT",
+    texture: "黑纸、蜡封、契约边注",
+  },
+  druid_mutation_circle: {
+    name: "德鲁伊异变环",
+    className: "trial-druid",
+    accent: "#72c891",
+    secondary: "#d8d0a0",
+    seal: "ROOT",
+    texture: "树根、骨枝、异变法阵",
+  },
+  default: {
+    name: "征召试炼",
+    className: "trial-default",
+    accent: "#e4bf62",
+    secondary: "#70c7c7",
+    seal: "A6",
+    texture: "羊皮纸、烛火、公会档案",
+  },
+};
+
+const HOME_RACE_TARGET_PRESETS = {
+  human: ["战士", "吟游诗人", "工匠", "圣武士"],
+  elf: ["游侠", "法师", "德鲁伊", "游荡者"],
+  drow: ["游荡者", "术士", "吟游诗人", "游侠"],
+  dwarf: ["战士", "牧师", "工匠", "圣武士"],
+  halfling: ["游荡者", "吟游诗人", "游侠", "牧师"],
+  gnome: ["工匠", "法师", "游荡者", "吟游诗人"],
+  half_orc: ["野蛮人", "战士", "圣武士", "游侠"],
+  tiefling: ["术士", "吟游诗人", "法师", "游荡者"],
+  dragonborn: ["圣武士", "战士", "术士", "牧师"],
+  goliath: ["野蛮人", "战士", "武僧", "游侠"],
+  troll: ["野蛮人", "战士", "术士", "德鲁伊"],
+  ogre_giant: ["野蛮人", "战士", "德鲁伊", "术士"],
+};
+
+const GENERIC_GUILD_TARGET_META = {
+  法师: { targetId: "guild_wizard", desk: "法师塔档案室", seal: "ARC", texture: "卷宗、符文、远程演算" },
+  战士: { targetId: "guild_fighter", desk: "战士训练厅", seal: "EDGE", texture: "兵器架、盾墙、战术沙盘" },
+  游荡者: { targetId: "guild_rogue", desk: "斥候与机关处", seal: "SHADE", texture: "暗门、锁具、路线图" },
+  游侠: { targetId: "guild_ranger", desk: "边境巡林站", seal: "TRAIL", texture: "地图、猎踪、远行契约" },
+  牧师: { targetId: "guild_cleric", desk: "誓约医疗所", seal: "BLESS", texture: "圣徽、药箱、值夜名单" },
+  德鲁伊: { targetId: "guild_druid", desk: "自然顾问席", seal: "WILD", texture: "草药、兽径、季节记录" },
+  圣武士: { targetId: "guild_paladin", desk: "誓言审议厅", seal: "OATH", texture: "誓约、盾徽、公开证词" },
+  吟游诗人: { targetId: "guild_bard", desk: "联络与士气处", seal: "SONG", texture: "传令牌、乐谱、谈判桌" },
+  术士: { targetId: "guild_warlock", desk: "异常契约审阅处", seal: "PACT", texture: "封蜡、密约、风险条款" },
+  武僧: { targetId: "guild_monk", desk: "专注训练场", seal: "FLOW", texture: "木桩、呼吸节拍、静室" },
+  野蛮人: { targetId: "guild_barbarian", desk: "突破先锋营", seal: "RAGE", texture: "破门锤、营火、冲锋旗" },
+  工匠: { targetId: "guild_artificer", desk: "工匠工坊", seal: "GEAR", texture: "齿轮、炼金台、装备清单" },
+};
+
+function getQuizModule(moduleId, fallback) {
+  const module = QUIZ_COPY.modules?.[moduleId];
+  if (!module) return fallback;
+  return {
+    ...fallback,
+    ...module,
+    guide: module.guide || fallback.guide,
+    page: module.page || fallback.page,
+    questions: module.questions || fallback.questions,
+  };
+}
+
+function getMbtiProbeConfig() {
+  return (
+    QUIZ_COPY.mbtiProbe || {
+      title: "扮演滤镜检定",
+      intro: "这几题只用于推断角色卡的演法滤镜，不代表正式人格测评。",
+      questions: [],
+      resultNote: "本结果只作为角色演法参考。",
+    }
+  );
+}
+
 const state = {
   screen: "start",
   current: 0,
@@ -667,7 +1069,12 @@ const state = {
   axisStages: {},
   raw: {},
   traits: { ...INITIAL_TRAITS },
+  mbtiProbe: null,
+  mbtiProbeReturnScreen: null,
   personalityAnswers: 0,
+  recruitment: null,
+  homePreviewRaceId: "",
+  homePreviewRaceIds: [],
 };
 
 let cleanupFns = [];
@@ -678,6 +1085,8 @@ const progressBar = document.querySelector("#progressBar");
 
 document.querySelector("#brandHome").addEventListener("click", () => {
   state.screen = "start";
+  state.recruitment = null;
+  state.mbtiProbeReturnScreen = null;
   render();
 });
 
@@ -722,79 +1131,1064 @@ function setProgress(label, pct) {
   progressBar.style.width = `${clamp(pct, 0, 100)}%`;
 }
 
+function getHomePreviewRacePool() {
+  return FANTASY_ANCESTRIES.filter((item) => item.id !== "auto" && getRaceArt(item.id));
+}
+
+function getHomePreviewRaceIds(limit = 6) {
+  const pool = getHomePreviewRacePool();
+  const maxCount = Math.min(limit, pool.length);
+  const validIds = new Set(pool.map((race) => race.id));
+  const existingIds = Array.isArray(state.homePreviewRaceIds)
+    ? state.homePreviewRaceIds.filter((id) => validIds.has(id))
+    : [];
+
+  if (existingIds.length >= maxCount) {
+    state.homePreviewRaceIds = existingIds.slice(0, maxCount);
+    return state.homePreviewRaceIds;
+  }
+
+  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  const shuffledIds = pool
+    .map((race) => ({ id: race.id, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((race) => race.id);
+
+  const pickedIds = [...existingIds, ...shuffledIds].filter((id, index, list) => list.indexOf(id) === index);
+  if (validIds.has(sampleId) && !pickedIds.includes(sampleId)) {
+    if (pickedIds.length >= maxCount) pickedIds[maxCount - 1] = sampleId;
+    else pickedIds.push(sampleId);
+  }
+
+  state.homePreviewRaceIds = pickedIds.slice(0, maxCount);
+  return state.homePreviewRaceIds;
+}
+
+function getHomePreviewRaces(limit = 6) {
+  const pool = getHomePreviewRacePool();
+  const byId = new Map(pool.map((race) => [race.id, race]));
+  return getHomePreviewRaceIds(limit)
+    .map((id) => byId.get(id))
+    .filter(Boolean);
+}
+
+function getHomePreviewSelection(previewRaces) {
+  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  const fallbackRace = previewRaces.find((race) => race.id === sampleId) || previewRaces[0] || getRecruitmentRace(sampleId);
+  const selectedId = previewRaces.some((race) => race.id === state.homePreviewRaceId)
+    ? state.homePreviewRaceId
+    : fallbackRace?.id || sampleId;
+  state.homePreviewRaceId = selectedId;
+  return getRecruitmentRaceCard(selectedId);
+}
+
+function getDndClassByName(className) {
+  return DND_CLASS_POOL.find((item) => item.className === className) || null;
+}
+
+function getHomeRecruitTargetPreviews(raceId, recruitTargets = []) {
+  const sampleId = RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  if (raceId === sampleId && recruitTargets.length) {
+    return recruitTargets.map((target) => ({
+      id: target.targetId,
+      type: "sample",
+      label: "样板路线",
+      title: target.classNameZh,
+      subtitle: target.title,
+      body: target.oneLine || target.acceptedStyle || target.recruitPitch || "",
+      theme: getRecruitmentTheme(target.targetId),
+    }));
+  }
+
+  const race = getRecruitmentRace(raceId);
+  const classNames = HOME_RACE_TARGET_PRESETS[raceId] || HOME_RACE_TARGET_PRESETS.human;
+  return classNames.map((className) => {
+    const dndClass = getDndClassByName(className);
+    const style = DND_CARD_STYLES[className] || DND_CARD_STYLES.冒险者;
+    return {
+      id: `${raceId}_${className}`,
+      type: "class",
+      label: "推荐投递",
+      title: className,
+      subtitle: dndClass?.role || `${race?.name || "当前血脉"}可尝试的职业方向`,
+      body: dndClass?.specialty || dndClass?.why || "公会会在正式登记后按六维校准结果细化这条路线。",
+      theme: {
+        accent: style.a || RECRUITMENT_THEME.default.accent,
+        secondary: style.b || RECRUITMENT_THEME.default.secondary,
+      },
+    };
+  });
+}
+
 function render() {
   cleanup();
   if (state.screen === "start") renderStart();
+  if (state.screen === "raceSelect") renderRaceSelect();
+  if (state.screen === "recruitTarget") renderRecruitTargetSelect();
+  if (state.screen === "recruitPhysique") renderRecruitmentQuestionScreen("physique");
+  if (state.screen === "recruitTrial") renderRecruitmentQuestionScreen("trial");
+  if (state.screen === "recruitCalibration") renderRecruitmentCalibration();
+  if (state.screen === "recruitJudgement") renderRecruitmentJudgement();
   if (state.screen === "profile") renderProfile();
   if (state.screen === "test") renderTest();
+  if (state.screen === "mbtiProbe") renderMbtiProbe();
   if (state.screen === "personality") renderPersonality();
   if (state.screen === "result") renderResult();
 }
 
 function renderStart() {
-  setProgress("公会柜台待命", 0);
+  setProgress("征召大厅开放", 0);
+  const raceCard = RACE_RECRUITMENT_DATA?.raceCard;
+  const recruitTargets = RACE_RECRUITMENT_DATA?.recruitTargets || [];
+  const previewRaces = getHomePreviewRaces(6);
+  const previewRaceCard = getHomePreviewSelection(previewRaces);
+  const previewRaceId = previewRaceCard?.raceId || state.homePreviewRaceId || raceCard?.raceId || "troll";
+  const selectedPreviewRace = previewRaces.find((race) => race.id === previewRaceId) || getRecruitmentRace(previewRaceId);
+  const homeTargetPreviews = getHomeRecruitTargetPreviews(previewRaceId, recruitTargets);
+  const homeTargetTheme = homeTargetPreviews[0]?.theme || RECRUITMENT_THEME.default;
+  const previewRaceName = selectedPreviewRace?.name || previewRaceCard?.raceNameZh || "当前血脉";
   app.innerHTML = `
-    <section class="screen hero-grid">
-      <div class="intro-panel hero-panel">
-        <div class="hero-orbit" aria-hidden="true"></div>
-        <p class="eyebrow">A6 Adventurer Sheet / 六维能力检定</p>
-        <h1>
-          <span class="hero-title-line">先过一轮</span>
-          <span class="hero-title-line">六维检定，</span>
-          <span class="hero-title-line">再领取你的</span>
-          <span class="hero-title-line">冒险者名册。</span>
-        </h1>
-        <p class="lead">
-          公会柜台不靠自我介绍发证。你会过一串力量、敏捷、体质、智力、感知、魅力检定；跑完以后，桌上会多出职业线索、阵营动机、扮演口吻和能直接开团的角色钩子。
-        </p>
-        <div class="pill-row">
-          <span class="pill">15 个小检定</span>
-          <span class="pill">六维属性投点</span>
-          <span class="pill">DND 职业线索</span>
-          <span class="pill">阵营动机牌</span>
-          <span class="pill">可扩写角色钩子</span>
+    <section class="screen recruitment-home">
+      <div class="recruit-hero">
+        <div class="recruit-hero-copy">
+          ${renderRecruitmentArt({ src: getRecruitmentUiArt("home"), alt: "西方奇幻公会征召大厅", className: "recruit-art-hero" })}
+          <p class="eyebrow">Adventurer Recruitment Office / 公会征召处</p>
+          <h1>今日征召开放</h1>
+          <p class="lead">
+            先登记血脉，再投递志愿。公会不会保证你被第一志愿录取，但会给你一份能上桌、能扮演、能写进团本的冒险者档案。
+          </p>
+          <div class="recruit-seals" aria-label="征召流程">
+            <span>血脉登记</span>
+            <span>志愿投递</span>
+            <span>体格鉴定</span>
+            <span>职业试炼</span>
+            <span>六维校准</span>
+            <span>MBTI滤镜</span>
+            <span>公会判定</span>
+          </div>
+          <div class="actions">
+            <button class="button primary recruitment-cta" id="recruitStartBtn" type="button">开始登记</button>
+            <button class="button ghost" id="demoResultBtn" type="button">随机投递简历</button>
+          </div>
+          <p class="fineprint">当前开放 ${raceCard ? raceCard.raceNameZh : "巨魔"} 征召样板线：四条志愿路线、种族体格鉴定、职业试炼、六维实战校准与 MBTI 简易滤镜。</p>
         </div>
-        <div class="actions">
-          <button class="button primary" id="startBtn" type="button">掷骰开卡</button>
-          <button class="button ghost" id="demoResultBtn" type="button">偷看成卡</button>
+        <div class="recruit-notice-board">
+          <span class="board-pin"></span>
+          <p class="eyebrow">Open Bloodline / 随机血脉</p>
+          <div class="home-race-preview-deck" aria-label="随机开放血脉">
+            ${previewRaces
+              .map((race) => {
+                const active = race.id === previewRaceId;
+                return `
+                  <button class="home-race-preview-card ${active ? "is-selected" : ""}" data-home-race-preview="${race.id}" type="button" aria-pressed="${active ? "true" : "false"}">
+                    ${renderRecruitmentArt({ src: getRaceArt(race.id), alt: `${race.name}血脉卡牌`, className: "home-race-preview-art" })}
+                    <span class="home-race-preview-name">${race.name}</span>
+                    <small class="home-race-preview-label">${race.label}</small>
+                  </button>
+                `;
+              })
+              .join("")}
+          </div>
+          <div class="home-race-preview-detail">
+            ${renderRecruitmentArt({ src: getRaceArt(previewRaceId) || getRecruitmentUiArt("registry"), alt: `${selectedPreviewRace?.name || previewRaceCard?.raceNameZh || "当前"}血脉登记图`, className: "notice-dossier-art" })}
+            <p class="eyebrow">Selected Bloodline / 当前预览</p>
+            <h2>${previewRaceCard ? previewRaceCard.title : "血脉登记中"}</h2>
+            <p>${previewRaceCard ? previewRaceCard.oneLine : selectedPreviewRace?.note || "征召档案正在装订。"}</p>
+            <div class="descriptor-tags">
+              ${(previewRaceCard?.tags || selectedPreviewRace?.tags || ["征召", "试炼", "成卡"]).map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+            <blockquote>${previewRaceCard?.recruiterQuote || "书记员正在翻找今天的征召名册。"}</blockquote>
+          </div>
         </div>
-        <p class="fineprint">这是一张娱乐用角色卡，不构成医学、心理学或职业建议。原型阶段数据只在浏览器本地计算。</p>
       </div>
 
-      <aside class="side-panel scan-panel">
-        <h3>今日委托板</h3>
-        <div class="stage-map">
-          ${ATTRIBUTES.map(
-            (axis) => `
-              <div class="stage-map-row" style="--axis-color:${axis.color}">
-                <div>
-                  <strong>${axis.name}</strong>
-                  <small>${axis.theme}</small>
-                </div>
-                <span>${axis.stages.length} 项检定</span>
-              </div>
-            `,
-          ).join("")}
-        </div>
-        <div class="notice">
-          每项属性都会经过几轮检定，不靠单题定性。不想跑某段，可以让公会书记填一枚中性参考骰。
-        </div>
-        <div class="mini-card">
-          <h3>跑完会拿到</h3>
-          <p>一张六维雷达、一组职业线索、人格扮演滤镜、阵营动机、角色称号和一段可直接交给 DM 的设定摘要。</p>
-        </div>
-      </aside>
+      <div class="recruit-home-grid">
+        <article class="recruit-ledger home-target-ledger" style="--trial-accent:${homeTargetTheme.accent}; --trial-secondary:${homeTargetTheme.secondary}">
+          <p class="eyebrow">Recruit Targets / 今日可投</p>
+          <h2>${previewRaceName}今日可投</h2>
+          <p>${homeTargetPreviews[0]?.type === "sample" ? "当前血脉已有完整征兵样板，投递后会进入对应职业试炼。" : "当前血脉会先按推荐方向预分流，正式登记后再由六维校准和 MBTI 滤镜细化职业结果。"}</p>
+          <div class="recruit-target-strip">
+            ${homeTargetPreviews
+              .map((target) => {
+                const theme = target.theme || RECRUITMENT_THEME.default;
+                return `
+                  <div class="recruit-mini-target is-linked" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}">
+                    <small>${target.label}</small>
+                    <strong>${target.title}</strong>
+                    <span>${target.subtitle}</span>
+                  </div>
+                `;
+              })
+              .join("")}
+          </div>
+        </article>
+
+        <article class="recruit-ledger">
+          <p class="eyebrow">Linked Preview / 联动状态</p>
+          <h2>已跟随${previewRaceName}</h2>
+          <p>上方卡牌切换后，这里的可投方向会同步刷新；点击开始登记时，也会默认带入当前预览的 ${previewRaceName} 血脉。</p>
+          <div class="descriptor-tags">
+            ${(previewRaceCard?.tags || selectedPreviewRace?.tags || ["血脉预览", "联动投递"]).slice(0, 4).map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+        </article>
+      </div>
     </section>
   `;
-  document.querySelector("#startBtn").addEventListener("click", () => {
-    state.screen = "profile";
-    render();
+  document.querySelectorAll("[data-home-race-preview]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.homePreviewRaceId = btn.dataset.homeRacePreview;
+      render();
+    });
+  });
+  document.querySelector("#recruitStartBtn").addEventListener("click", () => {
+    beginRecruitment(previewRaceId);
   });
   document.querySelector("#demoResultBtn").addEventListener("click", () => {
-    fillDemo();
+    state.recruitment = null;
+    state.mbtiProbeReturnScreen = null;
+    fillRandomSheet();
     state.screen = "result";
     render();
   });
+}
+
+function getRecruitmentTheme(targetId) {
+  const normalized = normalizeRecruitmentTargetId(targetId);
+  return RECRUITMENT_THEME[normalized] || RECRUITMENT_THEME.default;
+}
+
+function escapeAttribute(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+}
+
+function getRecruitmentAssetRecord(assetId) {
+  if (!assetId) return null;
+  const record = RACE_RECRUITMENT_ASSETS.byId?.[assetId] || null;
+  if (!record) return null;
+  return typeof record === "string" ? { status: "ready", file: record } : record;
+}
+
+function getRecruitmentAssetPath(assetId) {
+  const record = getRecruitmentAssetRecord(assetId);
+  if (!record || record.status !== "ready") return "";
+  return record.file || "";
+}
+
+function getRecruitmentUiArt(key) {
+  const value = RACE_RECRUITMENT_ASSETS.ui?.[key];
+  if (typeof value === "string") return value;
+  return value?.file || getRecruitmentAssetPath(`ui_${key}`);
+}
+
+function getRaceArt(raceId = "troll") {
+  const value = RACE_RECRUITMENT_ASSETS.races?.[raceId];
+  if (typeof value === "string") return value;
+  return value?.file || getRecruitmentAssetPath(`race_${raceId}_card`);
+}
+
+function getTargetArt(targetId) {
+  const normalized = normalizeRecruitmentTargetId(targetId);
+  const record = getRecruitmentAssetRecord(`troll_target_${normalized}`);
+  if (record?.sourceFile) return record.sourceFile;
+  const value = RACE_RECRUITMENT_ASSETS.targets?.troll?.[normalized];
+  if (typeof value === "string") return value;
+  return value?.sourceFile || value?.file || getRecruitmentAssetPath(`troll_target_${normalized}`);
+}
+
+function getQuestionArt(kind, question, targetId) {
+  const value = RACE_RECRUITMENT_ASSETS.questions?.[question?.id];
+  const directPath = typeof value === "string" ? value : value?.file || getRecruitmentAssetPath(question?.id);
+  if (directPath) return directPath;
+  if (kind === "physique") return getTargetArt(targetId) || getRaceArt("troll") || getRecruitmentUiArt("registry");
+  return getTargetArt(targetId) || getRaceArt("troll") || getRecruitmentUiArt("registry");
+}
+
+function getEndingArt(endingType) {
+  const value = RACE_RECRUITMENT_ASSETS.endings?.troll?.[endingType];
+  if (typeof value === "string") return value;
+  return value?.file || getRecruitmentAssetPath(`troll_ending_${endingType}`) || getRecruitmentUiArt("verdict");
+}
+
+function renderRecruitmentArt({ src = "", alt = "征召插图", className = "" } = {}) {
+  const hasImage = Boolean(src);
+  return `
+    <figure class="recruit-art-frame ${className} ${hasImage ? "has-image" : "is-fallback"}">
+      ${
+        hasImage
+          ? `<img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" onerror="this.closest('.recruit-art-frame')?.classList.add('is-fallback'); this.remove();">`
+          : ""
+      }
+      <span class="image-veil" aria-hidden="true"></span>
+    </figure>
+  `;
+}
+
+function normalizeRecruitmentTargetId(targetId) {
+  return RECRUITMENT_TARGET_ALIASES[targetId] || targetId || "";
+}
+
+function getRecruitmentRace(raceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll") {
+  const normalized = raceId || "troll";
+  return FANTASY_ANCESTRIES.find((item) => item.id === normalized) || FANTASY_ANCESTRIES.find((item) => item.id === "troll") || null;
+}
+
+function getRecruitmentRaceCard(raceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll") {
+  const source = RACE_RECRUITMENT_DATA?.raceCard || {};
+  const race = getRecruitmentRace(raceId);
+  if (!race) return source;
+  if (race.id === source.raceId) return source;
+  return {
+    raceId: race.id,
+    raceNameZh: race.name,
+    raceNameEn: race.label,
+    title: `${race.name}血脉登记`,
+    oneLine: race.note,
+    bodyText: `${race.note} 公会会先按通用征召流程登记你的血脉锚点，再把它写入最终冒险者档案。`,
+    warningText: `当前已接入${race.name}种族卡；职业投递与试炼暂用公会通用征召样板，最终档案会记录你选择的血脉。`,
+    recruiterQuote: `书记员把${race.name}血脉牌翻到台面上：先登记，再投递，剩下交给骰桌。`,
+    tags: race.tags || [],
+  };
+}
+
+function adaptRecruitmentCopy(value) {
+  if (typeof value !== "string") return value ?? "";
+  const sourceName = RACE_RECRUITMENT_DATA?.raceCard?.raceNameZh;
+  const race = getRecruitmentRace();
+  if (!sourceName || !race || race.id === RACE_RECRUITMENT_DATA?.raceCard?.raceId) return value;
+  return value.split(sourceName).join(race.name);
+}
+
+function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
+  state.recruitment = {
+    raceId: preferredRaceId || state.homePreviewRaceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll",
+    targetId: "",
+    phase: "race",
+    questionIndex: 0,
+    answers: [],
+    scoreDelta: {},
+    mbtiDelta: {},
+    affinityDelta: {},
+    alignmentDelta: {},
+    triggerTags: [],
+    toneCounts: {},
+    feedback: null,
+    calibration: null,
+    judgement: null,
+  };
+  state.profile = {};
+  state.scores = {};
+  state.axisStages = {};
+  state.raw = {};
+  state.traits = { ...INITIAL_TRAITS };
+  state.mbtiProbe = null;
+  state.mbtiProbeReturnScreen = null;
+  state.personalityAnswers = 0;
+  state.screen = "raceSelect";
+  render();
+}
+
+function renderRaceSelect() {
+  setProgress("血脉登记", 8);
+  const selectedRaceId = state.recruitment?.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll";
+  const activeRace = getRecruitmentRaceCard(selectedRaceId);
+  app.innerHTML = `
+    <section class="screen recruitment-flow">
+      <div class="recruit-step-head">
+        <p class="eyebrow">Step 1 / Bloodline Registry</p>
+        <h1>选择血脉锚点</h1>
+        <p>种族不是装饰。它会改变体格鉴定、职业试炼、缺陷卡触发和最后的公会评价。</p>
+      </div>
+      <div class="race-registry">
+        <div class="race-card-grid">
+          ${FANTASY_ANCESTRIES.filter((item) => item.id !== "auto")
+            .map((race) => {
+              const active = race.id === selectedRaceId;
+              return `
+                <button class="race-registry-card is-open ${active ? "is-featured" : ""}" data-race="${race.id}" type="button" aria-pressed="${active ? "true" : "false"}">
+                  ${renderRecruitmentArt({ src: getRaceArt(race.id), alt: `${race.name}血脉登记图`, className: "race-card-art" })}
+                  <span>${active ? "已选血脉" : "开放征召"}</span>
+                  <strong>${race.name}</strong>
+                  <small>${race.label}</small>
+                  <p>${race.note}</p>
+                </button>
+              `;
+            })
+            .join("")}
+        </div>
+        <aside class="race-dossier">
+          ${renderRecruitmentArt({ src: getRaceArt(activeRace?.raceId || selectedRaceId) || getRecruitmentUiArt("registry"), alt: `${activeRace?.raceNameZh || "当前"}血脉登记图`, className: "race-dossier-art" })}
+          <p class="eyebrow">Selected Bloodline / 当前选择</p>
+          <h2>${activeRace?.title || "血脉登记"}</h2>
+          <p>${activeRace?.bodyText || "公会书记员正在整理这份血脉档案。"}</p>
+          <div class="notice">${activeRace?.warningText || "特殊种族会改变体格和试炼口吻。"}</div>
+          <div class="descriptor-tags">
+            ${(activeRace?.tags || []).map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <div class="actions">
+            <button class="button primary" id="selectRace" type="button">登记${activeRace?.raceNameZh || "当前"}血脉</button>
+            <button class="button ghost" id="backHome" type="button">返回大厅</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  `;
+  document.querySelectorAll("[data-race]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.recruitment.raceId = btn.dataset.race;
+      renderRaceSelect();
+    });
+  });
+  document.querySelector("#selectRace").addEventListener("click", () => {
+    const raceId = state.recruitment?.raceId || selectedRaceId;
+    state.recruitment.raceId = raceId;
+    state.profile = {
+      ancestry: raceId,
+      mbtiSelf: "未知",
+      exercise: "unknown",
+      sleep: "unknown",
+      health: "none",
+      audio: "visual",
+    };
+    state.screen = "recruitTarget";
+    render();
+  });
+  document.querySelector("#backHome").addEventListener("click", () => {
+    state.screen = "start";
+    render();
+  });
+}
+
+function renderRecruitTargetSelect() {
+  setProgress("征兵志愿投递", 18);
+  const targets = RACE_RECRUITMENT_DATA?.recruitTargets || [];
+  app.innerHTML = `
+    <section class="screen recruitment-flow">
+      <div class="recruit-step-head">
+        <p class="eyebrow">Step 2 / Recruitment Desk</p>
+        <h1>选择征兵目标</h1>
+        <p>志愿只代表你敲响了哪扇门，不代表那扇门会立刻为你打开。</p>
+      </div>
+      <div class="target-choice-grid">
+        ${targets.map((target) => renderRecruitTargetCard(target)).join("")}
+      </div>
+      <div class="actions">
+        <button class="button ghost" id="backRace" type="button">重选血脉</button>
+      </div>
+    </section>
+  `;
+  document.querySelectorAll("[data-target-id]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.recruitment.targetId = btn.dataset.targetId;
+      state.recruitment.phase = "physique";
+      state.recruitment.questionIndex = 0;
+      state.recruitment.feedback = null;
+      state.screen = "recruitPhysique";
+      render();
+    });
+  });
+  document.querySelector("#backRace").addEventListener("click", () => {
+    state.screen = "raceSelect";
+    render();
+  });
+}
+
+function renderRecruitTargetCard(target) {
+  const theme = getRecruitmentTheme(target.targetId);
+  return `
+    <button class="target-contract ${theme.className}" data-target-id="${target.targetId}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}" type="button">
+      ${renderRecruitmentArt({ src: getTargetArt(target.targetId), alt: `${target.classNameZh}征兵目标图`, className: "target-contract-art" })}
+      <span class="contract-seal">${theme.seal}</span>
+      <p class="eyebrow">${target.classNameEn}</p>
+      <h2>${adaptRecruitmentCopy(target.title)}</h2>
+      <strong>${target.classNameZh}</strong>
+      <p>${adaptRecruitmentCopy(target.recruitPitch)}</p>
+      <dl>
+        <div>
+          <dt>录取打法</dt>
+          <dd>${adaptRecruitmentCopy(target.acceptedStyle)}</dd>
+        </div>
+        <div>
+          <dt>常见失败</dt>
+          <dd>${adaptRecruitmentCopy(target.likelyFailure)}</dd>
+        </div>
+        <div>
+          <dt>隐藏路线</dt>
+          <dd>${adaptRecruitmentCopy(target.hiddenRoute)}</dd>
+        </div>
+      </dl>
+      <div class="descriptor-tags">
+        ${(target.riskTags || []).map((tag) => `<span>${tag}</span>`).join("")}
+      </div>
+    </button>
+  `;
+}
+
+function getRecruitmentTarget(targetId = state.recruitment?.targetId) {
+  const normalized = normalizeRecruitmentTargetId(targetId);
+  return (RACE_RECRUITMENT_DATA?.recruitTargets || []).find((item) => item.targetId === normalized) || null;
+}
+
+function getRecruitmentQuestions(kind) {
+  if (!RACE_RECRUITMENT_DATA) return [];
+  if (kind === "physique") return RACE_RECRUITMENT_DATA.physiqueChecks || [];
+  const targetId = state.recruitment?.targetId;
+  return RACE_RECRUITMENT_DATA.trialSets?.[targetId] || [];
+}
+
+function renderRecruitmentQuestionScreen(kind) {
+  const recruitment = state.recruitment;
+  if (!recruitment) {
+    state.screen = "start";
+    render();
+    return;
+  }
+  const target = getRecruitmentTarget();
+  const theme = getRecruitmentTheme(target?.targetId);
+  const questions = getRecruitmentQuestions(kind);
+  const index = recruitment.questionIndex || 0;
+  const question = questions[index];
+  if (!question) {
+    if (kind === "physique") {
+      recruitment.phase = "trial";
+      recruitment.questionIndex = 0;
+      recruitment.feedback = null;
+      state.screen = "recruitTrial";
+    } else {
+      beginRecruitmentCalibration();
+    }
+    render();
+    return;
+  }
+  const stepLabel = kind === "physique" ? "血脉体格鉴定" : `${target?.classNameZh || "职业"}试炼`;
+  const progressBase = kind === "physique" ? 24 : 48;
+  const progressSpan = kind === "physique" ? 18 : 30;
+  setProgress(`${stepLabel} ${index + 1}/${questions.length}`, progressBase + (index / Math.max(questions.length, 1)) * progressSpan);
+  const feedback = recruitment.feedback;
+  const raceCard = getRecruitmentRaceCard();
+  const continueLabel =
+    index + 1 >= questions.length ? (kind === "physique" ? "进入职业试炼" : "进入六维实战校准") : "继续试炼";
+  const questionArt = getQuestionArt(kind, question, target?.targetId);
+  app.innerHTML = `
+    <section class="screen recruitment-flow trial-shell ${kind === "physique" ? "trial-physique" : theme.className}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}">
+      <div class="trial-topline">
+        <div>
+          <p class="eyebrow">${kind === "physique" ? "Step 3 / Bloodline Physique" : "Step 4 / Field Trial"}</p>
+          <h1>${stepLabel}</h1>
+        </div>
+        <div class="trial-progress-card">
+          <span>${index + 1}</span>
+          <small>/ ${questions.length}</small>
+        </div>
+      </div>
+      <div class="trial-layout">
+        <aside class="trial-dossier-card">
+          <span class="contract-seal">${kind === "physique" ? "BODY" : theme.seal}</span>
+          <h2>${kind === "physique" ? raceCard.title : adaptRecruitmentCopy(target.title)}</h2>
+          <p>${kind === "physique" ? raceCard.warningText : adaptRecruitmentCopy(target.oneLine)}</p>
+          <dl>
+            <div>
+              <dt>血脉</dt>
+              <dd>${raceCard.raceNameZh}</dd>
+            </div>
+            <div>
+              <dt>志愿</dt>
+              <dd>${target?.classNameZh || "未投递"}</dd>
+            </div>
+            <div>
+              <dt>试炼材质</dt>
+              <dd>${kind === "physique" ? "骨架、再生、空间代价" : theme.texture}</dd>
+            </div>
+          </dl>
+          ${renderRecruitmentLeanings()}
+        </aside>
+        <article class="trial-question-card">
+          ${renderRecruitmentArt({ src: questionArt, alt: `${question.title}试炼场景图`, className: "trial-scene-art" })}
+          <p class="eyebrow">${question.id}</p>
+          <h2>${adaptRecruitmentCopy(question.title)}</h2>
+          <p class="trial-scene">${adaptRecruitmentCopy(question.scene)}</p>
+          <h3>${adaptRecruitmentCopy(question.prompt)}</h3>
+          <div class="trial-option-grid">
+            ${question.options
+              .map(
+                (option, optionIndex) => `
+                  <button class="trial-option ${feedback?.optionId === option.id ? "is-selected" : ""}" data-choice="${optionIndex}" ${feedback ? "disabled" : ""} type="button">
+                    <span>${option.id}</span>
+                    <strong>${adaptRecruitmentCopy(option.text)}</strong>
+                  </button>
+                `,
+              )
+              .join("")}
+          </div>
+          ${
+            feedback
+              ? `
+                <div class="npc-feedback ${feedback.outcomeTone ? `tone-${feedback.outcomeTone}` : ""}">
+                  <p class="eyebrow">Recruiter Note / ${feedback.outcomeTone || "批注"}</p>
+                  <blockquote>${adaptRecruitmentCopy(feedback.npcReply)}</blockquote>
+                  <p>${adaptRecruitmentCopy(feedback.branchHint || "档案已更新，继续试炼。")}</p>
+                </div>
+                <div class="actions">
+                  <button class="button primary" id="continueRecruitment" type="button">${continueLabel}</button>
+                </div>
+              `
+              : ""
+          }
+        </article>
+      </div>
+    </section>
+  `;
+  if (feedback) {
+    document.querySelector("#continueRecruitment").addEventListener("click", () => {
+      advanceRecruitmentQuestion(kind, questions.length);
+    });
+  } else {
+    document.querySelectorAll("[data-choice]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const option = question.options[Number(btn.dataset.choice)];
+        chooseRecruitmentOption(kind, question, option);
+      });
+    });
+  }
+}
+
+function renderRecruitmentLeanings() {
+  const recruitment = state.recruitment || {};
+  const topAffinity = Object.entries(getNormalizedRecruitmentAffinity(recruitment.affinityDelta))
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 2);
+  const topScores = Object.entries(recruitment.scoreDelta || {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([axis, value]) => `${getAxisName(axis)} ${value >= 0 ? "+" : ""}${value}`);
+  return `
+    <div class="trial-leanings">
+      <strong>档案边注</strong>
+      <p>${topAffinity.length ? topAffinity.map(([id, value]) => `${getRecruitmentTheme(id).name} ${value >= 0 ? "+" : ""}${value}`).join(" / ") : "征召官仍在观察。"}</p>
+      <p>${topScores.length ? topScores.join(" / ") : "六维暂未改写。"}</p>
+    </div>
+  `;
+}
+
+function getAxisName(axisId) {
+  return ATTRIBUTES.find((axis) => axis.id === axisId)?.name || axisId;
+}
+
+function chooseRecruitmentOption(kind, question, option) {
+  const recruitment = state.recruitment;
+  addDeltaMap(recruitment.scoreDelta, option.scoreDelta);
+  addDeltaMap(recruitment.mbtiDelta, option.mbtiDelta);
+  addRecruitmentAffinityDelta(recruitment.affinityDelta, option.affinityDelta);
+  addDeltaMap(recruitment.alignmentDelta, option.alignmentDelta);
+  (option.triggerTags || []).forEach((tag) => {
+    if (!recruitment.triggerTags.includes(tag)) recruitment.triggerTags.push(tag);
+  });
+  if (option.outcomeTone) {
+    recruitment.toneCounts[option.outcomeTone] = (recruitment.toneCounts[option.outcomeTone] || 0) + 1;
+  }
+  recruitment.answers.push({
+    kind,
+    questionId: question.id,
+    title: question.title,
+    optionId: option.id,
+    optionText: option.text,
+    npcReply: option.npcReply,
+    outcomeTone: option.outcomeTone || "",
+    branchHint: option.branchHint || "",
+    triggerTags: option.triggerTags || [],
+  });
+  recruitment.feedback = {
+    optionId: option.id,
+    npcReply: option.npcReply,
+    outcomeTone: option.outcomeTone || "",
+    branchHint: option.branchHint || "",
+  };
+  render();
+}
+
+function addDeltaMap(target, delta = {}) {
+  Object.entries(delta || {}).forEach(([key, value]) => {
+    target[key] = (target[key] || 0) + Number(value || 0);
+  });
+}
+
+function addRecruitmentAffinityDelta(target, delta = {}) {
+  Object.entries(delta || {}).forEach(([key, value]) => {
+    const normalized = normalizeRecruitmentTargetId(key);
+    target[normalized] = (target[normalized] || 0) + Number(value || 0);
+  });
+}
+
+function advanceRecruitmentQuestion(kind, total) {
+  const recruitment = state.recruitment;
+  recruitment.feedback = null;
+  if (recruitment.questionIndex + 1 < total) {
+    recruitment.questionIndex += 1;
+  } else if (kind === "physique") {
+    recruitment.phase = "trial";
+    recruitment.questionIndex = 0;
+    state.screen = "recruitTrial";
+  } else {
+    beginRecruitmentCalibration();
+  }
+  render();
+}
+
+function finalizeRecruitment() {
+  const recruitment = state.recruitment;
+  const target = getRecruitmentTarget();
+  const calibrationStages = state.axisStages || {};
+  const base = 5.2;
+  const storyScores = Object.fromEntries(
+    ATTRIBUTES.map((axis) => {
+      const delta = recruitment.scoreDelta[axis.id] || 0;
+      const targetBoost = (target?.recommendedStats || []).includes(axis.id) ? 0.35 : 0;
+      return [axis.id, clamp(base + delta * 0.42 + targetBoost)];
+    }),
+  );
+  const scores = Object.fromEntries(
+    ATTRIBUTES.map((axis) => {
+      const storyScore = storyScores[axis.id];
+      const calibrationScore = getRecruitmentCalibrationAxisScore(axis.id, calibrationStages);
+      const hasCalibration = typeof calibrationScore === "number";
+      return [axis.id, hasCalibration ? clamp(storyScore * 0.6 + calibrationScore * 0.4) : storyScore];
+    }),
+  );
+  const traits = { ...INITIAL_TRAITS };
+  addDeltaMap(traits, recruitment.mbtiDelta);
+  addDeltaMap(traits, recruitment.alignmentDelta);
+  applyRecruitmentClassBias(traits, recruitment.targetId);
+
+  state.profile = {
+    ancestry: recruitment.raceId || RACE_RECRUITMENT_DATA?.raceCard?.raceId || "troll",
+    mbtiSelf: "未知",
+    exercise: "unknown",
+    sleep: recruitment.triggerTags.includes("再生代价") || recruitment.triggerTags.includes("野性饥饿") ? "poor" : "unknown",
+    health: recruitment.triggerTags.includes("旧伤") ? "mild" : "none",
+    audio: "visual",
+  };
+  state.scores = scores;
+  state.traits = traits;
+  state.mbtiProbe = null;
+  state.mbtiProbeReturnScreen = null;
+  state.axisStages = buildRecruitmentAxisStages(storyScores, target, calibrationStages);
+  state.raw = {
+    recruitment: {
+      raceId: recruitment.raceId,
+      targetId: recruitment.targetId,
+      answers: recruitment.answers,
+      triggerTags: recruitment.triggerTags,
+      calibration: summarizeRecruitmentCalibration(calibrationStages),
+    },
+  };
+  recruitment.judgement = buildRecruitmentJudgement();
+}
+
+function applyRecruitmentClassBias(traits, targetId) {
+  const bias = {
+    barbarian_camp: { S: 1, P: 1, chaotic: 1, action: 2, risk: 1 },
+    fighter_line: { S: 1, J: 1, lawful: 2, order: 2 },
+    warlock_contract: { N: 1, T: 1, self: 1, control: 1 },
+    druid_mutation_circle: { N: 1, F: 1, good: 1, empathy: 1 },
+  };
+  addDeltaMap(traits, bias[targetId] || {});
+}
+
+function getRecruitmentCalibrationAxisScore(axisId, calibrationStages = state.axisStages || {}) {
+  const stages = Object.values(calibrationStages[axisId] || {});
+  if (!stages.length) return null;
+  const totalWeight = stages.reduce((sum, item) => sum + (item.weight || 1), 0) || 1;
+  return clamp(stages.reduce((sum, item) => sum + item.score * (item.weight || 1), 0) / totalWeight);
+}
+
+function summarizeRecruitmentCalibration(calibrationStages = state.axisStages || {}) {
+  return Object.fromEntries(
+    ATTRIBUTES.map((axis) => {
+      const score = getRecruitmentCalibrationAxisScore(axis.id, calibrationStages);
+      return [axis.id, typeof score === "number" ? score : null];
+    }),
+  );
+}
+
+function buildRecruitmentAxisStages(storyScores, target, calibrationStages = {}) {
+  return Object.fromEntries(
+    ATTRIBUTES.map((axis) => {
+      const playedEntries = Object.entries(calibrationStages[axis.id] || {});
+      const hasCalibration = playedEntries.length > 0;
+      const entries = {
+        [`recruit_${axis.id}`]: {
+          title: "征召试炼",
+          score: storyScores[axis.id],
+          weight: hasCalibration ? 0.6 : 1,
+          difficulty: "种族流程",
+          raw: { recruitment: true },
+          note: `巨魔血脉 / ${target?.classNameZh || "征召目标"} / 文案判断`,
+        },
+      };
+      playedEntries.forEach(([stageId, item]) => {
+        entries[`calibration_${stageId}`] = {
+          ...item,
+          title: `实战校准 · ${item.title}`,
+          weight: 0.4,
+          raw: { ...(item.raw || {}), calibration: true },
+          note: item.note || "六维小游戏实测",
+        };
+      });
+      return [axis.id, entries];
+    }),
+  );
+}
+
+function buildRecruitmentJudgement() {
+  const recruitment = state.recruitment;
+  const target = getRecruitmentTarget();
+  const topTargetId = getTopRecruitmentAffinityTarget();
+  const affinity = getNormalizedRecruitmentAffinity(recruitment.affinityDelta);
+  const selectedAffinity = affinity[normalizeRecruitmentTargetId(recruitment.targetId)] || 0;
+  const topAffinity = affinity[topTargetId] || 0;
+  const danger = recruitment.toneCounts["危险"] || 0;
+  const absurd = recruitment.toneCounts["荒诞"] || 0;
+  const accepted = recruitment.toneCounts["合格"] || 0;
+  let endingType = "probation";
+  if (danger >= 3) endingType = "blacklisted";
+  else if (topTargetId && topTargetId !== recruitment.targetId && topAffinity > selectedAffinity + 2) endingType = "transferred";
+  else if (absurd >= accepted && absurd >= 3) endingType = "absurdAccepted";
+  else if (selectedAffinity >= 8 && accepted >= 4) endingType = "accepted";
+
+  const ending = pickRecruitmentEnding(endingType, target?.targetId, topTargetId);
+  return {
+    endingType,
+    ending,
+    target,
+    topTargetId,
+    recommendedClassName: RECRUITMENT_TARGET_CLASS[normalizeRecruitmentTargetId(topTargetId)] || RECRUITMENT_TARGET_CLASS[target?.targetId] || "",
+  };
+}
+
+function getTopRecruitmentAffinityTarget() {
+  const entries = Object.entries(getNormalizedRecruitmentAffinity(state.recruitment?.affinityDelta)).sort((a, b) => b[1] - a[1]);
+  return entries[0]?.[0] || state.recruitment?.targetId || "";
+}
+
+function getNormalizedRecruitmentAffinity(affinityDelta = {}) {
+  const normalized = {};
+  Object.entries(affinityDelta || {}).forEach(([key, value]) => {
+    const targetId = normalizeRecruitmentTargetId(key);
+    normalized[targetId] = (normalized[targetId] || 0) + Number(value || 0);
+  });
+  return normalized;
+}
+
+function pickRecruitmentEnding(endingType, targetId, topTargetId) {
+  const endings = RACE_RECRUITMENT_DATA?.endingTemplates || [];
+  const sameType = endings.filter((item) => item.endingType === endingType);
+  const selectedTargetId = normalizeRecruitmentTargetId(targetId);
+  const recommendedTargetId = normalizeRecruitmentTargetId(topTargetId);
+  const byTarget =
+    endingType === "transferred"
+      ? sameType.find((item) => item.rejectedClass === selectedTargetId && (item.recommendedClass || []).includes(recommendedTargetId)) ||
+        sameType.find((item) => (item.recommendedClass || []).includes(recommendedTargetId))
+      : sameType.find((item) => (item.recommendedClass || []).includes(selectedTargetId)) ||
+        sameType.find((item) => (item.recommendedClass || []).includes(recommendedTargetId));
+  return byTarget || sameType[0] || endings[0] || null;
+}
+
+function renderRecruitmentJudgement() {
+  const recruitment = state.recruitment;
+  if (!recruitment?.judgement?.ending) {
+    finalizeRecruitment();
+  }
+  const judgement = recruitment.judgement;
+  const ending = judgement.ending;
+  const target = judgement.target;
+  const theme = getRecruitmentTheme(target?.targetId);
+  const endingArt = getEndingArt(ending.endingType);
+  setProgress("公会判定完成", 86);
+  app.innerHTML = `
+    <section class="screen recruitment-flow judgement-page ${theme.className}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}">
+      <div class="judgement-scroll">
+        ${renderRecruitmentArt({ src: endingArt, alt: `${verdictLabel(ending.endingType)}公会判定图`, className: "judgement-art" })}
+        <p class="eyebrow">Guild Verdict / ${ending.endingType}</p>
+        <div class="verdict-stamp">${verdictLabel(ending.endingType)}</div>
+        <h1>${adaptRecruitmentCopy(ending.title)}</h1>
+        <p class="lead">${adaptRecruitmentCopy(ending.verdictLine)}</p>
+        <div class="judgement-grid">
+          <div>
+            <strong>报名志愿</strong>
+            <span>${target?.classNameZh || "未记录"} · ${adaptRecruitmentCopy(target?.title || "")}</span>
+          </div>
+          <div>
+            <strong>推荐归宿</strong>
+            <span>${(ending.recommendedClass || []).map((id) => getRecruitmentTheme(id).name).join(" / ")}</span>
+          </div>
+          <div>
+            <strong>上桌功能</strong>
+            <span>${adaptRecruitmentCopy(ending.tableFunction)}</span>
+          </div>
+          <div>
+            <strong>可演缺陷</strong>
+            <span>${adaptRecruitmentCopy(ending.playableFlaw)}</span>
+          </div>
+        </div>
+        <p>${adaptRecruitmentCopy(ending.explanation)}</p>
+        <blockquote>${adaptRecruitmentCopy(ending.nextHook)}</blockquote>
+        <div class="descriptor-tags">
+          ${(ending.tags || []).map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+        <div class="actions">
+          <button class="button primary" id="openRecruitResult" type="button">领取冒险者档案</button>
+          <button class="button ghost" id="restartRecruitment" type="button">重新登记</button>
+        </div>
+      </div>
+    </section>
+  `;
+  document.querySelector("#openRecruitResult").addEventListener("click", () => {
+    if (shouldRunMbtiProbe()) {
+      state.mbtiProbeReturnScreen = "result";
+      state.screen = "mbtiProbe";
+    } else {
+      state.screen = "result";
+    }
+    render();
+  });
+  document.querySelector("#restartRecruitment").addEventListener("click", () => {
+    beginRecruitment();
+  });
+}
+
+function verdictLabel(type) {
+  const map = {
+    accepted: "正式录取",
+    probation: "见习保留",
+    transferred: "转岗推荐",
+    blacklisted: "黑名单人才",
+    absurdAccepted: "荒诞通过",
+  };
+  return map[type] || "征召判定";
+}
+
+function getRecruitmentCalibrationPlan() {
+  return ATTRIBUTES.map((axis, axisIndex) => {
+    const stageId = RECRUITMENT_CALIBRATION_STAGE_IDS[axis.id] || axis.stages[0]?.id;
+    const stageIndex = Math.max(0, axis.stages.findIndex((item) => item.id === stageId));
+    return {
+      axisId: axis.id,
+      axisIndex,
+      stageIndex,
+    };
+  });
+}
+
+function beginRecruitmentCalibration() {
+  const recruitment = state.recruitment;
+  if (!recruitment) {
+    state.screen = "start";
+    render();
+    return;
+  }
+  recruitment.phase = "calibration";
+  recruitment.feedback = null;
+  recruitment.calibration = {
+    index: 0,
+    plan: getRecruitmentCalibrationPlan(),
+  };
+  state.scores = {};
+  state.axisStages = {};
+  state.raw = {};
+  setRecruitmentCalibrationPointer();
+  state.screen = "recruitCalibration";
+}
+
+function setRecruitmentCalibrationPointer() {
+  const plan = state.recruitment?.calibration?.plan || getRecruitmentCalibrationPlan();
+  const index = state.recruitment?.calibration?.index || 0;
+  const item = plan[index] || plan[0];
+  state.current = item.axisIndex;
+  state.stage = item.stageIndex;
+}
+
+function renderRecruitmentCalibration() {
+  const recruitment = state.recruitment;
+  if (!recruitment) {
+    state.screen = "start";
+    render();
+    return;
+  }
+  const plan = recruitment.calibration?.plan || getRecruitmentCalibrationPlan();
+  if (!recruitment.calibration) recruitment.calibration = { index: 0, plan };
+  setRecruitmentCalibrationPointer();
+  const index = recruitment.calibration.index || 0;
+  const target = getRecruitmentTarget();
+  const theme = getRecruitmentTheme(target?.targetId);
+  const axis = ATTRIBUTES[state.current];
+  const stage = axis.stages[state.stage];
+  setProgress(`六维实战校准 ${index + 1}/${plan.length}：${axis.name}`, 78 + (index / Math.max(1, plan.length)) * 10);
+
+  app.innerHTML = `
+    <section class="screen recruitment-flow trial-shell recruitment-calibration ${theme.className}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}; --axis-color:${axis.color}">
+      <div class="trial-topline">
+        <div>
+          <p class="eyebrow">Step 5 / Ability Calibration</p>
+          <h1>六维实战校准</h1>
+          <p>征召官先看你怎么选，骰桌再看你怎么做。这里的小游戏会进入最终雷达，修正前面的种族与职业判断。</p>
+        </div>
+        <div class="trial-progress-card">
+          <span>${index + 1}</span>
+          <small>/ ${plan.length}</small>
+        </div>
+      </div>
+      <div class="test-stage stage-shell calibration-stage" style="--axis-color:${axis.color}">
+        <div class="test-head">
+          <div class="test-title">
+            <span class="axis-badge">${axis.abbr}</span>
+            <div>
+              <p class="eyebrow">${target?.classNameZh || "征召"}校准 / ${axis.theme} / ${stage.difficulty}</p>
+              <h2>${axis.name} · ${stage.title}</h2>
+              <p>${axis.intro}</p>
+            </div>
+          </div>
+          <div class="calibration-ratio">
+            <strong>60%</strong><span>征召判断</span>
+            <strong>40%</strong><span>实战校准</span>
+          </div>
+        </div>
+        <div class="stage-track calibration-track">
+          ${plan
+            .map((item, itemIndex) => {
+              const itemAxis = ATTRIBUTES[item.axisIndex];
+              return `
+                <span class="stage-chip ${itemIndex === index ? "active" : ""} ${itemIndex < index ? "done" : ""}">
+                  ${itemIndex + 1}. ${itemAxis.name}
+                </span>
+              `;
+            })
+            .join("")}
+        </div>
+        <div id="stageMount"></div>
+      </div>
+    </section>
+  `;
+  getStageRenderers()[stage.type](axis, stage);
+}
+
+function advanceRecruitmentCalibration() {
+  const calibration = state.recruitment?.calibration;
+  if (!calibration) {
+    beginRecruitmentCalibration();
+    render();
+    return;
+  }
+  if (calibration.index < calibration.plan.length - 1) {
+    calibration.index += 1;
+    setRecruitmentCalibrationPointer();
+    render();
+    return;
+  }
+  finalizeRecruitment();
+  state.screen = "recruitJudgement";
+  render();
 }
 
 function renderProfile() {
@@ -817,11 +2211,11 @@ function renderProfile() {
           </div>
           <div class="field">
             <label for="height">身高 cm</label>
-            <input id="height" name="height" type="number" min="100" max="230" placeholder="例如 170" />
+            <input id="height" name="height" type="number" min="30" max="600" placeholder="170；极端值会转 DND 体型" />
           </div>
           <div class="field">
             <label for="weight">体重 kg</label>
-            <input id="weight" name="weight" type="number" min="25" max="220" placeholder="例如 62" />
+            <input id="weight" name="weight" type="number" min="1" max="1600" placeholder="62；巨人体型也能填" />
           </div>
           <div class="field">
             <label for="bodyFat">体脂率，可跳过</label>
@@ -856,6 +2250,12 @@ function renderProfile() {
             </select>
           </div>
           <div class="field">
+            <label for="ancestry">奇幻种族锚点，可选</label>
+            <select id="ancestry" name="ancestry">
+              ${FANTASY_ANCESTRIES.map((item) => `<option value="${item.id}">${item.name}${item.id === "auto" ? "" : ` · ${item.label}`}</option>`).join("")}
+            </select>
+          </div>
+          <div class="field">
             <label for="mbtiSelf">已知 MBTI，可选</label>
             <select id="mbtiSelf" name="mbtiSelf">
               ${MBTI_TYPES.map((type) => `<option value="${type}">${type}</option>`).join("")}
@@ -870,7 +2270,7 @@ function renderProfile() {
           </div>
         </form>
         <div class="notice">
-          这里不是体型评价，只给体质轴一个现实参照。健康和睡眠会影响检定权重，不会被简单折算成“好”或“差”。
+          这里不是体型评价，只给体质轴一个现实参照。种族锚点可以直接选择，不需要靠身高体重解锁；身高体重超出普通人校准区间时，会额外转成 DND 生物体型锚点，不按现实 BMI 硬判。
         </div>
         <div class="actions">
           <button class="button primary" id="profileNext" type="button">进入第一轮检定</button>
@@ -890,12 +2290,14 @@ function renderProfile() {
 }
 
 function beginTests() {
+  state.recruitment = null;
   state.current = 0;
   state.stage = 0;
   state.scores = {};
   state.axisStages = {};
   state.raw = {};
   state.traits = { ...INITIAL_TRAITS };
+  state.mbtiProbe = null;
   state.personalityAnswers = 0;
   state.screen = "test";
   render();
@@ -943,7 +2345,11 @@ function renderTest() {
     completeStage(5.2, { skipped: true, difficulty: stage.difficulty }, "DM 代掷一枚保底骰，使用中性参考分。");
   });
 
-  const renderers = {
+  getStageRenderers()[stage.type](axis, stage);
+}
+
+function getStageRenderers() {
+  return {
     clickWaves: renderClickWaves,
     stability: renderStability,
     reactionLadder: renderReactionLadder,
@@ -960,7 +2366,6 @@ function renderTest() {
     charismaQuiz: renderCharismaQuiz,
     alignmentQuiz: renderAlignmentQuiz,
   };
-  renderers[stage.type](axis, stage);
 }
 
 function stageGuide({ measure, rule, scoring }) {
@@ -1020,6 +2425,9 @@ function renderStageComplete(title, score, note) {
   const flavor = getCurrentStageFlavor();
   const d20 = d20Read(score);
   const verdict = verdictForScore(score);
+  const isRecruitCalibration = state.screen === "recruitCalibration";
+  const calibration = state.recruitment?.calibration;
+  const isLastCalibration = isRecruitCalibration && calibration && calibration.index >= calibration.plan.length - 1;
   mount.innerHTML = `
     <div class="arena center result-flash">
       <div class="mini-card resolution-card">
@@ -1040,13 +2448,17 @@ function renderStageComplete(title, score, note) {
       </div>
     </div>
     <div class="actions">
-      <button class="button primary" id="continueStage" type="button">翻到下一项检定</button>
+      <button class="button primary" id="continueStage" type="button">${isRecruitCalibration ? (isLastCalibration ? "提交公会判定" : "进入下一项校准") : "翻到下一项检定"}</button>
     </div>
   `;
   document.querySelector("#continueStage").addEventListener("click", advanceStage);
 }
 
 function advanceStage() {
+  if (state.screen === "recruitCalibration") {
+    advanceRecruitmentCalibration();
+    return;
+  }
   const axis = ATTRIBUTES[state.current];
   if (state.stage < axis.stages.length - 1) {
     state.stage += 1;
@@ -1059,9 +2471,19 @@ function advanceStage() {
     state.stage = 0;
     render();
   } else {
-    state.screen = "personality";
+    state.screen = shouldRunMbtiProbe() ? "mbtiProbe" : "personality";
     render();
   }
+}
+
+function shouldRunMbtiProbe() {
+  return !state.profile.mbtiSelf || state.profile.mbtiSelf === "未知";
+}
+
+function getMbtiProbeReturnScreen() {
+  const returnScreen = state.mbtiProbeReturnScreen || "personality";
+  state.mbtiProbeReturnScreen = null;
+  return returnScreen;
 }
 
 function finalizeAxis(axis) {
@@ -1186,11 +2608,11 @@ function renderStability(axis, stage) {
     ${metricStrip([
       { label: "安全停留", value: '<span id="safePct">0%</span>' },
       { label: "剩余回合", value: '<span id="stableTime">16.0s</span>' },
-      { label: "难度", value: stage.difficulty },
+      { label: "难度", value: '<span id="stableDifficulty">低</span>' },
     ])}
     <div class="arena center">
       <div class="stability-box">
-        <div class="safe-band"></div>
+        <div class="safe-band" id="safeBand"></div>
         <div class="stability-marker" id="stabilityMarker"></div>
       </div>
     </div>
@@ -1203,31 +2625,46 @@ function renderStability(axis, stage) {
   const start = document.querySelector("#startGame");
   const hold = document.querySelector("#holdBtn");
   const marker = document.querySelector("#stabilityMarker");
+  const safeBand = document.querySelector("#safeBand");
+  const duration = 16000;
+  const bands = [
+    { name: "低", min: 38, max: 66, rise: 1.2, fall: 0.92, sway: 0.38, weight: 1 },
+    { name: "中", min: 43, max: 61, rise: 1.48, fall: 1.12, sway: 0.58, weight: 1.18 },
+    { name: "高", min: 47, max: 57, rise: 1.72, fall: 1.34, sway: 0.82, weight: 1.38 },
+  ];
   let active = false;
   let holding = false;
   let value = 50;
-  let safeTicks = 0;
+  let safeWeight = 0;
+  let totalWeight = 0;
   let totalTicks = 0;
   let endAt = 0;
   let interval = null;
 
   function tick() {
     const left = Math.max(0, endAt - performance.now()) / 1000;
-    value += holding ? 1.45 : -1.05;
-    value += Math.sin(totalTicks / 7) * 0.45;
+    const elapsed = duration / 1000 - left;
+    const levelIndex = Math.min(2, Math.floor(elapsed / (duration / 3000)));
+    const band = bands[levelIndex];
+    value += holding ? band.rise : -band.fall;
+    value += Math.sin(totalTicks / Math.max(4, 8 - levelIndex * 1.6)) * band.sway;
     value = Math.max(0, Math.min(100, value));
-    const inSafe = value >= 42 && value <= 62;
+    const inSafe = value >= band.min && value <= band.max;
     totalTicks += 1;
-    if (inSafe) safeTicks += left < 7 ? 1.25 : 1;
+    totalWeight += band.weight;
+    if (inSafe) safeWeight += band.weight;
+    safeBand.style.left = `${band.min}%`;
+    safeBand.style.width = `${band.max - band.min}%`;
     marker.style.left = `${value}%`;
-    document.querySelector("#safePct").textContent = `${Math.round((safeTicks / Math.max(1, totalTicks)) * 100)}%`;
+    document.querySelector("#safePct").textContent = `${Math.round((safeWeight / Math.max(1, totalWeight)) * 100)}%`;
     document.querySelector("#stableTime").textContent = `${left.toFixed(1)}s`;
+    document.querySelector("#stableDifficulty").textContent = band.name;
     if (left <= 0) {
       clearInterval(interval);
       active = false;
       hold.disabled = true;
-      const score = clamp((safeTicks / Math.max(1, totalTicks)) * 10);
-      completeStage(score, { safeTicks, totalTicks }, `盾位维持率约 ${Math.round((safeTicks / totalTicks) * 100)}%。`);
+      const score = clamp((safeWeight / Math.max(1, totalWeight)) * 10);
+      completeStage(score, { safeWeight, totalWeight, totalTicks }, `盾位维持率约 ${Math.round((safeWeight / Math.max(1, totalWeight)) * 100)}%，高难段安全区收窄到 10%。`);
     }
   }
 
@@ -1235,10 +2672,13 @@ function renderStability(axis, stage) {
     active = true;
     start.disabled = true;
     hold.disabled = false;
-    safeTicks = 0;
+    safeWeight = 0;
+    totalWeight = 0;
     totalTicks = 0;
     value = 50;
-    endAt = performance.now() + 16000;
+    safeBand.style.left = `${bands[0].min}%`;
+    safeBand.style.width = `${bands[0].max - bands[0].min}%`;
+    endAt = performance.now() + duration;
     interval = setInterval(tick, 90);
   });
   hold.addEventListener("pointerdown", () => {
@@ -1346,34 +2786,68 @@ function renderTraceLine(axis, stage) {
   mount.innerHTML = `
     ${stageGuide({
       measure: "开锁手感、符线跟随和精细操作。",
-      rule: "按住并沿金色符线走到终点。越贴线、覆盖越完整，越像成功拆掉机关。",
-      scoring: "偏移、覆盖率和断线情况一起结算。",
+      rule: "符线锁被拆成三段。每段按住并沿金色符线走到终点，后面的符线会更窄、更弯。",
+      scoring: "三段分别记录偏移与覆盖率，后两段权重更高。",
     })}
     ${metricStrip([
+      { label: "段位", value: '<span id="traceSegment">1/3</span>' },
       { label: "覆盖", value: '<span id="traceCover">0%</span>' },
       { label: "偏移", value: '<span id="traceDrift">-</span>' },
-      { label: "机关", value: "符线锁" },
     ])}
     <div class="arena center">
-      <canvas class="canvas-game trace-canvas" id="traceCanvas" width="760" height="320"></canvas>
+      <div class="trace-wrap">
+        <canvas class="canvas-game trace-canvas" id="traceCanvas" width="760" height="320"></canvas>
+        <p class="trace-status" id="traceStatus">第 1 段：宽符线，先找手感。</p>
+      </div>
     </div>
     <div class="actions">
-      <button class="button primary" id="submitTrace" type="button">尝试开锁</button>
-      <button class="button ghost" id="clearTrace" type="button">重画符线</button>
+      <button class="button primary" id="submitTrace" type="button">提交第 1 段</button>
+      <button class="button ghost" id="clearTrace" type="button">重画本段</button>
     </div>
   `;
 
   const canvas = document.querySelector("#traceCanvas");
   const ctx = canvas.getContext("2d");
+  const traceConfigs = [
+    { label: "第 1 段", hint: "宽符线，先找手感。", amp: 42, waves: 1.35, wiggle: 10, wiggleFreq: 4.2, width: 10, tolerance: 17, weight: 1 },
+    { label: "第 2 段", hint: "曲线变密，别急着抄近路。", amp: 58, waves: 2.05, wiggle: 18, wiggleFreq: 6.1, width: 8, tolerance: 13, weight: 1.18 },
+    { label: "第 3 段", hint: "窄线高频，最后一把机关锁。", amp: 72, waves: 2.85, wiggle: 24, wiggleFreq: 8.2, width: 6, tolerance: 10, weight: 1.36 },
+  ];
+  let segment = 0;
   let drawing = false;
   let points = [];
+  let results = [];
+
+  function currentTrace() {
+    return traceConfigs[segment];
+  }
 
   function expectedY(x) {
+    const config = currentTrace();
     const t = x / canvas.width;
-    return canvas.height * 0.5 + Math.sin(t * Math.PI * 2.4) * 58 + Math.sin(t * Math.PI * 5) * 18;
+    const y =
+      canvas.height * 0.5 +
+      Math.sin(t * Math.PI * config.waves * 2 + segment * 0.6) * config.amp +
+      Math.sin(t * Math.PI * config.wiggleFreq + segment * 1.1) * config.wiggle;
+    return clamp(y, 34, canvas.height - 34);
+  }
+
+  function updateTraceText(stats = null) {
+    const config = currentTrace();
+    document.querySelector("#traceSegment").textContent = `${segment + 1}/3`;
+    document.querySelector("#traceStatus").textContent = `${config.label}：${config.hint}`;
+    document.querySelector("#submitTrace").textContent = `提交第 ${segment + 1} 段`;
+    if (stats) {
+      document.querySelector("#traceCover").textContent = `${Math.round(stats.coverage * 100)}%`;
+      document.querySelector("#traceDrift").textContent = `${Math.round(stats.drift)}px`;
+    } else {
+      document.querySelector("#traceCover").textContent = "0%";
+      document.querySelector("#traceDrift").textContent = "-";
+    }
   }
 
   function drawBase() {
+    const config = currentTrace();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "rgba(8,10,9,0.72)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -1386,7 +2860,7 @@ function renderTraceLine(axis, stage) {
       ctx.stroke();
     }
     ctx.strokeStyle = "#e4bf62";
-    ctx.lineWidth = 7;
+    ctx.lineWidth = config.width;
     ctx.lineCap = "round";
     ctx.beginPath();
     for (let x = 26; x < canvas.width - 26; x += 4) {
@@ -1395,6 +2869,9 @@ function renderTraceLine(axis, stage) {
       else ctx.lineTo(x, y);
     }
     ctx.stroke();
+    ctx.fillStyle = "rgba(243,236,215,0.44)";
+    ctx.font = "700 15px sans-serif";
+    ctx.fillText(config.label, 24, 28);
     redrawUser();
   }
 
@@ -1428,6 +2905,7 @@ function renderTraceLine(axis, stage) {
     if (!drawing) return;
     points.push(canvasPoint(event));
     drawBase();
+    if (points.length >= 2) updateTraceText(getTraceStats());
   });
   window.addEventListener("pointerup", () => {
     drawing = false;
@@ -1436,23 +2914,53 @@ function renderTraceLine(axis, stage) {
   document.querySelector("#clearTrace").addEventListener("click", () => {
     points = [];
     drawBase();
-    document.querySelector("#traceCover").textContent = "0%";
-    document.querySelector("#traceDrift").textContent = "-";
+    updateTraceText();
   });
+
+  function getTraceStats() {
+    if (points.length < 2) return { coverage: 0, drift: 90, points: points.length };
+    const xs = points.map((p) => p.x);
+    const coverage = clamp((Math.max(...xs) - Math.min(...xs)) / (canvas.width - 52), 0, 1);
+    const drift = points.reduce((sum, p) => sum + Math.abs(p.y - expectedY(p.x)), 0) / points.length;
+    return { coverage, drift, points: points.length };
+  }
+
+  function submitSegment() {
+    const config = currentTrace();
+    let stats = getTraceStats();
+    if (points.length < 8) {
+      stats = { coverage: 0, drift: 90, points: points.length };
+    }
+    const segmentScore = clamp(8.4 - stats.drift / config.tolerance + stats.coverage * 2.4 - (stats.coverage < 0.82 ? 1.6 : 0));
+    results.push({ ...stats, score: segmentScore, label: config.label, weight: config.weight });
+    if (segment >= traceConfigs.length - 1) {
+      const totalWeight = results.reduce((sum, item) => sum + item.weight, 0);
+      const score = clamp(results.reduce((sum, item) => sum + item.score * item.weight, 0) / totalWeight);
+      const avgCoverage = results.reduce((sum, item) => sum + item.coverage, 0) / results.length;
+      const avgDrift = results.reduce((sum, item) => sum + item.drift, 0) / results.length;
+      completeStage(
+        score,
+        { segments: results, avgCoverage, avgDrift: Math.round(avgDrift) },
+        `三段符线平均覆盖 ${Math.round(avgCoverage * 100)}%，平均偏移 ${Math.round(avgDrift)}px。`,
+      );
+      return;
+    }
+    segment += 1;
+    points = [];
+    drawBase();
+    updateTraceText();
+  }
 
   document.querySelector("#submitTrace").addEventListener("click", () => {
     if (points.length < 8) {
-      completeStage(1.2, { points: points.length }, "符线太短，机关没有响应。");
+      submitSegment();
       return;
     }
-    const xs = points.map((p) => p.x);
-    const coverage = (Math.max(...xs) - Math.min(...xs)) / (canvas.width - 52);
-    const drift = points.reduce((sum, p) => sum + Math.abs(p.y - expectedY(p.x)), 0) / points.length;
-    const score = clamp(10 - drift / 12 + clamp(coverage, 0, 1) * 2 - (coverage < 0.75 ? 1.8 : 0));
-    completeStage(score, { coverage, drift: Math.round(drift), points: points.length }, `符线覆盖 ${Math.round(coverage * 100)}%，平均偏移 ${Math.round(drift)}px。`);
+    submitSegment();
   });
 
   drawBase();
+  updateTraceText();
 }
 
 function renderDodge(axis, stage) {
@@ -1570,23 +3078,37 @@ function renderBodyPanel(axis, stage) {
   const healthScore = computeHealthScore();
   const p = state.profile || {};
   const bmi = Number(p.height) && Number(p.weight) ? Number(p.weight) / (Number(p.height) / 100) ** 2 : null;
+  const bodyAnchor = getBodyCreatureAnchor(p);
+  const ancestryText = bodyAnchor.ancestrySelected ? bodyAnchor.ancestryLine : "未指定";
   const mount = document.querySelector("#stageMount");
   mount.innerHTML = `
     ${stageGuide({
-      measure: "现实锚点、恢复状态和冒险续航底子。",
-      rule: "这一步只做娱乐化校准，不评价体型。缺失项会由公会书记填入中性默认值。",
-      scoring: "现实锚点和恢复状态会进入体质轴，避免单个小游戏把体质判歪。",
+      measure: "现实锚点、种族锚点、恢复状态和冒险续航底子。",
+      rule: "这一步只做娱乐化校准，不评价体型。种族可主动选择；极端身高体重会额外转成 DND 体型锚点，缺失项由公会书记填中性骰。",
+      scoring: "现实锚点、可选种族、奇幻体型参照和恢复状态会进入体质轴，避免单个小游戏把体质判歪。",
     })}
     <div class="two-col">
       <div class="mini-card">
         <h3>体魄底子</h3>
         <p class="huge-score">${fmt(bodyScore)}</p>
-        <p>年龄：${p.age || "未填"}；身高：${p.height || "未填"}；体重：${p.weight || "未填"}；BMI：${bmi ? fmt(bmi, 1) : "未计算"}</p>
+        <p>年龄：${p.age || "未填"}；身高：${p.height || "未填"}；体重：${p.weight || "未填"}；BMI：${bmi && !bodyAnchor.isFantasy ? fmt(bmi, 1) : bodyAnchor.isFantasy ? "奇幻体型锚点" : "未计算"}</p>
+        <p>种族锚点：${ancestryText}</p>
       </div>
       <div class="mini-card">
         <h3>营地恢复</h3>
         <p class="huge-score">${fmt(healthScore)}</p>
-        <p>运动：${translateProfile(p.exercise)}；睡眠：${translateProfile(p.sleep)}；健康影响：${translateProfile(p.health)}</p>
+        <p>运动：${translateExercise(p.exercise)}；睡眠：${translateSleep(p.sleep)}；健康影响：${translateHealth(p.health)}</p>
+      </div>
+      <div class="mini-card body-anchor-card">
+        <h3>DND 体型锚点</h3>
+        <p class="huge-score">${bodyAnchor.size}</p>
+        <p><strong>${bodyAnchor.creature}</strong> · ${bodyAnchor.label}</p>
+        <p>${bodyAnchor.note}</p>
+        ${
+          bodyAnchor.ancestrySelected
+            ? `<p><strong>种族锚点：</strong>${bodyAnchor.ancestryLine}。${bodyAnchor.ancestryNote}</p>`
+            : ""
+        }
       </div>
     </div>
     <div class="actions">
@@ -1595,7 +3117,11 @@ function renderBodyPanel(axis, stage) {
   `;
   document.querySelector("#confirmBody").addEventListener("click", () => {
     const score = clamp(bodyScore * 0.58 + healthScore * 0.42);
-    completeStage(score, { bodyScore, healthScore, bmi }, `现实锚点给出体质底分 ${fmt(score)}。`);
+    const ancestryNote = bodyAnchor.ancestrySelected ? `；种族锚点为${bodyAnchor.ancestry.name}` : "";
+    const note = bodyAnchor.isFantasy
+      ? `${bodyAnchor.creature}体型锚点接管普通 BMI 判定${ancestryNote}，体质底分 ${fmt(score)}。`
+      : `现实锚点给出体质底分 ${fmt(score)}${ancestryNote}。`;
+    completeStage(score, { bodyScore, healthScore, bmi, bodyAnchor }, note);
   });
 }
 
@@ -1604,16 +3130,22 @@ function renderRhythm(axis, stage) {
   mount.innerHTML = `
     ${stageGuide({
       measure: "节奏、续航和疲劳后的手感。",
-      rule: "看到营火核心亮起就点击按钮或按空格。每 8 拍升一级，鼓点会越来越急。",
-      scoring: "命中窗口、漏拍和后半段表现综合结算。",
+      rule: "鼓点会沿轨道冲向金色判定线。音符压线时点击按钮或按空格，越贴近判定线越好。",
+      scoring: "Perfect、Good、Miss 会拉开分数。每 8 拍升一级，鼓点会更快、判定窗会更窄。",
     })}
     ${metricStrip([
       { label: "命中", value: '<span id="beatGood">0</span>/24' },
-      { label: "平均偏差", value: '<span id="beatAvg">-</span>' },
+      { label: "判定", value: '<span id="beatJudge">待命</span>' },
       { label: "鼓点", value: '<span id="beatLevel">待命</span>' },
     ])}
     <div class="arena center">
-      <div class="pulse-core" id="pulseCore">稳</div>
+      <div class="rhythm-lane">
+        <div class="rhythm-track">
+          <div class="rhythm-hit-line"></div>
+          <div class="rhythm-note" id="rhythmNote">鼓</div>
+        </div>
+        <div class="rhythm-judge" id="rhythmJudge">等候营火鼓手起拍</div>
+      </div>
     </div>
     <div class="actions">
       <button class="button primary" id="startGame" type="button">点燃营火</button>
@@ -1623,70 +3155,151 @@ function renderRhythm(axis, stage) {
 
   const start = document.querySelector("#startGame");
   const tap = document.querySelector("#tapBeat");
-  const core = document.querySelector("#pulseCore");
-  const intervals = [860, 720, 590];
+  const note = document.querySelector("#rhythmNote");
+  const judge = document.querySelector("#rhythmJudge");
+  const approachMs = [920, 760, 620];
+  const perfectWindows = [70, 60, 50];
+  const goodWindows = [145, 125, 105];
+  const missWindows = [280, 240, 210];
+  const startPct = 8;
+  const hitPct = 74;
+  const endPct = 94;
   let beat = 0;
-  let lastBeat = 0;
-  let good = 0;
+  let hits = 0;
+  let perfect = 0;
+  let misses = 0;
+  let judgeScore = 0;
   let offsets = [];
-  let tappedBeat = new Set();
-  let timer = null;
+  let activeBeat = null;
+  let running = false;
+  let raf = null;
 
   function update() {
-    document.querySelector("#beatGood").textContent = good;
-    const avg = offsets.length ? Math.round(offsets.reduce((a, b) => a + b, 0) / offsets.length) : "-";
-    document.querySelector("#beatAvg").textContent = avg === "-" ? "-" : `${avg}ms`;
+    document.querySelector("#beatGood").textContent = hits;
   }
 
-  function nextPulse() {
+  function setJudge(text, kind = "") {
+    judge.textContent = text;
+    document.querySelector("#beatJudge").textContent = text;
+    judge.className = `rhythm-judge ${kind}`.trim();
+  }
+
+  function finish() {
+    running = false;
+    cancelAnimationFrame(raf);
+    const avg = offsets.length ? offsets.reduce((a, b) => a + b, 0) / offsets.length : 320;
+    const accuracyBonus = offsets.length ? Math.max(0, (150 - avg) / 150) * 0.8 : 0;
+    const score = clamp((judgeScore / 24) * 9.2 + accuracyBonus - misses * 0.08);
+    tap.disabled = true;
+    completeStage(
+      score,
+      { hits, perfect, misses, total: 24, avgOffsetMs: Math.round(avg) },
+      `营火鼓点 ${perfect} 次 Perfect，${hits - perfect} 次 Good，Miss ${misses} 次。`,
+    );
+  }
+
+  function startBeat() {
     if (beat >= 24) {
-      const avg = offsets.length ? offsets.reduce((a, b) => a + b, 0) / offsets.length : 460;
-      const score = clamp((good / 24) * 7.5 + ((260 - avg) / 260) * 2.6);
       tap.disabled = true;
-      completeStage(score, { good, total: 24, avgOffsetMs: Math.round(avg) }, `营火鼓点命中 ${good}/24，平均偏差 ${Math.round(avg)}ms。`);
+      finish();
       return;
     }
     const level = Math.min(2, Math.floor(beat / 8));
     document.querySelector("#beatLevel").textContent = ["低", "中", "高"][level];
     beat += 1;
-    lastBeat = performance.now();
-    core.textContent = beat;
-    core.classList.add("active");
-    setTimeout(() => core.classList.remove("active"), 190);
-    timer = setTimeout(nextPulse, intervals[level]);
+    const now = performance.now();
+    activeBeat = {
+      level,
+      startAt: now,
+      targetAt: now + approachMs[level],
+      endAt: now + approachMs[level] + missWindows[level],
+      tapped: false,
+    };
+    note.textContent = beat;
+    note.className = "rhythm-note active";
+    note.style.left = `${startPct}%`;
+    setJudge("READY", "");
   }
 
   function registerTap() {
-    if (tap.disabled || !lastBeat || tappedBeat.has(beat)) return;
-    const offset = Math.abs(performance.now() - lastBeat);
-    tappedBeat.add(beat);
+    if (tap.disabled || !activeBeat || activeBeat.tapped) return;
+    const offset = Math.abs(performance.now() - activeBeat.targetAt);
+    activeBeat.tapped = true;
     offsets.push(offset);
-    if (offset <= 250) good += 1;
+    note.classList.remove("active");
+    if (offset <= perfectWindows[activeBeat.level]) {
+      perfect += 1;
+      hits += 1;
+      judgeScore += 1;
+      setJudge("PERFECT", "perfect");
+      note.classList.add("perfect");
+    } else if (offset <= goodWindows[activeBeat.level]) {
+      hits += 1;
+      judgeScore += 0.72;
+      setJudge("GOOD", "good");
+      note.classList.add("good");
+    } else {
+      misses += 1;
+      setJudge("MISS", "miss");
+      note.classList.add("miss");
+    }
     update();
+    setTimeout(startBeat, 180);
+  }
+
+  function loop() {
+    if (!running) return;
+    if (activeBeat) {
+      const now = performance.now();
+      if (!activeBeat.tapped) {
+        if (now <= activeBeat.targetAt) {
+          const t = clamp((now - activeBeat.startAt) / (activeBeat.targetAt - activeBeat.startAt), 0, 1);
+          note.style.left = `${startPct + (hitPct - startPct) * t}%`;
+        } else {
+          const t = clamp((now - activeBeat.targetAt) / (activeBeat.endAt - activeBeat.targetAt), 0, 1);
+          note.style.left = `${hitPct + (endPct - hitPct) * t}%`;
+          if (now > activeBeat.endAt) {
+            activeBeat.tapped = true;
+            misses += 1;
+            note.className = "rhythm-note miss";
+            setJudge("MISS", "miss");
+            update();
+            setTimeout(startBeat, 150);
+          }
+        }
+      }
+    }
+    raf = requestAnimationFrame(loop);
   }
 
   start.addEventListener("click", () => {
     start.disabled = true;
     tap.disabled = false;
     beat = 0;
-    good = 0;
+    hits = 0;
+    perfect = 0;
+    misses = 0;
+    judgeScore = 0;
     offsets = [];
-    tappedBeat = new Set();
+    activeBeat = null;
+    running = true;
     update();
-    nextPulse();
+    setJudge("READY", "");
+    startBeat();
+    loop();
   });
   tap.addEventListener("click", registerTap);
   window.addEventListener("keydown", (event) => {
     if (event.code === "Space") registerTap();
   });
-  cleanupFns.push(() => clearTimeout(timer));
+  cleanupFns.push(() => cancelAnimationFrame(raf));
 }
 
 function renderMemoryLadder(axis, stage) {
   const levels = [
-    { label: "低", tokens: ["蓝", "塔", "7", "羽"], answer: "蓝-塔-7-羽" },
-    { label: "中", tokens: ["东", "镜", "4", "火", "鸦"], answer: "东-镜-4-火-鸦" },
-    { label: "高", tokens: ["月", "13", "银", "门", "南", "铃"], answer: "月-13-银-门-南-铃" },
+    { label: "低", tokens: ["蓝", "塔", "7", "羽"], answer: "蓝-塔-7-羽", revealMs: 3000 },
+    { label: "中", tokens: ["东", "镜", "4", "火", "鸦"], answer: "东-镜-4-火-鸦", revealMs: 1500 },
+    { label: "高", tokens: ["月", "13", "银", "门", "南", "铃"], answer: "月-13-银-门-南-铃", revealMs: 1000 },
   ];
   let index = 0;
   let correct = 0;
@@ -1695,28 +3308,28 @@ function renderMemoryLadder(axis, stage) {
   function drawReveal() {
     const data = levels[index];
     const mount = document.querySelector("#stageMount");
+    const revealSeconds = data.revealMs / 1000;
     mount.innerHTML = `
       ${stageGuide({
         measure: "符文短记、顺序保持和抗干扰回忆。",
-        rule: "记住这串符文，几秒后从卷轴里选出完全一致的一组。",
+        rule: `记住这串符文，本轮 ${revealSeconds} 秒后从卷轴里选出完全一致的一组。`,
         scoring: "三轮符文各占权重，高难卷轴权重略高。",
       })}
       ${metricStrip([
         { label: "难度", value: data.label },
         { label: "抄对", value: `${correct}/${index}` },
-        { label: "卷轴", value: "顺序符文" },
+        { label: "显现", value: `${revealSeconds} 秒` },
       ])}
       <div class="arena center">
         <div class="memory-strip">${data.tokens.map((token) => `<span class="memory-token">${token}</span>`).join("")}</div>
       </div>
       <div class="actions">
-        <button class="button primary" id="hideMemory" type="button">合上卷轴</button>
+        <button class="button primary" type="button" disabled>${revealSeconds} 秒后收卷</button>
       </div>
     `;
-    document.querySelector("#hideMemory").addEventListener("click", drawChoices);
     const timer = setTimeout(() => {
-      if (state.screen === "test" && ATTRIBUTES[state.current].id === "int") drawChoices();
-    }, 3600 + index * 500);
+      if ((state.screen === "test" || state.screen === "recruitCalibration") && ATTRIBUTES[state.current].id === "int") drawChoices();
+    }, data.revealMs);
     cleanupFns.push(() => clearTimeout(timer));
   }
 
@@ -1770,7 +3383,7 @@ function renderMemoryLadder(axis, stage) {
 }
 
 function renderAbstractQuiz(axis, stage) {
-  renderQuizStage(stage, {
+  renderQuizStage(stage, getQuizModule("int_abstract", {
     guide: {
       measure: "谜题结构、类比直觉和隐藏规则。",
       rule: "别只看表面道具，要像解地城机关一样找背后的关系。",
@@ -1814,11 +3427,11 @@ function renderAbstractQuiz(axis, stage) {
         ],
       },
     ],
-  });
+  }));
 }
 
 function renderReasoningQuiz(axis, stage) {
-  renderQuizStage(stage, {
+  renderQuizStage(stage, getQuizModule("int_reason", {
     guide: {
       measure: "调查、排除干扰项和长线判断。",
       rule: "像跑团调查一样读线索，不急着被最亮的证据牵走。",
@@ -1862,7 +3475,7 @@ function renderReasoningQuiz(axis, stage) {
         ],
       },
     ],
-  });
+  }));
 }
 
 function renderQuizStage(stage, config) {
@@ -1918,15 +3531,51 @@ function renderQuizStage(stage, config) {
 
 function renderColorLadder(axis, stage) {
   const rounds = [
-    { label: "低", size: 3, delta: 28 },
-    { label: "中", size: 4, delta: 15 },
-    { label: "高", size: 5, delta: 7 },
+    { label: "1", size: 3, delta: 30 },
+    { label: "2", size: 3, delta: 24 },
+    { label: "3", size: 3, delta: 18 },
+    { label: "4", size: 4, delta: 16 },
+    { label: "5", size: 4, delta: 13 },
+    { label: "6", size: 4, delta: 10 },
+    { label: "7", size: 5, delta: 9 },
+    { label: "8", size: 5, delta: 7 },
+    { label: "9", size: 5, delta: 5 },
   ];
   let round = 0;
   let correct = 0;
   let startedAt = performance.now();
+  const timeLimit = 20;
+  let timer = null;
+
+  function remainingSeconds() {
+    return Math.max(0, timeLimit - (performance.now() - startedAt) / 1000);
+  }
+
+  function scoreAndFinish(reason) {
+    clearInterval(timer);
+    const elapsed = (performance.now() - startedAt) / 1000;
+    const perfect = correct >= rounds.length && elapsed <= timeLimit;
+    const score = perfect ? 10 : clamp((correct / rounds.length) * 9.2 + Math.max(0, 0.8 - elapsed / 40));
+    completeStage(
+      score,
+      { correct, total: rounds.length, elapsedSec: Math.round(elapsed), reason },
+      perfect ? "9 张异色印记全部识破，20 秒内完成满分侦测。" : `异色侦测止步 ${correct}/${rounds.length}，${reason}。`,
+    );
+  }
+
+  function updateTimer() {
+    const timeNode = document.querySelector("#colorTime");
+    if (!timeNode) return;
+    const left = remainingSeconds();
+    timeNode.textContent = `${left.toFixed(1)}s`;
+    if (left <= 0) scoreAndFinish("20 秒沙漏耗尽");
+  }
 
   function draw() {
+    if (remainingSeconds() <= 0) {
+      scoreAndFinish("20 秒沙漏耗尽");
+      return;
+    }
     const data = rounds[round];
     const odd = Math.floor(Math.random() * data.size * data.size);
     const base = [118 + Math.floor(Math.random() * 20), 138 + Math.floor(Math.random() * 20), 130 + Math.floor(Math.random() * 20)];
@@ -1934,12 +3583,13 @@ function renderColorLadder(axis, stage) {
     mount.innerHTML = `
       ${stageGuide({
         measure: "异色察觉、速度和视觉敏锐度。",
-        rule: "低中高三轮，异常色块会越来越接近背景。找出那枚不对劲的魔法印记。",
-        scoring: "识破率和用时共同结算，高难异常印记权重更高。",
+        rule: "连续侦测 9 张异色印记，错一张或 20 秒耗尽就结算。越往后色差越小。",
+        scoring: "9 张全过且 20 秒内完成为 10 分；中途失手会按已识破张数结算。",
       })}
       ${metricStrip([
-        { label: "难度", value: data.label },
-        { label: "识破", value: `${correct}/${round}` },
+        { label: "进度", value: `${round + 1}/9` },
+        { label: "识破", value: `${correct}/9` },
+        { label: "余时", value: '<span id="colorTime">20.0s</span>' },
         { label: "伪装", value: `${data.delta}` },
       ])}
       <div class="arena center">
@@ -1954,20 +3604,25 @@ function renderColorLadder(axis, stage) {
       const delta = i === odd ? data.delta : 0;
       btn.style.background = `rgb(${base[0] + delta}, ${base[1] - Math.round(delta / 2)}, ${base[2] + Math.round(delta / 3)})`;
       btn.addEventListener("click", () => {
-        if (i === odd) correct += 1;
+        if (i !== odd) {
+          scoreAndFinish(`第 ${round + 1} 张误判`);
+          return;
+        }
+        correct += 1;
         round += 1;
         if (round >= rounds.length) {
-          const elapsed = (performance.now() - startedAt) / 1000;
-          const score = clamp((correct / rounds.length) * 8.6 + Math.max(0, 1.4 - elapsed / 32));
-          completeStage(score, { correct, total: rounds.length, elapsedSec: Math.round(elapsed) }, `异色印记识破 ${correct}/${rounds.length}。`);
+          scoreAndFinish("九张全过");
         } else {
           draw();
         }
       });
       grid.appendChild(btn);
     }
+    updateTimer();
   }
 
+  timer = setInterval(updateTimer, 100);
+  cleanupFns.push(() => clearInterval(timer));
   draw();
 }
 
@@ -1976,12 +3631,12 @@ function renderDualBall(axis, stage) {
   mount.innerHTML = `
     ${stageGuide({
       measure: "分散注意、双目标追踪和混乱中认人。",
-      rule: "开局会标出两颗目标星。随后所有星点变成同色并乱动，结束后选出你一路盯住的两颗。",
-      scoring: "猜中 0/1/2 颗会拉开分数，同时记录你在高干扰下的专注度。",
+      rule: "分低、中、高三轮。每轮先记住两颗目标星，随后星群加速混动，结束后指认一次。",
+      scoring: "三轮共 6 颗目标星。等级越高星群越快，全部追中才会接近满分。",
     })}
     ${metricStrip([
-      { label: "目标星", value: "2 颗" },
-      { label: "星群", value: "12" },
+      { label: "等级", value: '<span id="dualLevel">低 1/3</span>' },
+      { label: "命中", value: '<span id="dualHits">0</span>/6' },
       { label: "局面", value: '<span id="dualPhase">观察</span>' },
     ])}
     <div class="arena center">
@@ -1994,32 +3649,42 @@ function renderDualBall(axis, stage) {
   const canvas = document.querySelector("#dualCanvas");
   const ctx = canvas.getContext("2d");
   const start = document.querySelector("#startGame");
+  const levels = [
+    { name: "低", count: 8, reveal: 2.3, track: 4.8, speed: 1.08 },
+    { name: "中", count: 10, reveal: 1.9, track: 4.5, speed: 1.46 },
+    { name: "高", count: 12, reveal: 1.5, track: 4.2, speed: 1.88 },
+  ];
   let balls = [];
   let targets = [];
   let picked = [];
   let startedAt = 0;
+  let levelIndex = 0;
+  let roundResults = [];
   let raf = null;
   let stopped = false;
 
-  function initBalls() {
-    balls = Array.from({ length: 12 }, (_, i) => ({
+  function initBalls(config) {
+    balls = Array.from({ length: config.count }, (_, i) => ({
       id: i + 1,
       x: 44 + Math.random() * (canvas.width - 88),
       y: 44 + Math.random() * (canvas.height - 88),
-      vx: (Math.random() > 0.5 ? 1 : -1) * (1.4 + Math.random() * 1.4),
-      vy: (Math.random() > 0.5 ? 1 : -1) * (1.3 + Math.random() * 1.4),
+      vx: (Math.random() > 0.5 ? 1 : -1) * (config.speed + Math.random() * config.speed),
+      vy: (Math.random() > 0.5 ? 1 : -1) * (config.speed * 0.95 + Math.random() * config.speed),
       r: 13,
     }));
     targets = shuffle(balls.map((b) => b.id)).slice(0, 2);
   }
 
   function draw() {
+    const config = levels[levelIndex];
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "rgba(8,10,9,0.75)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     const elapsed = (performance.now() - startedAt) / 1000;
-    const reveal = elapsed < 2.5;
-    document.querySelector("#dualPhase").textContent = reveal ? "记住目标" : elapsed < 9 ? "追踪中" : "指认";
+    const reveal = elapsed < config.reveal;
+    const trackEnd = config.reveal + config.track;
+    document.querySelector("#dualLevel").textContent = `${config.name} ${levelIndex + 1}/3`;
+    document.querySelector("#dualPhase").textContent = reveal ? "记住目标" : elapsed < trackEnd ? "追踪中" : "指认";
     balls.forEach((ball) => {
       if (!stopped) {
         ball.x += ball.vx;
@@ -2041,7 +3706,7 @@ function renderDualBall(axis, stage) {
         ctx.fillText(String(ball.id), ball.x, ball.y);
       }
     });
-    if (elapsed >= 9 && !stopped) {
+    if (elapsed >= trackEnd && !stopped) {
       stopped = true;
       showPickActions();
     }
@@ -2049,8 +3714,9 @@ function renderDualBall(axis, stage) {
   }
 
   function showPickActions() {
+    const config = levels[levelIndex];
     const actions = document.querySelector("#dualActions");
-    actions.innerHTML = `<span class="pill">指认两颗目标星</span>`;
+    actions.innerHTML = `<span class="pill">${config.name}级：指认两颗目标星</span>`;
     balls.forEach((ball) => {
       const btn = document.createElement("button");
       btn.className = "button";
@@ -2063,8 +3729,18 @@ function renderDualBall(axis, stage) {
         draw();
         if (picked.length === 2) {
           const hit = picked.filter((id) => targets.includes(id)).length;
-          const score = hit === 2 ? 9.4 : hit === 1 ? 5.8 : 2.0;
-          completeStage(score, { targets, picked, hit }, `指认 ${hit}/2，目标星是 ${targets.join("、")}。`);
+          roundResults.push({ level: config.name, targets: [...targets], picked: [...picked], hit });
+          const totalHits = roundResults.reduce((sum, item) => sum + item.hit, 0);
+          document.querySelector("#dualHits").textContent = totalHits;
+          if (levelIndex >= levels.length - 1) {
+            const perfect = totalHits === 6;
+            const score = clamp((totalHits / 6) * 9.2 + (perfect ? 0.8 : 0));
+            completeStage(score, { rounds: roundResults, totalHits }, `三轮双星追踪命中 ${totalHits}/6。`);
+          } else {
+            levelIndex += 1;
+            actions.innerHTML = `<button class="button primary" id="nextDualRound" type="button">进入${levels[levelIndex].name}级追踪</button>`;
+            document.querySelector("#nextDualRound").addEventListener("click", startRound);
+          }
         }
       });
       actions.appendChild(btn);
@@ -2072,13 +3748,23 @@ function renderDualBall(axis, stage) {
     draw();
   }
 
-  start.addEventListener("click", () => {
-    initBalls();
+  function startRound() {
+    initBalls(levels[levelIndex]);
     picked = [];
     stopped = false;
     startedAt = performance.now();
-    start.disabled = true;
+    document.querySelector("#dualPhase").textContent = "记住目标";
+    document.querySelector("#dualActions").innerHTML = `<span class="pill">${levels[levelIndex].name}级追踪中</span>`;
+    cancelAnimationFrame(raf);
     draw();
+  }
+
+  start.addEventListener("click", () => {
+    start.disabled = true;
+    levelIndex = 0;
+    roundResults = [];
+    document.querySelector("#dualHits").textContent = "0";
+    startRound();
   });
   cleanupFns.push(() => cancelAnimationFrame(raf));
 }
@@ -2088,6 +3774,7 @@ function renderSchulte(axis, stage) {
     { label: "低", size: 3 },
     { label: "中", size: 4 },
     { label: "高", size: 5 },
+    { label: "极限", size: 6 },
   ];
   let boardIndex = 0;
   let current = 1;
@@ -2102,8 +3789,8 @@ function renderSchulte(axis, stage) {
     mount.innerHTML = `
       ${stageGuide({
         measure: "长注意、地形搜索、顺序执行和抗急躁。",
-        rule: "按 1 到 N 的顺序点完侦察格。低 3x3，中 4x4，高 5x5。",
-        scoring: "用时越短越好，点错会扣分。这一轮主要进入感知里的专注分。",
+        rule: "按 1 到 N 的顺序点完侦察格。低 3x3，中 4x4，高 5x5，最后追加极限 6x6。",
+        scoring: "前三轮看稳定搜索，极限轮用于区分 9 分以上；用时越短越好，点错会扣分。",
       })}
       ${metricStrip([
         { label: "难度", value: board.label },
@@ -2127,8 +3814,9 @@ function renderSchulte(axis, stage) {
             boardIndex += 1;
             if (boardIndex >= boards.length) {
               const elapsed = (performance.now() - startedAt) / 1000;
-              const score = clamp(10 - elapsed / 12 - errors * 0.45 + 2.2);
-              completeStage(score, { elapsedSec: Math.round(elapsed), errors }, `完成三轮侦察，用时 ${Math.round(elapsed)} 秒，误判 ${errors} 次。`);
+              const speedBonus = Math.max(0, 2.1 - elapsed / 34);
+              const score = clamp(8.4 + speedBonus - errors * 0.42);
+              completeStage(score, { elapsedSec: Math.round(elapsed), errors, boards: boards.length }, `完成四轮侦察含极限 6x6，用时 ${Math.round(elapsed)} 秒，误判 ${errors} 次。`);
             } else {
               drawBoard();
             }
@@ -2149,7 +3837,7 @@ function renderSchulte(axis, stage) {
 }
 
 function renderCharismaQuiz(axis, stage) {
-  renderQuizStage(stage, {
+  renderQuizStage(stage, getQuizModule("cha_dialogue", {
     guide: {
       measure: "议会发言、酒馆谈判、鼓舞和压场。",
       rule: "这里没有唯一正解，选你会怎么在桌边处理局面。",
@@ -2193,11 +3881,11 @@ function renderCharismaQuiz(axis, stage) {
         ],
       },
     ],
-  });
+  }));
 }
 
 function renderAlignmentQuiz(axis, stage) {
-  renderQuizStage(stage, {
+  renderQuizStage(stage, getQuizModule("cha_alignment", {
     guide: {
       measure: "规则观、目标观、代价承受和阵营动机。",
       rule: "选你在桌边最想扮演的行动方式。这里会保留“邪恶”阵营，但它只代表角色动机。",
@@ -2232,12 +3920,89 @@ function renderAlignmentQuiz(axis, stage) {
         ],
       },
     ],
-  });
+  }));
+}
+
+function renderMbtiProbe() {
+  const config = getMbtiProbeConfig();
+  const questions = config.questions || [];
+  if (!questions.length) {
+    state.screen = getMbtiProbeReturnScreen();
+    render();
+    return;
+  }
+
+  let index = 0;
+  state.mbtiProbe = {
+    scores: { I: 0, E: 0, N: 0, S: 0, T: 0, F: 0, J: 0, P: 0 },
+    answers: [],
+    completed: false,
+    resultNote: config.resultNote,
+  };
+
+  function draw() {
+    const q = questions[index];
+    setProgress(`扮演滤镜 ${index + 1}/${questions.length}`, 84 + index * 0.45);
+    app.innerHTML = `
+      <section class="screen">
+        <div class="tool-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Session 0.4 / MBTI Probe</p>
+              <h2>${config.title}</h2>
+              <p>${config.intro}</p>
+            </div>
+          </div>
+          <div class="question-panel tool-panel deep-question">
+            <p class="eyebrow">${q.axis} / Round ${q.round}</p>
+            <h3>${q.prompt}</h3>
+            <div class="choice-grid two-col">
+              ${q.options
+                .map(
+                  (option, i) => `
+                    <button class="choice" data-choice="${i}" type="button">
+                      <span class="choice-kicker">滤镜 ${i + 1}</span>
+                      <span>${option.text}</span>
+                    </button>
+                  `,
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    document.querySelectorAll("[data-choice]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const option = q.options[Number(btn.dataset.choice)];
+        const side = option.side;
+        state.mbtiProbe.scores[side] = (state.mbtiProbe.scores[side] || 0) + (option.score || 1);
+        state.mbtiProbe.answers.push({ id: q.id, axis: q.axis, round: q.round, side });
+        index += 1;
+        if (index >= questions.length) {
+          state.mbtiProbe.completed = true;
+          state.screen = getMbtiProbeReturnScreen();
+          render();
+        } else {
+          draw();
+        }
+      });
+    });
+  }
+
+  draw();
 }
 
 function renderPersonality() {
   setProgress("选择你的扮演姿态", 88);
-  const questions = [
+  const config = getQuizModule("roleplay_stance", {
+    page: {
+      eyebrow: "Session 0.5 / Roleplay Stance",
+      title: "给角色加一层扮演姿态",
+      intro: "这几题不改属性点，只决定你在桌边怎么演：守序还是破局，共情还是目标优先，谨慎还是冒险。",
+    },
+    questions: [
     {
       prompt: "你第一次走进一座陌生地城，最先看什么？",
       options: [
@@ -2274,7 +4039,10 @@ function renderPersonality() {
         { text: "太信原则，有时错过变化窗口。", traits: { lawful: 2, J: 1 } },
       ],
     },
-  ];
+    ],
+  });
+  const questions = config.questions;
+  const page = config.page;
   let index = 0;
 
   function draw() {
@@ -2283,9 +4051,9 @@ function renderPersonality() {
     app.innerHTML = `
       <section class="screen">
         <div class="tool-panel">
-          <p class="eyebrow">Session 0.5 / Roleplay Stance</p>
-          <h2>给角色加一层扮演姿态</h2>
-          <p class="panel-copy">这几题不改属性点，只决定你在桌边怎么演：守序还是破局，共情还是目标优先，谨慎还是冒险。</p>
+          <p class="eyebrow">${page.eyebrow}</p>
+          <h2>${page.title}</h2>
+          <p class="panel-copy">${page.intro}</p>
           <div class="question-panel tool-panel deep-question">
             <h3>${q.prompt}</h3>
             <div class="choice-grid">
@@ -2327,6 +4095,158 @@ function applyTraits(traits) {
   });
 }
 
+function getAncestryAnchor(profile = state.profile || {}) {
+  const id = profile.ancestry || "auto";
+  return FANTASY_ANCESTRIES.find((item) => item.id === id) || FANTASY_ANCESTRIES[0];
+}
+
+function isSpecificAncestry(ancestry) {
+  return Boolean(ancestry && ancestry.id && ancestry.id !== "auto");
+}
+
+function decorateBodyAnchor(anchor, ancestry) {
+  const selected = isSpecificAncestry(ancestry);
+  if (!selected) {
+    return {
+      ...anchor,
+      ancestry,
+      ancestrySelected: false,
+      ancestryLine: "",
+      ancestryNote: "",
+    };
+  }
+
+  if (!anchor.isFantasy) {
+    return {
+      ...anchor,
+      size: ancestry.size === "自动" ? anchor.size : ancestry.size,
+      creature: ancestry.name,
+      label: ancestry.label,
+      note: `${ancestry.note} ${anchor.note}`,
+      ancestry,
+      ancestrySelected: true,
+      ancestryLine: `${ancestry.name} · ${ancestry.label}`,
+      ancestryNote: ancestry.note,
+    };
+  }
+
+  return {
+    ...anchor,
+    ancestry,
+    ancestrySelected: true,
+    ancestryLine: `${ancestry.name} · ${ancestry.label}`,
+    ancestryNote: `${ancestry.note} 体型数值同时触发${anchor.size}参照，跑团时可解释成混血、变体、魔法体型或 DM 特批。`,
+  };
+}
+
+function getBodyCreatureAnchor(profile = state.profile || {}) {
+  const height = Number(profile.height);
+  const weight = Number(profile.weight);
+  const hasHeight = Number.isFinite(height) && height > 0;
+  const hasWeight = Number.isFinite(weight) && weight > 0;
+  const ancestry = getAncestryAnchor(profile);
+
+  if ((profile.height && !hasHeight) || (profile.weight && !hasWeight)) {
+    return decorateBodyAnchor({
+      size: "异常",
+      creature: "变形术事故",
+      label: "数值需要重新登记",
+      note: "公会书记看不懂这组身高体重，先按中性骰处理。",
+      isFantasy: true,
+      scoreMod: 0,
+    }, ancestry);
+  }
+
+  if (!hasHeight && !hasWeight) {
+    return decorateBodyAnchor({
+      size: "中型",
+      creature: "未登记冒险者",
+      label: "普通开卡参照",
+      note: "未填写体型数据，体质轴使用中性现实锚点。",
+      isFantasy: false,
+      scoreMod: 0,
+    }, ancestry);
+  }
+
+  const outOfHumanBand =
+    (hasHeight && (height < 130 || height > 230)) || (hasWeight && (weight < 35 || weight > 220));
+
+  if (!outOfHumanBand) {
+    return decorateBodyAnchor({
+      size: "中型",
+      creature: "类人生物",
+      label: "普通现实锚点",
+      note: "身高体重处于普通校准区间，使用现实锚点和 BMI 做轻量娱乐化换算。",
+      isFantasy: false,
+      scoreMod: 0,
+    }, ancestry);
+  }
+
+  if ((hasHeight && height < 60) || (hasWeight && weight < 12)) {
+    return decorateBodyAnchor({
+      size: "微型",
+      creature: "小妖精 / 魔宠",
+      label: "极小体型参照",
+      note: "按奇幻微型生物处理，不套普通人 BMI；优势偏灵巧和隐蔽，负重续航需要道具补足。",
+      isFantasy: true,
+      scoreMod: -0.15,
+    }, ancestry);
+  }
+
+  if ((hasHeight && height < 130) || (hasWeight && weight < 35)) {
+    return decorateBodyAnchor({
+      size: "小型",
+      creature: "侏儒 / 半身人 / 狗头人",
+      label: "小型冒险者参照",
+      note: "按 DND 小型生物处理，不把低身高体重直接判成现实弱项。",
+      isFantasy: true,
+      scoreMod: 0.05,
+    }, ancestry);
+  }
+
+  if ((hasHeight && height >= 500) || (hasWeight && weight >= 900)) {
+    return decorateBodyAnchor({
+      size: "超巨型",
+      creature: "泰坦 / 远古巨人",
+      label: "史诗体型参照",
+      note: "按超巨型奇幻生物处理；承重与冲击力极强，但地城适配会成为可演代价。",
+      isFantasy: true,
+      scoreMod: 0.9,
+    }, ancestry);
+  }
+
+  if ((hasHeight && height >= 350) || (hasWeight && weight >= 500)) {
+    return decorateBodyAnchor({
+      size: "巨型",
+      creature: "巨人",
+      label: "巨人级体型参照",
+      note: "按巨人级体型处理，体质底子偏强，同时保留行动空间和装备适配的剧情限制。",
+      isFantasy: true,
+      scoreMod: 0.7,
+    }, ancestry);
+  }
+
+  if ((hasHeight && height >= 240) || (hasWeight && weight >= 220)) {
+    return decorateBodyAnchor({
+      size: "大型",
+      creature: "食人魔 / 半巨人",
+      label: "大型生物参照",
+      note: "按大型生物处理，不用普通 BMI 评价；优势偏承重、抗压和正面冲击。",
+      isFantasy: true,
+      scoreMod: 0.45,
+    }, ancestry);
+  }
+
+  return decorateBodyAnchor({
+    size: "中型+",
+    creature: "哥利亚 / 熊地精",
+    label: "强壮类人生物参照",
+    note: "接近普通上限但仍可作为类人生物处理，体质修正保持温和。",
+    isFantasy: true,
+    scoreMod: 0.25,
+  }, ancestry);
+}
+
 function computeBodyScore() {
   const p = state.profile || {};
   let score = 5.2;
@@ -2334,20 +4254,24 @@ function computeBodyScore() {
   const height = Number(p.height);
   const weight = Number(p.weight);
   const bodyFat = Number(p.bodyFat);
+  const bodyAnchor = getBodyCreatureAnchor(p);
   if (age) {
     if (age >= 18 && age <= 35) score += 0.5;
     else if (age > 50) score -= 0.35;
   }
-  if (height && weight) {
-    const bmi = weight / (height / 100) ** 2;
-    if (bmi >= 18.5 && bmi <= 27.5) score += 0.7;
-    else if (bmi >= 16.5 && bmi <= 31) score += 0.2;
-    else score -= 0.35;
+  if (bodyAnchor.isFantasy) {
+    score += bodyAnchor.scoreMod;
+  } else if (height && weight) {
+      const bmi = weight / (height / 100) ** 2;
+      if (bmi >= 18.5 && bmi <= 27.5) score += 0.7;
+      else if (bmi >= 16.5 && bmi <= 31) score += 0.2;
+      else score -= 0.35;
   }
-  if (bodyFat) {
+  if (bodyFat && !bodyAnchor.isFantasy) {
     if (bodyFat >= 12 && bodyFat <= 30) score += 0.4;
     else if (bodyFat > 38) score -= 0.3;
   }
+  if (bodyAnchor.ancestrySelected) score += bodyAnchor.ancestry.scoreMod || 0;
   if (p.exercise === "light") score += 0.35;
   if (p.exercise === "regular") score += 1.0;
   if (p.exercise === "high") score += 1.25;
@@ -2372,16 +4296,30 @@ function computeHealthScore() {
   return clamp(score);
 }
 
-function translateProfile(value) {
+function translateExercise(value) {
   const map = {
     unknown: "未填写",
-    none: "无明显影响 / 基本不运动",
+    none: "基本不运动",
     light: "轻中强度 1-2 次",
     regular: "规律运动",
     high: "高频运动",
+  };
+  return map[value] || value || "未填写";
+}
+
+function translateSleep(value) {
+  const map = {
+    unknown: "未填写",
     good: "恢复不错",
     average: "一般",
     poor: "偏差",
+  };
+  return map[value] || value || "未填写";
+}
+
+function translateHealth(value) {
+  const map = {
+    none: "无明显影响",
     mild: "轻微影响",
     moderate: "中等影响",
     skip: "跳过",
@@ -2400,13 +4338,14 @@ function renderResult() {
         <h1>${summary.archetype}</h1>
         <p class="lead">${summary.oneLine}</p>
         <div class="pill-row">
+          <span class="pill">副职业 ${summary.dndProfile.subclass}</span>
           <span class="pill">${summary.mbtiLabel}</span>
-          <span class="pill">${summary.alignment}</span>
-          <span class="pill">${summary.classProfile.job}</span>
-          <span class="pill">DND ${summary.dndProfile.className}</span>
-          <span class="pill">${summary.titles.join(" / ")}</span>
+          ${summary.ancestryAnchor.id !== "auto" ? `<span class="pill">${summary.ancestryLabel}</span>` : ""}
+          <span class="pill">${summary.top.name} / ${summary.second.name}</span>
         </div>
       </div>
+
+      ${renderRecruitmentResultPanel()}
 
       <div class="result-grid">
         <div class="result-panel">
@@ -2455,7 +4394,7 @@ function renderResult() {
                 <span>本局主职业 · 六维投点</span>
                 <strong>${summary.dndProfile.className}<em>${summary.dndProfile.classEn}</em></strong>
                 <p>${summary.dndProfile.subclass} · ${summary.dndProfile.role}</p>
-                <small>${summary.dndProfile.matchText} ${summary.dndProfile.why}</small>
+                <small>${summary.primaryClassText}</small>
               </div>
               <div class="ornament-row">
                 <span>${summary.alignment}</span>
@@ -2499,39 +4438,48 @@ function renderResult() {
 
       <div class="result-grid">
         <div class="result-panel">
-          <h2>扮演滤镜与阵营动机</h2>
-          <div class="insight-stack">
-            <div class="mini-card">
-              <h3>MBTI 扮演口吻</h3>
-              <p>${summary.mbtiText}</p>
+          <h2>主职业描述</h2>
+          <div class="profession-brief">
+            <div class="profession-brief-head">
+              <span>TOP 1 贴合职业</span>
+              <strong>${summary.dndProfile.className}<em>${summary.dndProfile.classEn}</em></strong>
+              <p>${summary.dndProfile.subclass} · ${summary.dndProfile.role}</p>
             </div>
-            <div class="mini-card">
-              <h3>阵营动机</h3>
-              <p>${summary.alignmentText}</p>
-            </div>
+            <dl class="profession-lines">
+              <div>
+                <dt>主职业</dt>
+                <dd>${summary.mainClassLine}</dd>
+              </div>
+              <div>
+                <dt>副职业</dt>
+                <dd>${summary.subClassLine}</dd>
+              </div>
+              <div>
+                <dt>职业特性</dt>
+                <dd>${summary.classFeatureText}</dd>
+              </div>
+              <div>
+                <dt>特殊点</dt>
+                <dd>${summary.specialPointText}</dd>
+              </div>
+              <div>
+                <dt>可演缺陷</dt>
+                <dd>${summary.riskText}</dd>
+              </div>
+            </dl>
           </div>
         </div>
         <div class="result-panel">
-          <h2>可跑团的角色钩子</h2>
-          <div class="insight-stack">
-            <div class="mini-card combo-card">
-              <p class="eyebrow">${summary.top.abbr} + ${summary.second.abbr}</p>
-              <h3>${summary.comboProfile.name}</h3>
-              <p>${summary.comboProfile.direction}</p>
-              <div class="compact-chip-row">
-                ${summary.comboProfile.candidates.map((item) => `<span>${item}</span>`).join("")}
-              </div>
-            </div>
-            <div class="mini-card">
-              <h3>高亮属性</h3>
-              <p>${summary.strengthText}</p>
-            </div>
-            <div class="mini-card">
-              <h3>可演缺陷</h3>
-              <p>${summary.weaknessText}</p>
-            </div>
+          <h2>总结描述词</h2>
+          <div class="descriptor-grid">
+            ${renderDescriptorGroups(summary.descriptorGroups)}
           </div>
         </div>
+      </div>
+
+      <div class="result-grid">
+        ${renderConstitutionReading(summary.constitution)}
+        ${renderDefectReading(summary.constitution)}
       </div>
 
       <div class="result-panel">
@@ -2558,7 +4506,10 @@ function renderResult() {
       axisStages: {},
       raw: {},
       traits: { ...INITIAL_TRAITS },
+      mbtiProbe: null,
+      mbtiProbeReturnScreen: null,
       personalityAnswers: 0,
+      recruitment: null,
     });
     render();
   });
@@ -2577,6 +4528,167 @@ function renderDndMatchCard(profile, index, mbtiCode) {
       <strong>${fmt(profile.score)} / 10</strong>
       <small>${profile.matchText}</small>
     </article>
+  `;
+}
+
+function renderRecruitmentResultPanel() {
+  const judgement = state.recruitment?.judgement;
+  if (!judgement?.ending) return "";
+  const ending = judgement.ending;
+  const target = judgement.target;
+  const theme = getRecruitmentTheme(target?.targetId);
+  const endingArt = getEndingArt(ending.endingType);
+  return `
+    <div class="result-panel recruitment-result-panel ${theme.className}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}">
+      ${renderRecruitmentArt({ src: endingArt, alt: `${verdictLabel(ending.endingType)}公会判定图`, className: "judgement-art result-judgement-art" })}
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Recruitment Verdict / ${verdictLabel(ending.endingType)}</p>
+          <h2>${adaptRecruitmentCopy(ending.title)}</h2>
+          <p>${adaptRecruitmentCopy(ending.verdictLine)}</p>
+        </div>
+        <span class="verdict-stamp small">${verdictLabel(ending.endingType)}</span>
+      </div>
+      <div class="judgement-grid compact">
+        <div>
+          <strong>血脉</strong>
+          <span>${getRecruitmentRaceCard().raceNameZh || "巨魔"}</span>
+        </div>
+        <div>
+          <strong>报名志愿</strong>
+          <span>${target?.classNameZh || "未记录"}</span>
+        </div>
+        <div>
+          <strong>推荐归宿</strong>
+          <span>${(ending.recommendedClass || []).map((id) => getRecruitmentTheme(id).name).join(" / ")}</span>
+        </div>
+        <div>
+          <strong>上桌功能</strong>
+          <span>${adaptRecruitmentCopy(ending.tableFunction)}</span>
+        </div>
+        <div>
+          <strong>雷达来源</strong>
+          <span>${state.recruitment?.calibration ? "征召判断 60% / 六维实战 40%" : "征召判断折算"}</span>
+        </div>
+      </div>
+      <blockquote>${adaptRecruitmentCopy(ending.playableFlaw)}</blockquote>
+    </div>
+  `;
+}
+
+function renderDescriptorGroups(groups) {
+  return groups
+    .map(
+      (group) => `
+        <div class="descriptor-card">
+          <strong>${group.title}</strong>
+          <div class="descriptor-tags">
+            ${group.items.map((item) => `<span>${item}</span>`).join("")}
+          </div>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function renderConstitutionReading(constitution) {
+  const base = constitution.base;
+  return `
+    <div class="result-panel constitution-panel">
+      <div class="constitution-head">
+        <p class="eyebrow">Constitution Reading / Camp Diagnosis</p>
+        <h2>体质鉴定</h2>
+        <span>${constitution.tierLabel} · ${constitution.personalityGroup}</span>
+      </div>
+      <div class="constitution-card">
+        <strong>${base.title}</strong>
+        <p class="constitution-one-line">${base.oneLine}</p>
+        <p>${base.diagnosis}</p>
+        <dl class="constitution-lines">
+          <div>
+            <dt>桌边功能</dt>
+            <dd>${base.tableFunction}</dd>
+          </div>
+          <div>
+            <dt>角色钩子</dt>
+            <dd>${base.roleHook}</dd>
+          </div>
+          <div>
+            <dt>可演代价</dt>
+            <dd>${base.playableCost}</dd>
+          </div>
+        </dl>
+        <div class="descriptor-tags">
+          ${constitution.tags.map((item) => `<span>${item}</span>`).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDefectReading(constitution) {
+  const trigger = constitution.primaryTrigger;
+  if (!trigger) {
+    return `
+      <div class="result-panel defect-panel is-empty">
+        <div class="constitution-head">
+          <p class="eyebrow">Defect Card / Not Triggered</p>
+          <h2>缺陷卡</h2>
+          <span>本局未亮牌</span>
+        </div>
+        <div class="constitution-card">
+          <strong>没有触发特殊缺陷卡</strong>
+          <p class="constitution-one-line">这张卡只使用基础体质画像；如果后续生成缺陷卡图片，当前角色不需要额外抽卡。</p>
+          <p>系统会在特殊种族、极端体型、睡眠诅咒、高体低感知、高力低体等组合出现时亮出缺陷卡。</p>
+        </div>
+      </div>
+    `;
+  }
+
+  const asset = trigger.asset || getDefectCardAsset(trigger.defectCardId);
+  const hasImage = asset.status === "ready" && asset.file;
+  return `
+    <div class="result-panel defect-panel">
+      <div class="constitution-head">
+        <p class="eyebrow">Defect Card / ${trigger.defectCardId}</p>
+        <h2>缺陷卡</h2>
+        <span>${trigger.reason}</span>
+      </div>
+      <div class="constitution-card">
+        ${
+          hasImage
+            ? `<figure class="defect-card-art">
+                <img src="${asset.file}" alt="${asset.nameZh || trigger.title}" loading="eager">
+                <figcaption>${asset.nameZh || trigger.title} · ${trigger.defectCardId}</figcaption>
+              </figure>`
+            : `<div class="defect-card-missing">缺陷卡图待补：${asset.expectedFile || trigger.defectCardId}</div>`
+        }
+        <div class="defect-card-id">${trigger.defectCardId}</div>
+        <strong>${trigger.title}</strong>
+        <p class="constitution-one-line">${trigger.oneLine}</p>
+        <p>${trigger.diagnosis}</p>
+        <blockquote>${trigger.specialDialogue}</blockquote>
+        <dl class="constitution-lines">
+          <div>
+            <dt>命中证据</dt>
+            <dd>${trigger.evidence || trigger.reason}</dd>
+          </div>
+          <div>
+            <dt>上桌用途</dt>
+            <dd>${trigger.tableFunction}</dd>
+          </div>
+          <div>
+            <dt>可演代价</dt>
+            <dd>${trigger.playableCost}</dd>
+          </div>
+        </dl>
+        ${
+          constitution.extraTriggers.length
+            ? `<p class="fineprint">其他命中的暗线：${constitution.extraTriggers.map((item) => `${item.title}（${item.defectCardId}）`).join(" / ")}</p>`
+            : ""
+        }
+      </div>
+    </div>
   `;
 }
 
@@ -2652,8 +4764,11 @@ function stageBreakdown(axis) {
           ? stages
               .map(
                 (item) => `
-                  <div class="stage-score-line">
-                    <span>${item.title}</span>
+                  <div class="stage-score-line ${stageRunClass(item)}">
+                    <div class="stage-score-main">
+                      <span>${item.title}</span>
+                      <small>${stageRunLabel(item)} · ${item.note || item.difficulty || "已结算"}</small>
+                    </div>
                     <strong>${fmt(item.score)}</strong>
                   </div>
                 `,
@@ -2663,6 +4778,22 @@ function stageBreakdown(axis) {
       }
     </div>
   `;
+}
+
+function stageRunLabel(item) {
+  if (item.raw?.recruitment) return "征召判断";
+  if (item.raw?.calibration) return "实战校准";
+  if (item.raw?.skipped) return "默认骰";
+  if (item.raw?.demo) return "默认分";
+  if (item.raw?.randomSheet) return "随机投点";
+  return "实测";
+}
+
+function stageRunClass(item) {
+  if (item.raw?.recruitment) return "is-default";
+  if (item.raw?.calibration) return "is-played";
+  if (item.raw?.skipped || item.raw?.demo || item.raw?.randomSheet) return "is-default";
+  return "is-played";
 }
 
 function ensureScores() {
@@ -2724,34 +4855,383 @@ function getAlignmentResultProfile(label) {
   return RESULT_CONTENT.alignments[label] || describeAlignment(label);
 }
 
+function uniqueTagItems(items) {
+  const seen = new Set();
+  return items
+    .map((item) => String(item || "").trim())
+    .filter((item) => {
+      if (!item || seen.has(item)) return false;
+      seen.add(item);
+      return true;
+    });
+}
+
+function splitDescriptorText(text) {
+  return String(text || "")
+    .split(/[、，,\/·]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function buildDescriptorGroups({ dndProfile, mbtiCode, mbtiProfile, classProfile, alignment, comboProfile, top, second, low, titles, ancestryAnchor, bodyAnchor }) {
+  const hasAncestry = isSpecificAncestry(ancestryAnchor);
+  return [
+    {
+      title: "职业底色",
+      items: uniqueTagItems([dndProfile.className, dndProfile.subclass, `TOP 1 ${dndProfile.className}`, ...splitDescriptorText(dndProfile.role)]).slice(0, 6),
+    },
+    {
+      title: "桌边功能",
+      items: uniqueTagItems([...splitDescriptorText(dndProfile.role), ...splitDescriptorText(dndProfile.specialty), `${top.name}主轴`, `${second.name}副轴`, ...splitDescriptorText(dndProfile.stats)]).slice(0, 6),
+    },
+    {
+      title: "演法滤镜",
+      items: uniqueTagItems([mbtiCode, mbtiProfile.style, classProfile.job, alignment, ...titles.slice(0, 2)]),
+    },
+    {
+      title: "血脉锚点",
+      items: uniqueTagItems(
+        hasAncestry
+          ? [ancestryAnchor.name, ancestryAnchor.label, ancestryAnchor.trait, ...ancestryAnchor.tags, bodyAnchor.size]
+          : ["未指定种族", bodyAnchor.size, bodyAnchor.creature, bodyAnchor.label],
+      ).slice(0, 6),
+    },
+    {
+      title: "剧情张力",
+      items: uniqueTagItems([comboProfile.name, ...comboProfile.candidates.slice(0, 2), `${low.name}短板`, "成长线", "可写成角色缺陷"]),
+    },
+  ];
+}
+
+function getMbtiRoleFlavor(mbtiCode) {
+  return MBTI_ROLE_FLAVORS[mbtiCode] || MBTI_ROLE_FLAVORS.未知;
+}
+
+function trimSentenceEnd(text) {
+  return String(text || "").trim().replace(/[。.!！]+$/u, "");
+}
+
+function roleMethodPhrase(text) {
+  return trimSentenceEnd(text).replace(/^会把这门职业(?:当成|玩成|用成|演成|变成)/u, "").replace(/^会/u, "");
+}
+
+function roleFunctionPhrase(text) {
+  return trimSentenceEnd(text).replace(/^擅长/u, "");
+}
+
+function roleFlawPhrase(text) {
+  return trimSentenceEnd(text).replace(/^可演的代价是/u, "");
+}
+
+function getMbtiDndEvaluation(mbtiCode, dndClassEn) {
+  const map = window.MBTI_DND_EVALUATIONS || {};
+  return map[`${mbtiCode}__${dndClassEn}`] || null;
+}
+
+function buildRoleEvaluation({ dndProfile, mbtiCode, mbtiLabel, mbtiProfile, top, second, low }) {
+  const roleFlavor = getMbtiRoleFlavor(mbtiCode);
+  const classFlavor = dndProfile.flavor || dndProfile.classWhy || `${dndProfile.className}适合承担${dndProfile.role}。`;
+  const classSpecialty = dndProfile.specialty || `擅长${dndProfile.role}。`;
+  const subclass = dndProfile.subclass;
+  const className = dndProfile.className;
+  const role = dndProfile.role;
+  const reason = `${dndProfile.classWhy || dndProfile.why}本局高亮属性是 ${top.name} ${fmt(state.scores[top.id])} 与 ${second.name} ${fmt(state.scores[second.id])}；${low.name}可以当成限制、代价或剧情弱点。`;
+  const geminiEvaluation = getMbtiDndEvaluation(mbtiCode, dndProfile.classEn);
+  if (geminiEvaluation) {
+    return {
+      lead: geminiEvaluation.oneLine,
+      mainClassLine: `${geminiEvaluation.dndClass || className}（${geminiEvaluation.dndClassEn || dndProfile.classEn}）：${role}。`,
+      subClassLine: `${subclass}：${role}。`,
+      featureText: geminiEvaluation.functionText,
+      specialPoint: geminiEvaluation.specialPoint,
+      primary: `TOP 1 贴合度 ${fmt(dndProfile.score)} / 10。${geminiEvaluation.concept}。`,
+      reason,
+      mbtiSupport: geminiEvaluation.riskText,
+      dmHook: `${geminiEvaluation.concept}：${geminiEvaluation.oneLine}`,
+      riskText: geminiEvaluation.riskText,
+      concept: geminiEvaluation.concept,
+    };
+  }
+  const methodText = roleMethodPhrase(roleFlavor.method);
+  const functionText = roleFunctionPhrase(roleFlavor.function);
+  const specialtyText = roleFunctionPhrase(classSpecialty);
+  const flawText = roleFlawPhrase(roleFlavor.flaw);
+  const lead = `${className} · ${subclass}。定位：${role}。${mbtiCode} 风格：${methodText}。`;
+  const mainClassLine = `${className}（${dndProfile.classEn}）：${role}。`;
+  const subClassLine = `${subclass}：强化${specialtyText}。`;
+  const featureText = `${trimSentenceEnd(classFlavor)}；上桌功能：${specialtyText}。`;
+  const specialPoint = `${mbtiCode} 提供行动风格：${functionText}。可写代价：${flawText}。`;
+  const primary = `TOP 1 贴合度 ${fmt(dndProfile.score)} / 10。主职业 ${className}，副职业 ${subclass}。`;
+  const mbtiSupport = `${mbtiLabel}：${roleFlavor.function}。${roleFlavor.flaw}。`;
+  const dmHook = `可以把他写成“${roleFlavor.entrance}”的${className}：上桌能做${role}，剧情里则用“${flawText}”制造记忆点。`;
+  return { lead, mainClassLine, subClassLine, featureText, specialPoint, primary, reason, mbtiSupport, dmHook, riskText: mbtiSupport, concept: `${mbtiCode} ${className}` };
+}
+
+function getConstitutionTier(score) {
+  if (score < 3.2) return "frail";
+  if (score < 4.7) return "light";
+  if (score < 6.3) return "mortal";
+  if (score < 7.8) return "steady";
+  if (score < 9) return "iron";
+  return "monster";
+}
+
+function getConstitutionPersonalityGroup(mbtiCode) {
+  const sensing = mbtiCode[1] === "S";
+  const feeling = mbtiCode[2] === "F";
+  const judging = mbtiCode[3] === "J";
+  if (!sensing && !feeling) return "NT";
+  if (!sensing && feeling) return "NF";
+  if (sensing && judging) return "SJ";
+  return "SP";
+}
+
+function getConstitutionAncestryId(ancestryAnchor, bodyAnchor) {
+  if (isSpecificAncestry(ancestryAnchor)) return ancestryAnchor.id;
+  const size = bodyAnchor?.size || "";
+  const creature = bodyAnchor?.creature || "";
+  if (["大型", "巨型", "超巨型", "中型+"].includes(size) || /食人魔|巨人|泰坦|半巨人/.test(creature)) return "ogre_giant";
+  if (["微型", "小型"].includes(size) || /侏儒|半身人|小妖精|狗头人|魔宠/.test(creature)) return "halfling";
+  return "human";
+}
+
+function getConstitutionBaseCopy(ancestryId, conTier, personalityGroup) {
+  const base = CONSTITUTION_COPY.base || {};
+  return (
+    base[`${ancestryId}__${conTier}__${personalityGroup}`] ||
+    base[`human__${conTier}__${personalityGroup}`] ||
+    base[`${ancestryId}__mortal__${personalityGroup}`] ||
+    base[`human__mortal__${personalityGroup}`] || {
+      title: "未登记体质画像",
+      oneLine: "公会书记没翻到对应档案，暂按普通冒险者记录。",
+      diagnosis: "这张卡缺少可用的体质文案数据，但六维属性仍可正常结算。",
+      tableFunction: "作为通用冒险者处理，按当前职业和六维长板安排桌边任务。",
+      roleHook: "把体质留成待补设定，等后续剧情或图片资源补齐。",
+      playableCost: "缺少专属缺陷描述，暂由最低属性承担可演代价。",
+      tags: ["待补档案"],
+    }
+  );
+}
+
+function getConstitutionTriggerCopy(triggerId, personalityGroup) {
+  const triggers = CONSTITUTION_COPY.triggers || {};
+  return triggers[`${triggerId}__${personalityGroup}`] || triggers[`${triggerId}__NT`] || null;
+}
+
+function getDefectCardAsset(defectCardId) {
+  const asset = (DEFECT_CARD_ASSETS.byId || {})[defectCardId];
+  if (!asset) {
+    return {
+      id: defectCardId,
+      status: "missing",
+      file: "",
+      expectedFile: `assets/defect-cards/generated/${defectCardId}-preview.webp`,
+      nameZh: defectCardId,
+    };
+  }
+  return asset;
+}
+
+function getAxisScoreValue(axisId, fallback = 5.2) {
+  const value = state.scores?.[axisId];
+  return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
+function isHugeBody(bodyAnchor, ancestryId) {
+  const size = bodyAnchor?.size || "";
+  return ["大型", "巨型", "超巨型"].includes(size) || ["troll", "ogre_giant"].includes(ancestryId);
+}
+
+function isTinyBody(bodyAnchor, ancestryId) {
+  const size = bodyAnchor?.size || "";
+  return ["微型", "小型"].includes(size) || ["halfling", "gnome"].includes(ancestryId);
+}
+
+function buildConstitutionTriggers({ ancestryId, bodyAnchor, personalityGroup, alignment, mbtiCode }) {
+  const con = getAxisScoreValue("con");
+  const str = getAxisScoreValue("str");
+  const wis = getAxisScoreValue("wis");
+  const traits = state.traits || {};
+  const hugeBody = isHugeBody(bodyAnchor, ancestryId);
+  const tinyBody = isTinyBody(bodyAnchor, ancestryId);
+  const ancestryLabel = bodyAnchor?.ancestry?.name || ancestryId;
+  const bodyLabel = `${bodyAnchor?.size || "未登记"} / ${bodyAnchor?.creature || "未登记"}`;
+  const scoreEvidence = `实测 Str ${fmt(str)} / Con ${fmt(con)} / Wis ${fmt(wis)}`;
+  const anchorEvidence = `锚点 ${ancestryLabel}；体型 ${bodyLabel}`;
+  const recoveryEvidence = `睡眠 ${translateSleep(state.profile?.sleep)}；健康 ${translateHealth(state.profile?.health)}`;
+  const lawfulOrDuty =
+    alignment.includes("守序") ||
+    mbtiCode.endsWith("J") ||
+    (traits.good || 0) - (traits.self || 0) > 1 ||
+    (traits.lawful || 0) - (traits.chaotic || 0) > 1;
+  const rules = [
+    {
+      id: "tieflingHighConEvil",
+      when: ancestryId === "tiefling" && con >= 7.8 && alignment.includes("邪恶"),
+      reason: "提夫林高体质 + 灰暗阵营",
+      evidence: `${scoreEvidence}；${anchorEvidence}；阵营 ${alignment}`,
+    },
+    {
+      id: "trollLowStr",
+      when: ancestryId === "troll" && str <= 5.2,
+      reason: "巨魔锚点 + 力量偏低",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "dragonbornLowCon",
+      when: ancestryId === "dragonborn" && con <= 4.8,
+      reason: "龙裔锚点 + 体质偏低",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "dwarfLowCon",
+      when: ancestryId === "dwarf" && con <= 4.8,
+      reason: "矮人锚点 + 体质偏低",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "elfHighCon",
+      when: ancestryId === "elf" && con >= 7.8,
+      reason: "精灵锚点 + 高体质",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "lowStrHugeBody",
+      when: hugeBody && str <= 5.2,
+      reason: "巨体锚点 + 力量偏低",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "tinyHighCon",
+      when: tinyBody && con >= 7.6,
+      reason: "小体型锚点 + 高体质",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "sleepCurse",
+      when: state.profile?.sleep === "poor",
+      reason: "睡眠恢复偏差",
+      evidence: `${recoveryEvidence}；${scoreEvidence}`,
+    },
+    {
+      id: "oldWoundOath",
+      when: con <= 5.4 && lawfulOrDuty && (state.profile?.health === "mild" || state.profile?.health === "moderate" || alignment.includes("守序")),
+      reason: "中低体质 + 责任/守序倾向",
+      evidence: `${scoreEvidence}；${recoveryEvidence}；阵营/职责倾向 ${alignment}`,
+    },
+    {
+      id: "ironBodyLowWis",
+      when: con >= 8 && wis <= 4.8,
+      reason: "高体质 + 感知偏低",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+    {
+      id: "highStrLowCon",
+      when: str >= 7.8 && con <= 4.8,
+      reason: "高力量 + 低体质",
+      evidence: `${scoreEvidence}；${recoveryEvidence}`,
+    },
+    {
+      id: "highConLowStr",
+      when: con >= 7.8 && str <= 4.8,
+      reason: "高体质 + 低力量",
+      evidence: `${scoreEvidence}；${anchorEvidence}`,
+    },
+  ];
+  const seenCards = new Set();
+  return rules
+    .filter((rule) => rule.when)
+    .map((rule) => {
+      const copy = getConstitutionTriggerCopy(rule.id, personalityGroup);
+      return copy ? { ...copy, reason: rule.reason, evidence: rule.evidence, asset: getDefectCardAsset(copy.defectCardId) } : null;
+    })
+    .filter((item) => {
+      if (!item || seenCards.has(item.defectCardId)) return false;
+      seenCards.add(item.defectCardId);
+      return true;
+    });
+}
+
+function buildConstitutionReading({ mbtiCode, alignment, ancestryAnchor, bodyAnchor }) {
+  const conScore = getAxisScoreValue("con");
+  const conTier = getConstitutionTier(conScore);
+  const personalityGroup = getConstitutionPersonalityGroup(mbtiCode);
+  const ancestryId = getConstitutionAncestryId(ancestryAnchor, bodyAnchor);
+  const base = getConstitutionBaseCopy(ancestryId, conTier, personalityGroup);
+  const triggers = buildConstitutionTriggers({ ancestryId, bodyAnchor, personalityGroup, alignment, mbtiCode });
+  const tags = uniqueTagItems([
+    CONSTITUTION_TIER_LABELS[conTier],
+    ancestryId,
+    personalityGroup,
+    ...(base.tags || []),
+  ]).slice(0, 8);
+  return {
+    ancestryId,
+    conTier,
+    tierLabel: CONSTITUTION_TIER_LABELS[conTier] || conTier,
+    personalityGroup,
+    base,
+    tags,
+    triggers,
+    primaryTrigger: triggers[0] || null,
+    extraTriggers: triggers.slice(1, 3),
+  };
+}
+
 function buildSummary() {
   const sorted = getSortedAxes();
   const top = sorted[0];
   const second = sorted[1];
   const low = sorted[sorted.length - 1];
   const mbtiCode = getMbtiCode();
-  const mbtiLabel = state.profile.mbtiSelf && state.profile.mbtiSelf !== "未知" ? `${mbtiCode}（玩家自填）` : `${mbtiCode}（检定推断）`;
+  const mbtiLabel = getMbtiLabel(mbtiCode);
   const alignment = getAlignment();
   const classProfile = MBTI_ARCHETYPES[mbtiCode] || MBTI_ARCHETYPES.未知;
   const dndMatches = getDndMatches(mbtiCode, alignment);
   const dndProfile = dndMatches[0] || getFallbackDndProfile();
+  const bodyAnchor = getBodyCreatureAnchor(state.profile || {});
+  const ancestryAnchor = bodyAnchor.ancestry || getAncestryAnchor(state.profile || {});
+  const hasAncestry = isSpecificAncestry(ancestryAnchor);
+  const ancestryLabel = hasAncestry ? `${ancestryAnchor.name} · ${ancestryAnchor.label}` : "未指定种族";
+  const ancestrySummary = hasAncestry
+    ? `${ancestryAnchor.name}：${ancestryAnchor.note}`
+    : `未指定种族，体型参照为${bodyAnchor.size} / ${bodyAnchor.creature}。`;
   const dndTitle = `${dndProfile.className}·${dndProfile.subclass}`;
   const classes = getClasses(top.id, second.id, dndTitle);
   const titles = getTitles(top.id, second.id);
   const comboProfile = getAttributeComboProfile(top.id, second.id);
   const mbtiProfile = getMbtiResultProfile(mbtiCode, top.id);
   const alignmentProfile = getAlignmentResultProfile(alignment);
-  const archetype = `${comboProfile.name} · ${getArchetype(top.id, second.id)}`;
+  const archetype = dndProfile.className;
   const portraitName = `${mbtiCode} ${classProfile.job}`;
   const arcanaNumber = String(Math.round((state.scores[top.id] + state.scores[second.id]) * 3)).padStart(2, "0");
   const cardTitle = `${top.abbr} ${second.abbr} Major`;
-  const oneLine = `${comboProfile.tagline} 本次出卡暂定 DND「${dndProfile.className}」路线，${mbtiCode} 决定它在桌边怎么演。`;
-  const strengthText = `这张卡最亮的属性是 ${top.name} ${fmt(state.scores[top.id])} 与 ${second.name} ${fmt(state.scores[second.id])}。${comboProfile.explanation}`;
-  const weaknessText = `${low.name} ${fmt(state.scores[low.id])} 不是扣分项，更像一条可以在剧情里反复上桌的麻烦。${comboProfile.weakness}`;
+  const roleEvaluation = buildRoleEvaluation({ dndProfile, mbtiCode, mbtiLabel, mbtiProfile, top, second, low });
+  const mainClassLine = roleEvaluation.mainClassLine;
+  const subClassLine = roleEvaluation.subClassLine;
+  const classFeatureText = roleEvaluation.featureText;
+  const specialPointText = roleEvaluation.specialPoint;
+  const riskText = roleEvaluation.riskText;
+  const primaryClassText = roleEvaluation.primary;
+  const primaryClassReason = roleEvaluation.reason;
+  const mbtiSupportText = roleEvaluation.mbtiSupport;
+  const oneLine = roleEvaluation.lead;
+  const strengthText = `职业贴合的主要证据是 ${top.name} ${fmt(state.scores[top.id])} 与 ${second.name} ${fmt(state.scores[second.id])}。${comboProfile.explanation}`;
+  const weaknessText = `${low.name} ${fmt(state.scores[low.id])} 是这张职业卡的可演限制。${comboProfile.weakness}`;
   const mbtiText = `${mbtiLabel} · ${mbtiProfile.style}：${mbtiProfile.result} ${mbtiProfile.axisLine}`;
+  const mbtiProbeNote = state.mbtiProbe?.completed ? state.mbtiProbe.resultNote || getMbtiProbeConfig().resultNote : "";
   const alignmentText = `${alignment}：${alignmentProfile} 阵营是角色扮演倾向，不等同于现实道德评价。`;
   const scoreLine = ATTRIBUTES.map((axis) => `${axis.abbr} ${fmt(state.scores[axis.id])}`).join(" / ");
-  const characterPrompt = buildCharacterPrompt({ mbtiCode, classProfile, dndProfile, top, second, low, alignment, titles });
+  const constitution = buildConstitutionReading({ mbtiCode, alignment, ancestryAnchor, bodyAnchor });
+  const constitutionLine = `${constitution.tierLabel} / ${constitution.base.title}：${constitution.base.oneLine}`;
+  const defectLine = constitution.primaryTrigger
+    ? `${constitution.primaryTrigger.defectCardId} / ${constitution.primaryTrigger.title}：${constitution.primaryTrigger.reason}；${constitution.primaryTrigger.evidence || ""}`
+    : "未触发特殊缺陷卡";
+  const extraDefectLine = constitution.extraTriggers.length
+    ? constitution.extraTriggers.map((item) => `${item.defectCardId} / ${item.title}：${item.reason}`).join(" / ")
+    : "";
+  const characterPrompt = buildCharacterPrompt({ mbtiCode, classProfile, dndProfile, top, second, low, alignment, titles, ancestryAnchor, bodyAnchor, constitution });
+  const descriptorGroups = buildDescriptorGroups({ dndProfile, mbtiCode, mbtiProfile, classProfile, alignment, comboProfile, top, second, low, titles, ancestryAnchor, bodyAnchor });
   const portraitResource = getMbtiPortraitResource(mbtiCode);
   const portraitAsset = getPortraitAsset(portraitResource);
   const portraitResourceLine =
@@ -2762,6 +5242,9 @@ function buildSummary() {
     `冒险者名册：${archetype}`,
     `六维属性：${scoreLine}`,
     `扮演口吻：${mbtiLabel}`,
+    ...(mbtiProbeNote ? [`推断说明：${mbtiProbeNote}`] : []),
+    `种族锚点：${ancestryLabel}`,
+    `体型参照：${bodyAnchor.size} / ${bodyAnchor.creature}`,
     `阵营动机：${alignment}`,
     `主职业线索：${dndProfile.className}（${dndProfile.classEn}） / ${dndProfile.subclass}`,
     `队伍职能：${dndProfile.role}`,
@@ -2769,13 +5252,24 @@ function buildSummary() {
     `备用职业钩子：${dndProfile.alternates.join(" / ")}`,
     `职业判定依据：${dndProfile.matchText}`,
     `支线职业灵感：${classes.join(" / ")}`,
+    `组合概念：${roleEvaluation.concept}`,
     `桌边称号：${titles.join(" / ")}`,
     `属性组合牌：${comboProfile.name}`,
     `组合说明：${comboProfile.explanation}`,
     `本局玩法：${comboProfile.direction}`,
+    `成卡评价：${roleEvaluation.dmHook}`,
+    `可演缺陷：${roleEvaluation.riskText}`,
+    `体质画像：${constitutionLine}`,
+    `体质桌边功能：${constitution.base.tableFunction}`,
+    `体质角色钩子：${constitution.base.roleHook}`,
+    `体质可演代价：${constitution.base.playableCost}`,
+    `缺陷卡：${defectLine}`,
+    ...(extraDefectLine ? [`缺陷暗线：${extraDefectLine}`] : []),
+    ...(constitution.primaryTrigger ? [`缺陷特殊对话：${constitution.primaryTrigger.specialDialogue}`] : []),
     `人格扮演滤镜：${mbtiProfile.style}；${mbtiProfile.result}`,
     `阵营说明：${alignmentProfile}`,
     `角色钩子：突出${top.name}与${second.name}，把${low.name}写成限制、代价或成长线。`,
+    `血脉说明：${ancestrySummary}`,
     `立绘资源：${portraitResourceLine}`,
     "",
     `给 DM 的扩写提示：${characterPrompt}`,
@@ -2789,6 +5283,9 @@ function buildSummary() {
     mbtiCode,
     mbtiLabel,
     alignment,
+    ancestryAnchor,
+    bodyAnchor,
+    ancestryLabel,
     classProfile,
     comboProfile,
     mbtiProfile,
@@ -2800,10 +5297,20 @@ function buildSummary() {
     portraitName,
     arcanaNumber,
     cardTitle,
+    primaryClassText,
+    primaryClassReason,
+    mainClassLine,
+    subClassLine,
+    classFeatureText,
+    specialPointText,
+    riskText,
+    mbtiSupportText,
     strengthText,
     weaknessText,
     mbtiText,
     alignmentText,
+    descriptorGroups,
+    constitution,
     copyText,
     portraitResource,
     portraitAsset,
@@ -2812,8 +5319,37 @@ function buildSummary() {
 
 function getMbtiCode() {
   if (state.profile.mbtiSelf && state.profile.mbtiSelf !== "未知") return state.profile.mbtiSelf;
+  const probed = getMbtiCodeFromProbe();
+  if (probed) return probed;
   const t = state.traits;
   return `${t.E >= t.I ? "E" : "I"}${t.N >= t.S ? "N" : "S"}${t.F > t.T ? "F" : "T"}${t.P > t.J ? "P" : "J"}`;
+}
+
+function getMbtiLabel(mbtiCode) {
+  if (state.profile.mbtiSelf && state.profile.mbtiSelf !== "未知") return `${mbtiCode}（玩家自填）`;
+  if (state.mbtiProbe?.completed) return `${mbtiCode}（简易推断）`;
+  return `${mbtiCode}（检定推断）`;
+}
+
+function getMbtiCodeFromProbe() {
+  if (!state.mbtiProbe?.completed) return "";
+  const scores = state.mbtiProbe.scores || {};
+  return `${chooseMbtiSide("I", "E", scores)}${chooseMbtiSide("N", "S", scores)}${chooseMbtiSide("T", "F", scores)}${chooseMbtiSide("J", "P", scores)}`;
+}
+
+function chooseMbtiSide(left, right, scores) {
+  const leftScore = scores[left] || 0;
+  const rightScore = scores[right] || 0;
+  if (leftScore > rightScore) return left;
+  if (rightScore > leftScore) return right;
+
+  const leftTrait = state.traits[left] || 0;
+  const rightTrait = state.traits[right] || 0;
+  if (leftTrait > rightTrait) return left;
+  if (rightTrait > leftTrait) return right;
+
+  const defaultSides = { I: "E", N: "N", T: "T", J: "J" };
+  return defaultSides[left] || left;
 }
 
 function getAlignment() {
@@ -2841,23 +5377,48 @@ function getDndMatches(mbtiCode, alignment) {
     const weightTotal = Object.values(base.axes).reduce((sum, weight) => sum + weight, 0) || 1;
     const normalized = axisFit / weightTotal;
     const affinity = mbtiMod.affinity[base.className] || 0;
-    const score = clamp(normalized + affinity);
+    const recruitmentBoost = getRecruitmentClassBoost(base.className);
+    const score = clamp(normalized + affinity + recruitmentBoost);
     const subclass = chooseSubclass(base, mbtiCode, alignment, top.id, second.id);
     const style = DND_CARD_STYLES[base.className] || DND_CARD_STYLES.冒险者;
     return {
       ...base,
       subclass,
       score,
+      recruitmentBoost,
       stats: getClassStatsText(base.axes),
       face: `${mbtiMod.style}型${base.className}`,
+      flavor: base.flavor,
+      specialty: base.specialty,
+      classWhy: base.why,
+      mbtiDetail: mbtiMod.detail.trim(),
       why: `${base.why}${mbtiMod.detail}`,
       alternates: base.baseSubclasses.filter((item) => item !== subclass).slice(0, 3).map((item) => `${base.className}·${item}`),
-      matchText: `六维贡献 ${fmt(normalized)}，人格修饰 ${affinity >= 0 ? "+" : ""}${fmt(affinity)}。主导轴：${top.name} / ${second.name}。`,
+      matchText: `六维贡献 ${fmt(normalized)}，人格修饰 ${affinity >= 0 ? "+" : ""}${fmt(affinity)}${recruitmentBoost ? `，征召加权 +${fmt(recruitmentBoost)}` : ""}。主导轴：${top.name} / ${second.name}。`,
       style,
     };
   })
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => b.score - a.score || b.recruitmentBoost - a.recruitmentBoost)
     .slice(0, 4);
+}
+
+function getRecruitmentClassBoost(className) {
+  const judgement = state.recruitment?.judgement;
+  if (!judgement?.ending) return 0;
+  const endingType = judgement.endingType || judgement.ending.endingType;
+  const recommendedIds = (judgement.ending.recommendedClass || []).map(normalizeRecruitmentTargetId);
+  const fallbackId = normalizeRecruitmentTargetId(judgement.topTargetId || judgement.target?.targetId || state.recruitment?.targetId);
+  const targetIds = recommendedIds.length ? recommendedIds : [fallbackId];
+  const classNames = targetIds.map((targetId) => RECRUITMENT_TARGET_CLASS[targetId]).filter(Boolean);
+  if (!classNames.includes(className)) return 0;
+  const boostMap = {
+    accepted: 3.4,
+    absurdAccepted: 3.1,
+    transferred: 2.8,
+    probation: 1.15,
+    blacklisted: 0,
+  };
+  return boostMap[endingType] || 0;
 }
 
 function getFallbackDndProfile() {
@@ -2869,6 +5430,10 @@ function getFallbackDndProfile() {
     score: 5,
     stats: getClassStatsText(base.axes),
     face: base.className,
+    flavor: base.flavor,
+    specialty: base.specialty,
+    classWhy: base.why,
+    mbtiDetail: "人格风格未定，职业主要由六维属性决定。",
     alternates: base.baseSubclasses.slice(1).map((item) => `${base.className}·${item}`),
     matchText: "默认职业线索。跑完整张卡后会由六维属性重新排序。",
     style,
@@ -3004,8 +5569,14 @@ function describeAlignment(label) {
   return descriptions[label] || "倾向混合，适合作为复杂角色动机。";
 }
 
-function buildCharacterPrompt({ mbtiCode, classProfile, dndProfile, top, second, low, alignment, titles }) {
-  return `请把这张冒险者名册扩写成 OC / 跑团角色设定：${mbtiCode} ${classProfile.job}，DND职业线索为${dndProfile.className}（${dndProfile.subclass}），队伍职能${dndProfile.role}；高亮属性是${top.name}和${second.name}，可演缺陷围绕${low.name}设计；阵营动机${alignment}；桌边称号${titles.join("、")}。重点写行为方式、战斗/社交风格、剧情用途、成长线和可扮演的缺陷，不要把职业写死为人格定型。`;
+function buildCharacterPrompt({ mbtiCode, classProfile, dndProfile, top, second, low, alignment, titles, ancestryAnchor, bodyAnchor, constitution }) {
+  const ancestryLine = isSpecificAncestry(ancestryAnchor)
+    ? `种族锚点为${ancestryAnchor.name}（${ancestryAnchor.label}，${ancestryAnchor.trait}），`
+    : `种族未指定，体型参照为${bodyAnchor.size}/${bodyAnchor.creature}，`;
+  const constitutionLine = constitution
+    ? `体质画像为${constitution.base.title}，${constitution.primaryTrigger ? `特殊缺陷卡为${constitution.primaryTrigger.title}（${constitution.primaryTrigger.defectCardId}），` : "未触发特殊缺陷卡，"}`
+    : "";
+  return `请把这张冒险者名册扩写成 OC / 跑团角色设定：${mbtiCode} ${classProfile.job}，${ancestryLine}${constitutionLine}DND职业线索为${dndProfile.className}（${dndProfile.subclass}），队伍职能${dndProfile.role}；高亮属性是${top.name}和${second.name}，可演缺陷围绕${low.name}设计；阵营动机${alignment}；桌边称号${titles.join("、")}。重点写行为方式、战斗/社交风格、剧情用途、成长线和可扮演的缺陷，不要把职业写死为人格定型。`;
 }
 
 function drawRadar() {
@@ -3135,34 +5706,174 @@ async function copySummary() {
   document.querySelector("#copyBtn").textContent = "已复制";
 }
 
-function fillDemo() {
-  state.profile = { age: "28", height: "170", weight: "62", exercise: "regular", sleep: "average", health: "none", mbtiSelf: "INTJ" };
-  state.scores = { str: 4.8, dex: 7.4, con: 5.8, int: 8.2, wis: 8.6, cha: 6.4 };
+function randomRange(min, max, digits = 1) {
+  return Number((min + Math.random() * (max - min)).toFixed(digits));
+}
+
+function randomPick(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function weightedRandomPick(entries) {
+  const total = entries.reduce((sum, item) => sum + item.weight, 0);
+  let roll = Math.random() * total;
+  for (const item of entries) {
+    roll -= item.weight;
+    if (roll <= 0) return item.value;
+  }
+  return entries[entries.length - 1]?.value;
+}
+
+function buildRandomScores() {
+  const axes = shuffle(ATTRIBUTES.map((axis) => axis.id));
+  const primary = axes[0];
+  const secondary = axes[1];
+  const weak = axes[axes.length - 1];
+  const scores = {};
+  ATTRIBUTES.forEach((axis) => {
+    let range = [4.4, 6.8];
+    if (axis.id === primary) range = [7.5, 9.4];
+    if (axis.id === secondary) range = [6.5, 8.4];
+    if (axis.id === weak) range = [3.1, 5.0];
+    scores[axis.id] = randomRange(range[0], range[1]);
+  });
+  return scores;
+}
+
+function buildRandomTraits() {
+  const traits = { ...INITIAL_TRAITS };
+  const type = randomPick(MBTI_TYPES.filter((item) => item !== "未知"));
+  const pairMap = {
+    E: ["E", "I"],
+    I: ["I", "E"],
+    N: ["N", "S"],
+    S: ["S", "N"],
+    T: ["T", "F"],
+    F: ["F", "T"],
+    J: ["J", "P"],
+    P: ["P", "J"],
+  };
+  type.split("").forEach((letter) => {
+    const [major, minor] = pairMap[letter];
+    traits[major] += randomRange(4, 7, 0);
+    traits[minor] += randomRange(0, 2, 0);
+  });
+
+  const orderBias = randomPick(["lawful", "chaotic", "neutral"]);
+  const moralBias = randomPick(["good", "self", "neutral"]);
+  if (orderBias === "lawful") traits.lawful += randomRange(3, 6, 0);
+  if (orderBias === "chaotic") traits.chaotic += randomRange(3, 6, 0);
+  if (moralBias === "good") traits.good += randomRange(3, 6, 0);
+  if (moralBias === "self") traits.self += randomRange(3, 6, 0);
+
+  traits.action += randomRange(0, 4, 0);
+  traits.empathy += randomRange(0, 4, 0);
+  traits.order += randomRange(0, 4, 0);
+  traits.risk += randomRange(0, 4, 0);
+  traits.expression += randomRange(0, 4, 0);
+  traits.control += randomRange(0, 4, 0);
+  return traits;
+}
+
+function buildRandomProfile() {
+  const ancestryPool = FANTASY_ANCESTRIES.filter((item) => item.id !== "auto").map((item) => ({
+    value: item.id,
+    weight: item.id === "human" ? 6 : 0.35,
+  }));
+  return {
+    age: String(randomRange(18, 42, 0)),
+    height: "",
+    weight: "",
+    bodyFat: "",
+    exercise: weightedRandomPick([
+      { value: "unknown", weight: 0.8 },
+      { value: "light", weight: 1.2 },
+      { value: "regular", weight: 1.4 },
+      { value: "high", weight: 0.6 },
+      { value: "none", weight: 0.5 },
+    ]),
+    sleep: weightedRandomPick([
+      { value: "unknown", weight: 0.8 },
+      { value: "good", weight: 1 },
+      { value: "average", weight: 1.4 },
+      { value: "poor", weight: 0.6 },
+    ]),
+    health: weightedRandomPick([
+      { value: "none", weight: 1.8 },
+      { value: "mild", weight: 0.9 },
+      { value: "moderate", weight: 0.35 },
+      { value: "skip", weight: 0.5 },
+    ]),
+    ancestry: weightedRandomPick(ancestryPool),
+    mbtiSelf: "未知",
+    audio: "visual",
+  };
+}
+
+function tuneRandomSheetForAncestry(profile, scores, traits) {
+  if (Math.random() > 0.42) return;
+  const setScore = (axisId, min, max) => {
+    scores[axisId] = randomRange(min, max);
+  };
+  switch (profile.ancestry) {
+    case "troll":
+      setScore("str", 3.1, 5.1);
+      scores.con = Math.max(scores.con, randomRange(5.8, 7.8));
+      break;
+    case "dragonborn":
+    case "dwarf":
+      setScore("con", 3.1, 4.6);
+      break;
+    case "elf":
+      setScore("con", 7.9, 9.4);
+      break;
+    case "halfling":
+    case "gnome":
+      setScore("con", 7.7, 9.4);
+      break;
+    case "ogre_giant":
+      setScore("str", 3.1, 5.1);
+      break;
+    case "tiefling":
+      setScore("con", 7.9, 9.4);
+      traits.self += 5;
+      traits.chaotic += 3;
+      break;
+    default:
+      if (profile.sleep === "poor") setScore("con", 3.6, 5.8);
+      break;
+  }
+}
+
+function fillRandomSheet() {
+  state.current = 0;
+  state.stage = 0;
+  state.raw = {};
+  state.mbtiProbe = null;
+  state.mbtiProbeReturnScreen = null;
+  state.personalityAnswers = 0;
+  const randomProfile = buildRandomProfile();
+  const randomTraits = buildRandomTraits();
+  const randomScores = buildRandomScores();
+  tuneRandomSheetForAncestry(randomProfile, randomScores, randomTraits);
+  state.profile = randomProfile;
+  state.traits = randomTraits;
+  state.scores = randomScores;
   state.axisStages = {};
   ATTRIBUTES.forEach((axis) => {
     state.axisStages[axis.id] = {};
     axis.stages.forEach((stage, index) => {
+      const offset = (index - (axis.stages.length - 1) / 2) * randomRange(0.18, 0.42);
       state.axisStages[axis.id][stage.id] = {
         title: stage.title,
-        score: clamp((state.scores[axis.id] || 5.2) + (index - 1) * 0.35),
+        score: clamp(getAxisScoreValue(axis.id) + offset + randomRange(-0.35, 0.35)),
         weight: stage.weight || 1,
         difficulty: stage.difficulty,
-        raw: { demo: true },
+        raw: { randomSheet: true },
+        note: `随机投点生成；血脉锚点为 ${getAncestryAnchor(state.profile).name}。`,
       };
     });
   });
-  state.traits = {
-    ...INITIAL_TRAITS,
-    I: 5,
-    N: 4,
-    T: 5,
-    J: 6,
-    lawful: 3,
-    good: 2,
-    empathy: 2,
-    order: 4,
-    control: 4,
-  };
 }
 
 function shuffle(items) {

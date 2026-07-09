@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-03T11:26:59.515322+00:00",
+  "role": "defect-card",
+  "slotCount": 11,
+  "readyCount": 11,
+  "mapping": {
+    "promptSource": "docs/缺陷卡生图提示词_精简版.md",
+    "expectedFilePattern": "assets/defect-cards/generated/{defectCardId}-preview.webp",
+    "sourceFilePattern": "assets/defect-cards/generated/{defectCardId}-source.webp",
+    "workflow": [
+      "Generate one defect card at a time.",
+      "Verify prompt injection before each generation.",
+      "Use size:auto so the 2:3 portrait canvas is inferred from the prompt.",
+      "Verify the matching task card before extraction.",
+      "Extract the web preview without printing base64 into chat context.",
+      "Save the raw web preview and a unified 2:3 cropped preview.",
+      "Mark the slot ready immediately after local file extraction.",
+      "Keep generated asset paths relative to the site root."
+    ]
+  },
+  "slots": [
+    {
+      "id": "hollow_brute",
+      "nameZh": "空壳蛮影",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/hollow_brute-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/hollow_brute-preview.webp",
+      "promptBrief": "single troll-blood adventurer with a huge frightening silhouette, dragging a cracked club too heavy to lift cleanly, green regeneration magic sealing old cracks across the skin."
+    },
+    {
+      "id": "short_breath_flame",
+      "nameZh": "短息龙焰",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/short_breath_flame-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/short_breath_flame-preview.webp",
+      "promptBrief": "single dragonborn adventurer kneeling beside a dim brazier, ember smoke leaking from the mouth instead of a full breath weapon."
+    },
+    {
+      "id": "clan_iron_debt",
+      "nameZh": "氏族铁债",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/clan_iron_debt-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/clan_iron_debt-preview.webp",
+      "promptBrief": "single dwarf heir holding an ancestral hammer across both arms, tired eyes, heavy clan runes glowing on the weapon."
+    },
+    {
+      "id": "glass_blood_grace",
+      "nameZh": "玻璃长生",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/glass_blood_grace-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/glass_blood_grace-preview.webp",
+      "promptBrief": "single elegant elf under cold moonlight, translucent silver veins like fragile glass filaments, cracked crystal goblet floating nearby."
+    },
+    {
+      "id": "overclocked_body",
+      "nameZh": "过载肉身",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/overclocked_body-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/overclocked_body-preview.webp",
+      "promptBrief": "single powerful adventurer with glowing red stamina runes cracking across armor straps, visible steam from breath and shoulders."
+    },
+    {
+      "id": "unkillable_spark",
+      "nameZh": "不灭小火",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/unkillable_spark-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/unkillable_spark-preview.webp",
+      "promptBrief": "single small halfling or gnome adventurer crouched under an oversized shield in heavy rain, tiny campfire burning impossibly bright beside them."
+    },
+    {
+      "id": "heavy_bones",
+      "nameZh": "重骨窄门",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/heavy_bones-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/heavy_bones-preview.webp",
+      "promptBrief": "single giant-blood adventurer calmly squeezing through a narrow dungeon gate, massive shoulders scraping stone."
+    },
+    {
+      "id": "pact_scar_body",
+      "nameZh": "契约伤痕",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/pact_scar_body-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/pact_scar_body-preview.webp",
+      "promptBrief": "single tiefling warlock with glowing contract scars across arms and collarbone, arcane bandages floating like binding clauses."
+    },
+    {
+      "id": "sleep_curse",
+      "nameZh": "睡眠诅咒",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/sleep_curse-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/sleep_curse-preview.webp",
+      "promptBrief": "single adventurer sitting awake beside a bedroll, shadow of a dream demon leaning over the sleeping space, blue campfire almost extinguished."
+    },
+    {
+      "id": "iron_stomach",
+      "nameZh": "铁胃迟钝",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/iron_stomach-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/iron_stomach-preview.webp",
+      "promptBrief": "single tough adventurer stepping through glowing trap runes while calmly eating from a cursed stew bowl, green magical fumes curling unnoticed."
+    },
+    {
+      "id": "old_wound_oath",
+      "nameZh": "旧伤誓言",
+      "status": "ready",
+      "file": "assets/defect-cards/generated/old_wound_oath-preview.webp",
+      "expectedFile": "assets/defect-cards/generated/old_wound_oath-preview.webp",
+      "promptBrief": "single lawful knight or veteran guard binding an old wound before marching, oath badge glowing on the cloak."
+    }
+  ],
+  "items": [
+    {
+      "id": "hollow_brute",
+      "role": "defect-card",
+      "nameZh": "空壳蛮影",
+      "file": "assets/defect-cards/generated/hollow_brute-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/hollow_brute-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single troll-blood adventurer with a huge frightening silhouette, dragging a cracked club too heavy to lift cleanly, green regeneration magic sealing old cracks across the skin, exhausted but stubborn expression, unstable strength hidden inside a monstrous body, dark dungeon parchment background, dramatic rim lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 158880,
+      "sourceBytes": 76532,
+      "generatedAt": "2026-07-03T11:04:57.706Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "short_breath_flame",
+      "role": "defect-card",
+      "nameZh": "短息龙焰",
+      "file": "assets/defect-cards/generated/short_breath_flame-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/short_breath_flame-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single dragonborn adventurer kneeling beside a dim brazier, ember smoke leaking from the mouth instead of a full breath weapon, proud posture weakened by flickering stamina sigils on the armor, ancient draconic majesty fading into fragile endurance, warm ember lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 191396,
+      "sourceBytes": 93152,
+      "generatedAt": "2026-07-03T11:09:39.461Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "clan_iron_debt",
+      "role": "defect-card",
+      "nameZh": "氏族铁债",
+      "file": "assets/defect-cards/generated/clan_iron_debt-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/clan_iron_debt-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single dwarf heir holding an ancestral hammer across both arms, tired eyes, heavy clan runes glowing on the weapon, sturdy boots planted while the shoulders are visibly burdened, family duty heavier than the body can carry, stone forge hall background, bronze and iron lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 236168,
+      "sourceBytes": 109188,
+      "generatedAt": "2026-07-03T11:10:33.366Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "glass_blood_grace",
+      "role": "defect-card",
+      "nameZh": "玻璃长生",
+      "file": "assets/defect-cards/generated/glass_blood_grace-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/glass_blood_grace-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single elegant elf under cold moonlight, translucent silver veins like fragile glass filaments, graceful robe, calm distant expression, cracked crystal goblet floating nearby, long life preserved in brittle beauty, moonlit ancient garden background, blue silver lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 144180,
+      "sourceBytes": 68704,
+      "generatedAt": "2026-07-03T11:11:26.885Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "overclocked_body",
+      "role": "defect-card",
+      "nameZh": "过载肉身",
+      "file": "assets/defect-cards/generated/overclocked_body-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/overclocked_body-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single powerful adventurer with glowing red stamina runes cracking across armor straps, raised weapon still terrifying, visible steam from breath and shoulders, explosive strength overloading fragile endurance, scorched training yard background, orange firelight and dark teal shadows. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 234458,
+      "sourceBytes": 143358,
+      "generatedAt": "2026-07-03T11:14:44.380Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "unkillable_spark",
+      "role": "defect-card",
+      "nameZh": "不灭小火",
+      "file": "assets/defect-cards/generated/unkillable_spark-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/unkillable_spark-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single small halfling or gnome adventurer crouched under an oversized shield in heavy rain, tiny campfire burning impossibly bright beside them, determined smile, small body with stubborn monster-grade endurance, wet forest camp background, warm fire against cool rain lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 203684,
+      "sourceBytes": 91938,
+      "generatedAt": "2026-07-03T11:18:38.340Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "heavy_bones",
+      "role": "defect-card",
+      "nameZh": "重骨窄门",
+      "file": "assets/defect-cards/generated/heavy_bones-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/heavy_bones-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single giant-blood adventurer calmly squeezing through a narrow dungeon gate, massive shoulders scraping stone, heavy supplies carried without strain, enormous endurance limited by cramped architecture, ancient dungeon doorway background, stone dust and gold rim lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 189662,
+      "sourceBytes": 80366,
+      "generatedAt": "2026-07-03T11:21:59.334Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "pact_scar_body",
+      "role": "defect-card",
+      "nameZh": "契约伤痕",
+      "file": "assets/defect-cards/generated/pact_scar_body-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/pact_scar_body-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single tiefling warlock with glowing contract scars across arms and collarbone, arcane bandages floating like binding clauses, controlled and dangerous expression, endurance borrowed from an infernal pact with a visible cost, dark ritual chamber background, magenta and sickly gold lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 151090,
+      "sourceBytes": 103494,
+      "generatedAt": "2026-07-03T11:22:52.382Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "sleep_curse",
+      "role": "defect-card",
+      "nameZh": "睡眠诅咒",
+      "file": "assets/defect-cards/generated/sleep_curse-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/sleep_curse-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single adventurer sitting awake beside a bedroll, shadow of a dream demon leaning over the sleeping space, blue campfire almost extinguished, tired eyes with a weapon within reach, recovery stolen by a nightmare curse, lonely night campsite background, cold blue lighting with faint amber sparks. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 144258,
+      "sourceBytes": 61088,
+      "generatedAt": "2026-07-03T11:23:29.799Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "iron_stomach",
+      "role": "defect-card",
+      "nameZh": "铁胃迟钝",
+      "file": "assets/defect-cards/generated/iron_stomach-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/iron_stomach-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single tough adventurer stepping through glowing trap runes while calmly eating from a cursed stew bowl, green magical fumes curling unnoticed, scratched armor but relaxed expression, body almost indestructible while danger sense is painfully dull, dungeon tavern kitchen doorway background, moody green and warm candle lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 190624,
+      "sourceBytes": 83538,
+      "generatedAt": "2026-07-03T11:24:06.408Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    },
+    {
+      "id": "old_wound_oath",
+      "role": "defect-card",
+      "nameZh": "旧伤誓言",
+      "file": "assets/defect-cards/generated/old_wound_oath-preview.webp",
+      "sourceFile": "assets/defect-cards/generated/old_wound_oath-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy defect card illustration, portrait-orientation 2:3 canvas, tall vertical tarot card image, full card visible from top to bottom, cohesive defect-card series, ornate dark bronze tarot border, dark parchment background, subtle arcane frame, single centered subject, cinematic tabletop RPG character concept art, dramatic but clean lighting, clear readable silhouette. Single lawful knight or veteran guard binding an old wound before marching, oath badge glowing on the cloak, armor carefully maintained, tired body held upright by discipline and promise, duty continuing through limited endurance, dawn barracks background, solemn gold and gray lighting. No text, no watermark, no logo, no signature, no extra people, no crowd, no gore, no explicit injury, no severed limb, no body shaming, no medical chart, no modern hospital, no modern clothes, no sci-fi interface, no low quality, no blurry image, no bad anatomy, no cropped face, no cluttered background, no square image, no 1:1 canvas, no horizontal layout.",
+      "requestedSize": "auto",
+      "targetCanvas": "portrait 2:3",
+      "previewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 720
+      },
+      "reportedOriginalSize": "1024x1024 source, cropped to 2:3 preview",
+      "format": "webp",
+      "bytes": 169610,
+      "sourceBytes": 74100,
+      "generatedAt": "2026-07-03T11:24:52.647Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; the square web preview was center-cropped into a 2:3 card preview."
+      }
+    }
+  ]
+}
