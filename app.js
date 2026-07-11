@@ -1575,7 +1575,12 @@ function getEndingArt(endingType) {
   const raceValue = RACE_RECRUITMENT_ASSETS.endings?.[raceId]?.[endingType];
   if (typeof raceValue === "string") return raceValue;
   if (raceValue?.file) return raceValue.file;
-  if (raceId !== "troll") return getRecruitmentUiArt("verdict");
+  if (raceId !== "troll") {
+    const guildValue = RACE_RECRUITMENT_ASSETS.endings?.guild?.[endingType];
+    if (typeof guildValue === "string") return guildValue;
+    if (guildValue?.file) return guildValue.file;
+    return getRecruitmentUiArt("verdict");
+  }
   const value = RACE_RECRUITMENT_ASSETS.endings?.troll?.[endingType];
   if (typeof value === "string") return value;
   return value?.file || getRecruitmentAssetPath(`troll_ending_${endingType}`) || getRecruitmentUiArt("verdict");

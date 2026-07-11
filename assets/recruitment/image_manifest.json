@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T13:14:55.509Z",
+  "updatedAt": "2026-07-11T06:43:10.267Z",
   "role": "race-recruitment-assets",
   "baseDir": "assets/recruitment/generated",
-  "slotCount": 29,
-  "readyCount": 29,
+  "slotCount": 66,
+  "readyCount": 66,
   "slots": [
     {
       "id": "ui_home_recruitment_hall",
@@ -440,6 +440,561 @@
       "expectedFile": "assets/recruitment/generated/troll_ending_absurdAccepted-preview.webp",
       "ratio": "16:9",
       "promptBrief": "absurd trial success in chaotic guild office"
+    },
+    {
+      "id": "race_human_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_human_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_fighter-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_human_target_fighter-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "human recruit at the fighter training hall"
+    },
+    {
+      "id": "race_human_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_human_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_bard-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_human_target_bard-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "human recruit at the bard liaison office"
+    },
+    {
+      "id": "race_human_target_artificer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_artificer",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_human_target_artificer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_artificer-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_human_target_artificer-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "human recruit at the artificer workshop"
+    },
+    {
+      "id": "race_human_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_human_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_paladin-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_human_target_paladin-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "human recruit at the paladin oath hall"
+    },
+    {
+      "id": "race_elf_target_ranger",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_ranger",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_elf_target_ranger-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_ranger-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_elf_target_ranger-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "elf recruit at the ranger border station"
+    },
+    {
+      "id": "race_elf_target_wizard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_wizard",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_elf_target_wizard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_wizard-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_elf_target_wizard-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "elf recruit at the wizard archive"
+    },
+    {
+      "id": "race_elf_target_druid",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_druid",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_elf_target_druid-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_druid-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_elf_target_druid-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "elf recruit at the druid advisory circle"
+    },
+    {
+      "id": "race_elf_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_elf_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_rogue-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_elf_target_rogue-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "elf recruit at the rogue scout office"
+    },
+    {
+      "id": "race_dwarf_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dwarf_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_fighter-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dwarf_target_fighter-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dwarf recruit at the fighter training hall"
+    },
+    {
+      "id": "race_dwarf_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dwarf_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_paladin-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dwarf_target_paladin-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dwarf recruit at the paladin oath hall"
+    },
+    {
+      "id": "race_dwarf_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dwarf_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_cleric-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dwarf_target_cleric-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dwarf recruit at the cleric field ward"
+    },
+    {
+      "id": "race_dwarf_target_artificer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_artificer",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dwarf_target_artificer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_artificer-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dwarf_target_artificer-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dwarf recruit at the artificer workshop"
+    },
+    {
+      "id": "race_halfling_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_halfling_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_rogue-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_halfling_target_rogue-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "halfling recruit at the rogue scout office"
+    },
+    {
+      "id": "race_halfling_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_halfling_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_bard-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_halfling_target_bard-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "halfling recruit at the bard liaison office"
+    },
+    {
+      "id": "race_halfling_target_ranger",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_ranger",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_halfling_target_ranger-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_ranger-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_halfling_target_ranger-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "halfling recruit at the ranger border station"
+    },
+    {
+      "id": "race_halfling_target_warlock",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_warlock",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_halfling_target_warlock-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_warlock-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_halfling_target_warlock-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "halfling recruit at the warlock contract archive"
+    },
+    {
+      "id": "race_half_orc_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_half_orc_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_barbarian-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_half_orc_target_barbarian-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "half-orc recruit at the barbarian breach camp"
+    },
+    {
+      "id": "race_half_orc_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_half_orc_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_fighter-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_half_orc_target_fighter-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "half-orc recruit at the fighter training hall"
+    },
+    {
+      "id": "race_half_orc_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_half_orc_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_rogue-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_half_orc_target_rogue-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "half-orc recruit at the rogue scout office"
+    },
+    {
+      "id": "race_half_orc_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_half_orc_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_cleric-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_half_orc_target_cleric-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "half-orc recruit at the cleric field ward"
+    },
+    {
+      "id": "race_tiefling_target_warlock",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_warlock",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_tiefling_target_warlock-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_warlock-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_tiefling_target_warlock-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "tiefling recruit at the warlock contract archive"
+    },
+    {
+      "id": "race_tiefling_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_tiefling_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_rogue-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_tiefling_target_rogue-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "tiefling recruit at the rogue scout office"
+    },
+    {
+      "id": "race_tiefling_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_tiefling_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_bard-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_tiefling_target_bard-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "tiefling recruit at the bard liaison office"
+    },
+    {
+      "id": "race_tiefling_target_sorcerer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_sorcerer",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_tiefling_target_sorcerer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_sorcerer-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_tiefling_target_sorcerer-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "tiefling recruit at the sorcerer bloodline hall"
+    },
+    {
+      "id": "race_dragonborn_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dragonborn_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_paladin-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dragonborn_target_paladin-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dragonborn recruit at the paladin oath hall"
+    },
+    {
+      "id": "race_dragonborn_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dragonborn_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_fighter-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dragonborn_target_fighter-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dragonborn recruit at the fighter training hall"
+    },
+    {
+      "id": "race_dragonborn_target_sorcerer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_sorcerer",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dragonborn_target_sorcerer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_sorcerer-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dragonborn_target_sorcerer-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dragonborn recruit at the sorcerer bloodline hall"
+    },
+    {
+      "id": "race_dragonborn_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_dragonborn_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_barbarian-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_dragonborn_target_barbarian-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "dragonborn recruit at the barbarian breach camp"
+    },
+    {
+      "id": "race_ogre_giant_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_barbarian-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_ogre_giant_target_barbarian-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "ogre or giant-blood recruit at the barbarian breach camp"
+    },
+    {
+      "id": "race_ogre_giant_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_fighter-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_ogre_giant_target_fighter-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "ogre or giant-blood recruit at the fighter training hall"
+    },
+    {
+      "id": "race_ogre_giant_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_cleric-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_ogre_giant_target_cleric-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "ogre or giant-blood recruit at the cleric field ward"
+    },
+    {
+      "id": "race_ogre_giant_target_druid",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_druid",
+      "questionId": "",
+      "endingType": "",
+      "status": "ready",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_druid-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_druid-source.webp",
+      "expectedFile": "assets/recruitment/generated/race_ogre_giant_target_druid-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "ogre or giant-blood recruit at the druid advisory circle"
+    },
+    {
+      "id": "guild_ending_accepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "accepted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/guild_ending_accepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_accepted-source.webp",
+      "expectedFile": "assets/recruitment/generated/guild_ending_accepted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "formal guild acceptance verdict"
+    },
+    {
+      "id": "guild_ending_probation",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "probation",
+      "status": "ready",
+      "file": "assets/recruitment/generated/guild_ending_probation-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_probation-source.webp",
+      "expectedFile": "assets/recruitment/generated/guild_ending_probation-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild probation verdict"
+    },
+    {
+      "id": "guild_ending_transferred",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "transferred",
+      "status": "ready",
+      "file": "assets/recruitment/generated/guild_ending_transferred-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_transferred-source.webp",
+      "expectedFile": "assets/recruitment/generated/guild_ending_transferred-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild transfer verdict"
+    },
+    {
+      "id": "guild_ending_blacklisted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "blacklisted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/guild_ending_blacklisted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_blacklisted-source.webp",
+      "expectedFile": "assets/recruitment/generated/guild_ending_blacklisted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "guild blacklist verdict"
+    },
+    {
+      "id": "guild_ending_absurdAccepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "absurdAccepted",
+      "status": "ready",
+      "file": "assets/recruitment/generated/guild_ending_absurdAccepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_absurdAccepted-source.webp",
+      "expectedFile": "assets/recruitment/generated/guild_ending_absurdAccepted-preview.webp",
+      "ratio": "16:9",
+      "promptBrief": "absurd guild acceptance verdict"
     }
   ],
   "items": [
@@ -1311,6 +1866,1116 @@
       "review": {
         "status": "ready",
         "note": "Prompt injection and matching task card were verified; source preview was resized to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_human_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_human_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_fighter-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: green travel cloak and mixed adventuring kit shield wall yard and rain-dark weapon racks. Scene: An adaptable adult human recruit wearing a practical deep-green travel cloak, layered brown leather, a mixed field kit and a plain guild token; grounded proportions and an alert pragmatic expression. The recruit is being evaluated inside a disciplined shield-wall training yard with rain-dark weapon racks, black iron shields, tactical sand tables and blue-gray military light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 221442,
+      "sourceBytes": 60012,
+      "generatedAt": "2026-07-11T04:57:22.117Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_human_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_human_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_bard-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: green travel cloak and mixed adventuring kit sealed dispatches instruments and burgundy banners. Scene: An adaptable adult human recruit wearing a practical deep-green travel cloak, layered brown leather, a mixed field kit and a plain guild token; grounded proportions and an alert pragmatic expression. The recruit is being evaluated inside a guild liaison and morale office with sealed dispatches, regional maps, practical instruments, burgundy banners and a negotiation table. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 176974,
+      "sourceBytes": 55028,
+      "generatedAt": "2026-07-11T05:01:12.241Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_human_target_artificer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_artificer",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_human_target_artificer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_artificer-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: green travel cloak and mixed adventuring kit brass gears alchemy bench and teal sparks. Scene: An adaptable adult human recruit wearing a practical deep-green travel cloak, layered brown leather, a mixed field kit and a plain guild token; grounded proportions and an alert pragmatic expression. The recruit is being evaluated inside a crowded but readable artificer workshop with brass gears, alchemy bench, half-built field devices, ochre forge light and restrained teal sparks. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 245234,
+      "sourceBytes": 66936,
+      "generatedAt": "2026-07-11T05:07:13.961Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_human_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "human",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_human_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_human_target_paladin-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: green travel cloak and mixed adventuring kit oath shields candle aisle and blue gold light. Scene: An adaptable adult human recruit wearing a practical deep-green travel cloak, layered brown leather, a mixed field kit and a plain guild token; grounded proportions and an alert pragmatic expression. The recruit is being evaluated inside a solemn oath review hall with upright shields, witness benches, a candle aisle, blue-and-gold heraldry and an open ceremonial ledger. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 235752,
+      "sourceBytes": 64204,
+      "generatedAt": "2026-07-11T05:11:53.912Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_elf_target_ranger",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_ranger",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_elf_target_ranger-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_ranger-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: silver green leaf armor and moonlit profile tracking maps bow racks and wet pine doorway. Scene: A tall slender adult elf recruit with clearly pointed ears, silver-green leaf-pattern armor, pale moonlit fabric and restrained ancient elegance; precise posture and long-lived calm. The recruit is being evaluated inside a frontier ranger station with tracking maps, bow racks, weathered trail markers, hanging herbs and an open doorway onto wet pine forest. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 0,
+        "height": 0
+      },
+      "format": "webp",
+      "bytes": 298226,
+      "sourceBytes": 55722,
+      "generatedAt": "2026-07-11T05:24:25.068Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_elf_target_wizard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_wizard",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_elf_target_wizard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_wizard-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: silver green leaf armor and moonlit profile rune folios astrolabe and cold blue lamplight. Scene: A tall slender adult elf recruit with clearly pointed ears, silver-green leaf-pattern armor, pale moonlit fabric and restrained ancient elegance; precise posture and long-lived calm. The recruit is being evaluated inside a wizard tower archive with rune folios, astrolabe, stacked spell cases, chalk geometry and controlled cold blue lamplight. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 233844,
+      "sourceBytes": 58208,
+      "generatedAt": "2026-07-11T05:30:07.542Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_elf_target_druid",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_druid",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_elf_target_druid-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_druid-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: silver green leaf armor and moonlit profile living roots herb tables and green gold mist. Scene: A tall slender adult elf recruit with clearly pointed ears, silver-green leaf-pattern armor, pale moonlit fabric and restrained ancient elegance; precise posture and long-lived calm. The recruit is being evaluated inside a natural advisory courtyard where living roots cross stone, herb tables surround a seasonal map and green-gold mist filters through antler charms. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 217206,
+      "sourceBytes": 71558,
+      "generatedAt": "2026-07-11T05:37:23.339Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_elf_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "elf",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_elf_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_elf_target_rogue-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: silver green leaf armor and moonlit profile lock bench shadow routes and amber slit light. Scene: A tall slender adult elf recruit with clearly pointed ears, silver-green leaf-pattern armor, pale moonlit fabric and restrained ancient elegance; precise posture and long-lived calm. The recruit is being evaluated inside a scout and mechanisms office with a lock-testing bench, pinned shadow routes, rope tools, false doors and narrow amber slit light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 165850,
+      "sourceBytes": 55566,
+      "generatedAt": "2026-07-11T05:42:19.611Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dwarf_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dwarf_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_fighter-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: braided beard and glowing clan runes shield wall yard and rain-dark weapon racks. Scene: A short broad adult dwarf recruit with a heavy braided beard, forge-black plate, thick boots, a compact center of gravity and glowing clan runes worked into metal tools. The recruit is being evaluated inside a disciplined shield-wall training yard with rain-dark weapon racks, black iron shields, tactical sand tables and blue-gray military light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 234280,
+      "sourceBytes": 61538,
+      "generatedAt": "2026-07-11T05:45:31.286Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dwarf_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dwarf_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_paladin-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: braided beard and glowing clan runes oath shields candle aisle and blue gold light. Scene: A short broad adult dwarf recruit with a heavy braided beard, forge-black plate, thick boots, a compact center of gravity and glowing clan runes worked into metal tools. The recruit is being evaluated inside a solemn oath review hall with upright shields, witness benches, a candle aisle, blue-and-gold heraldry and an open ceremonial ledger. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 238890,
+      "sourceBytes": 71352,
+      "generatedAt": "2026-07-11T05:46:26.612Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dwarf_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dwarf_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_cleric-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: braided beard and glowing clan runes field cots holy symbols and amber cyan lanterns. Scene: A short broad adult dwarf recruit with a heavy braided beard, forge-black plate, thick boots, a compact center of gravity and glowing clan runes worked into metal tools. The recruit is being evaluated inside a field medical ward with sturdy cots, holy symbols, herb cabinets, wash basins and amber-cyan lanterns prepared for battlefield triage. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 209968,
+      "sourceBytes": 60874,
+      "generatedAt": "2026-07-11T05:47:29.997Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dwarf_target_artificer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dwarf",
+      "targetId": "guild_artificer",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dwarf_target_artificer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dwarf_target_artificer-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: braided beard and glowing clan runes brass gears alchemy bench and teal sparks. Scene: A short broad adult dwarf recruit with a heavy braided beard, forge-black plate, thick boots, a compact center of gravity and glowing clan runes worked into metal tools. The recruit is being evaluated inside a crowded but readable artificer workshop with brass gears, alchemy bench, half-built field devices, ochre forge light and restrained teal sparks. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 182190,
+      "sourceBytes": 58010,
+      "generatedAt": "2026-07-11T05:48:41.357Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_halfling_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_halfling_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_rogue-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: russet cloak lucky charm and low eye line lock bench shadow routes and amber slit light. Scene: A small middle-aged adult halfling recruit with a weathered mature face, visible age lines, adult facial proportions, russet traveling cloak, lucky charm, compact cooking kit and a noticeably low eye line against oversized guild furniture. The recruit is being evaluated inside a scout and mechanisms office with a lock-testing bench, pinned shadow routes, rope tools, false doors and narrow amber slit light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 186968,
+      "sourceBytes": 55000,
+      "generatedAt": "2026-07-11T06:01:31.178Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_halfling_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_halfling_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_bard-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: russet cloak lucky charm and low eye line sealed dispatches instruments and burgundy banners. Scene: A small adult halfling recruit with adult facial proportions, russet traveling cloak, lucky charm, compact cooking kit and a noticeably low eye line against oversized guild furniture. The recruit is being evaluated inside a guild liaison and morale office with sealed dispatches, regional maps, practical instruments, burgundy banners and a negotiation table. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 202822,
+      "sourceBytes": 60588,
+      "generatedAt": "2026-07-11T05:53:12.844Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_halfling_target_ranger",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_ranger",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_halfling_target_ranger-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_ranger-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: russet cloak lucky charm and low eye line tracking maps bow racks and wet pine doorway. Scene: A small adult halfling recruit with adult facial proportions, russet traveling cloak, lucky charm, compact cooking kit and a noticeably low eye line against oversized guild furniture. The recruit is being evaluated inside a frontier ranger station with tracking maps, bow racks, weathered trail markers, hanging herbs and an open doorway onto wet pine forest. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 230004,
+      "sourceBytes": 58160,
+      "generatedAt": "2026-07-11T05:54:24.240Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_halfling_target_warlock",
+      "role": "target",
+      "group": "targets",
+      "raceId": "halfling",
+      "targetId": "guild_warlock",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_halfling_target_warlock-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_halfling_target_warlock-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: russet cloak lucky charm and low eye line black parchment wax seals and violet crimson cellar. Scene: A small adult halfling recruit with adult facial proportions, russet traveling cloak, lucky charm, compact cooking kit and a noticeably low eye line against oversized guild furniture. The recruit is being evaluated inside an abnormal contract archive with black parchment, wax seals, chained folios, a cautious witness desk and controlled violet-crimson cellar light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 215360,
+      "sourceBytes": 61742,
+      "generatedAt": "2026-07-11T05:56:56.069Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_half_orc_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_half_orc_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_barbarian-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: cracked tusk and frontier weapon harness battering ram breach gate and red fire banners. Scene: A powerful adult half-orc recruit with olive-gray skin, one cracked tusk, practical frontier weapon harness, resilient scars without gore and a direct disciplined stance. The recruit is being evaluated inside a breach-vanguard camp with a battered practice gate, compact battering ram, split training posts, red fire banners and blackened iron tools. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 227306,
+      "sourceBytes": 63640,
+      "generatedAt": "2026-07-11T06:03:13.085Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_half_orc_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_half_orc_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_fighter-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: cracked tusk and frontier weapon harness shield wall yard and rain-dark weapon racks. Scene: A powerful adult half-orc recruit with olive-gray skin, one cracked tusk, practical frontier weapon harness, resilient scars without gore and a direct disciplined stance. The recruit is being evaluated inside a disciplined shield-wall training yard with rain-dark weapon racks, black iron shields, tactical sand tables and blue-gray military light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 238642,
+      "sourceBytes": 65976,
+      "generatedAt": "2026-07-11T06:04:24.471Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_half_orc_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_half_orc_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_rogue-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: cracked tusk and frontier weapon harness lock bench shadow routes and amber slit light. Scene: A powerful adult half-orc recruit with olive-gray skin, one cracked tusk, practical frontier weapon harness, resilient scars without gore and a direct disciplined stance. The recruit is being evaluated inside a scout and mechanisms office with a lock-testing bench, pinned shadow routes, rope tools, false doors and narrow amber slit light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 286496,
+      "sourceBytes": 65836,
+      "generatedAt": "2026-07-11T06:05:28.342Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_half_orc_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "half_orc",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_half_orc_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_half_orc_target_cleric-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: cracked tusk and frontier weapon harness field cots holy symbols and amber cyan lanterns. Scene: A powerful adult half-orc recruit with olive-gray skin, one cracked tusk, practical frontier weapon harness, resilient scars without gore and a direct disciplined stance. The recruit is being evaluated inside a field medical ward with sturdy cots, holy symbols, herb cabinets, wash basins and amber-cyan lanterns prepared for battlefield triage. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 268212,
+      "sourceBytes": 67762,
+      "generatedAt": "2026-07-11T06:07:59.963Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_tiefling_target_warlock",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_warlock",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_tiefling_target_warlock-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_warlock-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: swept horns ember marks and tailored dark leather black parchment wax seals and violet crimson cellar. Scene: An adult tiefling recruit with swept horns, ember-red skin, subtle glowing infernal markings and tailored dark leather; proud controlled posture, never oversexualized. The recruit is being evaluated inside an abnormal contract archive with black parchment, wax seals, chained folios, a cautious witness desk and controlled violet-crimson cellar light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 286576,
+      "sourceBytes": 59958,
+      "generatedAt": "2026-07-11T06:09:52.009Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_tiefling_target_rogue",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_rogue",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_tiefling_target_rogue-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_rogue-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: swept horns ember marks and tailored dark leather lock bench shadow routes and amber slit light. Scene: An adult tiefling recruit with swept horns, ember-red skin, subtle glowing infernal markings and tailored dark leather; proud controlled posture, never oversexualized. The recruit is being evaluated inside a scout and mechanisms office with a lock-testing bench, pinned shadow routes, rope tools, false doors and narrow amber slit light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 173812,
+      "sourceBytes": 49706,
+      "generatedAt": "2026-07-11T06:11:03.317Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_tiefling_target_bard",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_bard",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_tiefling_target_bard-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_bard-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: swept horns ember marks and tailored dark leather sealed dispatches instruments and burgundy banners. Scene: An adult tiefling recruit with swept horns, ember-red skin, subtle glowing infernal markings and tailored dark leather; proud controlled posture, never oversexualized. The recruit is being evaluated inside a guild liaison and morale office with sealed dispatches, regional maps, practical instruments, burgundy banners and a negotiation table. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 242926,
+      "sourceBytes": 60374,
+      "generatedAt": "2026-07-11T06:12:14.691Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_tiefling_target_sorcerer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "tiefling",
+      "targetId": "guild_sorcerer",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_tiefling_target_sorcerer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_tiefling_target_sorcerer-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: swept horns ember marks and tailored dark leather bloodline mirrors floating embers and crimson violet arcs. Scene: An adult tiefling recruit with swept horns, ember-red skin, subtle glowing infernal markings and tailored dark leather; proud controlled posture, never oversexualized. The recruit is being evaluated inside a bloodline magic hall with ancestry mirrors, scorched practice rings, floating embers and unstable but contained crimson-violet spell arcs. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 223652,
+      "sourceBytes": 55486,
+      "generatedAt": "2026-07-11T06:13:34.102Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dragonborn_target_paladin",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_paladin",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dragonborn_target_paladin-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_paladin-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: bronze scales clan tabard and breath glow oath shields candle aisle and blue gold light. Scene: An adult dragonborn recruit with an unmistakable draconic head, bronze-crimson scales, clan tabard, heavy clawed hands and a faint elemental breath glow; ceremonial dignity. The recruit is being evaluated inside a solemn oath review hall with upright shields, witness benches, a candle aisle, blue-and-gold heraldry and an open ceremonial ledger. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 222610,
+      "sourceBytes": 65012,
+      "generatedAt": "2026-07-11T06:18:56.311Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dragonborn_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dragonborn_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_fighter-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: bronze scales clan tabard and breath glow shield wall yard and rain-dark weapon racks. Scene: An adult dragonborn recruit with an unmistakable draconic head, bronze-crimson scales, clan tabard, heavy clawed hands and a faint elemental breath glow; ceremonial dignity. The recruit is being evaluated inside a disciplined shield-wall training yard with rain-dark weapon racks, black iron shields, tactical sand tables and blue-gray military light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 286362,
+      "sourceBytes": 68320,
+      "generatedAt": "2026-07-11T06:20:23.794Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dragonborn_target_sorcerer",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_sorcerer",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dragonborn_target_sorcerer-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_sorcerer-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: bronze scales clan tabard and breath glow bloodline mirrors floating embers and crimson violet arcs. Scene: An adult dragonborn recruit with an unmistakable draconic head, bronze-crimson scales, clan tabard, heavy clawed hands and a faint elemental breath glow; ceremonial dignity. The recruit is being evaluated inside a bloodline magic hall with ancestry mirrors, scorched practice rings, floating embers and unstable but contained crimson-violet spell arcs. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 249900,
+      "sourceBytes": 76470,
+      "generatedAt": "2026-07-11T06:21:43.179Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_dragonborn_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "dragonborn",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_dragonborn_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_dragonborn_target_barbarian-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: bronze scales clan tabard and breath glow battering ram breach gate and red fire banners. Scene: An adult dragonborn recruit with an unmistakable draconic head, bronze-crimson scales, clan tabard, heavy clawed hands and a faint elemental breath glow; ceremonial dignity. The recruit is being evaluated inside a breach-vanguard camp with a battered practice gate, compact battering ram, split training posts, red fire banners and blackened iron tools. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 254564,
+      "sourceBytes": 64890,
+      "generatedAt": "2026-07-11T06:25:26.948Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_ogre_giant_target_barbarian",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_barbarian",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_barbarian-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_barbarian-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: towering frame heavy pack and undersized doorway battering ram breach gate and red fire banners. Scene: A towering adult ogre-blood or giant-blood recruit with massive shoulders, weathered heavy pack, thick worn leather and obvious scale contrast against undersized guild doors and furniture; imposing but intelligent. The recruit is being evaluated inside a breach-vanguard camp with a battered practice gate, compact battering ram, split training posts, red fire banners and blackened iron tools. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 221746,
+      "sourceBytes": 62274,
+      "generatedAt": "2026-07-11T06:31:01.484Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_ogre_giant_target_fighter",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_fighter",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_fighter-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_fighter-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: towering frame heavy pack and undersized doorway shield wall yard and rain-dark weapon racks. Scene: A towering adult ogre-blood or giant-blood recruit with massive shoulders, weathered heavy pack, thick worn leather and obvious scale contrast against undersized guild doors and furniture; imposing but intelligent. The recruit is being evaluated inside a disciplined shield-wall training yard with rain-dark weapon racks, black iron shields, tactical sand tables and blue-gray military light. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 229146,
+      "sourceBytes": 61958,
+      "generatedAt": "2026-07-11T06:32:04.872Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_ogre_giant_target_cleric",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_cleric",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_cleric-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_cleric-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: towering frame heavy pack and undersized doorway field cots holy symbols and amber cyan lanterns. Scene: A towering adult ogre-blood or giant-blood recruit with massive shoulders, weathered heavy pack, thick worn leather and obvious scale contrast against undersized guild doors and furniture; imposing but intelligent. The recruit is being evaluated inside a field medical ward with sturdy cots, holy symbols, herb cabinets, wash basins and amber-cyan lanterns prepared for battlefield triage. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 250006,
+      "sourceBytes": 59724,
+      "generatedAt": "2026-07-11T06:34:20.396Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "race_ogre_giant_target_druid",
+      "role": "target",
+      "group": "targets",
+      "raceId": "ogre_giant",
+      "targetId": "guild_druid",
+      "questionId": "",
+      "endingType": "",
+      "file": "assets/recruitment/generated/race_ogre_giant_target_druid-preview.webp",
+      "sourceFile": "assets/recruitment/generated/race_ogre_giant_target_druid-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first medium-wide scene, one recruit occupying no more than one third of the frame, visible guild architecture and profession tools, subtle dark bronze ornamental edge treatment, dark parchment and black iron texture, low-saturation cinematic painterly realism, dramatic torchlight, clear silhouette, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: towering frame heavy pack and undersized doorway living roots herb tables and green gold mist. Scene: A towering adult ogre-blood or giant-blood recruit with massive shoulders, weathered heavy pack, thick worn leather and obvious scale contrast against undersized guild doors and furniture; imposing but intelligent. The recruit is being evaluated inside a natural advisory courtyard where living roots cross stone, herb tables surround a seasonal map and green-gold mist filters through antler charms. Composition: horizontal 16:9 guild dossier card, environment occupies at least two thirds of the image, medium-wide view, the recruit remains off-center and never exceeds one third of the frame, profession tools and architecture are clearly readable, safe margins for UI cropping. Mood: immersive, serious, tactile dark fantasy; preserve the race's culture and physical scale rather than using a generic human silhouette. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 257124,
+      "sourceBytes": 67576,
+      "generatedAt": "2026-07-11T06:35:23.745Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "guild_ending_accepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "accepted",
+      "file": "assets/recruitment/generated/guild_ending_accepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_accepted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild verdict dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first scene, stamped parchment and black iron bureaucracy props, subtle dark bronze ornamental edge treatment, low-saturation cinematic painterly realism, dramatic overhead candlelight, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: gold wax acceptance seal and open guild gate. Scene: A formal fantasy guild verdict desk with an approved parchment, gold wax seal, iron badge and an open gate toward a torchlit expedition courtyard; diverse recruit silhouettes remain small in the distance. Composition: 16:9 environment-first verdict card, strong central document and safe margins. Mood: earned formal acceptance, restrained triumph. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 279138,
+      "sourceBytes": 68760,
+      "generatedAt": "2026-07-11T06:37:12.626Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "guild_ending_probation",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "probation",
+      "file": "assets/recruitment/generated/guild_ending_probation-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_probation-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild verdict dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first scene, stamped parchment and black iron bureaucracy props, subtle dark bronze ornamental edge treatment, low-saturation cinematic painterly realism, dramatic overhead candlelight, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: temporary iron tag and amber observation ledger. Scene: A cautious guild clerk issues a temporary iron tag beside an amber observation ledger, stacked trial reports and a half-open side gate. Composition: 16:9 environment-first verdict card, bureaucracy props dominate, small recruit silhouette, safe margins. Mood: conditional opportunity under scrutiny. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 229416,
+      "sourceBytes": 58296,
+      "generatedAt": "2026-07-11T06:38:23.991Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "guild_ending_transferred",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "transferred",
+      "file": "assets/recruitment/generated/guild_ending_transferred-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_transferred-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild verdict dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first scene, stamped parchment and black iron bureaucracy props, subtle dark bronze ornamental edge treatment, low-saturation cinematic painterly realism, dramatic overhead candlelight, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: crossed route ribbons and redirected sealed dossier. Scene: A fantasy recruitment officer slides a sealed dossier from one guild emblem toward another across a route map, with two differently lit corridors beyond. Composition: 16:9 environment-first verdict card, strong diagonal transfer motion, no readable text, safe margins. Mood: surprising but constructive redirection. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 219180,
+      "sourceBytes": 66264,
+      "generatedAt": "2026-07-11T06:39:35.398Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "guild_ending_blacklisted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "blacklisted",
+      "file": "assets/recruitment/generated/guild_ending_blacklisted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_blacklisted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild verdict dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first scene, stamped parchment and black iron bureaucracy props, subtle dark bronze ornamental edge treatment, low-saturation cinematic painterly realism, dramatic overhead candlelight, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: black wax refusal seal and barred archive drawer. Scene: A dark guild ledger is locked into an iron archive drawer with a black wax seal while a distant recruit silhouette exits toward a rain-dark alley; no punishment or violence. Composition: 16:9 environment-first verdict card, ledger foreground, safe margins. Mood: ominous refusal with future underground possibilities. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 229728,
+      "sourceBytes": 50172,
+      "generatedAt": "2026-07-11T06:40:46.759Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
+      }
+    },
+    {
+      "id": "guild_ending_absurdAccepted",
+      "role": "ending",
+      "group": "endings",
+      "raceId": "guild",
+      "targetId": "",
+      "questionId": "",
+      "endingType": "absurdAccepted",
+      "file": "assets/recruitment/generated/guild_ending_absurdAccepted-preview.webp",
+      "sourceFile": "assets/recruitment/generated/guild_ending_absurdAccepted-source.webp",
+      "source": "https://img.codexbuy.com/",
+      "prompt": "DND fantasy guild verdict dossier card illustration, horizontal 16:9 canvas, cohesive recruitment card series, environment-first scene, stamped parchment and black iron bureaucracy props, subtle dark bronze ornamental edge treatment, low-saturation cinematic painterly realism, dramatic overhead candlelight, grounded western dark fantasy, professional tabletop RPG concept art. Visual anchor: crooked approval stamp and exhausted guild clerks. Scene: A chaotic but grounded fantasy guild office where an improbable trial result has been approved, crooked wax stamp, displaced equipment, exhausted clerks and one small triumphant recruit silhouette. Composition: 16:9 environment-first verdict card, readable controlled clutter, safe margins. Mood: dry black-humor victory, never slapstick. No text, no watermark, no logo, no readable letters, no UI overlay, no close-up portrait, no character filling the frame, no child, no teenager, no childlike face, no generic empty background, no modern equipment, no sci-fi technology, no neon cyberpunk, no anime, no chibi, no cartoon mascot, no oversexualized outfit, no explicit gore, no blurry image, no low quality, no extra limbs, no distorted hands, no duplicate main character.",
+      "ratio": "16:9",
+      "previewSize": {
+        "width": 1536,
+        "height": 864
+      },
+      "sourcePreviewSize": {
+        "width": 720,
+        "height": 405
+      },
+      "format": "webp",
+      "bytes": 265920,
+      "sourceBytes": 79636,
+      "generatedAt": "2026-07-11T06:43:10.268Z",
+      "review": {
+        "status": "ready",
+        "note": "Prompt injection and matching task card were verified; source preview was cropped to the documented UI ratio."
       }
     }
   ]
