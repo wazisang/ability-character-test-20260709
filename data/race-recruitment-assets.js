@@ -2,7 +2,7 @@ window.RACE_RECRUITMENT_ASSETS = Object.freeze({
   "meta": {
     "source": "assets/recruitment/image_manifest.json",
     "version": 1,
-    "updatedAt": "2026-07-11T06:43:10.267Z",
+    "updatedAt": "2026-07-11T16:42:31.908Z",
     "slotCount": 66,
     "readyCount": 66
   },
