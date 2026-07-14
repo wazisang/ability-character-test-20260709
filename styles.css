@@ -4043,3 +4043,1090 @@ h3 {
     gap: 2px;
   }
 }
+
+/* Codex "Absolutely" theme: warm paper, dark ink, and terracotta seals. */
+:root {
+  color-scheme: light;
+  --bg: #f5f3ee;
+  --bg-soft: #ece7de;
+  --panel: #fffdf8;
+  --panel-solid: #fbfaf5;
+  --panel-2: #e7e0d6;
+  --line: rgba(29, 27, 22, 0.16);
+  --line-strong: rgba(29, 27, 22, 0.3);
+  --text: #1d1b16;
+  --soft: #39342c;
+  --muted: #645c50;
+  --faint: #897f70;
+  --red: #c85b47;
+  --green: #4f8468;
+  --yellow: #da7756;
+  --blue: #567c92;
+  --violet: #826b91;
+  --magenta: #ad687a;
+  --cyan: #527d78;
+  --radius: 6px;
+  --font-body: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --font-code: "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --shadow: 0 16px 40px rgba(79, 62, 43, 0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+#ambient-canvas {
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+}
+
+.topbar {
+  border-color: var(--line);
+  background: var(--bg);
+  box-shadow: 0 1px 0 rgba(29, 27, 22, 0.04);
+  backdrop-filter: none;
+}
+
+.brand-mark {
+  border-color: color-mix(in srgb, var(--yellow) 72%, var(--line));
+  background: #f4dfd8;
+  color: #8d3e2c;
+  border-radius: var(--radius);
+  font-family: var(--font-code);
+}
+
+.brand strong,
+.eyebrow,
+.progress-track,
+.progress-track span,
+.contract-seal,
+.verdict-stamp,
+.d20-mark,
+.d20-result,
+.axis-badge,
+.stage-chip,
+.choice-kicker,
+.race-registry-card span,
+.recruit-mini-target small,
+.defect-card-id,
+.dnd-mbti {
+  font-family: var(--font-code);
+}
+
+.progress-track {
+  border-color: var(--line);
+  background: #e7e1d7;
+}
+
+.progress-track span {
+  background: var(--yellow);
+}
+
+.intro-panel,
+.side-panel,
+.tool-panel,
+.result-panel,
+.test-stage,
+.question-panel,
+.recruit-hero-copy,
+.recruit-notice-board,
+.recruit-ledger,
+.race-dossier,
+.target-contract,
+.trial-dossier-card,
+.trial-question-card,
+.judgement-scroll,
+.recruitment-result-panel {
+  border-color: var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.intro-panel::after,
+.side-panel::after,
+.tool-panel::after,
+.result-panel::after,
+.test-stage::after,
+.question-panel::after,
+.recruit-hero-copy::after,
+.recruit-notice-board::after,
+.recruit-ledger::after,
+.race-dossier::after,
+.target-contract::after,
+.trial-dossier-card::after,
+.trial-question-card::after,
+.judgement-scroll::after,
+.recruitment-result-panel::after {
+  border-color: rgba(29, 27, 22, 0.08);
+  border-radius: calc(var(--radius) - 1px);
+}
+
+.hero-panel::before,
+.stage-shell::before,
+.stage-shell::after,
+.scan-panel::after,
+.recruit-art-frame::before {
+  background: transparent;
+}
+
+.hero-orbit {
+  border-color: color-mix(in srgb, var(--yellow) 38%, var(--line));
+  box-shadow: none;
+}
+
+.hero-orbit::before {
+  border-color: rgba(82, 125, 120, 0.28);
+}
+
+.hero-orbit::after {
+  border-color: rgba(173, 104, 122, 0.28);
+}
+
+.eyebrow {
+  color: #8d3e2c;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.lead,
+.panel-copy,
+.brand small,
+.topbar-meta,
+.fineprint {
+  color: var(--muted);
+}
+
+.button {
+  border-color: var(--line-strong);
+  background: var(--panel-solid);
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 0 rgba(29, 27, 22, 0.1);
+}
+
+.button:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--yellow) 72%, var(--line));
+  background: #f9ece7;
+  box-shadow: 0 6px 0 rgba(29, 27, 22, 0.12);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(29, 27, 22, 0.1);
+}
+
+.button.primary {
+  border-color: #b14e39;
+  background: var(--yellow);
+  color: #24140f;
+  box-shadow: 0 3px 0 #a34835;
+}
+
+.button.primary:hover:not(:disabled) {
+  border-color: #963f2d;
+  background: #e78a69;
+  box-shadow: 0 6px 0 #a34835;
+}
+
+.button.ghost {
+  background: transparent;
+}
+
+.button.danger {
+  border-color: color-mix(in srgb, var(--red) 68%, var(--line));
+  background: #f8e1dc;
+  color: #7d3024;
+}
+
+.pill,
+.descriptor-tags span,
+.compact-chip-row span,
+.dnd-alt-row span,
+.constitution-head span,
+.recruit-seals span,
+.recruit-mini-target small,
+.race-registry-card span {
+  border-color: color-mix(in srgb, var(--yellow) 36%, var(--line));
+  background: #faf4ec;
+  color: var(--text);
+  border-radius: 999px;
+}
+
+.notice,
+.scan-panel,
+.stage-map,
+.stage-guide > div,
+.guide-scroll,
+.trial-scene,
+.npc-feedback,
+.trial-leanings,
+.calibration-ratio,
+.target-contract dl div,
+.trial-dossier-card dl div,
+.judgement-grid div,
+.recruit-notice-board blockquote,
+.judgement-scroll blockquote,
+.recruitment-result-panel blockquote,
+.defect-panel blockquote,
+.defect-card-missing {
+  border-color: color-mix(in srgb, var(--trial-accent, var(--yellow)) 26%, var(--line));
+  background: #f7f2ea;
+  color: var(--soft);
+  border-radius: var(--radius);
+}
+
+.field input,
+.field select,
+.result-copy {
+  border-color: var(--line-strong);
+  background: #fffdf8;
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+.field input:focus,
+.field select:focus,
+.result-copy:focus {
+  border-color: var(--yellow);
+  outline: 2px solid rgba(218, 119, 86, 0.2);
+  outline-offset: 2px;
+}
+
+.axis-bar,
+.safe-band,
+.rhythm-track,
+.stability-box,
+.memory-strip,
+.trace-wrap,
+.arena,
+.target,
+.obstacle,
+.choice,
+.symbol-cell,
+.swatch,
+.mini-card,
+.descriptor-card,
+.resolution-card,
+.combo-card {
+  border-color: color-mix(in srgb, var(--axis-color, var(--yellow)) 28%, var(--line));
+  background: var(--panel-solid);
+  box-shadow: none;
+}
+
+.arena::before,
+.arena::after,
+.trace-wrap::before,
+.trace-wrap::after {
+  opacity: 0.2;
+}
+
+.choice:hover:not(:disabled),
+.symbol-cell:hover:not(:disabled),
+.race-registry-card:hover:not(:disabled),
+.home-race-preview-card:hover,
+.target-contract:hover,
+.trial-option:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--trial-accent, var(--yellow)) 64%, var(--line));
+  background: #fbede7;
+  box-shadow: 0 8px 18px rgba(79, 62, 43, 0.12);
+}
+
+.choice.selected,
+.symbol-cell.selected,
+.trial-option.is-selected {
+  border-color: color-mix(in srgb, var(--trial-accent, var(--yellow)) 78%, var(--line));
+  background: color-mix(in srgb, var(--trial-accent, var(--yellow)) 14%, #fffdf8);
+}
+
+.recruit-art-frame {
+  border-color: color-mix(in srgb, var(--trial-accent, var(--yellow)) 34%, var(--line));
+  background: #e9e3d9;
+  border-radius: calc(var(--radius) - 1px);
+  box-shadow: none;
+}
+
+.recruit-art-frame.has-image::before {
+  opacity: 0;
+}
+
+.image-veil {
+  background: rgba(245, 243, 238, 0.12);
+}
+
+.recruit-art-hero .image-veil {
+  background: rgba(245, 243, 238, 0.52);
+}
+
+.recruit-hero-copy {
+  min-height: min(68vh, 640px);
+}
+
+.recruit-hero-copy h1,
+.home-race-preview-name,
+.recruit-notice-board,
+.trial-question-card h3,
+.npc-feedback blockquote {
+  color: var(--text);
+}
+
+.recruit-hero-copy .lead,
+.recruit-hero-copy .fineprint {
+  color: var(--text);
+  text-shadow: 0 1px 12px rgba(245, 243, 238, 0.96);
+}
+
+.recruit-notice-board p,
+.recruit-ledger p,
+.race-dossier p,
+.target-contract p,
+.trial-dossier-card p,
+.trial-question-card p,
+.judgement-scroll p,
+.recruitment-result-panel p,
+.race-registry-card small,
+.race-registry-card p,
+.home-race-preview-label,
+.trial-leanings p {
+  color: var(--muted);
+}
+
+.home-race-preview-card,
+.race-registry-card,
+.recruit-mini-target,
+.trial-option,
+.trial-progress-card {
+  border-color: var(--line);
+  background: var(--panel-solid);
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.home-race-preview-card.is-selected,
+.race-registry-card.is-featured {
+  border-color: color-mix(in srgb, var(--yellow) 72%, var(--line));
+  background: #fbede7;
+  box-shadow: inset 3px 0 0 var(--yellow);
+}
+
+.home-race-preview-card.is-pending,
+.race-registry-card.is-pending {
+  background: #f2eee8;
+}
+
+.recruit-mini-target strong,
+.target-contract > strong,
+.trial-progress-card span,
+.trial-leanings strong,
+.constitution-card > strong,
+.huge-score,
+.dm-note strong,
+.descriptor-card strong,
+.profession-brief-head strong {
+  color: color-mix(in srgb, var(--trial-accent, var(--yellow)) 76%, #6e2e22);
+}
+
+.contract-seal,
+.target-contract > .contract-seal {
+  border-color: color-mix(in srgb, var(--trial-accent) 70%, var(--line));
+  background: color-mix(in srgb, var(--trial-accent) 15%, #fffdf8);
+  color: color-mix(in srgb, var(--trial-accent) 82%, #5d271c);
+  box-shadow: none;
+}
+
+.trial-option span,
+.dnd-mbti {
+  border-color: color-mix(in srgb, var(--trial-secondary, var(--cyan)) 48%, var(--line));
+  background: #f3f7f4;
+  color: color-mix(in srgb, var(--trial-secondary, var(--cyan)) 84%, #26433f);
+}
+
+.verdict-stamp {
+  border-color: color-mix(in srgb, var(--trial-accent) 80%, #6e2e22);
+  color: color-mix(in srgb, var(--trial-accent) 84%, #6e2e22);
+  background: color-mix(in srgb, var(--trial-accent) 10%, #fffdf8);
+}
+
+.dnd-class-panel,
+.dnd-class-card,
+.dnd-match-card,
+.tarot-shell,
+.portrait-lore,
+.dnd-current-match,
+.constitution-card {
+  border-color: var(--line);
+  background: var(--panel-solid);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.dnd-class-panel::before,
+.dnd-class-panel::after,
+.dnd-class-card::before,
+.dnd-class-card::after,
+.tarot-shell::before,
+.tarot-shell::after,
+.dnd-current-match::before {
+  opacity: 0.16;
+}
+
+.dnd-class-card,
+.dnd-class-card:hover,
+.dnd-class-card.is-current {
+  background: var(--panel-solid);
+  box-shadow: 0 8px 20px rgba(79, 62, 43, 0.12);
+}
+
+.dnd-class-card.is-current {
+  border-color: color-mix(in srgb, var(--yellow) 78%, var(--line));
+  box-shadow: inset 3px 0 0 var(--yellow), 0 8px 20px rgba(79, 62, 43, 0.12);
+}
+
+.dnd-card-facts div,
+.profession-lines div,
+.constitution-head,
+.constitution-lines div,
+.stage-score-line,
+.resolution-score {
+  border-color: var(--line);
+}
+
+.dnd-class-title strong,
+.portrait-lore h3,
+.dnd-match-card h3,
+.profession-brief-head p,
+.constitution-one-line,
+.resolution-head h3,
+.resolution-score strong {
+  color: var(--text);
+}
+
+.dnd-card-facts dd,
+.dnd-reason,
+.profession-lines dd,
+.constitution-card p,
+.constitution-lines dd,
+.stage-score-main span,
+.dnd-match-card p,
+.dnd-match-card small {
+  color: var(--muted);
+}
+
+.defect-card-art img {
+  border-color: color-mix(in srgb, var(--yellow) 46%, var(--line));
+  background: #e9e3d9;
+  box-shadow: 0 12px 24px rgba(79, 62, 43, 0.12);
+}
+
+@media (max-width: 860px) {
+  .recruit-art-hero .image-veil {
+    background: rgba(245, 243, 238, 0.34);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .home-race-preview-card,
+  .race-registry-card,
+  .target-contract,
+  .trial-option,
+  .dnd-class-card {
+    transition: none;
+  }
+}
+
+/* Recruitment V2: shorter route and reusable composite-trial motion. */
+.recruitment-flow,
+.mbti-gate-screen,
+.mbti-fast-screen,
+.result-panel.recruitment-result-panel {
+  animation: route-page-in 320ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
+}
+
+.trial-act-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.trial-act-heading h1 {
+  margin: 2px 0 0;
+}
+
+.trial-act-heading small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.trial-act-number {
+  display: grid;
+  min-width: 68px;
+  min-height: 68px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--trial-accent) 58%, var(--line));
+  background: color-mix(in srgb, var(--trial-accent) 10%, var(--panel));
+  color: color-mix(in srgb, var(--trial-accent) 78%, #6e2e22);
+  border-radius: var(--radius);
+  font-family: var(--font-code);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 5px 0 color-mix(in srgb, var(--trial-accent) 22%, transparent);
+}
+
+.npc-feedback {
+  position: relative;
+  overflow: hidden;
+  animation: recruiter-note-in 260ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.feedback-auto-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--trial-accent);
+  transform-origin: left;
+  animation: feedback-drain 3.2s linear both;
+}
+
+.composite-axis-pair {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.composite-axis-pair > span {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3px 7px;
+  align-items: center;
+  min-width: 88px;
+  min-height: 52px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--pair-color) 46%, var(--line));
+  background: color-mix(in srgb, var(--pair-color) 8%, var(--panel));
+  border-radius: var(--radius);
+  box-shadow: inset 0 3px 0 color-mix(in srgb, var(--pair-color) 54%, transparent);
+}
+
+.composite-axis-pair b {
+  color: color-mix(in srgb, var(--pair-color) 76%, var(--text));
+  font-family: var(--font-code);
+  font-size: 15px;
+}
+
+.composite-axis-pair small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.composite-result-axes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.composite-result-axes span {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-code);
+}
+
+.composite-result-axes b {
+  color: var(--muted);
+}
+
+.calibration-stage {
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.calibration-stage.is-playing {
+  border-color: color-mix(in srgb, var(--axis-color) 62%, var(--line));
+  box-shadow: 0 16px 38px color-mix(in srgb, var(--axis-color) 12%, transparent);
+}
+
+.calibration-stage.is-resolving {
+  border-color: color-mix(in srgb, var(--yellow) 64%, var(--line));
+}
+
+#stageMount > .stage-guide,
+#stageMount > .metric-strip,
+#stageMount > .arena,
+#stageMount > .question-panel,
+#stageMount > .actions {
+  animation: trial-content-in 260ms cubic-bezier(0.2, 0.72, 0.2, 1) both;
+}
+
+#stageMount > .metric-strip {
+  animation-delay: 45ms;
+}
+
+#stageMount > .arena,
+#stageMount > .question-panel {
+  animation-delay: 85ms;
+}
+
+.calibration-track .stage-chip {
+  position: relative;
+  flex: 1 1 180px;
+  justify-content: center;
+  border-radius: var(--radius);
+}
+
+.calibration-track .stage-chip.active::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  background: var(--axis-color);
+  border-radius: 50%;
+  animation: active-check-pulse 1.1s ease-in-out infinite;
+}
+
+.obstacle,
+.target {
+  animation: target-materialize 180ms cubic-bezier(0.2, 0.9, 0.22, 1.3) both;
+  transition: transform 100ms ease, filter 100ms ease;
+  will-change: transform;
+}
+
+#stageMount > .arena {
+  border-color: #756b5f;
+  background:
+    linear-gradient(rgba(255, 253, 248, 0.34), rgba(255, 253, 248, 0.34)),
+    repeating-linear-gradient(135deg, #d9d2c7 0 12px, #d4ccbf 12px 24px);
+  box-shadow: inset 0 0 0 1px rgba(29, 27, 22, 0.12);
+}
+
+#stageMount > .arena::before {
+  border-color: rgba(29, 27, 22, 0.3);
+  opacity: 1;
+}
+
+#stageMount .obstacle {
+  border: 3px solid #54251b;
+  background:
+    radial-gradient(circle at 50% 50%, #fffdf8 0 19%, #54251b 20% 28%, transparent 29%),
+    #da7756;
+  color: #fffdf8;
+  text-shadow: 0 1px 2px rgba(29, 27, 22, 0.7);
+  box-shadow:
+    0 0 0 4px #fffdf8,
+    0 0 0 7px rgba(84, 37, 27, 0.92),
+    0 12px 24px rgba(63, 35, 27, 0.28);
+}
+
+#stageMount .target {
+  border: 3px solid #173f3a;
+  background:
+    radial-gradient(circle, #fffdf8 0 17%, #173f3a 18% 28%, #fffdf8 29% 38%, #2f7870 39% 100%);
+  color: #173f3a;
+  text-shadow: 0 1px 0 rgba(255, 253, 248, 0.82);
+  box-shadow:
+    0 0 0 4px #fffdf8,
+    0 0 0 7px rgba(23, 63, 58, 0.92),
+    0 12px 24px rgba(24, 65, 60, 0.28);
+}
+
+.arena-feedback {
+  position: absolute;
+  z-index: 8;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 900;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: arena-feedback-burst 520ms cubic-bezier(0.18, 0.76, 0.24, 1) both;
+}
+
+.arena-feedback.is-hit {
+  background: rgba(255, 253, 248, 0.88);
+  color: #1f665d;
+  box-shadow: 0 0 0 8px rgba(47, 120, 112, 0.2);
+}
+
+.arena-feedback.is-miss {
+  background: rgba(255, 253, 248, 0.82);
+  color: #9a372d;
+  box-shadow: 0 0 0 8px rgba(154, 55, 45, 0.16);
+}
+
+.portrait-identity-only {
+  grid-template-columns: minmax(240px, 340px);
+  justify-content: center;
+}
+
+.portrait-identity-only .tarot-shell {
+  grid-template-rows: minmax(0, 1fr) auto;
+  max-width: 340px;
+}
+
+.portrait-identity-only .tarot-nameplate p {
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.portrait-identity-only .tarot-nameplate h3 {
+  margin: 6px 0 0;
+  font-size: 24px;
+}
+
+.dnd-match-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.obstacle:active,
+.target:active {
+  filter: brightness(1.08);
+  transform: scale(0.84);
+}
+
+.stability-marker {
+  transition: left 80ms linear, box-shadow 120ms ease;
+}
+
+.safe-band {
+  transition: left 260ms ease, width 260ms ease, background 180ms ease;
+}
+
+.memory-token {
+  animation: rune-wake 300ms cubic-bezier(0.18, 0.82, 0.24, 1.2) both;
+}
+
+.memory-token:nth-child(2) { animation-delay: 60ms; }
+.memory-token:nth-child(3) { animation-delay: 120ms; }
+.memory-token:nth-child(4) { animation-delay: 180ms; }
+.memory-token:nth-child(5) { animation-delay: 240ms; }
+.memory-token:nth-child(6) { animation-delay: 300ms; }
+
+.color-grid .swatch {
+  animation: swatch-reveal 180ms ease-out both;
+}
+
+.d20-result.is-rolling {
+  animation: dice-tumble 520ms cubic-bezier(0.22, 0.8, 0.22, 1) both;
+}
+
+.resolution-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.resolution-card::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  border: 2px solid color-mix(in srgb, var(--axis-color, var(--yellow)) 58%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: verdict-ring 680ms ease-out both;
+}
+
+.result-panel.recruitment-result-panel .verdict-stamp {
+  animation: verdict-stamp-in 520ms cubic-bezier(0.18, 0.86, 0.24, 1.16) 180ms both;
+}
+
+.mbti-gate,
+.mbti-fast-panel {
+  padding: clamp(22px, 5vw, 48px);
+}
+
+.mbti-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.mbti-known-option,
+.mbti-probe-option {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  min-height: 210px;
+  padding: 24px 0;
+}
+
+.mbti-known-option {
+  padding-right: 18px;
+  border-right: 1px solid var(--line);
+}
+
+.mbti-known-option select {
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-family: var(--font-code);
+}
+
+.mbti-probe-option {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.mbti-probe-option:hover,
+.mbti-probe-option:focus-visible {
+  color: #8d3e2c;
+  transform: translateX(4px);
+}
+
+.mbti-probe-option:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.mbti-probe-option strong {
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.1;
+}
+
+.mbti-probe-option small {
+  color: var(--muted);
+}
+
+.mbti-fast-count {
+  min-width: 72px;
+  padding: 9px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  color: #8d3e2c;
+  font-family: var(--font-code);
+  text-align: center;
+}
+
+.mbti-fast-question {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.mbti-fast-question .choice {
+  animation: choice-offer-in 260ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.mbti-fast-question .choice:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+@keyframes route-page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes recruiter-note-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes feedback-drain {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@keyframes trial-content-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes active-check-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes target-materialize {
+  from { opacity: 0; transform: scale(0.64) rotate(-8deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes arena-feedback-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.42);
+  }
+  34% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.42);
+  }
+}
+
+@keyframes rune-wake {
+  from { opacity: 0; transform: translateY(8px) scale(0.88); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes swatch-reveal {
+  from { opacity: 0; transform: scale(0.82); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes dice-tumble {
+  0% { transform: rotate(-16deg) scale(0.82); filter: blur(1px); }
+  65% { transform: rotate(8deg) scale(1.12); filter: blur(0); }
+  100% { transform: rotate(0) scale(1); }
+}
+
+@keyframes verdict-ring {
+  from { opacity: 0.72; inset: 50%; }
+  to { opacity: 0; inset: -25%; }
+}
+
+@keyframes verdict-stamp-in {
+  from { opacity: 0; transform: scale(1.55) rotate(-9deg); }
+  to { opacity: 1; transform: scale(1) rotate(-2deg); }
+}
+
+@keyframes choice-offer-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 860px) {
+  .dnd-match-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .composite-axis-pair {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .composite-axis-pair > span {
+    flex: 1;
+  }
+
+  .mbti-gate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mbti-known-option {
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell,
+  .topbar,
+  .topbar-meta,
+  .app-main,
+  .screen,
+  .recruitment-home,
+  .recruit-hero,
+  .recruit-hero-copy,
+  .recruit-home-grid,
+  .recruit-notice-board,
+  .recruit-ledger {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .app-main {
+    width: calc(100% - 20px);
+  }
+
+  .recruit-hero-copy h1 {
+    max-width: 100%;
+    font-size: 42px;
+    line-height: 1.04;
+    overflow-wrap: anywhere;
+  }
+
+  .recruit-hero-copy .lead,
+  .recruit-hero-copy .fineprint,
+  .recruit-seals,
+  .actions {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .recruit-seals span,
+  .actions .button {
+    max-width: 100%;
+  }
+
+  .trial-act-heading {
+    align-items: flex-start;
+  }
+
+  .trial-act-number {
+    min-width: 54px;
+    min-height: 54px;
+  }
+
+  .composite-axis-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-flow,
+  .mbti-gate-screen,
+  .mbti-fast-screen,
+  .result-panel.recruitment-result-panel,
+  .npc-feedback,
+  .feedback-auto-progress,
+  #stageMount > *,
+  .calibration-track .stage-chip.active::after,
+  .obstacle,
+  .target,
+  .memory-token,
+  .color-grid .swatch,
+  .d20-result.is-rolling,
+  .resolution-card::after,
+  .result-panel.recruitment-result-panel .verdict-stamp,
+  .mbti-fast-question .choice {
+    animation: none;
+  }
+}

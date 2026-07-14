@@ -983,6 +983,16 @@ const RECRUITMENT_CALIBRATION_STAGE_IDS = {
   cha: "cha_dialogue",
 };
 
+const RECRUITMENT_STORY_COUNTS = Object.freeze({ physique: 1, trial: 2 });
+
+// Each drill owns two axes. Route-specific stage selection stays isolated here
+// so future minigames can be swapped without changing the recruitment flow.
+const RECRUITMENT_COMPOSITE_TRIALS = Object.freeze([
+  { id: "body", label: "体魄与耐受", axisIds: ["str", "con"] },
+  { id: "field", label: "身法与洞察", axisIds: ["dex", "wis"] },
+  { id: "mind", label: "谋略与气场", axisIds: ["int", "cha"] },
+]);
+
 const RECRUITMENT_THEME = {
   barbarian_camp: {
     name: "蛮子营地",
@@ -1392,7 +1402,7 @@ function renderStart() {
   setProgress("征召大厅开放", 0);
   const defaultRecruitmentData = getDefaultRecruitmentData();
   const raceCard = defaultRecruitmentData?.raceCard;
-  const previewRaces = getHomePreviewRaces(6);
+  const previewRaces = getHomePreviewRaces(24);
   const previewRaceCard = getHomePreviewSelection(previewRaces);
   const previewRaceId = previewRaceCard?.raceId || state.homePreviewRaceId || raceCard?.raceId || "troll";
   const selectedPreviewRace = previewRaces.find((race) => race.id === previewRaceId) || getRecruitmentRace(previewRaceId);
@@ -1409,22 +1419,21 @@ function renderStart() {
           <p class="eyebrow">Adventurer Recruitment Office / 公会征召处</p>
           <h1>今日征召开放</h1>
           <p class="lead">
-            先登记血脉，再投递志愿。公会不会保证你被第一志愿录取，但会给你一份能上桌、能扮演、能写进团本的冒险者档案。
+            在大厅选定血脉，再向一条职业路线投递志愿。三幕问选择，三场看本事，最后由公会把你写进冒险者名册。
           </p>
           <div class="recruit-seals" aria-label="征召流程">
-            <span>血脉登记</span>
+            <span>血脉选择</span>
             <span>志愿投递</span>
-            <span>体格鉴定</span>
-            <span>职业试炼</span>
-            <span>六维校准</span>
-            <span>MBTI滤镜</span>
-            <span>公会判定</span>
+            <span>三幕试炼</span>
+            <span>三场实战</span>
+            <span>扮演滤镜</span>
+            <span>档案判定</span>
           </div>
           <div class="actions">
             <button class="button primary recruitment-cta" id="recruitStartBtn" type="button" ${canStartRecruitment ? "" : "disabled"}>${canStartRecruitment ? "开始登记" : "文案待接入"}</button>
             <button class="button ghost" id="demoResultBtn" type="button">随机投递简历</button>
           </div>
-          <p class="fineprint">当前开放 ${openRecruitmentRaceNames} 征召样板线：四条志愿路线、种族体格鉴定、职业试炼、六维实战校准与 MBTI 简易滤镜。</p>
+          <p class="fineprint">当前开放 ${openRecruitmentRaceNames} 征召线：每种血脉四条志愿路线、三幕叙事、三场双轴实战，以及可自填或四题生成的 MBTI 扮演滤镜。</p>
         </div>
         <div class="recruit-notice-board">
           <span class="board-pin"></span>
@@ -1496,7 +1505,7 @@ function renderStart() {
   });
   document.querySelector("#recruitStartBtn").addEventListener("click", () => {
     if (!canStartRecruitment) return;
-    beginRecruitment(previewRaceId);
+    beginRecruitment(previewRaceId, { skipRaceRegistry: true });
   });
   document.querySelector("#demoResultBtn").addEventListener("click", () => {
     state.recruitment = null;
@@ -1638,12 +1647,14 @@ function adaptRecruitmentCopy(value) {
   return value.split(sourceName).join(race.name);
 }
 
-function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
+function beginRecruitment(preferredRaceId = state.homePreviewRaceId, options = {}) {
+  const raceId = preferredRaceId || state.homePreviewRaceId || getDefaultRecruitmentRaceId();
   state.recruitment = {
-    raceId: preferredRaceId || state.homePreviewRaceId || getDefaultRecruitmentRaceId(),
+    raceId,
     targetId: "",
     phase: "race",
     questionIndex: 0,
+    narrativePlan: null,
     answers: [],
     scoreDelta: {},
     mbtiDelta: {},
@@ -1655,7 +1666,16 @@ function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
     calibration: null,
     judgement: null,
   };
-  state.profile = {};
+  state.profile = options.skipRaceRegistry
+    ? {
+        ancestry: raceId,
+        mbtiSelf: "未知",
+        exercise: "unknown",
+        sleep: "unknown",
+        health: "none",
+        audio: "visual",
+      }
+    : {};
   state.scores = {};
   state.axisStages = {};
   state.raw = {};
@@ -1663,7 +1683,7 @@ function beginRecruitment(preferredRaceId = state.homePreviewRaceId) {
   state.mbtiProbe = null;
   state.mbtiProbeReturnScreen = null;
   state.personalityAnswers = 0;
-  state.screen = "raceSelect";
+  state.screen = options.skipRaceRegistry ? "recruitTarget" : "raceSelect";
   render();
 }
 
@@ -1782,6 +1802,7 @@ function renderRecruitTargetSelect() {
   document.querySelectorAll("[data-target-id]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.recruitment.targetId = btn.dataset.targetId;
+      state.recruitment.narrativePlan = buildRecruitmentNarrativePlan(btn.dataset.targetId);
       state.recruitment.phase = "physique";
       state.recruitment.questionIndex = 0;
       state.recruitment.feedback = null;
@@ -1790,7 +1811,7 @@ function renderRecruitTargetSelect() {
     });
   });
   document.querySelector("#backRace").addEventListener("click", () => {
-    state.screen = "raceSelect";
+    state.screen = "start";
     render();
   });
 }
@@ -1835,9 +1856,26 @@ function getRecruitmentTarget(targetId = state.recruitment?.targetId) {
 function getRecruitmentQuestions(kind) {
   const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
   if (!recruitmentData) return [];
-  if (kind === "physique") return recruitmentData.physiqueChecks || [];
-  const targetId = state.recruitment?.targetId;
-  return recruitmentData.trialSets?.[targetId] || [];
+  const source = kind === "physique" ? recruitmentData.physiqueChecks || [] : recruitmentData.trialSets?.[state.recruitment?.targetId] || [];
+  if (!state.recruitment.narrativePlan) {
+    state.recruitment.narrativePlan = buildRecruitmentNarrativePlan(state.recruitment?.targetId);
+  }
+  const plannedIds = state.recruitment.narrativePlan?.[kind] || [];
+  const byId = new Map(source.map((question) => [question.id, question]));
+  const planned = plannedIds.map((id) => byId.get(id)).filter(Boolean);
+  if (planned.length) return planned;
+  return source.slice(0, RECRUITMENT_STORY_COUNTS[kind] || source.length);
+}
+
+function buildRecruitmentNarrativePlan(targetId) {
+  const recruitmentData = getRecruitmentData(state.recruitment?.raceId);
+  if (!recruitmentData) return { physique: [], trial: [] };
+  const physique = shuffle([...(recruitmentData.physiqueChecks || [])]).slice(0, RECRUITMENT_STORY_COUNTS.physique);
+  const trial = shuffle([...(recruitmentData.trialSets?.[targetId] || [])]).slice(0, RECRUITMENT_STORY_COUNTS.trial);
+  return {
+    physique: physique.map((question) => question.id),
+    trial: trial.map((question) => question.id),
+  };
 }
 
 function renderRecruitmentQuestionScreen(kind) {
@@ -1851,6 +1889,8 @@ function renderRecruitmentQuestionScreen(kind) {
   const theme = getRecruitmentTheme(target?.targetId);
   const questions = getRecruitmentQuestions(kind);
   const index = recruitment.questionIndex || 0;
+  const actNumber = kind === "physique" ? 1 : index + 2;
+  const actTitle = ["体魄代价", "职业方法", "风险底线"][actNumber - 1] || "征召试炼";
   const question = questions[index];
   if (!question) {
     if (kind === "physique") {
@@ -1878,11 +1918,17 @@ function renderRecruitmentQuestionScreen(kind) {
       <div class="trial-topline">
         <div>
           <p class="eyebrow">${kind === "physique" ? "Step 3 / Bloodline Physique" : "Step 4 / Field Trial"}</p>
-          <h1>${stepLabel}</h1>
+          <div class="trial-act-heading">
+            <span class="trial-act-number">ACT ${actNumber}</span>
+            <div>
+              <small>三幕征召试炼</small>
+              <h1>${actTitle}</h1>
+            </div>
+          </div>
         </div>
         <div class="trial-progress-card">
-          <span>${index + 1}</span>
-          <small>/ ${questions.length}</small>
+          <span>${actNumber}</span>
+          <small>/ 3</small>
         </div>
       </div>
       <div class="trial-layout">
@@ -1931,9 +1977,10 @@ function renderRecruitmentQuestionScreen(kind) {
                   <p class="eyebrow">Recruiter Note / ${feedback.outcomeTone || "批注"}</p>
                   <blockquote>${adaptRecruitmentCopy(feedback.npcReply)}</blockquote>
                   <p>${adaptRecruitmentCopy(feedback.branchHint || "档案已更新，继续试炼。")}</p>
+                  <span class="feedback-auto-progress" aria-hidden="true"></span>
                 </div>
                 <div class="actions">
-                  <button class="button primary" id="continueRecruitment" type="button">${continueLabel}</button>
+                  <button class="button primary" id="continueRecruitment" type="button">立即${continueLabel}</button>
                 </div>
               `
               : ""
@@ -1943,9 +1990,15 @@ function renderRecruitmentQuestionScreen(kind) {
     </section>
   `;
   if (feedback) {
-    document.querySelector("#continueRecruitment").addEventListener("click", () => {
+    let advanced = false;
+    const advance = () => {
+      if (advanced) return;
+      advanced = true;
       advanceRecruitmentQuestion(kind, questions.length);
-    });
+    };
+    document.querySelector("#continueRecruitment").addEventListener("click", advance);
+    const autoAdvanceTimer = setTimeout(advance, 3200);
+    cleanupFns.push(() => clearTimeout(autoAdvanceTimer));
   } else {
     document.querySelectorAll("[data-choice]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -2042,12 +2095,12 @@ function finalizeRecruitment() {
   const recruitment = state.recruitment;
   const target = getRecruitmentTarget();
   const calibrationStages = state.axisStages || {};
-  const base = 5.2;
+  const base = 5;
   const storyScores = Object.fromEntries(
     ATTRIBUTES.map((axis) => {
       const delta = recruitment.scoreDelta[axis.id] || 0;
-      const targetBoost = (target?.recommendedStats || []).includes(axis.id) ? 0.35 : 0;
-      return [axis.id, clamp(base + delta * 0.42 + targetBoost)];
+      const targetBoost = (target?.recommendedStats || []).includes(axis.id) ? 0.45 : 0;
+      return [axis.id, clamp(base + delta * 0.72 + targetBoost)];
     }),
   );
   const scores = Object.fromEntries(
@@ -2158,11 +2211,16 @@ function buildRecruitmentJudgement() {
   const danger = recruitment.toneCounts["危险"] || 0;
   const absurd = recruitment.toneCounts["荒诞"] || 0;
   const accepted = recruitment.toneCounts["合格"] || 0;
+  const answerCount = Math.max(1, recruitment.answers.length);
+  const dangerRate = danger / answerCount;
+  const absurdRate = absurd / answerCount;
+  const acceptedRate = accepted / answerCount;
+  const transferMargin = Math.max(1, answerCount * 0.35);
   let endingType = "probation";
-  if (danger >= 3) endingType = "blacklisted";
-  else if (topTargetId && topTargetId !== recruitment.targetId && topAffinity > selectedAffinity + 2) endingType = "transferred";
-  else if (absurd >= accepted && absurd >= 3) endingType = "absurdAccepted";
-  else if (selectedAffinity >= 8 && accepted >= 4) endingType = "accepted";
+  if (dangerRate >= 0.6) endingType = "blacklisted";
+  else if (topTargetId && topTargetId !== recruitment.targetId && topAffinity >= selectedAffinity + transferMargin) endingType = "transferred";
+  else if (absurdRate >= 0.5 && absurd >= accepted) endingType = "absurdAccepted";
+  else if (acceptedRate >= 0.5 && (topTargetId === normalizeRecruitmentTargetId(recruitment.targetId) || selectedAffinity >= 2)) endingType = "accepted";
 
   const ending = pickRecruitmentEnding(endingType, target?.targetId, topTargetId);
   return {
@@ -2170,6 +2228,7 @@ function buildRecruitmentJudgement() {
     ending,
     target,
     topTargetId,
+    metrics: { answerCount, dangerRate, absurdRate, acceptedRate, selectedAffinity, topAffinity },
     recommendedClassName: RECRUITMENT_TARGET_CLASS[normalizeRecruitmentTargetId(topTargetId)] || RECRUITMENT_TARGET_CLASS[target?.targetId] || "",
   };
 }
@@ -2277,14 +2336,33 @@ function verdictLabel(type) {
   return map[type] || "征召判定";
 }
 
+function getRecruitmentCompositeStageId(trialId, targetId) {
+  const normalized = normalizeRecruitmentTargetId(targetId);
+  const enduranceRoutes = new Set(["warlock_contract", "druid_mutation_circle", "guild_warlock", "guild_wizard", "guild_artificer", "guild_sorcerer"]);
+  const perceptionRoutes = new Set(["druid_mutation_circle", "guild_druid", "guild_ranger", "guild_wizard", "guild_cleric"]);
+  const presenceRoutes = new Set(["warlock_contract", "guild_warlock", "guild_bard", "guild_paladin", "guild_cleric", "guild_sorcerer"]);
+  if (trialId === "body") return enduranceRoutes.has(normalized) ? "con_focus" : "str_burst";
+  if (trialId === "field") return perceptionRoutes.has(normalized) ? "wis_color" : "dex_reaction";
+  return presenceRoutes.has(normalized) ? "cha_dialogue" : "int_memory";
+}
+
+function findStagePointer(stageId) {
+  for (let axisIndex = 0; axisIndex < ATTRIBUTES.length; axisIndex += 1) {
+    const stageIndex = ATTRIBUTES[axisIndex].stages.findIndex((stage) => stage.id === stageId);
+    if (stageIndex >= 0) return { axisIndex, stageIndex };
+  }
+  return { axisIndex: 0, stageIndex: 0 };
+}
+
 function getRecruitmentCalibrationPlan() {
-  return ATTRIBUTES.map((axis, axisIndex) => {
-    const stageId = RECRUITMENT_CALIBRATION_STAGE_IDS[axis.id] || axis.stages[0]?.id;
-    const stageIndex = Math.max(0, axis.stages.findIndex((item) => item.id === stageId));
+  const targetId = state.recruitment?.targetId;
+  return RECRUITMENT_COMPOSITE_TRIALS.map((trial) => {
+    const stageId = getRecruitmentCompositeStageId(trial.id, targetId);
+    const pointer = findStagePointer(stageId);
     return {
-      axisId: axis.id,
-      axisIndex,
-      stageIndex,
+      ...trial,
+      stageId,
+      ...pointer,
     };
   });
 }
@@ -2328,19 +2406,21 @@ function renderRecruitmentCalibration() {
   if (!recruitment.calibration) recruitment.calibration = { index: 0, plan };
   setRecruitmentCalibrationPointer();
   const index = recruitment.calibration.index || 0;
+  const calibrationItem = plan[index];
   const target = getRecruitmentTarget();
   const theme = getRecruitmentTheme(target?.targetId);
   const axis = ATTRIBUTES[state.current];
   const stage = axis.stages[state.stage];
-  setProgress(`六维实战校准 ${index + 1}/${plan.length}：${axis.name}`, 78 + (index / Math.max(1, plan.length)) * 10);
+  const pairedAxes = (calibrationItem.axisIds || [axis.id]).map((axisId) => ATTRIBUTES.find((item) => item.id === axisId)).filter(Boolean);
+  setProgress(`复合实战 ${index + 1}/${plan.length}：${calibrationItem.label}`, 72 + (index / Math.max(1, plan.length)) * 18);
 
   app.innerHTML = `
     <section class="screen recruitment-flow trial-shell recruitment-calibration ${theme.className}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}; --axis-color:${axis.color}">
       <div class="trial-topline">
         <div>
           <p class="eyebrow">Step 5 / Ability Calibration</p>
-          <h1>六维实战校准</h1>
-          <p>征召官先看你怎么选，骰桌再看你怎么做。这里的小游戏会进入最终雷达，修正前面的种族与职业判断。</p>
+          <h1>三场复合实战</h1>
+          <p>每场检定同时覆盖两项能力。征召官先看你怎么选，骰桌再看你怎么做，最终仍按叙事 60% / 实战 40% 写入雷达。</p>
         </div>
         <div class="trial-progress-card">
           <span>${index + 1}</span>
@@ -2352,10 +2432,22 @@ function renderRecruitmentCalibration() {
           <div class="test-title">
             <span class="axis-badge">${axis.abbr}</span>
             <div>
-              <p class="eyebrow">${target?.classNameZh || "征召"}校准 / ${axis.theme} / ${stage.difficulty}</p>
-              <h2>${axis.name} · ${stage.title}</h2>
+              <p class="eyebrow">${target?.classNameZh || "征召"}校准 / ${calibrationItem.label} / ${stage.difficulty}</p>
+              <h2>${calibrationItem.label} · ${stage.title}</h2>
               <p>${axis.intro}</p>
             </div>
+          </div>
+          <div class="composite-axis-pair" aria-label="本场结算属性">
+            ${pairedAxes
+              .map(
+                (pairedAxis) => `
+                  <span style="--pair-color:${pairedAxis.color}">
+                    <b>${pairedAxis.abbr}</b>
+                    <small>${pairedAxis.name}</small>
+                  </span>
+                `,
+              )
+              .join("")}
           </div>
           <div class="calibration-ratio">
             <strong>60%</strong><span>征召判断</span>
@@ -2365,10 +2457,9 @@ function renderRecruitmentCalibration() {
         <div class="stage-track calibration-track">
           ${plan
             .map((item, itemIndex) => {
-              const itemAxis = ATTRIBUTES[item.axisIndex];
               return `
                 <span class="stage-chip ${itemIndex === index ? "active" : ""} ${itemIndex < index ? "done" : ""}">
-                  ${itemIndex + 1}. ${itemAxis.name}
+                  ${itemIndex + 1}. ${item.label}
                 </span>
               `;
             })
@@ -2379,6 +2470,14 @@ function renderRecruitmentCalibration() {
     </section>
   `;
   getStageRenderers()[stage.type](axis, stage);
+  const gameStart = document.querySelector("#startGame");
+  if (gameStart) {
+    gameStart.addEventListener(
+      "click",
+      () => document.querySelector(".calibration-stage")?.classList.add("is-playing"),
+      { once: true },
+    );
+  }
 }
 
 function advanceRecruitmentCalibration() {
@@ -2395,7 +2494,12 @@ function advanceRecruitmentCalibration() {
     return;
   }
   finalizeRecruitment();
-  state.screen = "recruitJudgement";
+  if (shouldRunMbtiProbe()) {
+    state.mbtiProbeReturnScreen = "result";
+    state.screen = "mbtiProbe";
+  } else {
+    state.screen = "result";
+  }
   render();
 }
 
@@ -2616,26 +2720,45 @@ function metricStrip(items) {
 function completeStage(score, raw, note) {
   const axis = ATTRIBUTES[state.current];
   const stage = axis.stages[state.stage];
-  if (!state.axisStages[axis.id]) state.axisStages[axis.id] = {};
-  state.axisStages[axis.id][stage.id] = {
-    score: clamp(score),
-    title: stage.title,
-    weight: stage.weight || 1,
-    difficulty: stage.difficulty,
-    raw,
-    note,
-  };
-  renderStageComplete(stage.title, clamp(score), note);
+  const calibration = state.screen === "recruitCalibration" ? state.recruitment?.calibration : null;
+  const calibrationItem = calibration?.plan?.[calibration.index || 0];
+  const scoredAxisIds = calibrationItem?.axisIds || [axis.id];
+  scoredAxisIds.forEach((axisId) => {
+    const scoredAxis = ATTRIBUTES.find((item) => item.id === axisId) || axis;
+    const isHostAxis = axisId === axis.id;
+    const adjustedScore = isHostAxis ? clamp(score) : clamp(5 + (score - 5) * 0.88);
+    if (!state.axisStages[axisId]) state.axisStages[axisId] = {};
+    const stageKey = calibrationItem ? `${stage.id}_${axisId}` : stage.id;
+    state.axisStages[axisId][stageKey] = {
+      score: adjustedScore,
+      title: calibrationItem ? `${calibrationItem.label} · ${scoredAxis.name}` : stage.title,
+      weight: calibrationItem ? 1 : stage.weight || 1,
+      difficulty: stage.difficulty,
+      raw: { ...raw, compositeTrialId: calibrationItem?.id || "", sourceAxisId: axis.id },
+      note,
+    };
+  });
+  renderStageComplete(calibrationItem?.label || stage.title, clamp(score), note);
 }
 
 function renderStageComplete(title, score, note) {
   const mount = document.querySelector("#stageMount");
+  document.querySelector(".calibration-stage")?.classList.add("is-resolving");
   const flavor = getCurrentStageFlavor();
   const d20 = d20Read(score);
   const verdict = verdictForScore(score);
   const isRecruitCalibration = state.screen === "recruitCalibration";
   const calibration = state.recruitment?.calibration;
+  const calibrationItem = isRecruitCalibration ? calibration?.plan?.[calibration?.index || 0] : null;
   const isLastCalibration = isRecruitCalibration && calibration && calibration.index >= calibration.plan.length - 1;
+  const compositeScores = (calibrationItem?.axisIds || [])
+    .map((axisId) => {
+      const pairedAxis = ATTRIBUTES.find((item) => item.id === axisId);
+      const stageEntry = state.axisStages[axisId]?.[`${ATTRIBUTES[state.current].stages[state.stage].id}_${axisId}`];
+      return pairedAxis && stageEntry ? `<span><b>${pairedAxis.abbr}</b>${fmt(stageEntry.score)}</span>` : "";
+    })
+    .filter(Boolean)
+    .join("");
   mount.innerHTML = `
     <div class="arena center result-flash">
       <div class="mini-card resolution-card">
@@ -2652,14 +2775,30 @@ function renderStageComplete(title, score, note) {
           <strong>${fmt(score)}</strong>
           <small>/ 10</small>
         </div>
+        ${compositeScores ? `<div class="composite-result-axes">${compositeScores}</div>` : ""}
         <p class="dm-note"><strong>DM 记录：</strong>${note}</p>
       </div>
     </div>
     <div class="actions">
-      <button class="button primary" id="continueStage" type="button">${isRecruitCalibration ? (isLastCalibration ? "提交公会判定" : "进入下一项校准") : "翻到下一项检定"}</button>
+      <button class="button primary" id="continueStage" type="button">${isRecruitCalibration ? (isLastCalibration ? "完成征召并生成档案" : "进入下一场复合检定") : "翻到下一项检定"}</button>
     </div>
   `;
+  animateDiceResult(document.querySelector(".d20-result"), d20);
   document.querySelector("#continueStage").addEventListener("click", advanceStage);
+}
+
+function animateDiceResult(node, finalValue) {
+  if (!node || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  node.classList.add("is-rolling");
+  const startedAt = performance.now();
+  const duration = 520;
+  function tick(now) {
+    const progress = Math.min(1, (now - startedAt) / duration);
+    node.textContent = progress >= 1 ? finalValue : Math.floor(Math.random() * 20) + 1;
+    if (progress < 1) requestAnimationFrame(tick);
+    else node.classList.remove("is-rolling");
+  }
+  requestAnimationFrame(tick);
 }
 
 function advanceStage() {
@@ -2700,6 +2839,21 @@ function finalizeAxis(axis) {
   const weighted = stages.reduce((sum, item) => sum + item.score * (item.weight || 1), 0) / totalWeight;
   state.scores[axis.id] = clamp(weighted);
   state.raw[axis.id] = { stages };
+}
+
+function showArenaFeedback(arena, event, kind = "hit") {
+  const rect = arena.getBoundingClientRect();
+  const marker = document.createElement("span");
+  marker.className = `arena-feedback is-${kind}`;
+  marker.textContent = kind === "hit" ? "命中" : "空挥";
+  marker.style.left = `${event.clientX - rect.left}px`;
+  marker.style.top = `${event.clientY - rect.top}px`;
+  arena.appendChild(marker);
+  marker.addEventListener("animationend", () => marker.remove(), { once: true });
+}
+
+function clearArenaTarget(arena) {
+  arena.querySelectorAll(".obstacle, .target, #startGame").forEach((element) => element.remove());
 }
 
 function renderClickWaves(axis, stage) {
@@ -2749,7 +2903,7 @@ function renderClickWaves(axis, stage) {
     }
     const level = levels[Math.min(2, Math.floor(targetNo / 8))];
     document.querySelector("#waveLabel").textContent = level.name;
-    arena.innerHTML = "";
+    clearArenaTarget(arena);
     const btn = document.createElement("button");
     btn.className = "obstacle";
     btn.type = "button";
@@ -2761,6 +2915,8 @@ function renderClickWaves(axis, stage) {
     btn.style.top = `${Math.random() * Math.max(1, rect.height - level.size - 12) + 6}px`;
     btn.addEventListener("click", (event) => {
       event.stopPropagation();
+      clearTimeout(timer);
+      showArenaFeedback(arena, event, "hit");
       hits += 1;
       streak += 1;
       bestStreak = Math.max(bestStreak, streak);
@@ -2787,6 +2943,7 @@ function renderClickWaves(axis, stage) {
 
   arena.addEventListener("click", (event) => {
     if (!running || event.target !== arena) return;
+    showArenaFeedback(arena, event, "miss");
     misses += 1;
     streak = 0;
     update();
@@ -2943,7 +3100,7 @@ function renderReactionLadder(axis, stage) {
     }
     const level = levels[Math.min(2, Math.floor(round / 5))];
     document.querySelector("#dexLevel").textContent = level.name;
-    arena.innerHTML = "";
+    clearArenaTarget(arena);
     const target = document.createElement("button");
     target.className = "target";
     target.type = "button";
@@ -2956,6 +3113,8 @@ function renderReactionLadder(axis, stage) {
     spawnTime = performance.now();
     target.addEventListener("click", (event) => {
       event.stopPropagation();
+      clearTimeout(timeout);
+      showArenaFeedback(arena, event, "hit");
       hits += 1;
       reactions.push(performance.now() - spawnTime);
       round += 1;
@@ -2985,6 +3144,11 @@ function renderReactionLadder(axis, stage) {
     reactions = [];
     update();
     spawn();
+  });
+  arena.addEventListener("click", (event) => {
+    if (event.target === arena && arena.querySelector(".target")) {
+      showArenaFeedback(arena, event, "miss");
+    }
   });
   cleanupFns.push(() => clearTimeout(timeout));
 }
@@ -4133,73 +4297,122 @@ function renderAlignmentQuiz(axis, stage) {
 
 function renderMbtiProbe() {
   const config = getMbtiProbeConfig();
-  const questions = config.questions || [];
+  const seenAxes = new Set();
+  const questions = (config.questions || []).filter((question) => {
+    if (seenAxes.has(question.axis)) return false;
+    seenAxes.add(question.axis);
+    return true;
+  });
   if (!questions.length) {
     state.screen = getMbtiProbeReturnScreen();
     render();
     return;
   }
 
-  let index = 0;
-  state.mbtiProbe = {
-    scores: { I: 0, E: 0, N: 0, S: 0, T: 0, F: 0, J: 0, P: 0 },
-    answers: [],
-    completed: false,
-    resultNote: config.resultNote,
-  };
+  function startProbe() {
+    let index = 0;
+    state.mbtiProbe = {
+      scores: { I: 0, E: 0, N: 0, S: 0, T: 0, F: 0, J: 0, P: 0 },
+      answers: [],
+      completed: false,
+      resultNote: config.resultNote,
+    };
 
-  function draw() {
-    const q = questions[index];
-    setProgress(`扮演滤镜 ${index + 1}/${questions.length}`, 84 + index * 0.45);
-    app.innerHTML = `
-      <section class="screen">
-        <div class="tool-panel">
-          <div class="panel-head">
-            <div>
-              <p class="eyebrow">Session 0.4 / MBTI Probe</p>
-              <h2>${config.title}</h2>
-              <p>${config.intro}</p>
+    function draw() {
+      const q = questions[index];
+      setProgress(`扮演滤镜 ${index + 1}/${questions.length}`, 92 + index * 1.5);
+      app.innerHTML = `
+        <section class="screen mbti-fast-screen">
+          <div class="tool-panel mbti-fast-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Roleplay Lens / 4-axis Probe</p>
+                <h2>${config.title}</h2>
+                <p>四个维度各回答一次，只决定角色的扮演滤镜，不改写已经完成的实战成绩。</p>
+              </div>
+              <span class="mbti-fast-count">${index + 1} / ${questions.length}</span>
+            </div>
+            <div class="mbti-fast-question">
+              <p class="eyebrow">${q.axis} / 单轮判定</p>
+              <h3>${q.prompt}</h3>
+              <div class="choice-grid two-col">
+                ${q.options
+                  .map(
+                    (option, i) => `
+                      <button class="choice" data-choice="${i}" type="button">
+                        <span class="choice-kicker">${option.side}</span>
+                        <span>${option.text}</span>
+                      </button>
+                    `,
+                  )
+                  .join("")}
+              </div>
             </div>
           </div>
-          <div class="question-panel tool-panel deep-question">
-            <p class="eyebrow">${q.axis} / Round ${q.round}</p>
-            <h3>${q.prompt}</h3>
-            <div class="choice-grid two-col">
-              ${q.options
-                .map(
-                  (option, i) => `
-                    <button class="choice" data-choice="${i}" type="button">
-                      <span class="choice-kicker">滤镜 ${i + 1}</span>
-                      <span>${option.text}</span>
-                    </button>
-                  `,
-                )
-                .join("")}
-            </div>
-          </div>
-        </div>
-      </section>
-    `;
+        </section>
+      `;
 
-    document.querySelectorAll("[data-choice]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const option = q.options[Number(btn.dataset.choice)];
-        const side = option.side;
-        state.mbtiProbe.scores[side] = (state.mbtiProbe.scores[side] || 0) + (option.score || 1);
-        state.mbtiProbe.answers.push({ id: q.id, axis: q.axis, round: q.round, side });
-        index += 1;
-        if (index >= questions.length) {
-          state.mbtiProbe.completed = true;
-          state.screen = getMbtiProbeReturnScreen();
-          render();
-        } else {
-          draw();
-        }
+      document.querySelectorAll("[data-choice]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const option = q.options[Number(btn.dataset.choice)];
+          const side = option.side;
+          state.mbtiProbe.scores[side] = (state.mbtiProbe.scores[side] || 0) + (option.score || 1);
+          state.mbtiProbe.answers.push({ id: q.id, axis: q.axis, round: 1, side });
+          index += 1;
+          if (index >= questions.length) {
+            state.mbtiProbe.completed = true;
+            state.screen = getMbtiProbeReturnScreen();
+            render();
+          } else {
+            draw();
+          }
+        });
       });
-    });
+    }
+
+    draw();
   }
 
-  draw();
+  setProgress("选择扮演滤镜", 91);
+  app.innerHTML = `
+    <section class="screen mbti-gate-screen">
+      <div class="tool-panel mbti-gate">
+        <div>
+          <p class="eyebrow">Final Filter / MBTI</p>
+          <h2>最后决定这张卡怎么演</h2>
+          <p>知道自己的 MBTI 就直接登记；不知道则用四道跑团情境题快速生成。它只影响角色口吻、职业细分和专属评价。</p>
+        </div>
+        <div class="mbti-gate-grid">
+          <div class="mbti-known-option">
+            <strong>我知道自己的类型</strong>
+            <select id="knownMbtiSelect" aria-label="选择 MBTI">
+              <option value="">选择 16 型之一</option>
+              ${MBTI_TYPES.slice(1).map((type) => `<option value="${type}">${type}</option>`).join("")}
+            </select>
+            <button class="button primary" id="useKnownMbti" type="button" disabled>使用这个类型</button>
+          </div>
+          <button class="mbti-probe-option" id="startShortMbti" type="button">
+            <span class="choice-kicker">4 questions</span>
+            <strong>让公会替我判断</strong>
+            <small>I/E、N/S、T/F、J/P 各一题</small>
+          </button>
+        </div>
+      </div>
+    </section>
+  `;
+  const select = document.querySelector("#knownMbtiSelect");
+  const useKnown = document.querySelector("#useKnownMbti");
+  select.addEventListener("change", () => {
+    useKnown.disabled = !select.value;
+  });
+  useKnown.addEventListener("click", () => {
+    if (!select.value) return;
+    state.profile.mbtiSelf = select.value;
+    state.mbtiProbe = null;
+    state.screen = getMbtiProbeReturnScreen();
+    render();
+  });
+  document.querySelector("#startShortMbti").addEventListener("click", startProbe);
 }
 
 function renderPersonality() {
@@ -4541,6 +4754,8 @@ function renderResult() {
   const summary = buildSummary();
   app.innerHTML = `
     <section class="screen">
+      ${renderRecruitmentResultPanel()}
+
       <div class="intro-panel result-hero" style="min-height:auto;">
         <p class="eyebrow">Character Sheet Ready / Welcome to the Table</p>
         <h1>${summary.archetype}</h1>
@@ -4553,8 +4768,6 @@ function renderResult() {
         </div>
       </div>
 
-      ${renderRecruitmentResultPanel()}
-
       <div class="result-grid">
         <div class="result-panel">
           <h2>六维属性雷达</h2>
@@ -4564,49 +4777,15 @@ function renderResult() {
         </div>
         <div class="result-panel">
           <h2>立绘与职业牌</h2>
-          <div class="portrait-card tarot-layout" style="--portrait-a:${summary.top.color}; --portrait-b:${summary.second.color};">
+          <div class="portrait-card tarot-layout portrait-identity-only" style="--portrait-a:${summary.top.color}; --portrait-b:${summary.second.color};">
             <div class="tarot-shell">
-              <div class="tarot-corner tarot-corner-tl">${summary.top.abbr}</div>
-              <div class="tarot-corner tarot-corner-tr">${summary.second.abbr}</div>
-              <div class="tarot-corner tarot-corner-bl">${summary.mbtiCode.slice(0, 2)}</div>
-              <div class="tarot-corner tarot-corner-br">${summary.mbtiCode.slice(2)}</div>
-              <div class="tarot-header">
-                <span>ARCANA ${summary.arcanaNumber}</span>
-                <strong>${summary.cardTitle}</strong>
-              </div>
               <div class="tarot-window">
-                ${summary.portraitAsset ? `<img class="portrait-image" src="${summary.portraitAsset}" alt="${summary.portraitName}" loading="lazy">` : ""}
+                ${summary.portraitAsset ? `<img class="portrait-image" src="${summary.portraitAsset}" alt="${summary.mbtiCode} ${summary.dndProfile.className}职业立绘" loading="lazy">` : ""}
                 <canvas id="portraitCanvas" class="portrait-canvas" width="520" height="520"></canvas>
               </div>
-              <div class="tarot-gems">
-                <span style="--gem:${summary.top.color};">${summary.top.name} ${fmt(state.scores[summary.top.id])}</span>
-                <span style="--gem:${summary.second.color};">${summary.second.name} ${fmt(state.scores[summary.second.id])}</span>
-              </div>
               <div class="tarot-nameplate">
-                <p>${summary.mbtiCode} / ${summary.dndProfile.classEn}</p>
-                <h3>${summary.portraitName}</h3>
-              </div>
-            </div>
-            <div class="portrait-lore">
-              <p class="eyebrow">${summary.cardTitle} / DND ${summary.dndProfile.classEn}</p>
-              <h3>${summary.portraitName}</h3>
-              <p>${summary.classProfile.face}</p>
-              <p class="portrait-resource-note">
-                ${
-                  summary.portraitResource.status === "ready"
-                    ? `立绘已接入 · ${summary.portraitResource.manifestId}`
-                    : `立绘待补齐 · ${summary.portraitResource.expectedFile}`
-                }
-              </p>
-              <div class="dnd-current-match">
-                <span>本局主职业 · 六维投点</span>
-                <strong>${summary.dndProfile.className}<em>${summary.dndProfile.classEn}</em></strong>
-                <p>${summary.dndProfile.subclass} · ${summary.dndProfile.role}</p>
-                <small>${summary.primaryClassText}</small>
-              </div>
-              <div class="ornament-row">
-                <span>${summary.alignment}</span>
-                <span>${summary.titles.join(" / ")}</span>
+                <p>${summary.mbtiCode}</p>
+                <h3>${summary.dndProfile.className}</h3>
               </div>
             </div>
           </div>
@@ -4619,13 +4798,9 @@ function renderResult() {
             <p class="eyebrow">Class Hooks / DND Job Board</p>
             <h2>职业线索板</h2>
           </div>
-          <p>职业不是 MBTI 套模板，先看六维投点，再看你打算怎么演。ESFP 可以钻研法术，INTJ 也可以上前线，只要这张卡支撑得住。</p>
         </div>
         <div class="dnd-match-grid">
           ${summary.dndMatches.map((profile, index) => renderDndMatchCard(profile, index, summary.mbtiCode)).join("")}
-        </div>
-        <div class="dnd-class-grid">
-          ${renderDndClassGrid(summary.mbtiCode, summary.dndProfile.className)}
         </div>
       </div>
 
@@ -4776,7 +4951,7 @@ function renderRecruitmentResultPanel() {
         </div>
         <div>
           <strong>雷达来源</strong>
-          <span>${state.recruitment?.calibration ? "征召判断 60% / 六维实战 40%" : "征召判断折算"}</span>
+          <span>${state.recruitment?.calibration ? "三幕判断 60% / 复合实战 40%" : "三幕判断折算"}</span>
         </div>
       </div>
       <blockquote>${adaptRecruitmentCopy(ending.playableFlaw)}</blockquote>
@@ -5607,7 +5782,7 @@ function getDndMatches(mbtiCode, alignment) {
     };
   })
     .sort((a, b) => b.score - a.score || b.recruitmentBoost - a.recruitmentBoost)
-    .slice(0, 4);
+    .slice(0, 3);
 }
 
 function getRecruitmentClassBoost(className) {
@@ -6109,8 +6284,8 @@ function initAmbient() {
   }
   function tick() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(238,232,207,0.32)";
-    ctx.strokeStyle = "rgba(238,232,207,0.08)";
+    ctx.fillStyle = "rgba(92,78,57,0.36)";
+    ctx.strokeStyle = "rgba(92,78,57,0.1)";
     points.forEach((p, i) => {
       p.x += p.vx;
       p.y += p.vy;
