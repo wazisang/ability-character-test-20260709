@@ -1228,7 +1228,36 @@ h3 {
   display: grid;
   grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.05fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
+}
+
+@media (min-width: 861px) {
+  .result-grid > .result-panel {
+    height: 100%;
+  }
+
+  .result-grid-identity > .result-panel,
+  .result-grid-scores > .result-panel,
+  .result-grid-profile > .result-panel {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .result-grid-identity .radar-wrap {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .result-grid-scores .score-list {
+    height: 100%;
+    grid-template-rows: repeat(6, minmax(44px, 1fr));
+    align-content: stretch;
+  }
+
+  .result-grid-profile .profession-brief,
+  .result-grid-profile .descriptor-grid {
+    align-content: start;
+  }
 }
 
 .canvas-game {

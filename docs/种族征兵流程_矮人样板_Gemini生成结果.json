@@ -1,92 +1,29 @@
 {
-  "raceId": "dwarf",
-  "raceName": "矮人 (Dwarf)",
-  "description": "固执如石，嗜酒如命。胡须是他们的尊严，锻造是他们的信仰。他们能喝下足以毒死一头牛的烈酒，也能在记仇小本本上把精灵的名字写上一万遍。",
-  "mbtiFilters": [
-    {
-      "axis": "E_I",
-      "condition": "E",
-      "modifier": {
-        "affinity": {
-          "guild_fighter": 1,
-          "guild_cleric": 1
-        }
-      }
-    },
-    {
-      "axis": "E_I",
-      "condition": "I",
-      "modifier": {
-        "affinity": {
-          "guild_artificer": 2,
-          "guild_paladin": 1
-        }
-      }
-    },
-    {
-      "axis": "S_N",
-      "condition": "S",
-      "modifier": {
-        "affinity": {
-          "guild_fighter": 2,
-          "guild_artificer": 1
-        }
-      }
-    },
-    {
-      "axis": "S_N",
-      "condition": "N",
-      "modifier": {
-        "affinity": {
-          "guild_cleric": 2,
-          "guild_paladin": -1
-        }
-      }
-    },
-    {
-      "axis": "T_F",
-      "condition": "T",
-      "modifier": {
-        "affinity": {
-          "guild_artificer": 2,
-          "guild_fighter": 1
-        }
-      }
-    },
-    {
-      "axis": "T_F",
-      "condition": "F",
-      "modifier": {
-        "affinity": {
-          "guild_cleric": 2,
-          "guild_paladin": 2
-        }
-      }
-    },
-    {
-      "axis": "J_P",
-      "condition": "J",
-      "modifier": {
-        "affinity": {
-          "guild_paladin": 2,
-          "guild_artificer": 1
-        }
-      }
-    },
-    {
-      "axis": "J_P",
-      "condition": "P",
-      "modifier": {
-        "affinity": {
-          "guild_fighter": 2,
-          "guild_cleric": -1
-        }
-      }
-    }
-  ],
+  "meta": {
+    "version": 1,
+    "raceId": "dwarf",
+    "raceNameZh": "矮人",
+    "scope": "race_recruitment_full"
+  },
+  "raceCard": {
+    "raceId": "dwarf",
+    "raceNameZh": "矮人",
+    "raceNameEn": "Dwarf",
+    "title": "铁峰堡的黑铁防线与征兵考验",
+    "oneLine": "固执如石，嗜酒如命。胡须是尊严，锻造是信仰。",
+    "bodyText": "矮人们能喝下毒死巨兽的烈酒，也能在记仇小本本上把世仇的名字写满一万遍。要加入他们的队伍，你不仅需要重装防御与重锤，更需要一副坚硬的肝脏和同样固执的灵魂。",
+    "tags": [
+      "固执",
+      "嗜酒",
+      "铁锤",
+      "重装"
+    ],
+    "warningText": "切勿在矮人面前称赞精灵的工艺，也不要试图拔他们的胡子。否则后果自负。",
+    "recruiterQuote": "“你的胡子留得不错，但你的锤子和肝脏同样够硬吗？” —— 铁峰卫士招募官·铜须"
+  },
   "recruitTargets": [
     {
-      "id": "guild_fighter",
+      "targetId": "guild_fighter",
       "name": "铁峰卫士 (Fighter)",
       "description": "战场上最坚不可摧的移动城墙。如果你想要一柄能敲碎龙骨的战锤，或者一堵死也不退的盾牌，找他们就对了。",
       "requirements": {
@@ -95,7 +32,7 @@
       }
     },
     {
-      "id": "guild_paladin",
+      "targetId": "guild_paladin",
       "name": "熔炉誓约者 (Paladin)",
       "description": "将神圣的誓言镌刻在钢铁与烈火之中。他们发誓守护氏族的荣耀，并随时准备用燃烧的战锤给异教徒（特别是精灵）做物理超度。",
       "requirements": {
@@ -105,7 +42,7 @@
       }
     },
     {
-      "id": "guild_cleric",
+      "targetId": "guild_cleric",
       "name": "符文祭司 (Cleric)",
       "description": "他们向山脉与酒神祈祷。他们的治疗术不仅能愈合伤口，还能顺便治好你的宿醉（或者让你再醉一次）。",
       "requirements": {
@@ -114,7 +51,7 @@
       }
     },
     {
-      "id": "guild_artificer",
+      "targetId": "guild_artificer",
       "name": "黑铁工匠 (Artificer)",
       "description": "永远满身机油味，认为世界上没有什么是不能用齿轮、黑火药和几句粗话解决的。如果有，那就用更大口径的火炮。",
       "requirements": {
@@ -190,7 +127,7 @@
           "npcReply": "卓尔刺客被你这套极其娴熟的法律讹诈吓得连夜逃回了幽暗地域。“你的心智比恶魔还要狡诈。”",
           "scoreDelta": {
             "int": 2,
-            "wis": -3
+            "wis": -2
           },
           "mbtiDelta": {
             "N": 1,
@@ -200,7 +137,7 @@
             "guild_artificer": -2
           },
           "alignmentDelta": {
-            "evil": 3
+            "self": 2
           },
           "triggerTags": [
             "法律讹诈",
@@ -302,7 +239,7 @@
           "text": "掏出一张《通用地城无障碍设施建设规范》，痛斥这个墓穴的设计极其歧视小体型种族，然后直接躺平在水里抗议，要求墓穴主人出来公开道歉并提供合理的适老化改造。",
           "npcReply": "如果不是队友把你强行拖走，你已经为地城平权运动捐躯了。“你是个极其危险的魔怔维权斗士。”",
           "scoreDelta": {
-            "wis": -3,
+            "wis": -2,
             "int": -1
           },
           "mbtiDelta": {
@@ -310,10 +247,10 @@
             "J": 1
           },
           "affinityDelta": {
-            "guild_paladin": -3
+            "guild_paladin": -2
           },
           "alignmentDelta": {
-            "evil": 2,
+            "self": 2,
             "risk": 2
           },
           "triggerTags": [
@@ -340,7 +277,7 @@
             "guild_artificer": 2
           },
           "alignmentDelta": {
-            "chaotic": 3
+            "chaotic": 2
           },
           "triggerTags": [
             "碳酸火箭嗝",
@@ -425,11 +362,11 @@
             "T": 1
           },
           "affinityDelta": {
-            "guild_paladin": -3
+            "guild_paladin": -2
           },
           "alignmentDelta": {
             "chaotic": 2,
-            "evil": 1
+            "self": 1
           },
           "triggerTags": [
             "烧伤病假",
@@ -532,18 +469,18 @@
           "text": "掏出一张极其复杂的《跨种族医疗免责声明书》，要求精灵签字画押，证明如果自己出现任何肠胃不适精灵必须承担全责。结果拖延太久，自己因失血过多昏迷了。",
           "npcReply": "你的繁文缛节害死了你自己。“你的脑子里除了碰瓷装不下任何大局观。”",
           "scoreDelta": {
-            "wis": -3,
+            "wis": -2,
             "cha": -1
           },
           "mbtiDelta": {
             "J": 2
           },
           "affinityDelta": {
-            "guild_cleric": -3
+            "guild_cleric": -2
           },
           "alignmentDelta": {
             "risk": 2,
-            "evil": 1
+            "self": 1
           },
           "triggerTags": [
             "碰瓷免责",
@@ -646,7 +583,7 @@
           "text": "极其熟练地掏出一张《地城豆腐渣工程举报信》，强行要求正在追杀你们的地精包工头在上面签字，表示自己要去消费者协会实名举报他们。",
           "npcReply": "地精不仅没签字，还把你埋在了废墟里。“你把维权用到了极其致命且不分场合的地方。”",
           "scoreDelta": {
-            "wis": -3,
+            "wis": -2,
             "int": 1
           },
           "mbtiDelta": {
@@ -654,10 +591,10 @@
             "P": 1
           },
           "affinityDelta": {
-            "guild_paladin": -3
+            "guild_paladin": -2
           },
           "alignmentDelta": {
-            "evil": 3,
+            "self": 2,
             "chaotic": 1
           },
           "triggerTags": [
@@ -701,6 +638,7 @@
     "guild_fighter": [
       {
         "id": "dwarf_fighter_shield_wall",
+        "targetId": "guild_fighter",
         "title": "破阵之怒",
         "scene": "你被编入铁峰卫士的持盾前列，面对着如潮水般涌来的食人魔。你左边的菜鸟被吓得抛下盾牌跑了，导致盾墙出现了一个极其致命的缺口。",
         "prompt": "在长官下令重新列阵之前，你要如何处理这个缺口？",
@@ -763,18 +701,18 @@
             "npcReply": "战友在撤退时把你当成尸体踩了过去，你肋骨断了三根。“懦弱的蛆虫，你不配握住战锤。”",
             "scoreDelta": {
               "con": -2,
-              "cha": -3
+              "cha": -2
             },
             "mbtiDelta": {
               "P": 1,
               "F": 1
             },
             "affinityDelta": {
-              "guild_fighter": -4
+              "guild_fighter": -2
             },
             "alignmentDelta": {
               "risk": 2,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "番茄酱装死",
@@ -800,7 +738,7 @@
               "guild_fighter": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "胡须流星锤",
@@ -813,6 +751,7 @@
       },
       {
         "id": "dwarf_fighter_agile_enemy",
+        "targetId": "guild_fighter",
         "title": "花里胡哨",
         "scene": "对练场上，你的对手是一个极其敏捷的精灵剑客。他像一只烦人的苍蝇一样围着你跳跃，用细剑不断在你的重甲上划出火花，试图用体力消耗战拖垮你。",
         "prompt": "面对这种在矮人看来‘极其没有荣誉感’的风筝战术，你该怎么破局？",
@@ -875,7 +814,7 @@
             "text": "极其无赖地向考官提交了一份《反兴奋剂举报信》，控诉精灵在鞋底涂了魔法润滑油，并趁他错愕时，发动【暗器专精】，往他脸上撒了一把孜然粉。",
             "npcReply": "考官不仅判你输，还极其严厉地惩罚了你的下作。“哪怕对方是精灵，矮人战士的荣誉也不允许这种下三滥手段。”",
             "scoreDelta": {
-              "cha": -3,
+              "cha": -2,
               "wis": -1
             },
             "mbtiDelta": {
@@ -883,10 +822,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_fighter": -3
+              "guild_fighter": -2
             },
             "alignmentDelta": {
-              "evil": 2,
+              "self": 2,
               "chaotic": 1
             },
             "triggerTags": [
@@ -927,6 +866,7 @@
       },
       {
         "id": "dwarf_fighter_weapon_care",
+        "targetId": "guild_fighter",
         "title": "战锤的哀鸣",
         "scene": "长途跋涉后，每个人都累得倒头就睡。但你注意到你的传家宝战锤上因为沾染了怪物酸血而出现了一个极小的腐蚀斑点。",
         "prompt": "面对这个只有指甲盖大小的斑点，你会怎么做？",
@@ -998,10 +938,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_fighter": -3
+              "guild_fighter": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "偷换新兵武器",
@@ -1040,6 +980,7 @@
       },
       {
         "id": "dwarf_fighter_treasure_guard",
+        "targetId": "guild_fighter",
         "title": "金币的诱惑",
         "scene": "你被派去独自看守刚刚从巨龙巢穴缴获的几万枚金币和矮人遗失的圣物。此时，一名极度狡猾的人类盗贼潜入进来，他拿出一张极其诱人的黑市地图，试图说服你分他一半，并且保证绝对没人发现。",
         "prompt": "面对一笔能让你买下一座山脉的财富诱惑，你的选择是：",
@@ -1104,7 +1045,7 @@
             "text": "极其熟练地掏出一份《联合投资风险承担协议》，极其专业地跟盗贼探讨如何把这笔巨款通过地精钱庄洗白，准备一起连夜卷款跑路。",
             "npcReply": "你们出门就被氏族的巡逻队抓了现行。“你对金子的渴望彻底腐蚀了你的矮人之魂，你将被流放。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -1
             },
             "mbtiDelta": {
@@ -1112,10 +1053,10 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_fighter": -3
+              "guild_fighter": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "联合洗钱",
@@ -1155,6 +1096,7 @@
       },
       {
         "id": "dwarf_fighter_goblin_swarm",
+        "targetId": "guild_fighter",
         "title": "涌动的绿潮",
         "scene": "你们深入废弃的矿坑，却不小心惊动了数以百计的穴居地精。狭窄的坑道里挤满了绿色的怪物，它们虽然弱小，但数量多到足以淹没你们。",
         "prompt": "面对这种令人绝望的数量压制，你要如何在这极度狭窄的空间里破局？",
@@ -1219,7 +1161,7 @@
             "text": "极其熟练地掏出一张《不可抗力免责声明》，大喊“这不在我的服务合同范围内！”，然后极其自私地砸断矿坑支撑柱，把队友和地精一起活埋。",
             "npcReply": "你确实逃出来了，但氏族的执法者在矿坑口等着你。“谋杀同僚的逃兵，断头台是你唯一的归宿。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -1227,10 +1169,10 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_fighter": -4
+              "guild_fighter": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -1271,6 +1213,7 @@
       },
       {
         "id": "dwarf_fighter_drinking_contest",
+        "targetId": "guild_fighter",
         "title": "战前动员",
         "scene": "明天就是决定山脉归属的最终决战。今晚，友军的人类指挥官极其自负地向你发起了一场喝烈酒的挑战，试图在气势上压倒矮人。但他偷偷在自己的酒杯里放了醒酒解药。",
         "prompt": "面对这种不仅有损种族尊严、还暗藏作弊的酒局，你该如何应对？",
@@ -1334,7 +1277,7 @@
             "text": "极其无耻地掏出一张《军营内务管理条例》，跑去向监军实名举报人类指挥官战前违规酗酒，用极其官僚的手段强行封停了酒局。",
             "npcReply": "你确实取消了酒局，但你在所有人心中成了一个极其无胆的软蛋。“矮人可以战死，可以喝死，但绝不能去打小报告。”",
             "scoreDelta": {
-              "cha": -3,
+              "cha": -2,
               "con": -1
             },
             "mbtiDelta": {
@@ -1342,12 +1285,12 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_fighter": -3,
+              "guild_fighter": -2,
               "guild_paladin": -1
             },
             "alignmentDelta": {
               "control": 2,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "实名举报",
@@ -1373,7 +1316,7 @@
               "guild_fighter": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "头骨砸杯",
@@ -1387,6 +1330,7 @@
       },
       {
         "id": "dwarf_fighter_final_proof",
+        "targetId": "guild_fighter",
         "title": "铁峰的誓言",
         "scene": "考核的最后，考官把一柄极其普通、甚至有些生锈的矿镐扔在你的面前，那是你的祖先第一次挖开大山的工具。考官问你：‘作为一名铁峰卫士，当山脉崩塌、烈火熄灭时，你还剩下什么？’",
         "prompt": "面对这个直指灵魂的终极拷问，你的回答是：",
@@ -1448,7 +1392,7 @@
             "text": "极其熟练地掏出一份《离职申请书》：“既然山都塌了，那说明企业已经破产了。我现在就要申请离职，并要求结清N+1的遣散费！”",
             "npcReply": "考官的眼神瞬间变得极其冰冷。“你侮辱了你的血脉，滚出卫士的队列，你不配被称为矮人。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -1456,10 +1400,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_fighter": -3
+              "guild_fighter": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -1503,6 +1447,7 @@
     "guild_paladin": [
       {
         "id": "dwarf_paladin_anvil_oath",
+        "targetId": "guild_paladin",
         "title": "熔炉的誓言",
         "scene": "熔炉誓约者的入会仪式极其硬核：你需要赤手空拳在烧红的铁砧上宣读誓言，忍受皮肉被灼烧的痛苦，以此证明你对誓约的忠诚。",
         "prompt": "面对烧得通红、冒着热气的铁砧，你的行动是：",
@@ -1566,7 +1511,7 @@
             "text": "极其熟练地掏出一张《高温作业安全许可证明》，指责考官没有提供符合劳保规定的防护手套，极其正义地拒绝进行违规操作。",
             "npcReply": "你被考官极其愤怒地一脚踢出了锻造房。“誓约庭绝不容忍这种令人作呕的法棍行径！”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -1574,10 +1519,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 2,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -1604,7 +1549,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "铁砧烤串",
@@ -1618,6 +1563,7 @@
       },
       {
         "id": "dwarf_paladin_heresy",
+        "targetId": "guild_paladin",
         "title": "异端的挑衅",
         "scene": "在一次联合会议上，一名人类学者极其傲慢地公开宣称，根据考证，矮人的锻造工艺有一部分是向古代高等精灵偷学的。",
         "prompt": "对于矮人誓约者来说，这不仅是学术挑衅，更是极其严重的宗教异端。你将如何回应？",
@@ -1682,18 +1628,18 @@
             "text": "极其熟练地掏出一份《学术成果转让协议》，表示只要对方愿意支付一笔极其庞大的封口费，自己愿意立刻承认矮人手艺全是抄袭的。",
             "npcReply": "在场的其他矮人看你的眼神如同在看一具尸体。“你不仅是个异端，还是个极其无脑的贪财软骨头。”",
             "scoreDelta": {
-              "wis": -3,
-              "cha": -3
+              "wis": -2,
+              "cha": -2
             },
             "mbtiDelta": {
               "P": 1,
               "T": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 2
+              "self": 2
             },
             "triggerTags": [
               "学术封口费",
@@ -1733,6 +1679,7 @@
       },
       {
         "id": "dwarf_paladin_demon_deal",
+        "targetId": "guild_paladin",
         "title": "恶魔的价码",
         "scene": "在一次极其危险的深渊探索中，你被困在一个绝境里。一个高阶恶魔出现在你面前，向你开出了一个极其诱人的条件：只要你放弃圣武士的誓言，他不仅保你一命，还送你一条永远挖不完的秘银矿脉和喝不完的顶级麦酒。",
         "prompt": "面对这种直击矮人灵魂深处软肋的诱惑，你的选择是：",
@@ -1796,7 +1743,7 @@
             "text": "极其熟练地掏出一张《灵魂转让抵押合同》，要求恶魔必须在合同里写明秘银矿的年化收益率，并要求自己享有深渊极其优厚的免税待遇。",
             "npcReply": "你得到了一座被诅咒的矿脉，永远在里面挖掘却带不出一块矿石。“你的灵魂被贪婪彻底啃噬，你是个极其可悲的堕落者。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -1804,10 +1751,10 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "灵魂抵押",
@@ -1847,6 +1794,7 @@
       },
       {
         "id": "dwarf_paladin_coward_ally",
+        "targetId": "guild_paladin",
         "title": "懦夫的背影",
         "scene": "在一次保卫村庄的战斗中，一名被你保护的人类雇佣兵因为极度的恐惧，抛下了防线，哭喊着向后方逃亡，甚至在逃跑时撞倒了一个平民小孩。",
         "prompt": "作为代表秩序与守护的誓约骑士，你将如何处置这个极其恶劣的逃兵？",
@@ -1867,7 +1815,7 @@
               "guild_paladin": 3
             },
             "alignmentDelta": {
-              "order": 3,
+              "order": 2,
               "control": 1
             },
             "triggerTags": [
@@ -1910,7 +1858,7 @@
             "text": "极其熟练地掏出一张《精神崩溃诊断书》，声称自己也被极其严重的战场PTSD感染了，必须立刻脱离战场去昂贵的疗养院休息，然后跟着逃跑。",
             "npcReply": "平民被屠戮殆尽。“你是个披着圣光外衣、拿着虚假诊断书逃避责任的极其可耻的伪君子。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -1918,10 +1866,10 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -1962,6 +1910,7 @@
       },
       {
         "id": "dwarf_paladin_forge_magic",
+        "targetId": "guild_paladin",
         "title": "战地抢修",
         "scene": "你的队友，一个精灵游侠的轻甲在战斗中被强酸大面积腐蚀，防御力大减。但你的治疗法术已经耗尽，只剩下矮人誓约者特有的‘锻炉神术’。",
         "prompt": "面对这种极其尴尬的装备损坏，你如何使用你那粗暴的锻炉魔法？",
@@ -2024,7 +1973,7 @@
             "text": "极其熟练地掏出一张《战地装备租赁合同》，趁火打劫，极其无耻地要求精灵必须签下十倍高利贷的借条，才肯借给他一块极其破旧的备用盾牌。",
             "npcReply": "你把战友的生死当成了极其卑劣的敛财工具。“你是个披着圣武士外皮的放贷黑商。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2032,10 +1981,10 @@
               "E": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "战地高利贷",
@@ -2075,6 +2024,7 @@
       },
       {
         "id": "dwarf_paladin_stolen_artifact",
+        "targetId": "guild_paladin",
         "title": "遗失的尊严",
         "scene": "氏族极其珍贵的‘先祖酿酒桶’被一群人类强盗偷走了。你一路追踪到他们的营地，发现他们不仅不知敬畏，还在用这件神圣的遗物极其粗俗地盛放猪食。",
         "prompt": "面对这种极其亵渎神圣遗物的画面，你会作何反应？",
@@ -2138,7 +2088,7 @@
             "text": "极其熟练地掏出一张《遗失物品免责声明》，在上面极其伪善地写下“酒桶已被彻底摧毁，无法追回”，然后极其懦弱地转身逃回了氏族。",
             "npcReply": "你把氏族的尊严和自己的灵魂一起丢进了阴沟里。“懦夫，你不配被称为圣武士。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2146,10 +2096,10 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 2,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -2176,7 +2126,7 @@
               "guild_cleric": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "品尝猪食",
@@ -2190,6 +2140,7 @@
       },
       {
         "id": "dwarf_paladin_final_proof",
+        "targetId": "guild_paladin",
         "title": "最终的誓言",
         "scene": "考核的最后，考官给你倒了一杯极其清淡的白水，问你：‘圣光就如同这杯无味的净水，而矮人的欲望如同烈酒。作为誓约骑士，你要如何平衡你的信仰与本能？’",
         "prompt": "面对这个极其尖锐的哲学问题，你的回答是：",
@@ -2253,7 +2204,7 @@
             "text": "极其熟练地掏出一个极其巨大的要饭碗：“信仰能当饭吃吗？只要你给我极其多的金币，我连恶魔的脚趾头都能极其痛快地喝下去。”",
             "npcReply": "考官极其厌恶地收起了杯子。“你是个毫无底线可言的极度贪婪者，誓约庭不收垃圾。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2261,10 +2212,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_paladin": -4
+              "guild_paladin": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -2291,7 +2242,7 @@
               "guild_cleric": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "白水兑酒精",
@@ -2307,6 +2258,7 @@
     "guild_cleric": [
       {
         "id": "dwarf_cleric_healing",
+        "targetId": "guild_cleric",
         "title": "硬核医疗",
         "scene": "战场上，一名极其虚弱的人类士兵肚子上破了个大洞，奄奄一息。而你作为符文祭司，手头的神圣治疗药水刚刚用完，只剩下一桶极其浓烈的矮人特供医用烈酒和一把烙铁。",
         "prompt": "面对濒死的人类，你要如何进行战地急救？",
@@ -2370,7 +2322,7 @@
             "text": "极其熟练地掏出一张《战地医疗费用预付单》，极其冷血地表示如果没有看到现款，自己绝对不会浪费一滴极其珍贵的医疗酒精。",
             "npcReply": "你比盘旋在战场上的秃鹫还要贪婪。“神明不会庇护一个极其卑劣的趁火打劫者。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2378,10 +2330,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -2408,7 +2360,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "肚子纹身广告",
@@ -2422,6 +2374,7 @@
       },
       {
         "id": "dwarf_cleric_elf_artifact",
+        "targetId": "guild_cleric",
         "title": "亵渎的圣物",
         "scene": "你们在探索中发现了一件极其精美、散发着柔和月光的精灵古董竖琴。它拥有安抚狂躁野兽的魔力，但它毕竟是一件精灵的造物。",
         "prompt": "作为矮人祭司，当队友提议用这把竖琴去安抚前面挡路的狂暴双足飞龙时，你的态度是：",
@@ -2483,7 +2436,7 @@
             "text": "极其熟练地掏出一张《野生动物保护法》，指责队友惊扰了极其珍稀的双足飞龙，然后趁乱把极其值钱的竖琴塞进了自己的腰包。",
             "npcReply": "你的队友被飞龙咬死了。“你的贪婪比飞龙还要致命，你是个极其卑劣的走私犯。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2491,10 +2444,10 @@
               "E": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -2534,6 +2487,7 @@
       },
       {
         "id": "dwarf_cleric_funeral",
+        "targetId": "guild_cleric",
         "title": "最后的敬意",
         "scene": "一名备受尊敬的矮人老兵在对抗半兽人时牺牲了。作为祭司，你需要为他主持一场极其神圣的回归岩壁仪式。但由于撤退极其仓促，你手头没有圣水，甚至连火把都没了。",
         "prompt": "在资源极其匮乏的野外，你要如何为这位老兵完成极其庄严的葬礼？",
@@ -2595,18 +2549,18 @@
             "text": "极其熟练地掏出一张《遗产强制征收令》，极其合法地把老兵身上极其值钱的盔甲和戒指全扒了下来，然后随便挖个坑极其草率地把他踹进去。",
             "npcReply": "你的行为引发了全队的极其愤怒的哗变。“剥削死者，你不仅侮辱了祭司这个职业，也侮辱了矮人这个词。”",
             "scoreDelta": {
-              "wis": -3,
-              "cha": -3
+              "wis": -2,
+              "cha": -2
             },
             "mbtiDelta": {
               "T": 2,
               "P": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "遗产征收令",
@@ -2632,7 +2586,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "点燃胡须",
@@ -2646,6 +2600,7 @@
       },
       {
         "id": "dwarf_cleric_brewery_defense",
+        "targetId": "guild_cleric",
         "title": "酒窖保卫战",
         "scene": "一群极度饥饿的地下虫族挖穿了墙壁，入侵了氏族极其神圣的地下大酒窖。那里面存放着三百年来酿造的所有极品黑麦酒。长老命令你务必守住酒窖。",
         "prompt": "面对数量极其庞大的虫群，你要如何保卫这些神圣的液体？",
@@ -2709,7 +2664,7 @@
             "text": "极其熟练地掏出一张《不可抗力资产转移书》，极其迅速地抱起两桶最贵的酒，极其自私地转身就跑，把氏族极其神圣的酒窖留给虫子。",
             "npcReply": "你活下来了，但你亲手摧毁了氏族三百年的积蓄。“你将被绑在广场上极其耻辱地处死。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2717,11 +2672,11 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
               "risk": 2,
-              "evil": 2
+              "self": 2
             },
             "triggerTags": [
               "携酒潜逃",
@@ -2747,7 +2702,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "祸水东引",
@@ -2761,6 +2716,7 @@
       },
       {
         "id": "dwarf_cleric_dispute",
+        "targetId": "guild_cleric",
         "title": "两大家族的对峙",
         "scene": "铁毡家族和铜须家族因为一条极度富矿的开采权发生了极其严重的械斗。双方几百个脾气暴躁的矮人已经举起了战锤，随时准备打个你死我活。你作为中立的祭司被派去调停。",
         "prompt": "面对这两群极其固执且随时会引发内战的矮人，你要如何进行调停？",
@@ -2824,7 +2780,7 @@
             "text": "极其熟练地掏出两份《矿权独家转让协议》，极其贪婪地分别收受两家的极其巨额的贿赂，极其完美地引发了双方极其惨烈的内战。",
             "npcReply": "你的两头吃回扣引发了极其严重的内战。“你是个极其卑劣的贪官，你不配穿着祭司的长袍。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -2832,10 +2788,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -2862,7 +2818,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "群体拼酒",
@@ -2875,6 +2831,7 @@
       },
       {
         "id": "dwarf_cleric_dark_magic_temptation",
+        "targetId": "guild_cleric",
         "title": "生与死的禁忌",
         "scene": "你极其珍视的战友在战斗中被剧毒刺穿了心脏，已经完全没有了呼吸。普通的复活术已经失效。此时，你发现地上有一本散发着极其邪恶气息的黑皮书，上面记载着一种极其恶劣但极其有效的‘剥夺他人寿命来起死回生’的死灵禁术。",
         "prompt": "面对战友冰冷的尸体，你是否会翻开那本禁忌之书？",
@@ -2939,17 +2896,17 @@
             "npcReply": "你越界了。“你为了私欲极其残忍地献祭了无辜者，你不再是祭司，你是个极其危险的黑魔法师。”",
             "scoreDelta": {
               "int": 2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "T": 1,
               "J": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "献祭无辜",
@@ -2975,7 +2932,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "贿赂死神",
@@ -2989,6 +2946,7 @@
       },
       {
         "id": "dwarf_cleric_final_proof",
+        "targetId": "guild_cleric",
         "title": "信仰的重量",
         "scene": "考核的最后，考官给你出了一道极其刁钻的难题：‘如果有一天，神明要求你为了信仰去摧毁氏族的矿脉和酒窖，你会怎么做？’",
         "prompt": "面对这个极其尖锐的、在信仰与世俗利益之间二选一的问题，你的回答是：",
@@ -3050,7 +3008,7 @@
             "text": "极其熟练地掏出一张《资产转移隐匿指南》，极其虚伪地表示会执行神意，但内心极其阴暗地盘算如何在摧毁前把最值钱的矿石偷偷转移到私库。",
             "npcReply": "考官极其厌恶地看着你。“你满嘴的谎言连地精都骗不过，极其虚伪的官僚。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3058,10 +3016,10 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_cleric": -4
+              "guild_cleric": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -3087,7 +3045,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "请神喝酒",
@@ -3102,6 +3060,7 @@
     "guild_artificer": [
       {
         "id": "dwarf_artificer_dragon_weapon",
+        "targetId": "guild_artificer",
         "title": "屠龙的图纸",
         "scene": "氏族要求你设计一款对抗成年红龙的武器。大部分工匠都在设计更大号的弩车，但你觉得这种常规思路极其的无聊且低效。",
         "prompt": "面对这种极其苛刻的设计要求，你的极度疯狂的设计思路是：",
@@ -3166,7 +3125,7 @@
             "npcReply": "图纸在测试时提前走火，炸毁了半个工坊。“你极其贪婪的阴谋最终反噬了你。”",
             "scoreDelta": {
               "int": 1,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "N": 1,
@@ -3176,7 +3135,7 @@
               "guild_artificer": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -3203,7 +3162,7 @@
               "guild_cleric": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "超声波音响",
@@ -3217,6 +3176,7 @@
       },
       {
         "id": "dwarf_artificer_jam_repair",
+        "targetId": "guild_artificer",
         "title": "致命卡壳",
         "scene": "你的小队正在被极度危险的石化蜥蜴追杀。你那极其金贵、造价高昂的六管连发转管火铳在最关键的时刻因为极其严重的过热而卡壳了。",
         "prompt": "面对即将扑上来的蜥蜴，和这把卡死的天价武器，你极其短暂的应对是：",
@@ -3279,7 +3239,7 @@
             "text": "极其熟练地掏出一张《极其严重的工伤索赔单》，极其自私地把卡壳火铳极其无情地扔向队友吸引仇恨，自己极其狼狈地尖叫着逃跑。",
             "npcReply": "你活下来了，但你失去了一切荣誉，也被公会极其严厉地追杀。“极其懦弱的逃兵，你不配使用机械。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3287,10 +3247,10 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_artificer": -4
+              "guild_artificer": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -3316,7 +3276,7 @@
               "guild_artificer": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "麦酒降温",
@@ -3330,6 +3290,7 @@
       },
       {
         "id": "dwarf_artificer_budget_cut",
+        "targetId": "guild_artificer",
         "title": "军费的缩减",
         "scene": "极其官僚的上层议会决定大幅削减前线工匠的预算。你必须在一周内交付十门大炮，但你极其无奈地发现手头的优质黑铁已经完全不够了。",
         "prompt": "面对这种极其恶劣的甲方要求，你极其变通的处理方式是：",
@@ -3392,7 +3353,7 @@
             "text": "极其熟练地掏出一份《极其虚假的质量检测合格报告》，极其丧心病狂地用劣质矿渣充数，把极其容易炸膛的杀人武器极其无耻地送上前线。",
             "npcReply": "大炮在前线发生了极其恐怖的连环炸膛，害死了无数战友。“你是个极其卑劣的杀人犯，你将被投入岩浆。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3400,10 +3361,10 @@
               "E": 1
             },
             "affinityDelta": {
-              "guild_artificer": -4
+              "guild_artificer": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -3430,7 +3391,7 @@
               "guild_rogue": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "拆楼熔炮",
@@ -3444,6 +3405,7 @@
       },
       {
         "id": "dwarf_artificer_safety_inspector",
+        "targetId": "guild_artificer",
         "title": "安检员的悲鸣",
         "scene": "你正在极其兴奋地调试一台极度危险的‘超载魔能榴弹发射器’。此时，一名极其死板的人类安全督导员拿着极其厚重的条文，指责你的工坊存在极其严重的消防隐患，要求你立刻停工整改。",
         "prompt": "面对这种极其扫兴的官僚主义干涉，你极其火爆的脾气会怎么做？",
@@ -3507,7 +3469,7 @@
             "text": "极其熟练地掏出一张《极其伪造的消防豁免许可》，不仅拒绝检查，还极其阴险地堵死排气阀试图引发一场“意外”的小爆炸把他极其惨烈地炸伤。",
             "npcReply": "爆炸极其严重地炸毁了工坊，你也被判处极其严重的谋杀未遂。“你是个极其危险的社会隐患。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3515,10 +3477,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_artificer": -4
+              "guild_artificer": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -3545,7 +3507,7 @@
               "guild_fighter": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "强行试爆",
@@ -3559,6 +3521,7 @@
       },
       {
         "id": "dwarf_artificer_elf_collab",
+        "targetId": "guild_artificer",
         "title": "屈辱的合作",
         "scene": "为了对抗极其强大的巫妖，上面极其强硬地要求你和一名极其高傲的精灵附魔师合作。你需要打造极其坚固的外壳，而他负责附魔。他极其挑剔地指责你打磨的金属不够‘优雅’，无法承载魔法。",
         "prompt": "面对这种极其侮辱矮人手艺的言论，你要如何与他‘合作’？",
@@ -3621,7 +3584,7 @@
             "text": "极其熟练地掏出一份《极其单方面的免责阴阳合同》，并在金属夹层里极其恶劣地塞了反魔石，让精灵极其惨烈地遭到魔法反噬。",
             "npcReply": "你极其狭隘的偏见害死了战友，也极其愚蠢地葬送了对抗巫妖的唯一希望。“你是个极其罪恶的破坏者。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3629,10 +3592,10 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_artificer": -4
+              "guild_artificer": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "暗藏反魔石",
@@ -3658,7 +3621,7 @@
               "guild_bard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "芭比粉大剑",
@@ -3671,7 +3634,124 @@
         ]
       },
       {
+        "id": "dwarf_artificer_rogue_automaton",
+        "targetId": "guild_artificer",
+        "title": "失控的魔能傀儡",
+        "scene": "在调试一款用于协助采矿的魔能机械傀儡时，因为一个逻辑芯片的极小短路，傀儡突然陷入了极其暴躁的死循环，挥舞着采矿镐开始在工坊里无差别拆墙，并且正朝着你存放极品麦酒的酒柜冲去。",
+        "prompt": "面对这个自己亲手制造、即将物理摧毁你毕生酒水收藏的钢铁逆子，你该怎么办？",
+        "options": [
+          {
+            "id": "A",
+            "text": "发动【精密停机】，极其冷静地顶着飞溅的石屑，用螺丝刀精准卡入傀儡脖颈后的核心齿轮缝隙，在一秒钟内强行物理阻断其动力源。",
+            "npcReply": "傀儡的红光熄灭了，距离你的酒柜只有几公分。“极其冷静且极其精准的停机操作，你的技术无可挑剔。”",
+            "scoreDelta": {
+              "int": 3,
+              "dex": 1
+            },
+            "mbtiDelta": {
+              "I": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 3
+            },
+            "alignmentDelta": {
+              "order": 2,
+              "control": 1
+            },
+            "triggerTags": [
+              "核心停机",
+              "精准微操",
+              "保卫麦酒"
+            ],
+            "outcomeTone": "合格",
+            "branchHint": "技术精湛、能在最混乱的场面中精准停机的机械大师"
+          },
+          {
+            "id": "B",
+            "text": "发动【野蛮格斗】，极其狂暴地抡起极其沉重的前线扳手，对着傀儡的钢腿来了一记极其猛烈的横扫，试图用极其纯粹的物理压制让它屈服。",
+            "npcReply": "傀儡被你砸坏了腿，倒在地上直冒烟，但你的酒柜也被余波震倒了。“……虽然解决了问题，但你似乎极其热衷于拆卸自己的作品。”",
+            "scoreDelta": {
+              "str": 3,
+              "dex": -1
+            },
+            "mbtiDelta": {
+              "E": 1,
+              "S": 1
+            },
+            "affinityDelta": {
+              "guild_fighter": 2,
+              "guild_artificer": 1
+            },
+            "alignmentDelta": {
+              "action": 2
+            },
+            "triggerTags": [
+              "铁锤拆机",
+              "物理服众",
+              "暴力拆解"
+            ],
+            "outcomeTone": "偏离",
+            "branchHint": "极其物理调校、习惯用最暴力手段驯服机器的铁血工匠"
+          },
+          {
+            "id": "C",
+            "text": "极其熟练地掏出一张《产品意外责任免责书》，宣称这是供应商提供的齿轮存在极其恶劣的质量缺陷，要求供应商赔偿损失，然后躲在门外看着工坊被物理拆毁。",
+            "npcReply": "工坊被拆平了。“你是个极其可耻的懦夫，为了推卸责任不惜看着自己的工坊化为废墟。”",
+            "scoreDelta": {
+              "wis": -2,
+              "cha": -2
+            },
+            "mbtiDelta": {
+              "P": 1,
+              "T": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": -2
+            },
+            "alignmentDelta": {
+              "self": 2,
+              "risk": 2
+            },
+            "triggerTags": [
+              "免责声明",
+              "甩锅供应商",
+              "见死不救"
+            ],
+            "outcomeTone": "危险",
+            "branchHint": "极其精通甩锅、为了自身免责不惜出卖整个工坊的卑劣混子"
+          },
+          {
+            "id": "D",
+            "text": "发动【魔改跳舞机】，极其离谱地把一块‘极度刺耳的广场舞音响芯片’强行拍进傀儡的外接插槽中，用极其洗脑的土嗨节奏强迫傀儡在原地开始跳极其滑稽的矮人踢踏舞。",
+            "npcReply": "傀儡在酒柜前跳起了踢踏舞，最后因为系统过载极其安详地物理报废了。“……你这极其逆天的改写手段，连傀儡的CPU都烧糊了。”",
+            "scoreDelta": {
+              "cha": 3,
+              "int": 1
+            },
+            "mbtiDelta": {
+              "E": 2,
+              "N": 1
+            },
+            "affinityDelta": {
+              "guild_artificer": 1
+            },
+            "alignmentDelta": {
+              "chaotic": 2
+            },
+            "triggerTags": [
+              "蹦迪傀儡",
+              "芯片魔改",
+              "土嗨蹦迪"
+            ],
+            "outcomeTone": "荒诞",
+            "branchHint": "脑洞大开、擅长用最抽象的方式给机器降维打击的奇葩发明家"
+          }
+        ]
+      },
+      {
         "id": "dwarf_artificer_final_proof",
+        "targetId": "guild_artificer",
         "title": "爆炸的艺术",
         "scene": "考核的最后，考官带你来到一台极其巨大但极其老旧的蒸汽核心前：‘它极其的不稳定，随时可能爆炸。你觉得它是极其失败的垃圾，还是极其完美的艺术品？’",
         "prompt": "面对这个极其考验工匠哲学的核心问题，你的回答是：",
@@ -3735,7 +3815,7 @@
             "text": "极其熟练地掏出一张《极其严重的心理创伤鉴定书》，极其懦弱地捂住耳朵尖叫：“它太极其危险了！我极其坚决地要退出！”",
             "npcReply": "考官极其鄙夷地挥了挥手。“害怕爆炸的人永远成不了极其顶级的黑铁工匠，滚吧。”",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3743,7 +3823,7 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_artificer": -4
+              "guild_artificer": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -3772,7 +3852,7 @@
               "guild_cleric": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "核心炒饭",
@@ -3788,60 +3868,423 @@
   },
   "endingTemplates": [
     {
-      "id": "dwarf_fighter_end",
+      "endingId": "dwarf_fighter_end",
+      "endingType": "accepted",
       "title": "铁峰的怒汉",
-      "condition": "affinity.guild_fighter >= 6 && alignment.order >= alignment.chaotic",
-      "description": "你成为了铁峰卫士中最坚硬的那块生铁。你的胡子极其杂乱，你的战锤极其沉重。你在防线的最前沿极其枯燥地敲碎了一颗又一颗怪物的头颅。精灵觉得你极其野蛮，人类觉得你极其死板，但只有你的战友知道，只要你极其固执地站在这里，铁峰堡的城墙就永远极其安全。",
-      "imagePrompt": "A highly detailed portrait of a heavily armored dwarf warrior standing firm like a mountain. The armor is battle-scarred and thick, with a massive double-sided warhammer resting on his shoulder. His beard is braided with iron rings. Background is a dark, underground defensive line with faint red glows of torches. Epic fantasy art style, grim and resolute atmosphere, dramatic lighting. isolated on a solid chroma key green background",
-      "isGoodEnd": true
+      "verdictLine": "判定：合格。你成为了铁峰卫士中最坚硬的一块钢铁。",
+      "explanation": "你成为了铁峰卫士中最坚硬的那块生铁。你的胡子极其杂乱，你的战锤极其沉重。你在防线的最前沿极其枯燥地敲碎了一颗又一颗怪物的头颅。精灵觉得你极其野蛮，人类觉得你极其死板，但只有你的战友知道，只要你极其固执地站在这里，铁峰堡的城墙就永远极其安全。",
+      "tableFunction": "酒馆防守：你坐在酒馆门口时，可强行阻挡任何非矮人顾客插队。",
+      "playableFlaw": "顽固不化：你拒绝接受任何来自于精灵的战术建议，哪怕它是对的。",
+      "nextHook": "前线召集：铁峰堡前线告急，带上你的塔盾，立刻出发！",
+      "recommendedClass": [
+        "战士",
+        "野蛮人"
+      ],
+      "tags": [
+        "高防",
+        "铁卫",
+        "暴躁"
+      ]
     },
     {
-      "id": "dwarf_paladin_end",
+      "endingId": "dwarf_paladin_end",
+      "endingType": "accepted",
       "title": "熔炉的烈焰",
-      "condition": "affinity.guild_paladin >= 6",
-      "description": "你成为了极其狂热的熔炉誓约者。你极其极其严格地遵守着誓言，把极其刻板的教条当成砸向异端的铁锤。你极其冷酷地烧毁了无数邪教徒的营地，也极其极其固执地强迫全队每天极其准时地对着铁砧祈祷。你像一团极其耀眼但极其烫手的神圣之火，所有人都极其敬畏你，但也极其极其地害怕你突然发飙。",
-      "imagePrompt": "A fierce dwarf paladin enveloped in holy fire, wielding a glowing runic hammer and a heavy shield. His armor is ornate yet functional, glowing red-hot from within like a forge. His eyes are filled with zealous fervor. Background features a sacred anvil and sparks flying in a massive dwarven forge. Epic fantasy art style, intense and intimidating atmosphere. isolated on a solid chroma key green background",
-      "isGoodEnd": true
+      "verdictLine": "判定：合格。你以烈火与誓言为武器，成为了熔炉誓约者。",
+      "explanation": "你成为了极其狂热的熔炉誓约者。你极其极其严格地遵守着誓言，把极其刻板的教条当成砸向异端的铁锤。你极其冷酷地烧毁了无数邪教徒的营地，也极其极其固执地强迫全队每天极其准时地对着铁砧祈祷。你像一团极其耀眼但极其烫手的神圣之火，所有人都极其敬畏你，但也极其极其地害怕你突然发飙。",
+      "tableFunction": "晨祷发起：每天清晨，你可以强迫酒馆内所有人在铁砧前祈祷，拒绝者需请你喝一杯啤酒。",
+      "playableFlaw": "教条主义：在非秩序秩序阵营的角色面前，你必须大声谴责他们的不检点行为。",
+      "nextHook": "圣战宣告：深渊恶魔的爪牙已现身，举起你的圣光战锤，净化他们！",
+      "recommendedClass": [
+        "圣武士",
+        "牧师"
+      ],
+      "tags": [
+        "圣光",
+        "狂热",
+        "高防"
+      ]
     },
     {
-      "id": "dwarf_cleric_end",
+      "endingId": "dwarf_cleric_end",
+      "endingType": "accepted",
       "title": "硬核的祭司",
-      "condition": "affinity.guild_cleric >= 6",
-      "description": "你极其极其完美地把信仰与世俗极其丝滑地结合在了一起。你不仅是极其受人尊敬的战地医生，更是极其声名远扬的酿酒大师。你极其喜欢用极其粗暴的手段物理超度亡灵，然后极其豪迈地请所有人喝极其浓烈的特供黑麦酒。在你的极其极其离谱的带领下，你们的教堂现在看起来极其像一个极度喧闹的地下酒馆。",
-      "imagePrompt": "A cheerful yet tough dwarf cleric holding a massive tankard of ale in one hand and a holy symbol shaped like an anvil in the other. He wears priestly robes heavily reinforced with chainmail. His beard is completely soaked in ale. Background is a lively dwarven tavern that also serves as a temple, with giant kegs. Epic fantasy art style, warm and boisterous lighting. isolated on a solid chroma key green background",
-      "isGoodEnd": true
+      "verdictLine": "判定：合格。你让教堂里充满了麦酒的芬芳。",
+      "explanation": "你极其极其完美地把信仰与世俗极其丝滑地结合在了一起。你不仅是极其受人尊敬的战地医生，更是极其声名远扬的酿酒大师。你极其喜欢用极其粗暴的手段物理超度亡灵，然后极其豪迈地请所有人喝极其浓烈的特供黑麦酒。在你的极其极其离谱的带领下，你们的教堂现在看起来极其像一个极度喧闹的地下酒馆。",
+      "tableFunction": "酒神赐福：你在酒馆内喝下烈酒后，可获得额外的神圣治疗法术位。",
+      "playableFlaw": "宿醉祈祷：每次施展法术前，你都必须打一个响亮的饱嗝，否则有5%几率施法失败。",
+      "nextHook": "神圣配方：寻找传说中的‘酒神最初配方’，在酒窖中创造奇迹。",
+      "recommendedClass": [
+        "牧师",
+        "吟游诗人"
+      ],
+      "tags": [
+        "治疗",
+        "酿酒",
+        "豪迈"
+      ]
     },
     {
-      "id": "dwarf_artificer_end",
+      "endingId": "dwarf_artificer_end",
+      "endingType": "accepted",
       "title": "爆炸的狂魔",
-      "condition": "affinity.guild_artificer >= 6",
-      "description": "你成为了黑铁工匠中最极其极其危险的存在。你极其鄙视任何传统的冷兵器，极其痴迷于给任何能动的东西装上极其夸张的动力炉和极度不稳定的黑火药。虽然你极其频繁地炸毁自己的实验室，但你极其天才地发明出了一管能极其极其精准地把巨龙下巴炸飞的‘超重型魔能滑膛炮’。只要极其极其幸运地没被自己的发明炸死，你终将极其伟大。",
-      "imagePrompt": "A manic dwarf artificer covered in soot and grease, wearing thick goggles. He is grinning crazily while holding an overly complex, massive, multi-barreled steampunk blunderbuss that is smoking and sparking. His workshop background is filled with chaotic blueprints, gears, and a small uncontrolled fire. Epic fantasy art style, dynamic and chaotic. isolated on a solid chroma key green background",
-      "isGoodEnd": true
+      "verdictLine": "判定：合格。你的指尖跃动着机械与黑火药的火花。",
+      "explanation": "你成为了黑铁工匠中最极其极其危险的存在。你极其鄙视任何传统的冷兵器，极其痴迷于给任何能动的东西装上极其夸张的动力炉和极度不稳定的黑火药。虽然你极其频繁地炸毁自己的实验室，但你极其天才地发明出了一管能极其极其精准地把巨龙下巴炸飞的‘超重型魔能滑膛炮’。只要极其极其幸运地没被自己的发明炸死，你终将极其伟大。",
+      "tableFunction": "零件拼装：在酒馆中，你可以用喝剩的铁罐 and 骨头制作出一个微型炸弹。",
+      "playableFlaw": "听力受损：因为长期接触爆炸，你的听力极差，经常听错NPC的指令并触发奇妙误会。",
+      "nextHook": "试爆通知：你的超重型滑膛炮已就位，目标：地底巨兽！",
+      "recommendedClass": [
+        "奇术师",
+        "法师"
+      ],
+      "tags": [
+        "科技",
+        "爆炸",
+        "疯狂"
+      ]
     },
     {
-      "id": "dwarf_failure_end",
+      "endingId": "dwarf_failure_end",
+      "endingType": "rejected",
       "title": "无毛的耻辱",
-      "condition": "alignment.chaotic > alignment.order && alignment.risk >= 4",
-      "description": "你因为极其频繁地在极其重要的场合展现出极其可耻的懦弱与极度极度的自私，最终被氏族极其极其愤怒地审判了。你的极其极其珍贵的胡须被极其屈辱地全部剃光，然后你被极其极其粗暴地流放到了地表。极其极其可悲的是，失去胡子的你甚至经常被人类极其眼瞎地当成极其肥胖的半身人小孩。",
-      "imagePrompt": "A deeply ashamed and depressed dwarf with NO BEARD, wearing tattered commoner clothes. He looks pathetic and completely stripped of his dwarven pride. He is sitting on a muddy street corner in a human city, being pointed at by mocking human passersby. Gloomy and miserable atmosphere. isolated on a solid chroma key green background",
-      "isGoodEnd": false
+      "verdictLine": "判定：淘汰。你被氏族剥夺了胡须，流放至地表。",
+      "explanation": "你因为极其频繁地在极其重要的场合展现出极其可耻的懦弱与极度极度的自私，最终被氏族极其极其愤怒地审判了。你的极其极其珍贵的胡须被极其屈辱地全部剃光，然后你被极其极其粗暴地流放到了地表。极其极其可悲的是，失去胡子的你甚至经常被人类极其眼瞎地当成极其肥胖的半身人小孩。",
+      "tableFunction": "假扮孩童：在地表人类城镇，你可以假装自己是个超重的小孩来骗取糖果或免费面包。",
+      "playableFlaw": "社恐与无毛症：没有胡子的你无法在任何矮人面前抬起头，对话时魅力判定承受-5惩罚。",
+      "nextHook": "救赎之路：寻找能够迅速生发胡须的远古神药，或者通过一件伟大的功绩重回地底。",
+      "recommendedClass": [
+        "游荡者"
+      ],
+      "tags": [
+        "无毛",
+        "耻辱",
+        "流放"
+      ]
     },
     {
-      "id": "dwarf_chaos_end",
+      "endingId": "dwarf_chaos_end",
+      "endingType": "special",
       "title": "物理拆迁办",
-      "condition": "alignment.chaotic >= 6",
-      "description": "你极其极其离谱的脑回路让你彻底脱离了所有正常军团的编制。你极其极其狂热地组建了一支名为‘物理超度与战地强行装修小队’的极度极其抽象的队伍。你们极其极其热衷于在战场上极其极其疯狂地给敌人的堡垒进行极其暴力的定向爆破和刮大白。虽然战果极其极其辉煌，但所有友军都极其极其害怕跟你们一起行动。",
-      "imagePrompt": "An absolutely insane dwarf holding a massive lit keg of gunpowder in one hand and a plaster trowel in the other. He is laughing maniacally while riding a makeshift rocket-propelled cart. Background shows a heavily damaged goblin fortress being simultaneously blown up and painted white. Comic and absurd fantasy style. isolated on a solid chroma key green background",
-      "isGoodEnd": false
+      "verdictLine": "判定：特殊结局。你把战场变成了轰轰烈烈的装修与定向爆破工坊。",
+      "explanation": "你极其极其离谱的脑回路让你彻底脱离了所有正常军团的编制。你极其极其狂热地组建了一支名为‘物理超度与战地强行装修小队’的极度极其抽象的队伍。你们极其极其热衷于在战场上极其极其疯狂地给敌人的堡垒进行极其暴力的定向爆破和刮大白。虽然战果极其极其辉煌，但所有友军都极其极其害怕跟你们一起行动。",
+      "tableFunction": "光速翻修：你可以在几秒内把酒馆里破损的木桌粉刷一新，虽然这可能并不是店主想要的。",
+      "playableFlaw": "多动症与强迫症：看到毛坯墙面或不牢固的石门，你必须防卫性地克制自己不去把它粉刷或定向爆破。",
+      "nextHook": "拆迁合同：地精商会发来了一份针对古老遗迹的物理拆迁意向书，奖金优厚！",
+      "recommendedClass": [
+        "野蛮人",
+        "奇术师"
+      ],
+      "tags": [
+        "拆迁",
+        "爆破",
+        "魔改"
+      ]
     },
     {
-      "id": "dwarf_evil_end",
+      "endingId": "dwarf_evil_end",
+      "endingType": "rejected",
       "title": "金币的奴隶",
-      "condition": "alignment.evil >= 6",
-      "description": "你极其极其彻底地被对金币的极度贪婪给吞噬了。你不仅极其极其卑劣地出卖了氏族的采矿机密，甚至极其极其丧心病狂地在极其极其劣质的战锤里掺铅卖给新兵。最终，你极其极其悲惨地遭到反噬：你被极其愤怒的买家锁在一个极其极其巨大的宝箱里，然后极其极其冷酷地沉入了极其极度冰冷的地下暗河中。极其讽刺的是，你真的是抱着极其极其多的金币死的。",
-      "imagePrompt": "A sinister, greedy dwarf with heavily jeweled rings on every finger, counting coins with a deeply wicked expression. He is surrounded by cheap, counterfeit dwarven weapons and piles of gold. The scene abruptly shifts to him drowning inside a sinking iron chest filled with coins. Dark and oppressive lighting. isolated on a solid chroma key green background",
-      "isGoodEnd": false
+      "verdictLine": "判定：淘汰。贪婪吞噬了你的灵魂，你抱着金币沉入暗河。",
+      "explanation": "你极其极其彻底地被对金币的极度贪婪给吞噬了。你不仅极其极其卑劣地出卖了氏族的采矿机密，甚至极其极其丧心病狂地在极其极其劣质的战锤里掺铅卖给新兵。最终，你极其极其悲惨地遭到反噬：你被极其愤怒的买家锁在一个极其极其巨大的宝箱里，然后极其极其冷酷地沉入了极其极度冰冷的地下暗河中。极其讽刺的是，你真的是抱着极其极其多的金币死的。",
+      "tableFunction": "金币称重：虽然你死了，但在英灵殿中，如果有人投掷出与金币相关的检定，你可以进行干涉。",
+      "playableFlaw": "财迷心窍：哪怕看到地上掉了一个铜板，你也必须在接下来的行动中优先去捡它。",
+      "nextHook": "亡灵救赎：你变成了地下暗河中的贪婪冤魂，等待着倒霉的冒险者把你从铁箱里捞出来。",
+      "recommendedClass": [
+        "游荡者"
+      ],
+      "tags": [
+        "贪婪",
+        "反噬",
+        "金币"
+      ]
+    },
+    {
+      "endingId": "dwarf_lawyer_end",
+      "endingType": "special",
+      "title": "地城金牌律师",
+      "verdictLine": "判定：特殊结局。你放弃了锤子，拿起了《通用法典》，成为了幽暗地域最可怕的法棍。",
+      "explanation": "你发现比起用铁锤砸人，用起诉书和跨种族免责声明能更快且更合法地消灭敌人。你成功起诉了三个地精部落非法侵占采矿权，还逼迫一名火元素签署了胡须伤害赔偿契约。现在，哪怕是地狱里的魔鬼领主在对你动手前，也得先让他的律师评估一下违约成本。",
+      "tableFunction": "无罪辩护：当有队友在酒馆里因为打架斗殴被卫兵逮捕时，你可以出示一份《合法防卫与酒精过敏免责声明》，有50%概率无罪释放他。",
+      "playableFlaw": "职业病：每当你听到‘合同’、‘协议’或‘起诉’时，你必须停下手中所有事情，花十分钟核对合同细节。",
+      "nextHook": "法庭传票：深渊领主向你发来传票，控告你在上一次战斗中使用了违规的商业讹诈。",
+      "recommendedClass": [
+        "吟游诗人",
+        "法师"
+      ],
+      "tags": [
+        "法律",
+        "法棍",
+        "免责"
+      ]
+    },
+    {
+      "endingId": "dwarf_peacemaker_end",
+      "endingType": "special",
+      "title": "酒精和平大使",
+      "verdictLine": "判定：特殊结局。你用无尽的麦酒和极强的肝脏，物理实现了跨种族和平。",
+      "explanation": "你坚信世界上没有一桶麦酒解决不了的种族仇恨，如果有，那就加点伏特加。你成功在矮人卫兵和精灵游侠之间举办了十七场拼酒大会，将致命的械斗变成了和谐的集体宿醉。虽然两族长老每天都在宿醉中感到头疼，但至少幽暗地域的流血事件减少了百分之九十。",
+      "tableFunction": "酒局劝架：当酒馆内发生冲突时，你可以强行发起一场拼酒对抗，用拼酒输赢代替物理斗殴。",
+      "playableFlaw": "重度宿醉：你在清晨的所有敏捷与感知检定都必须承受-2惩罚，除非你立刻喝下一小杯回魂酒。",
+      "nextHook": "国际外交：地表人类与地底精灵即将在酒馆签署和平条约，去负责采购两万桶烈酒！",
+      "recommendedClass": [
+        "牧师",
+        "吟游诗人"
+      ],
+      "tags": [
+        "和平",
+        "拼酒",
+        "肝帝"
+      ]
+    },
+    {
+      "endingId": "dwarf_gourmet_end",
+      "endingType": "special",
+      "title": "硬核黑暗厨神",
+      "verdictLine": "判定：特殊结局。你将所有的冒险危机都转换为了餐桌上的重工业美食。",
+      "explanation": "你对铁砧和魔能核心唯一的执念就是‘这玩意火候够不够炒菜’。你用火元素的余温做出了全地底最赞的烧烤，用双足飞龙的残骸做出了极品刺身，甚至还发明了火药兑酒的‘硬汉特饮’。精灵美食家们边吐边哭，而矮人老兵们则一边赞美你一边排长队领便当。",
+      "tableFunction": "战地烹饪：在休息整备期间，你可以用任何击杀的野兽材料制作一份恢复体力的食物，虽然卖相极其惊悚。",
+      "playableFlaw": "铁胃后遗症：你无法品尝任何正常的、清淡的食物，食用非重口味食物会让你情绪极其低落。",
+      "nextHook": "食神大赛：前往深渊，参加由恶魔领主主持的‘地狱熔炉烹饪挑战赛’！",
+      "recommendedClass": [
+        "游侠",
+        "野蛮人"
+      ],
+      "tags": [
+        "美食",
+        "铁胃",
+        "硬核"
+      ]
+    },
+    {
+      "endingId": "dwarf_cyborg_end",
+      "endingType": "special",
+      "title": "赛博改造先驱",
+      "verdictLine": "判定：特殊结局。你把打铁的手艺用在了自己身上，成为了半机械构造体。",
+      "explanation": "你认为矮人的血肉之躯在追求极致力量的道路上太慢了。你在自己的下巴上编织了合金假胡须，用火箭推进器代替了双腿，甚至把肋骨全换成了重金属装甲。现在你不仅不怕烫、不怕砸，每次打嗝还能极其巧合地喷射出高压蒸汽。",
+      "tableFunction": "蒸汽排放：在酒馆里，你可以通过排放体内的废水蒸汽来制造一片能见度为零的迷雾，方便你偷溜买单。",
+      "playableFlaw": "强磁敏感：如果靠近强力电磁铁或闪电法术，你将失去身体 of 构造体的控制权，并开始原地打转。",
+      "nextHook": "肉体飞升：寻找隐藏在黑铁矿坑深处的远古泰坦遗迹，给自己换一颗纯秘银的心脏。",
+      "recommendedClass": [
+        "奇术师",
+        "战士"
+      ],
+      "tags": [
+        "赛博",
+        "改装",
+        "飞升"
+      ]
+    },
+    {
+      "endingId": "dwarf_shame_scout_end",
+      "endingType": "rejected",
+      "title": "坑队友专家",
+      "verdictLine": "判定：淘汰。你被终身禁止加入任何冒险小队，因为所有人都不想死在你的‘合理规避’中。",
+      "explanation": "你用高利贷合同逼战友交保护费，在怪物扑上来时用队友当肉盾，还美其名曰‘风险对冲’。你的恶名传遍了所有地城公会。今天，你在大街上贴出了组队招募，结果不仅没有任何人回应，连路过的小狗都极其鄙视地朝你吐了唾沫。",
+      "tableFunction": "背摔盾牌：在酒馆里，如果有人向你丢酒杯，你可以顺手拉旁边的队友帮你挡下。",
+      "playableFlaw": "信誉破产：小队中的其他角色在与你交易时，有80%的几率要求你必须先付款，且魅力加成失效。",
+      "nextHook": "单干摸爬：鉴于没人原意当你队友，你必须独自前往最底层的墓穴进行摸金挑战。",
+      "recommendedClass": [
+        "游荡者"
+      ],
+      "tags": [
+        "自私",
+        "坑爹",
+        "孤狼"
+      ]
+    },
+    {
+      "endingId": "dwarf_pacifist_end",
+      "endingType": "special",
+      "title": "地城平权斗士",
+      "verdictLine": "判定：特殊结局。你成为了地城无障碍建设的唯一倡导者与碰瓷先锋。",
+      "explanation": "你因为在地下墓穴躺平抗议其缺乏‘小体型种族无障碍拉杆’而名声大噪。你组建了‘地城平权联盟’，开着轮椅去强行要求每一个地精营地 and 巨龙巢穴增设适老化设施和母婴室。地城主人们看见你的大红横幅就觉得头疼，甚至宁愿直接送你金币打发你走。",
+      "tableFunction": "平权演说：你可以在酒馆发起演说，强迫酒馆老板降低小体型顾客的桌椅高度，这能让你买酒打折。",
+      "playableFlaw": "死磕教条：只要地城里有任何高低差或狭窄地形，你都必须大声痛骂建筑师十分钟，并拒绝快速通过。",
+      "nextHook": "公用设施：前往地精哨所，强行监督他们的厕所是否进行了合理的无障碍改造。",
+      "recommendedClass": [
+        "吟游诗人"
+      ],
+      "tags": [
+        "维权",
+        "平权",
+        "躺平"
+      ]
+    },
+    {
+      "endingId": "dwarf_cleric_saint_end",
+      "endingType": "accepted",
+      "title": "符文秩序宗师",
+      "verdictLine": "判定：合格。你成为了山脉信仰的坚定柱石与符文律法的最高解释者。",
+      "explanation": "you用极其严谨的逻辑梳理了上千条古老的神圣符文，将神术变成了无懈可击的秩序法则。你不允许任何异端言论，但你的治疗术精准、圣洁，每一次出手都仿佛是摩拉丁亲自降下的工业标本。哪怕是最顽固的长老，也不得不佩服你在符文教条上的深厚造诣。",
+      "tableFunction": "符文压制：当有法术系敌人试图在酒馆施法时，你可以抛出一枚重力符文，使其施法速度减半。",
+      "playableFlaw": "完美主义：如果队友的盔甲上出现了一点不对称的痕迹，你会在战斗中极其强迫症地冲过去帮他擦拭干净。",
+      "nextHook": "大教堂重塑：主持铁峰堡中心大教堂的重建工程，将最新的符文法则镌刻在十米高的生铁大门上。",
+      "recommendedClass": [
+        "牧师"
+      ],
+      "tags": [
+        "符文",
+        "秩序",
+        "圣洁"
+      ]
+    },
+    {
+      "endingId": "dwarf_fighter_barbarian_end",
+      "endingType": "accepted",
+      "title": "铁峰狂战巨兽",
+      "verdictLine": "判定：合格。你是一面行走在战场上的肉弹战壕。",
+      "explanation": "you觉得盾牌太妨碍你舒展筋骨了。你更喜欢光着膀子、背上绑着点燃 of 火药桶，嗷嗷叫着冲进怪兽堆里开启人体大风车。虽然你每次战斗完都得让符文祭司物理烙印个半死，但你那可怕的物理冲击力和厚重的肌肉，确实把所有的进攻绿潮都给反向撞碎了。",
+      "tableFunction": "狂暴大风车：你可以在酒馆喝酒后，抱住一根柱子原地飞速旋转，有概率把周围的盗贼全甩出去。",
+      "playableFlaw": "战术失控：只要你进入狂暴状态，你必须不断冲锋，直到视线内没有任何站立的非矮人生生物。",
+      "nextHook": "前线突破：食人魔大军正在集结，作为尖刀班唯一的冲锋员，立刻跳下城墙开道！",
+      "recommendedClass": [
+        "野蛮人",
+        "战士"
+      ],
+      "tags": [
+        "狂暴",
+        "肉盾",
+        "冲锋"
+      ]
+    },
+    {
+      "endingId": "dwarf_artificer_architect_end",
+      "endingType": "accepted",
+      "title": "违章建筑大师",
+      "verdictLine": "判定：合格. 你用无处不在的违章瞭望塔重塑了幽暗地域的几何地貌。",
+      "explanation": "you坚信世界上没有地基，是因为你还没开始垒砖。不管是三米高的注水水槽还是十米高的古墓穹顶，你总能在几秒钟内用你的石工工具凭空盖起一座合格且带罚单的违建高塔。连那些喜欢用魔法传送的法师，在路过你盖的违建天桥时都不得不停下赞叹你的土木降维打击。",
+      "tableFunction": "瞬间哨塔：在野外露营时，你可以花五秒垒出一个两米高的石质哨塔，使小队获得守夜防偷袭优势。",
+      "playableFlaw": "城管克制：在面对官方城管人员或税务稽查员时，你的谈判魅力检定自动失败，必须立刻想办法转移资产。",
+      "nextHook": "要塞建设：协助铁峰堡在黑石关卡快速盖起三道防御城墙，阻挡兽人的突袭。",
+      "recommendedClass": [
+        "奇术师",
+        "法师"
+      ],
+      "tags": [
+        "基建",
+        "土木",
+        "创造"
+      ]
+    },
+    {
+      "endingId": "dwarf_paladin_rogue_end",
+      "endingType": "accepted",
+      "title": "流氓圣誓骑士",
+      "verdictLine": "判定：合格。你让深渊里的恶魔都学到了人类的卑劣手段。",
+      "explanation": "谁说圣武士必须光明正大决斗？你最擅长假装接受恶魔的诱惑，然后再踢碎对方的下巴；你喜欢在别人逃跑时，用法术把对方照得像个两百瓦的白炽灯以吸引所有怪物仇恨。恶魔骂你是极其不要脸的流氓，而你的长官只能捂着脸表示‘虽然不合规定，但好歹他赢了’。",
+      "tableFunction": "战术恐吓：当在酒馆中谈判时，你可以一拳砸在对方最敏感的关节上，使对方在接下来的对话中陷入恐慌。",
+      "playableFlaw": "名声扫地：守序好人阵营的角色会对你的行为方式感到极度不适，与他们组队时你的亲和力下降。",
+      "nextHook": "卧底计划：潜入幽暗地域的黑市交易会，伪装成堕落骑士，物理截获敌人的补给线。",
+      "recommendedClass": [
+        "圣武士",
+        "游荡者"
+      ],
+      "tags": [
+        "腹黑",
+        "实用",
+        "打击"
+      ]
+    },
+    {
+      "endingId": "dwarf_bard_troubadour_end",
+      "endingType": "special",
+      "title": "土嗨音乐家",
+      "verdictLine": "判定：特殊结局。你用魔性的矮人土嗨音乐和粉色涂装击穿了整个幽暗地域的耳膜。",
+      "explanation": "you把精灵的优雅竖琴魔改成电吉他，把严肃的屠龙巨型火炮改成了大功率迪厅低音炮。你开创了极其硬核的‘重金属芭比粉乐章’，所到之处，怪兽因为耳鸣和审美崩溃四散奔逃，队友们也因为严重的大呼小叫而开始抱头痛哭。你成了两界著名的审美终结者。",
+      "tableFunction": "魔音贯耳：在酒馆演奏时，可以让所有非矮人顾客因为精神崩溃而暂时离开酒馆，方便你们在里面行事。",
+      "playableFlaw": "噪音制造者：你在进行任何潜行检定或埋伏动作时，必须承受失败惩罚，因为你身上的金属配饰总在乒乓作响。",
+      "nextHook": "巡回演唱会：组织一场席卷地底所有主要城市的重金属芭比粉巡回演出，首站：幽暗精灵大剧院！",
+      "recommendedClass": [
+        "吟游诗人"
+      ],
+      "tags": [
+        "音乐",
+        "审美",
+        "噪音"
+      ]
+    },
+    {
+      "endingId": "dwarf_coward_recluse_end",
+      "endingType": "rejected",
+      "title": "养老金骗子",
+      "verdictLine": "判定：淘汰。你用一张烧伤假条和虚假PTSD诊断书，成功被踢出了征兵名册。",
+      "explanation": "you因为在极度安全的后方胡须着火而申请提前退休、遇到怪物时宣布犯了战场PTSD而成为前线征兵官的头痛对象。你极其熟练地使用各种劳工法和医疗豁免条例，成功骗到了几份地表疗养院的免费餐券。现在，你可以极其安详地躺在养老椅上，喝着麦酒，假装自己是个退役的老英雄。",
+      "tableFunction": "骗吃骗喝：你可以出示你的‘工伤退役证明’，在某些同情老兵的地表小酒馆里白嫖两杯劣质麦酒。",
+      "playableFlaw": "体能退化：由于长期装病和躺平，你的力量和体质上限永久-1，且极易疲劳。",
+      "nextHook": "稽查风波：氏族的审计官正在对所有的养老金发放名单进行实地抽查，赶紧想办法装病装到底！",
+      "recommendedClass": [
+        "游荡者"
+      ],
+      "tags": [
+        "混子",
+        "骗保",
+        "退休"
+      ]
+    },
+    {
+      "endingId": "dwarf_merchant_tycoon_end",
+      "endingType": "special",
+      "title": "商会洗钱大亨",
+      "verdictLine": "判定：特殊结局。你把生死存亡的地牢和战场，成功经营成了庞大的黑市洗钱帝国。",
+      "explanation": "在面临巨龙宝藏 and 恶魔契约时，你满脑子都是‘怎么通过地精钱庄走账’和‘怎么获取深渊免税干股’。你把战地的装备损坏变成了高利贷租赁契约，把氏族的危机变成了跨国投资报告。虽然你被踢出了正规军，但你现在掌控着整个幽暗地域三分之一的黑市贸易，连那些审判你的考官们，买装备时都得从你这儿贷款。",
+      "tableFunction": "商业借贷：你可以向酒馆里的NPC或队友发放短期高利贷，借款人若不按期归还，将承受罚息惩罚。",
+      "playableFlaw": "无利不起早：你拒绝进行任何没有任何直接金钱或物资回报的无偿任务，甚至不肯免费扶一下摔倒的老人。",
+      "nextHook": "金融风暴：地精商会的主席邀请你参加一次绝密会议，共同策划做空整个人类王国的铁矿交易。",
+      "recommendedClass": [
+        "游荡者",
+        "法师"
+      ],
+      "tags": [
+        "商业",
+        "洗钱",
+        "暴富"
+      ]
+    }
+  ],
+  "mbtiFilters": [
+    {
+      "groupId": "NT",
+      "title": "理性火花与锻造先锋",
+      "oneLine": "用逻辑和齿轮重构世界的思想者",
+      "evaluationStyle": "极度注重技术逻辑与效率，轻视繁文缛节与传统教条。",
+      "guild_fighterFlavor": "擅长分析战阵与受力结构，追求以智取胜的几何力学战士。",
+      "guild_paladinFlavor": "对教条抱有审视态度，更倾向于将誓言解释为维护某种高效秩序的契约。",
+      "guild_clericFlavor": "将神术视为某种尚未被完全解析的自然法则，喜欢系统化整理符文规律。",
+      "guild_artificerFlavor": "黑铁工匠的终极形态，痴迷于创造颠覆传统物理的超级魔能装置。",
+      "riskText": "在团队中可能显得冷酷、缺乏人情味，且容易因追求效率而忽视同僚的感受。"
+    },
+    {
+      "groupId": "NF",
+      "title": "岩壁共鸣与灵魂灯塔",
+      "oneLine": "在冰冷钢铁中寻找生命温度的理想主义者",
+      "evaluationStyle": "重视个体价值、团队情感与种族命运，容易受到道德与信念的感召。",
+      "guild_fighterFlavor": "为了守护同伴而挥舞盾牌，用友情与热血激励防线的温情卫士。",
+      "guild_paladinFlavor": "极度纯粹的光明化身，将守护弱者和践行誓言视为神圣不可侵犯的最高天职。",
+      "guild_clericFlavor": "最具同理心的符文祭司，乐于倾听痛苦，能用温柔的神术抚平一切创伤与宿醉。",
+      "guild_artificerFlavor": "希望通过自己的发明为人们带来温暖与便利，而非单纯的杀戮兵器。",
+      "riskText": "容易过度感性，在必须做出残酷抉择的战场上可能陷入纠结与自我怀疑。"
+    },
+    {
+      "groupId": "SJ",
+      "title": "古老律法与山脉基石",
+      "oneLine": "坚守传统、纪律与秩序的忠诚守护者",
+      "evaluationStyle": "尊重历史、传统规范与长辈指令，执行任务一丝不苟，极度可靠。",
+      "guild_fighterFlavor": "铁峰防线上最稳固的钉子，完美执行战术指令，把纪律视为生命。",
+      "guild_paladinFlavor": "坚贞不屈的熔炉坚守者，将古老誓约的每一条细则都贯彻到最微小的行动中。",
+      "guild_clericFlavor": "严守祭祀传统，极力维持古老仪式纯洁性的符文守护者。",
+      "guild_artificerFlavor": "遵循最严密的工程标准，极其反感危险爆破，追求极致的安全与稳定。",
+      "riskText": "思想极度保守，面对突发状况时缺乏变通，容易陷入教条主义和种族偏见。"
+    },
+    {
+      "groupId": "SP",
+      "title": "烈酒风暴与熔岩舞者",
+      "oneLine": "活在当下、渴望战斗与爆炸的自由之魂",
+      "evaluationStyle": "随性而为，崇尚直觉与行动，热衷于在极度混乱中寻找刺激与快乐。",
+      "guild_fighterFlavor": "在战场上高唱战歌、冲锋在前的狂战士，把战斗视为最过瘾的乐子。",
+      "guild_paladinFlavor": "不拘泥于形式的流氓圣武士，随时准备用物理方式给邪恶势力一个大大的惊喜。",
+      "guild_clericFlavor": "把教堂变成酒馆的随性祭司，信仰和本能同样强烈，擅长用酒水拉近关系。",
+      "guild_artificerFlavor": "热衷于战地改装和危险试爆的疯狂科学家，认为爆炸是世界上最美的艺术。",
+      "riskText": "极度缺乏纪律性，行事冲动且不计后果，经常给同伴带来意想不到的麻烦与危机。"
     }
   ]
 }

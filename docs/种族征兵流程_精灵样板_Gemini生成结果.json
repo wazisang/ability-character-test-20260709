@@ -334,7 +334,7 @@
           "npcReply": "地精巢穴被你的光芒照亮了，队友差点被你害死。‘感官过载导致了危险的洁癖发作。你是一颗定时炸弹。’",
           "scoreDelta": {
             "cha": 2,
-            "wis": -3
+            "wis": -2
           },
           "mbtiDelta": {
             "F": 1,
@@ -565,10 +565,10 @@
             "P": 1
           },
           "affinityDelta": {
-            "guild_wizard": -3
+            "guild_wizard": -2
           },
           "alignmentDelta": {
-            "self": 3
+            "self": 2
           },
           "triggerTags": [
             "嫌弃字丑",
@@ -746,7 +746,8 @@
               "生态推理"
             ],
             "outcomeTone": "合格",
-            "branchHint": "拥有极其敏锐环境感知力的追踪大师"
+            "branchHint": "拥有极其敏锐环境感知力的追踪大师",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -772,14 +773,15 @@
               "抖落盗匪"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其擅长利用环境势力的交涉型游侠"
+            "branchHint": "极其擅长利用环境势力的交涉型游侠",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
             "text": "嫌泥地太脏，在报告上写‘因环境过于恶劣，盗匪判定自尽’，然后找个干净的树桩喝下午茶去了。",
             "npcReply": "第二天盗匪洗劫了村庄，考官直接把你的考核表撕了。‘极度的洁癖和偷懒导致了判断失误。’",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "int": 1
             },
             "mbtiDelta": {
@@ -787,7 +789,7 @@
               "I": 1
             },
             "affinityDelta": {
-              "guild_ranger": -3
+              "guild_ranger": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -797,7 +799,8 @@
               "伪造报告"
             ],
             "outcomeTone": "危险",
-            "branchHint": "脱离现实、过于娇贵的温室花朵"
+            "branchHint": "脱离现实、过于娇贵的温室花朵",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -822,9 +825,11 @@
               "大声诈唬"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "试图在野外跟犯罪分子讲官僚拆迁的奇葩"
+            "branchHint": "试图在野外跟犯罪分子讲官僚拆迁的奇葩",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_ambush",
@@ -855,7 +860,8 @@
               "鼻尖筑巢"
             ],
             "outcomeTone": "合格",
-            "branchHint": "具备绝对忍耐力与静默技巧的狙击手"
+            "branchHint": "具备绝对忍耐力与静默技巧的狙击手",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -881,14 +887,15 @@
               "毒液狂化"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "缺乏耐心，喜欢物理破局的莽夫"
+            "branchHint": "缺乏耐心，喜欢物理破局的莽夫",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
             "text": "吓得直接尖叫着一巴掌把毒蜂拍死在脸上，不仅自己中了剧毒肿成猪头，还被兽人一网打尽。",
             "npcReply": "军阀看着树上掉下来个猪头精灵，开心地把你绑回了营地。‘三天的潜伏毁于极其业余的本能反应。’",
             "scoreDelta": {
-              "dex": -3,
+              "dex": -2,
               "wis": -1
             },
             "mbtiDelta": {
@@ -896,7 +903,7 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_ranger": -3
+              "guild_ranger": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -906,7 +913,8 @@
               "肿成猪头"
             ],
             "outcomeTone": "危险",
-            "branchHint": "心理素质极差的半吊子猎手"
+            "branchHint": "心理素质极差的半吊子猎手",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -931,9 +939,11 @@
               "蜂群奇袭"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "满脑子骚操作的生态认亲大师"
+            "branchHint": "满脑子骚操作的生态认亲大师",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_archery",
@@ -964,7 +974,8 @@
               "魔法投掷"
             ],
             "outcomeTone": "合格",
-            "branchHint": "将天赋感官运用到极致的神射手"
+            "branchHint": "将天赋感官运用到极致的神射手",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -990,7 +1001,8 @@
               "火力覆盖"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "喜欢用科技火力和金钱暴力解题的重炮手"
+            "branchHint": "喜欢用科技火力和金钱暴力解题的重炮手",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
@@ -998,14 +1010,14 @@
             "npcReply": "考官在你的考核单上画了个大叉。‘在战场上，敌人可不会因为你发型乱了就停止攻击你。’",
             "scoreDelta": {
               "cha": 1,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "E": 1,
               "J": 1
             },
             "affinityDelta": {
-              "guild_ranger": -3
+              "guild_ranger": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -1015,7 +1027,8 @@
               "少爷病"
             ],
             "outcomeTone": "危险",
-            "branchHint": "娇生惯养、无法适应恶劣环境的精灵少爷"
+            "branchHint": "娇生惯养、无法适应恶劣环境的精灵少爷",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -1040,9 +1053,11 @@
               "妖娆走位"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "用极其逆天的逆风操作公开作弊的放风筝大师"
+            "branchHint": "用极其逆天的逆风操作公开作弊的放风筝大师",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_animal",
@@ -1074,7 +1089,8 @@
               "共享痛楚"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极具温柔底色的林地守护者"
+            "branchHint": "极具温柔底色的林地守护者",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -1100,7 +1116,8 @@
               "暴力拆解"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "不善言辞但行动力极强的物理兽医"
+            "branchHint": "不善言辞但行动力极强的物理兽医",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
@@ -1115,10 +1132,10 @@
               "J": 1
             },
             "affinityDelta": {
-              "guild_druid": -3
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 2,
+              "self": 2,
               "risk": 1
             },
             "triggerTags": [
@@ -1126,7 +1143,8 @@
               "残酷倒卖"
             ],
             "outcomeTone": "危险",
-            "branchHint": "缺乏共情、手段极其残忍的盗猎者"
+            "branchHint": "缺乏共情、手段极其残忍的盗猎者",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -1151,9 +1169,11 @@
               "母熊玩偶服"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "试图用跨物种求偶解决危机的变态巡林客"
+            "branchHint": "试图用跨物种求偶解决危机的变态巡林客",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_identification",
@@ -1185,7 +1205,8 @@
               "完美圆场"
             ],
             "outcomeTone": "合格",
-            "branchHint": "拥有极高道德底线和实操手腕的游侠"
+            "branchHint": "拥有极高道德底线和实操手腕的游侠",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -1212,7 +1233,8 @@
               "胃酸算赃物"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "严格遵守法则、毫无情感波动的秩序狂"
+            "branchHint": "严格遵守法则、毫无情感波动的秩序狂",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
@@ -1228,17 +1250,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 1,
-              "guild_ranger": -3
+              "guild_ranger": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "收编扒手团",
               "抽七成"
             ],
             "outcomeTone": "危险",
-            "branchHint": "极其卑劣且毫无底线的黑社会头目"
+            "branchHint": "极其卑劣且毫无底线的黑社会头目",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -1263,9 +1286,11 @@
               "易容要饭"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "为了逃避选择而做出离谱举动的戏精"
+            "branchHint": "为了逃避选择而做出离谱举动的戏精",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_survival",
@@ -1296,7 +1321,8 @@
               "推导营养"
             ],
             "outcomeTone": "合格",
-            "branchHint": "具备扎实理论基础和冷血手腕的求生专家"
+            "branchHint": "具备扎实理论基础和冷血手腕的求生专家",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -1322,14 +1348,15 @@
               "极致潜行"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "不吃素、胆大包天的暗影求生者"
+            "branchHint": "不吃素、胆大包天的暗影求生者",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
             "text": "因为极度的饥饿和恐慌，一边痛哭流涕大骂大自然不公平，一边抓起地上的毒蘑菇乱啃，最后吐着白沫晕死过去。",
             "npcReply": "蘑菇含有强烈的致幻毒素，你最终因为幻觉从悬崖上跳了下去。‘脆弱的理智，在绝境中不堪一击。’",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "con": -1
             },
             "mbtiDelta": {
@@ -1347,7 +1374,8 @@
               "吐白沫"
             ],
             "outcomeTone": "危险",
-            "branchHint": "抗压能力极差，容易在逆境自爆的弱者"
+            "branchHint": "抗压能力极差，容易在逆境自爆的弱者",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -1372,9 +1400,11 @@
               "邪教涂装"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "靠当深渊邪神骗吃骗喝的抽象大师"
+            "branchHint": "靠当深渊邪神骗吃骗喝的抽象大师",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       },
       {
         "id": "elf_ranger_final",
@@ -1395,7 +1425,7 @@
               "I": 1
             },
             "affinityDelta": {
-              "guild_ranger": 4
+              "guild_ranger": 3
             },
             "alignmentDelta": {
               "order": 1,
@@ -1406,7 +1436,8 @@
               "极度忠诚"
             ],
             "outcomeTone": "合格",
-            "branchHint": "完美契合并愿意为游侠精神献祭的狂徒"
+            "branchHint": "完美契合并愿意为游侠精神献祭的狂徒",
+            "targetId": "guild_ranger"
           },
           {
             "id": "B",
@@ -1432,7 +1463,8 @@
               "务实财迷"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "比起荣誉更看重古董估值的黑市游侠"
+            "branchHint": "比起荣誉更看重古董估值的黑市游侠",
+            "targetId": "guild_ranger"
           },
           {
             "id": "C",
@@ -1447,7 +1479,7 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_ranger": -4,
+              "guild_ranger": -2,
               "guild_artificer": 2
             },
             "alignmentDelta": {
@@ -1459,7 +1491,8 @@
               "审美灾难"
             ],
             "outcomeTone": "危险",
-            "branchHint": "被异端审美毒害的潮流小太妹"
+            "branchHint": "被异端审美毒害的潮流小太妹",
+            "targetId": "guild_ranger"
           },
           {
             "id": "D",
@@ -1477,16 +1510,18 @@
               "guild_bard": 3
             },
             "alignmentDelta": {
-              "expression": 3
+              "expression": 2
             },
             "triggerTags": [
               "传世晾衣架",
               "居家神弓"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "把一切神圣物品当成家具的抽象艺术家"
+            "branchHint": "把一切神圣物品当成家具的抽象艺术家",
+            "targetId": "guild_ranger"
           }
-        ]
+        ],
+        "targetId": "guild_ranger"
       }
     ],
     "guild_wizard": [
@@ -1501,7 +1536,7 @@
             "text": "提交了一份名为《论排泄物在以太网道中的能量跃迁》的硬核论文，证明了蝙蝠粪便中的微量硫磺是如何实现魔力杠杆效应的。",
             "npcReply": "导师看着你的答卷，甚至拿出了放大镜。‘你撕开了魔法神秘主义的伪装，直击了法术的真理核心。’",
             "scoreDelta": {
-              "int": 4,
+              "int": 3,
               "wis": 1
             },
             "mbtiDelta": {
@@ -1519,7 +1554,8 @@
               "魔力杠杆"
             ],
             "outcomeTone": "合格",
-            "branchHint": "具有极其扎实学术底蕴的理论物理学家"
+            "branchHint": "具有极其扎实学术底蕴的理论物理学家",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -1545,7 +1581,8 @@
               "不用魔法"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "懒得写字直接造炸弹的实操工程师"
+            "branchHint": "懒得写字直接造炸弹的实操工程师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -1560,7 +1597,7 @@
               "J": 1
             },
             "affinityDelta": {
-              "guild_wizard": -3
+              "guild_wizard": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -1570,7 +1607,8 @@
               "傲慢交卷"
             ],
             "outcomeTone": "危险",
-            "branchHint": "被傲慢冲昏头脑的低素质画师"
+            "branchHint": "被傲慢冲昏头脑的低素质画师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -1595,9 +1633,11 @@
               "危险推导"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "研究方向极其下三滥的疯狂科学家"
+            "branchHint": "研究方向极其下三滥的疯狂科学家",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_backfire",
@@ -1629,7 +1669,8 @@
               "精神污染"
             ],
             "outcomeTone": "合格",
-            "branchHint": "为了学术安全甘愿牺牲灵魂的真理探求者"
+            "branchHint": "为了学术安全甘愿牺牲灵魂的真理探求者",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -1655,7 +1696,8 @@
               "物理断电"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其务实、只管断电不管设备的暴力法师"
+            "branchHint": "极其务实、只管断电不管设备的暴力法师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -1670,18 +1712,19 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_wizard": -3,
+              "guild_wizard": -2,
               "guild_rogue": 1
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "篡改甩锅",
               "看戏套盾"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无底线、趁火打劫的学术败类"
+            "branchHint": "毫无底线、趁火打劫的学术败类",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -1699,16 +1742,18 @@
               "guild_bard": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "火锅底料爆破",
               "辣瞎尖塔"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "在死神面前还要搞厨艺展示的终极乐子人"
+            "branchHint": "在死神面前还要搞厨艺展示的终极乐子人",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_counterspell",
@@ -1739,7 +1784,8 @@
               "烫头静电"
             ],
             "outcomeTone": "合格",
-            "branchHint": "精通底层逻辑、直接夺权的黑客法师"
+            "branchHint": "精通底层逻辑、直接夺权的黑客法师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -1765,7 +1811,8 @@
               "物理敲闷棍"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "毫无施法者包袱的街头霸王"
+            "branchHint": "毫无施法者包袱的街头霸王",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -1780,7 +1827,7 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_wizard": -3
+              "guild_wizard": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -1790,7 +1837,8 @@
               "场外撒泼"
             ],
             "outcomeTone": "危险",
-            "branchHint": "心胸狭隘且总找奇葩借口的无赖"
+            "branchHint": "心胸狭隘且总找奇葩借口的无赖",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -1815,9 +1863,11 @@
               "劈死裁判"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "利用无辜裁判当物理跳板的祸害"
+            "branchHint": "利用无辜裁判当物理跳板的祸害",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_component",
@@ -1842,14 +1892,15 @@
             },
             "alignmentDelta": {
               "control": 1,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "乌托邦梦境",
               "虚妄之泪"
             ],
             "outcomeTone": "合格",
-            "branchHint": "手段略显冷酷但盗梦技术一流的造梦师"
+            "branchHint": "手段略显冷酷但盗梦技术一流的造梦师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -1875,7 +1926,8 @@
               "演戏骗导师"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "靠洋葱和演技骗过导师的乐子人"
+            "branchHint": "靠洋葱和演技骗过导师的乐子人",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -1900,7 +1952,8 @@
               "被迫吐真言"
             ],
             "outcomeTone": "危险",
-            "branchHint": "缺乏独立思考能力、极其容易踩雷的冤大头"
+            "branchHint": "缺乏独立思考能力、极其容易踩雷的冤大头",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -1918,16 +1971,18 @@
               "guild_bard": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "逼发违心誓",
               "地精美男"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "用极其抽象的物理逼迫法搞出哲学的暴君"
+            "branchHint": "用极其抽象的物理逼迫法搞出哲学的暴君",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_diplomacy",
@@ -1958,7 +2013,8 @@
               "颠倒解谜"
             ],
             "outcomeTone": "合格",
-            "branchHint": "能够在高压下从容修改物理法则的法神"
+            "branchHint": "能够在高压下从容修改物理法则的法神",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -1984,7 +2040,8 @@
               "热胀冷缩劈锁"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "善于利用队友优势并加装插件的附魔师"
+            "branchHint": "善于利用队友优势并加装插件的附魔师",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -2009,7 +2066,8 @@
               "双双烧烤"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无团队协作、死于语言学优越感的废柴"
+            "branchHint": "毫无团队协作、死于语言学优越感的废柴",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -2034,9 +2092,11 @@
               "松弛感拉满"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "在岩浆里还能搞烧烤派对的究极摸鱼怪"
+            "branchHint": "在岩浆里还能搞烧烤派对的究极摸鱼怪",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_final",
@@ -2057,7 +2117,7 @@
               "J": 1
             },
             "affinityDelta": {
-              "guild_wizard": 4
+              "guild_wizard": 3
             },
             "alignmentDelta": {
               "order": 1
@@ -2067,7 +2127,8 @@
               "魔法黑客"
             ],
             "outcomeTone": "合格",
-            "branchHint": "完美契合高阶法师唯物精神的黑客理论"
+            "branchHint": "完美契合高阶法师唯物精神的黑客理论",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -2093,7 +2154,8 @@
               "超级工具"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "不追求形而上、只看重杀伤力的战斗狂"
+            "branchHint": "不追求形而上、只看重杀伤力的战斗狂",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -2108,18 +2170,19 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_wizard": -4
+              "guild_wizard": -2
             },
             "alignmentDelta": {
               "risk": 2,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "种族清洗",
               "狂热神权"
             ],
             "outcomeTone": "危险",
-            "branchHint": "满嘴暴论且价值观极其偏激的战犯"
+            "branchHint": "满嘴暴论且价值观极其偏激的战犯",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -2138,16 +2201,18 @@
               "guild_wizard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "集体幻觉",
               "精神病测试"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "脑洞突破天际、试图给所有人治病的医生"
+            "branchHint": "脑洞突破天际、试图给所有人治病的医生",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       },
       {
         "id": "elf_wizard_arrogance",
@@ -2179,7 +2244,8 @@
               "高明白嫖"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其务实、不拘泥传统还能顺手薅羊毛的黑客"
+            "branchHint": "极其务实、不拘泥传统还能顺手薅羊毛的黑客",
+            "targetId": "guild_wizard"
           },
           {
             "id": "B",
@@ -2204,7 +2270,8 @@
               "精密易碎"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "拥有严重学术洁癖、脱离实战的温室学者"
+            "branchHint": "拥有严重学术洁癖、脱离实战的温室学者",
+            "targetId": "guild_wizard"
           },
           {
             "id": "C",
@@ -2220,17 +2287,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 2,
-              "guild_wizard": -3
+              "guild_wizard": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "卖自毁密码",
               "发国难财"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无底线、利用魔法知识进行叛国倒卖的败类"
+            "branchHint": "毫无底线、利用魔法知识进行叛国倒卖的败类",
+            "targetId": "guild_wizard"
           },
           {
             "id": "D",
@@ -2255,9 +2323,11 @@
               "全城广播骂人"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "用城防设施搞抽象辱骂广播的狂人"
+            "branchHint": "用城防设施搞抽象辱骂广播的狂人",
+            "targetId": "guild_wizard"
           }
-        ]
+        ],
+        "targetId": "guild_wizard"
       }
     ],
     "guild_druid": [
@@ -2290,7 +2360,8 @@
               "冰冷宣判"
             ],
             "outcomeTone": "合格",
-            "branchHint": "拥有极强自我认知与恐怖威慑力的高阶狼人"
+            "branchHint": "拥有极强自我认知与恐怖威慑力的高阶狼人",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2316,7 +2387,8 @@
               "物理恐吓"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "更喜欢用最原始的血腥手段解决问题的实干派"
+            "branchHint": "更喜欢用最原始的血腥手段解决问题的实干派",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2324,25 +2396,26 @@
             "npcReply": "你永远地变成了一头疯狼。‘你失去了作为精灵的资格，沦为了被最低级本能驱使的怪物。’",
             "scoreDelta": {
               "str": 1,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "S": 2,
               "P": 1
             },
             "affinityDelta": {
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
               "risk": 2,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "吃人疯狼",
               "被剥皮"
             ],
             "outcomeTone": "危险",
-            "branchHint": "彻底迷失在变形法术中、极其凄惨的失败者"
+            "branchHint": "彻底迷失在变形法术中、极其凄惨的失败者",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2360,16 +2433,18 @@
               "guild_bard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "二哈拆家",
               "锅里撒尿"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "堂堂银狼活成了极度抽象的拆迁大队长"
+            "branchHint": "堂堂银狼活成了极度抽象的拆迁大队长",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_balance",
@@ -2400,7 +2475,8 @@
               "人类也是养料"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极度理智、恪守残酷自然法则的瘟疫播撒者"
+            "branchHint": "极度理智、恪守残酷自然法则的瘟疫播撒者",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2426,7 +2502,8 @@
               "赚取崇拜"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "充满神性、更倾向于精神PUA的林地教主"
+            "branchHint": "充满神性、更倾向于精神PUA的林地教主",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2442,17 +2519,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 1,
-              "guild_druid": -3
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "卖高价劣食",
               "榨干踢走"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无底线、大发灾难财的吸血奸商"
+            "branchHint": "毫无底线、大发灾难财的吸血奸商",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2470,16 +2548,18 @@
               "guild_fighter": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "变羊吃草",
               "强制食草"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "强行让全员当素食主义者的抽象变形大师"
+            "branchHint": "强行让全员当素食主义者的抽象变形大师",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_decay",
@@ -2510,7 +2590,8 @@
               "孢子共生"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其理智且学术造诣极深的恐怖毒师"
+            "branchHint": "极其理智且学术造诣极深的恐怖毒师",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2536,7 +2617,8 @@
               "绝对无菌"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "拥有严重洁癖和反社会倾向的放火狂"
+            "branchHint": "拥有严重洁癖和反社会倾向的放火狂",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2544,24 +2626,25 @@
             "npcReply": "你为了私仇把整片森林变成了生化武器试验场。‘你不再是德鲁伊，你是个极其恶劣的生化恐怖分子。’",
             "scoreDelta": {
               "int": 2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "T": 1,
               "P": 1
             },
             "affinityDelta": {
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "生化投毒",
               "垄断解药"
             ],
             "outcomeTone": "危险",
-            "branchHint": "极度恶毒、利用生态搞种族清洗的生化魔王"
+            "branchHint": "极度恶毒、利用生态搞种族清洗的生化魔王",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2579,16 +2662,18 @@
               "guild_bard": 2
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "毒蘑菇聚餐",
               "集体见太奶"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "敢拿全村人的命去试毒的终极迷幻厨神"
+            "branchHint": "敢拿全村人的命去试毒的终极迷幻厨神",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_final",
@@ -2609,7 +2694,7 @@
               "J": 1
             },
             "affinityDelta": {
-              "guild_druid": 4
+              "guild_druid": 3
             },
             "alignmentDelta": {
               "order": 1,
@@ -2620,7 +2705,8 @@
               "活体图腾"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其狂热、不惜把自己变成盆栽的核心骨干"
+            "branchHint": "极其狂热、不惜把自己变成盆栽的核心骨干",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2646,7 +2732,8 @@
               "武器化信仰"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其具有工匠精神、一切为了火力的实用派"
+            "branchHint": "极其具有工匠精神、一切为了火力的实用派",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2654,25 +2741,26 @@
             "npcReply": "你激怒了整个德鲁伊结社，哪怕你逃到天涯海角，也会遭到树木无尽的鞭打。‘极其低级的暴发户贪婪。’",
             "scoreDelta": {
               "dex": 1,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "E": 1,
               "P": 1
             },
             "affinityDelta": {
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "risk": 3,
-              "evil": 1
+              "risk": 2,
+              "self": 1
             },
             "triggerTags": [
               "黑市倒卖",
               "俗气雕刻"
             ],
             "outcomeTone": "危险",
-            "branchHint": "为了极其低级的审美连命都不要的暴发户"
+            "branchHint": "为了极其低级的审美连命都不要的暴发户",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2690,16 +2778,18 @@
               "guild_bard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "当核桃夹碎",
               "嫌弃没果仁"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "试图品鉴世界树果仁的极其逆天的干饭人"
+            "branchHint": "试图品鉴世界树果仁的极其逆天的干饭人",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_civilization",
@@ -2731,7 +2821,8 @@
               "强制拜神"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其擅长利用视觉恐怖进行信仰统治的教祖"
+            "branchHint": "极其擅长利用视觉恐怖进行信仰统治的教祖",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2757,7 +2848,8 @@
               "砸机器"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其讨厌噪音的硬核环保强拆队长"
+            "branchHint": "极其讨厌噪音的硬核环保强拆队长",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2765,7 +2857,7 @@
             "npcReply": "你把神圣的自然争端变成了极其成熟的跨国黑市产业链。‘你是个极其不要脸的双面间谍。’",
             "scoreDelta": {
               "cha": 2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "E": 1,
@@ -2773,17 +2865,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 2,
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "三头吃回扣",
               "商业奇才"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无自然底线的终极黑心二道贩子"
+            "branchHint": "毫无自然底线的终极黑心二道贩子",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2808,9 +2901,11 @@
               "带领猴子蹦迪"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "靠办演唱会逼疯周边住户的噪音主唱"
+            "branchHint": "靠办演唱会逼疯周边住户的噪音主唱",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_fey",
@@ -2842,7 +2937,8 @@
               "骗签卖身契"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其精通合同诈骗的高学历法务代表"
+            "branchHint": "极其精通合同诈骗的高学历法务代表",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2868,7 +2964,8 @@
               "流氓互殴"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其腹黑、擅长制造流氓火拼的搅屎棍"
+            "branchHint": "极其腹黑、擅长制造流氓火拼的搅屎棍",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2876,7 +2973,7 @@
             "npcReply": "你触怒了整个妖精荒野，妖精女王亲自对你下达了每天掉头发的恶毒诅咒。‘你的压榨让你无视了跨国法。’",
             "scoreDelta": {
               "int": 1,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "T": 1,
@@ -2884,17 +2981,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 2,
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "血汗工厂",
               "强挤染料"
             ],
             "outcomeTone": "危险",
-            "branchHint": "胆大包天、连外星友人都要压榨的黑心老板"
+            "branchHint": "胆大包天、连外星友人都要压榨的黑心老板",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -2912,16 +3010,18 @@
               "guild_bard": 3
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "带头作案",
               "粉刷城堡"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "完全放弃治安、直接当了恐怖分子头目的卧底"
+            "branchHint": "完全放弃治安、直接当了恐怖分子头目的卧底",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       },
       {
         "id": "elf_druid_healing",
@@ -2953,7 +3053,8 @@
               "食肉狂鹿"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极具弗兰肯斯坦精神和生命干涉狂热的禁忌法师"
+            "branchHint": "极具弗兰肯斯坦精神和生命干涉狂热的禁忌法师",
+            "targetId": "guild_druid"
           },
           {
             "id": "B",
@@ -2979,7 +3080,8 @@
               "极致循环"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其理智且满脑子都是食谱的野味大师"
+            "branchHint": "极其理智且满脑子都是食谱的野味大师",
+            "targetId": "guild_druid"
           },
           {
             "id": "C",
@@ -2987,7 +3089,7 @@
             "npcReply": "你将自然的弱者变成了极其下作的敛财工具。‘你不仅是个变态，还是个极其不要脸的碰瓷王。’",
             "scoreDelta": {
               "cha": 2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "E": 1,
@@ -2995,17 +3097,18 @@
             },
             "affinityDelta": {
               "guild_rogue": 2,
-              "guild_druid": -4
+              "guild_druid": -2
             },
             "alignmentDelta": {
-              "evil": 3
+              "self": 2
             },
             "triggerTags": [
               "放长线碰瓷",
               "收保护费"
             ],
             "outcomeTone": "危险",
-            "branchHint": "利用残疾动物大发横财的黑心无赖"
+            "branchHint": "利用残疾动物大发横财的黑心无赖",
+            "targetId": "guild_druid"
           },
           {
             "id": "D",
@@ -3023,16 +3126,18 @@
               "guild_wizard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "火箭小鹿",
               "一飞冲天"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "给动物装火箭发射器的重度科技迫害狂"
+            "branchHint": "给动物装火箭发射器的重度科技迫害狂",
+            "targetId": "guild_druid"
           }
-        ]
+        ],
+        "targetId": "guild_druid"
       }
     ],
     "guild_rogue": [
@@ -3066,7 +3171,8 @@
               "香艳绝杀"
             ],
             "outcomeTone": "合格",
-            "branchHint": "将自身美貌化为最致命武器的毒蜘蛛"
+            "branchHint": "将自身美貌化为最致命武器的毒蜘蛛",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3092,7 +3198,8 @@
               "皮搋子闷杀"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "不辞劳苦、极其重口味的实用主义刺客"
+            "branchHint": "不辞劳苦、极其重口味的实用主义刺客",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
@@ -3110,7 +3217,7 @@
               "guild_rogue": -2
             },
             "alignmentDelta": {
-              "evil": 3,
+              "self": 2,
               "risk": 2
             },
             "triggerTags": [
@@ -3118,7 +3225,8 @@
               "拉人陪葬"
             ],
             "outcomeTone": "危险",
-            "branchHint": "为达目的极其残忍且滥杀无辜的屠夫"
+            "branchHint": "为达目的极其残忍且滥杀无辜的屠夫",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3143,9 +3251,11 @@
               "活活看死"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "靠极其逆天的舞蹈把目标直接送走的舞娘"
+            "branchHint": "靠极其逆天的舞蹈把目标直接送走的舞娘",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_trap",
@@ -3176,7 +3286,8 @@
               "微观解锁"
             ],
             "outcomeTone": "合格",
-            "branchHint": "拥有超越机械精度的化学微操大师"
+            "branchHint": "拥有超越机械精度的化学微操大师",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3202,14 +3313,15 @@
               "图纸开锁"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "深谙黑社会做派、极其会找捷径的悍匪"
+            "branchHint": "深谙黑社会做派、极其会找捷径的悍匪",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
             "text": "极其暴躁地掏出攻城锤开始狂砸，结果不仅触发了极其猛烈的自毁符文被炸飞，还极其丢脸地被闻声赶来的警卫队当场抓获。",
             "npcReply": "东西毁了，你人也进去了。‘极度的急躁和对爆炸的无知，让你成了年度最蠢盗贼。’",
             "scoreDelta": {
-              "int": -3,
+              "int": -2,
               "dex": -1
             },
             "mbtiDelta": {
@@ -3217,7 +3329,7 @@
               "P": 1
             },
             "affinityDelta": {
-              "guild_rogue": -3
+              "guild_rogue": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -3227,7 +3339,8 @@
               "炸飞被抓"
             ],
             "outcomeTone": "危险",
-            "branchHint": "毫无技术含量、满脑子肌肉的低级毛贼"
+            "branchHint": "毫无技术含量、满脑子肌肉的低级毛贼",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3251,9 +3364,11 @@
               "离谱负压"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "试图用洁具解决所有防盗难题的抽象水管工"
+            "branchHint": "试图用洁具解决所有防盗难题的抽象水管工",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_betrayal",
@@ -3284,7 +3399,8 @@
               "精神反杀"
             ],
             "outcomeTone": "合格",
-            "branchHint": "深谙心理折磨和精神摧残的审讯专家"
+            "branchHint": "深谙心理折磨和精神摧残的审讯专家",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3310,14 +3426,15 @@
               "断骨刺腿"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "对自己比对敌人还狠的硬汉脱逃大师"
+            "branchHint": "对自己比对敌人还狠的硬汉脱逃大师",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
             "text": "极其没骨气地跪地求饶，极其下贱地表示自己愿意去舔他的靴子，极其无耻地出卖了公会所有战友的底裤颜色。",
             "npcReply": "你活下来了，但公会第二天就派人把你的舌头喂了狗。‘毫无骨气，你不配活那么久。’",
             "scoreDelta": {
-              "cha": -3,
+              "cha": -2,
               "wis": -2
             },
             "mbtiDelta": {
@@ -3325,18 +3442,19 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_rogue": -4
+              "guild_rogue": -2
             },
             "alignmentDelta": {
-              "evil": 1,
-              "risk": 3
+              "self": 1,
+              "risk": 2
             },
             "triggerTags": [
               "舔靴子",
               "出卖底裤"
             ],
             "outcomeTone": "危险",
-            "branchHint": "极度懦弱、毫无尊严的纯正软骨头"
+            "branchHint": "极度懦弱、毫无尊严的纯正软骨头",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3361,9 +3479,11 @@
               "尴尬春晚"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "靠极其尴尬的表演能力逼人释放的话痨"
+            "branchHint": "靠极其尴尬的表演能力逼人释放的话痨",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_final",
@@ -3384,18 +3504,19 @@
               "T": 1
             },
             "affinityDelta": {
-              "guild_rogue": 4
+              "guild_rogue": 3
             },
             "alignmentDelta": {
               "control": 1,
-              "evil": 1
+              "self": 1
             },
             "triggerTags": [
               "毁容立誓",
               "绝杀獠牙"
             ],
             "outcomeTone": "合格",
-            "branchHint": "彻底看透世俗虚伪、极其残酷的暗影收割者"
+            "branchHint": "彻底看透世俗虚伪、极其残酷的暗影收割者",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3421,7 +3542,8 @@
               "精明算计"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其在乎劳动法权益的打工人刺客"
+            "branchHint": "极其在乎劳动法权益的打工人刺客",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
@@ -3436,7 +3558,7 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_rogue": -4
+              "guild_rogue": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -3446,7 +3568,8 @@
               "当场被捅死"
             ],
             "outcomeTone": "危险",
-            "branchHint": "完全不看场合发疯的狂妄送死鬼"
+            "branchHint": "完全不看场合发疯的狂妄送死鬼",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3471,9 +3594,11 @@
               "降维品鉴"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "在极其严肃的关头强行推销雪碧的抽象怪"
+            "branchHint": "在极其严肃的关头强行推销雪碧的抽象怪",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_investigation",
@@ -3504,7 +3629,8 @@
               "摸老巢反杀"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其强悍且绝不吃亏的顶尖逆向猎头"
+            "branchHint": "极其强悍且绝不吃亏的顶尖逆向猎头",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3530,14 +3656,15 @@
               "恶臭留书"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其腹黑、极其喜欢恶心同行的生化刺客"
+            "branchHint": "极其腹黑、极其喜欢恶心同行的生化刺客",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
             "text": "极其自负地以为自己能看穿一切，极其愚蠢地踩中了极其明显的诱饵陷阱，极其可悲地被吊在天花板上荡了一晚上秋千。",
             "npcReply": "你不仅没拿到情报，还极其丢人地被巡逻队发现了。‘极度狂妄但极其眼瞎的菜鸟。’",
             "scoreDelta": {
-              "wis": -3,
+              "wis": -2,
               "cha": -2
             },
             "mbtiDelta": {
@@ -3545,18 +3672,19 @@
               "F": 1
             },
             "affinityDelta": {
-              "guild_rogue": -4
+              "guild_rogue": -2
             },
             "alignmentDelta": {
-              "risk": 3,
-              "evil": 1
+              "risk": 2,
+              "self": 1
             },
             "triggerTags": [
               "自大踩雷",
               "倒吊秋千"
             ],
             "outcomeTone": "危险",
-            "branchHint": "极其自负且眼神极其不好的杂鱼"
+            "branchHint": "极其自负且眼神极其不好的杂鱼",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3574,16 +3702,18 @@
               "guild_bard": 1
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "尸体穿蕾丝",
               "视觉霸凌"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "在极其危险的现场大搞变态换装的神经病"
+            "branchHint": "在极其危险的现场大搞变态换装的神经病",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_blackmail",
@@ -3615,7 +3745,8 @@
               "算计未来"
             ],
             "outcomeTone": "合格",
-            "branchHint": "为了任务可以绝对克制并设下恶毒连环套的杀手"
+            "branchHint": "为了任务可以绝对克制并设下恶毒连环套的杀手",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3641,7 +3772,8 @@
               "黑吃黑"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "业务极其熟练且极具缺德风格的怪盗"
+            "branchHint": "业务极其熟练且极具缺德风格的怪盗",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
@@ -3649,25 +3781,26 @@
             "npcReply": "恶魔非常感谢你的极其愚蠢的主动上门。‘在极度贪婪的深渊里玩火，活该变成恶魔的脚底板。’",
             "scoreDelta": {
               "int": -2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "E": 1,
               "P": 1
             },
             "affinityDelta": {
-              "guild_rogue": -3
+              "guild_rogue": -2
             },
             "alignmentDelta": {
-              "risk": 3,
-              "evil": 2
+              "risk": 2,
+              "self": 2
             },
             "triggerTags": [
               "敲诈恶魔",
               "做成鞋垫"
             ],
             "outcomeTone": "危险",
-            "branchHint": "被极度贪婪蒙蔽双眼、花式作死的小人"
+            "branchHint": "被极度贪婪蒙蔽双眼、花式作死的小人",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3685,16 +3818,18 @@
               "guild_bard": 3
             },
             "alignmentDelta": {
-              "chaotic": 3
+              "chaotic": 2
             },
             "triggerTags": [
               "碾碎宝石",
               "中指涂鸦"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "极其热衷于搞极其烧钱行为艺术的破坏王"
+            "branchHint": "极其热衷于搞极其烧钱行为艺术的破坏王",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       },
       {
         "id": "elf_rogue_escape",
@@ -3725,7 +3860,8 @@
               "倒挂隐形"
             ],
             "outcomeTone": "合格",
-            "branchHint": "极其精通心理盲区与仿声艺术的极品戏精刺客"
+            "branchHint": "极其精通心理盲区与仿声艺术的极品戏精刺客",
+            "targetId": "guild_rogue"
           },
           {
             "id": "B",
@@ -3751,7 +3887,8 @@
               "顺走佩剑"
             ],
             "outcomeTone": "偏离",
-            "branchHint": "极其果断、精通物理断腿术的狂暴悍匪"
+            "branchHint": "极其果断、精通物理断腿术的狂暴悍匪",
+            "targetId": "guild_rogue"
           },
           {
             "id": "C",
@@ -3759,14 +3896,14 @@
             "npcReply": "守卫被你极其凄惨且极具异味的投降方式恶心到了。‘公会极其后悔当初没有把你直接扔进粪坑里。’",
             "scoreDelta": {
               "cha": -2,
-              "wis": -3
+              "wis": -2
             },
             "mbtiDelta": {
               "F": 1,
               "J": 1
             },
             "affinityDelta": {
-              "guild_rogue": -4
+              "guild_rogue": -2
             },
             "alignmentDelta": {
               "risk": 2
@@ -3776,7 +3913,8 @@
               "极度没骨气"
             ],
             "outcomeTone": "危险",
-            "branchHint": "一有风吹草动就极其丢人现眼的尿裤子软蛋"
+            "branchHint": "一有风吹草动就极其丢人现眼的尿裤子软蛋",
+            "targetId": "guild_rogue"
           },
           {
             "id": "D",
@@ -3801,9 +3939,11 @@
               "骂退守卫"
             ],
             "outcomeTone": "荒诞",
-            "branchHint": "靠极其强大的无理取闹气场反向制裁守卫的影帝"
+            "branchHint": "靠极其强大的无理取闹气场反向制裁守卫的影帝",
+            "targetId": "guild_rogue"
           }
-        ]
+        ],
+        "targetId": "guild_rogue"
       }
     ]
   },

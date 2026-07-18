@@ -950,21 +950,47 @@ const CONSTITUTION_TIER_LABELS = {
 const RECRUITMENT_TARGET_CLASS = {
   barbarian_camp: "野蛮人",
   fighter_line: "战士",
-  warlock_contract: "术士",
+  warlock_contract: "契约术士",
   druid_mutation_circle: "德鲁伊",
   guild_wizard: "法师",
   guild_fighter: "战士",
-  guild_rogue: "游荡者",
+  guild_rogue: "潜行者",
   guild_ranger: "游侠",
   guild_cleric: "牧师",
   guild_druid: "德鲁伊",
   guild_paladin: "圣武士",
   guild_bard: "吟游诗人",
-  guild_warlock: "术士",
-  guild_sorcerer: "术法师",
+  guild_warlock: "契约术士",
+  guild_sorcerer: "血脉法师",
   guild_monk: "武僧",
   guild_barbarian: "野蛮人",
   guild_artificer: "工匠",
+};
+
+const RECRUITMENT_TARGET_CLASS_EN = {
+  barbarian_camp: "Barbarian",
+  fighter_line: "Fighter",
+  warlock_contract: "Warlock",
+  druid_mutation_circle: "Druid",
+  guild_wizard: "Wizard",
+  guild_fighter: "Fighter",
+  guild_rogue: "Rogue",
+  guild_ranger: "Ranger",
+  guild_cleric: "Cleric",
+  guild_druid: "Druid",
+  guild_paladin: "Paladin",
+  guild_bard: "Bard",
+  guild_warlock: "Warlock",
+  guild_sorcerer: "Sorcerer",
+  guild_monk: "Monk",
+  guild_barbarian: "Barbarian",
+  guild_artificer: "Artificer",
+};
+
+const RECRUITMENT_DND_CLASS_ALIASES = {
+  潜行者: "游荡者",
+  契约术士: "术士",
+  血脉法师: "术法师",
 };
 
 const RECRUITMENT_TARGET_ALIASES = {
@@ -1142,30 +1168,30 @@ const RECRUITMENT_THEME = {
 
 const HOME_RACE_TARGET_PRESETS = {
   human: ["战士", "吟游诗人", "工匠", "圣武士"],
-  elf: ["游侠", "法师", "德鲁伊", "游荡者"],
-  drow: ["游荡者", "术士", "吟游诗人", "游侠"],
+  elf: ["游侠", "法师", "德鲁伊", "潜行者"],
+  drow: ["潜行者", "契约术士", "吟游诗人", "游侠"],
   dwarf: ["战士", "圣武士", "牧师", "工匠"],
-  halfling: ["游荡者", "吟游诗人", "游侠", "术士"],
-  gnome: ["工匠", "法师", "游荡者", "吟游诗人"],
-  half_orc: ["野蛮人", "战士", "游荡者", "牧师"],
-  tiefling: ["术士", "游荡者", "吟游诗人", "术法师"],
-  dragonborn: ["圣武士", "战士", "术法师", "野蛮人"],
+  halfling: ["潜行者", "吟游诗人", "游侠", "契约术士"],
+  gnome: ["工匠", "法师", "潜行者", "吟游诗人"],
+  half_orc: ["野蛮人", "战士", "潜行者", "牧师"],
+  tiefling: ["契约术士", "潜行者", "吟游诗人", "血脉法师"],
+  dragonborn: ["圣武士", "战士", "血脉法师", "野蛮人"],
   goliath: ["野蛮人", "战士", "武僧", "游侠"],
-  troll: ["野蛮人", "战士", "术士", "德鲁伊"],
+  troll: ["野蛮人", "战士", "契约术士", "德鲁伊"],
   ogre_giant: ["野蛮人", "战士", "牧师", "德鲁伊"],
 };
 
 const GENERIC_GUILD_TARGET_META = {
   法师: { targetId: "guild_wizard", desk: "法师塔档案室", seal: "ARC", texture: "卷宗、符文、远程演算" },
   战士: { targetId: "guild_fighter", desk: "战士训练厅", seal: "EDGE", texture: "兵器架、盾墙、战术沙盘" },
-  游荡者: { targetId: "guild_rogue", desk: "斥候与机关处", seal: "SHADE", texture: "暗门、锁具、路线图" },
+  潜行者: { targetId: "guild_rogue", desk: "斥候与机关处", seal: "SHADE", texture: "暗门、锁具、路线图" },
   游侠: { targetId: "guild_ranger", desk: "边境巡林站", seal: "TRAIL", texture: "地图、猎踪、远行契约" },
   牧师: { targetId: "guild_cleric", desk: "誓约医疗所", seal: "BLESS", texture: "圣徽、药箱、值夜名单" },
   德鲁伊: { targetId: "guild_druid", desk: "自然顾问席", seal: "WILD", texture: "草药、兽径、季节记录" },
   圣武士: { targetId: "guild_paladin", desk: "誓言审议厅", seal: "OATH", texture: "誓约、盾徽、公开证词" },
   吟游诗人: { targetId: "guild_bard", desk: "联络与士气处", seal: "SONG", texture: "传令牌、乐谱、谈判桌" },
-  术士: { targetId: "guild_warlock", desk: "异常契约审阅处", seal: "PACT", texture: "封蜡、密约、风险条款" },
-  术法师: { targetId: "guild_sorcerer", desk: "血脉术法厅", seal: "BLOOD", texture: "血脉纹、火星、失控法阵" },
+  契约术士: { targetId: "guild_warlock", desk: "异常契约审阅处", seal: "PACT", texture: "封蜡、密约、风险条款" },
+  血脉法师: { targetId: "guild_sorcerer", desk: "血脉术法厅", seal: "BLOOD", texture: "血脉纹、火星、失控法阵" },
   圣骑士: { targetId: "guild_paladin", desk: "誓言审议厅", seal: "OATH", texture: "誓约、盾徽、公开证词" },
   奇术师: { targetId: "guild_artificer", desk: "工匠工坊", seal: "GEAR", texture: "齿轮、炼金台、装备清单" },
   武僧: { targetId: "guild_monk", desk: "专注训练场", seal: "FLOW", texture: "木桩、呼吸节拍、静室" },
@@ -1211,6 +1237,7 @@ const state = {
   recruitment: null,
   homePreviewRaceId: "",
   homePreviewRaceIds: [],
+  worldRecruitment: null,
 };
 
 let cleanupFns = [];
@@ -1251,6 +1278,7 @@ function getOpenRecruitmentRaceNames() {
 document.querySelector("#brandHome").addEventListener("click", () => {
   state.screen = "start";
   state.recruitment = null;
+  state.worldRecruitment = createWorldRecruitmentState();
   state.mbtiProbeReturnScreen = null;
   render();
 });
@@ -1345,7 +1373,34 @@ function getHomePreviewSelection(previewRaces) {
 }
 
 function getDndClassByName(className) {
-  return DND_CLASS_POOL.find((item) => item.className === className) || null;
+  const normalizedName = RECRUITMENT_DND_CLASS_ALIASES[className] || className;
+  return DND_CLASS_POOL.find((item) => item.className === normalizedName) || null;
+}
+
+function getRecruitmentTargetProfession(targetOrId) {
+  const target = typeof targetOrId === "object" && targetOrId ? targetOrId : null;
+  const targetId = normalizeRecruitmentTargetId(target?.targetId || targetOrId);
+  return RECRUITMENT_TARGET_CLASS[targetId] || target?.professionName || target?.classNameZh || target?.name || "职业";
+}
+
+function getRecruitmentTargetClassEn(targetOrId) {
+  const target = typeof targetOrId === "object" && targetOrId ? targetOrId : null;
+  const targetId = normalizeRecruitmentTargetId(target?.targetId || targetOrId);
+  return RECRUITMENT_TARGET_CLASS_EN[targetId] || target?.professionNameEn || target?.classNameEn || "Adventurer";
+}
+
+function getRecruitmentTargetTrainingSite(targetOrId) {
+  const target = typeof targetOrId === "object" && targetOrId ? targetOrId : null;
+  const targetId = normalizeRecruitmentTargetId(target?.targetId || targetOrId);
+  const professionName = getRecruitmentTargetProfession(targetOrId);
+  const explicitSite = target?.trainingSite || target?.classNameZh;
+  if (explicitSite && explicitSite !== professionName) return explicitSite;
+  return getRecruitmentTheme(targetId).name;
+}
+
+function getRecruitmentTargetSummary(target) {
+  if (!target) return "公会将在登记后提供对应的职业说明与检验要求。";
+  return target.oneLine || target.description || target.recruitPitch || target.acceptedStyle || target.title || target.name || "公会将在登记后提供对应的职业说明与检验要求。";
 }
 
 function getHomeRecruitTargetPreviews(raceId) {
@@ -1355,9 +1410,9 @@ function getHomeRecruitTargetPreviews(raceId) {
       id: target.targetId,
       type: "sample",
       label: "完整题库",
-      title: target.classNameZh,
-      subtitle: target.title,
-      body: target.oneLine || target.acceptedStyle || target.recruitPitch || "",
+      title: getRecruitmentTargetProfession(target),
+      subtitle: getRecruitmentTargetTrainingSite(target),
+      body: getRecruitmentTargetSummary(target),
       theme: getRecruitmentTheme(target.targetId),
     }));
   }
@@ -1366,13 +1421,15 @@ function getHomeRecruitTargetPreviews(raceId) {
   const classNames = HOME_RACE_TARGET_PRESETS[raceId] || HOME_RACE_TARGET_PRESETS.human;
   return classNames.map((className) => {
     const dndClass = getDndClassByName(className);
-    const style = DND_CARD_STYLES[className] || DND_CARD_STYLES.冒险者;
+    const dndClassName = RECRUITMENT_DND_CLASS_ALIASES[className] || className;
+    const style = DND_CARD_STYLES[className] || DND_CARD_STYLES[dndClassName] || DND_CARD_STYLES.冒险者;
+    const targetMeta = GENERIC_GUILD_TARGET_META[className];
     return {
       id: `${raceId}_${className}`,
       type: "class",
       label: "推荐投递",
       title: className,
-      subtitle: dndClass?.role || `${race?.name || "当前血脉"}可尝试的职业方向`,
+      subtitle: targetMeta?.desk || dndClass?.role || `${race?.name || "当前血脉"}可尝试的职业方向`,
       body: dndClass?.specialty || dndClass?.why || "公会会在正式登记后按六维校准结果细化这条路线。",
       theme: {
         accent: style.a || RECRUITMENT_THEME.default.accent,
@@ -1384,7 +1441,8 @@ function getHomeRecruitTargetPreviews(raceId) {
 
 function render() {
   cleanup();
-  if (state.screen === "start") renderStart();
+  document.body.classList.toggle("world-recruitment-mode", state.screen === "start");
+  if (state.screen === "start") renderWorldRecruitmentHome();
   if (state.screen === "raceSelect") renderRaceSelect();
   if (state.screen === "recruitTarget") renderRecruitTargetSelect();
   if (state.screen === "recruitPhysique") renderRecruitmentQuestionScreen("physique");
@@ -1683,7 +1741,15 @@ function beginRecruitment(preferredRaceId = state.homePreviewRaceId, options = {
   state.mbtiProbe = null;
   state.mbtiProbeReturnScreen = null;
   state.personalityAnswers = 0;
-  state.screen = options.skipRaceRegistry ? "recruitTarget" : "raceSelect";
+  const directTargetId = normalizeRecruitmentTargetId(options.targetId || "");
+  if (directTargetId) {
+    state.recruitment.targetId = directTargetId;
+    state.recruitment.narrativePlan = buildRecruitmentNarrativePlan(directTargetId);
+    state.recruitment.phase = "physique";
+    state.screen = "recruitPhysique";
+  } else {
+    state.screen = options.skipRaceRegistry ? "recruitTarget" : "raceSelect";
+  }
   render();
 }
 
@@ -1818,26 +1884,33 @@ function renderRecruitTargetSelect() {
 
 function renderRecruitTargetCard(target) {
   const theme = getRecruitmentTheme(target.targetId);
+  const professionName = getRecruitmentTargetProfession(target);
+  const professionNameEn = getRecruitmentTargetClassEn(target);
+  const trainingSite = getRecruitmentTargetTrainingSite(target);
+  const summary = getRecruitmentTargetSummary(target);
+  const acceptedStyle = target.acceptedStyle || target.description || `按${professionName}的核心方法完成职业检验。`;
+  const likelyFailure = target.likelyFailure || target.riskText || "忽略职业要求，只依赖单一能力强行推进。";
+  const hiddenRoute = target.hiddenRoute || "根据检验表现与人格倾向生成进阶方向。";
   return `
     <button class="target-contract ${theme.className}" data-target-id="${target.targetId}" style="--trial-accent:${theme.accent}; --trial-secondary:${theme.secondary}" type="button">
-      ${renderRecruitmentArt({ src: getTargetArt(target.targetId) || getRaceArt(state.recruitment?.raceId) || getRecruitmentUiArt("registry"), alt: `${target.classNameZh}征兵目标图`, className: "target-contract-art" })}
+      ${renderRecruitmentArt({ src: getTargetArt(target.targetId) || getRaceArt(state.recruitment?.raceId) || getRecruitmentUiArt("registry"), alt: `${professionName}征兵目标图`, className: "target-contract-art" })}
       <span class="contract-seal">${theme.seal}</span>
-      <p class="eyebrow">${target.classNameEn}</p>
-      <h2>${adaptRecruitmentCopy(target.title)}</h2>
-      <strong>${target.classNameZh}</strong>
-      <p>${adaptRecruitmentCopy(target.recruitPitch)}</p>
+      <p class="eyebrow">${professionNameEn}</p>
+      <h2>${professionName}</h2>
+      <strong>${trainingSite}</strong>
+      <p>${adaptRecruitmentCopy(summary)}</p>
       <dl>
         <div>
           <dt>录取打法</dt>
-          <dd>${adaptRecruitmentCopy(target.acceptedStyle)}</dd>
+          <dd>${adaptRecruitmentCopy(acceptedStyle)}</dd>
         </div>
         <div>
           <dt>常见失败</dt>
-          <dd>${adaptRecruitmentCopy(target.likelyFailure)}</dd>
+          <dd>${adaptRecruitmentCopy(likelyFailure)}</dd>
         </div>
         <div>
           <dt>隐藏路线</dt>
-          <dd>${adaptRecruitmentCopy(target.hiddenRoute)}</dd>
+          <dd>${adaptRecruitmentCopy(hiddenRoute)}</dd>
         </div>
       </dl>
       <div class="descriptor-tags">
@@ -1887,6 +1960,8 @@ function renderRecruitmentQuestionScreen(kind) {
   }
   const target = getRecruitmentTarget();
   const theme = getRecruitmentTheme(target?.targetId);
+  const professionName = getRecruitmentTargetProfession(target);
+  const targetSummary = getRecruitmentTargetSummary(target);
   const questions = getRecruitmentQuestions(kind);
   const index = recruitment.questionIndex || 0;
   const actNumber = kind === "physique" ? 1 : index + 2;
@@ -1904,7 +1979,7 @@ function renderRecruitmentQuestionScreen(kind) {
     render();
     return;
   }
-  const stepLabel = kind === "physique" ? "血脉体格鉴定" : `${target?.classNameZh || "职业"}试炼`;
+  const stepLabel = kind === "physique" ? "血脉体格鉴定" : `${professionName}试炼`;
   const progressBase = kind === "physique" ? 24 : 48;
   const progressSpan = kind === "physique" ? 18 : 30;
   setProgress(`${stepLabel} ${index + 1}/${questions.length}`, progressBase + (index / Math.max(questions.length, 1)) * progressSpan);
@@ -1934,8 +2009,8 @@ function renderRecruitmentQuestionScreen(kind) {
       <div class="trial-layout">
         <aside class="trial-dossier-card">
           <span class="contract-seal">${kind === "physique" ? "BODY" : theme.seal}</span>
-          <h2>${kind === "physique" ? raceCard.title : adaptRecruitmentCopy(target.title)}</h2>
-          <p>${kind === "physique" ? raceCard.warningText : adaptRecruitmentCopy(target.oneLine)}</p>
+          <h2>${kind === "physique" ? raceCard.title : professionName}</h2>
+          <p>${kind === "physique" ? raceCard.warningText : adaptRecruitmentCopy(targetSummary)}</p>
           <dl>
             <div>
               <dt>血脉</dt>
@@ -1943,7 +2018,7 @@ function renderRecruitmentQuestionScreen(kind) {
             </div>
             <div>
               <dt>志愿</dt>
-              <dd>${target?.classNameZh || "未投递"}</dd>
+              <dd>${professionName}</dd>
             </div>
             <div>
               <dt>试炼材质</dt>
@@ -2184,7 +2259,7 @@ function buildRecruitmentAxisStages(storyScores, target, calibrationStages = {})
           weight: hasCalibration ? 0.6 : 1,
           difficulty: "种族流程",
           raw: { recruitment: true },
-          note: `${getRecruitmentRaceCard().raceNameZh || "征召血脉"} / ${target?.classNameZh || "征召目标"} / 文案判断`,
+          note: `${getRecruitmentRaceCard().raceNameZh || "征召血脉"} / ${getRecruitmentTargetProfession(target)} / 文案判断`,
         },
       };
       playedEntries.forEach(([stageId, item]) => {
@@ -2284,7 +2359,7 @@ function renderRecruitmentJudgement() {
         <div class="judgement-grid">
           <div>
             <strong>报名志愿</strong>
-            <span>${target?.classNameZh || "未记录"} · ${adaptRecruitmentCopy(target?.title || "")}</span>
+            <span>${getRecruitmentTargetProfession(target)} · ${getRecruitmentTargetTrainingSite(target)}</span>
           </div>
           <div>
             <strong>推荐归宿</strong>
@@ -2432,7 +2507,7 @@ function renderRecruitmentCalibration() {
           <div class="test-title">
             <span class="axis-badge">${axis.abbr}</span>
             <div>
-              <p class="eyebrow">${target?.classNameZh || "征召"}校准 / ${calibrationItem.label} / ${stage.difficulty}</p>
+              <p class="eyebrow">${getRecruitmentTargetProfession(target)}校准 / ${calibrationItem.label} / ${stage.difficulty}</p>
               <h2>${calibrationItem.label} · ${stage.title}</h2>
               <p>${axis.intro}</p>
             </div>
@@ -4768,7 +4843,7 @@ function renderResult() {
         </div>
       </div>
 
-      <div class="result-grid">
+      <div class="result-grid result-grid-identity">
         <div class="result-panel">
           <h2>六维属性雷达</h2>
           <div class="radar-wrap">
@@ -4804,7 +4879,7 @@ function renderResult() {
         </div>
       </div>
 
-      <div class="result-grid">
+      <div class="result-grid result-grid-scores">
         <div class="result-panel">
           <h2>属性点数清单</h2>
           <div class="score-list">
@@ -4819,7 +4894,7 @@ function renderResult() {
         </div>
       </div>
 
-      <div class="result-grid">
+      <div class="result-grid result-grid-profile">
         <div class="result-panel">
           <h2>主职业描述</h2>
           <div class="profession-brief">
@@ -4860,7 +4935,7 @@ function renderResult() {
         </div>
       </div>
 
-      <div class="result-grid">
+      <div class="result-grid result-grid-constitution">
         ${renderConstitutionReading(summary.constitution)}
         ${renderDefectReading(summary.constitution)}
       </div>
@@ -4939,7 +5014,7 @@ function renderRecruitmentResultPanel() {
         </div>
         <div>
           <strong>报名志愿</strong>
-          <span>${target?.classNameZh || "未记录"}</span>
+          <span>${getRecruitmentTargetProfession(target)}</span>
         </div>
         <div>
           <strong>推荐归宿</strong>
