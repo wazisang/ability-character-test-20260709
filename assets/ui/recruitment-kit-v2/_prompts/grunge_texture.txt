@@ -1,0 +1,3 @@
+Seamless tileable paper grunge texture for multiply overlay.
+Subtle fiber grain, faint ink speckles, soft dirt, low contrast cream-brown, no text, no symbols, no vignette edges.
+Square seamless pattern suitable for CSS background-repeat.

@@ -15,9 +15,20 @@ const types = {
   ".jpeg": "image/jpeg",
 };
 
+const hallPath = "/world-recruitment-prototype.html";
+
 const server = http.createServer((req, res) => {
-  const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  const target = path.resolve(root, urlPath === "/" ? "index.html" : `.${urlPath}`);
+  const rawUrl = req.url || "/";
+  const urlPath = decodeURIComponent(rawUrl.split("?")[0]);
+
+  // 根路径直接进入「世界征召令」；index.html 由页面脚本决定是否留下（支持检验中刷新）
+  if (urlPath === "/") {
+    res.writeHead(302, { Location: hallPath, "Cache-Control": "no-store" });
+    res.end();
+    return;
+  }
+
+  const target = path.resolve(root, urlPath === "/index.html" ? "index.html" : `.${urlPath}`);
 
   if (!target.startsWith(root)) {
     res.writeHead(403);
@@ -42,4 +53,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, "127.0.0.1", () => {
   console.log(`Ability prototype running at http://127.0.0.1:${port}/`);
+  console.log(`Recruitment hall at http://127.0.0.1:${port}${hallPath}`);
 });

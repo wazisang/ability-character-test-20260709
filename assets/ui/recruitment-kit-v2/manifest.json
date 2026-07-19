@@ -1,0 +1,486 @@
+{
+  "version": 2,
+  "theme": "world-recruitment-kit-v2",
+  "baseDesign": "assets/ui/design-mocks/world-recruitment-redesign-v1.png",
+  "plan": "docs/superpowers/plans/2026-07-18-recruitment-kit-v2-generation.md",
+  "note": "按确认设计图分层生成；文字尽量 HTML 叠加。status: pending|ready|skipped",
+  "assets": [
+    {
+      "id": "wood_table",
+      "file": "wood_table.png",
+      "layer": "L0",
+      "role": "scene",
+      "transparent": false,
+      "status": "ready",
+      "desc": "深色木桌场景底板"
+    },
+    {
+      "id": "parchment_poster",
+      "file": "parchment_poster.png",
+      "layer": "L1",
+      "role": "panel",
+      "transparent": true,
+      "status": "ready",
+      "desc": "主羊皮纸海报空白底板"
+    },
+    {
+      "id": "grunge_texture",
+      "file": "grunge_texture.png",
+      "layer": "L2",
+      "role": "texture",
+      "transparent": false,
+      "status": "ready",
+      "desc": "可平铺纸面做旧纹理"
+    },
+    {
+      "id": "paper_scraps",
+      "file": "paper_scraps.png",
+      "layer": "L3",
+      "role": "decoration",
+      "transparent": true,
+      "status": "ready",
+      "desc": "主海报后方零散旧纸"
+    },
+    {
+      "id": "document_stack",
+      "file": "document_stack.png",
+      "layer": "L3",
+      "role": "decoration",
+      "transparent": true,
+      "status": "ready",
+      "desc": "右侧卷宗叠层"
+    },
+    {
+      "id": "map_fragment",
+      "file": "map_fragment.png",
+      "layer": "L3",
+      "role": "decoration",
+      "transparent": true,
+      "status": "ready",
+      "desc": "右上角卷边地图碎片"
+    },
+    {
+      "id": "title_plaque",
+      "file": "title_plaque.png",
+      "layer": "L4",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "标题横幅底板（无大字）"
+    },
+    {
+      "id": "guild_banner",
+      "file": "guild_banner.png",
+      "layer": "L5",
+      "role": "decoration",
+      "transparent": true,
+      "status": "pending",
+      "desc": "侧挂会旗（无中文）"
+    },
+    {
+      "id": "crest_sword",
+      "file": "crest_sword.png",
+      "layer": "L6",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "剑盾菱形纹章"
+    },
+    {
+      "id": "crest_lion",
+      "file": "crest_lion.png",
+      "layer": "L6",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "狮首菱形纹章"
+    },
+    {
+      "id": "brass_tack",
+      "file": "brass_tack.png",
+      "layer": "L7",
+      "role": "prop",
+      "transparent": true,
+      "status": "pending",
+      "desc": "黄铜图钉"
+    },
+    {
+      "id": "iron_nail",
+      "file": "iron_nail.png",
+      "layer": "L7",
+      "role": "prop",
+      "transparent": true,
+      "status": "pending",
+      "desc": "黑铁钉"
+    },
+    {
+      "id": "race_frame",
+      "file": "race_frame.png",
+      "layer": "L8",
+      "role": "frame",
+      "transparent": true,
+      "status": "pending",
+      "desc": "种族卡默认外框（中空）"
+    },
+    {
+      "id": "race_frame_selected",
+      "file": "race_frame_selected.png",
+      "layer": "L8",
+      "role": "frame",
+      "transparent": true,
+      "status": "pending",
+      "desc": "种族卡选中金框（中空）"
+    },
+    {
+      "id": "race_crest_human",
+      "file": "race_crest_human.png",
+      "layer": "L9",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "人类族徽"
+    },
+    {
+      "id": "race_crest_elf",
+      "file": "race_crest_elf.png",
+      "layer": "L9",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "精灵族徽"
+    },
+    {
+      "id": "race_crest_half_orc",
+      "file": "race_crest_half_orc.png",
+      "layer": "L9",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "半兽人族徽"
+    },
+    {
+      "id": "race_crest_tiefling",
+      "file": "race_crest_tiefling.png",
+      "layer": "L9",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "提夫林族徽"
+    },
+    {
+      "id": "career_card",
+      "file": "career_card.png",
+      "layer": "L10",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "职业卡空白底板"
+    },
+    {
+      "id": "career_crest_fighter",
+      "file": "career_crest_fighter.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "战士徽章"
+    },
+    {
+      "id": "career_crest_bard",
+      "file": "career_crest_bard.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "吟游诗人徽章"
+    },
+    {
+      "id": "career_crest_artificer",
+      "file": "career_crest_artificer.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "工匠徽章"
+    },
+    {
+      "id": "career_crest_paladin",
+      "file": "career_crest_paladin.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "圣武士徽章"
+    },
+    {
+      "id": "career_crest_ranger",
+      "file": "career_crest_ranger.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "游侠徽章"
+    },
+    {
+      "id": "career_crest_wizard",
+      "file": "career_crest_wizard.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "法师徽章"
+    },
+    {
+      "id": "career_crest_druid",
+      "file": "career_crest_druid.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "德鲁伊徽章"
+    },
+    {
+      "id": "career_crest_rogue",
+      "file": "career_crest_rogue.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "潜行者徽章"
+    },
+    {
+      "id": "career_crest_barbarian",
+      "file": "career_crest_barbarian.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "野蛮人徽章"
+    },
+    {
+      "id": "career_crest_cleric",
+      "file": "career_crest_cleric.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "牧师徽章"
+    },
+    {
+      "id": "career_crest_warlock",
+      "file": "career_crest_warlock.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "契约术士徽章"
+    },
+    {
+      "id": "career_crest_sorcerer",
+      "file": "career_crest_sorcerer.png",
+      "layer": "L11",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "血脉法师徽章"
+    },
+    {
+      "id": "panel_tab",
+      "file": "panel_tab.png",
+      "layer": "L12",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签默认底板"
+    },
+    {
+      "id": "panel_tab_active",
+      "file": "panel_tab_active.png",
+      "layer": "L12",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签激活底板"
+    },
+    {
+      "id": "tab_icon_guild",
+      "file": "tab_icon_guild.png",
+      "layer": "L13",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签图标-公会"
+    },
+    {
+      "id": "tab_icon_races",
+      "file": "tab_icon_races.png",
+      "layer": "L13",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签图标-种族"
+    },
+    {
+      "id": "tab_icon_purpose",
+      "file": "tab_icon_purpose.png",
+      "layer": "L13",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签图标-目的"
+    },
+    {
+      "id": "tab_icon_notice",
+      "file": "tab_icon_notice.png",
+      "layer": "L13",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签图标-须知"
+    },
+    {
+      "id": "tab_icon_benefits",
+      "file": "tab_icon_benefits.png",
+      "layer": "L13",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "页签图标-权益"
+    },
+    {
+      "id": "info_panel",
+      "file": "info_panel.png",
+      "layer": "L14",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "信息面板纸"
+    },
+    {
+      "id": "guild_city_sketch",
+      "file": "guild_city_sketch.png",
+      "layer": "L14",
+      "role": "illustration",
+      "transparent": true,
+      "status": "pending",
+      "desc": "公会城堡钢笔素描"
+    },
+    {
+      "id": "mission_icon_guard",
+      "file": "mission_icon_guard.png",
+      "layer": "L15",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "征召目的-守护"
+    },
+    {
+      "id": "mission_icon_explore",
+      "file": "mission_icon_explore.png",
+      "layer": "L15",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "征召目的-探索"
+    },
+    {
+      "id": "mission_icon_hunt",
+      "file": "mission_icon_hunt.png",
+      "layer": "L15",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "征召目的-讨伐"
+    },
+    {
+      "id": "mission_icon_resources",
+      "file": "mission_icon_resources.png",
+      "layer": "L15",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "征召目的-资源"
+    },
+    {
+      "id": "mission_icon_knowledge",
+      "file": "mission_icon_knowledge.png",
+      "layer": "L15",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "征召目的-知识"
+    },
+    {
+      "id": "accept_bar",
+      "file": "accept_bar.png",
+      "layer": "L16",
+      "role": "panel",
+      "transparent": true,
+      "status": "pending",
+      "desc": "接受征召横条底板"
+    },
+    {
+      "id": "accept_emblem",
+      "file": "accept_emblem.png",
+      "layer": "L16",
+      "role": "icon",
+      "transparent": true,
+      "status": "pending",
+      "desc": "接受条扁平罗盘徽记"
+    },
+    {
+      "id": "wax_seal",
+      "file": "wax_seal.png",
+      "layer": "L17",
+      "role": "stamp",
+      "transparent": true,
+      "status": "pending",
+      "desc": "红色立体蜡封"
+    },
+    {
+      "id": "today_recruit_stamp",
+      "file": "today_recruit_stamp.png",
+      "layer": "L17",
+      "role": "stamp",
+      "transparent": true,
+      "status": "pending",
+      "desc": "今日征召油墨章边框（无中文）"
+    },
+    {
+      "id": "candle",
+      "file": "candle.png",
+      "layer": "L17",
+      "role": "prop",
+      "transparent": true,
+      "status": "pending",
+      "desc": "左下蜡烛"
+    },
+    {
+      "id": "inkwell_quill",
+      "file": "inkwell_quill.png",
+      "layer": "L17",
+      "role": "prop",
+      "transparent": true,
+      "status": "pending",
+      "desc": "右下墨水瓶与羽笔"
+    },
+    {
+      "id": "compass_coin",
+      "file": "compass_coin.png",
+      "layer": "L17",
+      "role": "prop",
+      "transparent": true,
+      "status": "pending",
+      "desc": "实体罗盘币道具"
+    },
+    {
+      "id": "ornate_ring",
+      "file": "ornate_ring.png",
+      "layer": "L18",
+      "role": "frame",
+      "transparent": true,
+      "status": "pending",
+      "desc": "可选圆形选中装饰环"
+    }
+  ]
+}

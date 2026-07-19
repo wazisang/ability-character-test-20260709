@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "theme": "dwarf-ui-kit",
+  "note": "内置生图单独生成的矮人主题 UI 素材（白底 PNG，非拼图抠图）",
+  "assets": [
+    { "id": "dwarf_portrait", "file": "dwarf_portrait.png", "role": "portrait", "desc": "矮人王指向观众肖像" },
+    { "id": "parchment", "file": "parchment.png", "role": "panel", "desc": "空白羊皮纸面板" },
+    { "id": "mountain_fortress", "file": "mountain_fortress.png", "role": "illustration", "desc": "山地要塞木刻插图" },
+    { "id": "banner", "file": "banner.png", "role": "decoration", "desc": "竖幅纹章挂旗" },
+    { "id": "crossed_hammers", "file": "crossed_hammers.png", "role": "icon", "desc": "交叉战锤纹章" },
+    { "id": "ornate_ring", "file": "ornate_ring.png", "role": "frame", "desc": "圆形装饰边框" },
+    { "id": "title_plaque", "file": "title_plaque.png", "role": "button", "desc": "横条标题/按钮底板" },
+    { "id": "wax_seal", "file": "wax_seal.png", "role": "stamp", "desc": "山峰双锤蜡封印" },
+    { "id": "grunge_texture", "file": "grunge_texture.png", "role": "texture", "desc": "网点做旧纹理" }
+  ]
+}

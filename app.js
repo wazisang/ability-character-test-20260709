@@ -1238,6 +1238,9 @@ const state = {
   homePreviewRaceId: "",
   homePreviewRaceIds: [],
   worldRecruitment: null,
+  resultTab: "card",
+  selectedRaceId: "auto",
+  selectedMbti: "未知",
 };
 
 let cleanupFns = [];
@@ -1275,12 +1278,76 @@ function getOpenRecruitmentRaceNames() {
     .join("、");
 }
 
-document.querySelector("#brandHome").addEventListener("click", () => {
-  state.screen = "start";
+function saveState() {
+  try {
+    sessionStorage.setItem("abilityState", JSON.stringify({
+      screen: state.screen,
+      current: state.current,
+      stage: state.stage,
+      profile: state.profile,
+      scores: state.scores,
+      axisStages: state.axisStages,
+      raw: state.raw,
+      traits: state.traits,
+      mbtiProbe: state.mbtiProbe,
+      personalityAnswers: state.personalityAnswers,
+      recruitment: state.recruitment,
+      selectedRaceId: state.selectedRaceId,
+      selectedMbti: state.selectedMbti,
+      resultTab: state.resultTab,
+    }));
+  } catch (e) {}
+}
+
+function loadState() {
+  try {
+    const saved = sessionStorage.getItem("abilityState");
+    if (!saved) return false;
+    const data = JSON.parse(saved);
+    if (!data || !data.screen) return false;
+    Object.assign(state, data);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function clearSavedState() {
+  try { sessionStorage.removeItem("abilityState"); } catch (e) {}
+}
+
+function goToRecruitmentHall() {
+  clearSavedState();
   state.recruitment = null;
-  state.worldRecruitment = createWorldRecruitmentState();
+  state.worldRecruitment = null;
   state.mbtiProbeReturnScreen = null;
-  render();
+  state.screen = "start";
+  window.location.href = "./world-recruitment-prototype.html";
+}
+
+function consumeHallHandoff() {
+  const params = new URLSearchParams(window.location.search);
+  const raceId = params.get("race") || "";
+  const targetId = params.get("target") || "";
+  const fromHall = params.get("from") === "hall" || Boolean(raceId);
+  if (!fromHall || !raceId) return false;
+
+  clearSavedState();
+  beginRecruitment(raceId, {
+    skipRaceRegistry: true,
+    targetId: targetId && hasRecruitmentData(raceId) ? targetId : "",
+    deferRender: true,
+  });
+
+  // 清掉交接参数，避免刷新重复开局
+  const clean = new URL(window.location.href);
+  clean.search = "";
+  window.history.replaceState({}, "", clean.pathname);
+  return true;
+}
+
+document.querySelector("#brandHome").addEventListener("click", () => {
+  goToRecruitmentHall();
 });
 
 function cleanup() {
@@ -1454,6 +1521,7 @@ function render() {
   if (state.screen === "mbtiProbe") renderMbtiProbe();
   if (state.screen === "personality") renderPersonality();
   if (state.screen === "result") renderResult();
+  saveState();
 }
 
 function renderStart() {
@@ -1750,7 +1818,7 @@ function beginRecruitment(preferredRaceId = state.homePreviewRaceId, options = {
   } else {
     state.screen = options.skipRaceRegistry ? "recruitTarget" : "raceSelect";
   }
-  render();
+  if (!options.deferRender) render();
 }
 
 function renderRaceSelect() {
@@ -6390,4 +6458,13 @@ function initAmbient() {
 }
 
 initAmbient();
-render();
+if (!consumeHallHandoff()) {
+  loadState();
+  if (!state.screen || state.screen === "start") {
+    goToRecruitmentHall();
+  } else {
+    render();
+  }
+} else {
+  render();
+}

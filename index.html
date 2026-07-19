@@ -6,6 +6,26 @@
     <title>能力角色仪 | 冒险者检定与出卡</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./world-recruitment-home.css" />
+    <script>
+      // 无征召交接参数、且没有进行中档案时，入口改走高保真「世界征召令」原型
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var keepApp =
+          params.has("race") ||
+          params.has("target") ||
+          params.get("continue") === "1" ||
+          params.get("from") === "hall";
+        if (!keepApp) {
+          try {
+            var saved = JSON.parse(sessionStorage.getItem("abilityState") || "null");
+            if (saved && saved.screen && saved.screen !== "start") keepApp = true;
+          } catch (e) {}
+        }
+        if (!keepApp) {
+          location.replace("./world-recruitment-prototype.html");
+        }
+      })();
+    </script>
   </head>
   <body>
     <canvas id="ambient-canvas" aria-hidden="true"></canvas>

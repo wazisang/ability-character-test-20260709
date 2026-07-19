@@ -1,0 +1,3184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>世界征召令 | 冒险者工会联合征募</title>
+  <style>
+    :root {
+      --paper: #f0e6d2;
+      --paper-dark: #e3d6b8;
+      --ink: #2b2118;
+      --ink-light: #5c4d3c;
+      --accent-gold: #c9a45c;
+      --accent-red: #a34f3e;
+      --human-primary: #c9a45c;
+      --human-secondary: #a34f3e;
+      --elf-primary: #7a9e7e;
+      --elf-secondary: #c9b86a;
+      --orc-primary: #4a5a3a;
+      --orc-secondary: #8c4b3a;
+      --tiefling-primary: #7a2e2e;
+      --tiefling-secondary: #d4af37;
+      --shadow: rgba(43, 33, 24, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      min-height: 100dvh;
+      background-color: #241910;
+      color: var(--ink);
+      font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", Georgia, serif;
+      overflow-x: hidden;
+    }
+
+    /* 木桌单独铺满视口，不跟内容一起被压扁 */
+    .wood-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-color: #241910;
+      background-image: url("assets/ui/recruitment-kit-v2/wood_table.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      position: relative;
+      z-index: 1;
+      min-height: 100dvh;
+      box-sizing: border-box;
+    }
+
+    .paper-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      mix-blend-mode: multiply;
+      background-image:
+        url("assets/ui/recruitment-kit-v2/grunge_texture.png"),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(43,33,24,0.03) 2px, rgba(43,33,24,0.03) 3px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(43,33,24,0.02) 2px, rgba(43,33,24,0.02) 3px);
+      background-size: 520px 520px, auto, auto;
+      background-repeat: repeat, repeat, repeat;
+      z-index: 0;
+    }
+
+    /* 旧桌面碎纸/地图装饰与演示图不符，关闭 */
+    .desk-layers { display: none !important; }
+
+    /* 舞台：宽度按视口高度反推，保证整纸可见且不拉伸 */
+    .poster-stage {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, 94vw, calc((100dvh - 20px) * 1.5));
+      margin: 0 auto;
+    }
+
+    .poster-shell {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin: 0;
+      line-height: 0;
+      filter: drop-shadow(0 16px 24px rgba(0,0,0,0.55));
+    }
+
+    /* 高度跟图走，禁止 fill */
+    .poster-art {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* 内容落在羊皮纸心 —— 百分比相对纸面 */
+    .poster-ui {
+      position: absolute;
+      inset: 6% 7.5% 7% 7.5%;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+      gap: 3px;
+      line-height: normal;
+    }
+
+    /* 左侧会旗 —— 演示图左上探出 */
+    .prop-banner {
+      position: absolute;
+      left: -3.5%;
+      top: 6%;
+      width: 11%;
+      height: 52%;
+      background: url("assets/ui/recruitment-kit/banner.png") center top / contain no-repeat;
+      pointer-events: none;
+      z-index: 3;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+    }
+
+    /* 右上角改小蜡印，别用大圆环盖住纸面 */
+    .prop-crest {
+      position: absolute;
+      right: 8%;
+      top: 4%;
+      width: 4.5%;
+      aspect-ratio: 1;
+      background: url("assets/ui/recruitment-kit/wax_seal.png") center / contain no-repeat;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.88;
+      transform: rotate(12deg);
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.35));
+    }
+
+    /* 左上角小蜡封 —— 演示图 */
+    .prop-seal-tl {
+      position: absolute;
+      left: 7%;
+      top: 3.5%;
+      width: 5%;
+      aspect-ratio: 1;
+      background: url("assets/ui/recruitment-kit/wax_seal.png") center / contain no-repeat;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.9;
+      transform: rotate(-18deg);
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.35));
+    }
+
+    /* 演示图桌面道具：左下蜡烛、右下羽笔 */
+    .prop-candle {
+      position: absolute;
+      left: 1%;
+      bottom: -2%;
+      width: 9%;
+      aspect-ratio: 1;
+      background: url("assets/ui/recruitment-kit-v2/prop_candle.png") center / contain no-repeat;
+      pointer-events: none;
+      z-index: 4;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.45));
+    }
+
+    .prop-quill {
+      position: absolute;
+      right: 0.5%;
+      bottom: -1%;
+      width: 11%;
+      aspect-ratio: 1;
+      background: url("assets/ui/recruitment-kit-v2/prop_quill.png") center / contain no-repeat;
+      pointer-events: none;
+      z-index: 4;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+    }
+
+    /* 接受条旁蜡封 —— 演示图右下角常显 */
+    .accept-zone .wax-seal {
+      /* merged into .wax-seal below */
+    }
+
+    .app { /* legacy */ }
+
+    .poster-header {
+      text-align: center;
+      flex: 0 0 auto;
+      padding: 0;
+      margin: 0 0 2px;
+      border: none;
+      background: none;
+      position: relative;
+      z-index: 5;
+    }
+
+    .race-row {
+      flex: 0 0 auto;
+      min-height: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 演示图：种族四卡 + 职业叠同一上半区 */
+    .select-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(168px, 24%);
+      gap: 12px 16px;
+      align-items: end;
+      flex: 0 0 auto;
+      min-height: 0;
+    }
+
+    .character-figure {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      max-height: min(168px, 23vh);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.2s;
+      transform-origin: bottom center;
+      padding: 0;
+    }
+
+    .character-slot[data-selected="true"] .character-figure {
+      transform: scale(1.05);
+      filter: brightness(1.08);
+    }
+
+    /* 标题：演示图是纸上墨字 + 纹章，不用厚红牌抢视觉 */
+    .title-plaque {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: auto;
+      padding: 2px 8px;
+      background: none;
+      filter: none;
+    }
+
+    .title-plaque::before {
+      content: "";
+      width: 42px;
+      height: 42px;
+      background: url("assets/ui/recruitment-kit/crossed_hammers.png") center / contain no-repeat;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+      margin: 0;
+      letter-spacing: 0.28em;
+      font-weight: 900;
+      color: #1a120c;
+      text-shadow: 0 1px 0 rgba(255,240,210,0.35);
+    }
+
+    .subtitle {
+      margin-top: 2px;
+      font-size: clamp(0.62rem, 1.1vw, 0.78rem);
+      letter-spacing: 0.2em;
+      color: var(--ink-light);
+    }
+
+    .subtitle::before,
+    .subtitle::after {
+      content: "—";
+      margin: 0 0.4em;
+      opacity: 0.7;
+    }
+
+    /* 演示图结构：种族横排满宽 → 下方「详情 | 职业」 */
+    .characters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(8px, 1.2vw, 14px);
+      width: 100%;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      align-items: end;
+    }
+
+    /* 种族说明单独一行，在种族卡下方左侧（演示图） */
+    .race-info-box {
+      margin-top: 2px;
+      border: none;
+      background: transparent;
+      padding: 2px 8px 2px 2px;
+      min-height: 0;
+      position: relative;
+      box-shadow: none;
+      flex: 0 0 auto;
+      max-width: 72%;
+    }
+
+    .detail-row { display: none; }
+
+    .career-zone {
+      position: relative;
+      min-height: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding-top: 0;
+      align-self: end;
+      justify-self: center;
+    }
+
+    .career-zone-title {
+      text-align: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      color: var(--ink-light);
+    }
+
+    .card-stack {
+      position: relative;
+      width: 150px;
+      height: 178px;
+      margin: 0 auto;
+    }
+
+    .career-card {
+      position: absolute;
+      width: 136px;
+      height: 170px;
+      left: 50%;
+      top: 50%;
+      margin-left: -68px;
+      margin-top: -85px;
+      border: 1px solid rgba(43,33,24,0.7);
+      background: #efe2c4;
+      border-radius: 1px;
+      box-shadow: 3px 4px 8px rgba(0,0,0,0.22);
+      transform-origin: center bottom;
+      transition: transform 0.35s ease, z-index 0s linear 0s;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-panels {
+      margin-top: 2px;
+      flex: 1 1 auto;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accept-zone {
+      margin-top: 4px;
+      text-align: center;
+      position: relative;
+      min-height: 44px;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .poster-stage { width: min(960px, 98vw); }
+      .poster-ui { inset: 5.5% 6% 6.5%; }
+      .select-band { grid-template-columns: 1fr 160px; }
+      .prop-banner { width: 9%; opacity: 0.85; }
+      .character-figure { max-height: 130px; }
+    }
+
+    @media (max-width: 640px) {
+      body { display: block; padding: 8px; align-items: stretch; }
+      .poster-stage { width: 100%; max-height: none; }
+      .poster-art { max-height: none; }
+      .poster-ui { inset: 5% 6% 6%; }
+      .select-band { grid-template-columns: 1fr; }
+      .characters { width: 100%; }
+      .race-info-box { max-width: 100%; }
+      .prop-banner, .prop-crest, .prop-seal-tl, .prop-candle, .prop-quill { display: none; }
+    }
+
+    .character-slot {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 0;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    .character-slot:hover .character-figure {
+      box-shadow: 0 0 0 2px var(--accent-gold);
+    }
+
+    .character-name {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .character-name .en-name {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: var(--ink-light);
+      font-weight: 500;
+    }
+
+    .career-zone {
+      position: relative;
+      min-height: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding-top: 0;
+      margin-top: 0;
+      align-self: stretch;
+    }
+
+    .career-zone-title {
+      text-align: center;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .card-stack {
+      position: relative;
+      width: 190px;
+      height: 270px;
+      margin: 0 auto;
+    }
+
+    .career-card {
+      position: absolute;
+      width: 172px;
+      height: 248px;
+      left: 50%;
+      top: 50%;
+      margin-left: -86px;
+      margin-top: -124px;
+      border: 1px solid rgba(43,33,24,0.7);
+      background: #efe2c4;
+      border-radius: 1px;
+      box-shadow: 4px 6px 12px rgba(0,0,0,0.25);
+      transform-origin: center bottom;
+      transition: transform 0.35s ease, z-index 0s linear 0s;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 关掉脉冲光效；选中用金纹环框 */
+    .burst-overlay {
+      display: none !important;
+    }
+
+    .character-slot[data-selected="true"] .character-figure { transform: scale(1.04); filter: brightness(1.06); }
+
+    .selection-ring {
+      position: absolute;
+      inset: -12% -8%;
+      background-image: url("assets/ui/recruitment-kit/ornate_ring.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 3;
+      filter: drop-shadow(0 0 4px rgba(201,164,92,0.55));
+    }
+
+    .character-slot[data-selected="true"] .selection-ring { opacity: 0.92; }
+
+    .character-art {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      background-repeat: no-repeat;
+      background-position: center 18%;
+      background-size: cover;
+      border: 2px solid var(--ink);
+      border-radius: 3px;
+      box-shadow: 0 8px 16px rgba(43,33,24,0.35), inset 0 0 0 1px rgba(255,255,255,0.25);
+      position: relative;
+      z-index: 2;
+      transition: box-shadow 0.35s ease;
+    }
+
+    .character-slot[data-race="human"][data-selected="true"] .character-art { box-shadow: 0 0 0 3px var(--human-primary), 0 10px 18px rgba(43,33,24,0.4); }
+    .character-slot[data-race="elf"][data-selected="true"] .character-art { box-shadow: 0 0 0 3px var(--elf-primary), 0 10px 18px rgba(43,33,24,0.4); }
+    .character-slot[data-race="half_orc"][data-selected="true"] .character-art { box-shadow: 0 0 0 3px var(--orc-primary), 0 10px 18px rgba(43,33,24,0.4); }
+    .character-slot[data-race="tiefling"][data-selected="true"] .character-art { box-shadow: 0 0 0 3px var(--tiefling-primary), 0 10px 18px rgba(43,33,24,0.4); }
+
+    /* 内部素材：种族征召插画（真实生成图，替代占位剪影） */
+    .art-human { background-image: url("assets/recruitment/generated/race_human_card-preview.webp"); }
+    .art-elf { background-image: url("assets/recruitment/generated/race_elf_card-preview.webp"); }
+    .art-orc { background-image: url("assets/recruitment/generated/race_half_orc_card-preview.webp"); }
+    .art-tiefling { background-image: url("assets/recruitment/generated/race_tiefling_card-preview.webp"); }
+
+    /* 选中光效 */
+    .burst-overlay {
+      position: absolute;
+      inset: -10% -5% 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      z-index: -1;
+    }
+
+    [data-race="human"] .burst-overlay,
+    [data-race="elf"] .burst-overlay {
+      background:
+        conic-gradient(from 0deg at 50% 60%, var(--human-primary) 0deg 30deg, transparent 30deg 40deg, var(--human-secondary) 40deg 80deg, transparent 80deg 110deg, var(--human-primary) 110deg 150deg, transparent 150deg 180deg, var(--human-secondary) 180deg 220deg, transparent 220deg 250deg, var(--human-primary) 250deg 290deg, transparent 290deg 320deg, var(--human-secondary) 320deg 360deg);
+      mix-blend-mode: multiply;
+      animation: rotate-slow 18s linear infinite;
+    }
+
+    [data-race="elf"] .burst-overlay {
+      background:
+        conic-gradient(from 180deg at 50% 60%, var(--elf-primary) 0deg 24deg, transparent 24deg 36deg, var(--elf-secondary) 36deg 72deg, transparent 72deg 96deg, var(--elf-primary) 96deg 132deg, transparent 132deg 156deg, var(--elf-secondary) 156deg 192deg, transparent 192deg 216deg, var(--elf-primary) 216deg 252deg, transparent 252deg 276deg, var(--elf-secondary) 276deg 312deg, transparent 312deg 336deg, var(--elf-primary) 336deg 360deg);
+      animation-direction: reverse;
+    }
+
+    [data-race="half_orc"] .burst-overlay,
+    [data-race="tiefling"] .burst-overlay {
+      background:
+        repeating-radial-gradient(circle at 50% 55%, transparent 0 10px, var(--orc-primary) 11px 13px, transparent 14px 26px);
+      mix-blend-mode: multiply;
+      animation: breathe 2.2s steps(4) infinite, rotate-slow 22s linear infinite;
+    }
+
+    [data-race="tiefling"] .burst-overlay {
+      background:
+        repeating-radial-gradient(circle at 48% 52%, transparent 0 8px, var(--tiefling-primary) 9px 11px, transparent 12px 20px, var(--tiefling-secondary) 21px 23px, transparent 24px 36px);
+    }
+
+    .character-slot[data-selected="true"] .burst-overlay { opacity: 0.22; }
+    .character-slot:not([data-selected="true"]) { filter: brightness(0.94) saturate(0.92); }
+
+    @keyframes rotate-slow { to { transform: rotate(360deg); } }
+    @keyframes breathe {
+      0%, 100% { opacity: 0.35; }
+      25% { opacity: 0.55; }
+      50% { opacity: 0.75; }
+      75% { opacity: 0.55; }
+    }
+
+    /* 种族名 */
+    .character-name .selected-mark {
+      display: none;
+      font-size: 0.62rem;
+      color: var(--accent-red);
+      letter-spacing: 0;
+    }
+
+    [data-selected="true"] .selected-mark { display: inline; }
+
+    /* 介绍区：与职业叠卡同一行 */
+    .race-info-box {
+      margin-top: 0;
+      border: none;
+      background: transparent;
+      padding: 4px 8px 4px 4px;
+      min-height: 0;
+      position: relative;
+      box-shadow: none;
+    }
+
+    .race-info-title .stamp {
+      position: absolute;
+      right: 8%;
+      top: 0;
+      font-size: 0.78rem;
+      border: 2px solid var(--accent-red);
+      color: var(--accent-red);
+      padding: 5px 9px;
+      background: rgba(240, 220, 180, 0.45);
+      transform: rotate(-14deg);
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      box-shadow: 0 2px 0 rgba(163,79,62,0.25);
+      z-index: 2;
+    }
+
+    .character-slot[data-selected="true"] .character-art {
+      box-shadow:
+        0 0 0 3px #e0b45a,
+        0 0 0 6px rgba(201,164,92,0.35),
+        0 10px 18px rgba(43,33,24,0.4);
+    }
+
+    .career-card:hover { transform: translateY(-6px) rotate(0deg) !important; z-index: 100 !important; }
+
+    .career-card[data-selected="true"] {
+      z-index: 200 !important;
+      transform: translateY(-10px) rotate(0deg) !important;
+      box-shadow: 0 0 0 2px var(--accent-gold), 4px 6px 0 var(--shadow);
+    }
+
+    .race-info-box::before,
+    .race-info-box::after {
+      display: none;
+    }
+
+    .race-info-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .race-info-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+
+    .race-info-title .en {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-light);
+      font-weight: 400;
+    }
+
+    .race-info-body {
+      font-size: 0.76rem;
+      line-height: 1.4;
+      color: var(--ink-light);
+      max-width: 92%;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .poster-line {
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin: 0 0 4px;
+    }
+
+    .mission-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .mission-tag {
+      border: 1px solid rgba(43,33,24,0.45);
+      padding: 3px 8px;
+      font-size: 0.68rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--ink);
+      font-family: inherit;
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+    }
+
+    /* 职业卡区域 —— 与种族卡同高带 */
+    .career-zone {
+      position: relative;
+      min-height: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding-top: 0;
+      align-self: end;
+      justify-self: center;
+    }
+
+    .career-zone-title {
+      text-align: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      color: var(--ink-light);
+    }
+
+    .card-stack {
+      position: relative;
+      width: 152px;
+      height: 188px;
+      margin: 0 auto;
+    }
+
+    .career-card {
+      position: absolute;
+      width: 138px;
+      height: 180px;
+      left: 50%;
+      top: 50%;
+      margin-left: -69px;
+      margin-top: -90px;
+      border: 1px solid rgba(43,33,24,0.7);
+      background: #efe2c4;
+      border-radius: 1px;
+      box-shadow: 3px 4px 8px rgba(0,0,0,0.22);
+      transform-origin: center bottom;
+      transition: transform 0.35s ease, z-index 0s linear 0s;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .career-card:hover { transform: translateY(-6px) rotate(0deg) !important; z-index: 100 !important; }
+
+    .career-card[data-selected="true"] {
+      z-index: 200 !important;
+      transform: translateY(-10px) rotate(0deg) !important;
+      box-shadow: 0 0 0 2px var(--accent-gold), 4px 6px 0 var(--shadow);
+    }
+
+    .career-card-back {
+      background:
+        repeating-linear-gradient(45deg, var(--paper-dark), var(--paper-dark) 10px, #d8cbb0 10px, #d8cbb0 12px);
+    }
+    .career-card-back::after {
+      content: "?";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--ink-light);
+      opacity: 0.2;
+    }
+
+    .card-art {
+      height: 42%;
+      background-size: cover;
+      background-position: center;
+      filter: sepia(0.2);
+    }
+
+    .card-body {
+      padding: 6px 8px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .card-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin: 0 0 2px;
+    }
+
+    .card-location {
+      font-size: 0.62rem;
+      color: var(--ink-light);
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 0.62rem;
+      line-height: 1.3;
+      color: var(--ink-light);
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .card-selected-mark {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      border: 2px solid var(--accent-red);
+      color: var(--accent-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      transform: rotate(-8deg);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    [data-selected="true"] .card-selected-mark { opacity: 1; }
+
+    /* 底部信息板块 */
+    .panel-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+      margin-bottom: 6px;
+      flex: 0 0 auto;
+    }
+
+    .panel-tab {
+      border: 1px solid rgba(43,33,24,0.45);
+      background: rgba(240, 228, 200, 0.35);
+      padding: 7px 2px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      font-family: inherit;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .panel-tab:hover { background: rgba(43,33,24,0.1); }
+    /* 演示图：选中页签下沉深棕 + 金边 */
+    .panel-tab[data-active="true"] {
+      background: #3a2c22;
+      border-color: var(--accent-gold);
+      color: #f3e6c8;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.35);
+    }
+
+    .panel-content {
+      border: 1px dashed rgba(43,33,24,0.28);
+      background:
+        linear-gradient(90deg, rgba(240,228,200,0.55) 0%, rgba(240,228,200,0.2) 42%, transparent 70%),
+        url("assets/ui/recruitment-kit/mountain_fortress.png") left center / 38% auto no-repeat;
+      padding: 8px 10px 8px 12px;
+      min-height: 0;
+      flex: 1 1 auto;
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    .poster-line {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin: 0 0 8px;
+    }
+
+    .mission-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .mission-tag {
+      border: 1px solid rgba(43,33,24,0.45);
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--ink);
+      font-family: inherit;
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+    }
+
+    .mission-tag:hover { background: rgba(43,33,24,0.08); }
+    .mission-tag[data-active="true"] { background: #3a2c22; color: #f3e6c8; border-color: #3a2c22; }
+    .mission-tag[data-active="true"]::after {
+      content: "✓";
+      margin-left: 6px;
+      font-size: 0.7rem;
+    }
+
+    .mission-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* 移动端展开的任务详情：与桌面弹窗共用同一套内容结构 */
+    .mission-inline-detail {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--accent-gold);
+      background: rgba(43,33,24,0.05);
+      font-size: 0.85rem;
+      max-width: 100%;
+    }
+    .mission-inline-detail .modal-section { margin-top: 10px; }
+    .mission-inline-detail .modal-section:first-child { margin-top: 0; }
+    .mission-inline-detail .modal-section h4 { margin: 0 0 4px; font-size: 0.88rem; }
+    .mission-inline-detail .modal-section ul { margin: 0; padding-left: 18px; }
+    .mission-inline-detail .guild-note { margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent-gold); background: rgba(201,164,92,0.12); font-size: 0.82rem; color: var(--ink-light); }
+
+    /* 接受征召 */
+    .accept-btn {
+      display: block;
+      width: 100%;
+      border: 2px dashed #c9a45c;
+      outline: 1px solid #2f241c;
+      outline-offset: 2px;
+      background: linear-gradient(180deg, #5a4334 0%, #2f241c 55%, #241910 100%);
+      padding: 11px 20px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      font-family: inherit;
+      color: #f0e2c4;
+      transition: filter 0.2s, opacity 0.2s;
+      position: relative;
+      box-shadow: inset 0 1px 0 rgba(255,220,160,0.22), 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .accept-btn:hover:not(:disabled) { filter: brightness(1.08); }
+    .accept-btn:disabled {
+      opacity: 1;
+      cursor: not-allowed;
+      background: rgba(43,33,24,0.08);
+      color: var(--ink-light);
+      border-style: solid;
+      border-color: rgba(43,33,24,0.45);
+      box-shadow: none;
+    }
+
+    .wax-seal {
+      position: absolute;
+      right: -2%;
+      bottom: -42%;
+      width: 56px;
+      height: 56px;
+      background-image: url("assets/ui/recruitment-kit/wax_seal.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.35));
+      opacity: 0.92;
+      transform: rotate(10deg);
+      transition: opacity 0.3s, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .accept-zone.stamped .wax-seal {
+      opacity: 1;
+      transform: scale(1.12) rotate(-6deg);
+    }
+    .accept-zone.stamped .accept-btn { background: var(--ink); color: var(--paper); }
+
+    /* 任务详情弹窗 */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(43,33,24,0.45);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .modal-sheet {
+      background-color: rgba(240,230,210,0.96);
+      background-image: url("assets/ui/recruitment-kit-v2/parchment_poster.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: 2px solid var(--ink);
+      max-width: 640px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 8px 12px 0 var(--shadow);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .modal-title { margin-top: 0; font-size: 1.4rem; }
+    .modal-section { margin-top: 16px; }
+    .modal-section h4 { margin: 0 0 6px; font-size: 0.95rem; }
+    .modal-section ul { margin: 0; padding-left: 20px; }
+    .modal-section li { margin-bottom: 4px; }
+    .guild-note {
+      margin-top: 16px;
+      padding: 12px;
+      border-left: 4px solid var(--accent-gold);
+      background: rgba(201,164,92,0.12);
+      font-size: 0.9rem;
+      color: var(--ink-light);
+    }
+
+    /* 清场过渡 & 职业检验占位 */
+    .transition-screen {
+      position: fixed;
+      inset: 0;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
+
+    .transition-screen.open { opacity: 1; pointer-events: auto; }
+
+    .transition-screen h2 { font-size: 2rem; letter-spacing: 0.3em; margin-bottom: 12px; }
+    .transition-screen p { color: var(--paper-dark); }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .card-stack { margin-top: 8px; }
+      .characters { grid-template-columns: repeat(4, 1fr); width: 90%; }
+      .panel-tabs { grid-template-columns: repeat(5, 1fr); }
+      .mission-tags { flex-direction: row; flex-wrap: wrap; }
+      .mission-item { width: auto; }
+      .mission-tag { width: auto; text-align: center; }
+      .character-figure { max-height: 110px; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { letter-spacing: 0.15em; font-size: 1.4rem; }
+      .panel-tabs { grid-template-columns: repeat(2, 1fr); }
+      .characters { gap: 6px; width: 100%; grid-template-columns: repeat(2, 1fr); }
+      .character-figure { max-height: 160px; }
+      .title-plaque { min-width: 70%; padding: 8px 28px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .burst-overlay, .selection-ring { animation: none !important; }
+      .career-card, .character-figure, .character-art, .wax-seal { transition: none; }
+    }
+
+    /* ========== 版式层级重建（P0）========== */
+    .poster-ui {
+      inset: 5% 6.5% 5.5% 6.5%;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .prop-banner {
+      left: -2.5%;
+      top: 8%;
+      width: 7.5%;
+      height: 42%;
+      opacity: 0.72;
+      filter: saturate(0.7) brightness(0.92) drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+    }
+
+    .prop-candle { left: 0.5%; bottom: -3%; width: 11%; }
+    .prop-quill { right: -0.5%; bottom: -2%; width: 12%; }
+
+    /* 标题独占顶行，不被种族卡压住 */
+    .poster-header {
+      flex: 0 0 auto;
+      z-index: 20;
+      margin: 0 0 8px;
+      padding: 6px 0 14px;
+      min-height: 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: linear-gradient(180deg, rgba(244,230,200,0.55) 0%, rgba(244,230,200,0.2) 70%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .poster-header * { pointer-events: auto; }
+
+    /* 72% / 28% 双栏，整体下移约 100px，让出标题 */
+    .select-band {
+      display: grid;
+      grid-template-columns: minmax(0, 72%) minmax(0, 28%);
+      gap: 10px 14px;
+      align-items: stretch;
+      flex: 0 0 auto;
+      min-height: 190px;
+      margin-top: 72px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .title-crest {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      background: url("assets/ui/recruitment-kit/crossed_hammers.png") center / contain no-repeat;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.35));
+    }
+
+    .title-crest.right {
+      background-image: url("assets/ui/recruitment-kit/ornate_ring.png");
+      width: 36px;
+      height: 36px;
+      opacity: 0.9;
+    }
+
+    .title-plaque {
+      background: none;
+      padding: 0;
+      filter: none;
+      display: block;
+    }
+
+    .title-plaque::before { display: none !important; }
+
+    h1 {
+      font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+      letter-spacing: 0.32em;
+      color: #1a120c;
+      text-shadow: 0 1px 0 rgba(255,245,220,0.5);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      font-size: clamp(0.78rem, 1.25vw, 0.95rem);
+      letter-spacing: 0.22em;
+      color: #3d2f22;
+      font-weight: 600;
+    }
+
+    .race-row {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      z-index: 2;
+    }
+
+    .characters {
+      width: 100%;
+      margin: 0;
+      gap: 10px;
+      flex: 1 1 auto;
+      align-items: end;
+    }
+
+    .character-figure {
+      max-height: none;
+      height: 100%;
+      max-height: 190px;
+    }
+
+    .character-name {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: #1f1610;
+      line-height: 1.2;
+    }
+
+    .character-name .en-name {
+      display: inline;
+      margin-left: 4px;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: #5a4634;
+    }
+
+    .character-slot:not([data-selected="true"]) {
+      filter: brightness(0.82) saturate(0.85);
+      opacity: 0.92;
+    }
+
+    .character-slot[data-selected="true"] {
+      filter: none;
+      opacity: 1;
+    }
+
+    .character-slot[data-selected="true"] .character-art {
+      box-shadow:
+        0 0 0 3px #e8c36a,
+        0 0 0 7px rgba(201,164,92,0.35),
+        0 10px 18px rgba(43,33,24,0.4);
+    }
+
+    .career-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      align-self: stretch;
+      justify-self: stretch;
+      width: 100%;
+      min-height: 100%;
+      padding-top: 0;
+    }
+
+    .career-zone-title {
+      font-size: 0.8rem;
+      color: #3d2f22;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .card-stack {
+      width: min(100%, 188px);
+      height: 210px;
+      margin: 0 auto;
+    }
+
+    .career-card {
+      width: 168px;
+      height: 200px;
+      margin-left: -84px;
+      margin-top: -100px;
+    }
+
+    .career-card-back {
+      background:
+        linear-gradient(160deg, #c4b089 0%, #a8926a 45%, #8f7852 100%);
+      border: 2px solid #5c4a32;
+    }
+
+    .career-card-back::after {
+      content: "选择种族后揭示职业";
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(32, 24, 16, 0.55);
+      opacity: 1;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 12px;
+      line-height: 1.4;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(60,45,28,0.18) 0 18%, transparent 19%),
+        linear-gradient(160deg, transparent, transparent);
+    }
+
+    /* 种族说明：浅纸底 + 深墨色 */
+    .race-info-box {
+      flex: 0 0 auto;
+      max-width: 70%;
+      margin-top: 2px;
+      padding: 8px 12px;
+      background: rgba(246, 234, 206, 0.72);
+      border: 1px solid rgba(43,33,24,0.18);
+      color: #1f1610;
+    }
+
+    .race-info-title {
+      font-size: 1.1rem;
+      color: #1a120c;
+    }
+
+    .race-info-body {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #2b2118;
+      -webkit-line-clamp: 2;
+      max-width: 100%;
+    }
+
+    /* 信息区：页签 + 左图右文 */
+    .info-panels {
+      flex: 1 1 auto;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .panel-tabs {
+      gap: 6px;
+      margin-bottom: 0;
+    }
+
+    .panel-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      min-height: 44px;
+      padding: 8px 4px 7px;
+      font-size: 0.78rem;
+      background: rgba(245, 232, 204, 0.78);
+      border: 1px solid rgba(43,33,24,0.4);
+      color: #2b2118;
+    }
+
+    .panel-tab .tab-ico {
+      font-size: 0.95rem;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .panel-tab[data-active="true"] {
+      background: #3a2c22;
+      border: 1.5px solid #c9a45c;
+      color: #f3e6c8;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.35);
+    }
+
+    .panel-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(120px, 28%) minmax(0, 1fr);
+      gap: 12px;
+      align-items: stretch;
+      border: 1px dashed rgba(43,33,24,0.28);
+      padding: 8px;
+      background: rgba(246, 234, 206, 0.35);
+    }
+
+    .panel-illustration {
+      background:
+        linear-gradient(180deg, rgba(240,228,200,0.15), rgba(240,228,200,0.55)),
+        url("assets/ui/recruitment-kit/mountain_fortress.png") center / cover no-repeat;
+      border: 1px solid rgba(43,33,24,0.25);
+      min-height: 110px;
+      filter: sepia(0.35) contrast(0.92) brightness(1.05);
+      opacity: 0.88;
+    }
+
+    .panel-content {
+      border: none;
+      background: transparent;
+      padding: 2px 4px;
+      overflow: auto;
+      color: #1f1610;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .panel-content .poster-line,
+    .panel-content h3,
+    .panel-content strong {
+      color: #1a120c;
+    }
+
+    .mission-tags {
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .mission-tag {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      background: rgba(245, 232, 204, 0.85);
+      color: #2b2118;
+      border-color: rgba(43,33,24,0.45);
+    }
+
+    /* CTA：深褐宽横条，禁用也清晰可见 */
+    .accept-zone {
+      flex: 0 0 auto;
+      margin-top: 6px;
+      min-height: 64px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .accept-btn {
+      width: min(70%, 640px);
+      min-height: 64px;
+      position: relative;
+      border: 2px solid #c9a45c;
+      outline: 1px solid #2a1f16;
+      outline-offset: 3px;
+      background:
+        linear-gradient(180deg, #6a5040 0%, #3d2c22 42%, #2a1f16 100%);
+      color: #f3e6c8;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      padding: 14px 28px 14px 52px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,220,160,0.25),
+        0 6px 14px rgba(0,0,0,0.3);
+    }
+
+    .accept-btn::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      background: url("assets/ui/recruitment-kit/ornate_ring.png") center / contain no-repeat;
+      opacity: 0.9;
+      filter: sepia(0.4) brightness(1.2);
+    }
+
+    .accept-btn:disabled {
+      opacity: 0.78;
+      cursor: not-allowed;
+      background: linear-gradient(180deg, #5a4a3c 0%, #3a3028 55%, #2c241c 100%);
+      color: #d8c8a8;
+      border-color: #a89060;
+      border-style: solid;
+      box-shadow: inset 0 1px 0 rgba(255,220,160,0.12);
+    }
+
+    .wax-seal {
+      right: calc(15% - 10px);
+      bottom: -18%;
+      width: 54px;
+      height: 54px;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 900px) {
+      .select-band { grid-template-columns: 1fr 32%; min-height: 180px; }
+      .panel-body { grid-template-columns: 24% 1fr; }
+      .accept-btn { width: min(85%, 560px); }
+      .character-figure { max-height: 150px; }
+    }
+
+    @media (max-width: 640px) {
+      .select-band { grid-template-columns: 1fr; }
+      .panel-body { grid-template-columns: 1fr; }
+      .panel-illustration { min-height: 90px; }
+      .race-info-box { max-width: 100%; }
+      .accept-btn { width: 100%; }
+      .poster-header { min-height: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wood-bg" aria-hidden="true"></div>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <div class="poster-stage">
+    <div class="desk-layers" aria-hidden="true">
+      <div class="desk-layer desk-map"></div>
+      <div class="desk-layer desk-scraps"></div>
+      <div class="desk-layer desk-docs"></div>
+    </div>
+    <div class="prop-banner" aria-hidden="true">
+      <div class="guild-banner-face">
+        <div class="guild-banner-text">世界冒险者工会</div>
+        <div class="guild-banner-en">WORLD ADVENTURERS GUILD</div>
+      </div>
+    </div>
+    <div class="desk-map" aria-hidden="true"></div>
+    <div class="desk-docs" aria-hidden="true"></div>
+    <div class="desk-scraps-float" aria-hidden="true"></div>
+    <div class="desk-pin desk-pin-tl" aria-hidden="true"></div>
+    <div class="desk-pin desk-pin-tr" aria-hidden="true"></div>
+    <div class="desk-pin desk-pin-bl" aria-hidden="true"></div>
+    <div class="prop-compass" aria-hidden="true"></div>
+    <div class="prop-candle" aria-hidden="true"></div>
+    <div class="prop-quill" aria-hidden="true"></div>
+
+    <div class="poster-shell">
+      <img class="poster-art" src="assets/ui/recruitment-kit-v2/parchment_poster_landscape.png" alt="" aria-hidden="true" />
+    </div>
+
+    <div class="poster-ui" id="app">
+    <header class="poster-header">
+      <div class="title-strip">
+        <div class="title-copy">
+          <h1>世界征召令</h1>
+          <div class="subtitle">—— 世界冒险者工会联合征集 ——</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="select-band" aria-label="种族与职业">
+      <section class="race-row" aria-label="种族选择">
+        <div class="characters" id="characters">
+          <button class="character-slot" data-race="human" type="button" aria-pressed="false">
+            <div class="character-figure">
+              <div class="burst-overlay" aria-hidden="true"></div>
+              <div class="selection-ring" aria-hidden="true"></div>
+              <div class="character-art art-human" aria-hidden="true"></div>
+              <div class="character-name">人类 <span class="en-name">HUMAN</span> <span class="selected-mark">[已选择]</span></div>
+            </div>
+          </button>
+          <button class="character-slot" data-race="elf" type="button" aria-pressed="false">
+            <div class="character-figure">
+              <div class="burst-overlay" aria-hidden="true"></div>
+              <div class="selection-ring" aria-hidden="true"></div>
+              <div class="character-art art-elf" aria-hidden="true"></div>
+              <div class="character-name">精灵 <span class="en-name">ELF</span> <span class="selected-mark">[已选择]</span></div>
+            </div>
+          </button>
+          <button class="character-slot" data-race="half_orc" type="button" aria-pressed="false">
+            <div class="character-figure">
+              <div class="burst-overlay" aria-hidden="true"></div>
+              <div class="selection-ring" aria-hidden="true"></div>
+              <div class="character-art art-orc" aria-hidden="true"></div>
+              <div class="character-name">半兽人 <span class="en-name">HALF-ORC</span> <span class="selected-mark">[已选择]</span></div>
+            </div>
+          </button>
+          <button class="character-slot" data-race="tiefling" type="button" aria-pressed="false">
+            <div class="character-figure">
+              <div class="burst-overlay" aria-hidden="true"></div>
+              <div class="selection-ring" aria-hidden="true"></div>
+              <div class="character-art art-tiefling" aria-hidden="true"></div>
+              <div class="character-name">提夫林 <span class="en-name">TIEFLING</span> <span class="selected-mark">[已选择]</span></div>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <aside class="career-zone" aria-label="职业选择">
+        <div class="career-zone-title" id="careerZoneTitle">选择种族后揭示职业</div>
+        <div class="card-stack" id="cardStack">
+          <div class="career-card career-card-back" style="transform: translate(0, 0) rotate(0deg); z-index: 4;"></div>
+          <div class="career-card career-card-back" style="transform: translate(4px, -3px) rotate(2deg); z-index: 3;"></div>
+          <div class="career-card career-card-back" style="transform: translate(8px, -6px) rotate(-1deg); z-index: 2;"></div>
+          <div class="career-card career-card-back" style="transform: translate(12px, -9px) rotate(1.5deg); z-index: 1;"></div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="race-info-box" id="raceInfoBox">
+      <div class="race-crest" id="raceCrest" aria-hidden="true"></div>
+      <div class="race-info-main">
+        <h3 class="race-info-title" id="raceInfoTitle">
+          <span id="raceInfoName">请选择一个种族</span>
+          <span class="en" id="raceInfoEn"></span>
+        </h3>
+        <div class="race-info-body" id="raceInfoBody">点击上方种族选择血脉。种族不影响检定成绩，只影响档案标注。</div>
+      </div>
+      <div class="ink-stamp" id="raceInfoStamp" aria-hidden="true">今日征召</div>
+    </div>
+
+    <section class="info-panels" aria-label="征召信息">
+      <div class="panel-tabs" id="panelTabs">
+        <button class="panel-tab" data-panel="recruit" type="button"><span class="tab-num">1</span><span class="tab-ico ico-compass" aria-hidden="true"></span><span class="tab-label">今日招募</span></button>
+        <button class="panel-tab" data-panel="partners" type="button"><span class="tab-num">2</span><span class="tab-ico ico-people" aria-hidden="true"></span><span class="tab-label">合作单位</span></button>
+        <button class="panel-tab" data-panel="purpose" type="button" data-active="true"><span class="tab-num">3</span><span class="tab-ico ico-target" aria-hidden="true"></span><span class="tab-label">征召目的</span></button>
+        <button class="panel-tab" data-panel="howto" type="button"><span class="tab-num">4</span><span class="tab-ico ico-scroll" aria-hidden="true"></span><span class="tab-label">如何接受</span></button>
+        <button class="panel-tab" data-panel="report" type="button"><span class="tab-num">5</span><span class="tab-ico ico-wreath" aria-hidden="true"></span><span class="tab-label">报到说明</span></button>
+      </div>
+      <div class="panel-body">
+        <div class="panel-illustration" aria-hidden="true"></div>
+        <div class="panel-content" id="panelContent"></div>
+      </div>
+    </section>
+
+    <div class="accept-zone" id="acceptZone">
+      <button class="accept-btn" id="acceptBtn" type="button" disabled>
+        <span class="accept-compass" aria-hidden="true"></span>
+        <span class="accept-label">接受征召：尚不可用</span>
+      </button>
+      <div class="wax-seal" id="waxSeal" aria-hidden="true"></div>
+    </div>
+    </div>
+  </div>
+
+  <!-- 任务详情弹窗 -->
+  <div class="modal-overlay" id="missionModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-sheet" role="document">
+      <button class="modal-close" id="modalClose" type="button" aria-label="关闭">×</button>
+      <h3 class="modal-title" id="modalTitle" tabindex="-1">任务详情</h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- 清场过渡 -->
+  <div class="transition-screen" id="transitionScreen" aria-hidden="true">
+    <h2>档案已盖章</h2>
+    <p>正在前往职业检验场地……</p>
+  </div>
+
+  <script>
+    const RACE_DATA = {
+      human: {
+        name: "人类",
+        en: "HUMAN",
+        desc: "适应力强，职业道路广，善于在变化中建立秩序。在大多数组织中都能找到适合自己的位置。他们以务实与协作著称，是工会征召中最常见的血脉。",
+        color: "#c9a45c",
+        pointer: "12.5%",
+        careers: [
+          { id: "guild_fighter", name: "战士", location: "黑铁训练厅", desc: "接受基础战斗、队形协作与装备使用训练。" },
+          { id: "guild_bard", name: "吟游诗人", location: "联络与士气处", desc: "以传令、谈判和士气调动为核心的支援训练。" },
+          { id: "guild_artificer", name: "工匠", location: "工匠工坊", desc: "学习炼金、机关与装备维护，强调稳定输出。" },
+          { id: "guild_paladin", name: "圣武士", location: "誓言审议厅", desc: "将战斗与誓约结合，承担前线与保护职责。" }
+        ]
+      },
+      elf: {
+        name: "精灵",
+        en: "ELF",
+        desc: "感官敏锐，审美稳定，长寿带来的从容使他们在追踪、法术与自然领域表现突出。他们偏好精准与持久，善于在漫长旅程中保持判断力。",
+        color: "#7a9e7e",
+        pointer: "37.5%",
+        careers: [
+          { id: "guild_ranger", name: "游侠", location: "边境巡林站", desc: "野外追踪、猎杀与远行契约的执行者。" },
+          { id: "guild_wizard", name: "法师", location: "法师塔档案室", desc: "以卷宗、符文和远程演算为基础的法术训练。" },
+          { id: "guild_druid", name: "德鲁伊", location: "自然顾问席", desc: "草药、兽径与季节记录的自然调和训练。" },
+          { id: "guild_rogue", name: "潜行者", location: "斥候与机关处", desc: "暗门、锁具与路线图的快速突破训练。" }
+        ]
+      },
+      half_orc: {
+        name: "半兽人",
+        en: "HALF-ORC",
+        desc: "重视力量、行动和群体责任。体格强壮，擅长直接任务与前线承压。他们以忠诚与承压能力立足，常被派往最危险的突破口。",
+        color: "#4a5a3a",
+        pointer: "62.5%",
+        careers: [
+          { id: "guild_barbarian", name: "野蛮人", location: "突破先锋营", desc: "以破门锤、营火和冲锋旗为核心的压制训练。" },
+          { id: "guild_fighter", name: "战士", location: "黑铁训练厅", desc: "将蛮力转化为可持续战斗技巧的基础训练。" },
+          { id: "guild_rogue", name: "潜行者", location: "斥候与机关处", desc: "利用体格和直觉执行潜入与侦察任务。" },
+          { id: "guild_cleric", name: "牧师", location: "誓约医疗所", desc: "圣徽、药箱与值夜名单的信仰支援训练。" }
+        ]
+      },
+      tiefling: {
+        name: "提夫林",
+        en: "TIEFLING",
+        desc: "异界血脉带来独特气质，擅长契约、潜行与不稳定但强效的术法表达。他们在边缘事务与高风险谈判中往往更具优势。",
+        color: "#7a2e2e",
+        pointer: "87.5%",
+        careers: [
+          { id: "guild_warlock", name: "契约术士", location: "异常契约审阅处", desc: "封蜡、密约与风险条款的异界力量训练。" },
+          { id: "guild_rogue", name: "潜行者", location: "斥候与机关处", desc: "利用气质与身份张力执行情报与渗透任务。" },
+          { id: "guild_bard", name: "吟游诗人", location: "联络与士气处", desc: "以交涉和气场调动为核心的谈判训练。" },
+          { id: "guild_sorcerer", name: "血脉法师", location: "血脉术法厅", desc: "血脉纹、火星与失控法阵的术法训练。" }
+        ]
+      }
+    };
+
+    const PANEL_DATA = {
+      recruit: {
+        title: "今日招募",
+        body: `<p class="poster-line">人类 / 精灵 / 半兽人 / 提夫林</p><p>请选择血脉并确认对应职业，随后接受职业检验。</p>`
+      },
+      partners: {
+        title: "合作单位",
+        body: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;font-size:0.9rem">
+          <div><strong>世界冒险者工会</strong><br>发布征召、登记冒险者、安排职业检验、管理任务档案</div>
+          <div><strong>大陆城邦联盟</strong><br>提供跨境通行、地方协助、法律授权和临时驻地</div>
+          <div><strong>法师塔联合会</strong><br>监测世界裂隙、处理传送异常、提供奥术支援</div>
+          <div><strong>圣殿医疗救援会</strong><br>提供治疗、诅咒净化、伤员转运和灾区救援</div>
+          <div><strong>边境守望军</strong><br>提供前线情报、危险区域地图、道路护卫和紧急防御</div>
+        </div>`
+      },
+      purpose: {
+        title: "征召目的",
+        body: `<p class="purpose-lead">近月来，各地天空与古代传送门同时出现裂隙。城市失踪、季节错乱，魔物沿着断裂的道路进入现实。世界冒险者工会现面向各族征召人员，调查裂隙来源并维持各地秩序。</p>
+        <div class="mission-grid" id="missionTags"></div>`
+      },
+      howto: {
+        title: "如何接受征召",
+        body: `<ol style="padding-left:20px;line-height:1.8">
+          <li>选择种族</li>
+          <li>选择对应职业</li>
+          <li>接受职业检验</li>
+          <li>完成考核</li>
+          <li>登记成为冒险者</li>
+        </ol>`
+      },
+      report: {
+        title: "报到说明",
+        body: "<p>持本征召令至当地冒险者工会领取推荐印，再前往对应职业培训地点报到。</p><p style=\"font-size:0.85rem;color:var(--ink-light);margin-top:10px\">推荐印仅限本人使用。种族与职业登记完成后不得私自涂改，如需变更，请重新接受职业检验。</p>"
+      }
+    };
+
+    const MISSIONS = {
+      "世界裂隙调查": {
+        summary: "前往已发现的世界裂隙，确认其规模、稳定程度和另一侧环境，建立警戒范围并回收调查样本。",
+        goals: ["找到裂隙并完成地图标记。", "判断裂隙属于稳定、扩张或移动状态。", "回收一份环境或魔力样本。", "建立临时警戒点并提交调查记录。"],
+        note: "请勿把头伸进裂隙确认另一侧天气。此前已有三名实习员采用该方法，目前只回来两顶帽子。"
+      },
+      "失踪城邦搜寻": {
+        summary: "一座登记在册的城邦连同道路、居民和税务档案一起从地图上消失。调查其最后位置，确认城邦现状并恢复联络。",
+        goals: ["追查城邦消失前的交通和魔力记录。", "找到城邦或确认其转移方向。", "核实居民、管理机构和基础设施状况。", "建立返程信标并带回城邦档案。"],
+        note: "若当地官员坚称“我们只是集体搬家”，请要求出示迁址批文。无法出示批文的城邦，在行政意义上仍然属于失踪。"
+      },
+      "疑似救世主护送": {
+        summary: "护送一名被多份预言同时提及的旅人前往世界尽头。目标身份尚未完全确认，但已有多个敌对组织试图阻止其出发。",
+        goals: ["核验目标身份和预言文件。", "制定安全路线并避开公开追捕。", "保证目标及关键物品完整抵达。", "将封存证明交给终点接收人。"],
+        note: "目标可能没有战斗能力，但通常很有主意。请勿允许其在沿途每个村庄停下来接受支线委托，也不要让其临时组建第二支冒险队。"
+      },
+      "古龙危机谈判": {
+        summary: "一条古龙宣布将在近期毁灭数座城邦。任务重点不是击败古龙，而是查明诉求、建立停战窗口并争取修改行动日期。",
+        goals: ["确认古龙身份、领地和正式诉求。", "建立不会立刻遭到吐息攻击的谈判渠道。", "提出赔偿、替代目标或延期方案。", "带回双方认可的书面或魔法契约。"],
+        note: "能把末日从本周推迟到下季度，也算阶段性胜利。谈判期间请勿主动提及龙巢税、宝藏登记或历史欠款问题。"
+      },
+      "周期性岛屿调查": {
+        summary: "一座海岛每隔七天出现一次，并在日落后重新消失。调查岛上的遗迹、居民和时间异常，建立稳定的观测记录。",
+        goals: ["推算岛屿下一次出现的时间和位置。", "登岛后建立定位信标和撤离计时。", "调查遗迹、居民及异常生物。", "在岛屿消失前撤离并带回记录。"],
+        note: "错过撤离窗口的队员将自动转为下一期调查员，等待七天后统一接回。滞留期间不另计差旅补贴。"
+      }
+    };
+
+    // 内部素材：各种族对应职业的真实征召场景图（培训地点实景）
+    const CAREER_ART = {
+      human: {
+        guild_fighter: "assets/recruitment/generated/race_human_target_fighter-preview.webp",
+        guild_bard: "assets/recruitment/generated/race_human_target_bard-preview.webp",
+        guild_artificer: "assets/recruitment/generated/race_human_target_artificer-preview.webp",
+        guild_paladin: "assets/recruitment/generated/race_human_target_paladin-preview.webp"
+      },
+      elf: {
+        guild_ranger: "assets/recruitment/generated/race_elf_target_ranger-preview.webp",
+        guild_wizard: "assets/recruitment/generated/race_elf_target_wizard-preview.webp",
+        guild_druid: "assets/recruitment/generated/race_elf_target_druid-preview.webp",
+        guild_rogue: "assets/recruitment/generated/race_elf_target_rogue-preview.webp"
+      },
+      half_orc: {
+        guild_barbarian: "assets/recruitment/generated/race_half_orc_target_barbarian-preview.webp",
+        guild_fighter: "assets/recruitment/generated/race_half_orc_target_fighter-preview.webp",
+        guild_rogue: "assets/recruitment/generated/race_half_orc_target_rogue-preview.webp",
+        guild_cleric: "assets/recruitment/generated/race_half_orc_target_cleric-preview.webp"
+      },
+      tiefling: {
+        guild_warlock: "assets/recruitment/generated/race_tiefling_target_warlock-preview.webp",
+        guild_rogue: "assets/recruitment/generated/race_tiefling_target_rogue-preview.webp",
+        guild_bard: "assets/recruitment/generated/race_tiefling_target_bard-preview.webp",
+        guild_sorcerer: "assets/recruitment/generated/race_tiefling_target_sorcerer-preview.webp"
+      }
+    };
+
+    const state = { race: null, career: null, panel: "purpose", mission: null, locked: false };
+
+    const characters = document.getElementById("characters");
+    const raceInfoBox = document.getElementById("raceInfoBox");
+    const raceInfoName = document.getElementById("raceInfoName");
+    const raceInfoEn = document.getElementById("raceInfoEn");
+    const raceInfoBody = document.getElementById("raceInfoBody");
+    const raceInfoStamp = document.getElementById("raceInfoStamp");
+    const careerZoneTitle = document.getElementById("careerZoneTitle");
+    const cardStack = document.getElementById("cardStack");
+    const acceptBtn = document.getElementById("acceptBtn");
+    const acceptZone = document.getElementById("acceptZone");
+    const panelContent = document.getElementById("panelContent");
+    const panelTabs = document.getElementById("panelTabs");
+    const modal = document.getElementById("missionModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const modalClose = document.getElementById("modalClose");
+    const transitionScreen = document.getElementById("transitionScreen");
+
+    function updateRaceInfo(raceId) {
+      const crest = document.getElementById("raceCrest");
+      if (!raceId) {
+        raceInfoName.textContent = "请选择一个种族";
+        raceInfoEn.textContent = "";
+        raceInfoBody.textContent = "点击上方种族选择血脉。种族不影响检定成绩，只影响档案标注。";
+        raceInfoStamp.style.display = "none";
+        raceInfoStamp.setAttribute("aria-hidden", "true");
+        if (crest) crest.dataset.race = "";
+        return;
+      }
+      const r = RACE_DATA[raceId];
+      raceInfoName.textContent = r.name;
+      raceInfoEn.textContent = r.en;
+      raceInfoBody.textContent = r.desc;
+      raceInfoStamp.style.display = "flex";
+      raceInfoStamp.setAttribute("aria-hidden", "false");
+      if (crest) crest.dataset.race = raceId;
+    }
+
+    function layoutCareerCards(selectedId) {
+      const cards = [...document.querySelectorAll("#cardStack .career-card")];
+      if (!cards.length) return;
+      const front = selectedId
+        ? cards.find((c) => c.dataset.careerId === selectedId) || cards[0]
+        : cards[0];
+      const peeks = cards.filter((c) => c !== front);
+      cards.forEach((card) => {
+        card.classList.add("is-peek");
+        card.dataset.selected = "false";
+      });
+      front.classList.remove("is-peek");
+      // 仅在真实选中职业时打「已选」
+      if (selectedId && state.career === selectedId) {
+        front.dataset.selected = "true";
+      }
+      front.style.zIndex = "40";
+      front.style.transform = "translate(0px, 0px) rotate(-2.4deg)";
+      // 同尺寸标题条阶梯：矮背卡，不压页签
+      const stepX = 52;
+      const stepY = 62;
+      peeks.forEach((card, oi) => {
+        card.style.zIndex = String(30 - oi);
+        const x = stepX * (oi + 1);
+        const y = stepY * (oi + 1);
+        const rot = 1.8 + oi * 1.4;
+        card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+      });
+    }
+
+    function renderCareers(raceId) {
+      cardStack.innerHTML = "";
+      if (!raceId) {
+        careerZoneTitle.textContent = "选择种族后揭示职业";
+        [0,1,2,3].forEach((i) => {
+          const c = document.createElement("div");
+          c.className = "career-card career-card-back is-peek";
+          c.style.transform = `translate(${52 * (i + 1)}px, ${62 * (i + 1)}px) rotate(${1.8 + i * 1.4}deg)`;
+          c.style.zIndex = String(30 - i);
+          cardStack.appendChild(c);
+        });
+        return;
+      }
+      const careers = RACE_DATA[raceId].careers;
+      careerZoneTitle.textContent = `${RACE_DATA[raceId].name}对应职业`;
+      careers.forEach((career) => {
+        const card = document.createElement("button");
+        card.className = "career-card is-peek";
+        card.type = "button";
+        card.dataset.careerId = career.id;
+        const artUrl = (CAREER_ART[raceId] && CAREER_ART[raceId][career.id]) || "";
+        const artStyle = artUrl
+          ? `background-image:linear-gradient(180deg, transparent 55%, rgba(43,33,24,0.25)), url('${artUrl}')`
+          : `background:linear-gradient(135deg, ${RACE_DATA[raceId].color}22, ${RACE_DATA[raceId].color}55)`;
+        const en = career.id.replace("guild_", "").toUpperCase();
+        card.innerHTML = `
+          <div class="card-selected-mark" aria-hidden="true">已选</div>
+          <div class="card-head">
+            <span class="card-shield" aria-hidden="true"></span>
+            <h4 class="card-title">${career.name}<span class="card-title-en"> ${en}</span></h4>
+          </div>
+          <div class="card-art" style="${artStyle}" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-location">${career.location}</div>
+            <div class="card-desc">${career.desc}</div>
+          </div>
+        `;
+        card.addEventListener("click", () => selectCareer(career.id));
+        cardStack.appendChild(card);
+      });
+      if (state.career && careers.some((c) => c.id === state.career)) {
+        layoutCareerCards(state.career);
+      } else {
+        layoutCareerCards(null);
+      }
+    }
+
+    function selectRace(raceId) {
+      if (state.locked) return;
+      state.race = raceId;
+      state.career = null;
+      document.querySelectorAll(".character-slot").forEach((slot) => {
+        const isSelected = slot.dataset.race === raceId;
+        slot.dataset.selected = isSelected;
+        slot.setAttribute("aria-pressed", isSelected);
+      });
+      updateRaceInfo(raceId);
+      renderCareers(raceId);
+      const first = RACE_DATA[raceId]?.careers?.[0];
+      if (first) {
+        selectCareer(first.id);
+      } else {
+        updateAcceptBtn();
+      }
+    }
+
+    function selectCareer(careerId) {
+      if (state.locked) return;
+      state.career = careerId;
+      layoutCareerCards(careerId);
+      updateAcceptBtn();
+    }
+
+    function updateAcceptBtn() {
+      const label = acceptBtn.querySelector(".accept-label") || acceptBtn;
+      if (state.race && state.career) {
+        acceptBtn.disabled = false;
+        const raceName = RACE_DATA[state.race].name;
+        const careerName = RACE_DATA[state.race].careers.find(c => c.id === state.career).name;
+        label.textContent = `接受征召：${raceName} · ${careerName} —>`;
+      } else {
+        acceptBtn.disabled = true;
+        label.textContent = "接受征召：尚不可用";
+      }
+    }
+
+    function renderPanel(panelId) {
+      const data = PANEL_DATA[panelId];
+      panelContent.innerHTML = `<h3 style="margin-top:0">${data.title}</h3>${data.body}`;
+      if (panelId === "purpose") renderMissionTags();
+      document.querySelectorAll(".panel-tab").forEach((tab) => tab.dataset.active = (tab.dataset.panel === panelId));
+    }
+
+    let lastMissionTrigger = null;
+    const mobileQuery = window.matchMedia("(max-width: 900px)");
+    function isMobileLayout() { return mobileQuery.matches; }
+
+    function missionDetailHtml(m) {
+      return `
+        <div class="modal-section"><h4>任务简介</h4><p>${m.summary}</p></div>
+        <div class="modal-section"><h4>任务目标</h4><ul>${m.goals.map(g => `<li>${g}</li>`).join("")}</ul></div>
+        <div class="guild-note"><strong>工会备注：</strong>${m.note}</div>
+      `;
+    }
+
+    function renderMissionTags() {
+      const container = document.getElementById("missionTags");
+      if (!container) return;
+      const icons = ["ico-shield", "ico-compass", "ico-skull", "ico-leaf", "ico-book"];
+      container.innerHTML = Object.keys(MISSIONS).map((name, i) => `
+        <button class="mission-block" type="button" data-mission="${name}" data-active="${name === state.mission}" aria-expanded="false">
+          <span class="mission-ico ${icons[i % icons.length]}" aria-hidden="true"></span>
+          <span class="mission-copy">
+            <span class="mission-name">${name}</span>
+            <span class="mission-hint">${MISSIONS[name].goals[0]}</span>
+          </span>
+        </button>
+      `).join("");
+      container.querySelectorAll(".mission-block").forEach((tag) => {
+        tag.addEventListener("click", () => {
+          openMissionModal(tag.dataset.mission, tag);
+        });
+      });
+    }
+
+    // 移动端：五个任务标签改为纵向列表，点击后在标签下方展开详情，同一时间只展开一个
+    function toggleInlineMission(name, triggerEl) {
+      const item = triggerEl.closest(".mission-item");
+      const wasOpen = triggerEl.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".mission-item").forEach((it) => {
+        const btn = it.querySelector(".mission-tag");
+        const detail = it.querySelector(".mission-inline-detail");
+        btn.setAttribute("aria-expanded", "false");
+        btn.dataset.active = "false";
+        detail.hidden = true;
+        detail.innerHTML = "";
+      });
+      if (!wasOpen) {
+        const detail = item.querySelector(".mission-inline-detail");
+        detail.innerHTML = missionDetailHtml(MISSIONS[name]);
+        detail.hidden = false;
+        triggerEl.setAttribute("aria-expanded", "true");
+        triggerEl.dataset.active = "true";
+        state.mission = name;
+      } else {
+        state.mission = null;
+      }
+    }
+
+    function openMissionModal(name, triggerEl) {
+      const m = MISSIONS[name];
+      state.mission = name;
+      lastMissionTrigger = triggerEl || document.activeElement;
+      document.querySelectorAll(".mission-tag").forEach((tag) => {
+        tag.dataset.active = String(tag.dataset.mission === name);
+      });
+      modalTitle.textContent = name;
+      modalBody.innerHTML = missionDetailHtml(m);
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      modalTitle.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      if (lastMissionTrigger) {
+        lastMissionTrigger.focus();
+        lastMissionTrigger = null;
+      }
+    }
+
+    function acceptRecruitment() {
+      if (state.locked) return;
+      if (!state.race || !state.career) return;
+      state.locked = true;
+      acceptZone.classList.add("stamped");
+      acceptBtn.disabled = true;
+      document.querySelectorAll(".character-slot, .career-card").forEach((el) => {
+        el.disabled = true;
+        el.setAttribute("aria-disabled", "true");
+      });
+      setTimeout(() => {
+        transitionScreen.classList.add("open");
+        transitionScreen.setAttribute("aria-hidden", "false");
+      }, 900);
+      // 盖章后进入主站职业检验，带上血脉与志愿
+      setTimeout(() => {
+        const next = new URL("index.html", window.location.href);
+        next.searchParams.set("from", "hall");
+        next.searchParams.set("race", state.race);
+        next.searchParams.set("target", state.career);
+        window.location.href = next.toString();
+      }, 2200);
+    }
+
+    characters.addEventListener("click", (e) => {
+      const slot = e.target.closest(".character-slot");
+      if (slot) selectRace(slot.dataset.race);
+    });
+
+    panelTabs.addEventListener("click", (e) => {
+      const tab = e.target.closest(".panel-tab");
+      if (tab) {
+        state.panel = tab.dataset.panel;
+        renderPanel(state.panel);
+      }
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+
+    acceptBtn.addEventListener("click", acceptRecruitment);
+
+    renderPanel("purpose");
+    selectRace("human");
+    selectCareer("guild_fighter");
+  </script>
+
+  <!-- 绝对构图：1536×1024 演示图坐标（覆盖先前网页栅格） -->
+  <style id="layout-abs-1536">
+    /* === redesign-v1 visual language @ 1536×1024 === */
+    body {
+      display: block !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-height: 100dvh;
+      overflow: hidden !important;
+    }
+    html { overflow: hidden !important; }
+    .wood-bg { position: fixed; inset: 0; z-index: 0; }
+    .paper-grain { z-index: 1; opacity: 0.14; }
+
+    .poster-stage {
+      position: relative !important;
+      z-index: 2 !important;
+      width: min(98vw, calc(99.2vh * 1536 / 1024)) !important;
+      height: min(99.2vh, calc(98vw * 1024 / 1536)) !important;
+      aspect-ratio: 1536 / 1024 !important;
+      margin: 0.2vh auto 0 !important;
+      overflow: hidden !important;
+    }
+    .desk-layers { display: none !important; }
+
+    .poster-shell {
+      position: absolute !important;
+      left: 4.2%; top: 0.6%;
+      width: 91.6%; height: 97.8%;
+      margin: 0 !important;
+      z-index: 2;
+      line-height: 0;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,0.52));
+    }
+    .poster-art {
+      position: absolute !important; inset: 0 !important;
+      width: 100% !important; height: 100% !important;
+      object-fit: fill !important; max-height: none !important;
+    }
+
+    .poster-ui {
+      position: absolute !important;
+      inset: 0 !important;
+      display: block !important;
+      overflow: visible !important;
+      gap: 0 !important;
+      line-height: normal !important;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .poster-ui > * { pointer-events: auto; }
+
+    /* —— 桌面装饰 —— */
+    .desk-map {
+      position: absolute !important;
+      right: 0.5% !important; top: 1.2% !important;
+      width: 16% !important; height: 22% !important;
+      background: url("assets/ui/recruitment-kit-v2/map_fragment.png") center / contain no-repeat !important;
+      z-index: 3 !important; opacity: 0.92 !important;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)) !important;
+      pointer-events: none !important;
+      transform: rotate(6deg) !important;
+    }
+    .desk-docs {
+      position: absolute !important;
+      right: 1.5% !important; top: 18% !important;
+      width: 11% !important; height: 16% !important;
+      background: url("assets/ui/recruitment-kit-v2/document_stack.png") center / contain no-repeat !important;
+      z-index: 3 !important; opacity: 0.88 !important;
+      pointer-events: none !important;
+      transform: rotate(-4deg) !important;
+    }
+    .desk-scraps-float {
+      position: absolute !important;
+      right: 12% !important; top: 2% !important;
+      width: 9% !important; height: 12% !important;
+      background: url("assets/ui/recruitment-kit-v2/paper_scraps.png") center / contain no-repeat !important;
+      z-index: 3 !important; opacity: 0.8 !important;
+      pointer-events: none !important;
+      transform: rotate(8deg) !important;
+    }
+    .desk-pin {
+      position: absolute !important;
+      width: 1.1% !important; aspect-ratio: 1 !important;
+      border-radius: 50% !important;
+      background:
+        radial-gradient(circle at 35% 30%, #8a8680 0%, #3a3834 45%, #1a1814 100%) !important;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.25) !important;
+      z-index: 11 !important; pointer-events: none !important;
+    }
+    .desk-pin-tl { left: 8.5% !important; top: 4.5% !important; }
+    .desk-pin-tr { right: 7.5% !important; top: 5% !important; }
+    .desk-pin-bl { left: 9% !important; bottom: 14% !important; }
+    .prop-compass {
+      position: absolute !important;
+      left: 0.5% !important; bottom: 1.5% !important;
+      width: 96px !important; height: 96px !important;
+      max-width: 6.5% !important;
+      aspect-ratio: 1 !important;
+      z-index: 12 !important; pointer-events: none !important;
+      background: url("assets/ui/recruitment-kit-v2/compass_coin.png") center / contain no-repeat !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)) !important;
+    }
+    .prop-compass::after { display: none !important; content: none !important; }
+
+    /* —— 深褐工会旗（真素材） —— */
+    .prop-banner {
+      position: absolute !important;
+      left: 0% !important; top: 1.2% !important;
+      width: 12.37% !important; height: 42% !important;
+      z-index: 8 !important; opacity: 1 !important;
+      background: none !important;
+      filter: drop-shadow(0 10px 14px rgba(0,0,0,0.5)) !important;
+    }
+    .guild-banner-face {
+      position: absolute !important; inset: 0 !important;
+      display: flex !important; flex-direction: column !important;
+      align-items: center !important; justify-content: flex-end !important;
+      padding: 0 10% 22% !important;
+      background: url("assets/ui/recruitment-kit-v2/guild_banner_dark.png") center top / 100% 100% no-repeat !important;
+      border: none !important;
+      box-shadow: none !important;
+      clip-path: none !important;
+    }
+    .guild-banner-face::before { display: none !important; content: none !important; }
+    .guild-banner-crest { display: none !important; }
+    .guild-banner-text {
+      margin: 0 !important;
+      writing-mode: vertical-rl !important;
+      text-orientation: mixed !important;
+      font-size: clamp(0.68rem, 0.95vw, 0.88rem) !important;
+      letter-spacing: 0.28em !important;
+      color: #c9a45c !important;
+      font-weight: 700 !important;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.75) !important;
+      z-index: 1 !important;
+      line-height: 1.2 !important;
+    }
+    .guild-banner-en {
+      margin-top: 4% !important;
+      writing-mode: vertical-rl !important;
+      font-size: clamp(0.38rem, 0.52vw, 0.5rem) !important;
+      letter-spacing: 0.14em !important;
+      color: #a89058 !important;
+      opacity: 0.9 !important;
+      z-index: 1 !important;
+    }
+
+    .prop-candle {
+      position: absolute !important;
+      left: 6.2% !important; bottom: 0.3% !important;
+      width: 10.5% !important; aspect-ratio: 0.68 !important;
+      z-index: 11 !important;
+      background: url("assets/ui/recruitment-kit-v2/prop_candle.png") center bottom / contain no-repeat !important;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)) !important;
+    }
+    .prop-quill {
+      position: absolute !important;
+      right: 0.2% !important; bottom: 0.4% !important;
+      width: 12.5% !important; aspect-ratio: 0.95 !important;
+      z-index: 11 !important;
+      background: url("assets/ui/recruitment-kit-v2/prop_quill.png") center bottom / contain no-repeat !important;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)) !important;
+    }
+
+    /* —— 标题条真素材（纹章已内嵌） —— */
+    .poster-header {
+      position: absolute !important;
+      left: 22.5% !important; top: 1.46% !important;
+      width: 56.5% !important; height: 15.63% !important;
+      margin: 0 !important; padding: 0 !important; min-height: 0 !important;
+      z-index: 10 !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      background: none !important;
+      filter: none !important;
+    }
+    .title-strip {
+      width: 100% !important; height: 100% !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      gap: 0 !important;
+      padding: 2% 14% 3% !important;
+      background: url("assets/ui/recruitment-kit-v2/title_parchment_strip.png") center / 100% 100% no-repeat !important;
+      border: none !important;
+      box-shadow: none !important;
+      clip-path: none !important;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
+    }
+    .title-copy {
+      display: flex !important; flex-direction: column !important;
+      align-items: center !important; justify-content: center !important;
+      gap: 2px !important;
+      width: 100% !important;
+    }
+    .title-crest { display: none !important; }
+    .title-crest::before,
+    .title-crest::after { display: none !important; content: none !important; }
+    .title-plaque { background: none !important; padding: 0 !important; filter: none !important; display: none !important; }
+    .title-plaque::before { display: none !important; }
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif !important;
+      font-size: clamp(2.1rem, 4.4vw, 3.6rem) !important;
+      letter-spacing: 0.22em !important;
+      color: #14100c !important;
+      text-shadow: none !important;
+      margin: 0 !important; line-height: 1.05 !important;
+      font-weight: 900 !important;
+    }
+    .subtitle {
+      margin-top: 0 !important;
+      font-size: clamp(0.65rem, 1vw, 0.85rem) !important;
+      letter-spacing: 0.14em !important;
+      color: #3a2c22 !important; font-weight: 600 !important;
+    }
+
+    .select-band { display: contents !important; position: static !important; }
+
+    /* —— 种族胸像卡 —— */
+    .race-row {
+      position: absolute !important;
+      left: 14.2% !important; top: 17.8% !important;
+      width: 51% !important; height: 32.2% !important;
+      z-index: 6 !important; margin: 0 !important;
+    }
+    .characters {
+      display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: clamp(8px, 1.2vw, 18px) !important;
+      width: 100% !important; height: 100% !important; margin: 0 !important;
+      align-items: end !important;
+    }
+    .character-slot { align-self: end !important; }
+    .character-slot:hover .character-figure { box-shadow: none !important; }
+    .character-figure {
+      position: relative !important;
+      max-height: 82% !important; width: 100% !important;
+      aspect-ratio: 3 / 4 !important;
+      margin: 0 auto !important;
+    }
+    .selection-ring,
+    .burst-overlay { display: none !important; opacity: 0 !important; }
+    .character-art {
+      width: 100% !important; height: 100% !important;
+      aspect-ratio: auto !important;
+      border: 2px solid #4a3a28 !important;
+      border-radius: 2px !important;
+      box-shadow:
+        inset 0 0 0 1px rgba(180,150,90,0.25),
+        0 5px 10px rgba(0,0,0,0.35) !important;
+      background-size: 165% auto !important;
+      filter: none !important;
+    }
+    .art-human { background-position: 50% 8% !important; background-size: 185% auto !important; }
+    .art-elf { background-position: 48% 4% !important; background-size: 190% auto !important; }
+    .art-orc { background-position: 52% 6% !important; background-size: 195% auto !important; }
+    .art-tiefling { background-position: 50% 2% !important; background-size: 190% auto !important; }
+
+    .character-slot:not([data-selected="true"]) {
+      filter: brightness(0.68) saturate(0.7) contrast(0.95) !important;
+    }
+    .character-slot:not([data-selected="true"]) .character-art {
+      border: 3px solid #2e281e !important;
+      box-shadow:
+        inset 0 0 0 1px rgba(140,120,80,0.35),
+        inset 0 0 12px rgba(0,0,0,0.35),
+        0 4px 8px rgba(0,0,0,0.45) !important;
+    }
+    .character-slot[data-selected="true"] {
+      filter: brightness(1.05) saturate(1.05) !important;
+    }
+    .character-slot[data-selected="true"] .character-figure {
+      transform: none !important; filter: none !important;
+    }
+    .character-slot[data-selected="true"] .character-art {
+      border: 1.5px solid #e0c890 !important;
+      box-shadow:
+        0 0 0 1px rgba(224,180,90,0.4),
+        0 0 10px rgba(201,164,92,0.22),
+        inset 0 0 14px rgba(255,220,140,0.1),
+        0 6px 12px rgba(0,0,0,0.35) !important;
+    }
+    /* 选中态顶部小饰 + 底部徽章 —— 由 layout-iter3-fix 接管 */
+    .character-slot[data-selected="true"] .character-figure::before,
+    .character-slot[data-selected="true"] .character-figure::after {
+      /* placeholders overridden below */
+    }
+    .character-name {
+      font-size: clamp(0.7rem, 1vw, 0.88rem) !important;
+      color: #1a120c !important; margin-top: 8px !important;
+      letter-spacing: 0.08em !important;
+    }
+    .character-name .en-name {
+      display: inline !important; margin-left: 3px !important;
+      font-size: 0.62em !important; color: #4a3a28 !important;
+    }
+    .character-name .selected-mark {
+      display: none !important;
+      color: #a02828 !important; font-size: 0.78em !important;
+      margin-left: 2px !important;
+    }
+    [data-selected="true"] .selected-mark { display: inline !important; }
+
+    /* —— 职业旧卷宗卡 —— */
+    .career-zone {
+      position: absolute !important;
+      left: 66.2% !important; top: 17.5% !important;
+      width: 28.5% !important; height: 46% !important;
+      max-height: 46% !important;
+      min-height: 0 !important;
+      z-index: 7 !important;
+      display: flex !important; flex-direction: column !important;
+      align-items: center !important; justify-content: flex-start !important;
+      margin: 0 !important; padding: 0 !important;
+      overflow: visible !important;
+      align-self: auto !important;
+    }
+    .career-zone-title {
+      font-size: clamp(0.72rem, 1.05vw, 0.9rem) !important;
+      color: #2b2118 !important; margin: 0 0 4px !important; font-weight: 800 !important;
+      letter-spacing: 0.12em !important;
+    }
+    .card-stack {
+      position: relative !important;
+      width: 86% !important; height: 92% !important; margin: 0 auto !important;
+      overflow: visible !important;
+    }
+    .career-card {
+      width: 74% !important; height: 86% !important;
+      left: 36% !important; top: 54% !important;
+      margin-left: -37% !important; margin-top: -43% !important;
+      background:
+        linear-gradient(180deg, #f6edd8 0%, #e8d8b8 100%) !important;
+      border: 1.5px solid #5c4a32 !important;
+      border-radius: 1px !important;
+      box-shadow: 5px 7px 12px rgba(0,0,0,0.28) !important;
+      display: flex !important; flex-direction: column !important;
+      padding: 0 !important; overflow: hidden !important;
+    }
+    .career-card.is-peek {
+      width: 56% !important; height: 20% !important;
+      margin-left: -28% !important; margin-top: -58% !important;
+      justify-content: center !important;
+      background: linear-gradient(180deg, #f0e4c8, #dcc8a0) !important;
+      box-shadow: 3px 4px 8px rgba(0,0,0,0.22) !important;
+    }
+    .career-card.is-peek .card-art,
+    .career-card.is-peek .card-body,
+    .career-card.is-peek .card-selected-mark {
+      display: none !important;
+    }
+    .career-card.is-peek .card-head {
+      padding: 6px 4px !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    .career-card.is-peek .card-title {
+      font-size: clamp(0.68rem, 0.9vw, 0.8rem) !important;
+      text-align: center !important;
+    }
+    .career-card.is-peek .card-title-en { display: none !important; }
+    .career-card.is-peek .card-shield {
+      width: 26px !important; height: 30px !important;
+    }
+    .career-card.is-peek::before { display: none !important; }
+    .career-card::before {
+      content: "" !important;
+      position: absolute !important; top: 3px !important; left: 50% !important;
+      width: 10px !important; height: 10px !important;
+      margin-left: -5px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle at 35% 30%, #6a6660, #2a2824) !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.5) !important;
+      z-index: 5 !important;
+    }
+    .career-card-back {
+      background: linear-gradient(165deg, #d4c09a, #a89068) !important;
+    }
+    .career-card-back::after {
+      content: "选择种族后揭示职业" !important;
+      font-size: clamp(0.65rem, 0.95vw, 0.8rem) !important;
+      color: rgba(40,30,20,0.5) !important; opacity: 1 !important;
+    }
+    .card-head {
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      gap: 6px !important; padding: 10px 8px 4px !important;
+      flex: 0 0 auto !important;
+    }
+    .card-shield {
+      width: 22px !important; height: 26px !important; flex-shrink: 0 !important;
+      background:
+        linear-gradient(180deg, #c9a45c, #8a7040),
+        #c9a45c;
+      clip-path: polygon(50% 0%, 100% 12%, 92% 70%, 50% 100%, 8% 70%, 0% 12%);
+      box-shadow: inset 0 0 0 1px rgba(255,220,160,0.4) !important;
+      position: relative !important;
+    }
+    .card-shield::after {
+      content: "" !important;
+      position: absolute !important; inset: 28% 30% 35% !important;
+      background: #2a1e14 !important;
+      clip-path: polygon(20% 80%, 50% 10%, 80% 80%, 65% 80%, 65% 100%, 35% 100%, 35% 80%);
+    }
+    .card-title {
+      font-size: clamp(0.95rem, 1.35vw, 1.2rem) !important;
+      color: #1a120c !important; margin: 0 !important;
+      letter-spacing: 0.08em !important; font-weight: 800 !important;
+    }
+    .card-title-en {
+      font-size: 0.55em !important; letter-spacing: 0.12em !important;
+      color: #5a4a38 !important; font-weight: 600 !important;
+    }
+    .card-art {
+      height: 42% !important; flex: 0 0 42% !important;
+      margin: 0 8% !important;
+      border: 1px solid rgba(60,45,28,0.35) !important;
+      background-size: cover !important;
+      background-position: center 20% !important;
+      filter: sepia(0.35) contrast(0.95) brightness(0.95) !important;
+    }
+    .card-body {
+      flex: 1 1 auto !important; padding: 6px 10px 10px !important;
+      display: flex !important; flex-direction: column !important; gap: 3px !important;
+      background:
+        radial-gradient(circle at 85% 80%, rgba(201,164,92,0.12) 0 18%, transparent 20%);
+    }
+    .card-location {
+      font-size: clamp(0.58rem, 0.8vw, 0.72rem) !important;
+      color: #5a4a38 !important; letter-spacing: 0.06em !important;
+    }
+    .card-desc {
+      font-size: clamp(0.62rem, 0.88vw, 0.78rem) !important;
+      color: #2b2118 !important; line-height: 1.35 !important;
+      display: -webkit-box !important; -webkit-line-clamp: 4 !important;
+      -webkit-box-orient: vertical !important; overflow: hidden !important;
+    }
+    .career-card[data-selected="true"] {
+      border-color: #c9a45c !important;
+      box-shadow: 0 0 0 2px rgba(201,164,92,0.55), 6px 8px 14px rgba(0,0,0,0.3) !important;
+      z-index: 10 !important;
+    }
+
+    /* —— 种族说明：族徽 + 油墨章 —— */
+    .race-info-box {
+      position: absolute !important;
+      left: 8% !important; top: 50.5% !important;
+      width: 55.5% !important; height: 14.8% !important;
+      z-index: 6 !important; margin: 0 !important; max-width: none !important;
+      padding: 4px 10px !important;
+      background: transparent !important; border: none !important; box-shadow: none !important;
+      display: grid !important;
+      grid-template-columns: auto 1fr auto !important;
+      align-items: center !important; gap: 12px !important;
+      overflow: visible !important;
+    }
+    .race-crest {
+      width: clamp(56px, 5.8vw, 78px) !important;
+      height: clamp(66px, 6.8vw, 92px) !important;
+      background:
+        radial-gradient(circle at 50% 38%, #4a7ab8 0%, #1e4a88 55%, #122e58 100%) !important;
+      clip-path: polygon(50% 0%, 100% 10%, 94% 72%, 50% 100%, 6% 72%, 0% 10%);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.35), inset 0 0 0 2.5px #c9a45c !important;
+      position: relative !important;
+      opacity: 0.35 !important;
+    }
+    .race-crest[data-race] { opacity: 1 !important; }
+    .race-crest[data-race="human"] {
+      background:
+        radial-gradient(circle at 50% 35%, #5a8ad0 0%, #2a5aa0 50%, #163878 100%) !important;
+    }
+    .race-crest[data-race="elf"] { background: linear-gradient(180deg, #3a7a5a, #1a4830) !important; }
+    .race-crest[data-race="half_orc"] { background: linear-gradient(180deg, #6a5a3a, #3a3018) !important; }
+    .race-crest[data-race="tiefling"] { background: linear-gradient(180deg, #7a3a4a, #401820) !important; }
+    .race-crest::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 18% 22% 28% !important;
+      background:
+        radial-gradient(ellipse at 50% 30%, #e8c878 0 18%, transparent 20%),
+        radial-gradient(ellipse at 50% 58%, #d4b060 0 28%, transparent 30%),
+        linear-gradient(180deg, transparent 40%, #c9a45c 40% 55%, transparent 55%);
+      opacity: 0.95 !important;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35));
+    }
+    .race-crest::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 28% !important; right: 28% !important; top: 22% !important; bottom: 34% !important;
+      background:
+        radial-gradient(circle at 50% 28%, #f0d890 0 22%, transparent 24%),
+        radial-gradient(ellipse at 50% 70%, #c9a45c 0 40%, transparent 42%);
+      mask-image: radial-gradient(ellipse at 50% 45%, #000 0 55%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 0 55%, transparent 70%);
+      opacity: 0.95 !important;
+    }
+    .race-info-main { min-width: 0 !important; }
+    .race-info-title {
+      font-size: clamp(1.2rem, 2vw, 1.65rem) !important;
+      color: #1a120c !important; margin: 0 0 4px !important;
+      font-weight: 900 !important; letter-spacing: 0.1em !important;
+      display: flex !important; align-items: baseline !important; gap: 8px !important;
+    }
+    .race-info-title .en {
+      font-size: 0.55em !important; letter-spacing: 0.16em !important;
+      color: #5a4a38 !important; font-weight: 700 !important;
+    }
+    .race-info-body {
+      font-size: clamp(0.74rem, 1.02vw, 0.9rem) !important;
+      color: #2b2118 !important;
+      display: -webkit-box !important; -webkit-line-clamp: 3 !important;
+      -webkit-box-orient: vertical !important; overflow: hidden !important;
+      max-width: 100% !important; line-height: 1.4 !important;
+      font-family: "Noto Serif SC", "Songti SC", serif !important;
+      min-height: 3.9em !important;
+    }
+    .ink-stamp {
+      display: none;
+      width: clamp(78px, 8vw, 104px) !important;
+      height: clamp(78px, 8vw, 104px) !important;
+      align-items: center !important; justify-content: center !important;
+      border: 3px solid #9a2222 !important;
+      border-radius: 4px !important;
+      color: #9a2222 !important;
+      font-size: clamp(0.78rem, 1.05vw, 0.95rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.18em !important;
+      transform: rotate(-16deg) !important;
+      opacity: 0.78 !important;
+      background: rgba(154,34,34,0.05) !important;
+      box-shadow:
+        inset 0 0 0 2px rgba(154,34,34,0.45),
+        0 0 0 1px rgba(154,34,34,0.25) !important;
+      pointer-events: none !important;
+      flex-shrink: 0 !important;
+      text-align: center !important;
+      line-height: 1.15 !important;
+      padding: 10px !important;
+      font-family: "Noto Serif SC", "Songti SC", serif !important;
+    }
+
+    .info-panels { display: contents !important; position: static !important; margin: 0 !important; min-height: 0 !important; }
+
+    /* —— 页签：浅纸签底板 + 编号 + 单色图标 —— */
+    .panel-tabs {
+      position: absolute !important;
+      left: 9% !important; top: 65.6% !important;
+      width: 82.2% !important; height: 5.6% !important;
+      z-index: 6 !important; margin: 0 !important;
+      display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 6px !important;
+      background: transparent !important; border: none !important;
+    }
+    .panel-tab {
+      min-height: 0 !important; height: 100% !important;
+      padding: 3px 6px !important;
+      font-size: clamp(0.6rem, 0.88vw, 0.75rem) !important;
+      background:
+        linear-gradient(180deg, #f7edd4 0%, #e6d4b0 100%) !important;
+      color: #3a2c22 !important;
+      border: 1px solid rgba(90,70,40,0.4) !important;
+      border-radius: 2px 2px 0 0 !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,250,230,0.5) !important;
+      display: flex !important; flex-direction: row !important;
+      align-items: center !important; justify-content: center !important;
+      gap: 4px !important;
+      letter-spacing: 0.04em !important;
+      font-family: inherit !important;
+    }
+    .panel-tab .tab-num {
+      font-weight: 800 !important;
+      font-size: 0.85em !important;
+      color: #5a4a38 !important;
+      min-width: 0.9em !important;
+    }
+    .panel-tab .tab-label { white-space: nowrap !important; }
+    .panel-tab[data-active="true"] {
+      background: linear-gradient(180deg, #fff6e0 0%, #f0dfb8 100%) !important;
+      border-color: #c9a45c !important;
+      color: #1a120c !important;
+      font-weight: 800 !important;
+      box-shadow: 0 0 0 1px rgba(201,164,92,0.45), 0 2px 5px rgba(0,0,0,0.14) !important;
+    }
+    .panel-tab[data-active="true"] .tab-ico {
+      box-shadow: 0 0 0 2px #c9a45c, 0 0 0 3px rgba(201,164,92,0.2) !important;
+      border-radius: 50% !important;
+    }
+    .tab-ico {
+      width: 16px !important; height: 16px !important;
+      display: block !important; flex-shrink: 0 !important;
+      background-color: transparent !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: contain !important;
+      opacity: 0.9 !important;
+    }
+    .ico-compass {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 3v3M12 18v3M3 12h3M18 12h3'/%3E%3Cpath d='M12 8l2 4-2 4-2-4z' fill='%233a2c22'/%3E%3C/svg%3E") !important;
+    }
+    .ico-people {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Ccircle cx='9' cy='8' r='3'/%3E%3Ccircle cx='16' cy='9' r='2.5'/%3E%3Cpath d='M3 19c0-3 2.5-5 6-5s6 2 6 5'/%3E%3Cpath d='M14 14c2.5 0 5 1.5 5 4.5'/%3E%3C/svg%3E") !important;
+    }
+    .ico-target {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Ccircle cx='12' cy='12' r='1.2' fill='%233a2c22'/%3E%3C/svg%3E") !important;
+    }
+    .ico-scroll {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Cpath d='M6 5h10a2 2 0 012 2v12H8a2 2 0 01-2-2V5z'/%3E%3Cpath d='M6 5a2 2 0 00-2 2v10'/%3E%3Cpath d='M9 10h7M9 14h5'/%3E%3C/svg%3E") !important;
+    }
+    .ico-wreath {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Cpath d='M7 18c-2-2-3-4.5-3-7a5 5 0 019-3'/%3E%3Cpath d='M17 18c2-2 3-4.5 3-7a5 5 0 00-9-3'/%3E%3Cpath d='M8 18h8'/%3E%3C/svg%3E") !important;
+    }
+
+    /* —— 底部浅羊皮信息面板 —— */
+    .panel-body {
+      position: absolute !important;
+      left: 9% !important; top: 71.2% !important;
+      width: 82.2% !important; height: 16.2% !important;
+      z-index: 6 !important;
+      display: grid !important; grid-template-columns: 22% 1fr !important; gap: 12px !important;
+      padding: 8px 10px !important; margin: 0 !important;
+      border: 1px solid rgba(90,70,40,0.35) !important;
+      background:
+        linear-gradient(180deg, rgba(248,238,214,0.88), rgba(232,214,178,0.82)),
+        url("assets/ui/recruitment-kit/parchment.png") center / cover !important;
+      box-shadow: inset 0 0 0 1px rgba(255,250,230,0.35), 0 3px 8px rgba(0,0,0,0.12) !important;
+      overflow: hidden !important; min-height: 0 !important;
+    }
+    .panel-illustration {
+      min-height: 0 !important; height: 100% !important; opacity: 0.9 !important;
+      background:
+        linear-gradient(180deg, rgba(240,228,200,0.2), rgba(240,228,200,0.55)),
+        url("assets/ui/recruitment-kit/mountain_fortress.png") center / cover no-repeat !important;
+      border: 1px solid rgba(43,33,24,0.28) !important;
+      filter: grayscale(0.55) sepia(0.45) contrast(0.9) brightness(1.05) !important;
+    }
+    .panel-content {
+      overflow: hidden !important;
+      font-size: clamp(0.72rem, 0.98vw, 0.86rem) !important;
+      color: #1f1610 !important; line-height: 1.35 !important;
+      padding: 0 2px !important; background: transparent !important; border: none !important;
+    }
+    .panel-content h3 {
+      margin: 0 0 4px !important;
+      font-size: clamp(0.85rem, 1.15vw, 1rem) !important;
+      letter-spacing: 0.12em !important; color: #1a120c !important;
+    }
+    .purpose-lead {
+      margin: 0 0 6px !important;
+      display: -webkit-box !important; -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important; overflow: hidden !important;
+    }
+    .mission-grid {
+      display: grid !important;
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      gap: 6px !important; margin-top: 2px !important;
+    }
+    .mission-block {
+      display: flex !important; flex-direction: column !important;
+      align-items: center !important; gap: 3px !important;
+      padding: 5px 4px !important;
+      background: rgba(245,232,204,0.35) !important;
+      border: 1px solid rgba(90,70,40,0.35) !important;
+      border-radius: 1px !important;
+      color: #2b2118 !important;
+      cursor: pointer !important;
+      font-family: inherit !important;
+      box-shadow: none !important;
+      min-height: 0 !important;
+    }
+    .mission-block:hover,
+    .mission-block[data-active="true"] {
+      border-color: #c9a45c !important;
+      background: rgba(245,232,204,0.55) !important;
+    }
+    .mission-ico {
+      width: 16px !important; height: 16px !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: contain !important;
+    }
+    .mission-ico.ico-shield {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Cpath d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z'/%3E%3C/svg%3E") !important;
+    }
+    .mission-ico.ico-compass {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Cpath d='M12 8l2 4-2 4-2-4z' fill='%233a2c22'/%3E%3C/svg%3E") !important;
+    }
+    .mission-ico.ico-skull {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Ccircle cx='12' cy='10' r='6'/%3E%3Ccircle cx='10' cy='10' r='1' fill='%233a2c22'/%3E%3Ccircle cx='14' cy='10' r='1' fill='%233a2c22'/%3E%3Cpath d='M9 16h6M10 18v2M14 18v2'/%3E%3C/svg%3E") !important;
+    }
+    .mission-ico.ico-leaf {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Cpath d='M5 19c8-2 12-8 14-14-6 2-12 6-14 14z'/%3E%3Cpath d='M5 19c3-3 7-5 12-6'/%3E%3C/svg%3E") !important;
+    }
+    .mission-ico.ico-book {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a2c22' stroke-width='1.6'%3E%3Cpath d='M4 5h7v14H4zM13 5h7v14h-7z'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E") !important;
+    }
+    .mission-copy {
+      display: flex !important; flex-direction: column !important;
+      align-items: center !important; text-align: center !important;
+    }
+    .mission-name {
+      font-size: clamp(0.58rem, 0.78vw, 0.7rem) !important;
+      font-weight: 700 !important; letter-spacing: 0.04em !important;
+      line-height: 1.2 !important;
+    }
+    .mission-hint { display: none !important; }
+
+    /* —— CTA 厚重公会横幅 —— */
+    .accept-zone {
+      position: absolute !important;
+      left: 21% !important; top: 88.2% !important;
+      width: 58% !important; height: 9.5% !important;
+      z-index: 12 !important; margin: 0 !important; min-height: 0 !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+    }
+    .accept-btn {
+      width: 100% !important; height: 100% !important; min-height: 0 !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      gap: 14px !important;
+      font-size: clamp(1.05rem, 1.85vw, 1.5rem) !important;
+      letter-spacing: 0.18em !important;
+      border: 2.5px solid #c9a45c !important;
+      outline: 1px solid #1a120c !important; outline-offset: 3px !important;
+      background:
+        linear-gradient(180deg, #5a4638 0%, #3a2c22 38%, #1e1610 100%) !important;
+      color: #f0e2c0 !important;
+      padding: 0 28px !important;
+      border-radius: 1px !important;
+      box-shadow:
+        0 8px 16px rgba(0,0,0,0.42),
+        inset 0 1px 0 rgba(255,220,160,0.22),
+        inset 0 -2px 6px rgba(0,0,0,0.35) !important;
+      opacity: 1 !important;
+      font-weight: 800 !important;
+    }
+    .accept-btn::before { display: none !important; }
+    .accept-compass {
+      width: clamp(28px, 3vw, 40px) !important;
+      height: clamp(28px, 3vw, 40px) !important;
+      flex-shrink: 0 !important;
+      border-radius: 50% !important;
+      border: 1.5px solid #c9a45c !important;
+      background:
+        radial-gradient(circle at 50% 50%, #d4b878 0 10%, transparent 11%),
+        conic-gradient(from 0deg, #8a7040, #e0c890, #5a4830, #c9a45c, #3a3020, #e0c890),
+        #2a2218;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4) !important;
+    }
+    .accept-label { position: relative !important; z-index: 1 !important; }
+    .accept-btn:disabled {
+      opacity: 0.88 !important;
+      background: linear-gradient(180deg, #4a4038, #2c261f) !important;
+      color: #c8b898 !important;
+      border-color: #9a8458 !important; border-style: solid !important;
+      cursor: not-allowed !important;
+    }
+    .wax-seal {
+      right: -3% !important; bottom: -12% !important;
+      width: clamp(40px, 4.5vw, 58px) !important;
+      height: clamp(40px, 4.5vw, 58px) !important;
+      opacity: 0.92 !important; z-index: 13 !important;
+      background: url("assets/ui/recruitment-kit/wax_seal.png") center / contain no-repeat !important;
+    }
+
+    .poster-ui .panel-content,
+    .poster-ui .panel-body {
+      overflow: hidden !important;
+    }
+  </style>
+
+  <style id="layout-iter3-fix">
+    /* === Playwright iter2 对照修正 === */
+    .poster-header {
+      left: 21.2% !important; top: 1.1% !important;
+      width: 58.5% !important; height: 16.8% !important;
+      overflow: visible !important;
+    }
+    .title-strip {
+      padding: 2.5% 15% 3.5% !important;
+      background: url("assets/ui/recruitment-kit-v2/title_parchment_strip.png") center 45% / 114% 175% no-repeat !important;
+      overflow: hidden !important;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.34)) !important;
+    }
+    .title-copy { width: 58% !important; max-width: 480px !important; }
+    h1 {
+      font-size: clamp(1.8rem, 3.55vw, 2.95rem) !important;
+      letter-spacing: 0.18em !important;
+    }
+    .subtitle { font-size: clamp(0.58rem, 0.88vw, 0.76rem) !important; }
+
+    /* 种族卡：上移、加高至 ~300px */
+    .race-row {
+      left: 13.5% !important; top: 19.0% !important;
+      width: 54% !important; height: 30.5% !important;
+    }
+    .characters { gap: 10px !important; align-items: stretch !important; }
+    .character-slot {
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-self: stretch !important;
+    }
+    .character-figure {
+      position: relative !important;
+      flex: 1 1 auto !important;
+      width: 100% !important;
+      max-width: 208px !important;
+      height: 100% !important;
+      max-height: 308px !important;
+      aspect-ratio: auto !important;
+      margin: 0 auto !important;
+      overflow: hidden !important;
+    }
+    .character-art {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important; height: 100% !important;
+      z-index: 1 !important;
+    }
+    .art-human { background-position: 50% 10% !important; background-size: 175% auto !important; }
+    .art-elf { background-position: 48% 6% !important; background-size: 180% auto !important; }
+    .art-orc { background-position: 52% 8% !important; background-size: 185% auto !important; }
+    .art-tiefling { background-position: 50% 4% !important; background-size: 180% auto !important; }
+
+    .character-slot[data-selected="true"] .character-art {
+      border: 2px solid #efd090 !important;
+      box-shadow:
+        0 0 0 2px #c9a45c,
+        0 0 0 5px rgba(224,180,90,0.32),
+        0 0 16px rgba(201,164,92,0.4),
+        inset 0 0 18px rgba(255,220,140,0.14),
+        0 7px 14px rgba(0,0,0,0.42) !important;
+    }
+    .character-slot[data-selected="true"] .character-figure::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: -3px !important;
+      top: -3px !important; left: -3px !important; right: -3px !important; bottom: -3px !important;
+      width: auto !important; height: auto !important;
+      transform: none !important;
+      clip-path: none !important;
+      filter: none !important;
+      border: 1.5px solid #e0c890 !important;
+      border-radius: 2px !important;
+      box-shadow:
+        0 0 0 1px rgba(160,120,50,0.55),
+        inset 0 0 0 1px rgba(255,230,170,0.35) !important;
+      background:
+        linear-gradient(#d4b878, #d4b878) 0 0 / 22px 2.5px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 0 0 / 2.5px 22px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 100% 0 / 22px 2.5px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 100% 0 / 2.5px 22px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 0 100% / 22px 2.5px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 0 100% / 2.5px 22px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 100% 100% / 22px 2.5px no-repeat,
+        linear-gradient(#d4b878, #d4b878) 100% 100% / 2.5px 22px no-repeat !important;
+      z-index: 6 !important;
+      pointer-events: none !important;
+    }
+    .character-slot[data-selected="true"] .character-figure::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 50% !important;
+      bottom: -20px !important;
+      top: auto !important;
+      width: 46px !important;
+      height: 46px !important;
+      aspect-ratio: auto !important;
+      transform: translateX(-50%) !important;
+      border-radius: 50% !important;
+      clip-path: none !important;
+      border: 1.5px solid #e8c878 !important;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23c9a45c' stroke='%23f0d890' stroke-width='2'/%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='%238a7040' stroke-width='1.4'/%3E%3Cpath d='M24 7v8M24 33v8M7 24h8M33 24h8' stroke='%23f0d890' stroke-width='1.8'/%3E%3Cpath d='M24 14l2.8 7.4L24 34l-2.8-12.6z' fill='%23f4e0a8' stroke='%238a7040' stroke-width='0.8'/%3E%3Ccircle cx='24' cy='24' r='2.4' fill='%23fff0c0'/%3E%3C/svg%3E") center / contain no-repeat,
+        radial-gradient(circle at 35% 30%, #f0d890, #a89048 70%, #5a4830) !important;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.45) !important;
+      z-index: 8 !important;
+      pointer-events: none !important;
+    }
+    .character-slot[data-selected="true"] .character-figure {
+      overflow: visible !important;
+    }
+    .character-slot:not([data-selected="true"]) .character-figure::before,
+    .character-slot:not([data-selected="true"]) .character-figure::after {
+      content: none !important;
+      display: none !important;
+    }
+    .character-name {
+      position: absolute !important;
+      left: 0 !important; right: 0 !important; bottom: 0 !important;
+      z-index: 5 !important;
+      margin: 0 !important;
+      padding: 7px 4px 6px !important;
+      color: #f2e6c8 !important;
+      font-size: clamp(0.66rem, 0.92vw, 0.8rem) !important;
+      text-align: center !important;
+      background: linear-gradient(180deg, rgba(18,12,8,0.12), rgba(10,7,4,0.9) 32%, rgba(6,4,2,0.96)) !important;
+      border-top: 1px solid rgba(201,164,92,0.4) !important;
+    }
+    .character-name .en-name { color: #d4c4a0 !important; }
+
+    /* 职业：同尺寸档案纸右下阶梯叠放 */
+    .career-zone {
+      left: 63.5% !important; top: 17.2% !important;
+      width: 34% !important; height: 48% !important;
+      max-height: 48% !important;
+      overflow: visible !important;
+    }
+    .card-stack {
+      width: 92% !important; height: 92% !important;
+      overflow: visible !important;
+    }
+    .career-card {
+      width: 62% !important;
+      height: 88% !important;
+      left: 4% !important;
+      top: 46% !important;
+      margin-left: 0 !important;
+      margin-top: -44% !important;
+      transform-origin: center center !important;
+      overflow: hidden !important;
+      background: linear-gradient(180deg, #f7eedc 0%, #e6d6b4 100%) !important;
+      box-shadow: 6px 8px 14px rgba(0,0,0,0.32) !important;
+      max-width: 280px !important;
+    }
+    .career-card:not(.is-peek)::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 4px !important; left: 50% !important;
+      width: 12px !important; height: 12px !important;
+      margin-left: -6px !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle at 35% 30%, #7a7670, #2a2824) !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.55) !important;
+      z-index: 8 !important;
+    }
+    .career-card:hover { transform: none !important; }
+    .career-card .card-peek-strip { display: none !important; }
+    .career-card.is-peek {
+      width: 62% !important;
+      height: 88% !important;
+      left: 4% !important;
+      top: 46% !important;
+      margin-left: 0 !important;
+      margin-top: -44% !important;
+      max-width: 280px !important;
+      padding: 0 !important;
+      justify-content: flex-start !important;
+      background: linear-gradient(180deg, #f3e8d0, #dcc8a0) !important;
+      box-shadow: 4px 6px 12px rgba(0,0,0,0.26) !important;
+      overflow: hidden !important;
+    }
+    .career-card.is-peek .card-art,
+    .career-card.is-peek .card-body,
+    .career-card.is-peek .card-selected-mark,
+    .career-card.is-peek::before {
+      display: none !important;
+    }
+    .career-card.is-peek .card-head {
+      display: flex !important;
+      position: absolute !important;
+      top: 0 !important; left: 0 !important; right: 0 !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 6px !important;
+      padding: 10px 12px 10px 40% !important;
+      writing-mode: horizontal-tb !important;
+      min-height: 46px !important;
+      background: linear-gradient(180deg, #f8efd8 0%, #e6d4ae 100%) !important;
+      border-bottom: 1px solid rgba(90,70,40,0.28) !important;
+      box-sizing: border-box !important;
+      z-index: 2 !important;
+    }
+    .career-card.is-peek .card-title {
+      display: block !important;
+      writing-mode: horizontal-tb !important;
+      text-orientation: mixed !important;
+      font-size: clamp(0.78rem, 1.05vw, 0.95rem) !important;
+      text-align: right !important;
+      white-space: nowrap !important;
+      color: #1a120c !important;
+    }
+    .career-card.is-peek .card-title-en {
+      display: inline !important;
+      font-size: 0.62em !important;
+    }
+    .career-card.is-peek .card-shield {
+      width: 20px !important; height: 24px !important;
+      display: inline-block !important;
+    }
+    .career-card:not(.is-peek) .card-art { height: 46% !important; flex: 0 0 46% !important; }
+    .career-card:not(.is-peek) .card-body { padding: 6px 10px 12px !important; }
+    .career-card:not(.is-peek) .card-desc {
+      -webkit-line-clamp: 3 !important;
+      font-size: clamp(0.64rem, 0.9vw, 0.8rem) !important;
+    }
+    .career-card[data-selected="true"] {
+      z-index: 40 !important;
+      border-color: #8a7040 !important;
+    }
+
+    /* 种族说明随卡上移；印章不压正文 */
+    .race-info-box {
+      left: 8% !important; top: 50.2% !important;
+      width: 55% !important; height: 13.8% !important;
+      grid-template-columns: auto minmax(0, 1fr) auto !important;
+      gap: 10px 14px !important;
+      align-items: start !important;
+      padding-top: 2px !important;
+    }
+    .race-crest {
+      width: 68px !important; height: 80px !important;
+      background:
+        radial-gradient(circle at 50% 32%, #5b8fd4 0%, #2a5aa8 48%, #143878 100%) !important;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.35), inset 0 0 0 2.5px #d4b878 !important;
+    }
+    .race-crest[data-race="human"] {
+      background:
+        radial-gradient(circle at 50% 30%, #6a9ae0 0%, #2f62b0 45%, #163e80 100%) !important;
+    }
+    .race-crest::before {
+      inset: 20% 24% 30% !important;
+      background:
+        radial-gradient(ellipse at 50% 28%, #f0d890 0 16%, transparent 18%),
+        radial-gradient(ellipse at 42% 48%, #e0c070 0 10%, transparent 12%),
+        radial-gradient(ellipse at 58% 48%, #e0c070 0 10%, transparent 12%),
+        radial-gradient(ellipse at 50% 62%, #c9a45c 0 26%, transparent 28%) !important;
+    }
+    .race-crest::after { opacity: 0.55 !important; }
+    .race-info-main { padding-right: 8px !important; }
+    .ink-stamp {
+      align-self: center !important;
+      margin-left: 4px !important;
+      opacity: 0.7 !important;
+    }
+
+    /* 撕边纸签页签 */
+    .panel-tabs {
+      top: 64.6% !important;
+      height: 5.8% !important;
+      gap: 10px !important;
+    }
+    .panel-tab {
+      position: relative !important;
+      background:
+        linear-gradient(180deg, #f8edd6 0%, #e4d0aa 100%) !important;
+      border: 1px solid rgba(90,70,40,0.45) !important;
+      border-radius: 0 !important;
+      clip-path: polygon(
+        1% 8%, 3% 2%, 8% 6%, 14% 1%, 22% 5%, 35% 0%, 50% 4%, 62% 0%, 75% 5%, 88% 1%, 96% 6%, 100% 12%,
+        99% 88%, 96% 98%, 88% 94%, 75% 100%, 60% 95%, 48% 100%, 35% 94%, 20% 99%, 8% 93%, 2% 98%, 0% 88%
+      ) !important;
+      box-shadow: 2px 3px 6px rgba(0,0,0,0.18) !important;
+      transform: rotate(-0.4deg) !important;
+    }
+    .panel-tab:nth-child(2) { transform: rotate(0.5deg) !important; }
+    .panel-tab:nth-child(3) { transform: rotate(-0.2deg) !important; }
+    .panel-tab:nth-child(4) { transform: rotate(0.35deg) !important; }
+    .panel-tab:nth-child(5) { transform: rotate(-0.55deg) !important; }
+    .panel-tab[data-active="true"] {
+      background: linear-gradient(180deg, #4a382c 0%, #2a1e16 100%) !important;
+      color: #f0e2c0 !important;
+      border-color: #c9a45c !important;
+      box-shadow:
+        0 0 0 1px #c9a45c,
+        2px 3px 7px rgba(0,0,0,0.28) !important;
+      font-weight: 800 !important;
+    }
+    .panel-tab[data-active="true"] .tab-num,
+    .panel-tab[data-active="true"] .tab-label { color: #f0e2c0 !important; }
+    .panel-tab[data-active="true"] .tab-ico {
+      filter: invert(0.92) sepia(0.35) saturate(2) hue-rotate(5deg) !important;
+      box-shadow: none !important;
+    }
+    .panel-body { top: 70.8% !important; }
+
+    /* CTA：线稿罗盘，宽度贴近设计稿 */
+    .accept-zone {
+      left: 23.1% !important; top: 88.9% !important;
+      width: 53.1% !important; height: 9.3% !important;
+    }
+    .accept-compass {
+      width: 34px !important; height: 34px !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='24' cy='24' r='20' stroke='%23d4b878' stroke-width='2'/%3E%3Ccircle cx='24' cy='24' r='14' stroke='%23c9a45c' stroke-width='1.2'/%3E%3Cpath d='M24 6v6M24 36v6M6 24h6M36 24h6' stroke='%23d4b878' stroke-width='1.6'/%3E%3Cpath d='M24 14l3.2 8.2L24 34l-3.2-11.8z' fill='%23e0c890' stroke='%23a89048' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='2.2' fill='%23f0d890'/%3E%3C/svg%3E") center / contain no-repeat !important;
+    }
+  </style>
+
+  <style id="peek-height-hotfix">
+    /* 回归：背卡仅标题条高度，禁止压页签/信息面板 */
+    .career-card.is-peek {
+      height: 112px !important;
+      width: 58% !important;
+      max-width: 260px !important;
+      overflow: hidden !important;
+      justify-content: flex-start !important;
+    }
+    .career-card.is-peek .card-art,
+    .career-card.is-peek .card-body,
+    .career-card.is-peek .card-selected-mark,
+    .career-card.is-peek .card-peek-strip,
+    .career-card.is-peek::before {
+      display: none !important;
+    }
+    .career-card.is-peek .card-head {
+      position: static !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 6px !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      padding: 16px 12px !important;
+      box-sizing: border-box !important;
+      writing-mode: horizontal-tb !important;
+      background: linear-gradient(180deg, #f8efd8 0%, #e6d4ae 100%) !important;
+      border-bottom: none !important;
+    }
+    .career-card.is-peek .card-title {
+      writing-mode: horizontal-tb !important;
+      text-orientation: mixed !important;
+      white-space: nowrap !important;
+      text-align: left !important;
+      font-size: clamp(0.78rem, 1.05vw, 0.95rem) !important;
+    }
+    .career-card.is-peek .card-title-en { display: inline !important; }
+    .career-card:not(.is-peek) {
+      z-index: 40 !important;
+    }
+  </style>
+</body>
+</html>
