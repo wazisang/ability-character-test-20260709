@@ -1,0 +1,1866 @@
+@font-face {
+  font-family: "RecruitDisplay";
+  src: url("./assets/fonts/ZCOOLXiaoWei-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RecruitSerif";
+  src: url("./assets/fonts/NotoSerifSC-Variable.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+:root {
+  --paper: #eadbb8;
+  --paper-light: #f2e7ca;
+  --paper-deep: #d8c394;
+  --ink: #211b17;
+  --muted: #665342;
+  --red: #a34d35;
+  --red-dark: #713021;
+  --teal: #315f5b;
+  --gold: #b99045;
+  --wood: #24170f;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 50% 46%, transparent 48%, rgba(12, 7, 4, 0.42) 100%),
+    #18100b url("./assets/ui/recruitment-kit-v2/wood_table.png") center / cover fixed no-repeat;
+  font-family: "RecruitSerif", "Songti SC", serif;
+}
+
+.stage-viewport {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #f4d991;
+  outline-offset: 3px;
+}
+
+.recruitment-desk {
+  position: relative;
+  width: 1672px;
+  height: 941px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(ellipse at 27% 15%, rgba(235, 184, 115, 0.12), transparent 42%),
+    radial-gradient(ellipse at 50% 50%, transparent 52%, rgba(12, 7, 4, 0.34) 100%),
+    var(--wood) url("./assets/ui/recruitment-kit-v2/wood_table.png") center / cover no-repeat;
+  transform-origin: left top;
+  isolation: isolate;
+}
+
+.notice-sheet-layer,
+.dossier-sheet-layer {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* The generated master is a composition reference only. Paper geometry and
+   printed structure now share the same HTML coordinate system. */
+.notice-sheet-layer,
+.dossier-sheet-layer {
+  display: none;
+}
+
+.notice-sheet-layer {
+  left: 4.31%;
+  top: 0;
+  z-index: 1;
+  width: 65.37%;
+  height: 100%;
+  filter:
+    drop-shadow(2px 3px 1px rgba(30, 16, 8, 0.4))
+    drop-shadow(12px 17px 11px rgba(20, 10, 5, 0.48));
+}
+
+.dossier-sheet-layer {
+  left: 65.79%;
+  top: 10.63%;
+  z-index: 3;
+  width: 33.79%;
+  height: 85.55%;
+  filter:
+    drop-shadow(2px 3px 1px rgba(30, 16, 8, 0.36))
+    drop-shadow(10px 15px 10px rgba(20, 10, 5, 0.42));
+}
+
+.notice-paper {
+  position: absolute;
+  left: 4.6%;
+  top: 3.1%;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 19% 46% 18% 17%;
+  width: 64.7%;
+  height: 93.4%;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(74, 51, 32, 0.72);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(105deg, rgba(255, 246, 220, 0.3), transparent 24% 72%, rgba(101, 67, 37, 0.12)),
+    radial-gradient(circle at 16% 78%, rgba(112, 70, 36, 0.08), transparent 19%),
+    url("./assets/recruitment/textures/ink-halftone-tile-v1.png"),
+    url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+  background-size: auto, auto, 760px 760px, 640px 640px;
+  box-shadow:
+    2px 3px 1px rgba(35, 20, 10, 0.38),
+    15px 20px 18px rgba(20, 11, 6, 0.46),
+    inset 0 0 48px rgba(92, 58, 29, 0.12);
+  clip-path: polygon(0.6% 1.1%, 50% 0.2%, 99.2% 0.8%, 100% 58%, 99.1% 99%, 48% 99.7%, 0.8% 98.8%, 0 44%);
+  transform: rotate(-0.6deg);
+}
+
+.notice-paper::before,
+.notice-paper::after {
+  position: absolute;
+  display: block;
+  content: "";
+  pointer-events: none;
+}
+
+.notice-paper::before {
+  inset: 11px;
+  z-index: 20;
+  border: 2px solid rgba(36, 29, 23, 0.84);
+  box-shadow: inset 0 0 0 3px rgba(163, 77, 53, 0.52);
+}
+
+.notice-paper::after {
+  inset: 0;
+  z-index: 19;
+  opacity: 0.07;
+  background-image: url("./assets/ui/recruitment-kit-v2/grunge_texture.png");
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: multiply;
+}
+
+.notice-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr) 82px;
+  align-items: center;
+  min-height: 0;
+  margin: 20px 24px 0;
+  padding: 7px 22px;
+  border-bottom: 5px double var(--ink);
+}
+
+.guild-mark {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 2px solid var(--ink);
+  color: var(--paper-light);
+  background: var(--ink);
+  box-shadow: 5px 5px 0 var(--red);
+  font-family: "RecruitDisplay", serif;
+  font-size: 30px;
+  transform: rotate(-3deg);
+}
+
+.notice-title-copy {
+  min-width: 0;
+  text-align: left;
+}
+
+.notice-title-copy p,
+.notice-title-copy span,
+.dossier-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.notice-title-copy h1 {
+  margin: -2px 0 0;
+  color: var(--red);
+  font-family: "RecruitDisplay", "RecruitSerif", serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.issue-mark {
+  justify-self: end;
+  padding: 7px 8px;
+  border: 2px solid var(--red);
+  color: var(--red-dark);
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: center;
+  transform: rotate(4deg);
+}
+
+.roster-section {
+  display: grid;
+  grid-template-rows: 34px minmax(0, 1fr) 82px;
+  min-height: 0;
+  margin: 0 24px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border-bottom: 1px solid rgba(33, 27, 23, 0.68);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.section-rule strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.race-scroll {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.race-scroll::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(49, 95, 91, 0.14), transparent 54%),
+    radial-gradient(ellipse at 50% 100%, rgba(163, 77, 53, 0.16), transparent 62%),
+    repeating-linear-gradient(0deg, transparent 0 21px, rgba(37, 31, 25, 0.035) 21px 22px);
+  content: "";
+  pointer-events: none;
+}
+
+.race-scroll::after {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: 25px;
+  z-index: 1;
+  height: 58px;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0 31%,
+      rgba(76, 61, 43, 0.2) 32% 34%,
+      rgba(151, 116, 70, 0.12) 35% 100%
+    ),
+    repeating-linear-gradient(
+      7deg,
+      transparent 0 8px,
+      rgba(49, 95, 91, 0.09) 8px 9px
+    );
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  content: "";
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.roster-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.88;
+  background-image: url("./assets/recruitment/scenes/roster-world-scene-panorama-v1.webp");
+  background-position: center bottom;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: saturate(0.98) contrast(1.08) brightness(0.94);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 91%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 91%, transparent 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.race-roster {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 72%;
+  height: 100%;
+  min-height: 0;
+  margin-inline: auto;
+}
+
+.race-choice {
+  --race-accent: var(--red);
+  --portrait-shift: 0px;
+  --portrait-scale: 1.04;
+  --idle-duration: 4.6s;
+  --idle-delay: 0s;
+  --idle-lift: -2px;
+  --idle-tilt: 0.12deg;
+  --idle-shift: 0px;
+  --idle-breathe: 1.004;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  min-height: 0;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.race-choice:nth-child(1) {
+  --portrait-shift: 10px;
+  --portrait-scale: 1.08;
+  --idle-duration: 4.8s;
+  --idle-delay: -1.2s;
+  --idle-lift: -3px;
+  --idle-tilt: -0.32deg;
+  --idle-shift: -2px;
+  --idle-breathe: 1.007;
+  z-index: 4;
+}
+
+.race-choice:nth-child(2) {
+  --portrait-shift: 4px;
+  --portrait-scale: 1.05;
+  --idle-duration: 5.8s;
+  --idle-delay: -3.4s;
+  --idle-lift: -1px;
+  --idle-shift: 0px;
+  --idle-tilt: 0.08deg;
+  --idle-breathe: 1.002;
+  z-index: 5;
+}
+
+.race-choice:nth-child(3) {
+  --portrait-shift: -5px;
+  --portrait-scale: 1.06;
+  --idle-duration: 4.4s;
+  --idle-delay: -2.1s;
+  --idle-lift: -2px;
+  --idle-shift: -1px;
+  --idle-tilt: -0.2deg;
+  --idle-breathe: 1.008;
+  z-index: 6;
+}
+
+.race-choice:nth-child(4) {
+  --portrait-shift: -12px;
+  --portrait-scale: 1.07;
+  --idle-duration: 5.2s;
+  --idle-delay: -0.8s;
+  --idle-lift: -3px;
+  --idle-shift: 2px;
+  --idle-tilt: 0.3deg;
+  --idle-breathe: 1.006;
+  z-index: 7;
+}
+
+.race-choice::before {
+  position: absolute;
+  inset: 5px;
+  z-index: 7;
+  border: 0;
+  content: "";
+  pointer-events: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.race-choice::after {
+  position: absolute;
+  left: 14%;
+  bottom: 31px;
+  z-index: 2;
+  width: 72%;
+  height: 17px;
+  background-image:
+    radial-gradient(ellipse at center, rgba(44, 34, 25, 0.34), rgba(82, 66, 43, 0.13) 48%, transparent 72%),
+    radial-gradient(circle, rgba(36, 31, 25, 0.24) 0 1px, transparent 1.2px);
+  background-size: 100% 100%, 6px 6px;
+  content: "";
+  filter: blur(0.2px);
+  mix-blend-mode: multiply;
+  opacity: 0.72;
+  pointer-events: none;
+  transform: scaleX(0.92);
+  transition: opacity 240ms ease, transform 300ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.race-choice:hover::before {
+  box-shadow: inset 0 -3px color-mix(in srgb, var(--race-accent) 70%, var(--ink));
+}
+
+.race-choice.is-selected::before {
+  box-shadow: inset 0 -4px color-mix(in srgb, var(--race-accent) 78%, var(--ink));
+}
+
+.race-choice.is-selected::after {
+  opacity: 0.9;
+  transform: scaleX(1.08);
+}
+
+.race-support {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 320ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.race-support--notice-pillar {
+  right: 3%;
+  bottom: 31px;
+  width: 29%;
+  height: 76%;
+  border: 1px solid rgba(52, 43, 33, 0.48);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 43px,
+      rgba(47, 40, 31, 0.13) 43px 45px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(49, 95, 91, 0.08) 0 3px,
+      transparent 3px 8px
+    ),
+    linear-gradient(90deg, #9b805d 0 10%, #d1b98b 11% 80%, #80684e 81% 100%);
+  box-shadow: 4px 3px 0 rgba(45, 35, 26, 0.18), inset 3px 0 rgba(238, 219, 176, 0.28);
+  clip-path: polygon(5% 0, 96% 2%, 100% 98%, 2% 100%, 0 4%);
+  filter: saturate(0.76) contrast(1.02);
+  mix-blend-mode: multiply;
+  opacity: 0.68;
+  transform: rotate(0.7deg);
+}
+
+.race-choice.is-selected .race-support--notice-pillar {
+  opacity: 0.42;
+  transform: translateX(8px) rotate(0.7deg);
+}
+
+.selection-print {
+  position: absolute;
+  inset: 4px -18% 26px;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  background-color: transparent;
+  mask-image: radial-gradient(
+    ellipse at 50% 57%,
+    #000 0 56%,
+    rgba(0, 0, 0, 0.68) 72%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 57%,
+    #000 0 56%,
+    rgba(0, 0, 0, 0.68) 72%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+
+.selection-print::before,
+.selection-print::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 190%;
+  aspect-ratio: 1;
+  content: "";
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+.race-choice[data-focus="ray"] .selection-print::before,
+.race-choice[data-focus="ray-reverse"] .selection-print::before {
+  background: repeating-conic-gradient(
+    from 7deg,
+    color-mix(in srgb, var(--race-accent) 82%, #973b2d) 0 11deg,
+    #d8b762 11deg 23deg
+  );
+}
+
+.race-choice[data-focus="ray"] .selection-print::after,
+.race-choice[data-focus="ray-reverse"] .selection-print::after {
+  opacity: 0.42;
+  background-image: radial-gradient(circle, #2a241d 0 1.1px, transparent 1.3px);
+  background-size: 7px 7px;
+  mix-blend-mode: multiply;
+}
+
+.race-choice[data-focus="dots"] .selection-print::before,
+.race-choice[data-focus="dots-offset"] .selection-print::before {
+  width: 170%;
+  background-image: radial-gradient(circle, var(--race-accent) 0 3px, transparent 3.5px);
+  background-size: 15px 15px;
+}
+
+.race-choice[data-focus="dots"] .selection-print::after,
+.race-choice[data-focus="dots-offset"] .selection-print::after {
+  width: 172%;
+  opacity: 0.55;
+  background-image: radial-gradient(circle, #263c37 0 1.8px, transparent 2.2px);
+  background-position: 7px 7px;
+  background-size: 15px 15px;
+  mix-blend-mode: multiply;
+}
+
+.race-choice.is-selected .selection-print {
+  opacity: 0.62;
+  mix-blend-mode: multiply;
+}
+
+.race-choice.is-selected[data-focus="ray"] .selection-print::before,
+.race-choice.is-selected[data-focus="ray"] .selection-print::after,
+.race-choice.is-selected[data-focus="dots"] .selection-print::before {
+  animation: print-rotate 18s linear infinite;
+}
+
+.race-choice.is-selected[data-focus="ray-reverse"] .selection-print::before,
+.race-choice.is-selected[data-focus="ray-reverse"] .selection-print::after,
+.race-choice.is-selected[data-focus="dots-offset"] .selection-print::before {
+  animation: print-rotate-reverse 17s linear infinite;
+}
+
+.race-choice.is-selected[data-focus="dots"] .selection-print::after,
+.race-choice.is-selected[data-focus="dots-offset"] .selection-print::after {
+  animation: print-rotate-reverse 22s linear infinite;
+}
+
+.race-portrait {
+  position: absolute;
+  left: 50%;
+  bottom: 23px;
+  z-index: 3;
+  width: 121%;
+  height: calc(100% - 42px);
+  object-fit: contain;
+  object-position: center bottom;
+  filter: saturate(0.91) contrast(1.035);
+  transform: translateX(-50%) translateX(var(--portrait-shift)) scale(var(--portrait-scale));
+  transform-origin: center bottom;
+  transition: opacity 220ms ease, filter 220ms ease, transform 300ms cubic-bezier(0.2, 0.75, 0.2, 1);
+  pointer-events: none;
+}
+
+.race-portrait--idle,
+.race-portrait--selected {
+  transition:
+    opacity 80ms linear,
+    filter 220ms ease,
+    transform 300ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.race-portrait--idle {
+  transition-delay: 100ms, 0ms, 0ms;
+}
+
+.race-portrait--selected {
+  opacity: 0;
+  transition-delay: 0ms, 0ms, 0ms;
+}
+
+.race-choice[data-race="half_orc"] .race-portrait--idle {
+  --portrait-scale: 0.87;
+}
+
+.race-choice:hover .race-portrait {
+  filter: saturate(0.98) contrast(1.055) brightness(1.018);
+}
+
+.race-choice.is-selected .race-portrait {
+  filter:
+    saturate(1)
+    contrast(1.065)
+    brightness(1.025)
+    drop-shadow(1px 1px 0 rgba(242, 220, 178, 0.48))
+    drop-shadow(-1px 0 0 color-mix(in srgb, var(--race-accent) 46%, transparent));
+  transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(0) scale(calc(var(--portrait-scale) * 1.008));
+  animation: none;
+}
+
+.race-choice.is-selected .race-portrait--idle {
+  opacity: 0;
+  transition-delay: 0ms, 0ms, 0ms;
+}
+
+.race-choice.is-selected .race-portrait--selected {
+  opacity: 1;
+  transition-delay: 100ms, 0ms, 0ms;
+}
+
+.race-choice.is-selected {
+  z-index: 12;
+}
+
+.race-roster:has(.race-choice.is-selected) .race-choice:not(.is-selected) .race-portrait:not(.race-portrait--selected) {
+  filter: saturate(0.78) contrast(0.98) brightness(0.9);
+  opacity: 0.88;
+}
+
+.race-choice.is-selected.is-recruiting .race-portrait:not(.race-portrait--idle) {
+  animation: race-recruit-lock 680ms cubic-bezier(0.16, 0.88, 0.24, 1.12) both;
+}
+
+.race-choice[data-race="tiefling"].is-selected.is-recruiting .race-portrait:not(.race-portrait--idle) {
+  animation: tiefling-recruit-lock 760ms cubic-bezier(0.16, 0.88, 0.24, 1.08) both;
+}
+
+.race-choice.is-recruiting .race-state {
+  animation: recruited-stamp-in 520ms cubic-bezier(0.2, 0.9, 0.25, 1.15) 300ms both;
+}
+
+.race-name {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 4px;
+  z-index: 8;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  min-height: 29px;
+  padding: 4px 3px 3px;
+  border-top: 1px solid rgba(34, 28, 23, 0.52);
+  background: rgba(235, 220, 185, 0.78);
+  font-family: "RecruitDisplay", serif;
+  font-size: 18px;
+}
+
+.race-name small {
+  color: var(--muted);
+  font-family: "RecruitSerif", serif;
+  font-size: 8px;
+}
+
+.race-state {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  z-index: 10;
+  padding: 3px 5px;
+  border: 1px solid var(--race-accent);
+  color: var(--race-accent);
+  background: rgba(242, 231, 202, 0.9);
+  font-size: 9px;
+  opacity: 0;
+}
+
+.race-choice.is-selected .race-state {
+  opacity: 1;
+}
+
+.race-caption {
+  --caption-x: 12.5%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr) 58px;
+  align-items: center;
+  gap: 12px;
+  min-height: 0;
+  margin: 7px 5px 5px;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  background: rgba(241, 229, 198, 0.84);
+  box-shadow: inset 0 0 0 3px rgba(163, 77, 53, 0.12), 4px 4px 0 rgba(42, 32, 24, 0.12);
+}
+
+.race-caption::before,
+.race-caption::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.race-caption::before {
+  inset: 5px;
+  border: 1px dashed rgba(33, 27, 23, 0.28);
+}
+
+.race-caption::after {
+  right: 76px;
+  top: 8px;
+  width: 34px;
+  height: 7px;
+  background: repeating-linear-gradient(90deg, var(--red) 0 4px, transparent 4px 7px);
+}
+
+.caption-pointer {
+  position: absolute;
+  left: var(--caption-x);
+  top: -13px;
+  width: 24px;
+  height: 14px;
+  border-inline: 2px solid var(--ink);
+  background: var(--paper-light);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+  transition: left 260ms ease;
+}
+
+.caption-index {
+  position: relative;
+  z-index: 1;
+  padding-right: 10px;
+  border-right: 4px double var(--red);
+  color: var(--red-dark);
+  font-size: 13px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.race-caption h2,
+.race-caption p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.race-caption h2 {
+  font-family: "RecruitDisplay", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.race-caption p {
+  margin-top: 2px;
+  color: #493d32;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.caption-stamp {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 52px;
+  height: 42px;
+  place-items: center;
+  border: 2px solid currentColor;
+  color: rgba(113, 48, 33, 0.65);
+  font-size: 10px;
+  font-weight: 850;
+  transform: rotate(-8deg);
+}
+
+.notice-information {
+  display: grid;
+  grid-template-rows: 42px minmax(0, 1fr);
+  min-height: 0;
+  margin: 0 24px;
+  padding-top: 6px;
+}
+
+.notice-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+  align-items: end;
+}
+
+.notice-tab {
+  height: 35px;
+  padding: 3px 5px;
+  border: 1px solid rgba(42, 31, 23, 0.58);
+  border-bottom: 3px solid var(--tab-color, var(--red));
+  border-radius: 0;
+  background: rgba(235, 220, 184, 0.76);
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.notice-tab[aria-selected="true"] {
+  height: 40px;
+  color: var(--paper-light);
+  background: var(--ink);
+  border-color: var(--ink);
+  box-shadow: inset 0 -4px 0 var(--tab-color, var(--red));
+}
+
+.notice-copy {
+  min-height: 0;
+  overflow: auto;
+  padding: 8px 10px 7px;
+  border: 1px solid rgba(42, 31, 23, 0.62);
+  background: rgba(242, 230, 199, 0.46);
+  scrollbar-color: var(--red) transparent;
+  scrollbar-width: thin;
+}
+
+.notice-copy h2,
+.notice-copy p {
+  margin: 0;
+}
+
+.notice-copy h2 {
+  color: var(--red-dark);
+  font-family: "RecruitDisplay", serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.notice-copy p,
+.notice-copy li {
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.notice-copy > p + p {
+  margin-top: 4px;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.partner-grid article {
+  padding: 5px 7px;
+  border-top: 5px solid var(--partner-color, var(--red));
+  background: rgba(233, 217, 180, 0.54);
+}
+
+.partner-grid strong {
+  display: block;
+  font-size: 10px;
+}
+
+.partner-grid p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.mission-tags {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.mission-tag {
+  min-height: 34px;
+  padding: 4px 5px;
+  border: 1px solid rgba(42, 31, 23, 0.55);
+  border-radius: 0;
+  color: var(--ink);
+  background: rgba(239, 225, 192, 0.8);
+  font-size: 9px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.mission-tag:hover {
+  color: var(--paper-light);
+  background: var(--red-dark);
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 7px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: process;
+}
+
+.process-list li {
+  position: relative;
+  padding: 6px 6px 6px 28px;
+  border-top: 1px solid var(--ink);
+  counter-increment: process;
+}
+
+.process-list li::before {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  color: var(--red);
+  content: counter(process, decimal-leading-zero);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.acceptance-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 72px;
+  align-items: center;
+  gap: 12px;
+  min-height: 0;
+  margin: 0 24px 20px;
+  padding: 7px 12px;
+  border-top: 2px solid var(--ink);
+}
+
+.selection-summary {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.accept-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 52px;
+  padding: 7px 18px;
+  border: 3px double var(--paper-light);
+  border-radius: 0;
+  outline: 2px solid var(--red-dark);
+  color: #f3e7c8;
+  background: var(--red);
+  box-shadow: inset 0 0 0 2px rgba(93, 36, 25, 0.42), 4px 4px 0 rgba(66, 34, 25, 0.24);
+  font-family: "RecruitDisplay", serif;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.accept-button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.72) contrast(0.86);
+  opacity: 0.72;
+}
+
+.button-crest {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid currentColor;
+  font-size: 18px;
+  transform: rotate(-4deg);
+}
+
+.wax-seal {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  opacity: 0.9;
+  transform: rotate(7deg);
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 300ms ease;
+}
+
+.wax-seal img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.notice-paper.is-sealed .wax-seal {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1.2);
+}
+
+.career-dossier {
+  position: absolute;
+  left: 69.8%;
+  top: 10.4%;
+  z-index: 5;
+  width: 27.1%;
+  height: 80.4%;
+  min-height: 0;
+  margin: 0;
+  padding: 22px 17px 16px 46px;
+  overflow: visible;
+  border: 1px solid rgba(70, 48, 31, 0.74);
+  background-color: #decda7;
+  background-image:
+    linear-gradient(96deg, rgba(255, 247, 221, 0.24), transparent 30% 74%, rgba(96, 62, 31, 0.12)),
+    url("./assets/recruitment/textures/ink-halftone-tile-v1.png"),
+    url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+  background-size: auto, 680px 680px, 560px 560px;
+  box-shadow:
+    2px 3px 1px rgba(35, 20, 10, 0.36),
+    14px 19px 16px rgba(20, 11, 6, 0.42),
+    inset 0 0 42px rgba(92, 58, 29, 0.12);
+  transform: rotate(0.7deg);
+}
+
+.career-dossier::before {
+  display: none;
+}
+
+.dossier-pin {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  z-index: 9;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #17130f;
+  border-radius: 50%;
+  background: #6e6657;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.55);
+  transform: translateX(-50%);
+}
+
+.dossier-head {
+  position: relative;
+  z-index: 2;
+  min-height: 56px;
+  padding: 4px 0 8px;
+  border-bottom: 4px double var(--ink);
+}
+
+.dossier-head h2 {
+  margin: 2px 0 0;
+  font-family: "RecruitDisplay", serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.career-selector {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  height: calc(100% - 106px);
+  min-height: 385px;
+  place-items: center;
+  padding: 14px 0 6px 8px;
+  perspective: 900px;
+}
+
+.career-selector::before,
+.career-selector::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: min(230px, 84%);
+  aspect-ratio: 2 / 3;
+  border: 2px solid #273130;
+  background: #172526 url("./assets/recruitment/cards/profession-card-back-v1.webp") center / cover no-repeat;
+  box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.28);
+  content: "";
+  pointer-events: none;
+}
+
+.career-selector::before {
+  transform: translate(-47%, -49%) rotate(3.5deg);
+  opacity: 0.52;
+}
+
+.career-selector::after {
+  transform: translate(-53%, -51%) rotate(-3deg);
+  opacity: 0.34;
+}
+
+.career-bookmarks {
+  position: absolute;
+  left: -72px;
+  top: 28px;
+  z-index: 8;
+  display: grid;
+  gap: 9px;
+  width: 110px;
+}
+
+.career-bookmark {
+  --bookmark: var(--red);
+  position: relative;
+  width: 104px;
+  min-height: 42px;
+  padding: 6px 38px 6px 8px;
+  overflow: hidden;
+  border: 1px solid #30251d;
+  border-radius: 0;
+  color: #2b2118;
+  background: color-mix(in srgb, var(--bookmark) 22%, var(--paper-light));
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.26);
+  font-size: 11px;
+  font-weight: 850;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.career-bookmark::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  background: var(--bookmark);
+  content: "";
+  opacity: 0.75;
+}
+
+.career-bookmark:hover,
+.career-bookmark[aria-selected="true"] {
+  transform: translateX(-9px);
+}
+
+.career-bookmark[aria-selected="true"] {
+  color: #f4e7c6;
+  background: var(--bookmark);
+}
+
+.career-bookmark:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+
+.career-card {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 88px;
+  width: min(248px, 92%);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  filter: drop-shadow(7px 10px 7px rgba(0, 0, 0, 0.38));
+  opacity: 1;
+  transform-origin: center 58%;
+  will-change: transform, opacity, filter;
+}
+
+.career-card::before,
+.career-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border: 0;
+  background: url("./assets/recruitment/cards/profession-card-frame-v1.png") center / 100% 100% no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+.career-card::after {
+  inset: 10.5% 10.5% 18%;
+  border: 1px solid rgba(200, 164, 93, 0.48);
+  background: url("./assets/recruitment/textures/ink-halftone-tile-v1.png") center / 520px 520px;
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+}
+
+.career-card.is-empty {
+  grid-template-rows: 1fr;
+  place-items: center;
+  background-image:
+    url("./assets/recruitment/cards/profession-card-back-v1.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.career-card.is-empty::before {
+  inset: 8px;
+  border: 1px solid rgba(200, 164, 93, 0.74);
+  background: none;
+}
+
+.career-card.is-empty::after {
+  inset: 13px;
+  border: 1px solid rgba(31, 48, 47, 0.54);
+  background: none;
+  opacity: 1;
+}
+
+.career-empty-copy {
+  position: absolute;
+  left: 50%;
+  bottom: 16%;
+  z-index: 7;
+  display: grid;
+  width: 76%;
+  padding: 8px 10px 7px;
+  border: 3px double var(--red-dark);
+  color: var(--ink);
+  background-color: rgba(239, 224, 190, 0.96);
+  background-image: url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+  background-size: 320px 320px;
+  box-shadow: 3px 4px 0 rgba(30, 24, 19, 0.28);
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+  transform: translateX(-50%) rotate(-1deg);
+}
+
+.career-empty-copy strong {
+  color: var(--red-dark);
+  font-family: "RecruitDisplay", serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.career-empty-copy span {
+  padding-top: 3px;
+  border-top: 1px solid rgba(113, 48, 33, 0.52);
+}
+
+.career-art-wrap {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  margin: 8% 10.8% 0;
+  background: #dbcba7;
+}
+
+.career-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: saturate(0.92) contrast(1.04) brightness(1.03);
+}
+
+.career-card-copy {
+  position: relative;
+  z-index: 7;
+  display: grid;
+  align-content: center;
+  min-height: 0;
+  margin: 0 10.8% 6%;
+  padding: 3px 9px 7px;
+  color: var(--ink);
+  background: transparent;
+  text-align: center;
+}
+
+.career-card-copy h3,
+.career-card-copy p {
+  margin: 0;
+}
+
+.career-card-copy h3 {
+  color: var(--red-dark);
+  font-family: "RecruitDisplay", serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.career-card-copy p {
+  margin-top: 2px;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.career-location {
+  color: var(--teal);
+  font-weight: 750;
+}
+
+.career-desc {
+  display: none;
+}
+
+.career-selected-mark {
+  position: absolute;
+  right: 19px;
+  top: 20px;
+  z-index: 8;
+  padding: 4px 6px;
+  border: 3px double var(--red-dark);
+  color: var(--red-dark);
+  background: rgba(239, 224, 190, 0.95);
+  font-size: 8px;
+  transform: rotate(1deg);
+}
+
+.dossier-hint {
+  position: relative;
+  z-index: 3;
+  margin: 3px 8px 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.desk-quill,
+.desk-compass,
+.desk-stamp,
+.desk-seal {
+  position: absolute;
+  z-index: 7;
+  display: block;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(5px 8px 7px rgba(15, 8, 4, 0.5));
+}
+
+.desk-quill {
+  right: -1.3%;
+  bottom: -2.6%;
+  width: 12.5%;
+  transform: rotate(-7deg);
+}
+
+.desk-compass {
+  left: -2.2%;
+  top: 37%;
+  width: 10.5%;
+  transform: rotate(-8deg);
+}
+
+.desk-stamp {
+  right: 1.4%;
+  top: -7.5%;
+  width: 10.2%;
+  transform: rotate(28deg);
+}
+
+.desk-seal {
+  left: -1.1%;
+  bottom: 5.2%;
+  width: 8.4%;
+  transform: rotate(-12deg);
+}
+
+.desk-stamp,
+.desk-seal {
+  display: none;
+}
+
+.desk-quill,
+.desk-compass {
+  display: none;
+}
+
+.mission-dialog {
+  width: min(600px, calc(100% - 28px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  padding: 26px 30px 24px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  background-color: var(--paper-light);
+  background-image: url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+  background-size: 480px 480px;
+  box-shadow: 12px 16px 34px rgba(0, 0, 0, 0.56), inset 0 0 0 5px rgba(163, 77, 53, 0.18);
+}
+
+.mission-dialog::backdrop {
+  background: rgba(18, 10, 6, 0.72);
+}
+
+.mission-dialog > p,
+.mission-dialog h2,
+.mission-dialog h3 {
+  margin: 0;
+}
+
+.mission-dialog > p {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mission-dialog h2 {
+  margin-top: 5px;
+  font-family: "RecruitDisplay", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.mission-dialog h3 {
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.mission-dialog p,
+.mission-dialog li {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mission-note {
+  padding: 9px 12px;
+  border-left: 5px solid var(--red);
+  background: rgba(163, 77, 53, 0.09);
+}
+
+.dialog-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.handoff-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  color: #efe2c0;
+  background: #21160f;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 420ms ease, visibility 420ms ease;
+}
+
+.handoff-screen.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.handoff-screen img {
+  width: 140px;
+  height: 140px;
+  animation: handoff-stamp 500ms cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+}
+
+.handoff-screen h2,
+.handoff-screen p {
+  margin: 0;
+}
+
+.handoff-screen h2 {
+  margin-top: 14px;
+  font-family: "RecruitDisplay", serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.handoff-screen p {
+  margin-top: 7px;
+  color: #c9b58b;
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .race-choice:not(.is-selected) .race-portrait:not(.race-portrait--selected) {
+    animation: roster-idle var(--idle-duration) ease-in-out var(--idle-delay) infinite;
+  }
+}
+
+@keyframes roster-idle {
+  0%, 100% {
+    transform:
+      translateX(-50%)
+      translateX(var(--portrait-shift))
+      translateY(0)
+      rotate(0)
+      scale(var(--portrait-scale));
+  }
+  50% {
+    transform:
+      translateX(-50%)
+      translateX(var(--portrait-shift))
+      translateX(var(--idle-shift))
+      translateY(var(--idle-lift))
+      rotate(var(--idle-tilt))
+      scaleX(var(--portrait-scale))
+      scaleY(calc(var(--portrait-scale) * var(--idle-breathe)));
+  }
+}
+
+@keyframes print-edge-breathe {
+  0%, 100% {
+    opacity: 0.58;
+    mask-image: radial-gradient(ellipse at 50% 52%, transparent 0 31%, rgba(0, 0, 0, 0.18) 49%, #000 77%);
+  }
+  50% {
+    opacity: 0.9;
+    mask-image: radial-gradient(ellipse at 50% 52%, transparent 0 15%, rgba(0, 0, 0, 0.38) 34%, #000 64%);
+  }
+}
+
+@keyframes print-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes print-rotate-reverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes race-outline-breathe {
+  0%, 100% {
+    filter:
+      saturate(1.01)
+      contrast(1.03)
+      brightness(1.035)
+      drop-shadow(0 0 1px rgba(248, 226, 170, 0.55))
+      drop-shadow(0 0 5px color-mix(in srgb, var(--race-accent) 28%, transparent));
+  }
+  50% {
+    filter:
+      saturate(1.03)
+      contrast(1.03)
+      brightness(1.055)
+      drop-shadow(0 0 3px rgba(248, 226, 170, 0.76))
+      drop-shadow(0 0 9px color-mix(in srgb, var(--race-accent) 42%, transparent));
+  }
+}
+
+@keyframes race-recruit-lock {
+  0% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(8px) scale(calc(var(--portrait-scale) * 0.96)); }
+  44% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(-2px) scale(calc(var(--portrait-scale) * 1.014)); }
+  72% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(1px) scale(calc(var(--portrait-scale) * 1.004)); }
+  100% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(0) scale(calc(var(--portrait-scale) * 1.008)); }
+}
+
+@keyframes tiefling-recruit-lock {
+  0% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(12px) rotate(-1deg) scale(calc(var(--portrait-scale) * 0.94)); }
+  42% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(-3px) rotate(0.35deg) scale(calc(var(--portrait-scale) * 1.014)); }
+  68% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(1px) rotate(-0.12deg) scale(calc(var(--portrait-scale) * 1.004)); }
+  100% { transform: translateX(-50%) translateX(var(--portrait-shift)) translateY(0) rotate(0) scale(calc(var(--portrait-scale) * 1.008)); }
+}
+
+@keyframes recruited-stamp-in {
+  0% { opacity: 0; transform: translateY(-7px) rotate(8deg) scale(1.35); }
+  70% { opacity: 1; transform: translateY(1px) rotate(-2deg) scale(0.94); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+
+@keyframes handoff-stamp {
+  0% { opacity: 0; transform: translateY(-90px) scale(1.8) rotate(-16deg); }
+  70% { opacity: 1; transform: translateY(8px) scale(0.9) rotate(4deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+
+@media (max-width: 720px) {
+  body {
+    display: block;
+    overflow-x: hidden;
+    background-attachment: fixed;
+  }
+
+  .stage-viewport {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .recruitment-desk {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 8px;
+    background-image: url("./assets/ui/recruitment-kit-v2/wood_table.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .notice-sheet-layer,
+  .dossier-sheet-layer,
+  .desk-compass,
+  .desk-quill,
+  .desk-stamp,
+  .desk-seal {
+    display: none;
+  }
+
+  .notice-paper {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border: 1px solid #5a4430;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(rgba(246, 234, 204, 0.52), rgba(225, 204, 160, 0.22)),
+      url("./assets/recruitment/textures/ink-halftone-tile-v1.png"),
+      url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+    background-size: auto, 620px 620px, 560px 560px;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.48), inset 0 0 44px rgba(83, 53, 28, 0.18);
+    clip-path: none;
+    transform: none;
+  }
+
+  .notice-paper::before {
+    inset: 7px;
+  }
+
+  .notice-head {
+    grid-template-columns: 48px minmax(0, 1fr) 54px;
+    margin: 14px 14px 0;
+    padding: 10px 6px 8px;
+  }
+
+  .guild-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .notice-title-copy p,
+  .notice-title-copy span {
+    font-size: 8px;
+  }
+
+  .notice-title-copy span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .notice-title-copy h1 {
+    font-size: 36px;
+  }
+
+  .issue-mark {
+    padding: 5px 3px;
+    font-size: 8px;
+  }
+
+  .roster-section {
+    grid-template-rows: 34px 270px 96px;
+    margin: 0 14px;
+  }
+
+  .race-scroll {
+    overflow: hidden;
+  }
+
+  .roster-scene {
+    opacity: 0.82;
+    background-position: center 18%;
+    background-size: auto 86%;
+  }
+
+  .race-roster {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 96%;
+    margin-inline: auto;
+  }
+
+  .race-choice {
+    width: auto;
+    min-width: 0;
+  }
+
+  .race-choice:nth-child(1) {
+    --portrait-shift: 4px;
+    --portrait-scale: 1.02;
+  }
+
+  .race-choice:nth-child(2) {
+    --portrait-shift: 2px;
+    --portrait-scale: 1;
+  }
+
+  .race-choice:nth-child(3) {
+    --portrait-shift: -2px;
+    --portrait-scale: 1.04;
+  }
+
+  .race-choice:nth-child(4) {
+    --portrait-shift: -4px;
+    --portrait-scale: 1.02;
+  }
+
+  .race-portrait {
+    width: 132%;
+  }
+
+  .race-name {
+    left: 1px;
+    right: 1px;
+    gap: 2px;
+    font-size: 13px;
+  }
+
+  .race-name small {
+    font-size: 6px;
+  }
+
+  .race-state {
+    right: 2px;
+    top: 8px;
+    padding: 2px 3px;
+    font-size: 7px;
+  }
+
+  .race-caption {
+    grid-template-columns: 64px minmax(0, 1fr) 44px;
+    gap: 7px;
+    margin-inline: 0;
+    padding: 7px 8px;
+  }
+
+  .caption-pointer {
+    display: none;
+  }
+
+  .caption-index {
+    font-size: 11px;
+  }
+
+  .race-caption h2 {
+    font-size: 16px;
+  }
+
+  .race-caption p {
+    font-size: 10px;
+  }
+
+  .caption-stamp {
+    width: 40px;
+    height: 38px;
+    font-size: 8px;
+  }
+
+  .notice-information {
+    grid-template-rows: 46px 190px;
+    margin: 6px 14px 0;
+  }
+
+  .notice-tabs {
+    gap: 2px;
+  }
+
+  .notice-tab {
+    height: 40px;
+    padding: 2px;
+    font-size: 9px;
+    line-height: 1.2;
+  }
+
+  .notice-tab[aria-selected="true"] {
+    height: 44px;
+  }
+
+  .partner-grid,
+  .mission-tags,
+  .process-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .acceptance-block {
+    grid-template-columns: 1fr 56px;
+    gap: 8px;
+    margin: 6px 14px 18px;
+    padding: 10px 4px 6px;
+  }
+
+  .selection-summary {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .accept-button {
+    min-height: 50px;
+    font-size: 19px;
+  }
+
+  .wax-seal {
+    width: 54px;
+    height: 54px;
+  }
+
+  .career-dossier {
+    position: relative;
+    left: auto;
+    top: auto;
+    order: 2;
+    width: min(360px, calc(100% - 18px));
+    height: 590px;
+    min-height: 590px;
+    margin: 18px auto 84px;
+    padding-left: 54px;
+    border: 2px solid #34281e;
+    background-color: #decda7;
+    background-image: url("./assets/recruitment/textures/paper-fiber-tile-v1.webp");
+    background-size: 460px 460px;
+    box-shadow: 10px 16px 28px rgba(0, 0, 0, 0.5);
+    transform: rotate(0.5deg);
+  }
+
+  .career-bookmarks {
+    left: -66px;
+  }
+
+  .career-bookmark {
+    min-height: 46px;
+  }
+
+  .desk-quill {
+    right: -5%;
+    bottom: 0;
+    width: 34%;
+  }
+
+  .desk-compass {
+    right: 56%;
+    bottom: 1%;
+    width: 22%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
