@@ -305,9 +305,9 @@ button:focus-visible {
   inset: 0;
   z-index: 0;
   opacity: 0.88;
-  background-image: url("./assets/recruitment/scenes/roster-world-scene-panorama-v1.webp");
-  background-position: center bottom;
-  background-size: 100% 100%;
+  background-image: url("./assets/recruitment/scenes/roster-world-scene-grounded-v2.webp");
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
   filter: saturate(0.98) contrast(1.08) brightness(0.94);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 91%, transparent 100%);
@@ -410,7 +410,7 @@ button:focus-visible {
 .race-choice::after {
   position: absolute;
   left: 14%;
-  bottom: 31px;
+  bottom: 20px;
   z-index: 2;
   width: 72%;
   height: 17px;
@@ -449,7 +449,7 @@ button:focus-visible {
 
 .race-support--notice-pillar {
   right: 3%;
-  bottom: 31px;
+  bottom: 20px;
   width: 29%;
   height: 76%;
   border: 1px solid rgba(52, 43, 33, 0.48);
@@ -572,7 +572,7 @@ button:focus-visible {
 .race-portrait {
   position: absolute;
   left: 50%;
-  bottom: 23px;
+  bottom: 12px;
   z-index: 3;
   width: 121%;
   height: calc(100% - 42px);
@@ -1680,8 +1680,8 @@ button:focus-visible {
 
   .roster-scene {
     opacity: 0.82;
-    background-position: center 18%;
-    background-size: auto 86%;
+    background-position: center center;
+    background-size: auto 100%;
   }
 
   .race-roster {
