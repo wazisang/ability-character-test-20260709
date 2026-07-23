@@ -189,6 +189,20 @@ function selectedCareer() {
   return selectedRace()?.careers.find((career) => career.id === state.careerId) || null;
 }
 
+function renderSealedCareerCard(title, subtitle) {
+  return `
+    <div class="career-back-ritual" aria-hidden="true">
+      <span class="career-back-orbit"></span>
+      <span class="career-back-sigil">界</span>
+      <span class="career-back-rune career-back-rune--north">I</span>
+      <span class="career-back-rune career-back-rune--east">V</span>
+      <span class="career-back-rune career-back-rune--south">IX</span>
+      <span class="career-back-rune career-back-rune--west">XIII</span>
+    </div>
+    <div class="career-empty-copy"><strong>${title}</strong><span>${subtitle}</span></div>
+  `;
+}
+
 function renderRoster() {
   raceRoster.innerHTML = RACES.map((race) => `
     <button class="race-choice" data-race="${race.id}" data-focus="${race.focus}" type="button"
@@ -233,10 +247,12 @@ function updateRaceUI() {
     button.setAttribute("aria-pressed", String(active));
   });
 
+  recruitmentDesk.style.setProperty("--selection-accent", race?.accent || "#a34d35");
   raceCaption.style.setProperty("--caption-x", `${index * 18 + 23}%`);
+  raceCaption.classList.toggle("has-selection", Boolean(race));
   raceCaptionTitle.textContent = race ? `${race.name} · ${race.en}` : "请选择一名征召候选人";
   raceCaptionBody.textContent = race?.summary || "种族决定可申请的职业路线，不影响职业检验的最终成绩。";
-  raceCaptionStamp.textContent = race ? "今日征召" : "待登记";
+  raceCaptionStamp.textContent = race ? "今日\n征召" : "待\n登记";
 }
 
 function renderCareerSelector() {
@@ -246,10 +262,11 @@ function renderCareerSelector() {
 
   if (!race) {
     careerBookmarks.innerHTML = [1, 2, 3, 4].map((index) => `
-      <button class="career-bookmark" type="button" disabled style="--bookmark:${index % 2 ? "#a34d35" : "#315f5b"}">档案 ${index}</button>
+      <button class="career-bookmark" type="button" disabled data-slot="${index}" style="--bookmark:${index % 2 ? "#a34d35" : "#315f5b"}">档案 ${index}</button>
     `).join("");
     careerCard.className = "career-card is-empty";
-    careerCard.innerHTML = `<div class="career-empty-copy"><strong>档案封存</strong><span>选择种族后启封</span></div>`;
+    careerCard.style.removeProperty("--card-accent");
+    careerCard.innerHTML = renderSealedCareerCard("秘契封存", "选择种族后启封");
     dossierHint.textContent = "种族登记后，对应的四份职业档案会在这里展开。";
     return;
   }
@@ -261,27 +278,35 @@ function renderCareerSelector() {
   });
   careerBookmarks.innerHTML = race.careers.map((item, index) => `
     <button class="career-bookmark" data-career="${item.id}" role="tab" type="button"
-      aria-selected="${item.id === state.careerId}" style="--bookmark:${bookmarkColors[index]}">
+      data-slot="${index + 1}" aria-selected="${item.id === state.careerId}" style="--bookmark:${bookmarkColors[index]}">
       ${item.name}
     </button>
   `).join("");
 
   if (!career) {
     careerCard.className = "career-card is-empty";
-    careerCard.innerHTML = `<div class="career-empty-copy"><strong>档案已启封</strong><span>从左侧书签选择职业</span></div>`;
+    careerCard.style.setProperty("--card-accent", race.accent);
+    careerCard.innerHTML = renderSealedCareerCard("职业秘契", "从左侧书签选择职业");
     dossierHint.textContent = "职业不会自动代选。查看档案并确认后，征召按钮才会启用。";
     return;
   }
 
-  careerCard.className = "career-card";
+  const careerCode = career.id.replace(/^guild_/, "").toUpperCase();
+  careerCard.className = "career-card is-revealed";
+  careerCard.style.setProperty("--card-accent", race.accent);
   careerCard.innerHTML = `
+    <div class="career-card-header" aria-hidden="true">
+      <span class="career-card-code">${careerCode}</span>
+      <span class="career-card-sigil">${career.name.slice(0, 1)}</span>
+      <span class="career-card-rank">GUILD CLASS</span>
+    </div>
     <div class="career-art-wrap"><img class="career-art" src="${career.art}" alt="${race.name}${career.name}职业卡"></div>
     <div class="career-card-copy">
       <h3>${career.name}</h3>
       <p class="career-location">报到地点：${career.location}</p>
       <p class="career-desc">${career.desc}</p>
     </div>
-    <span class="career-selected-mark">已选职业</span>
+    <span class="career-selected-mark">登记</span>
   `;
   dossierHint.textContent = `${race.name} / ${career.name}的职业组合已经登记，可以接受征召。`;
 }
